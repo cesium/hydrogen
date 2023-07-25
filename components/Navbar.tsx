@@ -3,7 +3,7 @@ import Image from "next/image";
 import logo from "@/public/cesium.png";
 import Link from "next/link";
 
-const navbar = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"];
+const navbar: string[] = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"];
 
 export default function Navbar() {
   return (
@@ -20,7 +20,6 @@ export default function Navbar() {
           </Link>
         ))}
       </div>
-
       <div className="h-20 w-20 rounded-full bg-gray-200"></div>
     </div>
   );
