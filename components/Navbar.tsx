@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-import logo from "@/public/cesium.png";
+import logo from "@/public/cesium-lettering.png";
 import Link from "next/link";
 
 const navbar: string[] = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"];
 
 export default function Navbar() {
   return (
-    <div className="flex items-center justify-between px-16">
+    <div className="flex items-center justify-between">
       <Image src={logo} alt="" width={150} height={200} priority unoptimized />
       <div className="flex w-[50%] items-center justify-between">
         {navbar.map((title) => (
