@@ -7,7 +7,7 @@ const navbar: string[] = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"];
 
 export default function Navbar() {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between px-20">
       <Image src={logo} alt="" width={150} height={200} priority unoptimized />
       <div className="flex w-[50%] items-center justify-between">
         {navbar.map((title) => (
