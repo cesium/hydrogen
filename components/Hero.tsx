@@ -11,14 +11,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="relative">
-        <Image
-          src={logo}
-          alt=""
-          width={300}
-          height={343}
-          priority
-          unoptimized
-        />
+        <Image src={logo} alt="" width={300} height={343} priority />
         <Image
           className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-150 transform rounded-lg object-cover opacity-40 blur-3xl filter"
           src={logo}
@@ -26,7 +19,6 @@ export default function Hero() {
           width={300}
           height={343}
           priority
-          unoptimized
         />
       </div>
     </div>
