@@ -18,7 +18,7 @@ module.exports = {
       "5xl": ["3rem", { lineHeight: "3.5rem" }],
       "6xl": ["4rem", { lineHeight: "1" }],
       "7xl": ["5rem", { lineHeight: "1" }],
-      "8xl": ["6rem", { lineHeight: "1" }],
+      "8xl": ["7rem", { lineHeight: "1" }],
       "9xl": ["8rem", { lineHeight: "1" }],
     },
     extend: {
@@ -40,6 +40,7 @@ module.exports = {
           800: "#ED8661",
           900: "#ED8661",
         },
+        background: "EDE9E8",
       },
     },
   },
