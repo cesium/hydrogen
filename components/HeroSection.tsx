@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const items = [
@@ -12,7 +13,8 @@ export default function HeroSection() {
       {items.map((row, rowIndex) => (
         <React.Fragment key={rowIndex}>
           {row.map((item, colIndex) => (
-            <div
+            <Link
+              href="/"
               key={colIndex}
               className={`relative ${
                 rowIndex === 0 && colIndex === 0
@@ -25,7 +27,7 @@ export default function HeroSection() {
               } h-[250px] rounded-xl bg-gray-200 text-2xl font-bold text-white`}
             >
               <span className="absolute bottom-4 left-14">{item}</span>
-            </div>
+            </Link>
           ))}
         </React.Fragment>
       ))}
