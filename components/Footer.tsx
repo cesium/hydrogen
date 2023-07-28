@@ -1,13 +1,23 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaGithub,
+  FaYoutube,
+} from "react-icons/fa";
 
 type SocialLinkProps = {
   href: string;
-  icon: string;
+  icon: ReactNode;
 };
 
 const SocialLink = ({ href, icon }: SocialLinkProps) => (
   <li>
-    <a href={href}>{icon}</a>
+    <a href={href} className="[&>svg]:h-6 [&>svg]:w-6">
+      {icon}
+    </a>
   </li>
 );
 
@@ -36,12 +46,12 @@ const Footer = () => {
           CeSIUM - Centro de Estudantes de Engenharia Informática da
           Universidade do Minho
         </p>
-        <ul className="flex flex-wrap gap-x-2">
-          <SocialLink href="" icon="Facebook" />
-          <SocialLink href="" icon="Instagram" />
-          <SocialLink href="" icon="Twitter" />
-          <SocialLink href="" icon="Github" />
-          <SocialLink href="" icon="Youtube" />
+        <ul className="flex flex-wrap gap-x-4">
+          <SocialLink href="" icon={<FaFacebookF />} />
+          <SocialLink href="" icon={<FaInstagram />} />
+          <SocialLink href="" icon={<FaTwitter />} />
+          <SocialLink href="" icon={<FaGithub />} />
+          <SocialLink href="" icon={<FaYoutube />} />
         </ul>
       </div>
       <div className="flex justify-center max-lg:pt-4 max-md:border-t-[1px] max-md:border-gray-300">
