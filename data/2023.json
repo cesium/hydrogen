@@ -1,178 +1,181 @@
 [
   {
-    "title": "Presidência",
-    "members": [
+    "year": "2019",
+    "team": [
       {
-        "name": "Sofia Gomes",
-        "cargo": "Presidente"
-      },
-      {
-        "name": "Alexandre Gomes",
-        "cargo": "Vice-Presidente"
-      },
-      {
-        "name": "Gonçalo Rodrigues",
-        "cargo": "Vice-Presidente"
-      },
-      {
-        "name": "Vitor Leite",
-        "cargo": "Tesoureiro"
-      },
-      {
-        "name": "Beatriz Rodrigues",
-        "cargo": "Secretaria"
+        "title": "Presidência",
+        "members": [
+          {
+            "name": "Sofia Gomes",
+            "cargo": "Presidente"
+          },
+          {
+            "name": "Alexandre Gomes",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Gonçalo Rodrigues",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Vitor Leite",
+            "cargo": "Tesoureiro"
+          },
+          {
+            "name": "Beatriz Rodrigues",
+            "cargo": "Secretaria"
+          }
+        ]
       }
     ]
   },
   {
-    "title": "Departamento de Merchandising e Parcerias",
-    "members": [
+    "year": "2020",
+    "team": [
       {
-        "name": "Gerson Júnior",
-        "cargo": "Diretor"
-      },
-      {
-        "name": "Inês Marinho",
-        "cargo": "Co-Diretora"
-      },
-      {
-        "name": "Miguel Gramoso",
-        "cargo": "Co-Diretor"
+        "title": "Presidência",
+        "members": [
+          {
+            "name": "Sofia Gomes",
+            "cargo": "Presidente"
+          },
+          {
+            "name": "Alexandre Gomes",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Gonçalo Rodrigues",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Vitor Leite",
+            "cargo": "Tesoureiro"
+          },
+          {
+            "name": "Beatriz Rodrigues",
+            "cargo": "Secretaria"
+          }
+        ]
       }
     ]
   },
   {
-    "title": "CAOS",
-    "members": [
+    "year": "2021",
+    "team": [
       {
-        "name": "Rui Oliveira",
-        "cargo": "Diretor"
-      },
-      {
-        "name": "Rui Lopes",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Tiago Bacelar",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Enzo Vieira",
-        "cargo": "Co-Diretor"
+        "title": "Presidência",
+        "members": [
+          {
+            "name": "Sofia Gomes",
+            "cargo": "Presidente"
+          },
+          {
+            "name": "Alexandre Gomes",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Gonçalo Rodrigues",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Vitor Leite",
+            "cargo": "Tesoureiro"
+          },
+          {
+            "name": "Beatriz Rodrigues",
+            "cargo": "Secretaria"
+          }
+        ]
       }
     ]
   },
   {
-    "title": "Departamento de Marketing e Conteúdo",
-    "members": [
+    "year": "2022",
+    "team": [
       {
-        "name": "Gustavo Pereira",
-        "cargo": "Diretor"
-      },
-      {
-        "name": "Julio Pinto",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Ricardo Lucena",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Alexandre Neves",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Lara Pereira",
-        "cargo": "Co-Diretora"
+        "title": "Presidência",
+        "members": [
+          {
+            "name": "Sofia Gomes",
+            "cargo": "Presidente"
+          },
+          {
+            "name": "Alexandre Gomes",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Gonçalo Rodrigues",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Vitor Leite",
+            "cargo": "Tesoureiro"
+          },
+          {
+            "name": "Beatriz Rodrigues",
+            "cargo": "Secretaria"
+          }
+        ]
       }
     ]
   },
   {
-    "title": "Departamento Pedagogico",
-    "members": [
+    "year": "2023",
+    "team": [
       {
-        "name": "Henrique Pereira",
-        "cargo": "Diretor"
-      },
-      {
-        "name": "Daniel Pereira",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Pedro Sousa",
-        "cargo": "Co-Diretor"
+        "title": "Presidência",
+        "members": [
+          {
+            "name": "Mariana Silva",
+            "cargo": "Presidente"
+          },
+          {
+            "name": "Carlos Almeida",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Rita Ferreira",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Tiago Reis",
+            "cargo": "Tesoureiro"
+          },
+          {
+            "name": "Ana Oliveira",
+            "cargo": "Secretaria"
+          }
+        ]
       }
     ]
   },
   {
-    "title": "Departamento Recreativo",
-    "members": [
+    "year": "2024",
+    "team": [
       {
-        "name": "Leonardo Freitas",
-        "cargo": "Diretor"
-      },
-      {
-        "name": "Gonçalo Costa",
-        "cargo": "Co-Diretor"
-      },
-      {
-        "name": "Martim Ferreira",
-        "cargo": "Co-Diretor"
-      }
-    ]
-  },
-  {
-    "title": "Vogais",
-    "members": [
-      {
-        "name": "Jéssica Fernandes",
-        "cargo": "Vogal"
-      },
-      {
-        "name": "Gabriela Prata",
-        "cargo": "Vogal"
-      },
-      {
-        "name": "José Ferreira",
-        "cargo": "Vogal"
-      },
-      {
-        "name": "Matilde Bravo",
-        "cargo": "Vogal"
-      }
-    ]
-  },
-  {
-    "title": "Mesa da Assembleia Geral",
-    "members": [
-      {
-        "name": "Tiago Soares",
-        "cargo": "Presidente"
-      },
-      {
-        "name": "Pedro António",
-        "cargo": "Vice-Presidente"
-      },
-      {
-        "name": "Marco Pereira",
-        "cargo": "Secretario"
-      }
-    ]
-  },
-  {
-    "title": "Conselho Fiscal",
-    "members": [
-      {
-        "name": "Felipe Felicio",
-        "cargo": "Presidente"
-      },
-      {
-        "name": "Luis Araújo",
-        "cargo": "Vice-Presidente"
-      },
-      {
-        "name": "Rui Armada",
-        "cargo": "Secretario"
+        "title": "Presidência",
+        "members": [
+          {
+            "name": "Mariana Silva",
+            "cargo": "Presidente"
+          },
+          {
+            "name": "Carlos Almeida",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Rita Ferreira",
+            "cargo": "Vice-Presidente"
+          },
+          {
+            "name": "Tiago Reis",
+            "cargo": "Tesoureiro"
+          },
+          {
+            "name": "Ana Oliveira",
+            "cargo": "Secretaria"
+          }
+        ]
       }
     ]
   }
