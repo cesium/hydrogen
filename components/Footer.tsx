@@ -25,7 +25,7 @@ const ListLink = ({ href, text }: ListLinkProps) => (
 const Footer = () => {
   return (
     <footer className="mt-12 grid gap-4 px-4 pb-4 md:grid-cols-2 md:px-8 md:pb-8 lg:grid-cols-3 lg:px-20 lg:pb-24">
-      <div className="flex flex-col justify-between text-gray-500 gap-4 max-md:items-center max-md:text-center">
+      <div className="flex flex-col justify-between gap-4 text-gray-500 max-md:items-center max-md:text-center">
         <Image
           src="/cesium.svg"
           alt="CeSIUM logo"
