@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-text-left {
+  background: linear-gradient(
+    to left,
+    rgba(203, 213, 225, 1),
+    rgba(203, 213, 225, 0)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-right {
+  background: linear-gradient(
+    to right,
+    rgba(203, 213, 225, 1),
+    rgba(203, 213, 225, 0)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
