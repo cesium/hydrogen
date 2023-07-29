@@ -1,25 +1,9 @@
-import Link from "next/link";
-
-interface IButtonProps {
-  title: string;
-  linkPath: string;
-}
+import LinkButton from "./LinkButton";
 
 export default function PartnerBenefits() {
-  function LinkButton({ title, linkPath }: IButtonProps) {
-    return (
-      <Link
-        className="rounded-xl bg-cesium-orange px-6 py-4 text-xl font-bold text-white"
-        href={linkPath}
-      >
-        {title}
-      </Link>
-    );
-  }
-
   return (
     <div className="relative mt-6 h-[400px] bg-light-gray px-0 text-center">
-      <h1 className="pt-8 text-2xl font-bold">Vantagens de ser Sócio</h1>
+      <h2 className="pt-8 text-2xl font-bold">Vantagens de ser Sócio</h2>
 
       <p className="flex justify-center px-32 pt-8 opacity-70">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
