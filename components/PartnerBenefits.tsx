@@ -9,7 +9,7 @@ export default function PartnerBenefits() {
   function LinkButton({ title, linkPath }: IButtonProps) {
     return (
       <Link
-        className="rounded-lg bg-cesium-orange px-6 py-4 text-2xl font-bold text-white"
+        className="rounded-xl bg-cesium-orange px-6 py-4 text-xl font-bold text-white"
         href={linkPath}
       >
         {title}
