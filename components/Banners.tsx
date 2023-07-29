@@ -34,7 +34,7 @@ function Row({ links, rowIndex }: RowProps) {
           className={`relative col-span-${handleColSpan(
             rowIndex,
             colIndex,
-          )} h-[250px] rounded-xl bg-gray-200 text-2xl font-bold text-white`}
+          )} h-[250px] rounded-xl bg-gray-200 text-2xl font-bold text-white hover:bg-gray-300`}
         >
           <span className="absolute bottom-4 left-14">{item}</span>
         </Link>
