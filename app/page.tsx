@@ -1,11 +1,11 @@
 import Hero from "@/components/Hero";
-import HeroSection from "@/components/HeroSection";
+import Banners from "@/components/Banners";
 
 export default function Home() {
   return (
     <main className="bg-background px-20">
       <Hero />
-      <HeroSection />
+      <Banners />
     </main>
   );
 }
