@@ -1,14 +1,15 @@
 import Link from "next/link";
 import React from "react";
 
-const items: string[][] = [
+type LinkGroup = string[];
+const items: LinkGroup[] = [
   ["Ser Parceiro", "Parceiros", "Equipa"],
   ["Sobre Nós"],
   ["Departamento de Informática", "Estudar LEI"],
 ];
 
 interface RowProps {
-  links: string[];
+  links: LinkGroup;
   rowIndex: number;
 }
 
