@@ -41,6 +41,7 @@ module.exports = {
           900: "#ED8661",
         },
         background: "EDE9E8",
+        "light-gray": "#D9D9D9",
       },
     },
   },
