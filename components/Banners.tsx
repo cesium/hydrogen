@@ -12,15 +12,15 @@ interface RowProps {
   rowIndex: number;
 }
 
-function handleColSpan(rowIndex: number, colIndex: number): number {
+function handleColSpan(rowIndex: number, colIndex: number): string {
   if (rowIndex === 0) {
-    return colIndex === 0 ? 2 : 1;
+    return colIndex === 0 ? "col-span-2" : "col-span-1";
   } else if (rowIndex === 1) {
-    return 4;
+    return "col-span-4";
   } else if (rowIndex === 2) {
-    return 2;
+    return "col-span-2";
   } else {
-    return 1;
+    return "col-span-1";
   }
 }
 
@@ -31,7 +31,7 @@ function Row({ links, rowIndex }: RowProps) {
         <Link
           href="/"
           key={colIndex}
-          className={`relative col-span-${handleColSpan(
+          className={`relative ${handleColSpan(
             rowIndex,
             colIndex,
           )} h-[250px] rounded-xl bg-gray-200 text-2xl font-bold text-white hover:bg-gray-300`}
