@@ -21,10 +21,10 @@ interface TeamsProps {
 
 const Teams: React.FC<TeamsProps> = ({ yearData }) => {
   return (
-    <div className="mt-8 flex flex-col items-start justify-center gap-10 px-28">
+    <ul className="mt-8 flex flex-col items-start justify-center gap-10 px-28">
       {yearData.team.map((item) => (
-        <ul className="flex flex-col gap-4" key={item.title}>
-          <li className="text-2xl font-semibold">{item.title}</li>
+        <li className="flex flex-col gap-4" key={item.title}>
+          <strong className="text-2xl font-semibold">{item.title}</strong>
           <ul className="flex flex-row gap-16">
             {item.members.map((member) => (
               <li
@@ -32,14 +32,14 @@ const Teams: React.FC<TeamsProps> = ({ yearData }) => {
                 key={member.name}
               >
                 <div className="h-[160px] w-[130px] rounded-lg bg-gray-200"></div>
-                <div className="mt-4">{member.name}</div>
-                <div className="text-sm opacity-50">{member.cargo}</div>
+                <span className="mt-4">{member.name}</span>
+                <p className="text-sm opacity-50">{member.cargo}</p>
               </li>
             ))}
           </ul>
-        </ul>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 
