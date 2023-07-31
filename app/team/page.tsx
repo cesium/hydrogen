@@ -1,7 +1,7 @@
 "use client";
 import teamData from "@/data/2023.json";
 import React, { useState } from "react";
-import Date from "@/components/Date";
+import DatePicker from "@/components/DatePicker";
 import Teams from "@/components/Teams";
 
 export default function Team() {
@@ -15,12 +15,15 @@ export default function Team() {
   const selectedYearData = teamData.find((data) => data.year === selectedYear);
 
   return (
-    <main className="bg-background px-28 pb-8">
-      <Date
-        yearDataList={teamData}
-        selectedYear={selectedYear}
-        onYearChange={onYearChange}
-      />
+    <main className="bg-background px-28 pb-8 ">
+      <div className="flex flex-col items-center justify-center gap-8">
+        <h1 className="text-5xl font-semibold">Equipa</h1>
+        <DatePicker
+          yearDataList={teamData}
+          selectedYear={selectedYear}
+          onYearChange={onYearChange}
+        />
+      </div>
       {selectedYearData && <Teams yearData={selectedYearData} />}
     </main>
   );
