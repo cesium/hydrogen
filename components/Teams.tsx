@@ -23,7 +23,7 @@ const Teams: React.FC<TeamsProps> = ({ yearData }) => {
   return (
     <div className="mt-8 flex flex-col items-start justify-center gap-10 px-28">
       {yearData.team.map((item) => (
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col gap-4" key={item.title}>
           <li className="text-2xl font-semibold">{item.title}</li>
           <ul className="flex flex-row gap-16">
             {item.members.map((member) => (
