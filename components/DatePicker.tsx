@@ -23,9 +23,9 @@ const Date: React.FC<DateProps> = ({
   );
 
   return (
-    <div className="flex gap-10">
+    <div className="flex justify-between gap-10">
       <button
-        className="items-center text-xl font-normal text-slate-400"
+        className="w-16 items-center text-xl font-normal text-slate-400"
         onClick={() => {
           const prevYearIndex = Math.max(0, selectedYearIndex - 1);
           onYearChange(yearDataList[prevYearIndex].year);
@@ -33,7 +33,7 @@ const Date: React.FC<DateProps> = ({
       >
         &lt;
       </button>
-      <div className="flex flex-row items-center gap-10 ">
+      <div className="flex w-96 flex-row items-center justify-center gap-10">
         {displayedYears.map((yearData) => (
           <div
             className={`cursor-pointer text-xl font-semibold ${
@@ -55,7 +55,7 @@ const Date: React.FC<DateProps> = ({
         ))}
       </div>
       <button
-        className="items-center text-xl font-normal text-slate-400"
+        className="w-16 items-center text-xl font-normal text-slate-400"
         onClick={() => {
           const nextYearIndex = Math.min(
             selectedYearIndex + 1,
