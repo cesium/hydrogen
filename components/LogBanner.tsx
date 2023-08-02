@@ -4,7 +4,7 @@ interface ILogBannerProps {
   title: string;
   content: string;
   datePublished: string;
-  forDisplayTime : string;
+  forDisplayTime: string;
   path: string;
 }
 
