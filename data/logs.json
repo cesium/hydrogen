@@ -2,19 +2,22 @@
   {
     "title": "titulo",
     "content": "conteúdo",
-    "timePublished": "12h00",
+    "datePublished": "2077-10-02 9:00",
+    "forDisplayTime": "9H00",
     "path": "/logs"
   },
   {
     "title": "título2",
     "content": "conteúdo2",
-    "timePublished": "15h12",
+    "datePublished": "2023-08-02 21:40",
+    "forDisplayTime": "21H40",
     "path": "/logs"
   },
   {
     "title": "título3",
     "content": "conteúdo3",
-    "timePublished": "15h24",
+    "datePublished": "2023-08-02 21:37",
+    "forDisplayTime": "21H37",
     "path": "/"
   }
 ]
