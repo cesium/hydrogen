@@ -14,7 +14,7 @@ export default function LogBanner({
   path,
 }: ILogBannerProps) {
   return (
-    <div className="pt-10">
+    <article className="pt-10">
       <Link href={path}>
         <div className="h-[225px] w-[930px] bg-light-gray px-8 pt-6">
           <h2 className="text-3xl font-semibold">
@@ -24,6 +24,6 @@ export default function LogBanner({
           <p className="break-words pt-2 text-3xl font-semibold">{content}</p>
         </div>
       </Link>
-    </div>
+    </article>
   );
 }
