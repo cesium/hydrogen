@@ -60,7 +60,9 @@ export default function NewsAndEvents() {
             {newsData.map((newsItem, index) => (
               <li key={newsItem.id}>
                 <article
-                  className={`flex justify-center mt-12 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
+                  className={`flex justify-center mt-12 ${
+                    index % 2 === 1 ? "flex-row-reverse" : ""
+                  }`}
                 >
                   <div className="w-[550px] h-44 bg-gray-200">
                     <p className="px-4 pt-4 text-lg font-bold opacity-85">
