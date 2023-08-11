@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import newsData from "../data/NewsData.json";
 
 export default function NewsAndEvents() {
-  const [isEventsOverNews, setEventsOverNews] = React.useState(true);
+  const [isEventsOverNews, setEventsOverNews] = useState(true);
 
   function handleNewsClick() {
     setEventsOverNews(false);
@@ -15,17 +15,21 @@ export default function NewsAndEvents() {
   }
 
   return (
-    <div className="pt-20 pb-20">
+    <div className="pb-20 pt-20">
       <div className="flex justify-center">
         <button
           onClick={handleNewsClick}
-          className="text-gray-500 mr-8 pl-2 pr-2 mb-5 border-b-2 border-transparent hover:border-cesium-orange hover:text-cesium-orange transition-colors duration-300"
+          className={`mb-5 mr-8 border-b-2 border-transparent pl-2 pr-2 transition-colors duration-300 hover:border-cesium-orange hover:text-cesium-orange ${
+            !isEventsOverNews ? "text-cesium-orange" : "text-gray-500"
+          }`}
         >
           Noticias
         </button>
         <button
           onClick={handleEventsClick}
-          className="text-gray-500 mr-8 pl-2 pr-2 mb-5 border-b-2 border-transparent hover:border-cesium-orange hover:text-cesium-orange transition-colors duration-300"
+          className={`mb-5 mr-8 border-b-2 border-transparent pl-2 pr-2 transition-colors duration-300 hover:border-cesium-orange hover:text-cesium-orange ${
+            isEventsOverNews ? "text-cesium-orange" : "text-gray-500"
+          }`}
         >
           Eventos
         </button>
@@ -35,21 +39,21 @@ export default function NewsAndEvents() {
         <div>
           <ul>
             <li>
-              <article className="flex justify-center mt-12">
-                <div className="w-40 h-44 bg-cesium-orange"></div>
-                <div className="w-[550px] h-44 bg-gray-200"></div>
+              <article className="mt-12 flex justify-center">
+                <div className="h-44 w-40 bg-cesium-orange"></div>
+                <div className="h-44 w-[550px] bg-gray-200"></div>
               </article>
             </li>
             <li>
-              <article className="flex justify-center mt-12">
-                <div className="w-[550px] h-44 bg-gray-200"></div>
-                <div className="w-40 h-44 bg-cesium-orange"></div>
+              <article className="mt-12 flex justify-center">
+                <div className="h-44 w-[550px] bg-gray-200"></div>
+                <div className="h-44 w-40 bg-cesium-orange"></div>
               </article>
             </li>
             <li>
-              <article className="flex justify-center mt-12">
-                <div className="w-40 h-44 bg-cesium-orange"></div>
-                <div className="w-[550px] h-44 bg-gray-200"></div>
+              <article className="mt-12 flex justify-center">
+                <div className="h-44 w-40 bg-cesium-orange"></div>
+                <div className="h-44 w-[550px] bg-gray-200"></div>
               </article>
             </li>
           </ul>
@@ -60,17 +64,17 @@ export default function NewsAndEvents() {
             {newsData.map((newsItem, index) => (
               <li key={newsItem.id}>
                 <article
-                  className={`flex justify-center mt-12 ${
+                  className={`mt-12 flex justify-center ${
                     index % 2 === 1 ? "flex-row-reverse" : ""
                   }`}
                 >
-                  <div className="w-[550px] h-44 bg-gray-200">
-                    <p className="px-4 pt-4 text-lg font-bold opacity-85">
+                  <div className="h-44 w-[550px] bg-gray-200">
+                    <p className="opacity-85 px-4 pt-4 text-lg font-bold">
                       {newsItem.title}
                     </p>
-                    <p className="px-4 pt-4 opacity-85">{newsItem.text}</p>
+                    <p className="opacity-85 px-4 pt-4">{newsItem.text}</p>
                   </div>
-                  <div className="w-44 h-44 bg-cesium-orange flex items-center justify-center">
+                  <div className="flex h-44 w-44 items-center justify-center bg-cesium-orange">
                     <Image
                       src={require(`../public/${newsItem.image}`).default}
                       alt=""
