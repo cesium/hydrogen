@@ -21,7 +21,7 @@ export default function LogBanner({
           <h2 className="text-3xl font-semibold">
             {title + " - "}
             <time dateTime={new Date(datePublished).toISOString()}>
-              {dayjs(datePublished).format("HH:mm")}
+              {dayjs(datePublished).format("HH[H]mm")}
             </time>
           </h2>
           <p className="break-words pt-2 text-3xl font-semibold">{content}</p>
