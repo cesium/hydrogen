@@ -1,8 +1,8 @@
-import Link from "next/link";
+import Link from "next/link"
 
 interface IButtonProps {
-  title: string;
-  linkPath: string;
+  title: string
+  linkPath: string
 }
 
 export default function LinkButton({ title, linkPath }: IButtonProps) {
@@ -13,5 +13,5 @@ export default function LinkButton({ title, linkPath }: IButtonProps) {
     >
       {title}
     </Link>
-  );
+  )
 }

@@ -1,36 +1,36 @@
-import type { ReactNode } from "react";
-import Image from "next/image";
+import type { ReactNode } from "react"
+import Image from "next/image"
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaGithub,
   FaYoutube,
-} from "react-icons/fa";
+} from "react-icons/fa"
 
-type SocialLinkProps = {
-  href: string;
-  icon: ReactNode;
-};
+type SocialLinkPropsType = {
+  href: string
+  icon: ReactNode
+}
 
-const SocialLink = ({ href, icon }: SocialLinkProps) => (
+const SocialLink = ({ href, icon }: SocialLinkPropsType) => (
   <li>
     <a href={href} className="[&>svg]:h-6 [&>svg]:w-6">
       {icon}
     </a>
   </li>
-);
+)
 
-type ListLinkProps = {
-  href: string;
-  text: string;
-};
+type ListLinkPropsType = {
+  href: string
+  text: string
+}
 
-const ListLink = ({ href, text }: ListLinkProps) => (
+const ListLink = ({ href, text }: ListLinkPropsType) => (
   <li className="py-1 text-gray-500">
     <a href={href}>{text}</a>
   </li>
-);
+)
 
 const Footer = () => {
   return (
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

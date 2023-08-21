@@ -1,25 +1,25 @@
-import React from "react";
+import React from "react"
 
-interface Member {
-  name: string;
-  cargo: string;
+interface IMember {
+  name: string
+  cargo: string
 }
 
-interface Team {
-  title: string;
-  members: Member[];
+interface ITeam {
+  title: string
+  members: IMember[]
 }
 
-interface YearData {
-  year: string;
-  team: Team[];
+interface IYearData {
+  year: string
+  team: ITeam[]
 }
 
-interface TeamsProps {
-  yearData: YearData;
+interface ITeamsProps {
+  yearData: IYearData
 }
 
-const Teams: React.FC<TeamsProps> = ({ yearData }) => {
+const Teams: React.FC<ITeamsProps> = ({ yearData }) => {
   return (
     <ul className="mt-8 flex flex-col items-start justify-center gap-10 px-28">
       {yearData.team.map((item) => (
@@ -40,7 +40,7 @@ const Teams: React.FC<TeamsProps> = ({ yearData }) => {
         </li>
       ))}
     </ul>
-  );
-};
+  )
+}
 
-export default Teams;
+export default Teams

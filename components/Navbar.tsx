@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Image from "next/image"
 
-import logo from "@/public/cesium-lettering.png";
-import Link from "next/link";
+import logo from "@/public/cesium-lettering.png"
+import Link from "next/link"
 
-const navbar: string[] = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"];
+const navbar: string[] = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"]
 
 export default function Navbar() {
   return (
@@ -22,5 +22,5 @@ export default function Navbar() {
       </div>
       <div className="h-20 w-20 rounded-full bg-gray-200"></div>
     </div>
-  );
+  )
 }

@@ -1,34 +1,34 @@
-import React from "react";
+import React from "react"
 
-interface DateProps {
+interface IDateProps {
   yearDataList: {
-    year: string;
-    team: { title: string; members: { name: string; cargo: string }[] }[];
-  }[];
-  selectedYear: string;
-  onYearChange: (year: string) => void;
+    year: string
+    team: { title: string; members: { name: string; cargo: string }[] }[]
+  }[]
+  selectedYear: string
+  onYearChange: (year: string) => void
 }
 
-const Date: React.FC<DateProps> = ({
+const Date: React.FC<IDateProps> = ({
   yearDataList,
   selectedYear,
   onYearChange,
 }) => {
   const selectedYearIndex = yearDataList.findIndex(
     (yearData) => yearData.year === selectedYear,
-  );
+  )
   const displayedYears = yearDataList.slice(
     Math.max(0, selectedYearIndex - 2),
     Math.min(selectedYearIndex + 3, yearDataList.length),
-  );
+  )
 
   return (
     <div className="flex justify-between gap-10">
       <button
         className="w-16 items-center text-xl font-normal text-slate-400"
         onClick={() => {
-          const prevYearIndex = Math.max(0, selectedYearIndex - 1);
-          onYearChange(yearDataList[prevYearIndex].year);
+          const prevYearIndex = Math.max(0, selectedYearIndex - 1)
+          onYearChange(yearDataList[prevYearIndex].year)
         }}
       >
         &lt;
@@ -60,14 +60,14 @@ const Date: React.FC<DateProps> = ({
           const nextYearIndex = Math.min(
             selectedYearIndex + 1,
             yearDataList.length - 1,
-          );
-          onYearChange(yearDataList[nextYearIndex].year);
+          )
+          onYearChange(yearDataList[nextYearIndex].year)
         }}
       >
         &gt;
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default Date;
+export default Date

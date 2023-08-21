@@ -1,4 +1,4 @@
-import LinkButton from "./LinkButton";
+import LinkButton from "./LinkButton"
 
 export default function PartnerBenefits() {
   return (
@@ -19,5 +19,5 @@ export default function PartnerBenefits() {
         <LinkButton title="Torna-te Sócio" linkPath="/" />
       </p>
     </div>
-  );
+  )
 }
