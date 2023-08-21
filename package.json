@@ -11,8 +11,7 @@
     "format": "prettier --ignore-path .gitignore --write .",
     "test": "npm-run-all test:*",
     "test:lint": "npm-run-all test:lint:*",
-    "test:lint:js": "next lint",
-    "test:format": "prettier --check . --ignore-path .gitignore '!**/*.hbs'"
+    "test:lint:js": "next lint"
   },
   "dependencies": {
     "@types/node": "20.2.5",
