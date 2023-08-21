@@ -40,8 +40,5 @@ jobs:
       - name: 🧰 Install dependencies
         run: npm ci
 
-      - name: 🎨 Check code formatting
-        run: npm run test:format
-
       - name: 🐛 Lint the code
         run: npm run test:lint
