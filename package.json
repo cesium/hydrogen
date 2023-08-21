@@ -19,12 +19,9 @@
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
     "eslint": "8.42.0",
-    "eslint-config-next": "13.4.4",
     "next": "13.4.4",
     "npm-run-all": "^4.1.5",
     "postcss": "8.4.24",
-    "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
@@ -32,8 +29,6 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "@cesiuminho/eslint-config": "^2.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "@cesiuminho/eslint-config": "^2.0.2"
   }
 }
