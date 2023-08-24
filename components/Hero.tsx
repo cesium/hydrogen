@@ -7,7 +7,8 @@ export default function Hero() {
       <div className="w-[530px] flex-col items-center justify-center">
         <div className="mb-6 text-8xl font-semibold">CeSIUM</div>
         <div className="text-2xl font-semibold">
-          Centro de Estudante de Engenharia Informática da Universidade do Minho
+          Centro de Estudantes de Engenharia Informática da Universidade do
+          Minho
         </div>
       </div>
       <div className="relative">
