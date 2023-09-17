@@ -28,7 +28,10 @@ function NewsComponent({ newsData }: NewsComponentProps): JSX.Element {
     <div className="mt-12 flex flex-col items-center justify-center">
       <div className="grid w-[1172px] grid-cols-3 gap-10">
         {newsData.slice(0, visibleRows).map((newsItem) => (
-          <div className="flex w-[384px] flex-col items-start justify-start gap-4 text-start">
+          <div
+            key={newsItem.title}
+            className="flex w-[384px] flex-col items-start justify-start gap-4 text-start"
+          >
             <div className="h-[256px] w-[364px] bg-gray-200"></div>
             <h2 className="font-inter text-sm font-light text-gray-400">
               {newsItem.date}
