@@ -101,7 +101,7 @@ export default function Banners() {
           href="/"
           className="mb-4 ml-8 mr-auto border-b-2 border-cesium-orange font-inter text-sm font-normal text-cesium-orange hover:border-cesium-orange-700 hover:text-cesium-orange-700"
         >
-          Ver mais
+          Saber mais
         </Link>
         <span className="absolute right-64 top-8">
           <Image src={logo} width={255} alt="" />
