@@ -24,7 +24,9 @@ const Teams: React.FC<TeamsProps> = ({ yearData }) => {
     <ul className="mt-8 flex flex-col items-start justify-center gap-10 px-28">
       {yearData.team.map((item) => (
         <li className="flex flex-col gap-4" key={item.title}>
-          <strong className="text-2xl font-semibold">{item.title}</strong>
+          <strong className="font-orbitron text-2xl font-semibold">
+            {item.title}
+          </strong>
           <ul className="flex flex-row gap-16">
             {item.members.map((member) => (
               <li

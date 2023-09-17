@@ -1,6 +1,7 @@
+"use client";
 import Hero from "@/components/Hero";
 import Banners from "@/components/Banners";
-import PartnerBenefits from "@/components/PartnerBenefits";
+import CalendariumBenefits from "@/components/CalendariumBenefits";
 import NewsAndEvents from "@/components/NewsAndEvents";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
     <main className="bg-background">
       <Hero />
       <Banners />
-      <PartnerBenefits />
+      <CalendariumBenefits />
       <NewsAndEvents />
     </main>
   );

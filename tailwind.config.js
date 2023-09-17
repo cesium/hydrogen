@@ -1,11 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+const nextConfig = {
+  experimental: {
+    appDir: true,
+    fontLoaders: [
+      { loader: "@next/font/google", options: { subsets: ["latin"] } },
+    ],
+  },
+};
+
 module.exports = {
+  nextConfig,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      inter: "var(--inter-font)",
+      orbitron: "var(--orbitron-font)",
+    },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],
       sm: ["0.875rem", { lineHeight: "1.5rem" }],
@@ -29,7 +43,7 @@ module.exports = {
       },
       colors: {
         "cesium-orange": {
-          DEFAULT: "#ED8661",
+          DEFAULT: "#ED7950",
           100: "#FFEDE7",
           200: "#FBE4DC",
           300: "#F9D7CA",
@@ -38,10 +52,11 @@ module.exports = {
           600: "#F3AE95",
           700: "#F1A184",
           800: "#ED8661",
-          900: "#ED8661",
+          900: "#ED7950",
         },
         background: "EDE9E8",
         "light-gray": "#D9D9D9",
+        "dark-gray": "#353335",
       },
     },
   },

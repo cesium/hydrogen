@@ -2,25 +2,34 @@ import Image from "next/image";
 
 import logo from "@/public/cesium-lettering.png";
 import Link from "next/link";
+import LinkButton from "./LinkButton";
 
-const navbar: string[] = ["HOME", "TEAM", "LOGS", "EVENTS", "ABOUT US"];
+const navbar: string[] = ["Team", "Events", "Logs", "About Us"];
 
 export default function Navbar() {
   return (
-    <div className="flex items-center justify-between px-20">
-      <Image src={logo} alt="" width={150} height={200} priority />
-      <div className="flex w-[50%] items-center justify-between">
-        {navbar.map((title) => (
-          <Link
-            key={title}
-            className="border-b-2 border-transparent pb-4 text-sm text-black hover:border-cesium-orange hover:text-cesium-orange"
-            href={title === "HOME" ? "/" : `/${title.toLowerCase()}`}
-          >
-            {title}
-          </Link>
-        ))}
+    <div className="flex items-center justify-between px-28">
+      <div className="flex flex-row gap-10">
+        <a href="/">
+          <Image src={logo} alt="" width={125} height={200} priority />
+        </a>
+        <div className="mt-3 flex items-center justify-center gap-10">
+          {navbar.map((title) => (
+            <Link
+              key={title}
+              className={`border-b-2 border-transparent pb-2 font-orbitron text-lg text-black hover:border-cesium-orange hover:text-cesium-orange`}
+              href={`/${title.toLowerCase()}`}
+            >
+              {title}
+            </Link>
+          ))}
+        </div>
       </div>
-      <div className="h-20 w-20 rounded-full bg-gray-200"></div>
+      <LinkButton
+        className="p-2 font-orbitron text-lg font-normal text-white"
+        linkPath="/"
+        title="Get in Touch"
+      ></LinkButton>
     </div>
   );
 }
