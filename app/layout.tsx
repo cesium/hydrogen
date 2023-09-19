@@ -1,9 +1,10 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Inter, Orbitron } from "@next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--inter-font" });
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--orbitron-font" });
 
 export const metadata = {
   title: "Hydrogen",
@@ -17,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.variable} ${orbitron.variable}`}>
         <Navbar />
         {children}
         <Footer />

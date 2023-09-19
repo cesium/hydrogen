@@ -17,7 +17,7 @@ export default function Team() {
   return (
     <main className="bg-background px-28 pb-8 ">
       <div className="flex flex-col items-center justify-center gap-8">
-        <h1 className="text-5xl font-semibold">Equipa</h1>
+        <h1 className="font-orbitron text-5xl font-semibold">Equipa</h1>
         <DatePicker
           yearDataList={teamData}
           selectedYear={selectedYear}

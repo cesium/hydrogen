@@ -1,32 +1,32 @@
 [
   {
-    "title": "Cras interdum ipsum eget felis hendrerit.",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula. Fusce eleifend, velit in tempor efficitur, felis mauris tincidunt justo, ut tincidunt nulla nunc id ligula.",
-    "image": "sei-logo.jpg",
-    "id": 1
+    "title": "JOIN - Jornadas de Engenharia Informática",
+    "date": "Jan 1, 2023",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula. ",
+    "image": "sei-logo.jpg"
   },
   {
     "title": "Cras interdum ipsum eget felis hendrerit.",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula. Fusce eleifend, velit in tempor efficitur, felis mauris tincidunt justo, ut tincidunt nulla nunc id ligula.",
-    "image": "sei-logo.jpg",
-    "id": 2
+    "date": "Jan 1, 2023",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula.",
+    "image": "sei-logo.jpg"
   },
   {
     "title": "Cras interdum ipsum eget felis hendrerit.",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula. Fusce eleifend, velit in tempor efficitur, felis mauris tincidunt justo, ut tincidunt nulla nunc id ligula.",
-    "image": "sei-logo.jpg",
-    "id": 3
+    "date": "Jan 1, 2023",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula.",
+    "image": "sei-logo.jpg"
   },
   {
     "title": "Cras interdum ipsum eget felis hendrerit.",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula. Fusce eleifend, velit in tempor efficitur, felis mauris tincidunt justo, ut tincidunt nulla nunc id ligula.",
-    "image": "sei-logo.jpg",
-    "id": 4
+    "date": "Jan 1, 2023",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula.",
+    "image": "sei-logo.jpg"
   },
   {
     "title": "Cras interdum ipsum eget felis hendrerit.",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula. Fusce eleifend, velit in tempor efficitur, felis mauris tincidunt justo, ut tincidunt nulla nunc id ligula.",
-    "image": "sei-logo.jpg",
-    "id": 5
+    "date": "Jan 1, 2023",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut tincidunt quam, ac consectetur ligula.",
+    "image": "sei-logo.jpg"
   }
 ]

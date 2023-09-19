@@ -3,12 +3,17 @@ import Link from "next/link";
 interface IButtonProps {
   title: string;
   linkPath: string;
+  className: string;
 }
 
-export default function LinkButton({ title, linkPath }: IButtonProps) {
+export default function LinkButton({
+  title,
+  linkPath,
+  className,
+}: IButtonProps) {
   return (
     <Link
-      className="rounded-xl bg-cesium-orange px-6 py-4 text-xl font-bold text-white"
+      className={`rounded-md bg-cesium-orange text-xl font-bold  ${className}`}
       href={linkPath}
     >
       {title}

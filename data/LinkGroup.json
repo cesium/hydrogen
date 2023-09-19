@@ -1,0 +1,37 @@
+[
+  [
+    {
+      "title": "",
+      "href": "/",
+      "image": "/summer_camp.png"
+    },
+    {
+      "title": "+10",
+      "description": "Parcerias com empresas e descontos para sócios",
+      "href": "/"
+    },
+    {
+      "title": "5",
+      "subtitle": "Departamentos",
+      "description": "Gostavas de colaborar? Fica a saber mais dos nossos departamentos e de tudo o que fazemos",
+      "href": "/"
+    }
+  ],
+  [
+    {
+      "title": "Merch",
+      "description": "A oportunidade perfeita para vestir o curso",
+      "href": "/"
+    },
+    {
+      "title": "Logs",
+      "description": "Anúncios e Notícias que não vais querer perder",
+      "href": "/"
+    },
+    {
+      "title": "",
+      "href": "/link-para-banner-3",
+      "image": "/board.png"
+    }
+  ]
+]
