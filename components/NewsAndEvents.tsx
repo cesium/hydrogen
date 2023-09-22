@@ -16,30 +16,34 @@ export default function NewsAndEvents() {
   }
 
   return (
-    <div className="pb-20 pt-20">
-      <div className="flex justify-center">
-        <button
-          onClick={handleNewsClick}
-          className={`mb-5 mr-8 border-b-2 border-transparent pl-2 pr-2 font-inter text-lg font-semibold transition-colors duration-300 hover:border-cesium-orange hover:text-cesium-orange ${
-            !isEventsOverNews ? "text-cesium-orange" : "text-black"
-          }`}
-        >
-          Noticias
-        </button>
+    <div className="space-y-16">
+      <div className="flex justify-center space-x-8">
         <button
           onClick={handleEventsClick}
-          className={`mb-5 mr-8 border-b-2 border-transparent pl-2 pr-2 font-inter text-lg font-semibold transition-colors duration-300 hover:border-cesium-orange hover:text-cesium-orange ${
-            isEventsOverNews ? "text-cesium-orange" : "text-black"
+          className={`border-transparent pb-4 pl-2 pr-2 font-inter text-lg font-semibold transition-colors duration-300 hover:border-b hover:border-b-cesium-900 hover:text-cesium-900 ${
+            isEventsOverNews
+              ? "border-b border-b-cesium-900 text-cesium-900"
+              : ""
           }`}
         >
           Eventos
         </button>
+        <button
+          onClick={handleNewsClick}
+          className={`hover: border-b border-transparent pb-4 pl-2 pr-2 font-inter text-lg font-semibold transition-colors duration-300 hover:border-b-cesium-900 hover:text-cesium-900 ${
+            !isEventsOverNews
+              ? "border-b border-b-cesium-900 text-cesium-900"
+              : ""
+          }`}
+        >
+          Notícias
+        </button>
       </div>
 
       {isEventsOverNews ? (
-        <div className="mx-auto w-full max-w-[1172px]">
+        <div className="mx-auto w-full space-y-32">
           <SeiComponent />
-          <div className="mt-10">
+          <div className="space-y-16">
             <h1 className="flex justify-center font-orbitron text-3xl font-semibold">
               Outros Eventos
             </h1>

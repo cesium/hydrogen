@@ -38,7 +38,7 @@ const Date: React.FC<DateProps> = ({
           <div
             className={`cursor-pointer text-xl font-semibold ${
               yearData.year === selectedYear
-                ? "text-cesium-orange-900"
+                ? "text-cesium-900-900"
                 : "text-slate-300"
             } ${
               parseInt(yearData.year) === parseInt(selectedYear) - 2

@@ -6,10 +6,10 @@ import NewsAndEvents from "@/components/NewsAndEvents";
 
 export default function Home() {
   return (
-    <main className="bg-background">
+    <main className="space-y-32 bg-background">
       <Hero />
       <Banners />
-      <CalendariumBenefits />
+      {/* <CalendariumBenefits /> */}
       <NewsAndEvents />
     </main>
   );
