@@ -44,7 +44,7 @@ export default function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button className="bg-orange-cesium">Get In Touch</Button>
+        <Button onClick={() => {}}>Get In Touch</Button>
       </div>
     </header>
   );
