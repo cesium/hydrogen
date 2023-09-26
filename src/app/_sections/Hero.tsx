@@ -3,8 +3,8 @@ import cesiumLogo from "@/img/cesium-logo.svg";
 
 export default function Hero() {
   return (
-    <section className="container pt-24">
-      <div className="mx-auto flex w-fit items-center gap-24">
+    <section className="py-24">
+      <div className="container flex w-fit items-center gap-24">
         <div>
           <h1 className="font-orbitron text-8xl font-bold">CeSIUM</h1>
           <p className="max-w-[30rem] text-xl">
