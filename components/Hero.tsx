@@ -1,5 +1,4 @@
-import Image from "next/image";
-import logo from "@/public/cesium.svg";
+import CeSIUMLogo from "./CeSIUMLogo";
 
 export default function Hero() {
   return (
@@ -11,7 +10,7 @@ export default function Hero() {
           Minho
         </div>
       </div>
-      <Image src={logo} alt="" width={352} height={403.23} priority />
+      <CeSIUMLogo width={352} color="#ed7950" />
     </div>
   );
 }

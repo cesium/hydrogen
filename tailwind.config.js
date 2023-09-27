@@ -28,7 +28,6 @@ module.exports = {
       },
       colors: {
         cesium: {
-          DEFAULT: "#ED7950",
           100: "#FFEDE7",
           200: "#FBE4DC",
           300: "#F9D7CA",
