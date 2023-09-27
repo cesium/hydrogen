@@ -22,13 +22,12 @@ type BannerInfo = {
 const Banner = ({ item }: { item: BannerInfo }) => {
   return (
     <div
-      className={`relative col-span-${
-        item.span
-      } h-[250px] p-8 font-orbitron text-5xl font-bold shadow-sm shadow-gray-900/20 ${
+      className={`relative h-[250px] p-8 font-orbitron text-5xl font-bold shadow-sm shadow-gray-900/20 ${
         item.image
           ? "hover:opacity-9 overflow-hidden bg-transparent"
           : "bg-gray-200"
       }`}
+      style={{ gridColumn: `span ${item.span} / span ${item.span} ` }}
     >
       {/* Body */}
       {item.image ? (

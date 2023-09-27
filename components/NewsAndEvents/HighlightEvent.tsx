@@ -7,31 +7,41 @@ import sei from "@/public/sei.png";
 const HighlightEvent = () => {
   return (
     <div className="flex flex-col gap-10">
+      {/* Title */}
       <div className="flex flex-row items-center justify-between gap-20">
+        {/* --> title/subtitle */}
         <span className="space-y-2">
           <h1 className="whitespace-nowrap font-orbitron text-4xl font-semibold">
             O nosso maior evento
           </h1>
           <h2 className="font-medium">SEI - Semana Engenharia Informática</h2>
         </span>
+        {/* --> description */}
         <h2 className="text-justify font-inter text-base font-normal text-gray-500">
           Atividades incríveis, talks, workshops e concursos emocionantes para
           vibrar de emoção! 💙
         </h2>
       </div>
-      <div className="flex h-[280px] w-full flex-row justify-between space-x-8">
+      {/* Body */}
+      <div className="flex h-[280px] w-full flex-row justify-between space-x-4">
+        {/* Banner */}
         <div className="flex h-[280px] w-[350px] flex-col justify-center space-y-4 bg-gray-200 px-4 text-justify">
+          {/* --> title */}
           <h1 className="font-orbitron text-5xl font-bold text-cesium-900">
             +1000
           </h1>
+          {/* --> description */}
           <h2 className="font-inter text-base text-gray-500">
             Participantes na edição de 2023
           </h2>
         </div>
+        {/* Media */}
         <div className="relative flex w-full bg-gray-200">
+          {/* --> image */}
           <div className="flex overflow-hidden">
-            <Image src={sei} layout="fill" objectFit="cover" alt="" />
+            <Image src={sei} fill style={{ objectFit: "cover" }} alt="" />
           </div>
+          {/* --> media button */}
           <a
             href="https://www.instagram.com/p/Cozkc1yDvkK/"
             className="absolute -bottom-10 right-10 flex h-[100px] w-[100px] items-center justify-center rounded-full border-4 border-white bg-cesium-900"
