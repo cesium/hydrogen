@@ -1,9 +1,10 @@
 import Image from "next/image";
-import sei from "@/public/sei.png";
-import { MdOutlineVideoLibrary } from "react-icons/md";
-import Link from "next/link";
 
-export default function Index() {
+import { MdOutlineVideoLibrary } from "react-icons/md";
+
+import sei from "@/public/sei.png";
+
+const HighlightEvent = () => {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-row items-center justify-between gap-20">
@@ -43,4 +44,6 @@ export default function Index() {
       </div>
     </div>
   );
-}
+};
+
+export default HighlightEvent;

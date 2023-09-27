@@ -4,7 +4,7 @@ type CeSIUMLogoProps = {
   color?: string;
 };
 
-export default function CeSIUMLogo(props: CeSIUMLogoProps) {
+const CeSIUMLogo = (props: CeSIUMLogoProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -37,4 +37,6 @@ export default function CeSIUMLogo(props: CeSIUMLogoProps) {
       />
     </svg>
   );
-}
+};
+
+export default CeSIUMLogo;

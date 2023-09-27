@@ -1,5 +1,5 @@
 "use client";
-import teamData from "@/data/2023.json";
+import teamData from "@/data/TeamPageData.json";
 import React, { useState } from "react";
 import DatePicker from "@/components/DatePicker";
 import Teams from "@/components/Team";

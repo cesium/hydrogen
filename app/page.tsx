@@ -1,6 +1,6 @@
 "use client";
 import Hero from "@/components/Hero";
-import Banners from "@/components/Banners";
+import PromoGrid from "@/components/PromoGrid";
 import CalendariumBenefits from "@/components/CalendariumBenefits";
 import NewsAndEvents from "@/components/NewsAndEvents";
 
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="space-y-32">
       <Hero />
-      <Banners />
+      <PromoGrid />
       {/* <CalendariumBenefits /> */}
       <NewsAndEvents />
     </main>
