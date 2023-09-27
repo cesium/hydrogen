@@ -21,7 +21,7 @@ interface TeamsProps {
 
 const Teams: React.FC<TeamsProps> = ({ yearData }) => {
   return (
-    <ul className="mt-8 flex flex-col items-start justify-center gap-10 px-28">
+    <ul className="mx-24 mt-8 flex flex-col gap-10">
       {yearData.team.map((item) => (
         <li className="flex flex-col gap-4" key={item.title}>
           <strong className="font-orbitron text-2xl font-semibold">

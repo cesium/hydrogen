@@ -23,23 +23,25 @@ const Date: React.FC<DateProps> = ({
   );
 
   return (
-    <div className="flex justify-between gap-10">
+    <div className="flex justify-between gap-10 font-orbitron">
+      {/* Left Chevron */}
       <button
-        className="w-16 items-center text-xl font-normal text-slate-400"
+        className="w-16 items-center text-xl text-slate-400 transition-colors hover:text-gray-900"
         onClick={() => {
           const prevYearIndex = Math.max(0, selectedYearIndex - 1);
           onYearChange(yearDataList[prevYearIndex].year);
         }}
       >
-        &lt;
+        <i className="bi bi-chevron-left"></i>
       </button>
-      <div className="flex w-96 flex-row items-center justify-center gap-10">
+      {/* Year List */}
+      <div className="flex w-96 flex-row justify-center gap-10">
         {displayedYears.map((yearData) => (
           <div
-            className={`cursor-pointer text-xl font-semibold ${
+            className={`cursor-pointer text-xl transition-all ${
               yearData.year === selectedYear
-                ? "text-cesium-900-900"
-                : "text-slate-300"
+                ? "font-semibold text-cesium-900"
+                : "text-slate-300 hover:text-cesium-900"
             } ${
               parseInt(yearData.year) === parseInt(selectedYear) - 2
                 ? "gradient-text-left"
@@ -54,8 +56,9 @@ const Date: React.FC<DateProps> = ({
           </div>
         ))}
       </div>
+      {/* Right Chevron */}
       <button
-        className="w-16 items-center text-xl font-normal text-slate-400"
+        className="w-16 items-center text-xl text-slate-400 transition-colors hover:text-gray-900"
         onClick={() => {
           const nextYearIndex = Math.min(
             selectedYearIndex + 1,
@@ -64,7 +67,7 @@ const Date: React.FC<DateProps> = ({
           onYearChange(yearDataList[nextYearIndex].year);
         }}
       >
-        &gt;
+        <i className="bi bi-chevron-right"></i>
       </button>
     </div>
   );

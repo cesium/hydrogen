@@ -19,7 +19,7 @@ export default function Index() {
         </h2>
       </div>
       <div className="flex h-[280px] w-full flex-row justify-between space-x-8">
-        <div className="flex h-[280px] w-[350px] flex-col justify-center space-y-4 rounded-2xl bg-gray-200 px-4 text-justify">
+        <div className="flex h-[280px] w-[350px] flex-col justify-center space-y-4 bg-gray-200 px-4 text-justify">
           <h1 className="font-orbitron text-5xl font-bold text-cesium-900">
             +1000
           </h1>
@@ -28,14 +28,8 @@ export default function Index() {
           </h2>
         </div>
         <div className="relative flex w-full bg-gray-200">
-          <div className="flex overflow-hidden rounded-2xl">
-            <Image
-              src={sei}
-              layout="fill"
-              objectFit="cover"
-              alt=""
-              className="rounded-2xl"
-            />
+          <div className="flex overflow-hidden">
+            <Image src={sei} layout="fill" objectFit="cover" alt="" />
           </div>
           <a
             href="https://www.instagram.com/p/Cozkc1yDvkK/"

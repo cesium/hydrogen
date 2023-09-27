@@ -38,9 +38,9 @@ function Row({ links, rowIndex }: RowProps) {
           className={`relative ${handleColSpan(
             rowIndex,
             colIndex,
-          )} h-[250px] rounded-2xl p-8 font-orbitron  text-5xl font-bold ${
+          )} h-[250px] p-8 font-orbitron  text-5xl font-bold ${
             item.image
-              ? "hover:opacity-9 overflow-hidden rounded-2xl bg-transparent"
+              ? "hover:opacity-9 overflow-hidden bg-transparent"
               : "bg-gray-200"
           }`}
         >
@@ -121,7 +121,7 @@ export default function Banners() {
   return (
     <div className="mx-auto grid w-full grid-cols-4 gap-4 2xl:mt-60">
       {rows}
-      <div className="relative col-span-4 flex h-[250px] flex-col justify-between space-y-4 rounded-2xl bg-dark-gray p-8 font-orbitron text-5xl font-bold text-white">
+      <div className="relative col-span-4 flex h-[250px] flex-col justify-between space-y-4 bg-dark-gray p-8 font-orbitron text-5xl font-bold text-white">
         <h1>Torna-te Sócio</h1>
         <ul className="list-inside list-disc font-inter text-sm font-normal text-white">
           {[
