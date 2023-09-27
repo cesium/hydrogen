@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/cesiumW.png";
 import linkGroup from "@/data/LinkGroup.json";
+
+import CeSIUMLogo from "./CeSIUMLogo";
 
 type LinkGroupItem = {
   title: string;
@@ -38,8 +39,10 @@ function Row({ links, rowIndex }: RowProps) {
           className={`relative ${handleColSpan(
             rowIndex,
             colIndex,
-          )} h-[250px] font-orbitron text-5xl font-bold text-black ${
-            item.image ? "bg-transparent hover:opacity-90" : "bg-gray-200"
+          )} h-[250px] p-8 font-orbitron text-5xl font-bold shadow-sm shadow-gray-900/20 ${
+            item.image
+              ? "hover:opacity-9 overflow-hidden bg-transparent"
+              : "bg-gray-200"
           }`}
         >
           {item.image && (
@@ -52,19 +55,20 @@ function Row({ links, rowIndex }: RowProps) {
               />
             </Link>
           )}
-          <h1 className="absolute left-8 top-8">{item.title}</h1>
-          <h2 className="absolute left-20 top-14 mr-8 text-lg text-black">
-            {item.subtitle}
-          </h2>
+          <span className="flex flex-row space-x-2">
+            <h1>{item.title}</h1>
+            <h2 className="mt-[1.2rem]  text-lg">{item.subtitle}</h2>
+          </span>
           <h5 className="absolute left-8 top-24 mr-8 font-inter text-sm font-normal text-gray-500">
             {item.description}
           </h5>
           {!item.image && (
             <Link
               href={item.href}
-              className="absolute bottom-8 left-8 border-b-2 border-cesium-orange font-inter text-sm font-normal text-cesium-orange hover:border-cesium-orange-700 hover:text-cesium-orange-700"
+              className="absolute bottom-8 left-8 font-inter text-sm font-medium text-gray-900 transition-all hover:font-bold hover:text-cesium-900"
             >
-              Ver mais
+              <text className="border-b-2 border-cesium-900">Ver mais</text>{" "}
+              <i className="bi bi-chevron-right"></i>
             </Link>
           )}
         </div>
@@ -81,30 +85,29 @@ export default function Banners() {
   );
 
   return (
-    <div className="mx-auto my-32 grid w-[1030px] grid-cols-4 gap-4 2xl:mt-60">
+    <div className="mx-auto grid w-full grid-cols-4 gap-4 2xl:mt-60">
       {rows}
-      <div
-        className={`relative col-span-4 flex h-[250px] flex-col bg-dark-gray font-orbitron text-5xl font-bold text-white`}
-      >
-        <h1 className="mx-8 mt-8">Torna-te Sócio</h1>
-        <ul className="mx-8 mt-2 list-inside list-disc font-inter text-sm font-normal text-white">
+      <div className="relative col-span-4 flex h-[250px] flex-col justify-between space-y-4 overflow-hidden bg-dark-gray p-8 font-orbitron text-5xl font-bold text-white shadow-sm shadow-gray-900/20">
+        <h1>Torna-te Sócio</h1>
+        <ul className="list-inside list-disc font-inter text-sm font-normal text-white">
           {[
-            "Acesso à sala do CeSIUM",
-            "Cartão de sócio",
-            "Representação dos teus interesses",
-            "Kit de Sócios",
+            "Kit de Sócio",
+            "Cartão de Sócio",
+            "Descontos em Parceiros",
+            "Acesso a Eventos Especiais",
           ].map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
         <Link
           href="/"
-          className="mb-4 ml-8 mr-auto border-b-2 border-cesium-orange font-inter text-sm font-normal text-cesium-orange hover:border-cesium-orange-700 hover:text-cesium-orange-700"
+          className="w-fit font-inter text-lg font-medium text-white transition-all hover:font-bold"
         >
-          Saber mais
+          <text className="border-b-2 border-cesium-900">Saber mais</text>{" "}
+          <i className="bi bi-chevron-right"></i>
         </Link>
-        <span className="absolute right-64 top-8">
-          <Image src={logo} width={255} alt="" />
+        <span className="absolute -right-[5.5rem] top-[3rem]">
+          <CeSIUMLogo width={200} color="white" />
         </span>
       </div>
     </div>

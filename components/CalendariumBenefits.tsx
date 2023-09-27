@@ -1,12 +1,10 @@
-import LinkButton from "./LinkButton";
 import Image from "next/image";
 import calendarium from "@/public/calendarium.png";
 
 export default function PartnerBenefits() {
   return (
-    <div className="flex gap-20 bg-cesium-orange px-80 py-10 text-center">
+    <div className="flex flex-row gap-20 bg-cesium-900 px-80 py-10">
       <Image src={calendarium} width={384} height={384} alt=""></Image>
-
       <div className="flex flex-col items-start justify-start gap-4">
         <h2 className="mt-10 font-orbitron text-4xl font-bold text-white">
           Ja ouviste falar no Calendarium?
@@ -26,11 +24,11 @@ export default function PartnerBenefits() {
             <li key={index}>{item}</li>
           ))}
         </ul>
-        <LinkButton
-          className="bg-white px-6 py-4 font-orbitron text-base text-cesium-orange"
+        {/* <LinkButton
+          className="bg-white px-6 py-4 font-orbitron text-base text-cesium-900"
           title="Saber mais"
           linkPath="/"
-        />
+        /> */}
       </div>
     </div>
   );

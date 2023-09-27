@@ -20,21 +20,6 @@ module.exports = {
       inter: "var(--inter-font)",
       orbitron: "var(--orbitron-font)",
     },
-    fontSize: {
-      xs: ["0.75rem", { lineHeight: "1rem" }],
-      sm: ["0.875rem", { lineHeight: "1.5rem" }],
-      base: ["1rem", { lineHeight: "1.5rem" }],
-      lg: ["1.125rem", { lineHeight: "2rem" }],
-      xl: ["1.25rem", { lineHeight: "2rem" }],
-      "2xl": ["1.5rem", { lineHeight: "2.5rem" }],
-      "3xl": ["2rem", { lineHeight: "2.5rem" }],
-      "4xl": ["2.5rem", { lineHeight: "3rem" }],
-      "5xl": ["3rem", { lineHeight: "3.5rem" }],
-      "6xl": ["4rem", { lineHeight: "1" }],
-      "7xl": ["5rem", { lineHeight: "1" }],
-      "8xl": ["7rem", { lineHeight: "1" }],
-      "9xl": ["8rem", { lineHeight: "1" }],
-    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -42,8 +27,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "cesium-orange": {
-          DEFAULT: "#ED7950",
+        cesium: {
           100: "#FFEDE7",
           200: "#FBE4DC",
           300: "#F9D7CA",

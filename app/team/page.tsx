@@ -2,7 +2,7 @@
 import teamData from "@/data/2023.json";
 import React, { useState } from "react";
 import DatePicker from "@/components/DatePicker";
-import Teams from "@/components/Teams";
+import Teams from "@/components/Team";
 
 export default function Team() {
   const yearDefault = "2023";
@@ -15,8 +15,8 @@ export default function Team() {
   const selectedYearData = teamData.find((data) => data.year === selectedYear);
 
   return (
-    <main className="bg-background px-28 pb-8 ">
-      <div className="flex flex-col items-center justify-center gap-8">
+    <main>
+      <div className="flex select-none flex-col items-center justify-center gap-8">
         <h1 className="font-orbitron text-5xl font-semibold">Equipa</h1>
         <DatePicker
           yearDataList={teamData}
