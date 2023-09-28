@@ -19,7 +19,7 @@ interface TeamsProps {
   yearData: YearData;
 }
 
-const Teams: React.FC<TeamsProps> = ({ yearData }) => {
+const Team: React.FC<TeamsProps> = ({ yearData }) => {
   return (
     <ul className="mx-24 mt-8 flex flex-col gap-10">
       {yearData.team.map((item) => (
@@ -45,4 +45,4 @@ const Teams: React.FC<TeamsProps> = ({ yearData }) => {
   );
 };
 
-export default Teams;
+export default Team;

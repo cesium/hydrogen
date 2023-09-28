@@ -54,8 +54,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [width, setWidth] = useState<number>(window.innerWidth);
-  const [height, setHeight] = useState<number>(window.innerHeight);
+  const [width, setWidth] = useState<number>(0);
+  const [height, setHeight] = useState<number>(0);
 
   // "Listens" for changes in the window size and updates the nr of lines accordingly
   useEffect(() => {

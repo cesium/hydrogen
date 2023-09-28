@@ -2,9 +2,9 @@
 import teamData from "@/data/TeamPageData.json";
 import React, { useState } from "react";
 import DatePicker from "@/components/DatePicker";
-import Teams from "@/components/Team";
+import Team from "@/components/Team";
 
-export default function Team() {
+export default function Equipa() {
   const yearDefault = "2023";
   const [selectedYear, setSelectedYear] = useState(yearDefault);
 
@@ -24,7 +24,7 @@ export default function Team() {
           onYearChange={onYearChange}
         />
       </div>
-      {selectedYearData && <Teams yearData={selectedYearData} />}
+      {selectedYearData && <Team yearData={selectedYearData} />}
     </main>
   );
 }
