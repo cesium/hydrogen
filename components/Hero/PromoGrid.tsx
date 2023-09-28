@@ -101,14 +101,14 @@ const PromoGrid = () => {
     <div className="grid w-[516px] grid-cols-2 gap-4 overflow-hidden rounded-tl-[140px] shadow-sm shadow-gray-900/20">
       {/* --> 1st Banner */}
       <Carousel index={0} loop>
-        {(PromoGridItems[0] as BannerInfo[]).map((item) => (
-          <Banner item={item} />
+        {(PromoGridItems[0] as BannerInfo[]).map((item, index) => (
+          <Banner item={item} key={index} />
         ))}
       </Carousel>
       {/* --> 2nd Banner */}
       <Carousel index={1} loop>
-        {(PromoGridItems[1] as BannerInfo[]).map((item) => (
-          <Banner item={item} />
+        {(PromoGridItems[1] as BannerInfo[]).map((item, index) => (
+          <Banner item={item} key={index} />
         ))}
       </Carousel>
       {/* --> Become a Member Banner */}

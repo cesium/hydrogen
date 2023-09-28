@@ -24,7 +24,7 @@ const Carousel = ({ children, index, ...options }: Props) => {
       );
       return () => clearInterval(interval);
     }
-  }, [emblaApi, scroll]);
+  }, [emblaApi, scroll, index]);
 
   return (
     <div
