@@ -28,7 +28,9 @@ const Carousel = ({ children, index, ...options }: Props) => {
 
   return (
     <div
-      className="select-none overflow-hidden shadow-sm shadow-gray-900/20"
+      className={`select-none overflow-hidden shadow-sm shadow-gray-900/20 ${
+        index === 0 && "rounded-tl-[140px]"
+      }`}
       ref={emblaRef}
     >
       <div

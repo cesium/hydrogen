@@ -3,10 +3,14 @@ import Image from "next/image";
 import logo from "@/public/cesium-dark.svg";
 import Link from "next/link";
 
+import { usePathname } from "next/navigation";
+
 // List of pages
 const navbar: string[] = ["Sobre", "Equipa", "Loja", "Parcerias"];
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   return (
     <div className="flex h-10 items-center justify-between">
       {/* Logo */}
@@ -19,7 +23,9 @@ const Navbar = () => {
           {navbar.map((title) => (
             <Link
               key={title}
-              className={`transition-colors hover:border-cesium-900 hover:text-cesium-900`}
+              className={`transition-colors hover:border-cesium-900 hover:text-cesium-900 ${
+                pathname === `/${title.toLowerCase()}` && "text-cesium-900"
+              }`}
               href={`/${title.toLowerCase()}`}
             >
               {title}

@@ -98,7 +98,7 @@ const BecomeMemberBanner = () => {
 
 const PromoGrid = () => {
   return (
-    <div className="grid w-[516px] grid-cols-2 gap-4 overflow-hidden rounded-tl-[140px] shadow-sm shadow-gray-900/20">
+    <div className="grid w-[516px] grid-cols-2 gap-4">
       {/* --> 1st Banner */}
       <Carousel index={0} loop>
         {(PromoGridItems[0] as BannerInfo[]).map((item, index) => (
