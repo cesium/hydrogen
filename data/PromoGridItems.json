@@ -1,39 +1,43 @@
 [
-  {
-    "href": "/",
-    "image": "/summer_camp.png",
-    "description": "CeSIUM Summer Camp 2022 Promotional Image",
-    "span": 1
-  },
-  {
-    "title": "+50",
-    "description": "Colaboradores ativos a trabalhar e contribuir para o CeSIUM diariamente.",
-    "href": "/",
-    "span": 1
-  },
-  {
-    "title": "5",
-    "subtitle": "Departamentos",
-    "description": "Gostavas de colaborar? Fica a saber mais dos nossos departamentos e de tudo o que fazemos.",
-    "href": "/",
-    "span": 2
-  },
-  {
-    "title": "Merch",
-    "description": "A oportunidade perfeita para vestir o curso",
-    "href": "/",
-    "span": 2
-  },
-  {
-    "title": "+10",
-    "description": "Parcerias com empresas e estabelecimentos comerciais.",
-    "href": "/",
-    "span": 1
-  },
-  {
-    "title": "",
-    "href": "/",
-    "image": "/board.png",
-    "span": 1
-  }
+  [
+    {
+      "href": "/",
+      "image": "/summer_camp.png",
+      "description": "CeSIUM Summer Camp 2022 Promotional Image",
+      "span": 1
+    },
+    {
+      "title": "",
+      "href": "/",
+      "image": "/board.png",
+      "span": 1
+    }
+  ],
+  [
+    {
+      "title": "+50",
+      "description": "Colaboradores ativos a trabalhar e contribuir para o CeSIUM diariamente.",
+      "href": "/",
+      "span": 1
+    },
+    {
+      "title": "5",
+      "subtitle": "Departamentos",
+      "description": "Gostavas de colaborar? Fica a saber mais dos nossos departamentos e de tudo o que fazemos.",
+      "href": "/",
+      "span": 1
+    },
+    {
+      "title": "Merch",
+      "description": "A oportunidade perfeita para vestir o curso",
+      "href": "/",
+      "span": 1
+    },
+    {
+      "title": "+10",
+      "description": "Parcerias com empresas e estabelecimentos comerciais.",
+      "href": "/",
+      "span": 1
+    }
+  ]
 ]

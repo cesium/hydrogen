@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import React from "react";
-
-import CeSIUMLogo from "@/components/CeSIUMLogo";
+import CeSIUMLogo from "../CeSIUMLogo";
+import Carousel from "../Carousel";
 
 import PromoGridItems from "@/data/PromoGridItems.json";
 
@@ -22,10 +21,8 @@ type BannerInfo = {
 const Banner = ({ item }: { item: BannerInfo }) => {
   return (
     <div
-      className={`relative h-[250px] p-8 font-orbitron text-5xl font-bold shadow-sm shadow-gray-900/20 ${
-        item.image
-          ? "hover:opacity-9 overflow-hidden bg-transparent"
-          : "bg-gray-200"
+      className={`relative h-[250px] flex-[0_0_100%] p-8 font-orbitron text-5xl font-bold ${
+        item.image ? "hover:opacity-9 bg-transparent" : "bg-gray-200"
       }`}
       style={{ gridColumn: `span ${item.span} / span ${item.span} ` }}
     >
@@ -75,7 +72,7 @@ const BecomeMemberBanner = () => {
   ];
 
   return (
-    <div className="relative col-span-4 flex h-[250px] flex-col justify-between space-y-4 overflow-hidden bg-dark-gray p-8 font-orbitron text-5xl font-bold text-white shadow-sm shadow-gray-900/20">
+    <div className="relative col-span-2 flex h-[250px] flex-col justify-between space-y-4 overflow-hidden bg-dark-gray p-8 font-orbitron text-5xl font-bold text-white shadow-sm shadow-gray-900/20">
       <h1>Torna-te Sócio</h1>
       {/* Advantages List */}
       <ul className="list-inside list-disc font-inter text-sm font-normal text-white">
@@ -101,14 +98,20 @@ const BecomeMemberBanner = () => {
 
 const PromoGrid = () => {
   return (
-    <div className="mx-auto grid w-full grid-cols-4 gap-4 2xl:mt-60">
-      {/* PromoGrid items */}
-      {(PromoGridItems as BannerInfo[]).map(
-        (item: BannerInfo, index: number) => (
-          <Banner item={item} key={index} />
-        ),
-      )}
-      {/* Become a Member Banner */}
+    <div className="grid w-[516px] grid-cols-2 gap-4 overflow-hidden rounded-tl-[140px] shadow-sm shadow-gray-900/20">
+      {/* --> 1st Banner */}
+      <Carousel index={0} loop>
+        {(PromoGridItems[0] as BannerInfo[]).map((item) => (
+          <Banner item={item} />
+        ))}
+      </Carousel>
+      {/* --> 2nd Banner */}
+      <Carousel index={1} loop>
+        {(PromoGridItems[1] as BannerInfo[]).map((item) => (
+          <Banner item={item} />
+        ))}
+      </Carousel>
+      {/* --> Become a Member Banner */}
       <BecomeMemberBanner />
     </div>
   );

@@ -4,7 +4,7 @@ import logo from "@/public/cesium-dark.svg";
 import Link from "next/link";
 
 // List of pages
-const navbar: string[] = ["Team", "Events", "Logs", "About Us"];
+const navbar: string[] = ["Sobre", "Equipa", "Loja", "Parcerias"];
 
 const Navbar = () => {
   return (
