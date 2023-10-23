@@ -17,7 +17,7 @@ export default function Navbar() {
             <Link
               key={title}
               className={`transition-colors hover:border-cesium-900 hover:text-cesium-900`}
-              href={`/${title.toLowerCase()}`}
+              href={`/${title.toLowerCase().replace(/\s+/g, "_")}`}
             >
               {title}
             </Link>
