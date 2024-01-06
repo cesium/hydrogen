@@ -1,20 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-const nextConfig = {
-  experimental: {
-    appDir: true,
-    fontLoaders: [
-      { loader: "@next/font/google", options: { subsets: ["latin"] } },
-    ],
-  },
-};
+import { type Config } from "tailwindcss";
 
-module.exports = {
-  nextConfig,
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+export default {
+  content: ["./**/*.tsx"],
   theme: {
     fontFamily: {
       inter: "var(--inter-font)",
@@ -45,4 +32,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+} satisfies Config;

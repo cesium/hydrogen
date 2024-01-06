@@ -1,7 +1,7 @@
 import Image from "next/image";
 import sei from "@/public/sei.png";
 import { MdOutlineVideoLibrary } from "react-icons/md";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function Index() {
   return (

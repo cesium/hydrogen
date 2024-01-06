@@ -1,5 +1,5 @@
 import "/styles/globals.css";
-import { Inter, Orbitron } from "@next/font/google";
+import { Inter, Orbitron } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
         {/* --> checkered lines */}
         <div className="absolute -z-50 h-full w-full">
           <div>
-            {[...Array(7)].map((_, index) => (
+            {[...Array<null>(7)].map((_, index) => (
               <div
                 key={index}
                 className="absolute h-0.5 w-full bg-gray-50 shadow-inner"
@@ -34,7 +34,7 @@ export default function RootLayout({
             ))}
           </div>
           <div className="flex flex-row">
-            {[...Array(20)].map((_, index) => (
+            {[...Array<null>(20)].map((_, index) => (
               <div
                 key={index}
                 className="absolute h-full w-0.5 bg-gray-50 shadow-inner"

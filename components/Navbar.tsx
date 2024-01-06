@@ -9,6 +9,7 @@ export default function Navbar() {
   return (
     <div className="flex h-10 items-center justify-between">
       <a href="/">
+        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
         <Image src={logo} alt="" width={136} height={46} priority />
       </a>
       <div className="flex flex-row">

@@ -2,34 +2,41 @@
   "name": "hydrogen",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
     "lint": "next lint",
-    "format": "prettier --ignore-path .gitignore --write .",
-    "test": "npm-run-all test:*",
-    "test:lint": "npm-run-all test:lint:*",
-    "test:lint:js": "next lint",
-    "test:format": "prettier --check . --ignore-path .gitignore '!**/*.hbs'"
+    "start": "next start",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
-    "@next/font": "^13.4.19",
-    "@types/node": "20.2.5",
-    "@types/react": "18.2.9",
-    "@types/react-dom": "18.2.4",
-    "autoprefixer": "10.4.14",
-    "eslint": "8.42.0",
-    "eslint-config-next": "13.4.4",
-    "next": "13.4.4",
-    "npm-run-all": "^4.1.5",
-    "postcss": "8.4.24",
-    "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.4.0",
+    "@t3-oss/env-nextjs": "^0.7.1",
+    "next": "^14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.10.1",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.3"
-  }
+    "react-icons": "^4.12.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^18.17.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.1.6"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.25.1"
+  },
+  "packageManager": "npm@10.2.4"
 }

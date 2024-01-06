@@ -29,7 +29,7 @@ const Date: React.FC<DateProps> = ({
         className="w-16 items-center text-xl text-slate-400 transition-colors hover:text-gray-900"
         onClick={() => {
           const prevYearIndex = Math.max(0, selectedYearIndex - 1);
-          onYearChange(yearDataList[prevYearIndex].year);
+          onYearChange(yearDataList[prevYearIndex]!.year);
         }}
       >
         <i className="bi bi-chevron-left"></i>
@@ -46,8 +46,8 @@ const Date: React.FC<DateProps> = ({
               parseInt(yearData.year) === parseInt(selectedYear) - 2
                 ? "gradient-text-left"
                 : parseInt(yearData.year) === parseInt(selectedYear) + 2
-                ? "gradient-text-right"
-                : ""
+                  ? "gradient-text-right"
+                  : ""
             }`}
             key={yearData.year}
             onClick={() => onYearChange(yearData.year)}
@@ -64,7 +64,7 @@ const Date: React.FC<DateProps> = ({
             selectedYearIndex + 1,
             yearDataList.length - 1,
           );
-          onYearChange(yearDataList[nextYearIndex].year);
+          onYearChange(yearDataList[nextYearIndex]!.year);
         }}
       >
         <i className="bi bi-chevron-right"></i>
