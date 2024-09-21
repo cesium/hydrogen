@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^0.5.12
     version: 0.5.12(prettier@3.2.5)
   tailwindcss:
-    specifier: ^3.3.0
-    version: 3.4.1
+    specifier: ^3.4.12
+    version: 3.4.12
   typescript:
     specifier: ^5
     version: 5.4.3
@@ -3896,10 +3896,10 @@ packages:
     engines: { node: ">= 0.4" }
     dev: true
 
-  /tailwindcss@3.4.1:
+  /tailwindcss@3.4.12:
     resolution:
       {
-        integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==,
+        integrity: sha512-Htf/gHj2+soPb9UayUNci/Ja3d8pTmu9ONTfh4QY8r3MATTZOzmv6UYWF7ZwikEIC8okpfqmGqrmDehua8mF8w==,
       }
     engines: { node: ">=14.0.0" }
     hasBin: true
