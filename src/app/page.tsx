@@ -1,4 +1,4 @@
-import DepartmentCard from "@/components/department_card";
+import DepartmentCard from "@/components/department-card";
 
 export default function Home() {
   return (

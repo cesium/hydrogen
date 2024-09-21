@@ -68,7 +68,7 @@ const DepartmentCard = ({ type }: DepartmentCardProps) => {
 
       <div className="col-start-1 row-start-1 grid place-items-start gap-4 p-7 lg:grid-flow-col lg:gap-20 lg:p-14 lg:pr-36">
         <div className="w-full space-y-4">
-          <div className="font-title text-2xl font-medium lg:text-2xl">
+          <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-black/50">
               {info[type].icon}
             </span>
