@@ -21,6 +21,7 @@ const config: Config = {
         black: "#27272A",
         gray: "#94959C",
         stone: "#6C757D",
+        blue: "#5069ED",
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
