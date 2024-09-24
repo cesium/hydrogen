@@ -1,5 +1,3 @@
-import React from "react";
-
 const Colaboratorcard = () => {
   return (
     <div className="relative flex h-[269px] w-full max-w-[355px] flex-col items-center overflow-hidden rounded-xl bg-blue p-4 text-white md:h-[192px] md:max-w-[1300px] md:flex-row md:p-6">

@@ -1,5 +1,3 @@
-"use client";
-
 import DepartmentCard from "@/components/department-card";
 import Colaboratorcard from "@/components/colaborator-card";
 
