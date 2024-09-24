@@ -1,4 +1,5 @@
 import DepartmentCard from "@/components/department-card";
+import Membershipcard from "@/components/membership-card"
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <DepartmentCard type="ped" />
         <DepartmentCard type="rec" />
       </div>
+      <Membershipcard />
     </main>
   );
 }
