@@ -1,7 +1,7 @@
 "use client";
 
 import DepartmentCard from "@/components/department-card";
-import Sociocard from "@/components/socio-card";
+import Colaboratorcard from "@/components/colaborator-card";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <DepartmentCard type="rec" />
       </div>
       <div className="flex justify-center pt-6">
-        <Sociocard />
+        <Colaboratorcard />
       </div>
     </main>
   );
