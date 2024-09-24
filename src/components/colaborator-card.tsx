@@ -6,7 +6,7 @@ const Colaboratorcard = () => {
       {/* Image */}
       <div className="absolute bottom-0 left-2 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[236px]">
         <img
-          src="/sociocard.svg"
+          src="/colaboratorcard.svg"
           alt="Colaborador Icon"
           className="h-full w-full object-contain"
         />
