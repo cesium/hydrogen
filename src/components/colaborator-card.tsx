@@ -1,6 +1,6 @@
 const Colaboratorcard = () => {
   return (
-    <div className="relative flex h-[269px] w-full max-w-[355px] flex-col items-center overflow-hidden rounded-xl bg-blue p-4 text-white md:h-[192px] md:max-w-[1300px] md:flex-row md:p-6">
+    <div className="relative flex h-[269px] w-full flex-col items-center overflow-hidden rounded-xl bg-blue p-4 text-white md:h-[192px] md:max-w-[1300px] md:flex-row md:p-6">
       {/* Image */}
       <div className="absolute bottom-0 left-2 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[236px]">
         <img
@@ -15,7 +15,7 @@ const Colaboratorcard = () => {
         <h4 className="mb-2 font-title text-xl md:text-3xl">
           Torna-te colaborador
         </h4>
-        <p className="font-sans text-base md:text-base  ">
+        <p className="font-sans text-base md:text-base">
           Podes juntar-te a estes departamentos e contribuir para fazer o teu
           núcleo funcionar.
         </p>
@@ -29,9 +29,9 @@ const Colaboratorcard = () => {
 
         <button
           aria-label="Fechar"
-          className="absolute right-2 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
+          className=" material-symbols-outlined absolute right-2 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
         >
-          ×
+          close
         </button>
       </div>
     </div>
