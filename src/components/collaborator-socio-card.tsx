@@ -9,7 +9,7 @@ const getGradientColor = (type: "colaborador" | "socio") => {
     case "socio":
       return "#ED7950"; 
     default:
-      return "#FFFFFF"; 
+      return "#000000"; 
   }
 };
 
@@ -48,7 +48,7 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
       style={{ backgroundColor: color }}
     >
       {/* Image */}
-      <div className="absolute bottom-0 left-1 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[250px]">
+      <div className="absolute bottom-0 left-2 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[250px]">
         <img
           src={
             info[type].name[0] === "colaborador"
@@ -61,7 +61,7 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
       </div>
 
       {/* Text */}
-      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start text-white md:text-white md:relative md:ml-[236px] md:pb-20 md:text-left">
+      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left">
         <h4 className="mb-2 font-title text-xl md:text-3xl"
         style={{ color: "white" }}>
           Torna-te {info[type].name}
@@ -72,23 +72,18 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
         </p>
       </div>
 
-      {/* Buttons */}
+ {/* Botões */}
       <div className="relative mt-4 flex h-full w-full items-end justify-end md:mt-0 md:items-center md:justify-end md:space-x-4">
-        <button
-          className="hover:bg-gray-100 absolute bottom-4 right-0 rounded-full bg-white px-4 py-2 font-sans text-sm transition duration-300 md:static md:text-base"
-          style={{ color: color }}
-        >
+        <button className="hover:bg-gray-100 absolute bottom-4 right-4 rounded-full bg-white px-4 py-2 font-sans text-sm text-blue transition duration-300 md:static md:text-base"
+        style={{ color: color }}>
           Saber mais
         </button>
 
         <button
           aria-label="Fechar"
-          className={
-            info[type].name[0] === "colaborador"
-              ? "material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
-              : "material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-primary md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
-          }
-          style={{ color: "white" }}>
+          className="material-symbols-outlined absolute right-2 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
+          style={{ color: "white" }}
+        >
           close
         </button>
       </div>
