@@ -39,7 +39,7 @@ const getRandomText = (type: "colaborador" | "socio") => {
   }
 };
 
-const CollaboratorCard = ({ type }: Cardprops) => {
+const CollaboratorSocioCard = ({ type }: Cardprops) => {
   const color = getGradientColor(type);
 
   return (
@@ -94,4 +94,4 @@ const CollaboratorCard = ({ type }: Cardprops) => {
   );
 };
 
-export default CollaboratorCard;
+export default CollaboratorSocioCard;
