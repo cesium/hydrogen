@@ -5,11 +5,11 @@ interface Cardprops {
 const getGradientColor = (type: "colaborador" | "socio") => {
   switch (type) {
     case "colaborador":
-      return "#5069ED"; // Azul
+      return "#5069ED"; 
     case "socio":
-      return "#ED7950"; // Laranja
+      return "#ED7950"; 
     default:
-      return "#000000"; // Fallback para preto
+      return "#FFFFFF"; 
   }
 };
 
@@ -61,11 +61,13 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
       </div>
 
       {/* Text */}
-      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left">
-        <h4 className="mb-2 font-title text-xl md:text-3xl">
+      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start text-white md:text-white md:relative md:ml-[236px] md:pb-20 md:text-left">
+        <h4 className="mb-2 font-title text-xl md:text-3xl"
+        style={{ color: "white" }}>
           Torna-te {info[type].name}
         </h4>
-        <p className="font-sans text-base md:text-base">
+        <p className="font-sans text-base md:text-base"
+        style={{ color: "white" }}>
           {getRandomText(type)}
         </p>
       </div>
@@ -86,7 +88,7 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
               ? "material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
               : "material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-primary md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
           }
-        >
+          style={{ color: "white" }}>
           close
         </button>
       </div>
