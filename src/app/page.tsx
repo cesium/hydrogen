@@ -12,7 +12,10 @@ export default function Home() {
         <DepartmentCard type="rec" />
       </div>
       <div className="flex justify-center pt-6">
-        <Colaboratorcard />
+        <Colaboratorcard type="colaborador" />
+      </div>
+      <div className="flex justify-center pt-6">
+        <Colaboratorcard type="socio" />
       </div>
     </main>
   );
