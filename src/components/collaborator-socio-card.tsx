@@ -63,12 +63,10 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
 
       {/* Text */}
       <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left">
-        <h4 className="mb-2 font-title text-xl md:text-3xl"
-        style={{ color: "white" }}>
+        <h4 className="mb-2 font-title text-xl md:text-3xl text-white">
           Torna-te {info[type].name}
         </h4>
-        <p className="font-sans text-base md:text-base"
-        style={{ color: "white" }}>
+        <p className="font-sans text-base md:text-base text-white">
           {getRandomText(type)}
         </p>
       </div>
