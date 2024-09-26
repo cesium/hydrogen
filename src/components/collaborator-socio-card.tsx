@@ -35,7 +35,8 @@ const getRandomText = (type: "colaborador" | "socio") => {
     const texts = info[type].text;
     return texts[Math.floor(Math.random() * texts.length)];
   } else {
-    return info[type].text;
+    const texts = info[type].text;
+    return texts[Math.floor(Math.random() * texts.length)];
   }
 };
 
@@ -72,18 +73,20 @@ const CollaboratorSocioCard = ({ type }: Cardprops) => {
         </p>
       </div>
 
- {/* Botões */}
+      {/* Buttons */}
       <div className="relative mt-4 flex h-full w-full items-end justify-end md:mt-0 md:items-center md:justify-end md:space-x-4">
-        <button className="hover:bg-gray-100 absolute bottom-4 right-4 rounded-full bg-white px-4 py-2 font-sans text-sm text-blue transition duration-300 md:static md:text-base"
+        <button className="hover:bg-gray-100 absolute bottom-4 right-2 rounded-full bg-white px-4 py-2 font-sans text-sm text-blue transition duration-300 md:static md:text-base"
         style={{ color: color }}>
           Saber mais
         </button>
 
         <button
           aria-label="Fechar"
-          className="material-symbols-outlined absolute right-2 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
-          style={{ color: "white" }}
-        >
+          className={
+            info[type].name[0] === "colaborador"
+              ? "material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-blue md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
+              : "material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white hover:text-primary md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl"
+          }>        
           close
         </button>
       </div>
