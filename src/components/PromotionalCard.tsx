@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 
@@ -7,7 +7,7 @@ export const CardType = {
   Membership: "Membership",
 } as const;
 
-type CardValues = typeof CardType[keyof typeof CardType];
+type CardValues = (typeof CardType)[keyof typeof CardType];
 
 interface Cardprops {
   type: CardValues;
@@ -18,7 +18,9 @@ const getColor = (type: CardValues) => {
 };
 
 const imgSrc = (type: CardValues) => {
-  return type === CardType.Collaborate ? "colaboratorcard.svg" : "sociocard.svg"; 
+  return type === CardType.Collaborate
+    ? "colaboratorcard.svg"
+    : "sociocard.svg";
 };
 
 const info = {
@@ -50,7 +52,7 @@ const getRandomText = (type: CardValues) => {
 const PromotionalCard = ({ type }: Cardprops) => {
   const [isHovered, setIsHovered] = useState(false);
   const color = getColor(type);
-  
+
   const buttonClass = `material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl`;
 
   return (
@@ -69,10 +71,10 @@ const PromotionalCard = ({ type }: Cardprops) => {
 
       {/* Text */}
       <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left">
-        <h4 className="mb-2 font-title text-xl md:text-3xl text-white">
+        <h4 className="mb-2 font-title text-xl text-white md:text-3xl">
           Torna-te {info[type]?.name}
         </h4>
-        <p className="font-sans text-base md:text-base text-white">
+        <p className="font-sans text-base text-white md:text-base">
           {getRandomText(type)}
         </p>
       </div>

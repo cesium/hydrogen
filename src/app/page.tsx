@@ -13,10 +13,10 @@ export default function Home() {
         <DepartmentCard type="rec" />
       </div>
       <div className="flex justify-center pt-6">
-        <PromotionalCard type='Collaborate' />
+        <PromotionalCard type="Collaborate" />
       </div>
       <div className="flex justify-center pt-6">
-        <PromotionalCard type='Membership' />
+        <PromotionalCard type="Membership" />
       </div>
     </main>
   );
