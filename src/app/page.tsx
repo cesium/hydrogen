@@ -1,5 +1,6 @@
 import DepartmentCard from "@/components/department-card";
-import PromotionalCard, { CardType } from "@/components/PromotionalCard";
+import { CardType } from "@/components/PromotionalCard";
+import PromotionalCard from "@/components/PromotionalCard";
 
 export default function Home() {
   return (
@@ -12,10 +13,10 @@ export default function Home() {
         <DepartmentCard type="rec" />
       </div>
       <div className="flex justify-center pt-6">
-        <PromotionalCard type={CardType.Collaborate} />
+        <PromotionalCard type='Collaborate' />
       </div>
       <div className="flex justify-center pt-6">
-        <PromotionalCard type={CardType.Membership} />
+        <PromotionalCard type='Membership' />
       </div>
     </main>
   );

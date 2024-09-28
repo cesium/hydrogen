@@ -2,20 +2,22 @@
 
 import { useState } from "react";
 
-export enum CardType {
-  Collaborate = "Collaborate",
-  Membership = "Membership",
-}
+export const CardType = {
+  Collaborate: "Collaborate",
+  Membership: "Membership",
+} as const;
+
+type CardValues = typeof CardType[keyof typeof CardType];
 
 interface Cardprops {
-  type: CardType;
+  type: CardValues;
 }
 
-const getColor = (type: CardType) => {
+const getColor = (type: CardValues) => {
   return type === CardType.Collaborate ? "#5069ED" : "#ED7950";
 };
 
-const imgSrc = (type: CardType) => {
+const imgSrc = (type: CardValues) => {
   return type === CardType.Collaborate ? "colaboratorcard.svg" : "sociocard.svg"; 
 };
 
@@ -36,7 +38,7 @@ const info = {
   },
 };
 
-const getRandomText = (type: CardType) => {
+const getRandomText = (type: CardValues) => {
   const texts =
     type === CardType.Collaborate
       ? info[CardType.Collaborate].text
