@@ -20,7 +20,7 @@ const getColor = (type: CardValues) => {
 const imgSrc = (type: CardValues) => {
   return type === CardType.Collaborate
     ? "colaboratorcard.svg"
-    : "sociocard.svg";
+    : "sóciocard.svg";
 };
 
 const info: Record<CardValues, { name: string; text: string[] }> = {
@@ -32,7 +32,7 @@ const info: Record<CardValues, { name: string; text: string[] }> = {
     ],
   },
   [CardType.Membership]: {
-    name: "socio",
+    name: "sócio",
     text: [
       "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
       "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
