@@ -1,11 +1,7 @@
 @font-face {
   font-family: "Material Symbols Outlined";
   font-style: normal;
-  src:
-    url(/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].woff2)
-      format("woff2"),
-    url(/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].ttf)
-      format("truetype");
+  src: url(/fonts/MaterialSymbolsOutlined_28pt-Light.ttf) format("truetype");
   font-display: swap;
 }
 
