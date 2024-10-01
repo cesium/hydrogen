@@ -77,7 +77,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
       </div>
 
       {/* Text */}
-      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left">
+      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left md:flex-grow md:w-[80%] md:ml-[236px]">
         <h4 className="mb-2 font-title text-xl text-white md:text-3xl">
           Torna-te {info[type]?.name}
         </h4>
