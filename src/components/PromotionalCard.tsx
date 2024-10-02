@@ -84,7 +84,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
       {/* Buttons */}
       <div className="relative mt-4 flex h-full w-full items-end justify-end md:mt-0 md:items-center md:justify-end md:space-x-4">
         <button
-          className={`hover:bg-gray-100 absolute bottom-4 right-2 rounded-full bg-white px-4 py-2 font-sans text-sm text-blue transition duration-300 md:static md:text-base text-${color}`}
+          className={`hover:bg-gray-100 absolute bottom-4 right-2 rounded-full bg-white px-4 py-2 font-sans text-sm  transition duration-300 md:static md:text-base text-${color}`}
         >
           Saber mais
         </button>
