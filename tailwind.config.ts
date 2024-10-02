@@ -31,6 +31,11 @@ const config: Config = {
   },
   plugins: [],
   safelist: [
+    "bg-blue",
+    "bg-primary",
+    "text-white",
+    "hover:text-blue",
+    "hover:text-primary",
     "from-[#0085FF]/10",
     "to-[#00D1FF]/10",
     "from-[#FF00F5]/10",

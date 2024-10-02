@@ -1,29 +1,28 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState, useEffect } from "react";
 
-export const CardType = {
-  Collaborate: "Collaborate",
-  Membership: "Membership",
-} as const;
-
-type CardValues = (typeof CardType)[keyof typeof CardType];
-
+enum CardType {
+  Collaborate = "Collaborate",
+  Membership = "Membership",
+}
 interface Cardprops {
-  type: CardValues;
+  type: CardType;
 }
 
-const getColor = (type: CardValues) => {
-  return type === CardType.Collaborate ? "#5069ED" : "#ED7950";
+const getColor = (type: CardType) => {
+  return type === CardType.Collaborate ? "blue" : "primary";
 };
 
-const imgSrc = (type: CardValues) => {
+const imgSrc = (type: CardType) => {
   return type === CardType.Collaborate
     ? "colaboratorcard.svg"
     : "sóciocard.svg";
 };
 
-const info: Record<CardValues, { name: string; text: string[] }> = {
+const info: Record<CardType, { name: string; text: string[] }> = {
   [CardType.Collaborate]: {
     name: "colaborador",
     text: [
@@ -40,7 +39,7 @@ const info: Record<CardValues, { name: string; text: string[] }> = {
   },
 };
 
-const getRandomText = (type: CardValues): string | undefined => {
+const getRandomText = (type: CardType): string | undefined => {
   const texts =
     type === CardType.Collaborate
       ? info[CardType.Collaborate].text
@@ -52,7 +51,6 @@ const getRandomText = (type: CardValues): string | undefined => {
 };
 
 const PromotionalCard = ({ type }: Cardprops) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [text, setText] = useState("");
   const color = getColor(type);
 
@@ -60,24 +58,23 @@ const PromotionalCard = ({ type }: Cardprops) => {
     setText(getRandomText(type) ?? "");
   }, [type]);
 
-  const buttonClass = `material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-[#FFFFFF1A] text-lg text-white transition duration-300 hover:bg-white md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl`;
-
   return (
     <div
-      className="relative flex h-[269px] w-full flex-col items-center overflow-hidden rounded-xl p-4 text-white md:h-[192px] md:max-w-[1300px] md:flex-row md:p-6"
-      style={{ backgroundColor: color }}
+      className={`relative flex h-[269px] w-full flex-col items-center overflow-hidden rounded-xl p-4 text-white md:h-[192px] md:max-w-[1300px] md:flex-row md:p-6 bg-${color}`}
     >
       {/* Image */}
       <div className="absolute bottom-0 left-2 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[250px]">
-        <img
+        <Image
           src={imgSrc(type)}
-          alt="Colaborador Icon"
+          alt="Promotional Image"
+          width={0}
+          height={0}
           className="h-full w-full object-contain"
         />
       </div>
 
       {/* Text */}
-      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:pb-20 md:text-left md:flex-grow md:w-[80%] md:ml-[236px]">
+      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:w-[80%] md:flex-grow md:pb-20 md:text-left ">
         <h4 className="mb-2 font-title text-xl text-white md:text-3xl">
           Torna-te {info[type]?.name}
         </h4>
@@ -87,18 +84,14 @@ const PromotionalCard = ({ type }: Cardprops) => {
       {/* Buttons */}
       <div className="relative mt-4 flex h-full w-full items-end justify-end md:mt-0 md:items-center md:justify-end md:space-x-4">
         <button
-          className="hover:bg-gray-100 absolute bottom-4 right-2 rounded-full bg-white px-4 py-2 font-sans text-sm text-blue transition duration-300 md:static md:text-base"
-          style={{ color: color }}
+          className={`hover:bg-gray-100 absolute bottom-4 right-2 rounded-full bg-white px-4 py-2 font-sans text-sm text-blue transition duration-300 md:static md:text-base text-${color}`}
         >
           Saber mais
         </button>
 
         <button
           aria-label="Fechar"
-          className={buttonClass}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          style={{ color: isHovered ? color : "white" }}
+          className={`material-symbols-outlined absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-lg text-white transition duration-300 hover:bg-white md:relative md:right-0 md:top-0 md:h-10 md:w-10 md:text-xl hover:text-${color}`}
         >
           close
         </button>
