@@ -3,11 +3,8 @@
 import Image from "next/image";
 
 import { useState, useEffect } from "react";
+import { CardType } from "@/lib/types";
 
-enum CardType {
-  Collaborate = "Collaborate",
-  Membership = "Membership",
-}
 interface Cardprops {
   type: CardType;
 }
