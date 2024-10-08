@@ -69,7 +69,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
       <div className="col-start-1 row-start-1 bg-gradient-to-b from-[#F0F0F0]/90 to-transparent lg:bg-gradient-to-r" />
 
       <div className="col-start-1 row-start-1 grid place-items-start gap-4 p-7 lg:grid-flow-col lg:gap-20 lg:p-14 lg:pr-36">
-        <div className="w-full space-y-4">
+        <div className="w-full space-y-4 lg:w-96">
           <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-black/50">
               {info[type].icon}
@@ -81,6 +81,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
             <div className="flex items-center justify-between lg:justify-normal">
               <div className="flex space-x-1">
                 {/* TODO: Get team information from somewhere */}
+                {/* TODO: Max length of 3 avatars for mobile and 5 for desktop */}
                 {Array.from({ length: 3 }).map((_, i) => (
                   <div key={i} className="size-9 rounded-full bg-gray/20" />
                 ))}
