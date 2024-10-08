@@ -4,7 +4,7 @@
   src:
     url(/fonts/MaterialSymbolsOutlined.woff2) format("woff2"),
     url(/fonts/MaterialSymbolsOutlined.ttf) format("truetype");
-  font-display: swap;
+  font-display: block;
 }
 
 .material-symbols-outlined {
