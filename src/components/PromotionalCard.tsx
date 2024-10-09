@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 
-import { useState, useEffect } from "react";
 import { CardType } from "@/lib/types";
 
 interface Cardprops {
@@ -13,44 +12,23 @@ const getColor = (type: CardType) => {
   return type === CardType.Collaborate ? "blue" : "primary";
 };
 
-const info: Record<CardType, { name: string; text: string[]; image: string }> =
+const info: Record<CardType, { name: string; text: string; image: string }> =
   {
     [CardType.Collaborate]: {
       name: "colaborador",
-      text: [
-        "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
-        "Vem fazer parte desta equipa e ajuda a tornar o CeSIUM melhor todos os dias.",
-      ],
+      text: "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
       image: "collaborator.svg",
     },
     [CardType.Membership]: {
       name: "sócio",
-      text: [
-        "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
-        "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
-      ],
+      text: "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
       image: "partnercard.svg",
     },
   };
 
-const getRandomText = (type: CardType): string | undefined => {
-  const texts =
-    type === CardType.Collaborate
-      ? info[CardType.Collaborate].text
-      : info[CardType.Membership].text;
-
-  return texts && texts.length > 0
-    ? texts[Math.floor(Math.random() * texts.length)]
-    : "";
-};
-
 const PromotionalCard = ({ type }: Cardprops) => {
-  const [text, setText] = useState("");
   const color = getColor(type);
 
-  useEffect(() => {
-    setText(getRandomText(type) ?? "");
-  }, [type]);
 
   return (
     <div
@@ -72,7 +50,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
         <h4 className="mb-2 font-title text-xl text-white md:text-3xl">
           Torna-te {info[type]?.name}
         </h4>
-        <p className="font-sans text-base text-white md:text-base">{text}</p>
+        <p className="font-sans text-base text-white md:text-base">{info[type].text}</p>
       </div>
 
       {/* Buttons */}
