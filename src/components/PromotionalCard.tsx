@@ -13,28 +13,25 @@ const getColor = (type: CardType) => {
   return type === CardType.Collaborate ? "blue" : "primary";
 };
 
-const imgSrc = (type: CardType) => {
-  return type === CardType.Collaborate
-    ? "colaboratorcard.svg"
-    : "sóciocard.svg";
-};
-
-const info: Record<CardType, { name: string; text: string[] }> = {
-  [CardType.Collaborate]: {
-    name: "colaborador",
-    text: [
-      "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
-      "Vem fazer parte desta equipa e ajuda a tornar o CeSIUM melhor todos os dias.",
-    ],
-  },
-  [CardType.Membership]: {
-    name: "sócio",
-    text: [
-      "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
-      "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
-    ],
-  },
-};
+const info: Record<CardType, { name: string; text: string[]; image: string }> =
+  {
+    [CardType.Collaborate]: {
+      name: "colaborador",
+      text: [
+        "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
+        "Vem fazer parte desta equipa e ajuda a tornar o CeSIUM melhor todos os dias.",
+      ],
+      image: "collaborator.svg",
+    },
+    [CardType.Membership]: {
+      name: "sócio",
+      text: [
+        "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
+        "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
+      ],
+      image: "partnercard.svg",
+    },
+  };
 
 const getRandomText = (type: CardType): string | undefined => {
   const texts =
@@ -62,7 +59,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
       {/* Image */}
       <div className="absolute bottom-0 left-2 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[250px]">
         <Image
-          src={imgSrc(type)}
+          src={info[type].image}
           alt="Promotional Image"
           width={0}
           height={0}
