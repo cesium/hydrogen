@@ -21,7 +21,7 @@ const info: Record<CardType, { name: string; text: string; image: string }> = {
   [CardType.Membership]: {
     name: "sócio",
     text: "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
-    image: "partnercard.svg",
+    image: "member.svg",
   },
 };
 
@@ -34,14 +34,13 @@ const PromotionalCard = ({ type }: Cardprops) => {
     >
       {/* Card image */}
       <div
-        className={`absolute bottom-0 left-6 hidden min-[330px]:block min-[375px]:left-8 ${type == CardType.Collaborate ? "h-20 min-[375px]:h-24 min-[950px]:h-28" : "h-16 min-[375px]:h-20 min-[950px]:h-24"} min-[950px]:bottom-0`}
+        className={`absolute bottom-0 left-6 hidden min-[330px]:block min-[375px]:left-8`}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={info[type].image}
           alt="Promotional Image"
-          width={0}
-          height={0}
-          className="h-full w-full object-contain"
+          className={`${type == CardType.Collaborate ? "h-20 min-[375px]:h-24 min-[950px]:h-28" : "h-16 min-[375px]:h-20 min-[950px]:h-24"}`}
         />
       </div>
 
