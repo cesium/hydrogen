@@ -1,5 +1,5 @@
 import DepartmentCard from "@/components/department-card";
-import PromotionalCard from "@/components/PromotionalCard";
+import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
 
 export default function Home() {
