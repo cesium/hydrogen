@@ -30,10 +30,12 @@ const PromotionalCard = ({ type }: Cardprops) => {
 
   return (
     <div
-      className={`relative flex h-[269px] w-full flex-col items-center overflow-hidden rounded-xl p-4 text-white md:h-[192px] md:max-w-[1300px] md:flex-row md:p-6 bg-${color}`}
+      className={`relative flex min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8 bg-${color}`}
     >
       {/* Card image */}
-      <div className="absolute bottom-0 left-2 h-[87px] w-[148px] md:bottom-0 md:left-0 md:h-[148px] md:w-[250px]">
+      <div
+        className={`absolute bottom-0 hidden min-[400px]:block ${type == CardType.Collaborate ? "left-12 h-24 min-[950px]:h-28" : "left-10 h-20 min-[950px]:h-24"} min-[950px]:bottom-0`}
+      >
         <Image
           src={info[type].image}
           alt="Promotional Image"
@@ -44,19 +46,20 @@ const PromotionalCard = ({ type }: Cardprops) => {
       </div>
 
       {/* Descriptive text */}
-      <div className="absolute left-2 right-0 top-8 mt-0 flex-grow text-start md:relative md:ml-[236px] md:w-[80%] md:flex-grow md:pb-20 md:text-left ">
-        <h4 className="mb-2 font-title text-xl text-white md:text-3xl">
+      <div className="left-2 right-0 top-8 mt-0 w-full flex-grow text-start min-[950px]:ml-48 min-[950px]:flex-grow min-[950px]:text-left ">
+        <h4 className="mb-2 font-title text-2xl font-medium text-white">
           Torna-te {info[type]?.name}
         </h4>
-        <p className="font-sans text-base text-white md:text-base">
+        <p className="text-justify font-sans text-base text-white">
           {info[type].text}
         </p>
       </div>
 
       {/* Actions */}
-      <div className="relative mt-4 flex h-full w-full items-end justify-end md:mt-0 md:items-center md:justify-end md:space-x-4">
+
+      <div className="flex w-full justify-end">
         <button
-          className={`hover:bg-gray-100 absolute bottom-4 right-2 rounded-full bg-white px-4 py-2 font-sans text-sm  transition duration-300 md:static md:text-base text-${color}`}
+          className={`hover:bg-gray-100 rounded-full bg-white px-4 py-3 min-[950px]:static min-[950px]:text-base text-${color}`}
         >
           Saber mais
         </button>
