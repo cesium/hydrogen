@@ -35,9 +35,10 @@ const info = {
 
 interface DepartmentCardProps {
   type: "caos" | "dmc" | "drem" | "ped" | "rec";
+  hideTeam?: boolean;
 }
 
-const DepartmentCard = ({ type }: DepartmentCardProps) => {
+const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
   const gradient = () => {
     switch (type) {
       case "caos":
@@ -60,14 +61,15 @@ const DepartmentCard = ({ type }: DepartmentCardProps) => {
       <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/20 bg-clip-text font-title text-9xl text-transparent lg:inline-block">
         {type.toUpperCase()}
       </div>
-      <div className="col-start-1 row-start-1 box-border rounded-3xl border border-black/10" />
+
+      {/* <div className="col-start-1 row-start-1 box-border rounded-3xl border border-black/10" /> */}
       <div
         className={`col-start-1 row-start-1 bg-gradient-to-r lg:bg-gradient-to-t from-${gradient()[0]} to-${gradient()[1]}`}
       />
-      <div className="col-start-1 row-start-1 bg-gradient-to-b from-[#F0F0F0] to-transparent lg:bg-gradient-to-r" />
+      <div className="col-start-1 row-start-1 bg-gradient-to-b from-[#F0F0F0]/90 to-transparent lg:bg-gradient-to-r" />
 
       <div className="col-start-1 row-start-1 grid place-items-start gap-4 p-7 lg:grid-flow-col lg:gap-20 lg:p-14 lg:pr-36">
-        <div className="w-full space-y-4">
+        <div className="w-full space-y-4 lg:w-96">
           <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-black/50">
               {info[type].icon}
@@ -75,22 +77,28 @@ const DepartmentCard = ({ type }: DepartmentCardProps) => {
             <p className="text-black/50">{info[type].name[0]}</p>
             <p className="text-black">{info[type].name[1]}</p>
           </div>
-          <div className="flex items-center justify-between lg:justify-normal">
-            <div className="flex space-x-1">
-              {/* TODO: Get team information from somewhere */}
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div key={i} className="size-9 rounded-full bg-gray/20" />
-              ))}
+          {!hideTeam && (
+            <div className="flex items-center justify-between lg:justify-normal">
+              <div className="flex space-x-1">
+                {/* TODO: Get team information from somewhere */}
+                {/* TODO: Max length of 3 avatars for mobile and 5 for desktop */}
+                {Array.from({ length: 3 }).map((_, i) => (
+                  <div key={i} className="size-9 rounded-full bg-gray/20" />
+                ))}
+              </div>
+              <Link
+                className="flex items-center space-x-1 pl-8 text-sm font-medium"
+                href="/about/team"
+              >
+                <span className="hover:underline">Ver direção</span>
+                <span className="material-symbols-outlined text-xl">
+                  arrow_forward
+                </span>
+              </Link>
             </div>
-            <Link
-              className="pl-8 text-sm font-medium hover:underline"
-              href="/about/team"
-            >
-              Ver direção {"->"}
-            </Link>
-          </div>
+          )}
         </div>
-        <p className="flex h-full items-center text-justify text-sm lg:text-base">
+        <p className="flex h-full items-center text-justify lg:text-base">
           {info[type].description}
         </p>
       </div>
