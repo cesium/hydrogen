@@ -34,7 +34,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
     >
       {/* Card image */}
       <div
-        className={`absolute bottom-0 hidden min-[340px]:block ${type == CardType.Collaborate ? "left-12 h-24 min-[950px]:h-28" : "left-10 h-20 min-[950px]:h-24"} min-[950px]:bottom-0`}
+        className={`absolute bottom-0 left-6 hidden min-[330px]:block min-[375px]:left-8 ${type == CardType.Collaborate ? "h-20 min-[375px]:h-24 min-[950px]:h-28" : "h-16 min-[375px]:h-20 min-[950px]:h-24"} min-[950px]:bottom-0`}
       >
         <Image
           src={info[type].image}
