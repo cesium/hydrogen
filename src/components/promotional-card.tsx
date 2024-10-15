@@ -59,7 +59,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
 
       <div className="flex w-full justify-end">
         <button
-          className={`hover:bg-gray-100 rounded-full bg-white px-4 py-3 min-[950px]:static min-[950px]:text-base text-${color}`}
+          className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 min-[950px]:static min-[950px]:text-base text-${color}`}
         >
           Saber mais
         </button>
