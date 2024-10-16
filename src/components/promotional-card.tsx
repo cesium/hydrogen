@@ -32,7 +32,7 @@ const PromotionalCard = ({ type }: Cardprops) => {
     >
       {/* Card image */}
       <div
-        className={`absolute bottom-0 left-6 hidden min-[330px]:block min-[375px]:left-8`}
+        className={`absolute bottom-0 hidden min-[330px]:block ${type == CardType.Collaborate ? "left-2" : "left-8"}`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
