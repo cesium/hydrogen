@@ -3,14 +3,19 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
+  Listbox,
+  ListboxButton,
+  ListboxOption,
+  ListboxOptions,
   Transition,
 } from "@headlessui/react";
+import ListBox from "@/components/listbox";
 import { AnimatePresence, easeIn, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
-const teamInfo = [
+const teamInfo24_25 = [
   {
     name: "Direção",
     departments: [
@@ -178,8 +183,48 @@ const teamInfo = [
   },
 ];
 
+interface Member {
+  name: string;
+  role: string;
+}
+
+interface Department {
+  name: string;
+  members: Member[];
+}
+
+interface Team {
+  name: string;
+  departments?: Department[];
+  members?: Member[];
+}
+
+type TeamData = Team[];
+
+const generateYearRanges = (startYear: number, endYear: number): string[] => {
+  const yearRanges = [];
+  for (let year = endYear; year >= startYear; year--) {
+    yearRanges.push(`${year}-${year + 1}`);
+  }
+
+  return yearRanges;
+};
+
+const yearRanges = generateYearRanges(1996, 2024);
+
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
+  const [currentYear, setCurrentYear] = useState<string>("2024-2025");
+  const [team, setTeam] = useState<TeamData>([]);
+
+  useEffect(() => {
+    // fetch team info based on currentYear from public/data/YYYY-YYYY/team.json
+    fetch(`/data/teams/${currentYear}/teams.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        setTeam(data);
+      });
+  }, [currentYear]);
 
   return (
     <main className="h-screen w-screen flex-col items-center justify-center p-5 md:p-8">
@@ -190,17 +235,26 @@ export default function Team() {
         >
           <span className="material-symbols-outlined">arrow_back</span>Voltar
         </Link>
-        <h1 className="font-title text-3xl font-medium leading-9">Equipa</h1>
+        <div className="flex flex-row items-center justify-between gap-5 sm:justify-normal">
+          <h1 className="font-title text-3xl font-medium leading-9">Equipa</h1>
+          <ListBox
+            options={yearRanges}
+            defaultOption="2024-2025"
+            defaultOptionText="Atual mandato"
+            hint="Selecionar mandato"
+            currentOption={currentYear}
+            setCurrentOption={setCurrentYear}
+          />
+        </div>
         <p>
           Estes são alguns dos elementos da nossa equipa, da presidência às
           direções dos departamentos, assembleia geral e conselho fiscal.
         </p>
       </div>
-      {teamInfo.map((team, index) => (
+      {team?.map((team, index) => (
         <Disclosure defaultOpen as="div" className="mb-10" key={index}>
           {({ open }) => {
             const [fromDisclosureOpen, isFromDisclosureOpen] = useState(true);
-            console.log(team.departments?.length);
             return (
               <>
                 <DisclosureButton
@@ -230,7 +284,7 @@ export default function Team() {
                           transition: {
                             ease: "easeOut",
                             duration: team.departments
-                              ? 0.10 * team.departments.length
+                              ? 0.1 * team.departments.length
                               : 0.15,
                           },
                         }}
@@ -330,7 +384,7 @@ export default function Team() {
                             )
                           ) : (
                             <ul className="flex flex-col gap-4 md:flex-row md:gap-7">
-                              {team.members.map((member, memberIndex) => (
+                              {team.members?.map((member, memberIndex) => (
                                 <li
                                   key={memberIndex}
                                   className="flex items-center gap-4 md:flex-col"
@@ -364,20 +418,6 @@ export default function Team() {
           }}
         </Disclosure>
       ))}
-      <Disclosure>
-        <DisclosureButton className="group mx-1 mb-4 flex w-full items-center justify-between">
-          <h2 className="font-title text-2xl font-medium leading-9">Direção</h2>
-          <span className="material-symbols-outlined text-3xl transition group-data-[open]:-scale-100">
-            arrow_downward
-          </span>
-        </DisclosureButton>
-        <DisclosurePanel
-          className="group origin-top rounded-2xl bg-white p-6 transition duration-100 ease-in-out data-[closed]:scale-y-0"
-          transition={true}
-        >
-          <p>test</p>
-        </DisclosurePanel>
-      </Disclosure>
     </main>
   );
 }

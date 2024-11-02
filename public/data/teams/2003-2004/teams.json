@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Anabela Barbosa",
+            "role": "Presidente"
+          },
+          {
+            "name": "Bárbara Freitas",
+            "role": "Secretária"
+          },
+          {
+            "name": "Bruno Faria",
+            "role": "Tesoureiro"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Recursos Informáticos",
+        "members": [
+          {
+            "name": "Vasco Rocha",
+            "role": "Vice-Presidente"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Apoio ao Aluno",
+        "members": [
+          {
+            "name": "Ana Campos",
+            "role": "Vice-Presidente"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Comunicação e Relações Externas",
+        "members": [
+          {
+            "name": "Bruno Dias",
+            "role": "Vice-Presidente"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Simão Nunes",
+            "role": "Vice-Presidente"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "David Ribeiro",
+        "role": "Presidente"
+      },
+      {
+        "name": "Vitor Castro",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Andreia Esteves",
+        "role": "Secretária"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "Nuno Gonçalves",
+        "role": "Presidente"
+      },
+      {
+        "name": "Samuel Cordeiro",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "João Campos",
+        "role": "Secretário"
+      }
+    ]
+  }
+]

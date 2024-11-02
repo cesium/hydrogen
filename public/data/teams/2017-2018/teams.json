@@ -1,0 +1,157 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Martinho Aragão",
+            "role": "Presidente"
+          },
+          {
+            "name": "Dinis Peixoto",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Gil Gonçalves",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Francisco Costa",
+            "role": "Tesoureiro"
+          },
+          {
+            "name": "André Teixeira",
+            "role": "Secretário"
+          }
+        ]
+      },
+      {
+        "name": "DevTeams",
+        "members": [
+          {
+            "name": "Francisco Lira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Diogo Couto",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Pedagógico",
+        "members": [
+          {
+            "name": "Ricardo Pereira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Pedro Lima",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Sérgio Costa",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Ricardo Certo",
+            "role": "Diretor"
+          },
+          {
+            "name": "Adriana Guedes",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Comunicação",
+        "members": [
+          {
+            "name": "Zé Nuno Macedo",
+            "role": "Diretor"
+          },
+          {
+            "name": "João Vilaça",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Imagem",
+        "members": [
+          {
+            "name": "Rui Souto",
+            "role": "Diretor"
+          },
+          {
+            "name": "Tânia Esteves",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Relações Externas e Parcerias",
+        "members": [
+          {
+            "name": "Eduardo Semanas",
+            "role": "Diretor"
+          },
+          {
+            "name": "José Bastos",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Vogais",
+        "members": [
+          {
+            "name": "Francisco Ribeiro",
+            "role": "Vogal"
+          },
+          {
+            "name": "Hugo Brandão",
+            "role": "Vogal"
+          },
+          {
+            "name": "Luís Neto",
+            "role": "Vogal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "Inês Sampaio",
+        "role": "Presidente"
+      },
+      {
+        "name": "Bruno Cancelinha",
+        "role": "Secretário"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "Maria Dias",
+        "role": "Presidente"
+      },
+      {
+        "name": "Marcelo Miranda",
+        "role": "Secretário"
+      }
+    ]
+  }
+]
