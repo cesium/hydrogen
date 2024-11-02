@@ -15,174 +15,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 
-const teamInfo24_25 = [
-  {
-    name: "Direção",
-    departments: [
-      {
-        name: "Presidência",
-        members: [
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-        ],
-      },
-      {
-        name: "Centro de Apoio ao Open Source",
-        members: [
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-        ],
-      },
-      {
-        name: "Departamento de Relações Externas e Merch",
-        members: [
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-        ],
-      },
-      {
-        name: "Departamento Pedagógico",
-        members: [
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-        ],
-      },
-      {
-        name: "Departamento Recreativo",
-        members: [
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-        ],
-      },
-      {
-        name: "Vogais",
-        members: [
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-          {
-            name: "Vitor Lelis",
-            role: "Presidente",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Conselho Fiscal",
-    members: [
-      {
-        name: "Vitor Lelis",
-        role: "Presidente",
-      },
-      {
-        name: "Vitor Lelis",
-        role: "Presidente",
-      },
-    ],
-  },
-  {
-    name: "Assembleia Geral",
-    members: [
-      {
-        name: "Vitor Lelis",
-        role: "Presidente",
-      },
-      {
-        name: "Vitor Lelis",
-        role: "Presidente",
-      },
-    ],
-  },
-];
-
 interface Member {
   name: string;
   role: string;
@@ -216,15 +48,40 @@ export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
   const [currentYear, setCurrentYear] = useState<string>("2024-2025");
   const [team, setTeam] = useState<TeamData>([]);
+  const [disclosureStates, setDisclosureStates] = useState<boolean[]>([]);
 
   useEffect(() => {
-    // fetch team info based on currentYear from public/data/YYYY-YYYY/team.json
-    fetch(`/data/teams/${currentYear}/teams.json`)
-      .then((res) => res.json())
-      .then((data) => {
+    const fetchTeamData = async () => {
+      try {
+        const response = await fetch(`/data/teams/${currentYear}/teams.json`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data: TeamData = (await response.json()) as TeamData;
         setTeam(data);
-      });
+        setDisclosureStates(new Array(data.length).fill(true));
+      } catch (err) {
+        if (err instanceof Error) {
+          console.log(err.message);
+        } else {
+          console.log("An unknown error occurred");
+        }
+        setTeam([]);
+      }
+    };
+
+    void fetchTeamData();
   }, [currentYear]);
+
+  const setDisclosureState = (
+    value: boolean,
+    index: number,
+    disclosureStates: boolean[],
+  ) => {
+    const newDisclosureStates = [...disclosureStates];
+    newDisclosureStates[index] = value;
+    setDisclosureStates(newDisclosureStates);
+  };
 
   return (
     <main className="h-screen w-screen flex-col items-center justify-center p-5 md:p-8">
@@ -254,14 +111,14 @@ export default function Team() {
       {team?.map((team, index) => (
         <Disclosure defaultOpen as="div" className="mb-10" key={index}>
           {({ open }) => {
-            const [fromDisclosureOpen, isFromDisclosureOpen] = useState(true);
+            // const [fromDisclosureOpen, isFromDisclosureOpen] = useState(true);
             return (
               <>
                 <DisclosureButton
                   className="group mx-1 mb-4 flex w-full items-center justify-between"
                   onClick={() => {
                     isFromDefaultOpen(false);
-                    isFromDisclosureOpen(true);
+                    setDisclosureState(true, index, disclosureStates);
                   }}
                 >
                   <h2 className="font-title text-2xl font-medium leading-9">
@@ -314,7 +171,11 @@ export default function Team() {
                                       <DisclosureButton
                                         className="group flex w-full items-center justify-between"
                                         onClick={() =>
-                                          isFromDisclosureOpen(false)
+                                          setDisclosureState(
+                                            false,
+                                            index,
+                                            disclosureStates,
+                                          )
                                         }
                                       >
                                         <h3 className="text-start font-title text-xl font-medium">
@@ -329,7 +190,7 @@ export default function Team() {
                                           <DisclosurePanel static as={Fragment}>
                                             <motion.ul
                                               initial={
-                                                fromDisclosureOpen
+                                                disclosureStates[index]
                                                   ? { height: "auto" }
                                                   : { height: 0 }
                                               }
