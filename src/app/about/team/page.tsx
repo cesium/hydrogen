@@ -3,14 +3,9 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Listbox,
-  ListboxButton,
-  ListboxOption,
-  ListboxOptions,
-  Transition,
 } from "@headlessui/react";
 import ListBox from "@/components/listbox";
-import { AnimatePresence, easeIn, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
@@ -42,13 +37,70 @@ const generateYearRanges = (startYear: number, endYear: number): string[] => {
   return yearRanges;
 };
 
-const yearRanges = generateYearRanges(1996, 2024);
+const generateImageUrl = (
+  yearRange: string,
+  name: string,
+  count: number,
+): string => {
+  return `https://assets.hydrogen.cesium.pt/team-photos/${yearRange}/${name}${count ? count : ""}.jpg`;
+};
+
+const generateUrlsForTeams = (
+  teams: TeamData,
+  yearRange: string,
+): (string | string[])[][] => {
+  const nameCount: Record<string, number> = {};
+
+  const generateForMember = (member: Member) => {
+    const baseName = member.name
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "")
+      .toLowerCase();
+    const count = nameCount[baseName] ?? 0;
+    nameCount[baseName] = count + 1;
+    return generateImageUrl(yearRange, baseName, count);
+  };
+
+  const urls: (string | string[])[][] = [];
+
+  teams.forEach((team) => {
+    const teamUrls: (string | string[])[] = [];
+
+    if (team.members) {
+      const memberUrls = team.members.map((member) =>
+        generateForMember(member),
+      );
+      teamUrls.push(memberUrls);
+    }
+
+    if (team.departments) {
+      const departmentUrls = team.departments.map((department) => {
+        return department.members.map((member) => generateForMember(member));
+      });
+      teamUrls.push(...departmentUrls);
+    }
+
+    urls.push(teamUrls);
+  });
+
+  return urls;
+};
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
   const [currentYear, setCurrentYear] = useState<string>("2024-2025");
   const [team, setTeam] = useState<TeamData>([]);
   const [disclosureStates, setDisclosureStates] = useState<boolean[]>([]);
+  const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
+
+  const yearRanges = generateYearRanges(1996, 2024);
+
+  const isYearBefore2016 = (yearRange: string) => {
+    const firstYearStr = yearRange.split("-")[0];
+    const year = firstYearStr ? parseInt(firstYearStr, 10) : NaN;
+    return year < 2016;
+  };
 
   useEffect(() => {
     const fetchTeamData = async () => {
@@ -58,6 +110,10 @@ export default function Team() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data: TeamData = (await response.json()) as TeamData;
+        const urls = isYearBefore2016(currentYear)
+          ? []
+          : generateUrlsForTeams(data, currentYear); // Generate URLs based on the fetched team data
+        setImageUrls(urls);
         setTeam(data);
         setDisclosureStates(new Array(data.length).fill(true));
       } catch (err) {
@@ -69,7 +125,6 @@ export default function Team() {
         setTeam([]);
       }
     };
-
     void fetchTeamData();
   }, [currentYear]);
 
@@ -121,7 +176,7 @@ export default function Team() {
                     setDisclosureState(true, index, disclosureStates);
                   }}
                 >
-                  <h2 className="font-title text-2xl font-medium leading-9">
+                  <h2 className="text-start font-title text-2xl font-medium leading-9">
                     {team.name}
                   </h2>
                   <span className="material-symbols-outlined text-3xl opacity-50 transition duration-150 group-data-[open]:-scale-100">
@@ -217,11 +272,19 @@ export default function Team() {
                                                     className="flex items-center gap-4 md:flex-col"
                                                   >
                                                     <Image
-                                                      src="/images/vitor-lelis.png"
+                                                      src={
+                                                        imageUrls[index]?.[
+                                                          departmentIndex
+                                                        ]?.[memberIndex] ??
+                                                        "/images/none.png"
+                                                      }
                                                       alt="Profile picture"
                                                       width={130}
                                                       height={130}
                                                       className="size-16 rounded-full md:size-32"
+                                                      loading="lazy"
+                                                      placeholder="blur"
+                                                      blurDataURL="/images/none.png"
                                                     />
                                                     <div className="flex flex-col gap-1">
                                                       <h3 className=" font-medium">
@@ -251,11 +314,17 @@ export default function Team() {
                                   className="flex items-center gap-4 md:flex-col"
                                 >
                                   <Image
-                                    src="/images/vitor-lelis.png"
+                                    src={
+                                      imageUrls[index]?.[0]?.[memberIndex] ??
+                                      "/images/none.png"
+                                    }
                                     alt="Profile picture"
                                     width={130}
                                     height={130}
                                     className="size-16 rounded-full md:size-32"
+                                    loading="lazy"
+                                    placeholder="blur"
+                                    blurDataURL="/images/none.png"
                                   />
                                   <div className="flex flex-col gap-1">
                                     <h3 className="font-medium">
