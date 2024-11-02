@@ -285,6 +285,7 @@ export default function Team() {
                                                       loading="lazy"
                                                       placeholder="blur"
                                                       blurDataURL="/images/none.png"
+                                                      unoptimized
                                                     />
                                                     <div className="flex flex-col gap-1">
                                                       <h3 className=" font-medium">
@@ -325,6 +326,7 @@ export default function Team() {
                                     loading="lazy"
                                     placeholder="blur"
                                     blurDataURL="/images/none.png"
+                                    unoptimized
                                   />
                                   <div className="flex flex-col gap-1">
                                     <h3 className="font-medium">
