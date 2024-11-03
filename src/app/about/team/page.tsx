@@ -263,7 +263,7 @@ export default function Team() {
                                                   duration: 0.1,
                                                 },
                                               }}
-                                              className="mt-5 flex origin-top flex-col flex-wrap gap-4 overflow-hidden bg-white md:mt-6 md:flex-row md:gap-7"
+                                              className="mt-5 flex origin-top flex-col gap-4 overflow-hidden bg-white md:mt-6 md:flex-row md:flex-wrap md:gap-7"
                                             >
                                               {department.members.map(
                                                 (member, memberIndex) => (
@@ -288,10 +288,10 @@ export default function Team() {
                                                       unoptimized
                                                     />
                                                     <div className="flex max-w-36 flex-col gap-1 md:items-center">
-                                                      <h3 className="text-center font-medium">
+                                                      <h3 className="font-medium md:text-center">
                                                         {member.name}
                                                       </h3>
-                                                      <p className="text-center text-sm text-gray">
+                                                      <p className="text-sm text-gray md:text-center">
                                                         {member.role}
                                                       </p>
                                                     </div>
@@ -308,7 +308,7 @@ export default function Team() {
                               ),
                             )
                           ) : (
-                            <ul className="flex flex-col flex-wrap gap-4 md:flex-row md:gap-7">
+                            <ul className="flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-7">
                               {team.members?.map((member, memberIndex) => (
                                 <li
                                   key={memberIndex}
@@ -329,10 +329,10 @@ export default function Team() {
                                     unoptimized
                                   />
                                   <div className="flex max-w-36 flex-col gap-1 md:items-center">
-                                    <h3 className="text-center font-medium">
+                                    <h3 className="font-medium md:text-center">
                                       {member.name}
                                     </h3>
-                                    <p className="text-center text-sm text-gray">
+                                    <p className="text-sm text-gray md:text-center">
                                       {member.role}
                                     </p>
                                   </div>
