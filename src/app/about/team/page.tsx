@@ -139,7 +139,7 @@ export default function Team() {
   };
 
   return (
-    <main className="h-screen w-screen flex-col items-center justify-center p-5 md:p-8">
+    <main className="flex-col items-center justify-center p-5 md:p-8">
       <div className="mb-10 flex flex-col gap-4">
         <Link
           href=""
@@ -263,13 +263,13 @@ export default function Team() {
                                                   duration: 0.1,
                                                 },
                                               }}
-                                              className="mt-5 flex origin-top flex-col gap-4  overflow-hidden bg-white md:mt-6 md:flex-row md:gap-7"
+                                              className="mt-5 flex origin-top flex-col flex-wrap gap-4 overflow-hidden bg-white md:mt-6 md:flex-row md:gap-7"
                                             >
                                               {department.members.map(
                                                 (member, memberIndex) => (
                                                   <li
                                                     key={memberIndex}
-                                                    className="flex items-center gap-4 md:flex-col"
+                                                    className="flex flex-shrink-0 items-center gap-4 md:flex-col"
                                                   >
                                                     <Image
                                                       src={
@@ -279,19 +279,19 @@ export default function Team() {
                                                         "/images/none.png"
                                                       }
                                                       alt="Profile picture"
-                                                      width={130}
-                                                      height={130}
+                                                      width={400}
+                                                      height={400}
                                                       className="size-16 rounded-full md:size-32"
                                                       loading="lazy"
                                                       placeholder="blur"
                                                       blurDataURL="/images/none.png"
                                                       unoptimized
                                                     />
-                                                    <div className="flex flex-col gap-1">
-                                                      <h3 className=" font-medium">
+                                                    <div className="flex max-w-36 flex-col gap-1 md:items-center">
+                                                      <h3 className="text-center font-medium">
                                                         {member.name}
                                                       </h3>
-                                                      <p className="text-sm text-gray">
+                                                      <p className="text-center text-sm text-gray">
                                                         {member.role}
                                                       </p>
                                                     </div>
@@ -308,11 +308,11 @@ export default function Team() {
                               ),
                             )
                           ) : (
-                            <ul className="flex flex-col gap-4 md:flex-row md:gap-7">
+                            <ul className="flex flex-col flex-wrap gap-4 md:flex-row md:gap-7">
                               {team.members?.map((member, memberIndex) => (
                                 <li
                                   key={memberIndex}
-                                  className="flex items-center gap-4 md:flex-col"
+                                  className="flex flex-shrink-0 items-center gap-4 md:flex-col"
                                 >
                                   <Image
                                     src={
@@ -320,19 +320,19 @@ export default function Team() {
                                       "/images/none.png"
                                     }
                                     alt="Profile picture"
-                                    width={130}
-                                    height={130}
+                                    width={400}
+                                    height={400}
                                     className="size-16 rounded-full md:size-32"
                                     loading="lazy"
                                     placeholder="blur"
                                     blurDataURL="/images/none.png"
                                     unoptimized
                                   />
-                                  <div className="flex flex-col gap-1">
-                                    <h3 className="font-medium">
+                                  <div className="flex max-w-36 flex-col gap-1 md:items-center">
+                                    <h3 className="text-center font-medium">
                                       {member.name}
                                     </h3>
-                                    <p className="text-sm text-gray">
+                                    <p className="text-center text-sm text-gray">
                                       {member.role}
                                     </p>
                                   </div>
