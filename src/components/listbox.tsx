@@ -4,8 +4,7 @@ import {
   ListboxOption,
   ListboxOptions,
 } from "@headlessui/react";
-import exp from "constants";
-import { useState } from "react";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 
 interface DropdownProps {
   options: string[];
@@ -24,68 +23,124 @@ const ListBox = ({
   defaultOptionText,
   hint,
 }: DropdownProps) => {
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.3,
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+        ease: easeInOut, // easeInOutCubic
+      },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      transition: { duration: 0.2, ease: easeInOut },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: -5 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: easeInOut },
+    },
+    exit: { opacity: 0, y: -5, transition: { duration: 0.2, ease: easeInOut } },
+  };
+
   return (
     <Listbox onChange={setCurrentOption} value={currentOption}>
-      <ListboxButton className="flex h-min rounded-lg bg-black/5 p-1 pl-2 align-middle text-primary">
-        {currentOption}
-        <span className="material-symbols-outlined">unfold_more</span>
-      </ListboxButton>
-      <ListboxOptions
-        anchor={{ to: "bottom start", padding: 16, gap: 8 }}
-        className="min-w-72 rounded-2xl border border-black/10 bg-white pt-4 shadow-md"
-      >
-        {hint && (
-          <h3 className="mx-5 mb-2 font-semibold leading-7 text-black">
-            {hint}
-          </h3>
-        )}
-        <div className="mb-4 max-h-96 w-full overflow-auto bg-white px-4">
-          {options.map((option, index) => (
-            <ListboxOption
-              key={index}
-              value={option}
-              className="group flex items-center gap-2 rounded-lg p-2 data-[selected]:bg-primary/10"
-            >
-              <svg
-                className="hidden group-data-[selected]:block"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+      {({ open }) => (
+        <>
+          <ListboxButton className="flex h-min rounded-lg bg-black/5 p-1 pl-2 align-middle text-primary">
+            {currentOption}
+            <span className="material-symbols-outlined">unfold_more</span>
+          </ListboxButton>
+          <AnimatePresence>
+            {open && (
+              <ListboxOptions
+                static
+                as={motion.div}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={containerVariants}
+                anchor={{ to: "bottom start", padding: 16, gap: 8 }}
+                className="min-w-72 origin-top rounded-2xl border border-black/10 bg-white pt-4 shadow-md"
               >
-                <rect width="20" height="20" rx="10" fill="#ED7950" />
-                <rect x="7" y="7" width="6" height="6" rx="3" fill="white" />
-              </svg>
-              <svg
-                className="group-data-[selected]:hidden"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="0.75"
-                  y="0.75"
-                  width="18.5"
-                  height="18.5"
-                  rx="9.25"
-                  stroke="black"
-                  strokeOpacity="0.2"
-                  strokeWidth="1.5"
-                />
-              </svg>
-              <div>
-                {option}
-                {defaultOption == option && defaultOptionText && (
-                  <p className="text-sm text-primary">{defaultOptionText}</p>
+                {hint && (
+                  <h3 className="mx-5 font-semibold leading-7 text-black">
+                    {hint}
+                  </h3>
                 )}
-              </div>
-            </ListboxOption>
-          ))}
-        </div>
-      </ListboxOptions>
+                <div className="max-h-96 w-full overflow-auto bg-white px-4">
+                  <div className="sticky top-0 h-2 w-full bg-gradient-to-b from-white from-20% to-transparent"></div>
+                  {options.map((option, index) => (
+                    <ListboxOption
+                      key={index}
+                      value={option}
+                      as={motion.div}
+                      variants={itemVariants}
+                      className="group flex items-center gap-2 rounded-lg p-2 data-[selected]:bg-primary/10"
+                    >
+                      <svg
+                        className="hidden group-data-[selected]:block"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width="20" height="20" rx="10" fill="#ED7950" />
+                        <rect
+                          x="7"
+                          y="7"
+                          width="6"
+                          height="6"
+                          rx="3"
+                          fill="white"
+                        />
+                      </svg>
+                      <svg
+                        className="group-data-[selected]:hidden"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="0.75"
+                          y="0.75"
+                          width="18.5"
+                          height="18.5"
+                          rx="9.25"
+                          stroke="black"
+                          strokeOpacity="0.2"
+                          strokeWidth="1.5"
+                        />
+                      </svg>
+                      <div>
+                        {option}
+                        {defaultOption == option && defaultOptionText && (
+                          <p className="text-sm text-primary">
+                            {defaultOptionText}
+                          </p>
+                        )}
+                      </div>
+                    </ListboxOption>
+                  ))}
+                  <div className="sticky bottom-0 h-5 w-full bg-gradient-to-t from-white from-50% to-transparent"></div>
+                </div>
+              </ListboxOptions>
+            )}
+          </AnimatePresence>
+        </>
+      )}
     </Listbox>
   );
 };
