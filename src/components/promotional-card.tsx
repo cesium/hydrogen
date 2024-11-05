@@ -14,12 +14,12 @@ const info: Record<CardType, { name: string; text: string; image: string }> = {
   [CardType.Collaborate]: {
     name: "colaborador",
     text: "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar.",
-    image: "collaborator.svg",
+    image: "vectors/collaborator.svg",
   },
   [CardType.Membership]: {
     name: "sócio",
     text: "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios.",
-    image: "member.svg",
+    image: "vectors/member.svg",
   },
 };
 
