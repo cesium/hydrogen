@@ -1,6 +1,6 @@
 import DepartmentCard from "@/components/department-card";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="h-screen w-screen flex-col items-center justify-center overflow-scroll p-5">
       <div className="space-y-4">
