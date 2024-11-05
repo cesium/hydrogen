@@ -2,16 +2,8 @@
 
 import { createContext, useContext } from "react";
 import type { Dictionary } from "@/internationalization/dictionaries";
-import { useState } from "react";
 
-type DictionaryContextType = {
-  dictionary: Dictionary;
-  updateDictionary: (newDict: Dictionary) => void;
-};
-
-const DictionaryContext = createContext<DictionaryContextType | undefined>(
-  undefined,
-);
+const DictionaryContext = createContext<Dictionary | undefined>(undefined);
 
 export function DictionaryProvider({
   children,
@@ -20,14 +12,8 @@ export function DictionaryProvider({
   children: React.ReactNode;
   dict: Dictionary;
 }) {
-  const [dictionary, setDictionary] = useState<Dictionary>(dict);
-
-  const updateDictionary = (newDict: Dictionary) => {
-    setDictionary(newDict);
-  };
-
   return (
-    <DictionaryContext.Provider value={{ dictionary, updateDictionary }}>
+    <DictionaryContext.Provider value={dict}>
       {children}
     </DictionaryContext.Provider>
   );

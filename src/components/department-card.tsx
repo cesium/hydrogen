@@ -9,7 +9,7 @@ interface DepartmentCardProps {
 }
 
 const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
-  const { dictionary } = useDictionary();
+  const dict = useDictionary();
 
   const gradient = () => {
     switch (type) {
@@ -44,10 +44,10 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
         <div className="w-full space-y-4 lg:w-96">
           <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-black/50">
-              {dictionary[type].icon}
+              {dict[type].icon}
             </span>
-            <p className="text-black/50">{dictionary[type].name[0]}</p>
-            <p className="text-black">{dictionary[type].name[1]}</p>
+            <p className="text-black/50">{dict[type].name[0]}</p>
+            <p className="text-black">{dict[type].name[1]}</p>
           </div>
           {!hideTeam && (
             <div className="flex items-center justify-between lg:justify-normal">
@@ -62,9 +62,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
                 className="flex items-center space-x-1 pl-8 text-sm font-medium"
                 href="/about/team"
               >
-                <span className="hover:underline">
-                  {dictionary.button.see_team}
-                </span>
+                <span className="hover:underline">{dict.button.see_team}</span>
                 <span className="material-symbols-outlined text-xl">
                   arrow_forward
                 </span>
@@ -73,7 +71,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
           )}
         </div>
         <p className="flex h-full items-center text-justify lg:text-base">
-          {dictionary[type].description}
+          {dict[type].description}
         </p>
       </div>
     </div>
