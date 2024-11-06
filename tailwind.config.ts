@@ -21,6 +21,7 @@ const config: Config = {
         black: "#27272A",
         gray: "#94959C",
         stone: "#6C757D",
+        blue: "#5069ED",
       },
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
@@ -30,6 +31,13 @@ const config: Config = {
   },
   plugins: [],
   safelist: [
+    "bg-blue",
+    "bg-primary",
+    "text-white",
+    "hover:text-blue",
+    "hover:text-primary",
+    "text-blue",
+    "text-primary",
     "from-[#0085FF]/10",
     "to-[#00D1FF]/10",
     "from-[#FF00F5]/10",
