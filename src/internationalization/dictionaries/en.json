@@ -25,6 +25,15 @@
     "icon": "celebration"
   },
   "button": {
-    "see_team": "Go to team"
+    "see_team": "Go to team",
+    "learn_more": "Learn more"
+  },
+  "collaborate_card": {
+    "title": "Become a collaborator",
+    "text": "You can join these departments and contribute to making your organization work."
+  },
+  "member_card": {
+    "title": "Become a member",
+    "text": "Participate in all our events for free and enjoy tons of other benefits."
   }
 }

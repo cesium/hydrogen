@@ -25,6 +25,15 @@
     "icon": "celebration"
   },
   "button": {
-    "see_team": "Ver direção"
+    "see_team": "Ver direção",
+    "learn_more": "Saber mais"
+  },
+  "collaborate_card": {
+    "title": "Torna-te colaborador",
+    "text": "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar."
+  },
+  "member_card": {
+    "title": "Torna-te sócio",
+    "text": "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios."
   }
 }
