@@ -1,37 +1,7 @@
-import Link from "next/link";
+"use client";
 
-const info = {
-  caos: {
-    name: ["Centro de Apoio ao", "Open Source"],
-    description:
-      "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
-    icon: "terminal",
-  },
-  dmc: {
-    name: ["Departamento de", "Marketing e Conteúdo"],
-    description:
-      "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
-    icon: "lightbulb",
-  },
-  drem: {
-    name: ["Departamento de", "Relações Externas e Merch"],
-    description:
-      "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
-    icon: "handshake",
-  },
-  ped: {
-    name: ["Departamento", "Pedagógico"],
-    description:
-      "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
-    icon: "draw",
-  },
-  rec: {
-    name: ["Departamento", "Recreativo"],
-    description:
-      "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
-    icon: "celebration",
-  },
-};
+import Link from "next/link";
+import { useDictionary } from "@/contexts/dictionary-provider";
 
 interface DepartmentCardProps {
   type: "caos" | "dmc" | "drem" | "ped" | "rec";
@@ -39,6 +9,8 @@ interface DepartmentCardProps {
 }
 
 const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
+  const dict = useDictionary();
+
   const gradient = () => {
     switch (type) {
       case "caos":
@@ -72,10 +44,10 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
         <div className="w-full space-y-4 lg:w-96">
           <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-black/50">
-              {info[type].icon}
+              {dict[type].icon}
             </span>
-            <p className="text-black/50">{info[type].name[0]}</p>
-            <p className="text-black">{info[type].name[1]}</p>
+            <p className="text-black/50">{dict[type].name[0]}</p>
+            <p className="text-black">{dict[type].name[1]}</p>
           </div>
           {!hideTeam && (
             <div className="flex items-center justify-between lg:justify-normal">
@@ -90,7 +62,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
                 className="flex items-center space-x-1 pl-8 text-sm font-medium"
                 href="/about/team"
               >
-                <span className="hover:underline">Ver direção</span>
+                <span className="hover:underline">{dict.button.see_team}</span>
                 <span className="material-symbols-outlined text-xl">
                   arrow_forward
                 </span>
@@ -99,7 +71,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
           )}
         </div>
         <p className="flex h-full items-center text-justify lg:text-base">
-          {info[type].description}
+          {dict[type].description}
         </p>
       </div>
     </div>
