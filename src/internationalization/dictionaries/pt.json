@@ -35,5 +35,14 @@
   "member_card": {
     "title": "Torna-te sócio",
     "text": "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios."
-  }
+  },
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre Nós",
+    "events": "Eventos",
+    "partners": "Parcerias",
+    "store": "Loja",
+    "projects": "Projetos"
+  },
+  "social_media": "Redes sociais"
 }

@@ -1,9 +1,9 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
-import "./globals.css";
 import type { Locale } from "@/internationalization/dictionaries";
 import { DictionaryProvider } from "@/contexts/dictionary-provider";
-import { getDictionary } from "@/internationalization/dictionaries";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,17 +23,19 @@ export const metadata: Metadata = {
     "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
   params: { lang },
 }: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
-  const dict = await getDictionary(lang);
   return (
     <html lang={lang}>
       <body
-        className={`${inter.variable} ${orbitron.variable} bg-background font-sans text-black antialiased`}
+        className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-background font-sans text-black antialiased`}
       >
-        <DictionaryProvider dict={dict}>{children}</DictionaryProvider>
+        <DictionaryProvider lang={lang}>
+          <Navbar />
+          <div className="px-5 py-5 md:px-7 md:pb-14 md:pt-12">{children}</div>
+        </DictionaryProvider>
       </body>
     </html>
   );

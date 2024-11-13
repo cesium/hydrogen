@@ -35,5 +35,14 @@
   "member_card": {
     "title": "Become a member",
     "text": "Participate in all our events for free and enjoy tons of other benefits."
-  }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "events": "Events",
+    "partners": "Partners",
+    "store": "Store",
+    "projects": "Projects"
+  },
+  "social_media": "Social media"
 }
