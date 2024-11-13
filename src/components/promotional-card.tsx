@@ -27,16 +27,16 @@ const PromotionalCard = ({ type }: Cardprops) => {
         <img
           src={
             type == CardType.Collaborate
-              ? "vectors/collaborator.svg"
-              : "vectors/member.svg"
+              ? "/vectors/collaborator.svg"
+              : "/vectors/member.svg"
           }
           alt="Promotional Image"
-          className={`${type == CardType.Collaborate ? "h-20 min-[375px]:h-24 min-[950px]:h-28" : "h-16 min-[375px]:h-20 min-[950px]:h-24"}`}
+          className={`${type == CardType.Collaborate ? "h-20 min-[376px]:h-24 min-[950px]:h-28" : "h-16 min-[375px]:h-20 min-[950px]:h-24"}`}
         />
       </div>
 
       {/* Descriptive text */}
-      <div className="left-2 right-0 top-8 mt-0 w-full flex-grow text-start min-[950px]:ml-48 min-[950px]:flex-grow min-[950px]:text-left ">
+      <div className="left-2 right-0 top-8 z-10 mt-0 w-full flex-grow text-start min-[950px]:ml-48 min-[950px]:flex-grow min-[950px]:text-left">
         <h4 className="mb-2 font-title text-2xl font-medium text-white">
           {type == CardType.Collaborate
             ? dict.collaborate_card.title
