@@ -29,7 +29,7 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
   };
 
   return (
-    <div className="relative grid w-full overflow-hidden rounded-3xl">
+    <div className="relative grid w-full overflow-hidden rounded-2xl md:rounded-3xl">
       <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/20 bg-clip-text font-title text-9xl text-transparent lg:inline-block">
         {type.toUpperCase()}
       </div>
@@ -43,10 +43,10 @@ const DepartmentCard = ({ type, hideTeam }: DepartmentCardProps) => {
       <div className="col-start-1 row-start-1 grid place-items-start gap-4 p-7 lg:grid-flow-col lg:gap-20 lg:p-14 lg:pr-36">
         <div className="w-full space-y-4 lg:w-96">
           <div className="font-title text-2xl font-medium">
-            <span className="material-symbols-outlined text-4xl text-black/50">
+            <span className="material-symbols-outlined text-4xl text-gray">
               {dict[type].icon}
             </span>
-            <p className="text-black/50">{dict[type].name[0]}</p>
+            <p className="text-gray">{dict[type].name[0]}</p>
             <p className="text-black">{dict[type].name[1]}</p>
           </div>
           {!hideTeam && (
