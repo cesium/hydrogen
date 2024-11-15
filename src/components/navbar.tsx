@@ -72,20 +72,22 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <button
+        <motion.button
           className="material-symbols-outlined z-50 p-1 text-3xl text-gray md:hidden"
           onClick={() => setIsOpen(!isOpen)}
+          animate={{ rotate: isOpen ? 90 : 0 }}
         >
           {isOpen ? "close" : "menu"}
-        </button>
+        </motion.button>
       </nav>
       <AnimatePresence>
         {isOpen && (
           <motion.nav
-            className="fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col justify-between bg-[#F0F0F0] px-7 pb-8 pt-20"
-            exit={{ x: "100%" }}
-            initial={{ scale: 1.1 }}
+            className="fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col justify-between bg-[#F0F0F0] px-7 pb-8 pt-20 shadow-lg"
+            exit={{ x: "100%", borderRadius: "50px" }}
+            initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
+            transition={{ duration: 0.15 }}
           >
             <ul className="flex flex-col space-y-3 font-title text-3xl font-medium text-gray">
               {[home, ...routes].map((route, i) => (
