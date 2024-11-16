@@ -42,9 +42,9 @@ const ListBoxItem = ({
     const selectedIndex = currentOptionIndex;
     const distanceFromSelected = Math.abs(index - selectedIndex);
     if (selectedIndex < 8 && index < 8) {
-      return (8 - index) * 0.05;
+      return (index + 1) * 0.05;
     } else if (index - selectedIndex > -10 && index - selectedIndex <= 0) {
-      return (distanceFromSelected + 1) * 0.05;
+      return (10 - distanceFromSelected) * 0.05;
     }
     return 0.05;
   };
@@ -52,7 +52,7 @@ const ListBoxItem = ({
   const itemVariants = {
     hidden: {
       opacity: 0,
-      y: 10,
+      y: -10,
     },
     visible: {
       opacity: 1,

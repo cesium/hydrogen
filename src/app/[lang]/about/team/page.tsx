@@ -139,7 +139,7 @@ export default function Team() {
   };
 
   return (
-    <main className="flex-col items-center justify-center p-5 md:p-8">
+    <main className="flex-col items-center justify-center">
       <div className="mb-10 flex flex-col gap-4">
         <Link
           href=""
