@@ -164,7 +164,7 @@ const ListBox = ({
     <Listbox onChange={setCurrentOption} value={currentOption}>
       {({ open }) => (
         <>
-          <ListboxButton className="flex h-min rounded-lg bg-black/5 p-1 pl-2 align-middle text-primary">
+          <ListboxButton className="flex h-min rounded-lg p-1 pl-2 align-middle text-primary">
             {currentOption}
             <span className="material-symbols-outlined">unfold_more</span>
           </ListboxButton>

@@ -8,9 +8,14 @@ import ListBox from "@/components/listbox";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
-import { generateUrlsForTeams, generateYearRanges } from "@/lib/utils";
-import { TeamData } from "@/lib/types";
+import {
+  fetchTeamData,
+  generateUrlsForTeams,
+  generateYearRanges,
+} from "@/lib/utils";
+import type { TeamData } from "@/lib/types";
 import Avatar from "@/components/avatar";
+import { useDictionary } from "@/contexts/dictionary-provider";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
@@ -18,6 +23,7 @@ export default function Team() {
   const [team, setTeam] = useState<TeamData>([]);
   const [disclosureStates, setDisclosureStates] = useState<boolean[]>([]);
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
+  const dict = useDictionary();
 
   const yearRanges = generateYearRanges(1996, 2024);
 
@@ -28,29 +34,16 @@ export default function Team() {
   };
 
   useEffect(() => {
-    const fetchTeamData = async () => {
-      try {
-        const response = await fetch(`/data/teams/${currentYear}/teams.json`);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data: TeamData = (await response.json()) as TeamData;
-        const urls = isYearBefore2016(currentYear)
-          ? []
-          : generateUrlsForTeams(data, currentYear);
-        setImageUrls(urls);
-        setTeam(data);
-        setDisclosureStates(new Array(data.length).fill(true));
-      } catch (err) {
-        if (err instanceof Error) {
-          console.log(err.message);
-        } else {
-          console.log("An unknown error occurred");
-        }
-        setTeam([]);
-      }
+    const setTeamData = async () => {
+      const data: TeamData = await fetchTeamData(currentYear);
+      const urls = isYearBefore2016(currentYear)
+        ? []
+        : generateUrlsForTeams(data, currentYear);
+      setImageUrls(urls);
+      setTeam(data);
+      setDisclosureStates(new Array(data.length).fill(true));
     };
-    void fetchTeamData();
+    void setTeamData();
   }, [currentYear]);
 
   const setDisclosureState = (
@@ -70,23 +63,23 @@ export default function Team() {
           href=""
           className="flex items-center gap-1 font-medium text-primary"
         >
-          <span className="material-symbols-outlined">arrow_back</span>Voltar
+          <span className="material-symbols-outlined">arrow_back</span>
+          {dict.button.back}
         </Link>
         <div className="flex flex-row items-center justify-between gap-5 sm:justify-normal">
-          <h1 className="font-title text-3xl font-medium leading-9">Equipa</h1>
+          <h1 className="font-title text-3xl font-medium leading-9">
+            {dict.about.team.title}
+          </h1>
           <ListBox
             options={yearRanges}
             defaultOption="2024-2025"
-            defaultOptionText="Atual mandato"
-            hint="Selecionar mandato"
+            defaultOptionText={dict.about.team.team_selector.default_option}
+            hint={dict.about.team.team_selector.hint}
             currentOption={currentYear}
             setCurrentOption={setCurrentYear}
           />
         </div>
-        <p>
-          Estes são alguns dos elementos da nossa equipa, da presidência às
-          direções dos departamentos, assembleia geral e conselho fiscal.
-        </p>
+        <p>{dict.about.team.description}</p>
       </div>
       {team?.map((team, index) => (
         <Disclosure defaultOpen as="div" className="mb-10" key={index}>

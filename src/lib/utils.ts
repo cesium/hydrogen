@@ -1,4 +1,4 @@
-import { Member, TeamData } from "@/lib/types";
+import type { Member, TeamData } from "@/lib/types";
 
 const generateYearRanges = (startYear: number, endYear: number): string[] => {
   const yearRanges = [];
@@ -7,6 +7,36 @@ const generateYearRanges = (startYear: number, endYear: number): string[] => {
   }
 
   return yearRanges;
+};
+
+const fetchTeamData = async (currentYear: string): Promise<TeamData> => {
+  try {
+    const response = await fetch(`/data/teams/${currentYear}/teams.json`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data: TeamData = (await response.json()) as TeamData;
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching team data:", error);
+    return [];
+  }
+};
+
+const getTeamByName = (teams: TeamData, name: string) => {
+  return teams.find((team) => team.name === name);
+};
+
+const getDepartmentByName = (teams: TeamData, departmentName: string) => {
+  for (const team of teams) {
+    const department = team.departments?.find(
+      (department) => department.name === departmentName,
+    );
+    if (department) {
+      return department;
+    }
+  }
 };
 
 const generateImageUrl = (
@@ -63,4 +93,11 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export { generateYearRanges, generateUrlsForTeams, classNames };
+export {
+  generateYearRanges,
+  generateUrlsForTeams,
+  fetchTeamData,
+  getTeamByName,
+  getDepartmentByName,
+  classNames,
+};
