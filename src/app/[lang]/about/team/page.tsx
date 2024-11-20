@@ -25,7 +25,7 @@ export default function Team() {
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
   const dict = useDictionary();
 
-  const yearRanges = generateYearRanges(1996, 2024);
+  const yearRanges = generateYearRanges(1995, 2024);
 
   const isYearBefore2016 = (yearRange: string) => {
     const firstYearStr = yearRange.split("-")[0];
