@@ -6,86 +6,11 @@ import {
 } from "@headlessui/react";
 import ListBox from "@/components/listbox";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
-
-interface Member {
-  name: string;
-  role: string;
-}
-
-interface Department {
-  name: string;
-  members: Member[];
-}
-
-interface Team {
-  name: string;
-  departments?: Department[];
-  members?: Member[];
-}
-
-type TeamData = Team[];
-
-const generateYearRanges = (startYear: number, endYear: number): string[] => {
-  const yearRanges = [];
-  for (let year = endYear; year >= startYear; year--) {
-    yearRanges.push(`${year}-${year + 1}`);
-  }
-
-  return yearRanges;
-};
-
-const generateImageUrl = (
-  yearRange: string,
-  name: string,
-  count: number,
-): string => {
-  return `https://assets.hydrogen.cesium.pt/team-photos/${yearRange}/${name}${count ? count : ""}.jpg`;
-};
-
-const generateUrlsForTeams = (
-  teams: TeamData,
-  yearRange: string,
-): (string | string[])[][] => {
-  const nameCount: Record<string, number> = {};
-
-  const generateForMember = (member: Member) => {
-    const baseName = member.name
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/\s+/g, "")
-      .toLowerCase();
-    const count = nameCount[baseName] ?? 0;
-    nameCount[baseName] = count + 1;
-    return generateImageUrl(yearRange, baseName, count);
-  };
-
-  const urls: (string | string[])[][] = [];
-
-  teams.forEach((team) => {
-    const teamUrls: (string | string[])[] = [];
-
-    if (team.members) {
-      const memberUrls = team.members.map((member) =>
-        generateForMember(member),
-      );
-      teamUrls.push(memberUrls);
-    }
-
-    if (team.departments) {
-      const departmentUrls = team.departments.map((department) => {
-        return department.members.map((member) => generateForMember(member));
-      });
-      teamUrls.push(...departmentUrls);
-    }
-
-    urls.push(teamUrls);
-  });
-
-  return urls;
-};
+import { generateUrlsForTeams, generateYearRanges } from "@/lib/utils";
+import { TeamData } from "@/lib/types";
+import Avatar from "@/components/avatar";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
@@ -112,7 +37,7 @@ export default function Team() {
         const data: TeamData = (await response.json()) as TeamData;
         const urls = isYearBefore2016(currentYear)
           ? []
-          : generateUrlsForTeams(data, currentYear); // Generate URLs based on the fetched team data
+          : generateUrlsForTeams(data, currentYear);
         setImageUrls(urls);
         setTeam(data);
         setDisclosureStates(new Array(data.length).fill(true));
@@ -166,7 +91,6 @@ export default function Team() {
       {team?.map((team, index) => (
         <Disclosure defaultOpen as="div" className="mb-10" key={index}>
           {({ open }) => {
-            // const [fromDisclosureOpen, isFromDisclosureOpen] = useState(true);
             return (
               <>
                 <DisclosureButton
@@ -200,7 +124,6 @@ export default function Team() {
                               : 0.15,
                           },
                         }}
-                        // transition={team.departments ? { duration: 100 * team.departments.length } : {duration: 100}}
                         exit={{
                           height: 0,
                           transition: {
@@ -267,34 +190,17 @@ export default function Team() {
                                             >
                                               {department.members.map(
                                                 (member, memberIndex) => (
-                                                  <li
-                                                    key={memberIndex}
-                                                    className="flex flex-shrink-0 items-center gap-4 md:flex-col"
-                                                  >
-                                                    <Image
+                                                  <li key={memberIndex}>
+                                                    <Avatar
+                                                      name={member.name}
+                                                      role={member.role}
                                                       src={
                                                         imageUrls[index]?.[
                                                           departmentIndex
                                                         ]?.[memberIndex] ??
                                                         "/images/none.png"
                                                       }
-                                                      alt="Profile picture"
-                                                      width={400}
-                                                      height={400}
-                                                      className="size-16 rounded-full md:size-32"
-                                                      loading="lazy"
-                                                      placeholder="blur"
-                                                      blurDataURL="/images/none.png"
-                                                      unoptimized
                                                     />
-                                                    <div className="flex max-w-36 flex-col gap-1 md:items-center">
-                                                      <h3 className="font-medium md:text-center">
-                                                        {member.name}
-                                                      </h3>
-                                                      <p className="text-sm text-gray md:text-center">
-                                                        {member.role}
-                                                      </p>
-                                                    </div>
                                                   </li>
                                                 ),
                                               )}
@@ -310,32 +216,15 @@ export default function Team() {
                           ) : (
                             <ul className="flex flex-col gap-4 md:flex-row md:flex-wrap md:gap-7">
                               {team.members?.map((member, memberIndex) => (
-                                <li
-                                  key={memberIndex}
-                                  className="flex flex-shrink-0 items-center gap-4 md:flex-col"
-                                >
-                                  <Image
+                                <li key={memberIndex}>
+                                  <Avatar
+                                    name={member.name}
+                                    role={member.role}
                                     src={
                                       imageUrls[index]?.[0]?.[memberIndex] ??
                                       "/images/none.png"
                                     }
-                                    alt="Profile picture"
-                                    width={400}
-                                    height={400}
-                                    className="size-16 rounded-full md:size-32"
-                                    loading="lazy"
-                                    placeholder="blur"
-                                    blurDataURL="/images/none.png"
-                                    unoptimized
                                   />
-                                  <div className="flex max-w-36 flex-col gap-1 md:items-center">
-                                    <h3 className="font-medium md:text-center">
-                                      {member.name}
-                                    </h3>
-                                    <p className="text-sm text-gray md:text-center">
-                                      {member.role}
-                                    </p>
-                                  </div>
                                 </li>
                               ))}
                             </ul>

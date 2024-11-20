@@ -82,7 +82,7 @@ const ListBoxItem = ({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={itemVariants}
-      className="group flex items-center gap-2 rounded-lg p-2 data-[selected]:bg-primary/10"
+      className="group flex select-none items-center gap-2 rounded-lg p-2 data-[selected]:bg-primary/10"
     >
       <svg
         className="hidden group-data-[selected]:block"
