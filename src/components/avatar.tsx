@@ -8,10 +8,10 @@ interface AvatarProps {
 
 const Avatar = ({ src, name, role }: AvatarProps) => {
   return (
-    <div className="flex flex-shrink-0 items-center gap-4 md:flex-col">
+    <figure className="flex flex-shrink-0 items-center gap-4 md:flex-col">
       <Image
         src={src ?? "/images/none.png"}
-        alt="Profile picture"
+        alt={`${name}'s Profile picture`}
         width={400}
         height={400}
         className="size-16 rounded-full md:size-32"
@@ -24,7 +24,7 @@ const Avatar = ({ src, name, role }: AvatarProps) => {
         <h3 className="font-medium md:text-center">{name}</h3>
         <p className="text-sm text-gray md:text-center">{role}</p>
       </div>
-    </div>
+    </figure>
   );
 };
 
