@@ -1,9 +1,11 @@
-import { link } from "fs";
+import { link } from 'fs';
+import Image from 'next/image'
 
 const Footer = () => {
   const NavigationSection = ({
     title,
     items,
+    links
   }: {
     title: string;
     items: string[];
@@ -14,9 +16,9 @@ const Footer = () => {
       <ul className="space-y-3">
         {items.map((item, index) => (
           <li key={index}>
-            <a className="text-[14px] text-gray" href="#">
-              {item}
-            </a>
+              <a className="text-[14px] text-gray" href={links[index]}>
+                {item}
+              </a>  
           </li>
         ))}
       </ul>
@@ -90,13 +92,15 @@ const Footer = () => {
             Universidade do Minho
           </p>
           <div className="flex h-[30px] justify-left space-x-[20px]">
-            {socialLinks.map((social, index, link) => (
+            {socialLinks.map((social, index) => (
               <a href={social.link} target="_blank">
-                <img
+                <Image
                   key={index}
                   src={social.icon}
                   alt={social.alt}
-                  className="w-[26px] h-[26px]"
+                  width={26}
+                  height={26}
+                  className="w-[26px] h-[26px]" 
                 />  
               </a>
             ))}
