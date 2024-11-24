@@ -1,3 +1,5 @@
+import { link } from "fs";
+
 const Footer = () => {
   const NavigationSection = ({
     title,
@@ -45,11 +47,31 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: "facebook.svg", alt: "Facebook" },
-    { icon: "instagram.svg", alt: "Instagram" },
-    { icon: "twitter.svg", alt: "Twitter" },
-    { icon: "github.svg", alt: "Github" },
-    { icon: "youtube.svg", alt: "Youtube" },
+    { 
+      icon: "facebook.svg", 
+      alt: "Facebook" ,
+      link: "https://www.facebook.com/cesiuminho"
+    },
+    { 
+      icon: "instagram.svg", 
+      alt: "Instagram",
+      link: "https://www.instagram.com/cesiuminho/"
+    },
+    { 
+      icon: "twitter.svg", 
+      alt: "Twitter",
+      link: "https://x.com/cesiuminho "
+    },
+    { 
+      icon: "github.svg", 
+      alt: "Github",
+      link: "https://github.com/cesium"
+    },
+    { 
+      icon: "youtube.svg", 
+      alt: "Youtube",
+      link: "https://www.youtube.com/@cesiumUM"
+    },
   ];
 
   const contactInfo = [
@@ -59,29 +81,31 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="mt-8 flex flex-col place-items-center bg-[#EBEBEB] px-[20px] pb-[70px] pt-[32px] sm:flex-row sm:place-items-end sm:px-[30px] md:px-[100px]">
-      <div className="flex w-full max-w-[500px] flex-col place-items-center justify-center space-y-[22px] sm:flex sm:w-1/2 sm:max-w-max sm:flex-col-reverse md:place-items-start">
-        <div className="w-full space-y-6 pb-[10px] sm:mt-[50px] sm:w-80 sm:pb-[0px]">
+    <footer className=" flex flex-col sm:flex-row place-items-center sm:place-items-end  px-[20px] pb-[70px] pt-[32px] sm:px-[30px] md:px-[100px] mt-8 bg-[#EBEBEB]">
+      <div className="flex flex-col sm:flex-col-reverse w-full sm:w-1/2 max-w-[500px] sm:max-w-max place-items-center md:place-items-start justify-center space-y-[22px]">
+        <div className="w-full sm:w-80 space-y-6 pb-[10px] sm:pb-[0px] sm:mt-[50px]">
           <img src="cesium.svg" alt="" className="h-[37]  w-[32px] text-sm" />
-          <p className="text-[14px] leading-[17px] text-[#94959C]">
+          <p className="leading-[17px] text-[14px] text-[#94959C]">
             CeSIUM - Centro de Estudantes de Engenharia Informática da
             Universidade do Minho
           </p>
-          <div className="justify-left flex h-[30px] space-x-[20px]">
-            {socialLinks.map((social, index) => (
-              <img
-                key={index}
-                src={social.icon}
-                alt={social.alt}
-                className="h-[26px] w-[26px]"
-              />
+          <div className="flex h-[30px] justify-left space-x-[20px]">
+            {socialLinks.map((social, index, link) => (
+              <a href={social.link} target="_blank">
+                <img
+                  key={index}
+                  src={social.icon}
+                  alt={social.alt}
+                  className="w-[26px] h-[26px]"
+                />  
+              </a>
             ))}
           </div>
         </div>
         <div className="w-full">
           {/* Left */}
-          <div className="flex w-full min-w-[300px] space-x-[50px] sm:min-w-[600px] sm:space-x-0 sm:space-x-[25px]">
-            <div className="flex w-full flex-col space-y-[32px] sm:w-[300px] sm:flex-row sm:space-x-[50px] sm:space-y-0">
+          <div className="flex w-full min-w-[300px] sm:min-w-[600px] space-x-[50px] sm:space-x-[20px]">
+            <div className="flex flex-col sm:flex-row w-full sm:w-[300px] sm:space-x-[50px] space-y-[32px] sm:space-y-0">
               <div className="space-y-[12px]">
                 {sections[0] && (
                   <NavigationSection
@@ -111,7 +135,7 @@ const Footer = () => {
               </div>
             </div>
             {/* Right */}
-            <div className="flex w-full flex-col space-y-[32px] sm:w-[300px] sm:flex-row sm:space-y-0">
+            <div className="flex flex-col sm:flex-row w-full sm:w-[300px] space-y-[32px] sm:space-y-0">
               <div className="space-y-[12px] sm:hidden">
                 {sections[1] && (
                   <NavigationSection
@@ -143,7 +167,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-full max-w-[500px] flex-col sm:place-content-end sm:place-items-end md:max-w-full">
+      <div className="flex flex-col w-full max-w-[500px] md:max-w-full sm:place-content-end sm:place-items-end">
         <div className="my-[32px] h-0 border border-stroke sm:hidden"></div>
         <div className="flex flex-col sm:place-items-end">
           {contactInfo.map((info, index) => (
