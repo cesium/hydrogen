@@ -1,4 +1,3 @@
-import { link } from 'fs';
 import Image from 'next/image'
 
 const Footer = () => {
@@ -86,16 +85,15 @@ const Footer = () => {
     <footer className=" flex flex-col sm:flex-row place-items-center sm:place-items-end  px-[20px] pb-[70px] pt-[32px] sm:px-[30px] md:px-[100px] mt-8 bg-[#EBEBEB]">
       <div className="flex flex-col sm:flex-col-reverse w-full sm:w-1/2 max-w-[500px] sm:max-w-max place-items-center md:place-items-start justify-center space-y-[22px]">
         <div className="w-full sm:w-80 space-y-6 pb-[10px] sm:pb-[0px] sm:mt-[50px]">
-          <img src="cesium.svg" alt="" className="h-[37]  w-[32px] text-sm" />
+          <Image src="cesium.svg" alt="" width={32} height={37}/>
           <p className="leading-[17px] text-[14px] text-[#94959C]">
             CeSIUM - Centro de Estudantes de Engenharia Informática da
             Universidade do Minho
           </p>
           <div className="flex h-[30px] justify-left space-x-[20px]">
             {socialLinks.map((social, index) => (
-              <a href={social.link} target="_blank">
+              <a key={index} href={social.link} target="_blank">
                 <Image
-                  key={index}
                   src={social.icon}
                   alt={social.alt}
                   width={26}
