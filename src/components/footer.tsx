@@ -1,10 +1,11 @@
 "use client";
 
-import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import Image from 'next/image';
 
 const Footer = () => {
   const dict = useDictionary();
+
   const NavigationSection = ({
     title,
     items,
