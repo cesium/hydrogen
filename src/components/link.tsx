@@ -6,7 +6,7 @@ interface ILink {
     arrow: 'back'| 'forward'| 'outward'
 }
 
-const LinkProps = ({title, href, arrow}: ILink) => {
+const CostumLink = ({title, href, arrow}: ILink) => {
     switch(arrow) {
         case 'back':
             return (
@@ -26,4 +26,4 @@ const LinkProps = ({title, href, arrow}: ILink) => {
     }
 }
 
-export default LinkProps
+export default CostumLink
