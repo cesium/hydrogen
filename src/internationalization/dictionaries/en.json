@@ -1,4 +1,5 @@
 {
+  "cesium": "CeSIUM - Computer Engineering Student Center at the University of Minho",
   "caos": {
     "name": ["Center for", "Open Source Support"],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
@@ -45,4 +46,23 @@
     "projects": "Projects"
   },
   "social_media": "Social media"
+  ,
+  "footer": {
+    "section1": {
+      "title": "CeSIUM",
+      "items": ["News", "About Us", "Team", "Departments"]
+    },
+    "section2": {
+      "title": "Activities",
+      "items": ["Projects", "Events", "Partnerships"]
+    },
+    "section3": {
+      "title": "Students",
+      "items": ["Memberships", "Become a Collaborator", "Annuary"] 
+    },
+    "section4": {
+      "title": "Useful Links",
+      "items": ["Calendarium", "Blackboard", "Academic Portal", "Software Engineering Page"]
+    }
+  }
 }

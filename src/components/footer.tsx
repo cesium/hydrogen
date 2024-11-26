@@ -1,13 +1,17 @@
-import Image from 'next/image'
+"use client";
+
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import Image from 'next/image';
 
 const Footer = () => {
+  const dict = useDictionary();
   const NavigationSection = ({
     title,
     items,
     links
   }: {
     title: string;
-    items: string[];
+    items: (string | undefined)[];
     links: string[];
   }) => (
     <>
@@ -24,55 +28,21 @@ const Footer = () => {
     </>
   );
 
+  const cesium = { text: dict.cesium }
+
   const sections = [
-    {
-      title: "CeSIUM",
-      items: ["Notícias", "Sobre Nós", "Equipa", "Departamentos"],
-      links: ["#", "#", "#", "#"],
-    },
-    {
-      title: "Atividades",
-      items: ["Projetos", "Eventos", "Parcerias"],
-      links: ["#", "#", "#"],
-    },
-    {
-      title: "Estudantes",
-      items: ["Torna-te sócio", "Torna-te colaborador", "Anuário"],
-      links: ["#", "#", "#"],
-    },
-    {
-      title: "Links Úteis",
-      items: ["Calendarium", "Blackboard", "Portal do Aluno", "Página de LEI"],
-      links: ["#", "#", "#", "#"],
-    },
+    { title: dict.footer.section1.title || "", items: [dict.footer.section1.items[0], dict.footer.section1.items[1], dict.footer.section1.items[2], dict.footer.section1.items[3]], links: ["#", "#", "#", "#"]},
+    { title: dict.footer.section2.title || "", items: [dict.footer.section2.items[0], dict.footer.section2.items[1], dict.footer.section2.items[2]], links: ["#", "#", "#"]},
+    { title: dict.footer.section3.title || "", items: [dict.footer.section3.items[0], dict.footer.section3.items[1], dict.footer.section3.items[2]], links: ["#", "#", "#"]},
+    { title: dict.footer.section4.title || "", items: [dict.footer.section4.items[0], dict.footer.section4.items[1], dict.footer.section4.items[2], dict.footer.section4.items[3]], links: ["#", "#", "#", "#"]},
   ];
 
-  const socialLinks = [
-    { 
-      icon: "facebook.svg", 
-      alt: "Facebook" ,
-      link: "https://www.facebook.com/cesiuminho"
-    },
-    { 
-      icon: "instagram.svg", 
-      alt: "Instagram",
-      link: "https://www.instagram.com/cesiuminho/"
-    },
-    { 
-      icon: "twitter.svg", 
-      alt: "Twitter",
-      link: "https://x.com/cesiuminho "
-    },
-    { 
-      icon: "github.svg", 
-      alt: "Github",
-      link: "https://github.com/cesium"
-    },
-    { 
-      icon: "youtube.svg", 
-      alt: "Youtube",
-      link: "https://www.youtube.com/@cesiumUM"
-    },
+  const socials = [
+    { name: "Facebook", icon: "facebook.svg", url: "https://www.facebook.com/cesiuminho"},
+    { name: "Instagram", icon: "instagram.svg", url: "https://www.instagram.com/cesiuminho" },
+    { name: "X", icon: "twitter.svg", url: "https://x.com/cesiuminho" },
+    { name: "GitHub", icon: "github.svg", url: "https://github.com/cesium" },
+    { name: "YouTube", icon: "youtube.svg", url: "https://www.youtube.com/c/cesiumUM" },
   ];
 
   const contactInfo = [
@@ -87,15 +57,14 @@ const Footer = () => {
         <div className="w-full sm:w-80 space-y-6 pb-[10px] sm:pb-[0px] sm:mt-[50px]">
           <Image src="cesium.svg" alt="" width={32} height={37}/>
           <p className="leading-[17px] text-[14px] text-[#94959C]">
-            CeSIUM - Centro de Estudantes de Engenharia Informática da
-            Universidade do Minho
+            {cesium.text}
           </p>
           <div className="flex h-[30px] justify-left space-x-[20px]">
-            {socialLinks.map((social, index) => (
-              <a key={index} href={social.link} target="_blank">
+            {socials.map((social, index) => (
+              <a key={index} href={social.url} target="_blank">
                 <Image
                   src={social.icon}
-                  alt={social.alt}
+                  alt={social.name}
                   width={26}
                   height={26}
                   className="w-[26px] h-[26px]" 

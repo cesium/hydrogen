@@ -1,4 +1,5 @@
 {
+  "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da Universidade do Minho",
   "caos": {
     "name": ["Centro de Apoio ao", "Open Source"],
     "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
@@ -45,4 +46,23 @@
     "projects": "Projetos"
   },
   "social_media": "Redes sociais"
+  ,
+  "footer": {
+    "section1": {
+      "title": "CeSIUM",
+      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"]
+    },
+    "section2": {
+      "title": "Atividades",
+      "items": ["Projetos", "Eventos", "Parcerias"]
+    },
+    "section3": {
+      "title": "Estudantes",
+      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"] 
+    },
+    "section4": {
+      "title": "Links Úteis",
+      "items": ["Calendarium", "Blackboard", "Portal do Aluno", "Página de LEI"]
+    }
+  }
 }
