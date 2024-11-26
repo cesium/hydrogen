@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 1000">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-4 {
+        fill: #eb784f;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="234.09" y1="1047.8" x2="1361.03" y2="116.03" gradientTransform="translate(81.26 -97.79) rotate(7.38)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="164.53" y1="947.12" x2="1432.82" y2="214.87" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".6"/>
+    </linearGradient>
+    <radialGradient id="radial-gradient" cx="944.91" cy="472.59" fx="944.91" fy="472.59" r="410.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#efaf98"/>
+      <stop offset="1" stop-color="#eb784f"/>
+    </radialGradient>
+  </defs>
+  <rect class="cls-4" y="0" width="1600" height="1000"/>
+  <g>
+    <rect class="cls-3" x="157.78" y="177.6" width="1281.79" height="806.79" rx="47.14" ry="47.14" transform="translate(-68.02 107.42) rotate(-7.38)"/>
+    <path class="cls-1" d="M1341.8,109.27c21.08,0,39.02,15.79,41.73,36.73l91.53,706.61c2.99,23.04-13.33,44.22-36.38,47.21l-1177.67,152.56c-1.82.24-3.66.35-5.47.35-21.08,0-39.02-15.79-41.73-36.73L122.28,309.38c-1.45-11.16,1.54-22.22,8.41-31.14,6.87-8.92,16.8-14.62,27.97-16.07L1336.33,109.62c1.82-.24,3.66-.35,5.47-.35h0M1341.8,104.27c-2.02,0-4.06.13-6.12.4L158.02,257.22c-25.82,3.34-44.04,26.99-40.69,52.81l91.53,706.61c3.08,23.76,23.35,41.09,46.69,41.09,2.02,0,4.06-.13,6.12-.4l1177.67-152.56c25.82-3.34,44.04-26.99,40.69-52.81l-91.53-706.61c-3.08-23.76-23.35-41.09-46.69-41.09h0Z"/>
+  </g>
+  <path class="cls-2" d="M741.98,625.65l-51.96-19.77-9.44-55.58,113.99,43.27,9.44,55.58-62.04-23.5ZM723.08,434.86l42.52-35.81,175.81,65.44-143.58,120.36-113.88-42.61,42.52-35.81,61.93,22.84,58.54-48.74-123.85-45.68ZM715.34,440.94l113.88,42.6-42.52,35.81-61.93-22.84-50.92,42-51.96-19.77,93.43-77.81ZM618.66,527.47l51.96,19.77,11.12,65.5,61.93,22.84,9.44,55.58-113.99-43.27-20.45-120.42ZM640.91,658.47l123.31,46.45-11.12-65.5,51.96,19.77,20.45,120.42-175.26-66.21-9.33-54.92ZM834.68,778.04l-20.45-120.42,93.43-77.81,9.44,55.58-50.92,42,11.12,65.5-42.63,35.15ZM978.92,657.57l-93.43,77.81-9.33-54.92,93.43-77.81,9.33,54.92ZM925.28,627.88l-8.54-50.28,47.57,17.79-39.03,32.5ZM956.78,527.23l-144.35,119.81-9.44-55.58,144.23-120.48,9.55,56.24Z"/>
+</svg>

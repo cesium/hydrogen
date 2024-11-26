@@ -1,0 +1,48 @@
+{
+  "caos": {
+    "name": ["Centro de Apoio ao", "Open Source"],
+    "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
+    "icon": "terminal"
+  },
+  "dmc": {
+    "name": ["Departamento de", "Marketing e Conteúdo"],
+    "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
+    "icon": "lightbulb"
+  },
+  "drem": {
+    "name": ["Departamento de", "Relações Externas e Merch"],
+    "description": "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
+    "icon": "handshake"
+  },
+  "ped": {
+    "name": ["Departamento", "Pedagógico"],
+    "description": "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
+    "icon": "draw"
+  },
+  "rec": {
+    "name": ["Departamento", "Recreativo"],
+    "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
+    "icon": "celebration"
+  },
+  "button": {
+    "see_team": "Ver direção",
+    "learn_more": "Saber mais"
+  },
+  "collaborate_card": {
+    "title": "Torna-te colaborador",
+    "text": "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar."
+  },
+  "member_card": {
+    "title": "Torna-te sócio",
+    "text": "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios."
+  },
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre Nós",
+    "events": "Eventos",
+    "partners": "Parcerias",
+    "store": "Loja",
+    "projects": "Projetos"
+  },
+  "social_media": "Redes sociais"
+}
