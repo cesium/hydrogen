@@ -2,6 +2,7 @@
 
 import { useDictionary } from "@/contexts/dictionary-provider";
 import Image from 'next/image';
+import IconSocial from "public/icons/icon_social";
 
 const Footer = () => {
   const dict = useDictionary();
@@ -39,11 +40,11 @@ const Footer = () => {
   ];
 
   const socials = [
-    { name: "Facebook", icon: "facebook.svg", url: "https://www.facebook.com/cesiuminho"},
-    { name: "Instagram", icon: "instagram.svg", url: "https://www.instagram.com/cesiuminho" },
-    { name: "X", icon: "twitter.svg", url: "https://x.com/cesiuminho" },
-    { name: "GitHub", icon: "github.svg", url: "https://github.com/cesium" },
-    { name: "YouTube", icon: "youtube.svg", url: "https://www.youtube.com/c/cesiumUM" },
+    { name: "Facebook", icon: "facebook" , url: "https://www.facebook.com/cesiuminho"},
+    { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/cesiuminho" },
+    { name: "X", icon: "x", url: "https://x.com/cesiuminho" },
+    { name: "GitHub", icon: "github", url: "https://github.com/cesium" },
+    { name: "YouTube", icon: "youtube", url: "https://www.youtube.com/c/cesiumUM" },
   ];
 
   const contactInfo = [
@@ -53,25 +54,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer className=" flex flex-col sm:flex-row place-items-center sm:place-items-end  px-[20px] pb-[70px] pt-[32px] sm:px-[30px] md:px-[100px] mt-8 bg-[#EBEBEB]">
+    <footer className=" flex flex-col sm:flex-row place-items-center sm:place-items-end  px-[20px] pb-[70px] pt-[32px] sm:px-[30px] md:px-[100px] bg-[#EBEBEB]">
       <div className="flex flex-col sm:flex-col-reverse w-full sm:w-1/2 max-w-[500px] sm:max-w-max place-items-center md:place-items-start justify-center space-y-[22px]">
         <div className="w-full sm:w-80 space-y-6 pb-[10px] sm:pb-[0px] sm:mt-[50px]">
-          <Image src="cesium.svg" alt="" width={32} height={37}/>
+          <Image src="logo/cesium.svg" alt="" width={32} height={37}/>
           <p className="leading-[17px] text-[14px] text-[#94959C]">
             {cesium.text}
           </p>
           <div className="flex h-[30px] justify-left space-x-[20px]">
-            {socials.map((social, index) => (
-              <a key={index} href={social.url} target="_blank">
-                <Image
-                  src={social.icon}
-                  alt={social.name}
-                  width={26}
-                  height={26}
-                  className="w-[26px] h-[26px]" 
-                />  
-              </a>
-            ))}
+            {socials.map((social, index) => {
+              return (
+                <a key={index} href={social.url} target="_blank">
+                  <IconSocial type={social.icon} width={26} height={26} fill="#6C757D" />  
+                </a>
+              )
+            })}
           </div>
         </div>
         <div className="w-full">
