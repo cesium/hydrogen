@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Rafael Remondes",
+            "role": "Presidente"
+          },
+          {
+            "name": "António Cascais",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Helena Alves",
+            "role": "Secretária"
+          },
+          {
+            "name": "Daniel Araújo",
+            "role": "Tesoureiro"
+          }
+        ]
+      },
+      {
+        "name": "Centro de Apoio ao Open Source",
+        "members": [
+          {
+            "name": "Gabriel Poça",
+            "role": "Diretor"
+          },
+          {
+            "name": "André Santos",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Pedagógico",
+        "members": [
+          {
+            "name": "Fábio Catalão",
+            "role": "Diretor"
+          },
+          {
+            "name": "Pedro Maia",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Pedro Duarte",
+            "role": "Diretor"
+          },
+          {
+            "name": "Serafim Pinto",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Mário Leite",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Comunicação e Imagem",
+        "members": [
+          {
+            "name": "Hugo Frade",
+            "role": "Diretor"
+          },
+          {
+            "name": "Ricardo Branco",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Relações Externas e Parcerias",
+        "members": [
+          {
+            "name": "Miguel Gomes",
+            "role": "Diretor"
+          },
+          {
+            "name": "Diogo Alves",
+            "role": "Codiretor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "André Pimenta",
+        "role": "Presidente"
+      },
+      {
+        "name": "João Brandão",
+        "role": "Secretário"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "Nuno Carvalho",
+        "role": "Presidente"
+      },
+      {
+        "name": "Milton Nunes",
+        "role": "Secretário"
+      }
+    ]
+  }
+]

@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Sofia Gomes",
+            "role": "Presidente"
+          },
+          {
+            "name": "Alexandre Gomes",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Gonçalo Rodrigues",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Vitor Leite",
+            "role": "Tesoureiro"
+          },
+          {
+            "name": "Beatriz Rodrigues",
+            "role": "Secretária"
+          }
+        ]
+      },
+      {
+        "name": "Centro de Apoio ao Open Source",
+        "members": [
+          {
+            "name": "Rui Oliveira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Rui Lopes",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Tiago Pereira",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Enzo Vieira",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Marketing e Conteúdo",
+        "members": [
+          {
+            "name": "Gustavo Pereira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Júlio Pinto",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Ricardo Lucena",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Alexandre Neves",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Lara Pereira",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Merchandising e Parcerias",
+        "members": [
+          {
+            "name": "Gerson Junior",
+            "role": "Diretor"
+          },
+          {
+            "name": "Miguel Gramoso",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Inês Marinho",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Pedagógico",
+        "members": [
+          {
+            "name": "Henrique Pereira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Daniel Pereira",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Pedro Sousa",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Leonardo Freitas",
+            "role": "Diretor"
+          },
+          {
+            "name": "Gonçalo Costa",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Martim Ferreira",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Vogais",
+        "members": [
+          {
+            "name": "Gabriela Prata",
+            "role": "Vogal"
+          },
+          {
+            "name": "Jéssica Fernandes",
+            "role": "Vogal"
+          },
+          {
+            "name": "José Ferreira",
+            "role": "Vogal"
+          },
+          {
+            "name": "Matilde Bravo",
+            "role": "Vogal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "Tiago Soares",
+        "role": "Presidente"
+      },
+      {
+        "name": "Pedro António",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Marco Pereira",
+        "role": "Secretário"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "Filipe Felício",
+        "role": "Presidente"
+      },
+      {
+        "name": "Luís Araújo",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Rui Armada",
+        "role": "Secretário"
+      }
+    ]
+  }
+]

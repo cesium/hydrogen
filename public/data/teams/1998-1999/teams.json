@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Carlos Oliveira",
+            "role": "Presidente"
+          },
+          {
+            "name": "José Dias",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Tânia Barros",
+            "role": "Secretária"
+          },
+          {
+            "name": "Sara Magalhães",
+            "role": "Tesoureira"
+          },
+          {
+            "name": "Paulo Margaça",
+            "role": "Vogal"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Sistemas e Informação",
+        "members": [
+          {
+            "name": "Marco Gonçalves",
+            "role": "Diretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo e Cultural",
+        "members": [
+          {
+            "name": "Ricardo Tadeu",
+            "role": "Diretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Imagem e Relações Externas",
+        "members": [
+          {
+            "name": "Hugo Silva",
+            "role": "Diretor"
+          }
+        ]
+      }
+    ]
+  }
+]

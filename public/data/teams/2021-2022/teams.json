@@ -1,0 +1,151 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Nelson Estevão",
+            "role": "Presidente"
+          },
+          {
+            "name": "Maria Pires",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Filipe Felício",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Carlos Ferreira",
+            "role": "Tesoureiro"
+          },
+          {
+            "name": "Beatriz Rocha",
+            "role": "Secretária"
+          }
+        ]
+      },
+      {
+        "name": "Centro de Apoio ao Open Source",
+        "members": [
+          {
+            "name": "João Teixeira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Matilde Bravo",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Rui Oliveira",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Marketing e Conteúdo",
+        "members": [
+          {
+            "name": "Luis Araújo",
+            "role": "Diretor"
+          },
+          {
+            "name": "Gabriela Prata",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Gustavo Pereira",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Sofia Gomes",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Tiago Soares",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Merchandising e Parcerias",
+        "members": [
+          {
+            "name": "Marco Pereira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Alexandre Gomes",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Pedagógico",
+        "members": [
+          {
+            "name": "Vitor Leite",
+            "role": "Diretor"
+          },
+          {
+            "name": "Beatriz Rodrigues",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Sofia Santos",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Gonçalo Rodrigues",
+            "role": "Diretor"
+          },
+          {
+            "name": "Jéssica Fernandes",
+            "role": "Codiretora"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "Miguel Brandão",
+        "role": "Presidente"
+      },
+      {
+        "name": "Francisco Lopes",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Pedro António",
+        "role": "Secretário"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "José Peixoto",
+        "role": "Presidente"
+      },
+      {
+        "name": "Tânia Rocha",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Manuel Carvalho",
+        "role": "Secretário"
+      }
+    ]
+  }
+]
