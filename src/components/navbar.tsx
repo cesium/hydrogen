@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import IconSocial from "public/icons/icon_social";
+import IconSocial from "@/components/social-icon";
 
 const Navbar = () => {
   const dict = useDictionary();

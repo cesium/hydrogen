@@ -1,4 +1,4 @@
-const IconSocial = ({type, width, height, fill}: {type: string, width: number, height: number, fill: string}) => {
+const SocialIcon = ({type, width, height, fill}: {type: string, width: number, height: number, fill: string}) => {
     switch(type) {
         case "facebook":
             return (
@@ -56,4 +56,4 @@ const IconSocial = ({type, width, height, fill}: {type: string, width: number, h
     
 }
 
-export default IconSocial
+export default SocialIcon
