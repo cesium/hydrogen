@@ -45,9 +45,9 @@
     "store": "Loja",
     "projects": "Projetos"
   },
-  "social_media": "Redes sociais"
-  ,
-  "sections": [{
+  "social_media": "Redes sociais",
+  "sections": [
+    {
       "title": "CeSIUM",
       "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"],
       "links": ["#", "#", "#", "#"]
@@ -64,8 +64,13 @@
     },
     {
       "title": "Links Úteis",
-      "items": ["Calendarium", "Blackboard", "Portal do Aluno", "Página de LEI"],
+      "items": [
+        "Calendarium",
+        "Blackboard",
+        "Portal do Aluno",
+        "Página de LEI"
+      ],
       "links": ["#", "#", "#", "#"]
-    }]
+    }
+  ]
 }
-

@@ -45,9 +45,9 @@
     "store": "Store",
     "projects": "Projects"
   },
-  "social_media": "Social media"
-  ,
-  "sections": [{
+  "social_media": "Social media",
+  "sections": [
+    {
       "title": "CeSIUM",
       "items": ["News", "About Us", "Team", "Departments"],
       "links": ["#", "#", "#", "#"]
@@ -64,7 +64,13 @@
     },
     {
       "title": "Links Úteis",
-      "items": ["Calendarium", "Blackboard", "Academic Portal", "Computer Engineering Page"],
+      "items": [
+        "Calendarium",
+        "Blackboard",
+        "Academic Portal",
+        "Computer Engineering Page"
+      ],
       "links": ["#", "#", "#", "#"]
-    }]
+    }
+  ]
 }

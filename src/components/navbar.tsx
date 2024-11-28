@@ -132,7 +132,12 @@ const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <IconSocial width={26} height={26} type={social.name.toLowerCase()} fill="#94959C" />
+                        <IconSocial
+                          width={26}
+                          height={26}
+                          type={social.name.toLowerCase()}
+                          fill="#94959C"
+                        />
                       </Link>
                     </motion.li>
                   ))}
