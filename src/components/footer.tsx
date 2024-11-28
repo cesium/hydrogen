@@ -51,21 +51,13 @@ const Footer = () => {
         </div>
         <div className="w-full">
           <div className="grid w-full  min-w-[300px] grid-cols-2 gap-x-10 gap-y-8 sm:min-w-[600px] sm:grid-cols-4">
-            {dict.sections.map((section) => (
-              <div>
+            {dict.sections.map((section, index) => (
+              <div key={index}>
                 <h3 className="mb-3 text-stone">{section.title}</h3>
                 <ul className="space-y-3">
                   {section.items.map((item, index) => (
-                    <li className="text-sm text-gray">
-                      <Link
-                        href={
-                          section.links && section.links[index]
-                            ? section.links[index]
-                            : "#"
-                        }
-                      >
-                        {item}
-                      </Link>
+                    <li key={index} className="text-sm text-gray">
+                      <Link href={section.links?.[index] ?? "#"}>{item}</Link>
                     </li>
                   ))}
                 </ul>
