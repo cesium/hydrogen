@@ -47,22 +47,24 @@
   },
   "social_media": "Social media"
   ,
-  "footer": {
-    "section1": {
+  "sections": [{
       "title": "CeSIUM",
-      "items": ["News", "About Us", "Team", "Departments"]
+      "items": ["News", "About Us", "Team", "Departments"],
+      "links": ["#", "#", "#", "#"]
     },
-    "section2": {
+    {
       "title": "Activities",
-      "items": ["Projects", "Events", "Partnerships"]
+      "items": ["Projects", "Events", "Partnerships"],
+      "links": ["#", "#", "#"]
     },
-    "section3": {
-      "title": "Students",
-      "items": ["Memberships", "Become a Collaborator", "Annuary"] 
+    {
+      "title": "Estudantes",
+      "items": ["Memberships", "Collaborators", "Anuary"],
+      "links": ["#", "#", "#"]
     },
-    "section4": {
-      "title": "Useful Links",
-      "items": ["Calendarium", "Blackboard", "Academic Portal", "Software Engineering Page"]
-    }
-  }
+    {
+      "title": "Links Úteis",
+      "items": ["Calendarium", "Blackboard", "Academic Portal", "Computer Engineering Page"],
+      "links": ["#", "#", "#", "#"]
+    }]
 }

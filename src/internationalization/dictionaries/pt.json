@@ -47,22 +47,25 @@
   },
   "social_media": "Redes sociais"
   ,
-  "footer": {
-    "section1": {
+  "sections": [{
       "title": "CeSIUM",
-      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"]
+      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"],
+      "links": ["#", "#", "#", "#"]
     },
-    "section2": {
+    {
       "title": "Atividades",
-      "items": ["Projetos", "Eventos", "Parcerias"]
+      "items": ["Projetos", "Eventos", "Parcerias"],
+      "links": ["#", "#", "#"]
     },
-    "section3": {
+    {
       "title": "Estudantes",
-      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"] 
+      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"],
+      "links": ["#", "#", "#"]
     },
-    "section4": {
+    {
       "title": "Links Úteis",
-      "items": ["Calendarium", "Blackboard", "Portal do Aluno", "Página de LEI"]
-    }
-  }
+      "items": ["Calendarium", "Blackboard", "Portal do Aluno", "Página de LEI"],
+      "links": ["#", "#", "#", "#"]
+    }]
 }
+
