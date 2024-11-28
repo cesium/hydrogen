@@ -20,7 +20,7 @@ const config: Config = {
         stroke: "#D4D4D8",
         black: "#27272A",
         gray: "#94959C",
-        stone: "#6C757D",
+        stone: "#27272A",
         blue: "#5069ED",
       },
       fontFamily: {

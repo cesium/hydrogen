@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import IconSocial from "@/components/social-icon";
 
 const Navbar = () => {
   const dict = useDictionary();
@@ -131,11 +132,11 @@ const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Image
-                          src={`/icons/${social.name.toLowerCase()}.svg`}
-                          alt={`${social.name} Logo Icon`}
-                          height={26}
+                        <IconSocial
                           width={26}
+                          height={26}
+                          type={social.name.toLowerCase()}
+                          fill="#94959C"
                         />
                       </Link>
                     </motion.li>
