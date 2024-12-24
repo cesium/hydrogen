@@ -46,6 +46,13 @@
     "projects": "Projetos"
   },
   "social_media": "Redes sociais",
+  "socials": [
+    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
+    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
+    { "name": "X", "url": "https://x.com/cesiuminho" },
+    { "name": "GitHub", "url": "https://github.com/cesium" },
+    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+  ],
   "sections": [
     {
       "title": "CeSIUM",

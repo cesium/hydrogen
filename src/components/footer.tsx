@@ -8,38 +8,23 @@ import Link from "next/link";
 const Footer = () => {
   const dict = useDictionary();
 
-  const socials = [
-    {
-      name: "Facebook",
-      icon: "facebook",
-      url: "https://www.facebook.com/cesiuminho",
-    },
-    {
-      name: "Instagram",
-      icon: "instagram",
-      url: "https://www.instagram.com/cesiuminho",
-    },
-    { name: "X", icon: "x", url: "https://x.com/cesiuminho" },
-    { name: "GitHub", icon: "github", url: "https://github.com/cesium" },
-    {
-      name: "YouTube",
-      icon: "youtube",
-      url: "https://www.youtube.com/c/cesiumUM",
-    },
-  ];
-
   return (
-    <footer className=" flex flex-col place-items-center bg-[#EBEBEB] px-5  pb-[70px] pt-8 sm:flex-row sm:place-items-end sm:px-[30px] md:px-[100px]">
-      <div className="flex w-full max-w-[500px] flex-col place-items-center justify-center space-y-[22px] sm:w-1/2 sm:max-w-max sm:flex-col-reverse md:place-items-start">
+    <footer className=" flex flex-col place-items-center bg-[#EBEBEB] px-5 pb-16 pt-8 sm:flex-row sm:place-items-end sm:px-7 md:px-20">
+      <div className="flex w-full max-w-[500px] flex-col place-items-center justify-center space-y-5 sm:w-1/2 sm:max-w-max sm:flex-col-reverse md:place-items-start">
         <div className="w-full space-y-6 pb-2.5 sm:mt-[50px] sm:w-80 sm:pb-0">
           <Image src="logo/cesium.svg" alt="" width={32} height={37} />
           <p className="text-sm leading-[17px] text-[#94959C]">{dict.cesium}</p>
           <div className="justify-left flex h-[30px] space-x-5">
-            {socials.map((social, index) => {
+            {dict.socials.map((social) => {
               return (
-                <Link key={index} href={social.url} target="_blank">
+                <Link
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <SocialIcon
-                    type={social.icon}
+                    type={social.name.toLowerCase()}
                     width={26}
                     height={26}
                     fill="#6C757D"
