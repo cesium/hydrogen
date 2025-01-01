@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import SocialIcon from "@/components/social-icon";
 
 const Navbar = () => {
   const dict = useDictionary();
@@ -28,14 +29,6 @@ const Navbar = () => {
     { name: dict.navbar.partners, path: "/partners" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
     { name: dict.navbar.projects, path: "/projects" },
-  ];
-
-  const socials = [
-    { name: "Facebook", url: "https://www.facebook.com/cesiuminho" },
-    { name: "Instagram", url: "https://www.instagram.com/cesiuminho" },
-    { name: "X", url: "https://x.com/cesiuminho" },
-    { name: "GitHub", url: "https://github.com/cesium" },
-    { name: "YouTube", url: "https://www.youtube.com/c/cesiumUM" },
   ];
 
   return (
@@ -119,7 +112,7 @@ const Navbar = () => {
                   {dict.social_media}
                 </motion.p>
                 <ul className="flex space-x-4">
-                  {socials.map((social, i) => (
+                  {dict.socials.map((social, i) => (
                     <motion.li
                       key={social.name}
                       initial={{ scale: 0.9, opacity: 0 }}
@@ -131,11 +124,11 @@ const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Image
-                          src={`/icons/${social.name.toLowerCase()}.svg`}
-                          alt={`${social.name} Logo Icon`}
-                          height={26}
+                        <SocialIcon
                           width={26}
+                          height={26}
+                          type={social.name.toLowerCase()}
+                          fill="#94959C"
                         />
                       </Link>
                     </motion.li>

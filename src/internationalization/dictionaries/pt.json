@@ -1,4 +1,5 @@
 {
+  "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da Universidade do Minho",
   "caos": {
     "name": ["Centro de Apoio ao", "Open Source"],
     "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
@@ -44,5 +45,39 @@
     "store": "Loja",
     "projects": "Projetos"
   },
-  "social_media": "Redes sociais"
+  "social_media": "Redes sociais",
+  "socials": [
+    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
+    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
+    { "name": "X", "url": "https://x.com/cesiuminho" },
+    { "name": "GitHub", "url": "https://github.com/cesium" },
+    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+  ],
+  "sections": [
+    {
+      "title": "CeSIUM",
+      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"],
+      "links": ["#", "#", "#", "#"]
+    },
+    {
+      "title": "Atividades",
+      "items": ["Projetos", "Eventos", "Parcerias"],
+      "links": ["#", "#", "#"]
+    },
+    {
+      "title": "Estudantes",
+      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"],
+      "links": ["#", "#", "#"]
+    },
+    {
+      "title": "Links Úteis",
+      "items": [
+        "Calendarium",
+        "Blackboard",
+        "Portal do Aluno",
+        "Página de LEI"
+      ],
+      "links": ["#", "#", "#", "#"]
+    }
+  ]
 }
