@@ -61,7 +61,7 @@ export default function Team() {
     <main className="flex-col items-center justify-center">
       <div className="mb-10 flex flex-col gap-4">
         <Link
-          href=""
+          href="/about"
           className="flex items-center gap-1 font-medium text-primary"
         >
           <span className="material-symbols-outlined">arrow_back</span>
