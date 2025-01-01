@@ -1,0 +1,165 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Francisco Costa",
+            "role": "Presidente"
+          },
+          {
+            "name": "Sérgio Costa",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Bruno Cancelinha",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Francisco Lira",
+            "role": "Tesoureiro"
+          },
+          {
+            "name": "João Vilaça",
+            "role": "Secretário"
+          }
+        ]
+      },
+      {
+        "name": "Centro de Apoio ao Open Source",
+        "members": [
+          {
+            "name": "Daniel Tinoco",
+            "role": "Diretor"
+          },
+          {
+            "name": "José Resende",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Pedagógico",
+        "members": [
+          {
+            "name": "Nelson Estevão",
+            "role": "Diretor"
+          },
+          {
+            "name": "Pedro Lima",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Diogo Sobral",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Nuno Silva",
+            "role": "Diretor"
+          },
+          {
+            "name": "Tiago Monteiro",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Comunicação",
+        "members": [
+          {
+            "name": "Catarina Machado",
+            "role": "Diretora"
+          },
+          {
+            "name": "Eduardo Jorge Barbosa",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Imagem",
+        "members": [
+          {
+            "name": "Lúcia Abreu",
+            "role": "Diretora"
+          },
+          {
+            "name": "Pedro Pinto",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Maria Pires",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Relações Externas e Parcerias",
+        "members": [
+          {
+            "name": "José Bastos",
+            "role": "Diretor"
+          },
+          {
+            "name": "Sara Pereira",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Tiago Alves",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Vogais",
+        "members": [
+          {
+            "name": "Ricardo Certo",
+            "role": "Vogal"
+          },
+          {
+            "name": "Maria Dias",
+            "role": "Vogal"
+          },
+          {
+            "name": "Luís Neto",
+            "role": "Vogal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "João Coelho",
+        "role": "Presidente"
+      },
+      {
+        "name": "Adriana Guedes",
+        "role": "Secretária"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "Luís Fernandes",
+        "role": "Presidente"
+      },
+      {
+        "name": "Rui Oliveira",
+        "role": "Secretário"
+      }
+    ]
+  }
+]

@@ -27,7 +27,8 @@
   },
   "button": {
     "see_team": "Go to team",
-    "learn_more": "Learn more"
+    "learn_more": "Learn more",
+    "back": "Go Back"
   },
   "collaborate_card": {
     "title": "Become a collaborator",
@@ -44,6 +45,16 @@
     "partners": "Partners",
     "store": "Store",
     "projects": "Projects"
+  },
+  "about": {
+    "team": {
+      "title": "Team",
+      "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
+      "team_selector": {
+        "default_option": "Current mandate",
+        "hint": "Select mandate"
+      }
+    }
   },
   "social_media": "Social media",
   "socials": [

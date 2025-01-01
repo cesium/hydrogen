@@ -27,7 +27,8 @@
   },
   "button": {
     "see_team": "Ver direção",
-    "learn_more": "Saber mais"
+    "learn_more": "Saber mais",
+    "back": "Voltar"
   },
   "collaborate_card": {
     "title": "Torna-te colaborador",
@@ -44,6 +45,16 @@
     "partners": "Parcerias",
     "store": "Loja",
     "projects": "Projetos"
+  },
+  "about": {
+    "team": {
+      "title": "Equipa",
+      "description": "Estes são alguns dos elementos da nossa equipa, da presidência às direções dos departamentos, assembleia geral e conselho fiscal.",
+      "team_selector": {
+        "default_option": "Atual mandato",
+        "hint": "Selecionar mandato"
+      }
+    }
   },
   "social_media": "Redes sociais",
   "socials": [

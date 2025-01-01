@@ -1,0 +1,192 @@
+[
+  {
+    "name": "Direção",
+    "departments": [
+      {
+        "name": "Presidência",
+        "members": [
+          {
+            "name": "Gustavo Pereira",
+            "role": "Presidente"
+          },
+          {
+            "name": "Rui Oliveira",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Júlio Pinto",
+            "role": "Vice-Presidente"
+          },
+          {
+            "name": "Mário Rodrigues",
+            "role": "Tesoureiro"
+          },
+          {
+            "name": "Lara Pereira",
+            "role": "Secretária"
+          }
+        ]
+      },
+      {
+        "name": "Centro de Apoio ao Open Source",
+        "members": [
+          {
+            "name": "João Lobo",
+            "role": "Diretor"
+          },
+          {
+            "name": "Afonso Martins",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Diogo Matos",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Filipe Rodrigues",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Nuno Fernandes",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Marketing e Conteúdo",
+        "members": [
+          {
+            "name": "Rita Camacho",
+            "role": "Diretora"
+          },
+          {
+            "name": "Eduardo Faria",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Marta Rodrigues",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Sara Silva",
+            "role": "Codiretora"
+          },
+          {
+            "name": "Zita Duarte",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento de Relações Externas e Merchandising",
+        "members": [
+          {
+            "name": "Martim Ferreira",
+            "role": "Diretor"
+          },
+          {
+            "name": "Salomé Faria",
+            "role": "Codiretora"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Pedagógico",
+        "members": [
+          {
+            "name": "Fernando Pires",
+            "role": "Diretor"
+          },
+          {
+            "name": "Heitor Fernandes",
+            "role": "Codiretor"
+          },
+          {
+            "name": "Humberto Gomes",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Departamento Recreativo",
+        "members": [
+          {
+            "name": "Filipa Pinto",
+            "role": "Diretora"
+          },
+          {
+            "name": "Gonçalo Freitas",
+            "role": "Codiretor"
+          },
+          {
+            "name": "José Correia",
+            "role": "Codiretor"
+          }
+        ]
+      },
+      {
+        "name": "Vogais",
+        "members": [
+          {
+            "name": "Afonso Dionísio",
+            "role": "Vogal"
+          },
+          {
+            "name": "Alexandre Machado",
+            "role": "Vogal"
+          },
+          {
+            "name": "Eduarda Vieira",
+            "role": "Vogal"
+          },
+          {
+            "name": "Gonçalo Costa",
+            "role": "Vogal"
+          },
+          {
+            "name": "Hélder Gomes",
+            "role": "Vogal"
+          },
+          {
+            "name": "Miguel Gramoso",
+            "role": "Vogal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mesa da Assembleia Geral",
+    "members": [
+      {
+        "name": "Vitor Lelis",
+        "role": "Presidente"
+      },
+      {
+        "name": "Rafael Seara",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Carlos Ribeiro",
+        "role": "Secretário"
+      }
+    ]
+  },
+  {
+    "name": "Conselho Fiscal",
+    "members": [
+      {
+        "name": "Jéssica Fernandes",
+        "role": "Presidente"
+      },
+      {
+        "name": "Inês Ferreira",
+        "role": "Vice-Presidente"
+      },
+      {
+        "name": "Luís Pereira",
+        "role": "Secretário"
+      }
+    ]
+  }
+]

@@ -10,7 +10,7 @@ const CustomLink = ({ title, href, arrow }: LinkProps) => {
   return (
     <Link
       href={href}
-      className="flex items-center gap-1 font-medium text-primary hover:opacity-85 transition-opacity"
+      className="flex items-center gap-1 font-medium text-primary transition-opacity hover:opacity-85"
     >
       {arrow === "back" && (
         <span className="material-symbols-outlined">arrow_{arrow}</span>
