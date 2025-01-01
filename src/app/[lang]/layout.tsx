@@ -4,6 +4,7 @@ import { Inter, Orbitron } from "next/font/google";
 import type { Locale } from "@/internationalization/dictionaries";
 import { DictionaryProvider } from "@/contexts/dictionary-provider";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
         <DictionaryProvider lang={lang}>
           <Navbar />
           <div className="px-5 py-5 md:px-7 md:pb-14 md:pt-12">{children}</div>
+          <Footer />
         </DictionaryProvider>
       </body>
     </html>
