@@ -13,9 +13,10 @@ import {
   generateUrlsForTeams,
   generateYearRanges,
 } from "@/lib/utils";
-import type { TeamData } from "@/lib/types";
+import { CardType, type TeamData } from "@/lib/types";
 import Avatar from "@/components/avatar";
 import { useDictionary } from "@/contexts/dictionary-provider";
+import PromotionalCard from "@/components/promotional-card";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
@@ -232,6 +233,9 @@ export default function Team() {
           }}
         </Disclosure>
       ))}
+      <div className="m-5">
+        <PromotionalCard type={CardType.Collaborate} />
+      </div>
     </main>
   );
 }
