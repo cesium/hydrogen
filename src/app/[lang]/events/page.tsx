@@ -1,3 +1,3 @@
-const Events = () => <></>;
-
-export default Events;
+export default function Events() {
+  return <main>Events</main>;
+}
