@@ -1,4 +1,4 @@
-import type { Member, TeamData } from "@/lib/types";
+import type { Member, MemberInfo, TeamData } from "@/lib/types";
 
 const generateYearRanges = (startYear: number, endYear: number): string[] => {
   const yearRanges = [];
@@ -89,6 +89,33 @@ const generateUrlsForTeams = (
   return urls;
 };
 
+const getDepartmentMembersInfo = (
+  team: TeamData,
+  yearRange: string,
+  departmentName: string,
+): MemberInfo[] => {
+  const imageUrls = generateUrlsForTeams(team, yearRange);
+  const department = getDepartmentByName(team, departmentName);
+
+  if (!department) {
+    return [];
+  }
+
+  return department.members.map((member, index) => {
+    const departmentIndex = team[0]?.departments?.findIndex(
+      (d) => d.name === department.name,
+    );
+
+    if (departmentIndex)
+      return {
+        ...member,
+        imageUrl:
+          imageUrls[0]?.[departmentIndex]?.[index] ?? "/images/none.png",
+      };
+    else return { ...member, imageUrl: "/images/none.png" };
+  });
+};
+
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -100,4 +127,5 @@ export {
   getTeamByName,
   getDepartmentByName,
   classNames,
+  getDepartmentMembersInfo,
 };

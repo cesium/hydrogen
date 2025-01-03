@@ -54,6 +54,10 @@
         "default_option": "Atual mandato",
         "hint": "Selecionar mandato"
       }
+    },
+    "departments": {
+      "title": "Departamentos",
+      "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     }
   },
   "social_media": "Redes sociais",

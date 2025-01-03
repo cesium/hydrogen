@@ -1,3 +1,3 @@
-const Partners = () => <></>;
-
-export default Partners;
+export default function Partners() {
+  return <main>Partners</main>;
+}

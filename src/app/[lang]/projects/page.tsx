@@ -1,3 +1,3 @@
-const Projects = () => <></>;
-
-export default Projects;
+export default function Projects() {
+  return <main>Projects</main>;
+}

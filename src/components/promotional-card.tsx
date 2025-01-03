@@ -1,7 +1,8 @@
 "use client";
 
-import { useDictionary } from "@/contexts/dictionary-provider";
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
+import Link from "next/link";
 
 interface Cardprops {
   type: CardType;
@@ -14,6 +15,7 @@ const getColor = (type: CardType) => {
 const PromotionalCard = ({ type }: Cardprops) => {
   const dict = useDictionary();
   const color = getColor(type);
+  const lang = useLang();
 
   return (
     <div
@@ -52,11 +54,18 @@ const PromotionalCard = ({ type }: Cardprops) => {
       {/* Actions */}
 
       <div className="flex w-full justify-end">
-        <button
+        <Link
           className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 min-[950px]:static min-[950px]:text-base text-${color}`}
+          href={
+            "/" +
+            lang +
+            (type == CardType.Collaborate
+              ? "/about/become-a-collaborator"
+              : "/about/become-a-member")
+          }
         >
           {dict.button.learn_more}
-        </button>
+        </Link>
       </div>
     </div>
   );

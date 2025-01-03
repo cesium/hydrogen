@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Disclosure,
   DisclosureButton,
@@ -6,7 +7,6 @@ import {
 } from "@headlessui/react";
 import ListBox from "@/components/listbox";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 import {
   fetchTeamData,
@@ -17,6 +17,7 @@ import { CardType, type TeamData } from "@/lib/types";
 import Avatar from "@/components/avatar";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import PromotionalCard from "@/components/promotional-card";
+import AppLink from "@/components/link";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
@@ -58,17 +59,11 @@ export default function Team() {
   };
 
   return (
-    <main className="flex-col items-center justify-center">
-      <div className="mb-10 flex flex-col gap-4">
-        <Link
-          href="/about"
-          className="flex items-center gap-1 font-medium text-primary"
-        >
-          <span className="material-symbols-outlined">arrow_back</span>
-          {dict.button.back}
-        </Link>
-        <div className="flex flex-row items-center justify-between gap-5 sm:justify-normal">
-          <h1 className="font-title text-3xl font-medium leading-9">
+    <main className="space-y-8 sm:space-y-12">
+      <div className="flex flex-col gap-4 px-2 md:px-5">
+        <AppLink arrow="back" title={dict.button.back} href="/about" />
+        <div className="flex items-center justify-between gap-5 sm:justify-normal">
+          <h1 className="font-title text-3xl font-medium">
             {dict.about.team.title}
           </h1>
           <ListBox
@@ -83,12 +78,12 @@ export default function Team() {
         <p>{dict.about.team.description}</p>
       </div>
       {team?.map((team, index) => (
-        <Disclosure defaultOpen as="div" className="mb-10" key={index}>
+        <Disclosure defaultOpen as="div" key={index}>
           {({ open }) => {
             return (
               <>
                 <DisclosureButton
-                  className="group mx-1 mb-4 flex w-full items-center justify-between"
+                  className="group mx-1 mb-4 flex w-full items-center justify-between px-2 md:px-5"
                   onClick={() => {
                     isFromDefaultOpen(false);
                     setDisclosureState(true, index, disclosureStates);
@@ -98,7 +93,7 @@ export default function Team() {
                     {team.name}
                   </h2>
                   <span className="material-symbols-outlined text-3xl opacity-50 transition duration-150 group-data-[open]:-scale-100">
-                    arrow_downward
+                    keyboard_arrow_down
                   </span>
                 </DisclosureButton>
 
@@ -154,7 +149,7 @@ export default function Team() {
                                           {department.name}
                                         </h3>
                                         <span className="material-symbols-outlined text-3xl opacity-50 transition duration-150 group-data-[open]:-scale-100">
-                                          arrow_downward
+                                          keyboard_arrow_down
                                         </span>
                                       </DisclosureButton>
                                       <AnimatePresence>
@@ -233,7 +228,7 @@ export default function Team() {
           }}
         </Disclosure>
       ))}
-      <div className="m-5">
+      <div className="px-2 md:px-5">
         <PromotionalCard type={CardType.Collaborate} />
       </div>
     </main>
