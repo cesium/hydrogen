@@ -19,14 +19,14 @@ const AppLink = ({ title, href, arrow }: LinkProps) => {
 
   return arrow === "back" ? (
     <button onClick={() => router.back()} className={style}>
-      <span className="material-symbols-outlined">arrow_{arrow}</span>
+      <span className="material-symbols-outlined">{"arrow_" + arrow}</span>
       <p>{title}</p>
     </button>
   ) : (
     <Link href={arrow === "forward" ? hrefLang : hrefDefault} className={style}>
       <p>{title}</p>
       {(arrow === "forward" || arrow === "outward") && (
-        <span className="material-symbols-outlined">arrow_{arrow}</span>
+        <span className="material-symbols-outlined">{"arrow_" + arrow}</span>
       )}
     </Link>
   );
