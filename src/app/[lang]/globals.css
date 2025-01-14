@@ -52,3 +52,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
 }
+
+.swiper{
+  height: 300px;
+  .swiper-slide{
+    background: #ccc;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+  }
+}
