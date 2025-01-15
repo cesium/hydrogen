@@ -3,32 +3,57 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+import { ReactNode } from "react";
 
-interface ImageCarouselProps {
-  images: string[]; 
+interface CarouselItem {
+  image?: string; 
+  text?: ReactNode;  
 }
 
-export default function ImageCarousel({ images }: ImageCarouselProps) {
+interface CarouselProps {
+  items: CarouselItem[]; 
+}
+
+export default function Carousel({ items }: CarouselProps) {
+  const hasText = items.some((item) => item.text);
+
   return (
     <Swiper
-      spaceBetween={30}
+      slidesPerView={hasText ? 2 : 3} 
+      spaceBetween={20}
       centeredSlides={true}
+      loop={true}
       autoplay={{
-        delay: 2500,
+        delay: 0,
         disableOnInteraction: false,
+      }}
+      speed={3000}
+      breakpoints={{
+        0: { slidesPerView: hasText ? 1 : 2, spaceBetween: 10, }, 
+        768: { slidesPerView: hasText ? 2 : 2, spaceBetween: 15 },
+        1024: { slidesPerView: hasText ? 2: 3, spaceBetween: 20,centeredSlides: hasText ? false : true },
       }}
       pagination={{
         clickable: true,
+        type: "bullets",
       }}
-      navigation={true}
-      modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper"
+      modules={[Autoplay, Pagination]}
+      className="custom-swiper"
     >
-      {images.map((image, index) => (
+      {items.map((item, index) => (
         <SwiperSlide key={index}>
-          <img src={image} alt={`Slide ${index + 1}`} className="w-full h-auto" />
+          {item.image ? (
+            <img
+              src={item.image}
+              alt={`Slide ${index + 1}`}
+              className="carousel-image"
+            />
+          ) : item.text ? (
+            <div className={`carousel-text-wrapper ${index === 0 ? 'first-text' : index === 1 ? 'second-text' : ''}`}>
+              <div className="carousel-text">{item.text}</div>
+            </div>
+          ) : null}
         </SwiperSlide>
       ))}
     </Swiper>
