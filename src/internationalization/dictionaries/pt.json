@@ -58,8 +58,7 @@
     "projects": {
       "title": "Projects",
       "description": "Desde a SEI - a Semana da Engenharia Informática, uma atividade anual que liga estudantes a inovações e empresas - ao CoderDojo - que traz a programação aos mais novos - o CeSIUM cria e participa em vários projetos. Conhece-os aqui.",
-      "card":
-      [
+      "card": [
         {
           "mobile_description": "Realizada anualmente no campus de Gualtar da Universidade do Minho, conjuga inovações tecnológicas com especialistas da área junto dos estudantes.",
           "desktop_description": "A Semana da Engenharia Informática realiza-se anualmente no campus de Gualtar da Universidade do Minho, pretendendo conjugar as maiores inovações tecnológicas da atualidade com os melhores especialistas da área, tudo para oferecer um programa fantástico aos nossos estudantes."
