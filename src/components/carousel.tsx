@@ -7,12 +7,12 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { ReactNode } from "react";
 
 interface CarouselItem {
-  image?: string; 
-  text?: ReactNode;  
+  image?: string;
+  text?: ReactNode;
 }
 
 interface CarouselProps {
-  items: CarouselItem[]; 
+  items: CarouselItem[];
 }
 
 export default function Carousel({ items }: CarouselProps) {
@@ -20,7 +20,7 @@ export default function Carousel({ items }: CarouselProps) {
 
   return (
     <Swiper
-      slidesPerView={hasText ? 2 : 3} 
+      slidesPerView={hasText ? 2 : 3}
       spaceBetween={20}
       centeredSlides={true}
       loop={true}
@@ -30,9 +30,13 @@ export default function Carousel({ items }: CarouselProps) {
       }}
       speed={3000}
       breakpoints={{
-        0: { slidesPerView: hasText ? 1 : 2, spaceBetween: 10, }, 
+        0: { slidesPerView: hasText ? 1 : 2, spaceBetween: 10 },
         768: { slidesPerView: hasText ? 2 : 2, spaceBetween: 15 },
-        1024: { slidesPerView: hasText ? 2: 3, spaceBetween: 20,centeredSlides: hasText ? false : true },
+        1024: {
+          slidesPerView: hasText ? 2 : 3,
+          spaceBetween: hasText ? 10 : 20,
+          centeredSlides: hasText ? false : true,
+        },
       }}
       pagination={{
         clickable: true,
@@ -50,9 +54,7 @@ export default function Carousel({ items }: CarouselProps) {
               className="carousel-image"
             />
           ) : item.text ? (
-            <div className={`carousel-text-wrapper ${index === 0 ? 'first-text' : index === 1 ? 'second-text' : ''}`}>
-              <div className="carousel-text">{item.text}</div>
-            </div>
+            <div>{item.text}</div>
           ) : null}
         </SwiperSlide>
       ))}
