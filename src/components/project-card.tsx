@@ -3,6 +3,7 @@
 import { useDictionary } from "@/contexts/dictionary-provider";
 import Image from "next/image";
 import Link from "next/link";
+import CustomLink from "./link";
 
 const ProjectCard = () => {
   const dict = useDictionary();
@@ -34,14 +35,7 @@ const ProjectCard = () => {
   ];
 
   return (
-    <div className="mb-6 flex flex-col justify-center md:flex-row">
-      <div className="lg:w-100px]">
-        <h2 className="font-title text-2xl font-medium leading-8 md:translate-y-14 md:rotate-[-90deg]">
-          {dict.about.projects.title}
-        </h2>
-      </div>
       <div className="flex flex-col">
-        <p className="pb-10 pt-4">{dict.about.projects.description}</p>
         <div className="flex flex-col md:gap-4 lg:flex-row">
           {dict.about.projects.card.map((project, key) => {
             return (
@@ -65,32 +59,13 @@ const ProjectCard = () => {
                   {project.desktop_description}
                 </p>
                 <div className="mt-4 flex w-16 justify-between">
-                  <Link
-                    className="flex items-center space-x-1 font-medium text-[#ED7950]"
-                    href={info[key]?.ref ?? "#"}
-                    target="_blank"
-                  >
-                    <span>{dict.about.projects.open}</span>
-                    <span className="material-symbols-outlined text-xl font-medium text-[#ED7950]">
-                      arrow_outward
-                    </span>
-                  </Link>
+                  <CustomLink title={dict.about.projects.open} href={info[key]?.ref ?? "#"} arrow="outward"></CustomLink>
                 </div>
               </div>
             );
           })}
         </div>
-        <Link
-          className="my-10 flex hidden items-center space-x-1 font-medium text-[#ED7950] lg:inline-flex"
-          href={"#"}
-        >
-          <span>{dict.about.projects.see_more}</span>
-          <span className="material-symbols-outlined text-xl font-medium text-[#ED7950]">
-            arrow_forward
-          </span>
-        </Link>
       </div>
-    </div>
   );
 };
 
