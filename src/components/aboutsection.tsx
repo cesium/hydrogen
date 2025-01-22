@@ -1,4 +1,8 @@
+"use client";
+
 import CustomLink from "./link";
+import { useDictionary } from "@/contexts/dictionary-provider";
+
 
 interface AboutSectionProps {
   title: string;
@@ -7,6 +11,8 @@ interface AboutSectionProps {
 }
 
 const AboutsectionLayout = ({ title, subtitle, children }: AboutSectionProps) => {
+  const dict = useDictionary(); 
+
   return (
     <div className="flex flex-col items-stretch px-6 pt-10 sm:flex-row sm:p-12">
       <div className="flex w-full mb-4 sm:mr-6 sm:w-20">
@@ -23,7 +29,7 @@ const AboutsectionLayout = ({ title, subtitle, children }: AboutSectionProps) =>
         <div className="sm:my-10 my-7">{children}</div>
 
         <div className="hidden sm:block">
-          <CustomLink title="Ver mais" href="#" arrow="forward" />
+          <CustomLink title={dict.button.see_more} href="#" arrow="forward" />
         </div>
       </div>
     </div>
