@@ -1,3 +1,3 @@
 export default function BecomeAMember() {
-  return <></>;
+  return <main>Become a Member</main>;
 }

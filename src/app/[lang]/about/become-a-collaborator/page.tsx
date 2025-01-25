@@ -1,3 +1,3 @@
 export default function BecomeACollaborator() {
-  return <></>;
+  return <main>Become a Collaborator</main>;
 }
