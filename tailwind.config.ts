@@ -19,7 +19,6 @@ const config: Config = {
         background: "#FAFAFA",
         stroke: "#D4D4D8",
         black: "#27272A",
-        frost: "rgba(256,256,256,0.5)",
         gray: "#94959C",
         stone: "#27272A",
         blue: "#5069ED",

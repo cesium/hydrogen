@@ -42,13 +42,13 @@ const Navbar = () => {
       : pathname === "/about/become-a-collaborator"
         ? "bg-blue"
         : "bg-background";
-  const linkColor = isMemberOrCollaborator ? "text-frost" : "text-gray";
+  const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
   const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
   const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
   const hamburgerMenuColor = isOpen
     ? "text-gray"
     : isMemberOrCollaborator
-      ? "text-white"
+      ? "text-white/50"
       : "text-gray";
 
   return (
@@ -64,6 +64,7 @@ const Navbar = () => {
             alt="CeSIUM Logo Icon"
             fill={`${colorLogo}`}
             className="hidden md:block"
+            fullColor={isMemberOrCollaborator}
           />
           <Logo
             type="cesium-full"
@@ -72,6 +73,7 @@ const Navbar = () => {
             alt="CeSIUM Logo"
             fill={`${colorLogo}`}
             className="block md:hidden"
+            fullColor={isMemberOrCollaborator}
           />
         </Link>
         <div
@@ -83,7 +85,7 @@ const Navbar = () => {
               href={route.path}
               className={`${
                 isCurrent(route.path) ? `${currentLink}` : ""
-              } transition-colors hover:text-black`}
+              } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
             >
               {route.name}
             </Link>
