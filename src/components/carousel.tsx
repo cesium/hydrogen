@@ -16,7 +16,7 @@ interface CarouselProps {
 }
 
 export default function Carousel({ items }: CarouselProps) {
-  const hasText = items.some((item) => item.text);
+  const hasText = items.some((item) => item.text !== undefined);
 
   return (
     <Swiper
