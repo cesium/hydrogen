@@ -54,6 +54,10 @@
         "default_option": "Current mandate",
         "hint": "Select mandate"
       }
+    },
+    "departments": {
+      "title": "Departments",
+      "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     }
   },
   "social_media": "Social media",
@@ -61,6 +65,7 @@
     { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
     { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
     { "name": "X", "url": "https://x.com/cesiuminho" },
+    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
     { "name": "GitHub", "url": "https://github.com/cesium" },
     { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
   ],
