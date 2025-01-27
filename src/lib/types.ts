@@ -20,3 +20,7 @@ export interface Team {
 }
 
 export type TeamData = Team[];
+
+export interface MemberInfo extends Member {
+  imageUrl: string;
+}

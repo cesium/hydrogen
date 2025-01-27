@@ -2,7 +2,7 @@
 
 import { useDictionary } from "@/contexts/dictionary-provider";
 import Image from "next/image";
-import CustomLink from "./link";
+import AppLink from "./link";
 
 interface ProjectProps {
   type: string;
@@ -90,11 +90,11 @@ const ProjectCard = ({ type }: ProjectProps) => {
         {project.desktop_description}
       </p>
       <div className="mt-4 flex w-16 justify-between">
-        <CustomLink
+        <AppLink
           title={dict.about.projects.open}
           href={info().ref}
           arrow="outward"
-        ></CustomLink>
+        ></AppLink>
       </div>
     </div>
   );
