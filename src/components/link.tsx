@@ -13,11 +13,15 @@ const CustomLink = ({ title, href, arrow }: LinkProps) => {
       className="flex items-center gap-1 font-medium text-primary transition-opacity hover:opacity-85"
     >
       {arrow === "back" && (
-        <span className="material-symbols-outlined">arrow_{arrow}</span>
+        <span className="material-symbols-outlined text-xl">arrow_{arrow}</span>
       )}
       <p>{title}</p>
       {(arrow === "forward" || arrow === "outward") && (
-        <span className="material-symbols-outlined">arrow_{arrow}</span>
+        <span
+          className={`material-symbols-outlined text-xl ${arrow === "outward" && "pt-0.5"}`}
+        >
+          arrow_{arrow}
+        </span>
       )}
     </Link>
   );
