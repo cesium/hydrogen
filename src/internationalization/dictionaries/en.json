@@ -55,6 +55,10 @@
         "default_option": "Current mandate",
         "hint": "Select mandate"
       }
+    },
+    "departments": {
+      "title": "Departments",
+      "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     }
   },
   "social_media": "Social media",
