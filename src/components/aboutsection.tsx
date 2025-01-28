@@ -15,7 +15,7 @@ const AboutsectionLayout = ({ title, subtitle, href, children }: AboutSectionPro
   const dict = useDictionary(); 
 
   return (
-    <div className="flex flex-col items-stretch px-1 sm:px-7 pt-10 sm:pt-12 sm:flex-row">
+    <div className="flex flex-col items-stretch py-10 sm:py-12 sm:flex-row">
       <div className="flex items-center w-full mb-4 sm:mr-6 sm:w-20">
         <div className="flex flex-1 h-fit items-center justify-start sm:items-start sm:justify-center sm:h-full sm:w-full">
             <span className="w-fit origin-right font-title text-2xl font-medium sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 sm:text-3xl">
