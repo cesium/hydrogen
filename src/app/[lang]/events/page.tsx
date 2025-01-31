@@ -42,7 +42,7 @@ export default function EventsPage() {
       <div className="px-4">
         <div className="flex items-center justify-between py-8">
           <h1 className="text-2xl font-bold">Eventos</h1>
-          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
             <a href="/calendar" className="text-orange-500 hover:underline flex items-center gap-1">
               Calendarium
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-orange-500">
@@ -61,7 +61,7 @@ export default function EventsPage() {
 
       <div className="px-4">
         <div className="md:flex md:gap-12">
-          <div className="w-full md:w-[600px] mb-8 md:mb-0">
+          <div className="w-full md:w-2/5 mb-8 md:mb-0">
             <Calendar events={events} />
             <div className="mt-4">
               <PromotionalCard type={CardType.Membership}/>
@@ -69,7 +69,7 @@ export default function EventsPage() {
           </div>
           <div className="flex-1">
             <EventList events={events} />
-            <p className="mt-8 text-sm text-gray-600">
+            <p className="mt-8 text-sm text-black/50">
               Por agora a lista acabou. Esta lista só mostra eventos organizados pelo CeSIUM. Para veres mais eventos,
               como festas ou feriados, visita o{" "}
               <a href="/calendar" className="text-orange-500 hover:underline">
