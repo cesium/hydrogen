@@ -129,7 +129,7 @@ function formatEventDate(date: Date): string {
 }
 
 function getMonthAbbreviation(date: Date): string {
-  return date.toLocaleString("pt-BR", { month: "short" }).toUpperCase()
+  return date.toLocaleString("pt-BR", { month: "short" }).replace('.', '').toUpperCase();
 }
 
 function getDay(date: Date): number {

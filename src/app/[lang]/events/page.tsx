@@ -7,8 +7,8 @@ const events: Event[] = [
   {
     id: "1",
     title: "Hackathon Bugsbyte",
-    startDate: new Date(2024, 3, 5),
-    endDate: new Date(2024, 3, 7),
+    startDate: new Date(2025, 3, 5),
+    endDate: new Date(2025, 3, 7),
     location: "Altice Forum Braga",
     instagramLink: "https://instagram.com",
     description:
@@ -17,7 +17,7 @@ const events: Event[] = [
   {
     id: "2",
     title: "Karaoke",
-    startDate: new Date(2024, 2, 14),
+    startDate: new Date(2025, 2, 14),
     time: "21:00",
     location: "Rick Universal",
     instagramLink: "https://instagram.com",
@@ -27,7 +27,7 @@ const events: Event[] = [
   {
     id: "3",
     title: "Showoff Typst",
-    startDate: new Date(2024, 2, 14),
+    startDate: new Date(2025, 2, 14),
     time: "16:00",
     location: "DI - Auditório 1",
     instagramLink: "https://instagram.com",

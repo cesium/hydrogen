@@ -8,7 +8,7 @@ export function EventCard({ event }: EventCardProps) {
 
   return (
     <div className="flex gap-4 items-start p-4 border-b border-black/20">
-      <div className="bg-gray-50 rounded-lg p-2 text-center w-[4.5rem]">
+      <div className="bg-black/10 rounded-xl p-2 text-center w-[4.5rem]">
         <div className="text-orange-500 text-sm font-medium">{month}</div>
         <div className="text-2xl font-bold">{day}</div>
       </div>
