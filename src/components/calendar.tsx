@@ -36,13 +36,13 @@ export function Calendar({ events = [], onDateSelect, onEventClick, className }:
   return (
     <div className={`w-full ${className}`}>
       <div {...handlers} className="select-none">
-        <div className="flex items-center justify-between pb-4">
+        <div className="flex items-center justify-center pb-4 space-x-2">
           <button onClick={handlePreviousMonth} className="text-orange-500 hover:bg-gray-50">
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-6 w-6" />
           </button>
           <h2 className="text-xl">{currentDate.toLocaleString("pt-BR", { month: "long", year: "numeric" })}</h2>
           <button onClick={handleNextMonth} className="text-orange-500 hover:bg-gray-50">
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-6 w-6" />
           </button>
         </div>
 
