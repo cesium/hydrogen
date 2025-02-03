@@ -128,8 +128,8 @@ function formatEventDate(date: Date): string {
   })
 }
 
-function getMonthAbbreviation(date: Date): string {
-  return date.toLocaleString("pt-BR", { month: "short" }).replace('.', '').toUpperCase();
+function getMonthAbbreviation(date: Date, lang: string): string {
+  return date.toLocaleString(lang, { month: "short" }).replace('.', '').toUpperCase();
 }
 
 function getDay(date: Date): number {

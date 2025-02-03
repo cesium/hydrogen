@@ -1,7 +1,11 @@
+"use client"
+
 import { Calendar } from "@/components/calendar"
 import { EventList } from "@/components/event-list"
 import PromotionalCard from "@/components/promotional-card"
+import { useDictionary } from "@/contexts/dictionary-provider"
 import  { type Event, CardType } from "@/lib/types"
+import Link from "next/link"
 
 const events: Event[] = [
   {
@@ -37,24 +41,26 @@ const events: Event[] = [
 ]
 
 export default function EventsPage() {
+  const dict = useDictionary()
+
   return (
     <>
       <div className="px-4">
         <div className="flex items-center justify-between py-8">
-          <h1 className="text-2xl font-bold">Eventos</h1>
+          <h1 className="text-3xl font-medium font-title">{dict.events.title}</h1>
             <div className="hidden md:flex items-center gap-4">
-            <a href="/calendar" className="text-orange-500 hover:underline flex items-center gap-1">
+            <Link href="https://calendario.cesium.di.uminho.pt/" className="text-primary hover:underline flex items-center gap-1">
               Calendarium
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-orange-500">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" />
               </svg>
-            </a>
-            <a href="https://instagram.com" className="text-orange-500 hover:underline flex items-center gap-1">
+            </Link>
+            <Link href="https://instagram.com/cesiuminho" className="text-primary hover:underline flex items-center gap-1">
               Instagram
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-orange-500">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
                 <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -70,16 +76,15 @@ export default function EventsPage() {
           <div className="flex-1">
             <EventList events={events} />
             <p className="mt-8 text-sm text-black/50">
-              Por agora a lista acabou. Esta lista só mostra eventos organizados pelo CeSIUM. Para veres mais eventos,
-              como festas ou feriados, visita o{" "}
-              <a href="/calendar" className="text-orange-500 hover:underline">
-                Calendarium
-              </a>
-              . Mantém-te a par das novidades no nosso{" "}
-              <a href="https://instagram.com" className="text-orange-500 hover:underline">
-                Instagram
-              </a>
-              .
+              {dict.events.warning.split("Calendarium")[0]}
+              <Link href="https://calendario.cesium.di.uminho.pt/" className="text-primary hover:underline">
+              Calendarium
+              </Link>
+              {dict.events.warning.split("Calendarium")[1]?.split("Instagram")[0]}
+              <Link href="https://instagram.com/cesiuminho" className="text-primary hover:underline">
+              Instagram
+              </Link>
+              {dict.events.warning.split("Instagram")[1]}
             </p>
           </div>
         </div>

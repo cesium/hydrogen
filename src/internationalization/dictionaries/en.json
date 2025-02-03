@@ -60,6 +60,10 @@
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     }
   },
+  "events": {
+    "title": "Events",
+    "warning": "For now, the list is over. This list only shows events organized by CeSIUM. To see more events, such as parties or holidays, visit the Calendarium. Stay updated on our Instagram."
+  },
   "social_media": "Social media",
   "socials": [
     { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },

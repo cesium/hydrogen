@@ -60,6 +60,10 @@
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     }
   },
+  "events": {
+    "title": "Eventos",
+    "warning": "Por agora a lista acabou. Esta lista só mostra eventos organizados pelo CeSIUM. Para veres mais eventos, como festas ou feriados, visita o Calendarium. Mantém-te a par das novidades no nosso Instagram."
+  },
   "social_media": "Redes sociais",
   "socials": [
     { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },

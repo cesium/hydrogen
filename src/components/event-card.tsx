@@ -1,15 +1,18 @@
+"use client"
+
 import { Calendar, MapPin, Instagram } from "lucide-react"
 import type { EventCardProps } from "../lib/types"
 import { getMonthAbbreviation, getDay } from "../lib/utils"
+import { useLang } from "@/contexts/dictionary-provider"
 
 export function EventCard({ event }: EventCardProps) {
-  const month = getMonthAbbreviation(event.startDate)
+  const month = getMonthAbbreviation(event.startDate, useLang())
   const day = getDay(event.startDate)
 
   return (
     <div className="flex gap-4 items-start p-4 border-b border-black/20">
       <div className="bg-black bg-opacity-[6%] rounded-xl p-2 text-center w-[4.5rem]">
-        <div className="text-orange-500 text-sm font-medium">{month}</div>
+        <div className="text-primary text-sm font-medium">{month}</div>
         <div className="text-2xl font-bold">{day}</div>
       </div>
       <div className="flex-1">
@@ -27,7 +30,7 @@ export function EventCard({ event }: EventCardProps) {
             <span>{event.location}</span>
           </div>
           {event.instagramLink && (
-            <div className="flex items-center gap-2 text-orange-500">
+            <div className="flex items-center gap-2 text-primary">
               <Instagram className="h-4 w-4" />
               <a href={event.instagramLink} target="_blank" rel="noopener noreferrer" className="hover:underline">
                 instagram.com
@@ -36,7 +39,7 @@ export function EventCard({ event }: EventCardProps) {
           )}
         </div>
         <p className="mt-4 text-sm text-black/50">
-          {event.description} <button className="text-orange-500 hover:underline">mais</button>
+          {event.description} <button className="text-primary hover:underline">mais</button>
         </p>
       </div>
     </div>

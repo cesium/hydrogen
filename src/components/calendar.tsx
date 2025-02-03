@@ -5,6 +5,7 @@ import { useSwipeable } from "react-swipeable"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { CalendarProps, Event } from "../lib/types"
 import { getMonthDays, isSameDay, isWithinRange } from "../lib/utils"
+import { useLang } from "@/contexts/dictionary-provider"
 
 export function Calendar({ events = [], onDateSelect, onEventClick, className }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -37,11 +38,11 @@ export function Calendar({ events = [], onDateSelect, onEventClick, className }:
     <div className={`w-full ${className}`}>
       <div {...handlers} className="select-none">
         <div className="flex items-center justify-center pb-4 space-x-2">
-          <button onClick={handlePreviousMonth} className="text-orange-500 hover:bg-gray-50">
+          <button onClick={handlePreviousMonth} className="text-primary hover:bg-gray-50">
             <ChevronLeft className="h-6 w-6" />
           </button>
-          <h2 className="text-xl">{currentDate.toLocaleString("pt-BR", { month: "long", year: "numeric" })}</h2>
-          <button onClick={handleNextMonth} className="text-orange-500 hover:bg-gray-50">
+          <h2 className="text-2xl font-title font-medium">{currentDate.toLocaleString(useLang(), { month: "long" }).charAt(0).toUpperCase() + currentDate.toLocaleString(useLang(), { month: "long" }).slice(1)} {currentDate.getFullYear()}</h2>
+          <button onClick={handleNextMonth} className="text-primary hover:bg-gray-50">
             <ChevronRight className="h-6 w-6" />
           </button>
         </div>
@@ -78,7 +79,7 @@ export function Calendar({ events = [], onDateSelect, onEventClick, className }:
                   >
                     {date.getDate()}
                   </span>
-                  {hasEvent && <span className="absolute bottom-0.5 w-1.5 h-1.5 rounded-full bg-orange-500" />}
+                  {hasEvent && <span className="absolute bottom-0.5 w-1.5 h-1.5 rounded-full bg-primary" />}
                 </button>
               )
             })}
