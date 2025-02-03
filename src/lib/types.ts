@@ -26,14 +26,11 @@ export interface MemberInfo extends Member {
 }
 
 export interface Event {
-  id: string
-  title: string
-  startDate: Date
-  endDate?: Date
-  time?: string
-  location: string
-  instagramLink?: string
-  description: string
+  title: string,
+  place?: string,
+  link?: string,
+  start: Date,
+  end: Date
 }
 
 export interface EventsPageProps {

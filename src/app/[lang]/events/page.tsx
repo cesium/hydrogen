@@ -4,48 +4,62 @@ import { Calendar } from "@/components/calendar"
 import { EventList } from "@/components/event-list"
 import PromotionalCard from "@/components/promotional-card"
 import { useDictionary } from "@/contexts/dictionary-provider"
+import getEvents from "@/lib/api/getEvents"
 import  { type Event, CardType } from "@/lib/types"
 import Link from "next/link"
 
-const events: Event[] = [
-  {
-    id: "1",
-    title: "Hackathon Bugsbyte",
-    startDate: new Date(2025, 3, 5),
-    endDate: new Date(2025, 3, 7),
-    location: "Altice Forum Braga",
-    instagramLink: "https://instagram.com",
-    description:
-      "Na Hackathon Bugsbyte qualquer estudante pode fazer nascer uma idea, basta ter um espírito competitivo e alguns dotes",
-  },
-  {
-    id: "2",
-    title: "Karaoke",
-    startDate: new Date(2025, 2, 14),
-    time: "21:00",
-    location: "Rick Universal",
-    instagramLink: "https://instagram.com",
-    description:
-      "O karaoke do CeSIUM está de volta! Prepara a tua voz 🎤 Junta-te a nós, no Rick's, na próxima quinta-feira, dia 14",
-  },
-  {
-    id: "3",
-    title: "Showoff Typst",
-    startDate: new Date(2025, 2, 14),
-    time: "16:00",
-    location: "DI - Auditório 1",
-    instagramLink: "https://instagram.com",
-    description:
-      "Farto de demorar mais a escrever um relatório do que a implementar uma feature? Vem à demonstração do Typst",
-  },
-]
+import { useEffect, useState } from "react"
 
 export default function EventsPage() {
   const dict = useDictionary()
 
+  /*
+  const [events, setEvents] = useState<Event[]>([])
+
+  useEffect(() => {
+    async function fetchEvents() {
+      const eventsData = await getEvents()
+      setEvents(eventsData)
+    }
+    fetchEvents().catch(error => console.error('Failed to fetch events:', error))
+  }, [])
+  */
+
+  const events: Event[] = [
+    {
+      title: "[AL] Teste",
+      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
+      link: "https://instagram.com/cesiuminho",
+      start: new Date("2025-10-31T00:00:00"),
+      end: new Date("2025-10-31T00:00:00"),
+    },
+    {
+      title: "[AL] Teste",
+      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
+      link: "https://instagram.com/cesiuminho",
+      start: new Date("2025-01-04T00:00:00"),
+      end: new Date("2025-01-04T00:00:00"),
+    },
+    {
+      title: "[AL] Recurso",
+      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
+      link: "https://instagram.com/cesiuminho",
+      start: new Date("2025-01-25T09:00:00"),
+      end: new Date("2025-01-25T12:00:00"),
+    },
+    {
+      title: "[AL] Época Especial",
+      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
+      link: "https://instagram.com/cesiuminho",
+      start: new Date("2025-07-19T09:00:00"),
+      end: new Date("2025-07-19T12:00:00"),
+    }
+  ];
+  
+
   return (
     <>
-      <div className="px-4">
+      <div className="md:px-5">
         <div className="flex items-center justify-between py-8">
           <h1 className="text-3xl font-medium font-title">{dict.events.title}</h1>
             <div className="hidden md:flex items-center gap-4">
@@ -65,7 +79,7 @@ export default function EventsPage() {
         </div>
       </div>
 
-      <div className="px-4">
+      <div className="md:px-5">
         <div className="md:flex md:gap-12">
           <div className="w-full md:w-2/5 mb-8 md:mb-0">
             <Calendar events={events} />

@@ -4,8 +4,8 @@ import { EventCard } from "./event-card"
 export function EventList({ events }: EventListProps) {
   return (
     <div className="space-y-6">
-      {events.map((event) => (
-        <EventCard key={event.id} event={event} />
+      {events.map((event, index) => (
+        <EventCard key={index} event={event} />
       ))}
     </div>
   )

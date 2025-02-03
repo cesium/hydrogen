@@ -1,13 +1,14 @@
 "use client"
 
-import { Calendar, MapPin, Instagram } from "lucide-react"
 import type { EventCardProps } from "../lib/types"
 import { getMonthAbbreviation, getDay } from "../lib/utils"
 import { useLang } from "@/contexts/dictionary-provider"
 
 export function EventCard({ event }: EventCardProps) {
-  const month = getMonthAbbreviation(event.startDate, useLang())
-  const day = getDay(event.startDate)
+  const lang = useLang()
+  const month = getMonthAbbreviation(event.start, lang)
+  const day = getDay(event.start)
+  const time = new Date(event.start).toLocaleTimeString(lang, { hour: '2-digit', minute: '2-digit' })
 
   return (
     <div className="flex gap-4 items-start p-4 border-b border-black/20">
@@ -17,30 +18,27 @@ export function EventCard({ event }: EventCardProps) {
       </div>
       <div className="flex-1">
         <h3 className="text-xl font-bold mb-4">{event.title}</h3>
-        <div className="space-y-2 text-sm text-gray-600">
-          {event.time && (
+        <div className="space-y-2 text-base text-gray-600">
+          {time && (
             <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4" />
-              <span>{event.time}</span>
-              {event.endDate && <span>• {event.endDate.toLocaleDateString("pt-BR")}</span>}
+              <span className="material-symbols-outlined">calendar_month</span>
+              {time}
+              {event.end && <span>• {event.end.toLocaleDateString(lang)}</span>}
             </div>
           )}
           <div className="flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
-            <span>{event.location}</span>
+          <span className="material-symbols-outlined">location_on</span>
+            {event.place}
           </div>
-          {event.instagramLink && (
-            <div className="flex items-center gap-2 text-primary">
-              <Instagram className="h-4 w-4" />
-              <a href={event.instagramLink} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                instagram.com
+          {event.link && (
+            <div className="flex items-center gap-2 text-primary w-[80%]">
+              <span className="material-symbols-outlined">link</span>
+              <a href={event.link} target="_blank" rel="noopener noreferrer" className="hover:underline truncate">
+                {event.link.split("://")[1]}
               </a>
             </div>
           )}
         </div>
-        <p className="mt-4 text-sm text-black/50">
-          {event.description} <button className="text-primary hover:underline">mais</button>
-        </p>
       </div>
     </div>
   )
