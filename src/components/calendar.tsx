@@ -1,11 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { use, useState } from "react"
 import { useSwipeable } from "react-swipeable"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import type { CalendarProps, Event } from "../lib/types"
 import { getMonthDays, isSameDay, isWithinRange } from "../lib/utils"
-import { useLang } from "@/contexts/dictionary-provider"
+import { useDictionary, useLang } from "@/contexts/dictionary-provider"
 
 export function Calendar({ events = [], onDateSelect, onEventClick, className }: CalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date())
@@ -31,8 +31,9 @@ export function Calendar({ events = [], onDateSelect, onEventClick, className }:
     onDateSelect?.(date)
   }
 
+  const dict = useDictionary();
   const days = getMonthDays(currentDate)
-  const weekDays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
+  const weekDays = dict.events.weekDays.split(", ")
 
   return (
     <div className={`w-full ${className}`}>
