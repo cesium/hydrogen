@@ -4,6 +4,7 @@ import DepartmentCard from "@/components/department-card";
 import AppLink from "@/components/link";
 import PromotionalCard from "@/components/promotional-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
+import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { CardType, type TeamData } from "@/lib/types";
 import { fetchTeamData } from "@/lib/utils";
 import { useState, useEffect } from "react";
@@ -67,7 +68,9 @@ export default function Departments() {
   ];
 
   return (
-    <main className="flex flex-col gap-8 sm:gap-12">
+    <main
+      className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding + verticalPadding}`}
+    >
       <div className="flex flex-col gap-4 px-2 md:px-5">
         <AppLink arrow="back" title={dict.button.back} href={"/about"} />
         <h1 className="font-title text-3xl font-medium">
