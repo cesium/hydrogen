@@ -64,18 +64,18 @@ const ProjectCard = ({ type }: ProjectProps) => {
 
   return (
     <div
-      className={`mt-[30px] border-b border-[#230BB71A] pb-[30px] md:mt-0 md:min-w-[460px] lg:w-1/3 lg:border-none`}
+      className={`mt-[30px] border-b border-[#230BB71A] pb-[30px] md:mt-0 md:w-1/3 md:min-w-[460px] md:border-none`}
       style={{
         background: `radial-gradient(circle at center 130%, ${info().gradient_color ?? "rgba(50,51,51,0.25)"} 10%, rgba(50,51,51,0) 57%)`,
       }}
     >
-      <div className="relative w-auto h-[50px] flex">
-          <Image
-            src={info().src}
-            alt={info().alt}
-            fill
-            className="object-contain object-left-top"
-          />
+      <div className="relative flex h-[50px] w-auto">
+        <Image
+          src={info().src}
+          alt={info().alt}
+          fill
+          className="object-contain object-left-top"
+        />
       </div>
       <p className="pt-4 md:hidden md:min-w-[460px]">
         {project.mobile_description}
