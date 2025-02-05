@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import SocialIcon from "@/components/social-icon";
+import Logo from "./logo";
 
 const Navbar = () => {
   const dict = useDictionary();
@@ -31,42 +32,67 @@ const Navbar = () => {
     { name: dict.navbar.projects, path: "/projects" },
   ];
 
+  const isMemberOrCollaborator =
+    pathname === "/about/become-a-member" ||
+    pathname === "/about/become-a-collaborator";
+
+  const navbarBackgroundColor =
+    pathname === "/about/become-a-member"
+      ? "bg-primary"
+      : pathname === "/about/become-a-collaborator"
+        ? "bg-blue"
+        : "bg-background";
+  const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
+  const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
+  const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
+  const hamburgerMenuColor = isOpen
+    ? "text-gray"
+    : isMemberOrCollaborator
+      ? "text-white/50"
+      : "text-gray";
+
   return (
-    <div className="sticky top-0 z-40 flex w-full flex-col bg-background px-5 pb-3 pt-4 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-background after:to-transparent md:relative md:px-20 md:pt-12 after:md:hidden">
+    <div
+      className={`${navbarBackgroundColor} sticky top-0 z-40 flex w-full flex-col px-5 pb-3 pt-4 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-background after:to-transparent md:relative md:px-20 md:pt-12 after:md:hidden`}
+    >
       <nav className="flex items-center justify-between gap-9 md:justify-normal">
         <Link href="/">
-          <Image
-            priority
-            src="/logo/cesium.svg"
+          <Logo
+            type="cesium"
             width={30}
             height={34}
             alt="CeSIUM Logo Icon"
+            fill={`${colorLogo}`}
             className="hidden md:block"
+            fullColor={isMemberOrCollaborator}
           />
-          <Image
-            priority
-            src="/logo/cesium-full.svg"
+          <Logo
+            type="cesium-full"
             width={103}
             height={32}
             alt="CeSIUM Logo"
+            fill={`${colorLogo}`}
             className="block md:hidden"
+            fullColor={isMemberOrCollaborator}
           />
         </Link>
-        <div className="hidden items-center space-x-6 font-title text-lg font-medium text-gray md:flex">
+        <div
+          className={`hidden items-center space-x-6 font-title text-lg font-medium ${linkColor} md:flex`}
+        >
           {routes.map((route) => (
             <Link
               key={route.path}
               href={route.path}
               className={`${
-                isCurrent(route.path) ? "text-black" : ""
-              } transition-colors hover:text-black`}
+                isCurrent(route.path) ? `${currentLink}` : ""
+              } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
             >
               {route.name}
             </Link>
           ))}
         </div>
         <motion.button
-          className="material-symbols-outlined z-50 p-1 text-3xl text-gray md:hidden"
+          className={`${hamburgerMenuColor} material-symbols-outlined z-50 p-1 text-3xl md:hidden`}
           onClick={() => setIsOpen(!isOpen)}
           animate={{ rotate: isOpen ? 90 : 0 }}
         >
