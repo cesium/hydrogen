@@ -26,10 +26,12 @@ export function EventCard({ event }: EventCardProps) {
               {event.end && <span>• {event.end.toLocaleDateString(lang)}</span>}
             </div>
           )}
+          {event.place && (
           <div className="flex items-center gap-2">
           <span className="material-symbols-outlined">location_on</span>
             {event.place}
           </div>
+          )}
           {event.link && (
             <div className="flex items-center gap-2 text-primary w-[80%]">
               <span className="material-symbols-outlined">explore</span>
