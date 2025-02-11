@@ -35,7 +35,7 @@ export default function RootLayout({
       >
         <DictionaryProvider lang={lang}>
           <Navbar />
-          <div className="h-full px-5 py-5 md:px-7 md:py-12">{children}</div>
+          <div className="h-full">{children}</div>
           <Footer />
         </DictionaryProvider>
       </body>

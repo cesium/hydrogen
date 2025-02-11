@@ -18,6 +18,7 @@ import Avatar from "@/components/avatar";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import PromotionalCard from "@/components/promotional-card";
 import AppLink from "@/components/link";
+import { horizontalPadding, verticalPadding } from "@/lib/styling";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
@@ -59,7 +60,9 @@ export default function Team() {
   };
 
   return (
-    <main className="space-y-8 sm:space-y-12">
+    <main
+      className={`space-y-8 sm:space-y-12 ${horizontalPadding + verticalPadding}`}
+    >
       <div className="flex flex-col gap-4 px-2 md:px-5">
         <AppLink arrow="back" title={dict.button.back} href="/about" />
         <div className="flex items-center justify-between gap-5 sm:justify-normal">

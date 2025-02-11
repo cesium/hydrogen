@@ -48,6 +48,10 @@ const config: Config = {
     "to-[#ED7950]/20",
     "from-[#03A300]/10",
     "to-[#82E700]/10",
+    "px-5",
+    "py-5",
+    "md:px-7",
+    "md:py-12",
   ],
 };
 export default config;
