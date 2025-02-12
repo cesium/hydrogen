@@ -2,7 +2,7 @@
 
 import CustomLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
-
+import { horizontalPadding } from "@/lib/styling";
 
 interface AboutSectionProps {
   title: string;
@@ -11,30 +11,45 @@ interface AboutSectionProps {
   children: React.ReactNode;
 }
 
-const AboutsectionLayout = ({ title, subtitle, href, children }: AboutSectionProps) => {
-  const dict = useDictionary(); 
+const AboutsectionLayout = ({
+  title,
+  subtitle,
+  href,
+  children,
+}: AboutSectionProps) => {
+  const dict = useDictionary();
 
   return (
-    <div className="flex flex-col items-stretch py-10 sm:py-12 sm:flex-row">
-      <div className="flex items-center w-full mb-4 sm:mr-6 sm:w-20">
-        <div className="flex flex-1 h-fit items-center justify-start sm:items-start sm:justify-center sm:h-full sm:w-full">
-            <span className="w-fit origin-right font-title text-2xl font-medium sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 sm:text-3xl">
-              {title}
-            </span>
+    <div
+      className={`flex flex-col items-stretch py-10 sm:flex-row sm:py-12 ${horizontalPadding}`}
+    >
+      <div className="mb-4 flex w-full items-center sm:mr-6 sm:w-20">
+        <div className="flex h-fit flex-1 items-center justify-start sm:h-full sm:w-full sm:items-start sm:justify-center">
+          <span className="w-fit origin-right font-title text-2xl font-medium sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 sm:text-3xl">
+            {title}
+          </span>
         </div>
-        <span className="sm:hidden pt-1">          
-                <CustomLink title={dict.button.see_more} href={href} arrow="forward" />
+        <span className="pt-1 sm:hidden">
+          <CustomLink
+            title={dict.button.see_more}
+            href={href}
+            arrow="forward"
+          />
         </span>
       </div>
 
       <div>
         <div className="flex justify-start">{subtitle}</div>
 
-        <div className="hidden sm:block mt-4">
-          <CustomLink title={dict.button.see_more} href={href} arrow="forward" />
+        <div className="mt-4 hidden sm:block">
+          <CustomLink
+            title={dict.button.see_more}
+            href={href}
+            arrow="forward"
+          />
         </div>
 
-        <div className="sm:mt-10 mt-7">{children}</div>
+        <div className="mt-7 sm:mt-10">{children}</div>
       </div>
     </div>
   );
