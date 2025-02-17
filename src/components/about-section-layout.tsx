@@ -11,7 +11,7 @@ interface AboutSectionProps {
   children: React.ReactNode;
 }
 
-const AboutsectionLayout = ({
+const AboutSectionLayout = ({
   title,
   subtitle,
   href,
@@ -55,4 +55,4 @@ const AboutsectionLayout = ({
   );
 };
 
-export default AboutsectionLayout;
+export default AboutSectionLayout;
