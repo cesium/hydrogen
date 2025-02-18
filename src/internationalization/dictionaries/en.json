@@ -63,7 +63,12 @@
   "events": {
     "title": "Events",
     "warning": "For now, the list is over. This list only shows events organized by CeSIUM. To see more events, such as parties or holidays, visit the Calendarium. Stay updated on our Instagram.",
-    "weekDays": "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+    "weekDays": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
+    "showLess": "Show Less",
+    "showMore": "Show More",
+    "futureEvents": "Upcoming Events",
+    "pastEvents": "Past Events",
+    "noEvents": "There are no events to display."
   },
   "social_media": "Social media",
   "socials": [

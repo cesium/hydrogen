@@ -6,6 +6,7 @@ import PromotionalCard from "@/components/promotional-card"
 import { useDictionary } from "@/contexts/dictionary-provider"
 import getEvents from "@/lib/api/getEvents"
 import  { type Event, CardType } from "@/lib/types"
+import { isWithinRange } from "@/lib/utils"
 import Link from "next/link"
 
 import { useEffect, useState } from "react"
@@ -13,7 +14,6 @@ import { useEffect, useState } from "react"
 export default function EventsPage() {
   const dict = useDictionary()
 
-  /*
   const [events, setEvents] = useState<Event[]>([])
 
   useEffect(() => {
@@ -23,40 +23,7 @@ export default function EventsPage() {
     }
     fetchEvents().catch(error => console.error('Failed to fetch events:', error))
   }, [])
-  */
-
-  const events: Event[] = [
-    {
-      title: "[AL] Teste",
-      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
-      link: "https://instagram.com/cesiuminho",
-      start: new Date("2025-10-31T00:00:00"),
-      end: new Date("2025-10-31T00:00:00"),
-    },
-    {
-      title: "[AL] Teste",
-      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
-      link: "https://instagram.com/cesiuminho",
-      start: new Date("2025-01-04T00:00:00"),
-      end: new Date("2025-01-04T00:00:00"),
-    },
-    {
-      title: "[AL] Recurso",
-      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
-      link: "https://instagram.com/cesiuminho",
-      start: new Date("2025-01-25T09:00:00"),
-      end: new Date("2025-01-25T12:00:00"),
-    },
-    {
-      title: "[AL] Época Especial",
-      place: "CP2 - 0.11 + 0.20 + 1.03 + 1.05 + 1.07",
-      link: "https://instagram.com/cesiuminho",
-      start: new Date("2025-07-19T09:00:00"),
-      end: new Date("2025-07-19T12:00:00"),
-    }
-  ];
   
-
   return (
     <>
       <div className="md:px-5">
@@ -87,7 +54,7 @@ export default function EventsPage() {
               <PromotionalCard type={CardType.Membership}/>
             </div>
           </div>
-          <div className="flex-1">
+            <div className="flex-1">
             <EventList events={events} />
             <p className="mt-8 text-sm text-black/50">
               {dict.events.warning.split("Calendarium")[0]}
@@ -100,7 +67,7 @@ export default function EventsPage() {
               </Link>
               {dict.events.warning.split("Instagram")[1]}
             </p>
-          </div>
+            </div>
         </div>
       </div>
     </>

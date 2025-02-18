@@ -63,7 +63,12 @@
   "events": {
     "title": "Eventos",
     "warning": "Por agora a lista acabou. Esta lista só mostra eventos organizados pelo CeSIUM. Para veres mais eventos, como festas ou feriados, visita o Calendarium. Mantém-te a par das novidades no nosso Instagram.",
-    "weekDays": "Dom, Seg, Ter, Qua, Qui, Sex, Sab"
+    "weekDays": "Dom, Seg, Ter, Qua, Qui, Sex, Sab",
+    "showLess": "Mostrar menos",
+    "showMore": "Mostrar mais",
+    "futureEvents": "Próximos Eventos",
+    "pastEvents": "Eventos Passados",
+    "noEvents": "Não existem eventos para mostrar."
   },
   "social_media": "Redes sociais",
   "socials": [
