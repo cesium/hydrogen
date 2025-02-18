@@ -38,7 +38,7 @@ const AboutSectionLayout = ({
         </span>
       </div>
 
-      <div>
+      <div className="overflow-auto">
         <div className="flex justify-start">{subtitle}</div>
 
         <div className="mt-4 hidden sm:block">
