@@ -55,7 +55,7 @@ const AboutSectionLayout = ({
       </div>
 
       <div className="overflow-auto">
-        <div className="flex justify-start">{subtitle}</div>
+        <div className={`flex justify-start ${titleOrientation == "vertical" ? "max-w-[1250px]" : ""}`}>{subtitle}</div>
 
         <div
           className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
