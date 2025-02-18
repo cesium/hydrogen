@@ -56,6 +56,26 @@
         "hint": "Select mandate"
       }
     },
+    "projects": {
+      "title": "Projects",
+      "description": "From SEI - the Computer Engineering Week, an annual activity that connects students to innovations and companies - to CoderDojo - which brings programming to the younger generation - CeSIUM creates and participates in various projects. Discover them here.",
+      "card": [
+        {
+          "mobile_description": "Held annually at the Gualtar campus of the University of Minho, it combines technological innovations with industry experts for students.",
+          "desktop_description": "The Computer Engineering Week is held annually at the Gualtar campus of the University of Minho, aiming to combine the latest technological innovations with the best industry experts to offer a fantastic program to our students."
+        },
+        {
+          "mobile_description": "An annual programming competition where participants have 48 hours to develop a project.",
+          "desktop_description": "The Bugsbyte Hackathon is an annual programming competition in which participants have 48 hours to work as a team and develop a technological project focused on an entrepreneurial and impactful solution."
+        },
+        {
+          "mobile_description": "A global, volunteer-driven, non-profit movement that aims to teach children and young people aged 7 to 17 how to program.",
+          "desktop_description": "CoderDojo Braga is part of a global, volunteer-driven, non-profit movement that aims to teach children and young people aged 7 to 17 how to program. This project seeks to demonstrate how programming can be a force for positive change in the world."
+        }
+      ],
+      "open": "Open",
+      "see_more": "See more"
+    },
     "departments": {
       "title": "Departments",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."

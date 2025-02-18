@@ -49,12 +49,32 @@
   },
   "about": {
     "team": {
-      "title": "Equipa",
-      "description": "Estes são alguns dos elementos da nossa equipa, da presidência às direções dos departamentos, assembleia geral e conselho fiscal.",
+      "title": "Team",
+      "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
       "team_selector": {
-        "default_option": "Atual mandato",
-        "hint": "Selecionar mandato"
+        "default_option": "Current mandate",
+        "hint": "Select mandate"
       }
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Desde a SEI - a Semana da Engenharia Informática, uma atividade anual que liga estudantes a inovações e empresas - ao CoderDojo - que traz a programação aos mais novos - o CeSIUM cria e participa em vários projetos. Conhece-os aqui.",
+      "card": [
+        {
+          "mobile_description": "Realizada anualmente no campus de Gualtar da Universidade do Minho, conjuga inovações tecnológicas com especialistas da área junto dos estudantes.",
+          "desktop_description": "A Semana da Engenharia Informática realiza-se anualmente no campus de Gualtar da Universidade do Minho, pretendendo conjugar as maiores inovações tecnológicas da atualidade com os melhores especialistas da área, tudo para oferecer um programa fantástico aos nossos estudantes."
+        },
+        {
+          "mobile_description": "Uma competição de programação anual onde os participantes têm 48 horas para desenvolverem um projeto.",
+          "desktop_description": "A Hackathon Bugsbyte é uma competição de programação anual na qual os participantes têm 48 horas para trabalham em equipa e desenvolverem um projeto tecnológico sobre uma solução empreendedora e impactante."
+        },
+        {
+          "mobile_description": "Um movimento global, voluntário, sem fins lucrativos, que visa ensinar crianças e jovens dos 7 aos 17 anos a programar.",
+          "desktop_description": "O CoderDojo Braga integra-se num movimento global, voluntário e sem fins lucrativos que visa ensinar crianças e jovens dos 7 aos 17 anos a programar. Este projeto pretende mostrar como a programação pode ser uma força de mudança positiva no mundo."
+        }
+      ],
+      "open": "Abrir",
+      "see_more": "Ver mais"
     },
     "departments": {
       "title": "Departamentos",
