@@ -23,7 +23,14 @@ const PerkItem = ({ icon, description }: Perk) => (
     <span className="material-symbols-outlined flex aspect-square size-10 items-center justify-center rounded-md bg-black/5 text-2xl">
       {icon}
     </span>
-    <Markdown className="text-base font-normal">{description}</Markdown>
+    <Markdown
+      className="text-base font-normal"
+      options={{
+        overrides: { strong: { props: { className: "font-semibold" } } },
+      }}
+    >
+      {description}
+    </Markdown>
   </li>
 );
 
@@ -34,7 +41,7 @@ const PartnerCard = ({ title, url, logo, color, perks }: PartnerCardProps) => {
     <div
       className="relative flex h-full w-full flex-col gap-4 rounded-[20px] border border-black/10 p-7"
       style={{
-        background: `linear-gradient(180deg, ${color}20 0%, ${color}00 50%, ${color}00 100%)`,
+        background: `linear-gradient(180deg, ${color}20 0%, #00000000 50%, #00000000 100%)`,
       }}
     >
       <figure className="size-24 rounded-lg bg-white">
