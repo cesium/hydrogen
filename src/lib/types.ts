@@ -24,3 +24,30 @@ export type TeamData = Team[];
 export interface MemberInfo extends Member {
   imageUrl: string;
 }
+
+export interface Event {
+  title: string,
+  place?: string,
+  link?: string,
+  start: Date,
+  end: Date
+}
+
+export interface EventsPageProps {
+  events: Event[]
+}
+
+export interface EventCardProps {
+  event: Event
+}
+
+export interface EventListProps {
+  events: Event[]
+}
+
+export interface CalendarProps {
+  events: Event[]
+  onDateSelect?: (date: Date) => void
+  onEventClick?: (event: Event) => void
+  className?: string
+}
