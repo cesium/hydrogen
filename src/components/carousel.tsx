@@ -4,19 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import { ReactNode } from "react";
-
-interface CarouselItem {
-  image?: string;
-  text?: ReactNode;
-}
 
 interface CarouselProps {
-  items: CarouselItem[];
+  items: React.ReactNode[];
 }
 
 export default function Carousel({ items }: CarouselProps) {
-  const hasText = items.some((item) => item.text !== undefined);
+  const hasText = items.some((item) => item !== undefined);
 
   return (
     <Swiper
@@ -46,17 +40,7 @@ export default function Carousel({ items }: CarouselProps) {
       className="custom-swiper"
     >
       {items.map((item, index) => (
-        <SwiperSlide key={index}>
-          {item.image ? (
-            <img
-              src={item.image}
-              alt={`Slide ${index + 1}`}
-              className="carousel-image"
-            />
-          ) : item.text ? (
-            <div>{item.text}</div>
-          ) : null}
-        </SwiperSlide>
+        <SwiperSlide key={index}>{item}</SwiperSlide>
       ))}
     </Swiper>
   );
