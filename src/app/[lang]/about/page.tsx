@@ -7,6 +7,7 @@ import type { MemberInfo, TeamData } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { departmentShortName, getDepartmentMembersInfo, generateUrlsForTeams } from "@/lib/utils";
 import { fetchTeamData } from "@/lib/utils";
+import { horizontalPadding } from "@/lib/styling";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -15,6 +16,7 @@ interface MemberDep extends MemberInfo {
 export default function About() {
 
   const dict = useDictionary();
+  const dictAbout = dict.about;
 
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
@@ -67,7 +69,14 @@ export default function About() {
   
   return (
     <>
-      <div className="flex flex-col">
+      <div className={`flex flex-col text-center pt-24 pb-12 gap-4 sm:gap-6 border-b-[1px] border-[#0000001A]`}>
+        <p className="font-title font-medium text-2xl sm:text-3xl">{dictAbout.sections[0]?.title}</p>
+        <p className="px-6 sm:px-12">{dictAbout.sections[0]?.subtitle}</p>
+        <div className="flex justify-center items-center h-60 sm:h-80 w-full bg-red-400 my-3 sm:my-6">Carroseel</div>
+        <p className="px-6 sm:px-12">{dictAbout.sections[0]?.description}</p>
+      </div>
+      
+      <div className="flex flex-col border-b-[1px] border-[#0000001A]">
         <AboutSectionLayout
           title={dict.about.sections[1]?.title ?? ""}
           //titleOrientation="vertical"
