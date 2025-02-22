@@ -9,6 +9,8 @@ import { CardType, type TeamData } from "@/lib/types";
 import { departmentShortName, fetchTeamData } from "@/lib/utils";
 import { useState, useEffect } from "react";
 
+type shortNames = "caos" | "dmc" | "drem" | "ped" | "rec";
+
 export default function Departments() {
   const dict = useDictionary();
 
@@ -67,7 +69,7 @@ export default function Departments() {
           <DepartmentCard
             key={departmentName}
             name={departmentName}
-            shortName={departmentShortName(departmentName) as "caos" | "dmc" | "drem" | "ped" | "rec"}
+            shortName={departmentShortName(departmentName) as shortNames}
             gradientFrom={gradient(departmentShortName(departmentName))[0] ?? ""}
             gradientTo={gradient(departmentShortName(departmentName))[1] ?? ""}
             hideTeam={false}
