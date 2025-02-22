@@ -34,7 +34,9 @@ export default function About() {
   ];
 
   useEffect(() => {
+    console.log("useEffect running");
     const aux = async () => {
+      console.log("aux running");
       const team: TeamData = await fetchTeamData(yearRange);
       setTeamData(team);
       
@@ -42,13 +44,10 @@ export default function About() {
       setImageUrls(urls);
 
       const membersData: MemberDep[] = []; 
-
-      console.log(departmentNames)
       
       departmentNames.forEach((departmentName, index) => {
-        console.log("Processing department:", departmentName);
         const departmentData = getDepartmentMembersInfo(team, yearRange, departmentName);
-        console.log(departmentData);
+        console.log("Processing department:",departmentName,"\n",departmentData);
         
         const depShortName = (index != 0 && index != 6) ? departmentShortName(departmentName).toUpperCase() : "";
 
@@ -70,9 +69,9 @@ export default function About() {
     <>
       <div className="flex flex-col">
         <AboutSectionLayout
-          title={dict.about.team.title}
+          title={dict.about.sections[1]?.title ?? ""}
           //titleOrientation="vertical"
-          subtitle="O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
+          subtitle={dict.about.sections[1]?.subtitle ?? ""}
           //linkName="see_team"
           //linkPos="after"
           href="/about/team"
