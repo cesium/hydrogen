@@ -26,17 +26,17 @@ export default function Departments() {
   const gradient = (type: string) => {
     switch (type) {
       case "caos":
-        return ["[#0085FF]/10", "[#00D1FF]/10"];
+        return ["[#0085FF]/5", "[#00D1FF]/5"];
       case "dmc":
-        return ["[#FF00F5]/10", "[#FF2E00]/10"];
+        return ["[#FF00F5]/5", "[#FF2E00]/5"];
       case "drem":
-        return ["[#0500FF]/10", "[#A500DE]/10"];
+        return ["[#0500FF]/5", "[#A500DE]/5"];
       case "ped":
         return ["[#E4B12E]/20", "[#ED7950]/20"];
       case "rec":
-        return ["[#03A300]/10", "[#82E700]/10"];
+        return ["[#03A300]/5", "[#82E700]/5"];
       default:
-        return ["[#0085FF]/10", "[#00D1FF]/10"];
+        return ["[#0085FF]/5", "[#00D1FF]/5"];
     }
   };
 
@@ -62,7 +62,7 @@ export default function Departments() {
         </h1>
         <p>{dict.about.departments.description}</p>
       </div>
-      <div className="flex flex-col gap-4 sm:gap-5">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
         {departmentNames.map((departmentName) => (
           <DepartmentCard
             key={departmentName}
