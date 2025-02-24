@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { EventListProps, Event } from "../lib/types";
 import { EventCard } from "./event-card";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { LoadingSpinner } from "@/components/loading-spinner";
+import { EventSkeleton } from "./event-skeleton";
 import { isSameDay } from "../lib/utils";
 
 export function EventList({
@@ -17,10 +17,6 @@ export function EventList({
   const lang = useLang();
   const [showAllFuture, setShowAllFuture] = useState(false);
   const [showAllPast, setShowAllPast] = useState(false);
-
-  if (isLoading) {
-    return <LoadingSpinner text={dict.events.loading} />;
-  }
 
   const currentDate = new Date();
 
@@ -54,28 +50,31 @@ export function EventList({
     setShowAll: (show: boolean) => void,
     title: string,
   ) => (
-    <>
-      {totalEvents.length > 0 && (
-        <div className="mb-8">
-          <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
-          <div
-            className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}
-          >
-            {eventList.map((event, index) => (
-              <EventCard key={index} event={event} />
-            ))}
-          </div>
-          {totalEvents.length > 5 && (
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="mt-4 w-full text-center text-primary hover:underline"
-            >
-              {showAll ? dict.events.showLess : dict.events.showMore}
-            </button>
-          )}
-        </div>
+    <div className="mb-8">
+      <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
+      <div
+        className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}
+      >
+        {isLoading ? (
+          <>
+            <EventSkeleton />
+            <EventSkeleton />
+          </>
+        ) : (
+          eventList.map((event, index) => (
+            <EventCard key={index} event={event} />
+          ))
+        )}
+      </div>
+      {!isLoading && totalEvents.length > 5 && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="mt-4 w-full text-center text-primary hover:underline"
+        >
+          {showAll ? dict.events.showLess : dict.events.showMore}
+        </button>
       )}
-    </>
+    </div>
   );
 
   return (
