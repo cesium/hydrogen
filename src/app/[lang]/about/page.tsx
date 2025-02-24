@@ -94,7 +94,7 @@ const About = () => {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <AboutSectionLayout
-              title={dict.about.departments.title}
+              title={dict.about.sections.departments.title}
               subtitle={dict.about.departments.short_description}
               href="/about/departments"
             >

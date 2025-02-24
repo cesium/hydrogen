@@ -48,6 +48,21 @@
     "projects": "Projects"
   },
   "about": {
+    "sections": {
+      "cesium": {
+        "title": "What is CeSIUM",
+        "subtitle": "CeSIUM is a Computer Engineering Student Center at the University of Minho, made up of volunteer students whose main objective is to represent and promote the course. It is a united and sonorous nucleus capable of providing unique and enriching experiences for your future professional life.",
+        "description": "We aim to organize activities with content similar to and complementary to the course, as well as promote and publicize leisure and socialization events for students and alumni. We also represent the collective interests of Computer Engineering students before academic bodies or institutions to enhance their academic journey."
+      },
+      "team": {
+        "title": "Team",
+        "subtitle": "CeSIUM would not exist without our amazing team, which works every day to keep the core running and make students' years in the course unique. Meet the team here."
+      },
+      "departments": {
+        "title": "Departments",
+        "short_description": "We operate with 5 departments that focus on the different areas of our activities as a core. Get to know them here."
+      }
+    },
     "team": {
       "title": "Team",
       "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
