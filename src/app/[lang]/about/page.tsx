@@ -1,15 +1,11 @@
 "use client";
 
-import ProjectCard from "@/components/project-card";
 import DepartmentCard from "@/components/department-card";
 import AboutSectionLayout from "@/components/about-section-layout";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { useEffect, useState } from "react";
-import { TeamData } from "@/lib/types";
+import type { TeamData } from "@/lib/types";
 import { fetchTeamData } from "@/lib/utils";
-import { div } from "motion/react-client";
-
-
 
 const departmentNames = [
   "Centro de Apoio ao Open Source",
@@ -19,7 +15,7 @@ const departmentNames = [
   "Departamento Recreativo",
 ];
 
-const shortName = (name: string) => { 
+const shortName = (name: string) => {
   switch (name) {
     case "Centro de Apoio ao Open Source":
       return "caos";
@@ -34,7 +30,7 @@ const shortName = (name: string) => {
     default:
       return "caos";
   }
-}
+};
 
 const gradient = (type: string) => {
   switch (type) {
@@ -53,9 +49,7 @@ const gradient = (type: string) => {
   }
 };
 
-
 const Departments = () => {
-
   const currentYearRange = "2024-2025";
   const [teamData, setTeamData] = useState<TeamData>([]);
 
@@ -67,25 +61,23 @@ const Departments = () => {
     void aux();
   }, [currentYearRange]);
 
-  return ( 
-    <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2"> 
-      {
-        departmentNames.map((departmentName) => (
+  return (
+    <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
+      {departmentNames.map((departmentName) => (
         <DepartmentCard
-        key={departmentName}
-        name={departmentName}
-        shortName={shortName(departmentName)}
-        gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
-        gradientTo={gradient(shortName(departmentName))[1] ?? ""}
-        hideTeam
-        teamData={teamData}
-        yearRange={currentYearRange}
+          key={departmentName}
+          name={departmentName}
+          shortName={shortName(departmentName)}
+          gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
+          gradientTo={gradient(shortName(departmentName))[1] ?? ""}
+          hideTeam
+          teamData={teamData}
+          yearRange={currentYearRange}
         ></DepartmentCard>
-        ))
-      }
+      ))}
     </div>
-  )
-}
+  );
+};
 
 const About = () => {
   const dict = useDictionary();
@@ -97,14 +89,18 @@ const About = () => {
           className="flex flex-col md:flex-row md:gap-4 md:overflow-auto"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          <div className="flex flex-col md:flex-row md:gap-4 md:overflow-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
-            <AboutSectionLayout 
-            title={dict.about.departments.title}
-            subtitle={dict.about.departments.short_description}
-            href="/about/departments"
-            children = {<Departments />}
-            />
-          </div>     
+          <div
+            className="flex flex-col md:flex-row md:gap-4 md:overflow-auto"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            <AboutSectionLayout
+              title={dict.about.departments.title}
+              subtitle={dict.about.departments.short_description}
+              href="/about/departments"
+            >
+              <Departments />
+            </AboutSectionLayout>
+          </div>
         </div>
       </div>
     </>
