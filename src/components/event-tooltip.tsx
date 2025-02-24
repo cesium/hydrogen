@@ -36,7 +36,7 @@ export function EventTooltip({
         transform: "translate(-50%, -100%)",
       }}
     >
-      <div className="border-border max-w-[300px] rounded-lg border bg-white p-3 shadow-lg">
+      <div className="max-w-[300px] rounded-lg border border-black/50 bg-white p-3 shadow-lg">
         <div className="space-y-2">
           {events.map((event, index) => (
             <div key={index} className="text-sm">

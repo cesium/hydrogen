@@ -49,33 +49,38 @@ export function EventList({
     showAll: boolean,
     setShowAll: (show: boolean) => void,
     title: string,
-  ) => (
-    <div className="mb-8">
-      <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
-      <div
-        className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}
-      >
-        {isLoading ? (
-          <>
-            <EventSkeleton />
-            <EventSkeleton />
-          </>
-        ) : (
-          eventList.map((event, index) => (
-            <EventCard key={index} event={event} />
-          ))
-        )}
-      </div>
-      {!isLoading && totalEvents.length > 5 && (
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className="mt-4 w-full text-center text-primary hover:underline"
-        >
-          {showAll ? dict.events.showLess : dict.events.showMore}
-        </button>
-      )}
-    </div>
-  );
+  ) => {
+    if (isLoading || totalEvents.length > 0) {
+      return (
+        <div className="mb-8">
+          <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
+          <div
+            className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}
+          >
+            {isLoading ? (
+              <>
+                <EventSkeleton />
+                <EventSkeleton />
+              </>
+            ) : (
+              eventList.map((event, index) => (
+                <EventCard key={index} event={event} />
+              ))
+            )}
+          </div>
+          {!isLoading && totalEvents.length > 5 && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="mt-4 w-full text-center text-primary hover:underline"
+            >
+              {showAll ? dict.events.showLess : dict.events.showMore}
+            </button>
+          )}
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div>
