@@ -3,23 +3,36 @@
 import { useState } from "react"
 import type { EventListProps, Event } from "../lib/types"
 import { EventCard } from "./event-card"
-import { useDictionary } from "@/contexts/dictionary-provider"
+import { useDictionary, useLang } from "@/contexts/dictionary-provider"
 import { LoadingSpinner } from "@/components/loading-spinner"
+import { isSameDay } from "../lib/utils"
 
-export function EventList({ events, isLoading }: EventListProps) {
+export function EventList({ events, isLoading, selectedDate, onClearDate }: EventListProps) {
   const dict = useDictionary()
+  const lang = useLang()
   const [showAllFuture, setShowAllFuture] = useState(false)
   const [showAllPast, setShowAllPast] = useState(false)
 
   if (isLoading) {
-    return <LoadingSpinner text={String(dict.events.loading)} />
+    return <LoadingSpinner text={dict.events.loading} />
   }
 
   const currentDate = new Date()
-  const futureEvents = events
+
+  const filteredEvents = selectedDate
+    ? events.filter((event) => {
+        const eventStart = new Date(event.start)
+        const eventEnd = new Date(event.end)
+        return (
+          isSameDay(eventStart, selectedDate) || (eventEnd && eventStart <= selectedDate && eventEnd >= selectedDate)
+        )
+      })
+    : events
+
+  const futureEvents = filteredEvents
     .filter((event) => new Date(event.start) >= currentDate)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
-  const pastEvents = events
+  const pastEvents = filteredEvents
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime())
 
@@ -57,6 +70,23 @@ export function EventList({ events, isLoading }: EventListProps) {
 
   return (
     <div>
+      {selectedDate && (
+        <button
+          onClick={() => {
+            onClearDate()
+          }}
+          className="p-1 px-3 bg-primary text-white rounded-full inline-flex items-center w-auto hover:bg-primary/90 transition-colors mb-4"
+        >
+          {selectedDate
+            .toLocaleDateString(lang, {
+              day: "numeric",
+              month: "2-digit",
+            })
+            .replace(/^\w/, (c) => c.toUpperCase())
+            .replace("-", "/")}{" "}
+          <span className="material-symbols-outlined text-xl ml-1">close</span>
+        </button>
+      )}
       {renderEventList(visibleFutureEvents, futureEvents, showAllFuture, setShowAllFuture, dict.events.futureEvents)}
       {renderEventList(visiblePastEvents, pastEvents, showAllPast, setShowAllPast, dict.events.pastEvents)}
     </div>

@@ -43,12 +43,21 @@ export interface EventCardProps {
 
 export interface EventListProps {
   events: Event[],
-  isLoading?: boolean
+  isLoading?: boolean,
+  selectedDate: Date | null,
+  onClearDate: () => void
 }
 
 export interface CalendarProps {
-  events: Event[]
-  onDateSelect?: (date: Date) => void
-  onEventClick?: (event: Event) => void
+  events: Event[],
+  onDateSelect?: (date: Date | null) => void,
+  onEventClick?: (event: Event) => void,
+  selectedDate: Date | null,
   className?: string
+}
+
+export interface EventTooltipProps {
+  events: Event[]
+  isVisible: boolean
+  anchorElement: HTMLElement | null
 }

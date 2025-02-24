@@ -66,8 +66,8 @@
     "weekDays": "Dom, Seg, Ter, Qua, Qui, Sex, Sab",
     "showLess": "Mostrar menos",
     "showMore": "Mostrar mais",
-    "futureEvents": "Próximos Eventos",
-    "pastEvents": "Eventos Passados",
+    "futureEvents": "Próximos",
+    "pastEvents": "Passados",
     "noEvents": "Não existem eventos para mostrar.",
     "loading": "A carregar eventos..."
   },

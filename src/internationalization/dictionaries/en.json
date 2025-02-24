@@ -66,8 +66,8 @@
     "weekDays": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
     "showLess": "Show Less",
     "showMore": "Show More",
-    "futureEvents": "Upcoming Events",
-    "pastEvents": "Past Events",
+    "futureEvents": "Upcoming",
+    "pastEvents": "Past",
     "noEvents": "There are no events to display.",
     "loading": "Loading events..."
   },

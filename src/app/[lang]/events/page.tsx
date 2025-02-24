@@ -8,11 +8,13 @@ import getEvents from "@/lib/api/getEvents"
 import { type Event, CardType } from "@/lib/types"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { isSameDay } from "@/lib/utils"
 
 export default function EventsPage() {
   const dict = useDictionary()
   const [events, setEvents] = useState<Event[]>([])
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
 
   useEffect(() => {
     async function fetchEvents() {
@@ -26,8 +28,17 @@ export default function EventsPage() {
         setIsLoading(false)
       }
     }
-    fetchEvents().catch(error => console.error('Failed to fetch events:', error))
+
+    void fetchEvents()
   }, [])
+
+  const handleDateSelect = (date: Date | null) => {
+    setSelectedDate((prevDate) => (prevDate && date && isSameDay(prevDate, date) ? null : date))
+  }
+
+  const handleClearDate = () => {
+    setSelectedDate(null)
+  }
 
   return (
     <>
@@ -60,13 +71,23 @@ export default function EventsPage() {
       <div className="md:px-5">
         <div className="md:flex md:gap-12">
           <div className="w-full md:w-2/5 mb-8 md:mb-0">
-            <Calendar events={events} />
+            <Calendar
+              events={events}
+              onDateSelect={handleDateSelect}
+              selectedDate={selectedDate}
+              className="your-calendar-class"
+            />
             <div className="mt-4">
               <PromotionalCard type={CardType.Membership} />
             </div>
           </div>
           <div className="flex-1">
-            <EventList events={events} isLoading={isLoading} />
+            <EventList
+              events={events}
+              isLoading={isLoading}
+              selectedDate={selectedDate}
+              onClearDate={handleClearDate}
+            />
             <p className="mt-8 text-sm text-black/50">
               {dict.events.warning.split("Calendarium")[0]}
               <Link href="https://calendario.cesium.di.uminho.pt/" className="text-primary hover:underline">
