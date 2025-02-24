@@ -79,6 +79,29 @@
     "departments": {
       "title": "Departments",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
+    },
+    "become_a_member": {
+      "participate": {
+        "title": "Participate",
+        "description": "Participate in all our events for free and enjoy tons of other benefits."
+      },
+      "member_kit": {
+        "title": "Member Kit",
+        "description": "You can join these departments and contribute to making your organization work."
+      },
+      "room_acess": {
+        "title": "Room Access",
+        "description": "You can access our room and use our resources."
+      },
+      "represent": {
+        "title": "Represent",
+        "description": "You can represent CeSIUM in events and competitions."
+      },
+      "discounts": {
+        "title": "Discounts",
+        "description": "You can get discounts on our store and with our partners.",
+        "link": "Go to store"
+      }
     }
   },
   "social_media": "Social media",
