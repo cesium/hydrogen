@@ -69,9 +69,9 @@ export default function About() {
     <>
       <div className="flex flex-col">
         <AboutSectionLayout
-          title={dict.about.sections[1]?.title ?? ""}
+          title={dict.about.sections.team.title ?? ""}
           //titleOrientation="vertical"
-          subtitle={dict.about.sections[1]?.subtitle ?? ""}
+          subtitle={dict.about.sections.team.subtitle ?? ""}
           //linkName="see_team"
           //linkPos="after"
           href="/about/team"
@@ -96,7 +96,7 @@ export default function About() {
                 "/images/none.png"
               }
               name={member.name}
-              role={`${team?.name} • ${member.role}`}
+              role={`${departmentShortName(team?.name)} • ${member.role}`}
               className="rounded-full"
               imageClassName="size-24 md:size-32 rounded-full"
               />))

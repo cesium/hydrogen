@@ -137,6 +137,10 @@ function classNames(...classes: string[]) {
         return "ped";
       case "Departamento Recreativo":
         return "rec";
+      case "Mesa da Assembleia Geral":
+        return "MAG";
+      case "Conselho Fiscal":
+        return "CF";
       default:
         return "caos";
     }
