@@ -69,14 +69,14 @@ export default function About() {
   
   return (
     <>
-      <div className={`flex flex-col text-center pt-24 pb-12 gap-4 sm:gap-6 border-b-[1px] border-[#0000001A]`}>
+      <section className={`flex flex-col text-center pt-24 pb-12 gap-4 sm:gap-6 border-b-[1px] border-[#0000001A]`}>
         <p className="font-title font-medium text-2xl sm:text-3xl">{dictAbout.sections[0]?.title}</p>
         <p className="px-6 sm:px-12">{dictAbout.sections[0]?.subtitle}</p>
         <div className="flex justify-center items-center h-60 sm:h-80 w-full bg-red-400 my-3 sm:my-6">Carroseel</div>
         <p className="px-6 sm:px-12">{dictAbout.sections[0]?.description}</p>
-      </div>
+      </section>
       
-      <div className="flex flex-col border-b-[1px] border-[#0000001A]">
+      <section className="flex flex-col border-b-[1px] border-[#0000001A]">
         <AboutSectionLayout
           title={dict.about.sections[1]?.title ?? ""}
           //titleOrientation="vertical"
@@ -113,7 +113,7 @@ export default function About() {
             
           </div>
         </AboutSectionLayout>
-      </div>
+      </section>
     </>
   );
 };
