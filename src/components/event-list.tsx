@@ -15,8 +15,8 @@ export function EventList({
 }: EventListProps) {
   const dict = useDictionary();
   const lang = useLang();
-  const [showAllFuture, setShowAllFuture] = useState(false);
-  const [showAllPast, setShowAllPast] = useState(false);
+  const [visibleFutureCount, setVisibleFutureCount] = useState(5);
+  const [visiblePastCount, setVisiblePastCount] = useState(5);
 
   const currentDate = new Date();
 
@@ -38,25 +38,22 @@ export function EventList({
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
-  const visibleFutureEvents = showAllFuture
-    ? futureEvents
-    : futureEvents.slice(0, 5);
-  const visiblePastEvents = showAllPast ? pastEvents : pastEvents.slice(0, 5);
+  const visibleFutureEvents = futureEvents.slice(0, visibleFutureCount);
+  const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
 
   const renderEventList = (
     eventList: Event[],
     totalEvents: Event[],
-    showAll: boolean,
-    setShowAll: (show: boolean) => void,
+    visibleCount: number,
+    setVisibleCount: (count: number) => void,
     title: string,
   ) => {
     if (isLoading || totalEvents.length > 0) {
+      const canShowMore = totalEvents.length > visibleCount;
       return (
         <div className="mb-8">
           <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
-          <div
-            className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}
-          >
+          <div className="space-y-6">
             {isLoading ? (
               <>
                 <EventSkeleton />
@@ -68,12 +65,20 @@ export function EventList({
               ))
             )}
           </div>
-          {!isLoading && totalEvents.length > 5 && (
+          {!isLoading && canShowMore && (
             <button
-              onClick={() => setShowAll(!showAll)}
+              onClick={() => setVisibleCount(visibleCount + 5)}
               className="mt-4 w-full text-center text-primary hover:underline"
             >
-              {showAll ? dict.events.showLess : dict.events.showMore}
+              {dict.events.showMore}
+            </button>
+          )}
+          {!isLoading && !canShowMore && visibleCount > 5 && (
+            <button
+              onClick={() => setVisibleCount(5)}
+              className="mt-4 w-full text-center text-primary hover:underline"
+            >
+              {dict.events.showLess}
             </button>
           )}
         </div>
@@ -104,15 +109,15 @@ export function EventList({
       {renderEventList(
         visibleFutureEvents,
         futureEvents,
-        showAllFuture,
-        setShowAllFuture,
+        visibleFutureCount,
+        setVisibleFutureCount,
         dict.events.futureEvents,
       )}
       {renderEventList(
         visiblePastEvents,
         pastEvents,
-        showAllPast,
-        setShowAllPast,
+        visiblePastCount,
+        setVisiblePastCount,
         dict.events.pastEvents,
       )}
     </div>
