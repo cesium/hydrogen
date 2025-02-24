@@ -1,67 +1,91 @@
-"use client"
+"use client";
 
-import { Calendar } from "@/components/calendar"
-import { EventList } from "@/components/event-list"
-import PromotionalCard from "@/components/promotional-card"
-import { useDictionary } from "@/contexts/dictionary-provider"
-import getEvents from "@/lib/api/getEvents"
-import { type Event, CardType } from "@/lib/types"
-import Link from "next/link"
-import { useEffect, useState } from "react"
-import { isSameDay } from "@/lib/utils"
+import { Calendar } from "@/components/calendar";
+import { EventList } from "@/components/event-list";
+import PromotionalCard from "@/components/promotional-card";
+import { useDictionary } from "@/contexts/dictionary-provider";
+import getEvents from "@/lib/api/getEvents";
+import { type Event, CardType } from "@/lib/types";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { isSameDay } from "@/lib/utils";
 
 export default function EventsPage() {
-  const dict = useDictionary()
-  const [events, setEvents] = useState<Event[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null)
+  const dict = useDictionary();
+  const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   useEffect(() => {
     async function fetchEvents() {
       try {
-        setIsLoading(true)
-        const eventsData = await getEvents()
-        setEvents(eventsData)
+        setIsLoading(true);
+        const eventsData = await getEvents();
+        setEvents(eventsData);
       } catch (error) {
-        console.error("Failed to fetch events:", error)
+        console.error("Failed to fetch events:", error);
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
     }
 
-    void fetchEvents()
-  }, [])
+    void fetchEvents();
+  }, []);
 
   const handleDateSelect = (date: Date | null) => {
-    setSelectedDate((prevDate) => (prevDate && date && isSameDay(prevDate, date) ? null : date))
-  }
+    setSelectedDate((prevDate) =>
+      prevDate && date && isSameDay(prevDate, date) ? null : date,
+    );
+  };
 
   const handleClearDate = () => {
-    setSelectedDate(null)
-  }
+    setSelectedDate(null);
+  };
 
   return (
     <>
       <div className="md:px-5">
         <div className="flex items-center justify-between py-8">
-          <h1 className="text-3xl font-medium font-title">{dict.events.title}</h1>
-          <div className="hidden md:flex items-center gap-4">
+          <h1 className="font-title text-3xl font-medium">
+            {dict.events.title}
+          </h1>
+          <div className="hidden items-center gap-4 md:flex">
             <Link
               href="https://calendario.cesium.di.uminho.pt/"
-              className="text-primary hover:underline flex items-center gap-1"
+              className="flex items-center gap-1 text-primary hover:underline"
             >
               Calendarium
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
-                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-primary"
+              >
+                <path
+                  d="M7 17L17 7M17 7H8M17 7V16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </svg>
             </Link>
             <Link
               href="https://instagram.com/cesiuminho"
-              className="text-primary hover:underline flex items-center gap-1"
+              className="flex items-center gap-1 text-primary hover:underline"
             >
               Instagram
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-primary">
-                <path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" strokeWidth="2" />
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="text-primary"
+              >
+                <path
+                  d="M7 17L17 7M17 7H8M17 7V16"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
               </svg>
             </Link>
           </div>
@@ -70,7 +94,7 @@ export default function EventsPage() {
 
       <div className="md:px-5">
         <div className="md:flex md:gap-12">
-          <div className="w-full md:w-2/5 mb-8 md:mb-0">
+          <div className="mb-8 w-full md:mb-0 md:w-2/5">
             <Calendar
               events={events}
               onDateSelect={handleDateSelect}
@@ -90,11 +114,21 @@ export default function EventsPage() {
             />
             <p className="mt-8 text-sm text-black/50">
               {dict.events.warning.split("Calendarium")[0]}
-              <Link href="https://calendario.cesium.di.uminho.pt/" className="text-primary hover:underline">
+              <Link
+                href="https://calendario.cesium.di.uminho.pt/"
+                className="text-primary hover:underline"
+              >
                 Calendarium
               </Link>
-              {dict.events.warning.split("Calendarium")[1]?.split("Instagram")[0]}
-              <Link href="https://instagram.com/cesiuminho" className="text-primary hover:underline">
+              {
+                dict.events.warning
+                  .split("Calendarium")[1]
+                  ?.split("Instagram")[0]
+              }
+              <Link
+                href="https://instagram.com/cesiuminho"
+                className="text-primary hover:underline"
+              >
                 Instagram
               </Link>
               {dict.events.warning.split("Instagram")[1]}
@@ -103,5 +137,5 @@ export default function EventsPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

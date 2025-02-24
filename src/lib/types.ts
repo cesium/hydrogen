@@ -26,38 +26,38 @@ export interface MemberInfo extends Member {
 }
 
 export interface Event {
-  title: string,
-  place?: string,
-  link?: string,
-  start: Date,
-  end: Date
+  title: string;
+  place?: string;
+  link?: string;
+  start: Date;
+  end: Date;
 }
 
 export interface EventsPageProps {
-  events: Event[]
+  events: Event[];
 }
 
 export interface EventCardProps {
-  event: Event
+  event: Event;
 }
 
 export interface EventListProps {
-  events: Event[],
-  isLoading?: boolean,
-  selectedDate: Date | null,
-  onClearDate: () => void
+  events: Event[];
+  isLoading?: boolean;
+  selectedDate: Date | null;
+  onClearDate: () => void;
 }
 
 export interface CalendarProps {
-  events: Event[],
-  onDateSelect?: (date: Date | null) => void,
-  onEventClick?: (event: Event) => void,
-  selectedDate: Date | null,
-  className?: string
+  events: Event[];
+  onDateSelect?: (date: Date | null) => void;
+  onEventClick?: (event: Event) => void;
+  selectedDate: Date | null;
+  className?: string;
 }
 
 export interface EventTooltipProps {
-  events: Event[]
-  isVisible: boolean
-  anchorElement: HTMLElement | null
+  events: Event[];
+  isVisible: boolean;
+  anchorElement: HTMLElement | null;
 }

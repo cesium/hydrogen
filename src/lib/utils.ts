@@ -125,51 +125,54 @@ function formatEventDate(date: Date): string {
     day: "numeric",
     month: "long",
     year: "numeric",
-  })
+  });
 }
 
 function getMonthAbbreviation(date: Date, lang: string): string {
-  return date.toLocaleString(lang, { month: "short" }).replace('.', '').toUpperCase();
+  return date
+    .toLocaleString(lang, { month: "short" })
+    .replace(".", "")
+    .toUpperCase();
 }
 
 function getDay(date: Date): number {
-  return date.getDate()
+  return date.getDate();
 }
 
 function getDaysInMonth(date: Date): Date[] {
-  const year = date.getFullYear()
-  const month = date.getMonth()
-  const daysInMonth = new Date(year, month + 1, 0).getDate()
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  const days: Date[] = []
+  const days: Date[] = [];
   for (let day = 1; day <= daysInMonth; day++) {
-    days.push(new Date(year, month, day))
+    days.push(new Date(year, month, day));
   }
 
-  return days
+  return days;
 }
 
 function getMonthDays(date: Date): Date[] {
-  const year = date.getFullYear()
-  const month = date.getMonth()
-  const firstDay = new Date(year, month, 1)
-  const lastDay = new Date(year, month + 1, 0)
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
 
-  const days: Date[] = []
+  const days: Date[] = [];
 
-  const daysFromPrevMonth = firstDay.getDay()
+  const daysFromPrevMonth = firstDay.getDay();
   for (let i = daysFromPrevMonth; i > 0; i--) {
-    days.push(new Date(year, month, -i + 1))
+    days.push(new Date(year, month, -i + 1));
   }
 
-  days.push(...getDaysInMonth(date))
+  days.push(...getDaysInMonth(date));
 
-  const daysFromNextMonth = 7 - lastDay.getDay() - 1
+  const daysFromNextMonth = 7 - lastDay.getDay() - 1;
   for (let i = 1; i <= daysFromNextMonth; i++) {
-    days.push(new Date(year, month + 1, i))
+    days.push(new Date(year, month + 1, i));
   }
 
-  return days
+  return days;
 }
 
 function isSameDay(date1: Date, date2: Date): boolean {
@@ -177,15 +180,27 @@ function isSameDay(date1: Date, date2: Date): boolean {
     date1.getFullYear() === date2.getFullYear() &&
     date1.getMonth() === date2.getMonth() &&
     date1.getDate() === date2.getDate()
-  )
+  );
 }
 
 function isWithinRange(date: Date, start: Date, end: Date): boolean {
-  const normalizedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate())
-  const normalizedStart = new Date(start.getFullYear(), start.getMonth(), start.getDate())
-  const normalizedEnd = new Date(end.getFullYear(), end.getMonth(), end.getDate())
-  
-  return normalizedDate >= normalizedStart && normalizedDate <= normalizedEnd
+  const normalizedDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  );
+  const normalizedStart = new Date(
+    start.getFullYear(),
+    start.getMonth(),
+    start.getDate(),
+  );
+  const normalizedEnd = new Date(
+    end.getFullYear(),
+    end.getMonth(),
+    end.getDate(),
+  );
+
+  return normalizedDate >= normalizedStart && normalizedDate <= normalizedEnd;
 }
 
 export {
@@ -202,7 +217,5 @@ export {
   getDaysInMonth,
   getMonthDays,
   isSameDay,
-  isWithinRange
+  isWithinRange,
 };
-
-
