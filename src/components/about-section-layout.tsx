@@ -2,7 +2,7 @@
 
 import CustomLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { horizontalPadding } from "@/lib/styling";
+import { horizontalPaddingL } from "@/lib/styling";
 
 type TitleOr = "vertical" | "horizontal";
 type LinkName = "see_more" | "see_team";
@@ -15,7 +15,7 @@ interface AboutSectionProps {
   linkName: LinkName;
   linkPos?: LinkPos;
   href: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const AboutSectionLayout = ({
@@ -31,7 +31,7 @@ const AboutSectionLayout = ({
 
   return (
     <div
-      className={`flex flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 ${horizontalPadding}`}
+      className={`flex flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 ${horizontalPaddingL}`}
     >
       <div className="mb-4 flex w-full items-center sm:mr-6 sm:w-20">
         <div
