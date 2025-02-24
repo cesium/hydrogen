@@ -122,16 +122,16 @@ export function Calendar({
                   <button
                     onClick={() => handleDateSelect(date)}
                     className={`
-                  hover:bg-gray-100 flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl text-center md:h-12 md:w-12
+                  hover:bg-gray-100 flex h-12 w-10 cursor-pointer items-center justify-center rounded-xl text-center md:h-12 md:w-12
                   ${!isCurrentMonth ? "text-gray-300" : ""}
-                  ${isSelected ? "z-10 border border-primary" : ""}
+                  ${isSelected ? "z-10 bg-primary text-white" : ""}
                 `}
                   >
                     {date.getDate()}
                   </button>
                   {hasEvent(date) && isCurrentMonth && (
                     <span
-                      className={`absolute bottom-0.5 h-1.5 w-1.5 rounded-full bg-primary ${isSelected ? "z-20" : "z-10"}`}
+                      className={`absolute bottom-1 h-1.5 w-1.5 rounded-full bg-primary ${isSelected ? "z-20 bg-white" : "z-10"}`}
                     />
                   )}
                 </div>
