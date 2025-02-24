@@ -4,11 +4,16 @@ import { useState } from "react"
 import type { EventListProps, Event } from "../lib/types"
 import { EventCard } from "./event-card"
 import { useDictionary } from "@/contexts/dictionary-provider"
+import { LoadingSpinner } from "@/components/loading-spinner"
 
-export function EventList({ events }: EventListProps) {
+export function EventList({ events, isLoading }: EventListProps) {
   const dict = useDictionary()
   const [showAllFuture, setShowAllFuture] = useState(false)
   const [showAllPast, setShowAllPast] = useState(false)
+
+  if (isLoading) {
+    return <LoadingSpinner text={String(dict.events.loading)} />
+  }
 
   const currentDate = new Date()
   const futureEvents = events
@@ -29,19 +34,24 @@ export function EventList({ events }: EventListProps) {
     title: string,
   ) => (
     <>
-      {totalEvents.length > 0 && <div className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-        <div className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}>
-          {eventList.map((event, index) => (
-            <EventCard key={index} event={event} /> 
-          ))}
+      {totalEvents.length > 0 && (
+        <div className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+          <div className={`space-y-6 ${showAll ? "max-h-[1000px] overflow-y-auto pr-4" : ""}`}>
+            {eventList.map((event, index) => (
+              <EventCard key={index} event={event} />
+            ))}
+          </div>
+          {totalEvents.length > 5 && (
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="mt-4 text-primary hover:underline text-center w-full"
+            >
+              {showAll ? dict.events.showLess : dict.events.showMore}
+            </button>
+          )}
         </div>
-        {totalEvents.length > 5 && (
-          <button onClick={() => setShowAll(!showAll)} className="mt-4 text-primary hover:underline text-center w-full">
-            {showAll ? dict.events.showLess : dict.events.showMore}
-          </button>
-        )}
-      </div>}
+      )}
     </>
   )
 

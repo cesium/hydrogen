@@ -42,7 +42,8 @@ export interface EventCardProps {
 }
 
 export interface EventListProps {
-  events: Event[]
+  events: Event[],
+  isLoading?: boolean
 }
 
 export interface CalendarProps {

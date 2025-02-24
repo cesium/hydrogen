@@ -68,7 +68,8 @@
     "showMore": "Mostrar mais",
     "futureEvents": "Próximos Eventos",
     "pastEvents": "Eventos Passados",
-    "noEvents": "Não existem eventos para mostrar."
+    "noEvents": "Não existem eventos para mostrar.",
+    "loading": "A carregar eventos..."
   },
   "social_media": "Redes sociais",
   "socials": [
