@@ -120,6 +120,9 @@ export function EventList({
         setVisiblePastCount,
         dict.events.pastEvents,
       )}
+      {!isLoading && filteredEvents.length === 0 && (
+        <div className="text-center text-black/50">{dict.events.noEvents}</div>
+      )}
     </div>
   );
 }

@@ -37,9 +37,7 @@ export function Calendar({
   };
 
   const handleDateSelect = (date: Date) => {
-    if (hasEvent(date)) {
-      onDateSelect?.(date);
-    }
+    onDateSelect?.(date);
   };
 
   const dict = useDictionary();
@@ -124,17 +122,17 @@ export function Calendar({
                   <button
                     onClick={() => handleDateSelect(date)}
                     className={`
-                  flex h-10 w-10 items-center justify-center rounded-full text-center
+                  hover:bg-gray-100 flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl text-center md:h-12 md:w-12
                   ${!isCurrentMonth ? "text-gray-300" : ""}
-                  ${hasEvent(date) && isCurrentMonth ? "hover:bg-gray-100 cursor-pointer" : "cursor-default"}
-                  ${isSelected ? "bg-primary text-white hover:bg-primary" : ""}
+                  ${isSelected ? "z-10 border border-primary" : ""}
                 `}
-                    disabled={!hasEvent(date) || !isCurrentMonth}
                   >
                     {date.getDate()}
                   </button>
-                  {hasEvent(date) && !isSelected && isCurrentMonth && (
-                    <span className="absolute bottom-0.5 h-1.5 w-1.5 rounded-full bg-primary" />
+                  {hasEvent(date) && isCurrentMonth && (
+                    <span
+                      className={`absolute bottom-0.5 h-1.5 w-1.5 rounded-full bg-primary ${isSelected ? "z-20" : "z-10"}`}
+                    />
                   )}
                 </div>
               );
