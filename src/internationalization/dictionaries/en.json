@@ -78,6 +78,7 @@
     },
     "departments": {
       "title": "Departments",
+      "short_description": "We operate with 5 departments that focus on the different areas of our activities as a core. Get to know them here.",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     }
   },

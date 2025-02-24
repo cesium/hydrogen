@@ -48,6 +48,7 @@
     "projects": "Projetos"
   },
   "about": {
+
     "team": {
       "title": "Team",
       "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
@@ -78,6 +79,7 @@
     },
     "departments": {
       "title": "Departamentos",
+      "short_description": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     }
   },
