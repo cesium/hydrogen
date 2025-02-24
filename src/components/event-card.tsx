@@ -33,7 +33,7 @@ export function EventCard({ event }: EventCardProps) {
           </div>
           )}
           {event.link && (
-            <div className="flex items-center gap-2 text-primary w-64">
+            <div className="flex items-center gap-2 text-primary w-64 max-w-[80%] sm:max-w-full">
               <span className="material-symbols-outlined">explore</span>
               <a href={event.link} target="_blank" rel="noopener noreferrer" className="hover:underline truncate">
                 {event.link.split("://")[1]}
