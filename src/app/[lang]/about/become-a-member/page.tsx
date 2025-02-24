@@ -2,17 +2,17 @@
 import Image from 'next/image';
 import InfoCard from '@/components/info-card';
 import { useDictionary } from '@/contexts/dictionary-provider';
+import { horizontalPadding, verticalPadding } from '@/lib/styling';
 
 export default function BecomeAMember() {
   const dict = useDictionary();
 
   return (
   <main
-    className={`flex flex-col gap-8 sm:gap-12 px-5 md:px-20`}
+    className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding} ${verticalPadding}`}
   > 
-    
     <InfoCard>
-      <div className="flex flex-col px-[50px] pt-[40px] gap-4 overflow-hidden">
+      <div className="flex flex-col px-12 pt-10 gap-4 overflow-hidden">
         <div className="flex flex-col md:flex-row items-center gap-4 z-10">
           <div className="size-8 bg-gradient-to-t from-[#3EA3FF] from-30% via-[#D83CFF] via-50% to-[#FF4291] to-80% bg-clip-text text-transparent">
             <span className="material-symbols-outlined text-4xl leading-8">
@@ -46,9 +46,9 @@ export default function BecomeAMember() {
       </div>
     </InfoCard>
 
-    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <InfoCard>
-        <div className="flex flex-row py-[40px]">
+        <div className="flex flex-row py-10">
           <div className="w-[150px] h-[200px] overflow-hidden relative">
             <Image 
               src="/images/totebag.png" 
@@ -59,7 +59,7 @@ export default function BecomeAMember() {
             />
           </div>
 
-          <div className="flex flex-col px-[20px]  md:px-[50px] py-[40px] gap-4">
+          <div className="flex flex-col px-5  md:px-12 py-10 gap-4">
             <h2 className="text-2xl font-title text-primary font-semibold">{dict.about.become_a_member.member_kit.title}</h2>
             <p>{dict.about.become_a_member.member_kit.description}</p>
           </div>
@@ -67,7 +67,7 @@ export default function BecomeAMember() {
       </InfoCard>
 
       <InfoCard>
-        <div className="flex flex-col px-[50px] py-[40px] gap-4">
+        <div className="flex flex-col px-12 py-10 gap-4">
           <span className="material-symbols-outlined text-5xl text-primary">
             meeting_room
           </span>
@@ -77,7 +77,7 @@ export default function BecomeAMember() {
       </InfoCard>
 
       <InfoCard>
-        <div className="flex flex-col px-[50px] py-[40px] gap-4">
+        <div className="flex flex-col px-12 py-10 gap-4">
           <span className="material-symbols-outlined text-5xl text-primary">
             campaign
           </span>
@@ -102,7 +102,7 @@ export default function BecomeAMember() {
           </div>
 
           <div className="justify-self-center col-span-2 lg:col-span-1 my-[40px] lg:my-auto lg:order-2 order-1">
-            <div className='px-[50px] py-[50px] flex flex-col gap-2'>
+            <div className='px-12 py-10 flex flex-col gap-2'>
               <div className='mx-auto flex flex-col lg:flex-row items-center gap-2'>
                 <span className='material-symbols-outlined text-4xl text-[#5C657F]'>
                   percent
