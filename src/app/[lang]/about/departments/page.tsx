@@ -40,7 +40,6 @@ export default function Departments() {
     }
   };
 
-  // Short names, !! as they appear in dictionary !!
   const shortName = (departmentName: string) => {
     switch (departmentName) {
       case "Centro de Apoio ao Open Source":
@@ -58,7 +57,6 @@ export default function Departments() {
     }
   };
 
-  // List of department names, !! as they appear in team data !!
   const departmentNames = [
     "Centro de Apoio ao Open Source",
     "Departamento de Marketing e Conteúdo",
