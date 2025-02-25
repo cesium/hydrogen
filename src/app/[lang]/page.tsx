@@ -16,7 +16,7 @@ export default function Home() {
   const text = [
     <div
       key="text1"
-      className="h-[270px] w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text pl-6 font-title text-[36px] font-medium leading-[125%] text-transparent md:h-[360px] md:w-[565px] md:text-[48px]"
+      className="flex h-full w-full justify-center bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent md:h-[360px] md:w-[565px] md:text-[48px]"
     >
       <p>
         Centro de
@@ -28,8 +28,8 @@ export default function Home() {
         da Universidade do Minho
       </p>
     </div>,
-    <div key="text2" className=" h-[288px] w-[343px] md:h-[168px] md:w-[636px]">
-      <div className="text-justify font-sans text-[12px] font-normal leading-[24px] text-[#6E6E6E] md:text-[16px]">
+    <div key="text2" className="mb-10 h-full w-full md:h-[168px] md:w-[636px]">
+      <div className="text-justify font-sans text-[14px] font-normal leading-[24px] text-[#6E6E6E] md:text-[16px]">
         <p>
           Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e
           Informática (LESI) da UM. (...) Foi neste contexto que um grupo de
@@ -50,24 +50,29 @@ export default function Home() {
 
   return (
     <main className="flex-col items-center justify-center">
+      <div className="block pt-6 md:hidden">
+        <Carousel
+          items={text.map((t, index) => (
+            <div key={index}>{t}</div>
+          ))}
+        />
+      </div>
+      <div className="hidden justify-between px-10 md:flex">
+        {text[0]}
+        {text[1]}
+      </div>
+
       <div className="w-full pt-6">
         <Carousel
           items={images.map((image, index) => (
             <Image
               key={index}
               src={image}
+              width={400}
+              height={400}
               alt=""
-              width={500}
-              height={300}
-              className="h-auto max-h-[150px] w-full rounded-xl object-cover md:max-h-[400px]"
+              className="h-[400px] w-full rounded-xl object-cover"
             />
-          ))}
-        />
-      </div>
-      <div className="flex justify-end pt-6">
-        <Carousel
-          items={text.map((t, index) => (
-            <div key={index}>{t}</div>
           ))}
         />
       </div>
