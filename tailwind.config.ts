@@ -19,6 +19,7 @@ const config: Config = {
         background: "#FAFAFA",
         stroke: "#D4D4D8",
         black: "#27272A",
+        dark: "#000000",
         gray: "#94959C",
         stone: "#27272A",
         blue: "#5069ED",
@@ -52,6 +53,10 @@ const config: Config = {
     "py-5",
     "md:px-7",
     "md:py-12",
+    "pr-5",
+    "pl-5",
+    "md:pr-7",
+    "md:pl-7",
   ],
 };
 export default config;
