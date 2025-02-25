@@ -19,7 +19,9 @@ export default function Carousel({ items, autoplay }: CarouselProps) {
       slidesPerView={1}
       spaceBetween={30}
       centeredSlides={true}
-      autoplay={autoplay ? { delay: autoplay, disableOnInteraction: false } : false}
+      autoplay={
+        autoplay ? { delay: autoplay, disableOnInteraction: false } : false
+      }
       loop={true}
       navigation={true}
       breakpoints={{
