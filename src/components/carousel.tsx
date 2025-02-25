@@ -8,10 +8,10 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 interface CarouselProps {
   items: React.ReactNode[];
-  autoplay?: boolean;
+  autoplay?: number;
 }
 
-export default function Carousel({ items, autoplay = false }: CarouselProps) {
+export default function Carousel({ items, autoplay }: CarouselProps) {
   const hasText = items.some((item) => item !== undefined);
 
   return (
@@ -19,7 +19,7 @@ export default function Carousel({ items, autoplay = false }: CarouselProps) {
       slidesPerView={1}
       spaceBetween={30}
       centeredSlides={true}
-      autoplay={autoplay ? { delay: 2000, disableOnInteraction: false } : false}
+      autoplay={autoplay ? { delay: autoplay, disableOnInteraction: false } : false}
       loop={true}
       navigation={true}
       breakpoints={{
