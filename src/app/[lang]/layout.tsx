@@ -46,7 +46,7 @@ export function generateMetadata({
     applicationName: "CeSIUM",
     appleWebApp: {
       title: "CeSIUM",
-      statusBarStyle: "default",
+      statusBarStyle: "black-translucent",
       capable: true,
     },
     icons: {
@@ -63,6 +63,16 @@ export function generateMetadata({
         {
           url: "/favicon-32x32.png",
           sizes: "32x32",
+          type: "image/png",
+        },
+        {
+          url: "/web-app-manifest-192x192.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+        {
+          url: "/web-app-manifest-512x512.png",
+          sizes: "512x512",
           type: "image/png",
         },
       ],
