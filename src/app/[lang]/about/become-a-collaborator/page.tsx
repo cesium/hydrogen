@@ -1,3 +1,3 @@
 export default function BecomeACollaborator() {
-  return <main>Become a Collaborator</main>;
+  return <main className="h-[100rem]">Become a Collaborator</main>;
 }
