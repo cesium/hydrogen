@@ -89,7 +89,6 @@ const generateUrlsForTeams = (
   return urls;
 };
 
-
 const getDepartmentMembersInfo = (
   team: TeamData,
   yearRange: string,
@@ -97,7 +96,7 @@ const getDepartmentMembersInfo = (
 ): MemberInfo[] => {
   const imageUrls = generateUrlsForTeams(team, yearRange);
   const department = getDepartmentByName(team, departmentName);
-  console.log(imageUrls)
+  console.log(imageUrls);
 
   if (!department) {
     return [];
@@ -123,28 +122,28 @@ function classNames(...classes: string[]) {
 }
 
 // Short names, !! as they appear in dictionary !!
-  const departmentShortName = (departmentName: string) => {
-    switch (departmentName) {
-      case "Presidência":
-        return "presi";
-      case "Centro de Apoio ao Open Source":
-        return "caos";
-      case "Departamento de Marketing e Conteúdo":
-        return "dmc";
-      case "Departamento de Relações Externas e Merch":
-        return "drem";
-      case "Departamento Pedagógico":
-        return "ped";
-      case "Departamento Recreativo":
-        return "rec";
-      case "Mesa da Assembleia Geral":
-        return "MAG";
-      case "Conselho Fiscal":
-        return "CF";
-      default:
-        return "caos";
-    }
-  };
+const departmentShortName = (departmentName: string) => {
+  switch (departmentName) {
+    case "Presidência":
+      return "presi";
+    case "Centro de Apoio ao Open Source":
+      return "caos";
+    case "Departamento de Marketing e Conteúdo":
+      return "dmc";
+    case "Departamento de Relações Externas e Merch":
+      return "drem";
+    case "Departamento Pedagógico":
+      return "ped";
+    case "Departamento Recreativo":
+      return "rec";
+    case "Mesa da Assembleia Geral":
+      return "MAG";
+    case "Conselho Fiscal":
+      return "CF";
+    default:
+      return "caos";
+  }
+};
 
 export {
   generateYearRanges,
@@ -154,5 +153,5 @@ export {
   getDepartmentByName,
   classNames,
   getDepartmentMembersInfo,
-  departmentShortName
+  departmentShortName,
 };
