@@ -14,6 +14,7 @@
     "@formatjs/intl-localematcher": "^0.5.7",
     "@headlessui/react": "^2.2.0",
     "@types/negotiator": "^0.6.3",
+    "markdown-to-jsx": "^7.7.4",
     "motion": "^11.11.15",
     "negotiator": "^1.0.0",
     "next": "14.2.16",
