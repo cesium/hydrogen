@@ -30,8 +30,8 @@ const Footer = () => {
                 >
                   <SocialIcon
                     type={social.name.toLowerCase()}
-                    width={26}
-                    height={26}
+                    width={24}
+                    height={24}
                     fill="#6C757D"
                   />
                 </Link>
