@@ -9,8 +9,7 @@ const About = () => {
         <div
           className="flex flex-col md:flex-row md:gap-4 md:overflow-auto"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-        </div>
+        ></div>
       </div>
     </>
   );
