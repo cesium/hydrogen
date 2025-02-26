@@ -4,22 +4,28 @@ import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
 import Link from "next/link";
 
-interface Cardprops {
+interface CardProps {
   type: CardType;
+  /**
+   * When true, disables desktop-specific responsive styles,
+   * keeping mobile layout across all screen sizes.
+   * @default false
+   */
+  mobileOnlyLayout?: boolean;
 }
 
 const getColor = (type: CardType) => {
   return type === CardType.Collaborate ? "blue" : "primary";
 };
 
-const PromotionalCard = ({ type }: Cardprops) => {
+const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
   const dict = useDictionary();
   const color = getColor(type);
   const lang = useLang();
 
   return (
     <div
-      className={`relative flex min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8 bg-${color}`}
+      className={`relative flex min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color}`}
     >
       {/* Card image */}
       <div
@@ -33,12 +39,14 @@ const PromotionalCard = ({ type }: Cardprops) => {
               : "/vectors/member.svg"
           }
           alt="Promotional Image"
-          className={`${type == CardType.Collaborate ? "h-20 min-[376px]:h-24 min-[950px]:h-28" : "h-16 min-[375px]:h-20 min-[950px]:h-24"}`}
+          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`}`}
         />
       </div>
 
       {/* Descriptive text */}
-      <div className="left-2 right-0 top-8 z-10 mt-0 w-full flex-grow text-start min-[950px]:ml-48 min-[950px]:flex-grow min-[950px]:text-left">
+      <div
+        className={`left-2 right-0 top-8 z-10 mt-0 w-full flex-grow text-start ${!mobileOnlyLayout ? "min-[950px]:ml-48 min-[950px]:flex-grow min-[950px]:text-left" : ""}`}
+      >
         <h4 className="mb-2 font-title text-2xl font-medium text-white">
           {type == CardType.Collaborate
             ? dict.collaborate_card.title
@@ -53,9 +61,9 @@ const PromotionalCard = ({ type }: Cardprops) => {
 
       {/* Actions */}
 
-      <div className="flex w-full justify-end">
+      <div className="z-10 flex w-full justify-end">
         <Link
-          className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 min-[950px]:static min-[950px]:text-base text-${color}`}
+          className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 ${!mobileOnlyLayout ? "min-[950px]:static min-[950px]:text-base" : ""} text-${color}`}
           href={
             "/" +
             lang +
