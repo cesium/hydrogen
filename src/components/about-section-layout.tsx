@@ -55,7 +55,6 @@ const AboutSectionLayout = ({
       </div>
 
       <div className="overflow-auto">
-        
         <div className={horizontalPaddingR}>
           <div className={`flex justify-start ${titleOrientation == "vertical" ? "max-w-[1250px]" : ""}`}>{subtitle}</div>
 

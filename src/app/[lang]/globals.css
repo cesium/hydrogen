@@ -52,3 +52,62 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.4);
 }
+
+.custom-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-image {
+  max-width: 490px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    max-width: 316px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    width: 316.43px;
+    height: 237px;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-image {
+    width: 490px;
+    height: 367px;
+  }
+}
+
+.swiper-pagination {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .swiper-pagination {
+    display: block;
+    bottom: 10px;
+    --swiper-theme-color: #ff6f00;
+    --swiper-pagination-bottom: -4px;
+  }
+
+  .swiper-pagination-bullet {
+    opacity: 0.6;
+  }
+}
+
+/* Estilo para o segundo texto */
+.carousel-text-wrapper.second-text .carousel-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+  color: #6e6e6e; /* Cinza */
+}
