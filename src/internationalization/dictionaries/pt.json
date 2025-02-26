@@ -115,6 +115,29 @@
     "departments": {
       "title": "Departamentos",
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
+    },
+    "become_a_member": {
+      "participate": {
+        "title": "Participa gratuitamente em eventos",
+        "description": "O teu cartão de sócio é o passe direto para quase todos os nossos eventos. Aproveita noites de karaoke, board games ou cinema, workshops e showoffs, ocasiões especiais como o Magusto e a Noite de Informática, e muito mais, de graça ou com descontos exclusivos."
+      },
+      "member_kit": {
+        "title": "Kit Sócio",
+        "description": "Recebe um starter pack de ofertas, que pode incluir uma T-Shirt, cadernos, stickers, canetas, e mais. E uma tote bag para levares tudo contigo."
+      },
+      "room_acess": {
+        "title": "Acesso à sala do CeSIUM",
+        "description": "A porta da sala do CeSIUM está sempre aberta - entra quando quiseres, e instala-te. Também tens acesso à nossa Mercearia, com bebidas e snacks a preços que não encontrarás noutro sítio."
+      },
+      "represent": {
+        "title": "Representação dos teus interesses",
+        "description": "O CeSIUM é a voz dos teus interesses e problemas na universidade. Ao seres sócio, é mais fácil fazeres-te ouvir."
+      },
+      "discounts": {
+        "title": "Descontos na Merch",
+        "description": "Aproveita descontos de 30% ou mais em vários artigos da nossa Loja online, desde t-shirts e casacos, a artigos de papelaria, stickers, porta-chaves, e mais.",
+        "link": "Abrir loja"
+      }
     }
   },
   "social_media": "Redes sociais",
