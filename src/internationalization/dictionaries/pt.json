@@ -48,21 +48,6 @@
     "projects": "Projetos"
   },
   "about": {
-    "sections": {
-      "cesium": {
-        "title": "O que é o CeSIUM",
-        "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
-        "description": "Procuramos organizar actividades de contéudo semelhante e complementar ao curso, assim como promover e divulgar acções de lazer e socialização entre estudantes e ex-alunos. Representamos ainda os interesses colectivos dos alunos de Engenharia Informática junto dos orgãos ou instituições para que a sua carreira académica seja mais rica."
-      },
-      "team": {
-        "title": "Team",
-        "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
-      },
-      "departments": {
-        "title": "Departamentos",
-        "short_description": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui."
-      }
-    },
     "team": {
       "title": "Team",
       "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
@@ -93,7 +78,7 @@
     },
     "departments": {
       "title": "Departamentos",
-      "short_description": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
+      "subtitle": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     }
   },
