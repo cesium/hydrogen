@@ -10,12 +10,12 @@ export default function About() {
   const dictAbout = dict.about;
 
   const images = [
-    "/images/imagem1.jpg",
-    "/images/imagem2.jpg",
-    "/images/imagem3.jpg",
-    "/images/imagem1.jpg",
-    "/images/imagem2.jpg",
-    "/images/imagem3.jpg",
+    "/images/uMinho1.jpg",
+    "/images/sei24-25.jpg",
+    "/images/uMinho2.jpg",
+    "/images/uMinho1.jpg",
+    "/images/sei24-25.jpg",
+    "/images/uMinho2.jpg",
   ];
   
   return (
