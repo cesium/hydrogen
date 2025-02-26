@@ -94,11 +94,11 @@
   },
   "social_media": "Social media",
   "socials": [
-    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
     { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
-    { "name": "X", "url": "https://x.com/cesiuminho" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
+    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
     { "name": "GitHub", "url": "https://github.com/cesium" },
+    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
+    { "name": "X", "url": "https://x.com/cesiuminho" },
     { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
   ],
   "sections": [
