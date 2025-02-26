@@ -9,8 +9,9 @@ const About = () => {
   return (
     <>
       <div className="flex flex-col">
-<<<<<<< HEAD
         <AboutSectionLayout
+          linkName="see_more"
+          titleOrientation="vertical"
           title={dict.about.projects.title}
           subtitle={dict.about.projects.description}
           href="#"
@@ -24,12 +25,6 @@ const About = () => {
             <ProjectCard type="coderdojo" />
           </div>
         </AboutSectionLayout>
-=======
-        <div
-          className="flex flex-col md:flex-row md:gap-4 md:overflow-auto"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        ></div>
->>>>>>> main
       </div>
     </>
   );
