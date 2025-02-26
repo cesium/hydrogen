@@ -4,7 +4,7 @@ import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
 import Link from "next/link";
 
-interface Cardprops {
+interface CardProps {
   type: CardType;
   /**
    * When true, disables desktop-specific responsive styles,
@@ -18,7 +18,7 @@ const getColor = (type: CardType) => {
   return type === CardType.Collaborate ? "blue" : "primary";
 };
 
-const PromotionalCard = ({ type, mobileOnlyLayout }: Cardprops) => {
+const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
   const dict = useDictionary();
   const color = getColor(type);
   const lang = useLang();
