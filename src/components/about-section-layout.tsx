@@ -31,7 +31,7 @@ const AboutSectionLayout = ({
 
   return (
     <div
-      className={`grid w-full grid-flow-row items-stretch py-10 ${titleOrientation == "vertical" ? "sm:grid-flow-col" : ""} sm:py-12 ${horizontalPaddingL}`}
+      className={`flex w-full flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 ${horizontalPaddingL}`}
     >
       {/* Title */}
       <div
@@ -41,7 +41,7 @@ const AboutSectionLayout = ({
           className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:items-start sm:justify-center" : ""}`}
         >
           <span
-            className={`w-fit origin-right whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} `}
+            className={`w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} `}
           >
             {title}
           </span>
