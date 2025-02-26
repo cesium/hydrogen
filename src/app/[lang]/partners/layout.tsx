@@ -12,8 +12,8 @@ export function generateMetadata({
   const dict = getDictionary(lang);
 
   return {
-    title: dict.seo.title,
-    description: dict.seo.description,
+    title: dict.seo.partners.title,
+    description: dict.seo.partners.description,
     keywords: [
       "student center",
       "engeneering",
@@ -23,12 +23,13 @@ export function generateMetadata({
       "students",
       "CeSIUM",
       "CeSIUM UMinho",
+      "partners",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt",
+      url: "https://cesium.di.uminho.pt/partners",
       type: "website",
-      title: dict.seo.title,
-      description: dict.seo.description,
+      title: dict.seo.partners.title,
+      description: dict.seo.partners.description,
       images: [
         {
           url: "https://cesium.di.uminho.pt/og.png",
@@ -39,15 +40,17 @@ export function generateMetadata({
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt",
+      canonical: "https://cesium.di.uminho.pt/partners",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US",
-        pt: "https://cesium.di.uminho.pt/pt_PT",
+        en: "https://cesium.di.uminho.pt/en_US/partners",
+        pt: "https://cesium.di.uminho.pt/pt_PT/partners",
       },
     },
   };
 }
 
-export default function Home() {
-  return <main className="flex-col items-center justify-center">Home</main>;
+export default function PartnersLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return <>{children}</>;
 }
