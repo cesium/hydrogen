@@ -2,7 +2,7 @@
 
 import CustomLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { horizontalPaddingL } from "@/lib/styling";
+import { horizontalPaddingL, horizontalPaddingR } from "@/lib/styling";
 
 type TitleOr = "vertical" | "horizontal";
 type LinkName = "see_more" | "see_team";
@@ -44,7 +44,7 @@ const AboutSectionLayout = ({
           </span>
         </div>
         <span
-          className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
+          className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""} ${horizontalPaddingR}`}
         >
           <CustomLink
             title={dict.button[linkName]}
@@ -55,16 +55,19 @@ const AboutSectionLayout = ({
       </div>
 
       <div className="overflow-auto">
-        <div className={`flex justify-start ${titleOrientation == "vertical" ? "max-w-[1250px]" : ""}`}>{subtitle}</div>
+        
+        <div className={horizontalPaddingR}>
+          <div className={`flex justify-start ${titleOrientation == "vertical" ? "max-w-[1250px]" : ""}`}>{subtitle}</div>
 
-        <div
-          className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
-        >
-          <CustomLink
-            title={dict.button[linkName]}
-            href={href}
-            arrow="forward"
-          />
+          <div
+            className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+          >
+            <CustomLink
+              title={dict.button[linkName]}
+              href={href}
+              arrow="forward"
+            />
+          </div>
         </div>
 
         <div className="mt-7 sm:mt-10">{children}</div>
