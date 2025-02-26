@@ -1,119 +1,47 @@
 "use client";
 
-import AboutSectionLayout from "@/components/about-section-layout";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import Avatar from "@/components/avatar";
-import type { MemberInfo, TeamData } from "@/lib/types";
-import { useEffect, useState } from "react";
-import { departmentShortName, getDepartmentMembersInfo, generateUrlsForTeams } from "@/lib/utils";
-import { fetchTeamData } from "@/lib/utils";
-import { horizontalPadding } from "@/lib/styling";
-
-interface MemberDep extends MemberInfo {
-  department: string;
-}
+import Carousel from "@/components/carousel";
+import Image from "next/image";
 
 export default function About() {
 
   const dict = useDictionary();
   const dictAbout = dict.about;
 
-  const [teamData, setTeamData] = useState<TeamData>([]);
-  const [members, setMembers] = useState<MemberDep[]>([]);
-  const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
-
-  const yearRange = "2024-2025";
-  
-  // List of department names, !! as they appear in team data !!
-  const departmentNames = [
-    "Presidência",
-    "Centro de Apoio ao Open Source",
-    "Departamento de Marketing e Conteúdo",
-    "Departamento de Relações Externas e Merch",
-    "Departamento Pedagógico",
-    "Departamento Recreativo",
-    "Vogais"
+  const images = [
+    "/images/imagem1.jpg",
+    "/images/imagem2.jpg",
+    "/images/imagem3.jpg",
+    "/images/imagem1.jpg",
+    "/images/imagem2.jpg",
+    "/images/imagem3.jpg",
   ];
-
-  useEffect(() => {
-    console.log("useEffect running");
-    const aux = async () => {
-      console.log("aux running");
-      const team: TeamData = await fetchTeamData(yearRange);
-      setTeamData(team);
-      
-      const urls = generateUrlsForTeams(team, yearRange);
-      setImageUrls(urls);
-
-      const membersData: MemberDep[] = []; 
-      
-      departmentNames.forEach((departmentName, index) => {
-        const departmentData = getDepartmentMembersInfo(team, yearRange, departmentName);
-        console.log("Processing department:",departmentName,"\n",departmentData);
-        
-        const depShortName = (index != 0 && index != 6) ? departmentShortName(departmentName).toUpperCase() : "";
-
-        const membersWithDep = departmentData.map((member) => ({
-          ...member,
-          department: depShortName,
-        }));
-        
-        membersData.push(...membersWithDep);
-      });
-      setMembers(membersData);
-    };
-    void aux();
-  }, [yearRange]);
-
-
   
   return (
     <>
+
       <section className={`flex flex-col text-center pt-24 pb-12 gap-4 sm:gap-6 border-b-[1px] border-[#0000001A]`}>
         <p className="font-title font-medium text-2xl sm:text-3xl">{dictAbout.sections[0]?.title}</p>
         <p className="px-6 sm:px-12">{dictAbout.sections[0]?.subtitle}</p>
-        <div className="flex justify-center items-center h-60 sm:h-80 w-full bg-red-400 my-3 sm:my-6">Carroseel</div>
+        <div className="w-full pt-6">
+          <Carousel
+            autoplay={3000}
+            items={images.map((image, index) => (
+              <Image
+                key={index}
+                src={image}
+                width={400}
+                height={400}
+                alt=""
+                className="h-[400px] w-full rounded-xl object-cover"
+              />
+            ))}
+          />
+        </div>
         <p className="px-6 sm:px-12">{dictAbout.sections[0]?.description}</p>
       </section>
-      
-      <section className="flex flex-col border-b-[1px] border-[#0000001A]">
-        <AboutSectionLayout
-          title={dict.about.sections[1]?.title ?? ""}
-          //titleOrientation="vertical"
-          subtitle={dict.about.sections[1]?.subtitle ?? ""}
-          //linkName="see_team"
-          //linkPos="after"
-          href="/about/team"
-        >
-          <div className="flex gap-7 w-full overflow-scroll no-scrollbar">
-            {teamData.map((team, index) => (
-              index == 0 ? members.map((member) => (
-                <Avatar
-                key={member.name}
-                src={member.imageUrl}
-                name={member.name}
-                role={member.department ? `${member.department} • ${member.role}` : member.role}
-                className="rounded-full font-normal"
-                imageClassName="size-24 md:size-32 rounded-full"
-                />
-          
-            )) : team?.members?.map((member, memberIndex) => (
-              <Avatar
-              key={member.name}
-              src={
-                imageUrls[index]?.[0]?.[memberIndex] ??
-                "/images/none.png"
-              }
-              name={member.name}
-              role={`${team?.name} • ${member.role}`}
-              className="rounded-full"
-              imageClassName="size-24 md:size-32 rounded-full"
-              />))
-            ))}
-            
-          </div>
-        </AboutSectionLayout>
-      </section>
+
     </>
   );
 };
