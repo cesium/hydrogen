@@ -1,5 +1,7 @@
-const About = () => {
-  return <></>;
-};
+"use client";
 
-export default About;
+export default function About() {
+  return (
+    <></>
+  );
+}
