@@ -93,58 +93,54 @@ export default function BecomeAMember() {
       </InfoCard>
 
       <div className="lg:col-span-3">
-        <InfoCard>
-          <div className="flex flex-col gap-4">
-            <div className="grid grid-cols-1 lg:grid-cols-3">
-              <div className="relative order-2 -ml-[25px] h-[150px] w-[200px] self-end justify-self-start overflow-hidden sm:h-[175px] sm:w-[250px] lg:order-1 lg:self-start">
-                <Image
-                  src="/images/notebook.png"
-                  alt="discounts"
-                  layout="fill"
-                  objectFit="cover"
-                  className="object-[0%_0%] lg:object-[100%_100%]" // Default: Top-left on small, Bottom-right on large
-                />
-              </div>
+      <InfoCard>
+        <div className="flex flex-col gap-4">
+          <div className="grid h-full sm:h-96 grid-cols-2 sm:grid-cols-3">
+            <div className="relative order-2 w-full h-full max-w-[480px] justify-self-start -ml-5 mb-12 sm:-ml-12 sm:-mt-24 lg:order-1 lg:self-start">
+              <Image
+                src="/images/notebook.png"
+                alt="discounts"
+                layout="fill"
+                objectFit="cover"
+                className="object-[0%_0%] sm:object-[100%_100%]" // Default: Top-left on small, Bottom-right on large
+              />
+            </div>
 
-              <div className="order-1 col-span-2 my-[40px] justify-self-center lg:order-2 lg:col-span-1 lg:my-auto">
-                <div className="flex flex-col gap-2 px-12 py-10">
-                  <div className="mx-auto flex flex-col items-center gap-2 lg:flex-row">
-                    <span className="material-symbols-outlined text-4xl text-[#5C657F]">
-                      percent
-                    </span>
-                    <h2 className="text-center font-title text-2xl font-semibold">
-                      {dict.about.become_a_member.discounts.title}
-                    </h2>
-                  </div>
-                  <p className="text-center">
-                    {dict.about.become_a_member.discounts.description}
-                  </p>
-                  <a
-                    className="mx-auto flex flex-row items-center justify-center gap-1 text-[#5C657F]"
-                    href="https://store.cesium.pt"
-                  >
-                    <p className="text-center">
-                      {dict.about.become_a_member.discounts.link}
-                    </p>
-                    <span className="material-symbols-outlined leading-8">
-                      north_east
-                    </span>
-                  </a>
+            <div className="order-1 col-span-2 flex items-center justify-center h-full sm:order-2 sm:col-span-1">
+              <div className="flex flex-col items-center gap-2 px-12 py-10 sm:px-0">
+                <div className="flex flex-col items-center gap-2 mx-auto lg:flex-row">
+                  <span className="text-4xl text-[#5C657F] material-symbols-outlined">
+                    percent
+                  </span>
+                  <h2 className="text-2xl font-semibold text-center font-title">
+                    {dict.about.become_a_member.discounts.title}
+                  </h2>
                 </div>
-              </div>
-
-              <div className="relative order-3 -mb-[25px] -mr-[150px] h-[150px] w-[300px] justify-self-end overflow-hidden sm:h-[200px] sm:w-[400px] lg:mt-[150px]">
-                <Image
-                  src="/images/laptop.png"
-                  alt="discounts"
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="0% 0%"
-                />
+                <p className="text-center">{dict.about.become_a_member.discounts.description}</p>
+                <a
+                  className="flex flex-row items-center justify-center gap-1 mx-auto text-[#5C657F]"
+                  href="https://store.cesium.pt"
+                >
+                  <p className="text-center">{dict.about.become_a_member.discounts.link}</p>
+                  <span className="leading-8 material-symbols-outlined">north_east</span>
+                </a>
               </div>
             </div>
+
+            <div className="relative order-3 w-full h-full max-w-[480px] justify-self-end -mr-5 pb-32 sm:pb-0 -mb-4 sm:-mr-12 sm:mt-24">
+              <Image
+                src="/images/laptop.png"
+                alt="discounts"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="0% 0%"
+              />
+            </div>
           </div>
-        </InfoCard>
+        </div>
+      </InfoCard>
+
+
       </div>
     </main>
   );
