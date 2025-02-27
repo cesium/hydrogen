@@ -32,16 +32,16 @@ const Navbar = () => {
     { name: dict.navbar.projects, path: "/projects" },
   ];
 
-  const isMemberOrCollaborator =
-    pathname === "/about/become-a-member" ||
-    pathname === "/about/become-a-collaborator";
+  const isMember = pathname === "/about/become-a-member";
+  const isCollaborator = pathname === "/about/become-a-collaborator";
 
-  const navbarBackgroundColor =
-    pathname === "/about/become-a-member"
-      ? "bg-primary"
-      : pathname === "/about/become-a-collaborator"
-        ? "bg-blue"
-        : "bg-background";
+  const isMemberOrCollaborator = isMember || isCollaborator;
+
+  const navbarBackgroundColor = isMember
+    ? "bg-primary"
+    : isCollaborator
+      ? "bg-blue"
+      : "bg-background";
   const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
   const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
   const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${navbarBackgroundColor} sticky top-0 z-40 flex w-full flex-col px-5 pb-3 pt-4 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-background after:to-transparent md:relative md:px-20 md:pt-12 after:md:hidden`}
+      className={`${navbarBackgroundColor} ${isMemberOrCollaborator ? "relative after:hidden" : "sticky"} top-0 z-40 flex w-full flex-col px-5 pb-3 pt-4 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-background after:to-transparent md:relative md:px-20 md:pt-12 after:md:hidden`}
     >
       <nav className="flex items-center justify-between gap-9 md:justify-normal">
         <Link href="/">

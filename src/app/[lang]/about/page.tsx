@@ -46,6 +46,4 @@ const About = () => {
       </div>
     </main>
   );
-};
-
-export default About;
+}
