@@ -14,7 +14,7 @@ function About() {
           titleOrientation="vertical"
           title={dict.about.projects.title}
           subtitle={dict.about.projects.description}
-          href="#"
+          href="/projects"
         >
           <div
             className="flex flex-col md:flex-row md:gap-4"
