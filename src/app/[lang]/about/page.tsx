@@ -3,7 +3,7 @@ import AboutSectionLayout from "@/components/about-section-layout";
 import ProjectCard from "@/components/project-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 
-function About() {
+export default function About() {
   const dict = useDictionary();
   return (
     <>
