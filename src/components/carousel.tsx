@@ -15,41 +15,38 @@ interface CarouselProps {
 }
 
 export default function Carousel({
-  overflow = false, /* Shows partially the previous and next items */
-  pagination = false, /* Shows the bullet pagination */
-  loop = false, /* Loops through the items */
-  items, /* Items to show on the carousel */
-  autoplay, /* Sets if the carousel has autoplay */
+  overflow = false /* Shows partially the previous and next items */,
+  pagination = false /* Shows the bullet pagination */,
+  loop = false /* Loops through the items */,
+  items /* Items to show on the carousel */,
+  autoplay /* Sets if the carousel has autoplay */,
 }: CarouselProps) {
-
   return (
-    <div className="">
-      <Swiper
-        slidesPerView={overflow ? 1.3 : 1}
-        spaceBetween={15}
-        centeredSlides={true}
-        loop={loop ? true : false}
-        autoplay={
-          autoplay ? { delay: autoplay, disableOnInteraction: false } : false
-        }
-        pagination={pagination ? { clickable: true, type: "bullets" } : false}
-        breakpoints={{
-          768: {
-            slidesPerView: overflow ? 1.8 : 2,
-            spaceBetween: 15,
-            centeredSlides: overflow ? true : false,
-          },
-          1024: { slidesPerView: overflow ? 2.5 : 3, spaceBetween: 20 },
-        }}
-        modules={[Autoplay, Pagination]}
-        className="custom-swiper"
-      >
-        {items.map((item, index) => (
-          <SwiperSlide key={index} className={`flex justify-center`}>
-            {item}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+    <Swiper
+      slidesPerView={overflow ? 1.3 : 1}
+      spaceBetween={15}
+      centeredSlides={true}
+      loop={loop ? true : false}
+      autoplay={
+        autoplay ? { delay: autoplay, disableOnInteraction: false } : false
+      }
+      pagination={pagination ? { clickable: true, type: "bullets" } : false}
+      breakpoints={{
+        768: {
+          slidesPerView: overflow ? 1.8 : 2,
+          spaceBetween: 15,
+          centeredSlides: overflow ? true : false,
+        },
+        1024: { slidesPerView: overflow ? 2.5 : 3, spaceBetween: 20 },
+      }}
+      modules={[Autoplay, Pagination]}
+      className="custom-swiper"
+    >
+      {items.map((item, index) => (
+        <SwiperSlide key={index} className={`flex justify-center`}>
+          {item}
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }

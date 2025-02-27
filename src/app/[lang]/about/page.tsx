@@ -45,12 +45,12 @@ export default function Home() {
         <p>Pedro Rangel Henriques</p>
         <p>Diretor Do Departamento de Informática - 2017</p>
       </div>
-    </div>
+    </div>,
   ];
 
   return (
     <main className="flex-col items-center justify-center">
-      <div className="block pt-6 px-6 md:hidden">
+      <div className="block px-6 pt-6 md:hidden">
         <Carousel
           autoplay={2000}
           pagination
