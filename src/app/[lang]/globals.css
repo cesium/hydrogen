@@ -58,6 +58,15 @@
   overflow: hidden;
 }
 
+.custom-swiper .swiper-pagination {
+  display: flex;
+  position: relative;
+  margin-top: 38px;
+  margin-bottom: 20px;
+  justify-content: center;
+  --swiper-theme-color: #ff6f00;
+}
+
 .carousel-image {
   max-width: 490px;
   height: auto;
@@ -93,8 +102,6 @@
   .swiper-pagination {
     display: block;
     bottom: 10px;
-    --swiper-theme-color: #ff6f00;
-    --swiper-pagination-bottom: -4px;
   }
 
   .swiper-pagination-bullet {
