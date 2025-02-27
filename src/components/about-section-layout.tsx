@@ -60,7 +60,6 @@ const AboutSectionLayout = ({
       <div className="overflow-auto">
         <div className={horizontalPaddingR}>
           <span className="text-start">{subtitle}</span>
-
           <div
             className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
           >
