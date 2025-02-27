@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <div className={`bg-[#EBEBEB] ${horizontalPadding}`}>
-      <footer className=" flex flex-col place-items-center px-5 pb-16 pt-8 sm:flex-row sm:place-items-end sm:px-7 md:px-12">
+      <footer className=" flex flex-col place-items-center pb-16 pt-8 sm:flex-row sm:place-items-end sm:px-7 md:px-12">
         <div className="flex w-full max-w-[500px] flex-col place-items-center justify-center space-y-5 sm:w-1/2 sm:max-w-max sm:flex-col-reverse md:place-items-start">
           <div className="w-full space-y-6 pb-2.5 sm:mt-[50px] sm:w-80 sm:pb-0">
             <Image
