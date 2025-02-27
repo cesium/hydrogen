@@ -4,7 +4,7 @@ import AboutSectionLayout from "@/components/about-section-layout";
 import ProjectCard from "@/components/project-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 
-const About = () => {
+function About() {
   const dict = useDictionary();
   return (
     <>
@@ -17,7 +17,7 @@ const About = () => {
           href="#"
         >
           <div
-            className="flex flex-col overflow-auto md:flex-row md:gap-4"
+            className="flex flex-col md:flex-row md:gap-4"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <ProjectCard type="sei" />
@@ -28,6 +28,6 @@ const About = () => {
       </div>
     </>
   );
-};
+}
 
 export default About;
