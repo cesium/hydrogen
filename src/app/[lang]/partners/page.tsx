@@ -11,8 +11,9 @@ export default function Partners() {
   return (
     <main className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding + verticalPadding}`}>
       <div className="grid grid-cols-1 gap-2.5 sm:gap-3 md:grid-cols-2 lg:grid-cols-3">
-        {partners.map((partner) => (
+        {partners.map((partner, index) => (
           <PartnerCard
+            key={index}
             title={partner.title}
             url={partner.url}
             logo={partner.logo}
