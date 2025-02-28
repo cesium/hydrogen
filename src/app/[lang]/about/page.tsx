@@ -104,6 +104,7 @@ export default function About() {
                       }
                       className="rounded-full font-normal"
                       imageClassName="size-24 md:size-32 rounded-full"
+                      style="style2"
                     />
                   ))
                 : team?.members?.map((member, memberIndex) => (
@@ -117,6 +118,7 @@ export default function About() {
                       role={`${departmentShortName(team?.name)} • ${member.role}`}
                       className="rounded-full"
                       imageClassName="size-24 md:size-32 rounded-full"
+                      style="style2"
                     />
                   )),
             )}
