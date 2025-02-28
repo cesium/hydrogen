@@ -2,18 +2,28 @@
 
 import CustomLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { horizontalPadding } from "@/lib/styling";
+import { horizontalPaddingL, horizontalPaddingR } from "@/lib/styling";
+
+type TitleOr = "vertical" | "horizontal";
+type LinkName = "see_more" | "see_team";
+type LinkPos = "after" | "before";
 
 interface AboutSectionProps {
   title: string;
+  titleOrientation?: TitleOr;
   subtitle: string;
+  linkName: LinkName;
+  linkPos?: LinkPos;
   href: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const AboutSectionLayout = ({
   title,
+  titleOrientation, // Allows to show the title horizontally on desktop
   subtitle,
+  linkName,
+  linkPos, // Allows to show the link after the subtitle on mobile
   href,
   children,
 }: AboutSectionProps) => {
@@ -21,35 +31,51 @@ const AboutSectionLayout = ({
 
   return (
     <div
-      className={`flex flex-col items-stretch py-10 sm:flex-row sm:py-12 ${horizontalPadding}`}
+      className={`flex w-full flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 ${horizontalPaddingL}`}
     >
-      <div className="mb-4 flex w-full items-center sm:mr-6 sm:w-20">
-        <div className="flex h-fit flex-1 items-center justify-start sm:h-full sm:w-full sm:items-start sm:justify-center">
-          <span className="w-fit origin-right font-title text-2xl font-medium sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 sm:text-3xl">
+      {/* Title */}
+      <div
+        className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-20" : "mb-4"} sm:mr-6`}
+      >
+        <div
+          className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:items-start sm:justify-center" : ""}`}
+        >
+          <span
+            className={`w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} `}
+          >
             {title}
           </span>
         </div>
-        <span className="pt-1 sm:hidden">
+        <span
+          className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""} ${horizontalPaddingR}`}
+        >
           <CustomLink
-            title={dict.button.see_more}
+            title={dict.button[linkName]}
             href={href}
             arrow="forward"
           />
         </span>
       </div>
-
-      <div>
-        <div className="flex justify-start">{subtitle}</div>
-
-        <div className="mt-4 hidden sm:block">
-          <CustomLink
-            title={dict.button.see_more}
-            href={href}
-            arrow="forward"
-          />
+      {/* Subtitle */}
+      <div className="overflow-auto">
+        <div className={horizontalPaddingR}>
+          <span className="text-start">{subtitle}</span>
+          <div
+            className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+          >
+            <CustomLink
+              title={dict.button[linkName]}
+              href={href}
+              arrow="forward"
+            />
+          </div>
         </div>
-
-        <div className="mt-7 sm:mt-10">{children}</div>
+        {/* Content (Scrollable) */}
+        <div
+          className={`mt-7 overflow-y-auto overflow-x-scroll sm:mt-10 ${horizontalPaddingR}`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,41 @@
 {
-  "cesium": "CeSIUM - Computer Engineering Student Center at the University of Minho",
+  "seo": {
+    "title": "CeSIUM - Computer Engineering Student Center at UMinho",
+    "description": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
+    "projects": {
+      "title": "Projects | CeSIUM",
+      "description": "Estes são os projetos desenvolvidos pelo CeSIUM."
+    },
+    "partners": {
+      "title": "Partners | CeSIUM",
+      "description": "Estas são as parcerias do CeSIUM."
+    },
+    "events": {
+      "title": "Events | CeSIUM",
+      "description": "Estes são os eventos dinamizados pelo CeSIUM."
+    },
+    "about": {
+      "title": "About | CeSIUM",
+      "description": "Sabe mais sobre nós."
+    },
+    "team": {
+      "title": "Team | CeSIUM",
+      "description": "Conhece a equipa do CeSIUM."
+    },
+    "departments": {
+      "title": "Departments | CeSIUM",
+      "description": "Conhece os nossos departamentos."
+    },
+    "become_a_collaborator": {
+      "title": "Become a Collaborator | CeSIUM",
+      "description": "Conhece as vantagens de te tornares nosso colaborador."
+    },
+    "become_a_member": {
+      "title": "Become a Member | CeSIUM",
+      "description": "Conhece as vantagens de te tornares nosso sócio."
+    }
+  },
+  "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
     "name": ["Center for", "Open Source Support"],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
@@ -105,30 +141,12 @@
   },
   "social_media": "Social media",
   "socials": [
-    {
-      "name": "Facebook",
-      "url": "https://www.facebook.com/cesiuminho"
-    },
-    {
-      "name": "Instagram",
-      "url": "https://www.instagram.com/cesiuminho"
-    },
-    {
-      "name": "X",
-      "url": "https://x.com/cesiuminho"
-    },
-    {
-      "name": "TikTok",
-      "url": "https://www.tiktok.com/@cesiuminho"
-    },
-    {
-      "name": "GitHub",
-      "url": "https://github.com/cesium"
-    },
-    {
-      "name": "YouTube",
-      "url": "https://www.youtube.com/c/cesiumUM"
-    }
+    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
+    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
+    { "name": "GitHub", "url": "https://github.com/cesium" },
+    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
+    { "name": "X", "url": "https://x.com/cesiuminho" },
+    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
   ],
   "sections": [
     {
