@@ -29,7 +29,10 @@
     "see_team": "Go to team",
     "learn_more": "Learn more",
     "see_more": "See more",
-    "back": "Go Back"
+    "back": "Go Back",
+    "open_calendarium": "Open Calendarium",
+    "open_shop": "Open Shop",
+    "partnerships": "Partnerships"
   },
   "collaborate_card": {
     "title": "Become a collaborator",
@@ -79,16 +82,53 @@
     "departments": {
       "title": "Departments",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
+    },
+    "explore": {
+      "title": "Explore further",
+      "events": {
+        "title": "Events",
+        "description": "Curious about the dates of our events? We have a page for that. For more course dates, we have the Calendarium."
+      },
+      "shop": {
+        "title": "Shop",
+        "description": "T-shirts, accessories and materials from CeSIUM and our projects - everything is available in our online store."
+      },
+      "become_a_member": {
+        "title": "Become a member",
+        "description": "CeSIUM members are entitled to a number of benefits. Discover them now and the partnerships they entitle you to."
+      },
+      "become_a_collaborator": {
+        "title": "Become a collaborator",
+        "description": "If you'd like to be part of the team, we'd love to welcome you. Find out more about how you can become a collaborator."
+      }
     }
   },
   "social_media": "Social media",
   "socials": [
-    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
-    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
-    { "name": "X", "url": "https://x.com/cesiuminho" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
-    { "name": "GitHub", "url": "https://github.com/cesium" },
-    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/cesiuminho"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/cesiuminho"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/cesiuminho"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@cesiuminho"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/cesium"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/c/cesiumUM"
+    }
   ],
   "sections": [
     {
