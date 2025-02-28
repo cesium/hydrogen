@@ -4,12 +4,10 @@ import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
 import ProjectCard from "@/components/project-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { useDictionary } from "@/contexts/dictionary-provider";
 
 export default function About() {
   const dict = useDictionary();
-const About = () => {
-  const dict = useDictionary();
+  
   return (
     <>
       <div className="flex flex-col">
