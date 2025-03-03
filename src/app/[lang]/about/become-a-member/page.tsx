@@ -33,7 +33,6 @@ export default function BecomeAMember() {
               <div className="pointer-events-none absolute left-0 top-0 z-0 h-full w-full">
                 <div className="absolute bottom-[-50px] left-0 right-0 top-[-10px] bg-gradient-to-r from-[#9DD0FF] via-[#F5CFFF] to-[#FF9BC5] opacity-80 blur-[50px]"></div>
               </div>
-              {/* Image container with clipping */}
               <div className="relative z-10 h-full w-full overflow-hidden">
                 <Image
                   src="/images/ticket.png"
