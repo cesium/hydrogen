@@ -29,7 +29,6 @@ export default function BecomeAMember() {
             </p>
 
             <div className="relative mt-6 h-[180px] w-full min-w-[580px] max-w-[980px] sm:mt-8 md:mx-auto">
-              {/* Gradient Background outside the overflow-hidden box */}
               <div className="pointer-events-none absolute left-0 top-0 z-0 h-full w-full">
                 <div className="absolute bottom-[-50px] left-0 right-0 top-[-10px] bg-gradient-to-r from-[#9DD0FF] via-[#F5CFFF] to-[#FF9BC5] opacity-80 blur-[50px]"></div>
               </div>
