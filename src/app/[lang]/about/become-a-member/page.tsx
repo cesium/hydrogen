@@ -66,7 +66,6 @@ export default function BecomeAMember() {
         </div>
       </InfoCard>
 
-
       <InfoCard>
         <div className="flex flex-col gap-4 px-12 py-10">
           <span className="material-symbols-outlined text-5xl text-primary">
@@ -92,47 +91,58 @@ export default function BecomeAMember() {
       </InfoCard>
 
       <div className="2xl:col-span-3">
-      <InfoCard>
-        <div className="flex flex-col gap-4">
-          <div className="grid h-full sm:h-96 grid-cols-2 sm:grid-cols-3">
-            <div className="relative order-2 w-full h-full max-w-[480px] justify-self-start -mb-4 sm:mb-0 -ml-4 sm:-ml-12 sm:-mt-24 lg:order-1">
-              <Image
-                src="/images/notebook.png"
-                alt="discounts"
-                layout="fill"
-                objectFit="cover"
-                className="object-[0%_0%] sm:object-[100%_100%]"
-              />
-            </div>
+        <InfoCard>
+          <div className="flex flex-col gap-4">
+            <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
+              <div className="relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1">
+                <Image
+                  src="/images/notebook.png"
+                  alt="discounts"
+                  layout="fill"
+                  objectFit="cover"
+                  className="object-[0%_0%] sm:object-[100%_100%]"
+                />
+              </div>
 
-            <div className="order-1 col-span-2 flex items-center justify-center h-full sm:order-2 sm:col-span-1">
-              <div className="flex flex-col items-center gap-2 px-12 py-10 sm:px-0">
-                <div className="flex flex-col items-center gap-2 lg:flex-row">
-                  <span className="text-4xl text-[#5C657F] material-symbols-outlined">percent</span>
-                  <h2 className="text-2xl font-semibold text-center font-title">
-                    {dict.about.become_a_member.discounts.title}
-                  </h2>
+              <div className="order-1 col-span-2 flex h-full items-center justify-center sm:order-2 sm:col-span-1">
+                <div className="flex flex-col items-center gap-2 px-12 py-10 sm:px-0">
+                  <div className="flex flex-col items-center gap-2 lg:flex-row">
+                    <span className="material-symbols-outlined text-4xl text-[#5C657F]">
+                      percent
+                    </span>
+                    <h2 className="text-center font-title text-2xl font-semibold">
+                      {dict.about.become_a_member.discounts.title}
+                    </h2>
+                  </div>
+                  <p className="text-center">
+                    {dict.about.become_a_member.discounts.description}
+                  </p>
+                  <a
+                    className="flex items-center gap-1 text-[#5C657F]"
+                    href="https://store.cesium.pt"
+                  >
+                    <p className="text-center">
+                      {dict.about.become_a_member.discounts.link}
+                    </p>
+                    <span className="material-symbols-outlined leading-8">
+                      north_east
+                    </span>
+                  </a>
                 </div>
-                <p className="text-center">{dict.about.become_a_member.discounts.description}</p>
-                <a className="flex items-center gap-1 text-[#5C657F]" href="https://store.cesium.pt">
-                  <p className="text-center">{dict.about.become_a_member.discounts.link}</p>
-                  <span className="leading-8 material-symbols-outlined">north_east</span>
-                </a>
+              </div>
+
+              <div className="relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0">
+                <Image
+                  src="/images/laptop.png"
+                  alt="discounts"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="0% 0%"
+                />
               </div>
             </div>
-
-            <div className="relative order-3 w-full h-full max-w-[480px] justify-self-end pb-32 sm:pb-0 -mb-4 sm:mb-0 -mr-4 sm:-mr-12 sm:mt-24">
-              <Image
-                src="/images/laptop.png"
-                alt="discounts"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="0% 0%"
-              />
-            </div>
           </div>
-        </div>
-      </InfoCard>
+        </InfoCard>
       </div>
     </main>
   );
