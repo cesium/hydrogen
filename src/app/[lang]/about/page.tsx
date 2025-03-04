@@ -79,53 +79,52 @@ export default function About() {
   }, [yearRange]);
 
   return (
-    <>
-      <div className="flex flex-col">
-        <AboutSectionLayout
-          title={dict.about.sections.team.title ?? ""}
-          titleOrientation="vertical"
-          subtitle={dict.about.sections.team.subtitle ?? ""}
-          linkName="see_team"
-          linkPos="after"
-          href="/about/team"
-        >
-          <div className="no-scrollbar flex w-full gap-7 overflow-scroll scroll-smooth">
-            {teamData.map((team, index) =>
-              index == 0
-                ? members.map((member) => (
-                    <Avatar
-                      key={member.name}
-                      src={member.imageUrl}
-                      name={member.name}
-                      role={
-                        member.department
-                          ? `${member.department} • ${member.role}`
-                          : member.role
-                      }
-                      className="rounded-full font-normal"
-                      imageClassName="size-24 md:size-32 rounded-full"
-                      style="style2"
-                    />
-                  ))
-                : team?.members?.map((member, memberIndex) => (
-                    <Avatar
-                      key={member.name}
-                      src={
-                        imageUrls[index]?.[0]?.[memberIndex] ??
-                        "/images/none.png"
-                      }
-                      name={member.name}
-                      role={`${departmentShortName(team?.name)} • ${member.role}`}
-                      className="rounded-full"
-                      imageClassName="size-24 md:size-32 rounded-full"
-                      style="style2"
-                    />
-                  )),
-            )}
-          </div>
-        </AboutSectionLayout>
-      </div>
-    </>
+    <main>
+      <AboutSectionLayout
+        title={dict.about.sections.team.title ?? ""}
+        titleOrientation="vertical"
+        subtitle={dict.about.sections.team.subtitle ?? ""}
+        linkName="see_team"
+        linkPos="after"
+        href="/about/team"
+        overflows
+      >
+        <div className="no-scrollbar flex w-full gap-7 overflow-scroll scroll-smooth">
+          {teamData.map((team, index) =>
+            index == 0
+              ? members.map((member) => (
+                  <Avatar
+                    key={member.name}
+                    src={member.imageUrl}
+                    name={member.name}
+                    role={
+                      member.department
+                        ? `${member.department} • ${member.role}`
+                        : member.role
+                    }
+                    className="rounded-full font-normal"
+                    imageClassName="size-24 md:size-32 rounded-full"
+                    style="style2"
+                  />
+                ))
+              : team?.members?.map((member, memberIndex) => (
+                  <Avatar
+                    key={member.name}
+                    src={
+                      imageUrls[index]?.[0]?.[memberIndex] ??
+                      "/images/none.png"
+                    }
+                    name={member.name}
+                    role={`${departmentShortName(team?.name)} • ${member.role}`}
+                    className="rounded-full"
+                    imageClassName="size-24 md:size-32 rounded-full"
+                    style="style2"
+                  />
+                )),
+          )}
+        </div>
+      </AboutSectionLayout>
+    </main>
   );
 }
 
