@@ -9,9 +9,9 @@ export default function BecomeAMember() {
 
   return (
     <main
-      className={`grid grid-cols-1 gap-7 lg:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
+      className={`grid grid-cols-1 gap-7 2xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
-      <div className="lg:col-span-3">
+      <div className="2xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
             <div className="z-10 flex flex-col items-start gap-4 md:flex-row">
@@ -48,12 +48,12 @@ export default function BecomeAMember() {
 
       <InfoCard>
         <div className="flex h-full flex-row items-center">
-          <div className="relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:w-[300px] lg:h-[90%] lg:w-[450px]">
+          <div className="relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
             <Image
               src="/images/totebag.png"
               alt="totebag"
               layout="fill"
-              className="object-cover object-right min-[604px]:object-bottom min-[604px]:pb-2 lg:object-right"
+              className="object-cover object-[right_bottom]"
             />
           </div>
 
@@ -65,6 +65,7 @@ export default function BecomeAMember() {
           </div>
         </div>
       </InfoCard>
+
 
       <InfoCard>
         <div className="flex flex-col gap-4 px-12 py-10">
@@ -90,7 +91,7 @@ export default function BecomeAMember() {
         </div>
       </InfoCard>
 
-      <div className="lg:col-span-3">
+      <div className="2xl:col-span-3">
       <InfoCard>
         <div className="flex flex-col gap-4">
           <div className="grid h-full sm:h-96 grid-cols-2 sm:grid-cols-3">
