@@ -14,7 +14,7 @@ export default function About() {
   
   return (
     <main>
-      <section className={`flex flex-col items-center text-center py-12 gap-4 sm:gap-6 border-b-[1px] border-[#0000001A] bg-gray/`}>
+      <section className={`flex flex-col items-center text-center py-12 gap-4 sm:gap-6 border-b border-black/10 bg-black/5`}>
         <p className="font-title font-medium text-2xl sm:text-3xl">{dictAbout.sections.cesium.title}</p>
         <p className={horizontalPadding}>{dictAbout.sections.cesium.subtitle}</p>
         <div className="w-full overflow-hidden pt-4 sm:pt-6">
