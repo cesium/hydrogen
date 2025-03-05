@@ -16,7 +16,7 @@ export default function About() {
     <main>
       <section className={`flex flex-col items-center text-center py-12 gap-4 sm:gap-6 border-b-[1px] border-[#0000001A] bg-gray/`}>
         <p className="font-title font-medium text-2xl sm:text-3xl">{dictAbout.sections.cesium.title}</p>
-        <p className="px-6 sm:px-64">{dictAbout.sections.cesium.subtitle}</p>
+        <p className={horizontalPadding}>{dictAbout.sections.cesium.subtitle}</p>
         <div className="w-full overflow-hidden pt-4 sm:pt-6">
           <Carousel
             autoplay={2000}
@@ -36,7 +36,7 @@ export default function About() {
             ))}
           />
         </div>
-        <p className="px-6 sm:px-64">{dictAbout.sections.cesium.description}</p>
+        <p className={horizontalPadding}>{dictAbout.sections.cesium.description}</p>
       </section>
     </main>
   );
