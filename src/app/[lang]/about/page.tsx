@@ -76,6 +76,7 @@ export default function About() {
       setMembers(membersData);
     };
     void aux();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [yearRange]);
 
   return (
