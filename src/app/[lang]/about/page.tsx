@@ -89,7 +89,7 @@ export default function About() {
         href="/about/team"
         overflows
       >
-        <div className="no-scrollbar flex w-full gap-7 overflow-scroll scroll-smooth">
+        <div className="flex w-full gap-7">
           {teamData.map((team, index) =>
             index == 0
               ? members.map((member) => (
