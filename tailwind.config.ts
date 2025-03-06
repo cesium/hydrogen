@@ -57,6 +57,18 @@ const config: Config = {
     "pl-5",
     "md:pr-7",
     "md:pl-7",
+    "2xl:px-60",
+    "2xl:pr-60",
+    "2xl:pl-60",
+    "lg:px-28",
+    "lg:pr-28",
+    "lg:pl-28",
+    "sm:px-7",
+    "sm:pr-7",
+    "sm:pl-7",
+    "md:px-16",
+    "md:pr-16",
+    "md:pl-16",
   ],
 };
 export default config;
