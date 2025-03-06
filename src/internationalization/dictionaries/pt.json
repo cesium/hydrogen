@@ -144,22 +144,63 @@
     },
     "explore": {
       "title": "Explora mais",
-      "events": {
-        "title": "Eventos",
-        "description": "Curioso sobre as datas dos nossos eventos? Temos uma página para isso. Para mais datas do curso, temos o Calendarium."
-      },
-      "shop": {
-        "title": "Loja",
-        "description": "Camisolas, acessórios e materiais do CeSIUM e dos nossos projetos - está tudo disponível na nossa loja online."
-      },
-      "become_a_member": {
-        "title": "Torna-te sócio",
-        "description": "Sócios do CeSIUM têm direito a vários benefícios. Descobre-os já e as parcerias a que te dão direito."
-      },
-      "become_a_collaborator": {
-        "title": "Torna-te colaborador",
-        "description": "Se gostavas de fazer parte do núcleo, nós adorávamos receber-te. Sabe mais sobre como te podes tornar um colaborador."
-      }
+      "items": [
+        {
+          "id": "events",
+          "title": "Eventos",
+          "description": "Curioso sobre as datas dos nossos eventos? Temos uma página para isso. Para mais datas do curso, temos o Calendarium.",
+          "links": [
+            { "title": "Eventos", "href": "/events", "arrow": "forward" },
+            {
+              "title": "Abrir Calendarium",
+              "href": "https://calendario.cesium.di.uminho.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "id": "shop",
+          "title": "Loja",
+          "description": "Camisolas, acessórios e materiais do CeSIUM e dos nossos projetos - está tudo disponível na nossa loja online.",
+          "links": [
+            {
+              "title": "Abrir loja",
+              "href": "https://store.cesium.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "id": "become_a_member",
+          "title": "Torna-te sócio",
+          "description": "Sócios do CeSIUM têm direito a vários benefícios. Descobre-os já e as parcerias a que te dão direito.",
+          "links": [
+            {
+              "title": "Torna-te sócio",
+              "href": "/about/become-a-member",
+              "arrow": "forward"
+            },
+            {
+              "title": "Parcerias",
+              "href": "/partners",
+              "arrow": "forward"
+            }
+          ]
+        },
+        {
+          "id": "become_a_collaborator",
+          "title": "Torna-te colaborador",
+          "description": "Se gostavas de fazer parte do núcleo, nós adorávamos receber-te. Sabe mais sobre como te podes tornar um colaborador.",
+          "links": [
+            {
+              "title": "Torna-te colaborador",
+              "href": "/about/become-a-collaborator",
+              "arrow": "forward",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
     }
   },
   "social_media": "Redes sociais",

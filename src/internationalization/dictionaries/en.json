@@ -119,28 +119,63 @@
       "title": "Departments",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
-    "become_a_member": {
-      "participate": {
-        "title": "Participate",
-        "description": "Participate in all our events for free and enjoy tons of other benefits."
-      },
-      "member_kit": {
-        "title": "Member Kit",
-        "description": "You can join these departments and contribute to making your organization work."
-      },
-      "room_acess": {
-        "title": "Room Access",
-        "description": "You can access our room and use our resources."
-      },
-      "represent": {
-        "title": "Represent",
-        "description": "You can represent CeSIUM in events and competitions."
-      },
-      "discounts": {
-        "title": "Discounts",
-        "description": "You can get discounts on our store and with our partners.",
-        "link": "Go to store"
-      }
+    "explore": {
+      "title": "Explore further",
+      "items": [
+        {
+          "title": "Events",
+          "description": "Curious about the dates of our events? We have a page for that. For more course dates, we have the Calendarium.",
+          "links": [
+            {
+              "title": "Events",
+              "href": "/events",
+              "arrow": "forward"
+            },
+            {
+              "title": "Open Calendarium",
+              "href": "https://calendario.cesium.di.uminho.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "title": "Shop",
+          "description": "T-shirts, accessories and materials from CeSIUM and our projects - everything is available in our online store.",
+          "links": [
+            {
+              "title": "Open Shop",
+              "href": "https://store.cesium.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "title": "Become a member",
+          "description": "CeSIUM members are entitled to a number of benefits. Discover them now and the partnerships they entitle you to.",
+          "links": [
+            {
+              "title": "Become a member",
+              "href": "/about/become-a-member",
+              "arrow": "forward"
+            },
+            { "title": "Partnerships",
+              "href": "/partners",
+              "arrow": "forward" }
+          ]
+        },
+        {
+          "title": "Become a collaborator",
+          "description": "If you'd like to be part of the team, we'd love to welcome you. Find out more about how you can become a collaborator.",
+          "links": [
+            {
+              "title": "Become a collaborator",
+              "href": "/about/become-a-collaborator",
+              "arrow": "forward",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
     }
   },
   "social_media": "Social media",

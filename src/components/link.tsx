@@ -9,15 +9,13 @@ interface LinkProps {
   color?: "primary" | "blue";
 }
 
-const AppLink = ({ title, href, arrow, color }: LinkProps) => {
+const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
   const hrefLang = `/${lang}${href}`;
   const router = useRouter();
 
-  const style = `flex items-center gap-1 font-medium transition-opacity hover:opacity-85 ${
-    color === "blue" ? "text-blue" : "text-primary"
-  }`;
+  const style = `flex items-center gap-1 font-medium transition-opacity hover:opacity-85 text-${color}`;
 
   return arrow === "back" ? (
     <button onClick={() => router.back()} className={style}>
