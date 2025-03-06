@@ -9,8 +9,10 @@ export default function Partners() {
   const partners = dict.partners;
 
   return (
-    <main className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding + verticalPadding}`}>
-      <div className="grid grid-cols-1 gap-2.5 sm:gap-3 md:grid-cols-2 lg:grid-cols-3">
+    <main
+      className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding} ${verticalPadding}`}
+    >
+      <div className="grid grid-cols-1 gap-2.5 sm:gap-3 md:grid-cols-2 2xl:grid-cols-3">
         {partners.map((partner, index) => (
           <PartnerCard
             key={index}

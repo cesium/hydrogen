@@ -53,7 +53,7 @@ const Navbar = () => {
       : "text-gray";
 
   return (
-    <div className={horizontalPadding}>
+    <div className={`${navbarBackgroundColor} ${horizontalPadding}`}>
       <div
         className={`${navbarBackgroundColor} ${isMemberOrCollaborator ? "relative after:hidden" : "sticky"} top-0 z-40 flex w-full flex-col pb-3 pt-4 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-background after:to-transparent md:relative md:px-12 md:pt-12 after:md:hidden`}
       >
