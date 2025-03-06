@@ -69,10 +69,6 @@
     "open_calendarium": "Abrir Calendarium",
     "open_shop": "Abrir loja",
     "partnerships": "Parcerias"
-    "back": "Voltar",
-    "open_calendarium": "Abrir Calendarium",
-    "open_shop": "Abrir loja",
-    "partnerships": "Parcerias"
   },
   "collaborate_card": {
     "title": "Torna-te colaborador",
@@ -335,7 +331,7 @@
           "icon": "Euro"
         }
       ]
-    }, 
+    },
     {
       "title": "Nuguelmusic",
       "url": "http://www.nuguelmusic.pt/",

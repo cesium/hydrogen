@@ -7,7 +7,6 @@ interface LinkProps {
   href?: string;
   arrow?: "back" | "forward" | "outward";
   color?: "primary" | "blue";
-  color?: "primary" | "blue";
 }
 
 const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
