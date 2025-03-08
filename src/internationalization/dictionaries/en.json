@@ -65,10 +65,7 @@
     "see_team": "Go to team",
     "learn_more": "Learn more",
     "see_more": "See more",
-    "back": "Go Back",
-    "open_calendarium": "Open Calendarium",
-    "open_shop": "Open Shop",
-    "partnerships": "Partnerships"
+    "back": "Go Back"
   },
   "collaborate_card": {
     "title": "Become a collaborator",
@@ -121,25 +118,25 @@
     },
     "become_a_member": {
       "participate": {
-        "title": "Participa gratuitamente em eventos",
-        "description": "O teu cartão de sócio é o passe direto para quase todos os nossos eventos. Aproveita noites de karaoke, board games ou cinema, workshops e showoffs, ocasiões especiais como o Magusto e a Noite de Informática, e muito mais, de graça ou com descontos exclusivos."
+        "title": "Participate",
+        "description": "Participate in all our events for free and enjoy tons of other benefits."
       },
       "member_kit": {
-        "title": "Kit Sócio",
-        "description": "Recebe um starter pack de ofertas, que pode incluir uma T-Shirt, cadernos, stickers, canetas, e mais. E uma tote bag para levares tudo contigo."
+        "title": "Member Kit",
+        "description": "You can join these departments and contribute to making your organization work."
       },
       "room_acess": {
-        "title": "Acesso à sala do CeSIUM",
-        "description": "A porta da sala do CeSIUM está sempre aberta - entra quando quiseres, e instala-te. Também tens acesso à nossa Mercearia, com bebidas e snacks a preços que não encontrarás noutro sítio."
+        "title": "Room Access",
+        "description": "You can access our room and use our resources."
       },
       "represent": {
-        "title": "Representação dos teus interesses",
-        "description": "O CeSIUM é a voz dos teus interesses e problemas na universidade. Ao seres sócio, é mais fácil fazeres-te ouvir."
+        "title": "Represent",
+        "description": "You can represent CeSIUM in events and competitions."
       },
       "discounts": {
-        "title": "Descontos na Merch",
-        "description": "Aproveita descontos de 30% ou mais em vários artigos da nossa Loja online, desde t-shirts e casacos, a artigos de papelaria, stickers, porta-chaves, e mais.",
-        "link": "Abrir loja"
+        "title": "Discounts",
+        "description": "You can get discounts on our store and with our partners.",
+        "link": "Go to the store"
       }
     },
     "explore": {
