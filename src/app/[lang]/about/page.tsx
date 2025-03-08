@@ -117,8 +117,7 @@ export default function About() {
                 )),
           )}
         </div>
-        <p className={horizontalPadding}>{dictAbout.sections.cesium.description}</p>
-      </section>
+      </AboutSectionLayout>
     </main>
   );
 }
