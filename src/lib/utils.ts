@@ -89,6 +89,7 @@ const generateUrlsForTeams = (
   return urls;
 };
 
+
 const getDepartmentMembersInfo = (
   team: TeamData,
   yearRange: string,
@@ -96,7 +97,6 @@ const getDepartmentMembersInfo = (
 ): MemberInfo[] => {
   const imageUrls = generateUrlsForTeams(team, yearRange);
   const department = getDepartmentByName(team, departmentName);
-  console.log(imageUrls);
 
   if (!department) {
     return [];

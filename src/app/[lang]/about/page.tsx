@@ -17,8 +17,9 @@ interface MemberDep extends MemberInfo {
 }
 
 export default function About() {
-  const dict = useDictionary();
 
+  const dict = useDictionary();
+  
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
@@ -116,8 +117,10 @@ export default function About() {
                 )),
           )}
         </div>
-      </AboutSectionLayout>
+        <p className={horizontalPadding}>{dictAbout.sections.cesium.description}</p>
+      </section>
     </main>
   );
 }
+
 

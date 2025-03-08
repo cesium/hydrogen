@@ -42,6 +42,7 @@ export default function Departments() {
     }
   };
 
+
   // List of department names, !! as they appear in team data !!
   const departmentNames = [
     "Centro de Apoio ao Open Source",
