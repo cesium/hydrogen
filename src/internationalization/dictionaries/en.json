@@ -153,18 +153,92 @@
       "discounts": {
         "title": "Discounts",
         "description": "You can get discounts on our store and with our partners.",
-        "link": "Go to store"
+        "link": "Go to the store"
       }
+    },
+    "explore": {
+      "title": "Explore further",
+      "items": [
+        {
+          "title": "Events",
+          "description": "Curious about the dates of our events? We have a page for that. For more course dates, we have the Calendarium.",
+          "links": [
+            {
+              "title": "Events",
+              "href": "/events",
+              "arrow": "forward"
+            },
+            {
+              "title": "Open Calendarium",
+              "href": "https://calendario.cesium.di.uminho.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "title": "Shop",
+          "description": "T-shirts, accessories and materials from CeSIUM and our projects - everything is available in our online store.",
+          "links": [
+            {
+              "title": "Open Shop",
+              "href": "https://store.cesium.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "title": "Become a member",
+          "description": "CeSIUM members are entitled to a number of benefits. Discover them now and the partnerships they entitle you to.",
+          "links": [
+            {
+              "title": "Become a member",
+              "href": "/about/become-a-member",
+              "arrow": "forward"
+            },
+            { "title": "Partnerships", "href": "/partners", "arrow": "forward" }
+          ]
+        },
+        {
+          "title": "Become a collaborator",
+          "description": "If you'd like to be part of the team, we'd love to welcome you. Find out more about how you can become a collaborator.",
+          "links": [
+            {
+              "title": "Become a collaborator",
+              "href": "/about/become-a-collaborator",
+              "arrow": "forward",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
     }
   },
   "social_media": "Social media",
   "socials": [
-    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
-    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
-    { "name": "GitHub", "url": "https://github.com/cesium" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
-    { "name": "X", "url": "https://x.com/cesiuminho" },
-    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/cesiuminho"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/cesiuminho"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/cesiuminho"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@cesiuminho"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/cesium"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/c/cesiumUM"
+    }
   ],
   "sections": [
     {
