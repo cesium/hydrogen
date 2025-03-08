@@ -10,9 +10,7 @@ export default function About() {
   const dict = useDictionary();
 
   return (
-    <>
-      <div className="flex flex-col">
-        <div className="flex flex-col bg-white">
+    <main>
           <AboutSectionLayout
             linkName="see_more"
             titleOrientation="vertical"
@@ -29,23 +27,22 @@ export default function About() {
               <ProjectCard type="coderdojo" />
             </div>
           </AboutSectionLayout>
-        </div>
         <AboutSection>
-          <div className="border-t border-black/10 pt-10">
-            <h2 className="w-full font-title text-3xl font-medium md:mb-4 md:mt-8 md:text-4xl">
+          <div className="flex flex-col gap-5 py-10 md:py-16">
+            <h2 className="w-full font-title text-2xl md:text-3xl font-medium">
               {dict.about.explore.title}
             </h2>
-            <div className="mb-20 mt-8 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-2 gap-4 md:gap-5 md:grid-cols-4">
               {dict.about.explore.items.map((item) => (
-                <div key={item.title}>
-                  <h3 className="text-l pb-1 font-bold md:text-xl">
+                <div key={item.title} className="flex flex-col gap-2 sm:gap-3">
+                  <h3 className="font-bold">
                     {item.title}
                   </h3>
-                  <p className="font-normal md:text-xl">{item.description}</p>
+                  <p>{item.description}</p>
                   {item.links.map((link, index) => {
                     const linkColor = "color" in link ? link.color : "primary";
                     return (
-                      <div key={index} className="pt-2">
+                      <div key={index}>
                         <AppLink
                           title={link.title}
                           href={link.href}
@@ -60,7 +57,6 @@ export default function About() {
             </div>
           </div>
         </AboutSection>
-      </div>
-    </>
+    </main>
   );
 }
