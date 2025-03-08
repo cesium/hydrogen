@@ -84,6 +84,13 @@
     "projects": "Projetos"
   },
   "about": {
+    "sections": { 
+      "hero": {
+        "title": "O que é o CeSIUM?",
+        "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
+        "subtitle": "Diretor Do Departamento de Informática - 2017"
+      }
+    },
     "team": {
       "title": "Team",
       "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
