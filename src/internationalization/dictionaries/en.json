@@ -86,9 +86,9 @@
   "about": {
     "sections": { 
       "cesium": {
-        "title": "O que é o CeSIUM?",
-        "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
-        "description": "Procuramos organizar actividades de contéudo semelhante e complementar ao curso, assim como promover e divulgar acções de lazer e socialização entre estudantes e ex-alunos. Representamos ainda os interesses colectivos dos alunos de Engenharia Informática junto dos orgãos ou instituições para que a sua carreira académica seja mais rica.",
+        "title": "What is CeSIUM?",
+        "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
+        "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {"src": "/images/uMinho1.jpg", "alt": "University of Minho building."},
           {"src": "/images/workshop.jpg", "alt": "Class full of Computer Engineering students during a workshop."},
