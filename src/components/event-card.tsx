@@ -14,7 +14,7 @@ export function EventCard({ event }: EventCardProps) {
   });
 
   return (
-    <div className="flex items-start gap-4 border-b border-black/20 p-4">
+    <div className="flex items-start gap-4 border-b border-black/20 p-4 py-6">
       <div className="w-[4.5rem] rounded-xl bg-black bg-opacity-[6%] p-2 text-center">
         <div className="text-sm font-medium text-primary">{month}</div>
         <div className="text-2xl font-bold">{day}</div>

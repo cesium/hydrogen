@@ -53,7 +53,7 @@ export function EventList({
       return (
         <div className="mb-8">
           <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
-          <div className="space-y-6">
+          <div className="space-y-0">
             {isLoading ? (
               <>
                 <EventSkeleton />
@@ -68,7 +68,7 @@ export function EventList({
           {!isLoading && canShowMore && (
             <button
               onClick={() => setVisibleCount(visibleCount + 5)}
-              className="mt-4 w-full text-center text-primary hover:underline"
+              className="mt-6 w-full text-center text-primary hover:underline"
             >
               {dict.events.showMore}
             </button>
@@ -76,7 +76,7 @@ export function EventList({
           {!isLoading && !canShowMore && visibleCount > 5 && (
             <button
               onClick={() => setVisibleCount(5)}
-              className="mt-4 w-full text-center text-primary hover:underline"
+              className="mt-6 w-full text-center text-primary hover:underline"
             >
               {dict.events.showLess}
             </button>

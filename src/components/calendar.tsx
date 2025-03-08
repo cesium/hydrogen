@@ -122,7 +122,7 @@ export function Calendar({
                   <button
                     onClick={() => handleDateSelect(date)}
                     className={`
-                  hover:bg-gray-100 flex h-12 w-10 cursor-pointer items-center justify-center rounded-xl text-center md:h-12 md:w-12
+                  hover:bg-gray-100 flex h-12 w-10 cursor-pointer items-center justify-center rounded-xl text-center
                   ${!isCurrentMonth ? "text-gray-300" : ""}
                   ${isSelected ? "z-10 bg-primary text-white" : ""}
                 `}
