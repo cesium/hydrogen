@@ -37,9 +37,7 @@ export default function About() {
   ];
 
   useEffect(() => {
-    console.log("useEffect running");
     const aux = async () => {
-      console.log("aux running");
       const team: TeamData = await fetchTeamData(yearRange);
       setTeamData(team);
 
@@ -53,12 +51,6 @@ export default function About() {
           team,
           yearRange,
           departmentName,
-        );
-        console.log(
-          "Processing department:",
-          departmentName,
-          "\n",
-          departmentData,
         );
 
         const depShortName =
@@ -76,6 +68,7 @@ export default function About() {
       setMembers(membersData);
     };
     void aux();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [yearRange]);
 
   return (
