@@ -1,6 +1,5 @@
 "use client";
 
-import AboutSectionLayout from "@/components/about-section-layout";
 import AboutSection from "@/components/about-section";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
@@ -15,6 +14,9 @@ import {
   generateUrlsForTeams,
 } from "@/lib/utils";
 import { fetchTeamData } from "@/lib/utils";
+import { horizontalPadding } from "@/lib/styling";
+import Carousel from "@/components/carousel";
+import Image from "next/image";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -24,7 +26,7 @@ export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;
   const images = dictAbout.sections.cesium.images;
-        
+
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
@@ -76,7 +78,7 @@ export default function About() {
     void aux();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [yearRange]);
-    
+
   return (
     <main>
       {/* "What is CeSIUM?" */}
@@ -144,8 +146,7 @@ export default function About() {
                   <Avatar
                     key={member.name}
                     src={
-                      imageUrls[index]?.[0]?.[memberIndex] ??
-                      "/images/none.png"
+                      imageUrls[index]?.[0]?.[memberIndex] ?? "/images/none.png"
                     }
                     name={member.name}
                     role={`${departmentShortName(team?.name)} • ${member.role}`}
