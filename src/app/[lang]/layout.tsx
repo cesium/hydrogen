@@ -1,7 +1,10 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
-import type { Locale } from "@/internationalization/dictionaries";
+import {
+  getDictionary,
+  type Locale,
+} from "@/internationalization/dictionaries";
 import { DictionaryProvider } from "@/contexts/dictionary-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -17,12 +20,62 @@ const orbitron = Orbitron({
   variable: "--font-orbitron",
 });
 
-export const metadata: Metadata = {
-  title:
-    "CeSIUM - Centro de Estudantes de Engenharia Informática da Universidade do Minho",
-  description:
-    "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
-};
+export function generateMetadata({
+  params: { lang },
+}: {
+  params: { lang: Locale };
+}): Metadata {
+  const dict = getDictionary(lang);
+
+  return {
+    metadataBase: new URL("https://cesium.di.uminho.pt"),
+    openGraph: {
+      siteName: dict.seo.title,
+      type: "website",
+      locale: "pt_PT",
+      alternateLocale: "en_US",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+      googleBot: "index, follow",
+    },
+    applicationName: "CeSIUM",
+    appleWebApp: {
+      title: "CeSIUM",
+      statusBarStyle: "black-translucent",
+      capable: true,
+    },
+    icons: {
+      icon: [
+        {
+          url: "/favicon.ico",
+          type: "image/x-icon",
+        },
+        {
+          url: "/favicon-16x16.png",
+          sizes: "16x16",
+          type: "image/png",
+        },
+        {
+          url: "/favicon-32x32.png",
+          sizes: "32x32",
+          type: "image/png",
+        },
+      ],
+      shortcut: [
+        {
+          url: "/favicon.ico",
+          type: "image/x-icon",
+        },
+      ],
+    },
+    manifest: "/manifest.webmanifest",
+  };
+}
 
 export default function RootLayout({
   children,
@@ -30,12 +83,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
   return (
     <html lang={lang}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="CeSIUM" />
+      </head>
       <body
         className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-background font-sans text-black antialiased`}
       >
         <DictionaryProvider lang={lang}>
           <Navbar />
-          <div className="h-full px-5 py-5 md:px-7 md:py-12">{children}</div>
+          <div className="h-full">{children}</div>
           <Footer />
         </DictionaryProvider>
       </body>
