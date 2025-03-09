@@ -33,19 +33,19 @@ export default function About() {
 
   const yearRange = "2024-2025";
 
-  // List of department names, !! as they appear in team data !!
-  const departmentNames = [
-    "Presidência",
-    "Centro de Apoio ao Open Source",
-    "Departamento de Marketing e Conteúdo",
-    "Departamento de Relações Externas e Merch",
-    "Departamento Pedagógico",
-    "Departamento Recreativo",
-    "Vogais",
-  ];
-
   useEffect(() => {
     const aux = async () => {
+      // List of department names, !! as they appear in team data !!
+      const departmentNames = [
+        "Presidência",
+        "Centro de Apoio ao Open Source",
+        "Departamento de Marketing e Conteúdo",
+        "Departamento de Relações Externas e Merch",
+        "Departamento Pedagógico",
+        "Departamento Recreativo",
+        "Vogais",
+      ];
+
       const team: TeamData = await fetchTeamData(yearRange);
       setTeamData(team);
 
@@ -76,7 +76,6 @@ export default function About() {
       setMembers(membersData);
     };
     void aux();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [yearRange]);
 
   return (
