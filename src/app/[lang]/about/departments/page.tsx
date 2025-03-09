@@ -43,7 +43,6 @@ export default function Departments() {
   };
 
 
-
   // List of department names, !! as they appear in team data !!
   const departmentNames = [
     "Centro de Apoio ao Open Source",
@@ -70,7 +69,9 @@ export default function Departments() {
             key={departmentName}
             name={departmentName}
             shortName={departmentShortName(departmentName) as shortNames}
-            gradientFrom={gradient(departmentShortName(departmentName))[0] ?? ""}
+            gradientFrom={
+              gradient(departmentShortName(departmentName))[0] ?? ""
+            }
             gradientTo={gradient(departmentShortName(departmentName))[1] ?? ""}
             hideTeam={false}
             teamData={teamData}

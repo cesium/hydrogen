@@ -94,15 +94,15 @@ const AboutSectionLayout = ({
             {overflows && (
               <div className="hidden md:block">
                 {!isScrolledRight && (
-                  <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-background from-30% to-transparent" />
+                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-background from-20% to-transparent"/>
                 )}
                 {!isScrolledLeft && (
-                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background from-20% to-transparent" />
+                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background from-20% to-transparent"/>
                 )}
               </div>
             )}
             <div
-              className="mt-7 overflow-y-auto overflow-x-scroll sm:mt-10"
+              className="mt-7 overflow-y-auto overflow-x-scroll sm:mt-10 no-scrollbar"
               ref={scrollableRef}
               onScroll={handleScroll}
             >
