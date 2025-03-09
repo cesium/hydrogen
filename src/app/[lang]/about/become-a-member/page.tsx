@@ -9,9 +9,9 @@ export default function BecomeAMember() {
 
   return (
     <main
-      className={`grid grid-cols-1 gap-7 2xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
+      className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
-      <div className="2xl:col-span-3">
+      <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
             <div className="z-10 flex flex-col items-start gap-4 md:flex-row">
@@ -32,7 +32,7 @@ export default function BecomeAMember() {
               <div className="pointer-events-none absolute left-0 top-0 z-0 h-full w-full">
                 <div className="absolute bottom-[-50px] left-0 right-0 top-[-10px] bg-gradient-to-r from-[#9DD0FF] via-[#F5CFFF] to-[#FF9BC5] opacity-80 blur-[50px]"></div>
               </div>
-              <div className="relative z-10 h-full w-full overflow-hidden">
+              <div className="pointer-events-none relative z-10 h-full w-full overflow-hidden">
                 <Image
                   src="/images/ticket.png"
                   alt="ticket"
@@ -48,7 +48,7 @@ export default function BecomeAMember() {
 
       <InfoCard>
         <div className="flex h-full flex-row items-center">
-          <div className="relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
+          <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
             <Image
               src="/images/totebag.png"
               alt="totebag"
@@ -90,11 +90,11 @@ export default function BecomeAMember() {
         </div>
       </InfoCard>
 
-      <div className="2xl:col-span-3">
+      <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4">
             <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
-              <div className="relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1">
+              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1">
                 <Image
                   src="/images/notebook.png"
                   alt="discounts"
@@ -106,7 +106,7 @@ export default function BecomeAMember() {
 
               <div className="order-1 col-span-2 flex h-full items-center justify-center sm:order-2 sm:col-span-1">
                 <div className="flex flex-col items-center gap-2 px-12 py-10 sm:px-0">
-                  <div className="flex flex-col items-center gap-2 lg:flex-row">
+                  <div className="flex flex-col items-center gap-2">
                     <span className="material-symbols-outlined text-4xl text-[#5C657F]">
                       percent
                     </span>
@@ -124,14 +124,14 @@ export default function BecomeAMember() {
                     <p className="text-center">
                       {dict.about.become_a_member.discounts.link}
                     </p>
-                    <span className="material-symbols-outlined leading-8">
-                      north_east
+                    <span className="material-symbols-outlined">
+                      arrow_outward
                     </span>
                   </a>
                 </div>
               </div>
 
-              <div className="relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0">
+              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0">
                 <Image
                   src="/images/laptop.png"
                   alt="discounts"
