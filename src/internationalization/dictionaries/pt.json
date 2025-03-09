@@ -92,11 +92,11 @@
       }
     },
     "team": {
-      "title": "Team",
-      "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
+      "title": "Equipa",
+      "description": "Estes são alguns dos elementos da nossa equipa, da presidência às direções dos departamentos, assembleia geral e conselho fiscal.",
       "team_selector": {
-        "default_option": "Current mandate",
-        "hint": "Select mandate"
+        "default_option": "Atual mandato",
+        "hint": "Selecionar mandato"
       }
     },
     "projects": {

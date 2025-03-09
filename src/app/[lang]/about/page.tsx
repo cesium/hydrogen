@@ -3,8 +3,12 @@
 import AboutSection from "@/components/about-section";
 import Carousel from "@/components/carousel";
 import { useDictionary } from "@/contexts/dictionary-provider";
+import Carousel from "@/components/carousel";
+import Image from "next/image";
+import { horizontalPadding } from "@/lib/styling";
 
 export default function About() {
+
   const dict = useDictionary();
 
   const heroItems = [

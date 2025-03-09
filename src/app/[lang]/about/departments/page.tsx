@@ -6,8 +6,10 @@ import PromotionalCard from "@/components/promotional-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { CardType, type TeamData } from "@/lib/types";
-import { fetchTeamData } from "@/lib/utils";
+import { departmentShortName, fetchTeamData } from "@/lib/utils";
 import { useState, useEffect } from "react";
+
+type shortNames = "caos" | "dmc" | "drem" | "ped" | "rec";
 
 export default function Departments() {
   const dict = useDictionary();
@@ -40,23 +42,7 @@ export default function Departments() {
     }
   };
 
-  // Short names, !! as they appear in dictionary !!
-  const shortName = (departmentName: string) => {
-    switch (departmentName) {
-      case "Centro de Apoio ao Open Source":
-        return "caos";
-      case "Departamento de Marketing e Conteúdo":
-        return "dmc";
-      case "Departamento de Relações Externas e Merch":
-        return "drem";
-      case "Departamento Pedagógico":
-        return "ped";
-      case "Departamento Recreativo":
-        return "rec";
-      default:
-        return "caos";
-    }
-  };
+
 
   // List of department names, !! as they appear in team data !!
   const departmentNames = [
@@ -83,9 +69,9 @@ export default function Departments() {
           <DepartmentCard
             key={departmentName}
             name={departmentName}
-            shortName={shortName(departmentName)}
-            gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
-            gradientTo={gradient(shortName(departmentName))[1] ?? ""}
+            shortName={departmentShortName(departmentName) as shortNames}
+            gradientFrom={gradient(departmentShortName(departmentName))[0] ?? ""}
+            gradientTo={gradient(departmentShortName(departmentName))[1] ?? ""}
             hideTeam={false}
             teamData={teamData}
             yearRange={currentYearRange}

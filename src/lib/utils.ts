@@ -89,6 +89,7 @@ const generateUrlsForTeams = (
   return urls;
 };
 
+
 const getDepartmentMembersInfo = (
   team: TeamData,
   yearRange: string,
@@ -96,6 +97,7 @@ const getDepartmentMembersInfo = (
 ): MemberInfo[] => {
   const imageUrls = generateUrlsForTeams(team, yearRange);
   const department = getDepartmentByName(team, departmentName);
+  console.log(imageUrls)
 
   if (!department) {
     return [];
@@ -106,7 +108,7 @@ const getDepartmentMembersInfo = (
       (d) => d.name === department.name,
     );
 
-    if (departmentIndex)
+    if (departmentIndex !== undefined && departmentIndex !== -1)
       return {
         ...member,
         imageUrl:
@@ -120,6 +122,26 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
+// Short names, !! as they appear in dictionary !!
+  const departmentShortName = (departmentName: string) => {
+    switch (departmentName) {
+      case "Presidência":
+        return "presi";
+      case "Centro de Apoio ao Open Source":
+        return "caos";
+      case "Departamento de Marketing e Conteúdo":
+        return "dmc";
+      case "Departamento de Relações Externas e Merch":
+        return "drem";
+      case "Departamento Pedagógico":
+        return "ped";
+      case "Departamento Recreativo":
+        return "rec";
+      default:
+        return "caos";
+    }
+  };
+
 export {
   generateYearRanges,
   generateUrlsForTeams,
@@ -128,4 +150,5 @@ export {
   getDepartmentByName,
   classNames,
   getDepartmentMembersInfo,
+  departmentShortName
 };
