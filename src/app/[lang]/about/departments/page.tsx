@@ -5,10 +5,51 @@ import AppLink from "@/components/link";
 import PromotionalCard from "@/components/promotional-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
-import { CardType } from "@/lib/types";
+import { CardType, type TeamData } from "@/lib/types";
+import { departmentShortName, fetchTeamData } from "@/lib/utils";
+import { useState, useEffect } from "react";
+
+type shortNames = "caos" | "dmc" | "drem" | "ped" | "rec";
 
 export default function Departments() {
   const dict = useDictionary();
+  const currentYearRange = "2024-2025";
+  const [teamData, setTeamData] = useState<TeamData>([]);
+
+  useEffect(() => {
+    const aux = async () => {
+      const data: TeamData = await fetchTeamData(currentYearRange);
+      setTeamData(data);
+    };
+    void aux();
+  }, [currentYearRange]);
+
+  const gradient = (type: string) => {
+    switch (type) {
+      case "caos":
+        return ["[#0085FF]/5", "[#00D1FF]/5"];
+      case "dmc":
+        return ["[#FF00F5]/5", "[#FF2E00]/5"];
+      case "drem":
+        return ["[#0500FF]/5", "[#A500DE]/5"];
+      case "ped":
+        return ["[#E4B12E]/20", "[#ED7950]/20"];
+      case "rec":
+        return ["[#03A300]/5", "[#82E700]/5"];
+      default:
+        return ["[#0085FF]/5", "[#00D1FF]/5"];
+    }
+  };
+
+  // List of department names, !! as they appear in team data !!
+  const departmentNames = [
+    "Centro de Apoio ao Open Source",
+    "Departamento de Marketing e Conteúdo",
+    "Departamento de Relações Externas e Merch",
+    "Departamento Pedagógico",
+    "Departamento Recreativo",
+  ];
+  
   return (
     <main
       className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding} ${verticalPadding}`}

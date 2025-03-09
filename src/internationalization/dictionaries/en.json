@@ -84,6 +84,23 @@
     "projects": "Projects"
   },
   "about": {
+    "sections": {
+      "team": {
+        "title": "Team",
+        "subtitle": "CeSIUM wouldn't exist without our incredible team, which works every day to keep the group running and make students' years in the course unique. Meet them here."
+      },
+        "cesium": {
+        "title": "What is CeSIUM?",
+        "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
+        "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
+        "images": [
+          {"src": "/images/uMinho1.jpg", "alt": "University of Minho building."},
+          {"src": "/images/workshop.jpg", "alt": "Class full of Computer Engineering students during a workshop."},
+          {"src": "/images/uMinho2.jpg", "alt": "University of Minho building."},
+          {"src": "/images/sei24-25.jpg", "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."}
+        ]
+      }
+    },
     "team": {
       "title": "Team",
       "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
@@ -137,18 +154,92 @@
       "discounts": {
         "title": "Discounts",
         "description": "You can get discounts on our store and with our partners.",
-        "link": "Go to store"
+        "link": "Go to the store"
       }
+    },
+    "explore": {
+      "title": "Explore further",
+      "items": [
+        {
+          "title": "Events",
+          "description": "Curious about the dates of our events? We have a page for that. For more course dates, we have the Calendarium.",
+          "links": [
+            {
+              "title": "Events",
+              "href": "/events",
+              "arrow": "forward"
+            },
+            {
+              "title": "Open Calendarium",
+              "href": "https://calendario.cesium.di.uminho.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "title": "Shop",
+          "description": "T-shirts, accessories and materials from CeSIUM and our projects - everything is available in our online store.",
+          "links": [
+            {
+              "title": "Open Shop",
+              "href": "https://store.cesium.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "title": "Become a member",
+          "description": "CeSIUM members are entitled to a number of benefits. Discover them now and the partnerships they entitle you to.",
+          "links": [
+            {
+              "title": "Become a member",
+              "href": "/about/become-a-member",
+              "arrow": "forward"
+            },
+            { "title": "Partnerships", "href": "/partners", "arrow": "forward" }
+          ]
+        },
+        {
+          "title": "Become a collaborator",
+          "description": "If you'd like to be part of the team, we'd love to welcome you. Find out more about how you can become a collaborator.",
+          "links": [
+            {
+              "title": "Become a collaborator",
+              "href": "/about/become-a-collaborator",
+              "arrow": "forward",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
     }
   },
   "social_media": "Social media",
   "socials": [
-    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
-    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
-    { "name": "GitHub", "url": "https://github.com/cesium" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
-    { "name": "X", "url": "https://x.com/cesiuminho" },
-    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/cesiuminho"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/cesiuminho"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/cesiuminho"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@cesiuminho"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/cesium"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/c/cesiumUM"
+    }
   ],
   "sections": [
     {
