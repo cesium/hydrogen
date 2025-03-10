@@ -13,6 +13,7 @@ interface DepartmentCardProps {
   gradientFrom: string;
   gradientTo: string;
   hideTeam?: boolean;
+  hideShortName?: boolean;
   teamData: TeamData;
   yearRange: string;
 }
@@ -23,6 +24,7 @@ const DepartmentCard = ({
   gradientFrom,
   gradientTo,
   hideTeam,
+  hideShortName,
   teamData,
   yearRange,
 }: DepartmentCardProps) => {
@@ -38,9 +40,11 @@ const DepartmentCard = ({
 
   return (
     <div className="relative grid w-full overflow-hidden rounded-2xl md:rounded-3xl">
-      <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/10 bg-clip-text font-title text-9xl text-transparent md:block">
-        {shortName.toUpperCase()}
-      </div>
+      {!hideShortName && (
+        <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/10 bg-clip-text font-title text-9xl text-transparent md:block">
+          {shortName.toUpperCase()}
+        </div>
+      )}
 
       <div
         className={`col-start-1 row-start-1 bg-gradient-to-r from-${gradientFrom} to-${gradientTo}`}
@@ -63,7 +67,7 @@ const DepartmentCard = ({
                 {members.map((m, _) => (
                   <Avatar
                     src={m.imageUrl}
-                    className="rounded-full border-2 border-background/50"
+                    className="rounded-full border-2 border-muted/50"
                     imageClassName="size-9 rounded-full"
                     key={m.name}
                   />

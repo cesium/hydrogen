@@ -1,5 +1,6 @@
 "use client";
 
+import DepartmentsList from "@/components/departments-list";
 import AboutSection from "@/components/about-section";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
@@ -156,6 +157,21 @@ export default function About() {
                 )),
           )}
         </div>
+      </AboutSectionLayout>
+      {/* Departments */}
+      <AboutSectionLayout
+        linkName="see_more"
+        titleOrientation="vertical"
+        title={dict.about.departments.title}
+        subtitle={dict.about.departments.subtitle}
+        href="/about/departments"
+        dark
+      >
+        <DepartmentsList
+          hideTeam
+          hideShortName
+          className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 2xl:grid-cols-3"
+        />
       </AboutSectionLayout>
       {/* Projects */}
       <AboutSectionLayout

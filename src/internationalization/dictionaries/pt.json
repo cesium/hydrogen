@@ -86,7 +86,7 @@
   "about": {
     "sections": {
       "team": {
-        "title": "Team",
+        "title": "Equipa",
         "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
       },
         "cesium": {
@@ -131,6 +131,7 @@
     },
     "departments": {
       "title": "Departamentos",
+      "subtitle": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     },
     "become_a_member": {

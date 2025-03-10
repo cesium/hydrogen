@@ -87,7 +87,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="CeSIUM" />
       </head>
       <body
-        className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-background font-sans text-black antialiased`}
+        className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-white font-sans text-black antialiased`}
       >
         <DictionaryProvider lang={lang}>
           <Navbar />
