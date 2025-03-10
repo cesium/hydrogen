@@ -161,12 +161,15 @@ export default function About() {
       {/* Departments */}
       <AboutSectionLayout
         linkName="see_more"
+        titleOrientation="vertical"
         title={dict.about.departments.title}
         subtitle={dict.about.departments.subtitle}
         href="/about/departments"
+        dark
       >
         <DepartmentsList
           hideTeam
+          hideShortName
           className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 2xl:grid-cols-3"
         />
       </AboutSectionLayout>

@@ -48,11 +48,12 @@ const gradient = (type: string) => {
 };
 
 interface DepartmentsListProps {
-  hideTeam: boolean;
+  hideTeam?: boolean;
+  hideShortName?: boolean;
   className?: string;
 }
 
-const DepartmentsList = ({ hideTeam, className }: DepartmentsListProps) => {
+const DepartmentsList = ({ hideTeam, hideShortName, className }: DepartmentsListProps) => {
   const currentYearRange = "2024-2025";
   const [teamData, setTeamData] = useState<TeamData>([]);
 
@@ -77,6 +78,7 @@ const DepartmentsList = ({ hideTeam, className }: DepartmentsListProps) => {
           gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
           gradientTo={gradient(shortName(departmentName))[1] ?? ""}
           hideTeam={hideTeam}
+          hideShortName={hideShortName}
           teamData={teamData}
           yearRange={currentYearRange}
         ></DepartmentCard>
