@@ -16,7 +16,7 @@ const config: Config = {
       },
       colors: {
         primary: "#ED7950",
-        background: "#FAFAFA",
+        muted: "#FAFAFA",
         stroke: "#D4D4D8",
         black: "#27272A",
         dark: "#000000",
