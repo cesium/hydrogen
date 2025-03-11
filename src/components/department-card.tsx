@@ -13,6 +13,7 @@ interface DepartmentCardProps {
   gradientFrom: string;
   gradientTo: string;
   hideTeam?: boolean;
+  hideShortName?: boolean;
   teamData: TeamData;
   yearRange: string;
 }
@@ -23,6 +24,7 @@ const DepartmentCard = ({
   gradientFrom,
   gradientTo,
   hideTeam,
+  hideShortName,
   teamData,
   yearRange,
 }: DepartmentCardProps) => {
@@ -38,16 +40,18 @@ const DepartmentCard = ({
 
   return (
     <div className="relative grid w-full overflow-hidden rounded-2xl md:rounded-3xl">
-      <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/10 bg-clip-text font-title text-9xl text-transparent md:block">
-        {shortName.toUpperCase()}
-      </div>
+      {!hideShortName && (
+        <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/10 bg-clip-text font-title text-9xl text-transparent md:block">
+          {shortName.toUpperCase()}
+        </div>
+      )}
 
       <div
         className={`col-start-1 row-start-1 bg-gradient-to-r from-${gradientFrom} to-${gradientTo}`}
       />
       <div className="col-start-1 row-start-1 bg-gradient-to-b from-[#F0F0F0]/90 to-transparent" />
 
-      <div className="col-start-1 row-start-1 grid place-items-start gap-4 p-7">
+      <div className="col-start-1 row-start-1 flex flex-col items-start gap-4 p-7">
         <div className="w-full space-y-4">
           <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-gray">
@@ -59,11 +63,10 @@ const DepartmentCard = ({
           {!hideTeam && (
             <div className="flex items-center justify-between gap-3">
               <div className="flex -space-x-4 min-[400px]:-space-x-3 sm:-space-x-2">
-                {/* TODO: Max length of 3 avatars for mobile and 5 for desktop */}
                 {members.map((m, _) => (
                   <Avatar
                     src={m.imageUrl}
-                    className="rounded-full border-2 border-background/50"
+                    className="rounded-full border-2 border-muted/50"
                     imageClassName="size-9 rounded-full"
                     key={m.name}
                   />
@@ -81,7 +84,7 @@ const DepartmentCard = ({
             </div>
           )}
         </div>
-        <p className="flex h-full items-center text-justify lg:text-base">
+        <p className="flex h-full items-start text-justify lg:text-base">
           {dict[shortName].description}
         </p>
       </div>
