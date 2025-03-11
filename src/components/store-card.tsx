@@ -6,14 +6,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import getProducts from "@/lib/api/getProducts";
 import { Product } from "@/lib/types";
-
-const shuffleArray = (array: any[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
+import { shuffleArray } from "@/lib/utils";
+import { useDictionary } from "@/contexts/dictionary-provider";
 
 interface StoreProductProps {
   product: Product;
@@ -53,6 +47,7 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
 
 const StoreCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const dict = useDictionary();
 
   useEffect(() => {
     async function fetchProducts() {
@@ -74,16 +69,14 @@ const StoreCard = () => {
     <InfoCard>
       <div className="flex flex-col bg-black sm:flex-row sm:justify-between sm:gap-2">
         <div className="flex w-full flex-col gap-2 px-6 py-9 pb-3 text-white sm:w-3/6 sm:px-9 sm:py-11">
-          <h1 className="font-title text-2xl">Loja</h1>
-          <p>
-            Na CeSIUM Store, temos hoodies, casacos, t-shirts, meias, canecas,
-            stickers e muito mais. Se fores sócio, também temos descontos.
-          </p>
+          <h1 className="font-title text-2xl">{dict.store_card.title}</h1>
+          <p>{dict.store_card.text}</p>
           <Link
             className="hover:bg-gray-100 mt-2 w-max rounded-full px-5 py-3 text-white ring-2 ring-white transition-colors hover:bg-white/5"
-            href={""}
+            href={"https://store.cesium.pt"}
+            target="_blank"
           >
-            Abrir Loja
+            {dict.store_card.button}
           </Link>
         </div>
         <div className="sm:relative sm:w-2/5">
