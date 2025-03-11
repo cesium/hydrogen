@@ -3,7 +3,7 @@
 import InfoCard from "@/components/info-card";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import getProducts from "@/lib/api/getProducts";
 import type { Product } from "@/lib/types";
 import { shuffleArray } from "@/lib/utils";
@@ -53,8 +53,12 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
 const StoreCard = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const dict = useDictionary();
+  const hasFetched = useRef(false);
 
   useEffect(() => {
+    if (hasFetched.current) return;
+    hasFetched.current = true;
+
     async function fetchProducts() {
       try {
         const productsData = await getProducts();
@@ -67,6 +71,7 @@ const StoreCard = () => {
         console.error("Failed to fetch products:", error);
       }
     }
+
     void fetchProducts();
   }, []);
 

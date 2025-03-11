@@ -1,21 +1,26 @@
 "use server";
 
-import axios from "axios";
 import type { Product } from "../types";
 
 const getProducts = async () => {
   try {
-    const response = await axios.get<Record<string, Product>>(
+    const response = await fetch(
       "https://api.shopk.it/v1/product?featured=true&limit=5",
       {
         headers: {
           "X-API-KEY": process.env.SHOPKIT_API_KEY!,
           "Content-Type": "application/json",
         },
+        next: { revalidate: 86400 },
       },
     );
 
-    const productsArray = Object.values(response.data);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch products: ${response.statusText}`);
+    }
+
+    const data: Record<string, Product> = await response.json();
+    const productsArray = Object.values(data);
 
     return productsArray.slice(0, -1);
   } catch (error) {
