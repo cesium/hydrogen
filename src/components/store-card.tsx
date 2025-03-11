@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import getProducts from "@/lib/api/getProducts";
-import { Product } from "@/lib/types";
+import type { Product } from "@/lib/types";
 import { shuffleArray } from "@/lib/utils";
 import { useDictionary } from "@/contexts/dictionary-provider";
 
@@ -30,15 +30,15 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
         target="_blank"
       >
         <span className="absolute right-0 z-20 -mr-3 -mt-6 rounded-3xl bg-black px-4 py-2 ring-2 ring-white sm:mr-3">
-          <p>{product.price}</p>
+          <p>{product.price_formatted}</p>
         </span>
         <div className="relative h-full w-full overflow-hidden rounded-lg">
           {isLoading && (
             <div className="bg-gray-700 absolute inset-0 animate-pulse" />
           )}
           <Image
-            src={product.imageUrl}
-            alt={product.name}
+            src={product.image.square}
+            alt={product.title}
             layout="fill"
             objectFit="contain"
             className="pointer-events-none select-none"
@@ -90,18 +90,18 @@ const StoreCard = () => {
           <div className="-ml-24 flex h-64 flex-col gap-2 overflow-hidden sm:absolute sm:-mt-32 sm:ml-0 sm:h-max">
             <div className="flex flex-row items-center justify-end gap-8 sm:translate-y-24 sm:justify-normal">
               <StoreProduct
-                product={products[0] as Product}
+                product={products[0]!}
                 sizeClass="size-52 sm:size-72"
               />
               <div className="flex flex-col gap-11 overflow-hidden">
                 <div className="ml-24 mt-8 sm:ml-48 sm:mt-0">
                   <StoreProduct
-                    product={products[1] as Product}
+                    product={products[1]!}
                     sizeClass="size-32 sm:size-44"
                   />
                 </div>
                 <StoreProduct
-                  product={products[2] as Product}
+                  product={products[2]!}
                   sizeClass="size-40 sm:size-56"
                 />
               </div>

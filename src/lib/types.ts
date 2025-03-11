@@ -25,10 +25,16 @@ export interface MemberInfo extends Member {
   imageUrl: string;
 }
 
+export interface ProductImage {
+  thumb: string;
+  square: string;
+  full: string;
+}
+
 export interface Product {
   id: string;
-  name: string;
+  title: string;
   handle: string;
-  price: number;
-  imageUrl: string;
+  price_formatted: string;
+  image: ProductImage;
 }
