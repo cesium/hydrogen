@@ -37,27 +37,42 @@
   },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
-    "name": ["Center for", "Open Source Support"],
+    "name": [
+      "Center for",
+      "Open Source Support"
+    ],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": ["Department of", "Marketing and Content"],
+    "name": [
+      "Department of",
+      "Marketing and Content"
+    ],
     "description": "The DMC is responsible for promoting activities and managing CeSIUM's social media presence - essentially handling all of CeSIUM's marketing. Their work primarily focuses on CeSIUM's visual design and written communications.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": ["Department of", "External Relations and Merch"],
+    "name": [
+      "Department of",
+      "External Relations and Merch"
+    ],
     "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
     "icon": "handshake"
   },
   "ped": {
-    "name": ["Educational", "Department"],
+    "name": [
+      "Educational",
+      "Department"
+    ],
     "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
     "icon": "draw"
   },
   "rec": {
-    "name": ["Recreational", "Department"],
+    "name": [
+      "Recreational",
+      "Department"
+    ],
     "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
     "icon": "celebration"
   },
@@ -77,6 +92,7 @@
   },
   "navbar": {
     "home": "Home",
+    "team": "Team",
     "about": "About",
     "events": "Events",
     "partners": "Partners",
@@ -89,15 +105,27 @@
         "title": "Team",
         "subtitle": "CeSIUM wouldn't exist without our incredible team, which works every day to keep the group running and make students' years in the course unique. Meet them here."
       },
-        "cesium": {
+      "cesium": {
         "title": "What is CeSIUM?",
         "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
         "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
-          {"src": "/images/uMinho1.jpg", "alt": "University of Minho building."},
-          {"src": "/images/workshop.jpg", "alt": "Class full of Computer Engineering students during a workshop."},
-          {"src": "/images/uMinho2.jpg", "alt": "University of Minho building."},
-          {"src": "/images/sei24-25.jpg", "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."}
+          {
+            "src": "/images/uMinho1.jpg",
+            "alt": "University of Minho building."
+          },
+          {
+            "src": "/images/workshop.jpg",
+            "alt": "Class full of Computer Engineering students during a workshop."
+          },
+          {
+            "src": "/images/uMinho2.jpg",
+            "alt": "University of Minho building."
+          },
+          {
+            "src": "/images/sei24-25.jpg",
+            "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
+          }
         ]
       }
     },
@@ -196,7 +224,11 @@
               "href": "/about/become-a-member",
               "arrow": "forward"
             },
-            { "title": "Partnerships", "href": "/partners", "arrow": "forward" }
+            {
+              "title": "Partnerships",
+              "href": "/partners",
+              "arrow": "forward"
+            }
           ]
         },
         {
@@ -244,28 +276,28 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["News", "About Us", "Team", "Departments"],
-      "links": ["#", "#", "#", "#"]
+      "items": ["About Us", "Team", "Departments"],
+      "links": ["/about", "/team", "/about/departments"]
     },
     {
       "title": "Activities",
-      "items": ["Projects", "Events", "Partnerships"],
-      "links": ["#", "#", "#"]
+      "items": ["Events", "Partnerships"],
+      "links": ["/events", "/partners"]
     },
     {
-      "title": "Estudantes",
-      "items": ["Memberships", "Collaborators", "Anuary"],
-      "links": ["#", "#", "#"]
+      "title": "Students",
+      "items": ["Become a Member", "Become a Collaborator"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
-      "title": "Links Úteis",
+      "title": "Useful Links",
       "items": [
+        "CeSIUM Link",
         "Calendarium",
         "Blackboard",
-        "Academic Portal",
-        "Computer Engineering Page"
+        "Student's Portal"
       ],
-      "links": ["#", "#", "#", "#"]
+      "links": ["https://cesium.link", "https://calendario.cesium.pt", "https://elearning.uminho.pt", "https://alunos.uminho.pt"]
     }
   ],
   "partners": [

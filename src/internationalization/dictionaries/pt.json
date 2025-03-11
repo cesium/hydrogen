@@ -77,6 +77,7 @@
   },
   "navbar": {
     "home": "Início",
+    "team": "Equipa",
     "about": "Sobre Nós",
     "events": "Eventos",
     "partners": "Parcerias",
@@ -230,28 +231,28 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"],
-      "links": ["#", "#", "#", "#"]
+      "items": ["Sobre nós", "Equipa", "Departmentos"],
+      "links": ["/about", "/team", "/about/departments"]
     },
     {
       "title": "Atividades",
-      "items": ["Projetos", "Eventos", "Parcerias"],
-      "links": ["#", "#", "#"]
+      "items": ["Eventos", "Parcerias"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Estudantes",
-      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"],
-      "links": ["#", "#", "#"]
+      "items": ["Torna-te sócio", "Torna-te colaborador"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Links Úteis",
       "items": [
+        "CeSIUM Link",
         "Calendarium",
         "Blackboard",
-        "Portal do Aluno",
-        "Página de LEI"
+        "Portal do Aluno"
       ],
-      "links": ["#", "#", "#", "#"]
+      "links": ["https://cesium.link", "https://calendario.cesium.pt", "https://elearning.uminho.pt", "https://alunos.uminho.pt"]
     }
   ],
   "partners": [
