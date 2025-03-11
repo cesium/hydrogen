@@ -66,15 +66,15 @@ export default function EventsPage() {
 
       <div className="md:px-5">
         <div className="md:flex md:gap-12">
-          <div className="mb-8 w-full md:mb-0 md:w-2/5">
+          <div className="mb-8 flex w-full flex-col gap-14 md:mb-0 md:w-2/5">
             <Calendar
               events={events}
               onDateSelect={handleDateSelect}
               selectedDate={selectedDate}
               className="your-calendar-class"
             />
-            <div className="mt-4 hidden md:block">
-              <PromotionalCard type={CardType.Membership} />
+            <div className="hidden md:block">
+              <PromotionalCard mobileOnlyLayout type={CardType.Membership} />
             </div>
           </div>
           <div className="flex-1">
@@ -88,7 +88,7 @@ export default function EventsPage() {
               <h2 className="mb-4 font-title text-2xl font-medium">
                 {dict.events.warningTitle}
               </h2>
-              <div className="text-black">
+              <div className="text-black/50">
                 {dict.events.warning.split("\t").map((paragraph, index) => {
                   if (paragraph.includes("Calendarium")) {
                     const parts = paragraph.split("Calendarium");

@@ -94,7 +94,7 @@ export function Calendar({
         <div>
           <div className="mb-2 grid grid-cols-7">
             {weekDays.map((day) => (
-              <div key={day} className="text-gray-500 text-center text-sm">
+              <div key={day} className="text-center text-sm text-black/50">
                 {day}
               </div>
             ))}
@@ -119,16 +119,19 @@ export function Calendar({
                     setTooltipAnchor(null);
                   }}
                 >
-                  <button
-                    onClick={() => handleDateSelect(date)}
+                    <button
+                    onClick={() =>
+                      isCurrentMonth ? handleDateSelect(date) : null
+                    }
+                    disabled={!isCurrentMonth}
                     className={`
-                  hover:bg-gray-100 flex h-12 w-10 cursor-pointer items-center justify-center rounded-xl text-center
-                  ${!isCurrentMonth ? "text-gray-300" : ""}
-                  ${isSelected ? "z-10 bg-primary text-white" : ""}
-                `}
-                  >
+                    flex h-12 w-10 items-center justify-center rounded-xl text-center
+                    ${!isCurrentMonth ? "text-gray-300 cursor-default opacity-50" : "hover:bg-black/5 transition-colors cursor-pointer"}
+                    ${isSelected ? "z-10 bg-primary text-white hover:bg-primary" : ""}
+                  `}
+                    >
                     {date.getDate()}
-                  </button>
+                    </button>
                   {hasEvent(date) && isCurrentMonth && (
                     <span
                       className={`absolute bottom-1 h-1.5 w-1.5 rounded-full bg-primary ${isSelected ? "z-20 bg-white" : "z-10"}`}
