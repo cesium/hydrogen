@@ -51,7 +51,7 @@ const DepartmentCard = ({
       />
       <div className="col-start-1 row-start-1 bg-gradient-to-b from-[#F0F0F0]/90 to-transparent" />
 
-      <div className="col-start-1 row-start-1 grid place-items-start gap-4 p-7">
+      <div className="col-start-1 row-start-1 flex flex-col items-start gap-4 p-7">
         <div className="w-full space-y-4">
           <div className="font-title text-2xl font-medium">
             <span className="material-symbols-outlined text-4xl text-gray">
@@ -63,7 +63,6 @@ const DepartmentCard = ({
           {!hideTeam && (
             <div className="flex items-center justify-between gap-3">
               <div className="flex -space-x-4 min-[400px]:-space-x-3 sm:-space-x-2">
-                {/* TODO: Max length of 3 avatars for mobile and 5 for desktop */}
                 {members.map((m, _) => (
                   <Avatar
                     src={m.imageUrl}
@@ -85,7 +84,7 @@ const DepartmentCard = ({
             </div>
           )}
         </div>
-        <p className="flex h-full items-center text-justify lg:text-base">
+        <p className="flex h-full items-start text-justify lg:text-base">
           {dict[shortName].description}
         </p>
       </div>

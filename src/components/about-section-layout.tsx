@@ -35,7 +35,7 @@ const AboutSectionLayout = ({
   const dict = useDictionary();
 
   const [isScrolledLeft, setIsScrolledLeft] = useState(true);
-  const [isScrolledRight, setIsScrolledRight] = useState(true);
+  const [isScrolledRight, setIsScrolledRight] = useState(false);
   const scrollableRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
