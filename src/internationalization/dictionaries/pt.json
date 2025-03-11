@@ -143,6 +143,7 @@
   "events": {
     "title": "Eventos",
     "warning": "Consulta outros meses para veres mais eventos.\tEsta página apenas incluiu eventos do Cesium. Para mais eventos, como testes ou datas de entregas, visita o Calendarium.\tPara te manteres sempre a par, segue o nosso Instagram.",
+    "warningTitle": "Mais Eventos",
     "weekDays": "Dom, Seg, Ter, Qua, Qui, Sex, Sab",
     "showLess": "Mostrar menos",
     "showMore": "Mostrar mais",

@@ -52,7 +52,7 @@ export function EventList({
       const canShowMore = totalEvents.length > visibleCount;
       return (
         <div className="mb-8">
-          <h2 className="mb-4 text-2xl font-semibold">{title}</h2>
+          <h2 className="mb-4 font-title text-2xl font-medium">{title}</h2>
           <div className="space-y-0">
             {isLoading ? (
               <>
