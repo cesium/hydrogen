@@ -89,38 +89,45 @@ export default function EventsPage() {
                 {dict.events.warningTitle}
               </h2>
               <div className="text-black">
-                {dict.events.warning.split("\t").map((paragraph, index) => (
-                  <p key={index} className="mb-1">
-                    {paragraph.includes("Calendarium") ? (
-                      <>
-                        {paragraph.split("Calendarium")[0]}
+                {dict.events.warning.split("\t").map((paragraph, index) => {
+                  if (paragraph.includes("Calendarium")) {
+                    const parts = paragraph.split("Calendarium");
+                    return (
+                      <p key={index} className="mb-1">
+                        {parts[0]}
                         <Link
                           href="https://calendario.cesium.di.uminho.pt/"
-                          className="text-primary hover:underline"
+                          className="font-bold text-primary hover:underline"
                         >
                           Calendarium
                         </Link>
-                        {
-                          paragraph
-                            .split("Calendarium")[1]
-                            ?.split("Instagram")[0]
-                        }
-                      </>
-                    ) : paragraph.includes("Instagram") ? (
-                      <>
-                        To stay updated, follow our{" "}
+                        {parts[1]}
+                      </p>
+                    );
+                  }
+
+                  if (paragraph.includes("Instagram")) {
+                    const parts = paragraph.split("Instagram");
+                    return (
+                      <p key={index} className="mb-1">
+                        {parts[0]}
                         <Link
                           href="https://instagram.com/cesiuminho"
-                          className="text-primary hover:underline"
+                          className="font-bold text-primary hover:underline"
                         >
                           Instagram
                         </Link>
-                      </>
-                    ) : (
-                      paragraph
-                    )}
-                  </p>
-                ))}
+                        .
+                      </p>
+                    );
+                  }
+
+                  return (
+                    <p key={index} className="mb-1">
+                      {paragraph}
+                    </p>
+                  );
+                })}
               </div>
             </div>
             <div className="mt-4 md:hidden">
