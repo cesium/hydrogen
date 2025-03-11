@@ -17,6 +17,7 @@ interface AboutSectionProps {
   linkPos?: LinkPos;
   href: string;
   overflows?: boolean;
+  dark?: boolean;
   children?: React.ReactNode;
 }
 
@@ -28,12 +29,13 @@ const AboutSectionLayout = ({
   linkPos, // Allows to show the link after the subtitle on mobile
   href,
   overflows,
+  dark,
   children,
 }: AboutSectionProps) => {
   const dict = useDictionary();
 
   const [isScrolledLeft, setIsScrolledLeft] = useState(true);
-  const [isScrolledRight, setIsScrolledRight] = useState(true);
+  const [isScrolledRight, setIsScrolledRight] = useState(false);
   const scrollableRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -48,7 +50,7 @@ const AboutSectionLayout = ({
   };
 
   return (
-    <AboutSection>
+    <AboutSection dark={dark}>
       <div
         className={`relative flex w-full flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12`}
       >
@@ -94,15 +96,15 @@ const AboutSectionLayout = ({
             {overflows && (
               <div className="hidden md:block">
                 {!isScrolledRight && (
-                  <div className="absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-background from-30% to-transparent" />
+                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white from-20% to-transparent" />
                 )}
                 {!isScrolledLeft && (
-                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-background from-20% to-transparent" />
+                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white from-20% to-transparent" />
                 )}
               </div>
             )}
             <div
-              className="mt-7 overflow-y-auto overflow-x-scroll sm:mt-10"
+              className="no-scrollbar mt-7 overflow-y-auto overflow-x-scroll sm:mt-10"
               ref={scrollableRef}
               onScroll={handleScroll}
             >

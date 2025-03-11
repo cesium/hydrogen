@@ -6,16 +6,16 @@ interface LinkProps {
   title: string;
   href?: string;
   arrow?: "back" | "forward" | "outward";
+  color?: "primary" | "blue";
 }
 
-const AppLink = ({ title, href, arrow }: LinkProps) => {
+const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
   const hrefLang = `/${lang}${href}`;
   const router = useRouter();
 
-  const style =
-    "flex items-center gap-1 font-medium text-primary transition-opacity hover:opacity-85";
+  const style = `flex items-center gap-1 font-medium transition-opacity hover:opacity-85 text-${color}`;
 
   return arrow === "back" ? (
     <button onClick={() => router.back()} className={style}>
