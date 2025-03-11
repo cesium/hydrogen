@@ -43,7 +43,7 @@ export function generateMetadata({
       canonical: "https://cesium.di.uminho.pt/about/become-a-collaborator",
       languages: {
         en: "https://cesium.di.uminho.pt/en_US/about/become-a-collaborator",
-        pt: "https://cesium.di.uminho.pt/pt_PT/about/team",
+        pt: "https://cesium.di.uminho.pt/pt_PT/team",
       },
     },
   };

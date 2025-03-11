@@ -26,7 +26,7 @@ export function generateMetadata({
       "team",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/about/team",
+      url: "https://cesium.di.uminho.pt/team",
       type: "website",
       title: dict.seo.team.title,
       description: dict.seo.team.description,
@@ -40,10 +40,10 @@ export function generateMetadata({
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/about/team",
+      canonical: "https://cesium.di.uminho.pt/team",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/about/team",
-        pt: "https://cesium.di.uminho.pt/pt_PT/about/team",
+        en: "https://cesium.di.uminho.pt/en_US/team",
+        pt: "https://cesium.di.uminho.pt/pt_PT/team",
       },
     },
   };
