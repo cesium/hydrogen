@@ -27,10 +27,10 @@ const Navbar = () => {
   const home = { name: dict.navbar.home, path: "/" };
   const routes = [
     { name: dict.navbar.about, path: "/about" },
-    { name: dict.navbar.events, path: "/events" },
+    { name: dict.navbar.team, path: "/team" },
     { name: dict.navbar.partners, path: "/partners" },
+    { name: dict.navbar.events, path: "/events" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
-    { name: dict.navbar.projects, path: "/projects" },
   ];
 
   const isMember = pathname === "/about/become-a-member";
@@ -42,7 +42,7 @@ const Navbar = () => {
     ? "bg-primary"
     : isCollaborator
       ? "bg-blue"
-      : "bg-white";
+      : "bg-white md:bg-transparent";
   const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
   const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
   const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
@@ -66,7 +66,7 @@ const Navbar = () => {
               width={30}
               height={34}
               alt="CeSIUM Logo Icon"
-              fill={`${colorLogo}`}
+              fill={colorLogo}
               className="hidden md:block"
               fullColor={isMemberOrCollaborator}
             />
