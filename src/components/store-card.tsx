@@ -1,0 +1,116 @@
+"use client";
+
+import InfoCard from "@/components/info-card";
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+import getProducts from "@/lib/api/getProducts";
+import { Product } from "@/lib/types";
+
+const shuffleArray = (array: any[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+interface StoreProductProps {
+  product: Product;
+  sizeClass: string;
+}
+
+const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  if (!product) {
+    return null;
+  }
+
+  return (
+    <div
+      className={`relative ${sizeClass} flex-shrink-0 text-base font-semibold text-white`}
+    >
+      <span className="absolute right-0 z-20 -mr-3 -mt-6 rounded-3xl bg-black px-4 py-2 ring-2 ring-white sm:mr-3">
+        <p>{product.price}</p>
+      </span>
+      <div className="relative h-full w-full overflow-hidden rounded-lg">
+        {isLoading && (
+          <div className="bg-gray-700 absolute inset-0 animate-pulse" />
+        )}
+        <Image
+          src={product.imageUrl}
+          alt={product.name}
+          layout="fill"
+          objectFit="contain"
+          className="pointer-events-none select-none"
+          onLoadingComplete={() => setIsLoading(false)}
+        />
+      </div>
+    </div>
+  );
+};
+
+const StoreCard = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const productsData = await getProducts();
+        const limitedRandomProducts = shuffleArray([...productsData]).slice(
+          0,
+          3,
+        );
+        setProducts(limitedRandomProducts);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    }
+    void fetchProducts();
+  }, []);
+
+  return (
+    <InfoCard>
+      <div className="flex flex-col bg-black sm:flex-row sm:justify-between sm:gap-2">
+        <div className="flex w-full flex-col gap-2 px-6 py-9 pb-3 text-white sm:w-3/6 sm:px-9 sm:py-11">
+          <h1 className="font-title text-2xl">Loja</h1>
+          <p>
+            Na CeSIUM Store, temos hoodies, casacos, t-shirts, meias, canecas,
+            stickers e muito mais. Se fores sócio, também temos descontos.
+          </p>
+          <Link
+            className="hover:bg-gray-100 mt-2 w-max rounded-full px-5 py-3 text-white ring-2 ring-white transition-colors hover:bg-white/5"
+            href={""}
+          >
+            Abrir Loja
+          </Link>
+        </div>
+        <div className="sm:relative sm:w-2/5">
+          <div className="-ml-24 flex h-64 flex-col gap-2 overflow-hidden sm:absolute sm:-mt-32 sm:ml-0 sm:h-max">
+            <div className="flex flex-row items-center justify-end gap-8 sm:translate-y-24 sm:justify-normal">
+              <StoreProduct
+                product={products[0] as Product}
+                sizeClass="size-52 sm:size-72"
+              />
+              <div className="flex flex-col gap-11 overflow-hidden">
+                <div className="ml-24 mt-8 sm:ml-48 sm:mt-0">
+                  <StoreProduct
+                    product={products[1] as Product}
+                    sizeClass="size-32 sm:size-44"
+                  />
+                </div>
+                <StoreProduct
+                  product={products[2] as Product}
+                  sizeClass="size-40 sm:size-56"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </InfoCard>
+  );
+};
+
+export default StoreCard;

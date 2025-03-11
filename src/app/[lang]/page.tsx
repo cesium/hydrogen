@@ -3,6 +3,7 @@ import {
   type Locale,
 } from "@/internationalization/dictionaries";
 import { type Metadata } from "next";
+import StoreCard from "@/components/store-card";
 
 export function generateMetadata({
   params: { lang },
@@ -49,5 +50,10 @@ export function generateMetadata({
 }
 
 export default function Home() {
-  return <main className="flex-col items-center justify-center">Home</main>;
+  return (
+    <main className="flex-col items-center justify-center px-[20px] sm:px-[53px]">
+      Home
+      <StoreCard />
+    </main>
+  );
 }
