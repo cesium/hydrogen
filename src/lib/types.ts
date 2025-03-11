@@ -28,6 +28,7 @@ export interface MemberInfo extends Member {
 export interface Product {
   id: string;
   name: string;
+  handle: string;
   price: number;
   imageUrl: string;
 }

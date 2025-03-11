@@ -19,6 +19,7 @@ const getProducts = async () => {
     return productsArray.slice(0, -1).map((product: any) => ({
       id: product.id,
       name: product.title,
+      handle: product.handle,
       price: product.price_formatted,
       imageUrl: product.image?.square ?? "",
     }));

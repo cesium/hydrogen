@@ -23,24 +23,29 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
 
   return (
     <div
-      className={`relative ${sizeClass} flex-shrink-0 text-base font-semibold text-white`}
+      className={`relative ${sizeClass} flex-shrink-0 text-base font-semibold text-white transition-transform hover:-translate-y-1`}
     >
-      <span className="absolute right-0 z-20 -mr-3 -mt-6 rounded-3xl bg-black px-4 py-2 ring-2 ring-white sm:mr-3">
-        <p>{product.price}</p>
-      </span>
-      <div className="relative h-full w-full overflow-hidden rounded-lg">
-        {isLoading && (
-          <div className="bg-gray-700 absolute inset-0 animate-pulse" />
-        )}
-        <Image
-          src={product.imageUrl}
-          alt={product.name}
-          layout="fill"
-          objectFit="contain"
-          className="pointer-events-none select-none"
-          onLoadingComplete={() => setIsLoading(false)}
-        />
-      </div>
+      <Link
+        href={`https://store.cesium.pt/product/${product.handle}`}
+        target="_blank"
+      >
+        <span className="absolute right-0 z-20 -mr-3 -mt-6 rounded-3xl bg-black px-4 py-2 ring-2 ring-white sm:mr-3">
+          <p>{product.price}</p>
+        </span>
+        <div className="relative h-full w-full overflow-hidden rounded-lg">
+          {isLoading && (
+            <div className="bg-gray-700 absolute inset-0 animate-pulse" />
+          )}
+          <Image
+            src={product.imageUrl}
+            alt={product.name}
+            layout="fill"
+            objectFit="contain"
+            className="pointer-events-none select-none"
+            onLoadingComplete={() => setIsLoading(false)}
+          />
+        </div>
+      </Link>
     </div>
   );
 };
@@ -69,7 +74,9 @@ const StoreCard = () => {
     <InfoCard>
       <div className="flex flex-col bg-black sm:flex-row sm:justify-between sm:gap-2">
         <div className="flex w-full flex-col gap-2 px-6 py-9 pb-3 text-white sm:w-3/6 sm:px-9 sm:py-11">
-          <h1 className="font-title text-2xl">{dict.store_card.title}</h1>
+          <h4 className="font-title text-2xl font-medium">
+            {dict.store_card.title}
+          </h4>
           <p>{dict.store_card.text}</p>
           <Link
             className="hover:bg-gray-100 mt-2 w-max rounded-full px-5 py-3 text-white ring-2 ring-white transition-colors hover:bg-white/5"
