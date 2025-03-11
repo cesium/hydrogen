@@ -13,9 +13,9 @@ interface AboutSectionProps {
   title: string;
   titleOrientation?: TitleOr;
   subtitle: string;
-  linkName: LinkName;
+  linkName?: LinkName;
   linkPos?: LinkPos;
-  href: string;
+  href?: string;
   overflows?: boolean;
   dark?: boolean;
   children?: React.ReactNode;
@@ -56,10 +56,10 @@ const AboutSectionLayout = ({
       >
         {/* Title */}
         <div
-          className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-20" : "mb-4"} sm:mr-6`}
+          className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-10" : "mb-4"} sm:mr-6`}
         >
           <div
-            className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:items-start sm:justify-center" : ""}`}
+            className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:items-start sm:justify-center sm:-translate-x-2" : ""}`}
           >
             <span
               className={`w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} `}
@@ -67,29 +67,33 @@ const AboutSectionLayout = ({
               {title}
             </span>
           </div>
-          <span
-            className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
-          >
-            <CustomLink
-              title={dict.button[linkName]}
-              href={href}
-              arrow="forward"
-            />
-          </span>
-        </div>
-        {/* Subtitle */}
-        <div className="overflow-auto">
-          <div>
-            <span className="text-start">{subtitle}</span>
-            <div
-              className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+          {linkName && href && (
+            <span
+              className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
             >
               <CustomLink
                 title={dict.button[linkName]}
                 href={href}
                 arrow="forward"
               />
-            </div>
+            </span>
+          )}
+        </div>
+        {/* Subtitle */}
+        <div className="overflow-auto">
+          <div>
+            <span className="text-start">{subtitle}</span>
+            {linkName && href && (
+              <div
+                className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+              >
+                <CustomLink
+                  title={dict.button[linkName]}
+                  href={href}
+                  arrow="forward"
+                />
+              </div>
+            )}
           </div>
           {/* Content (Scrollable) */}
           <div className="relative">
