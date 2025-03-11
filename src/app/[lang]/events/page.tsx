@@ -64,40 +64,60 @@ export default function EventsPage() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-12 lg:flex-row">
-        <div className="flex w-full flex-col gap-14 lg:w-2/5">
-          <Calendar
-            events={events}
-            onDateSelect={handleDateSelect}
-            selectedDate={selectedDate}
-            className="your-calendar-class"
-          />
-          <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
-        </div>
-        <div className="flex-1">
-          <EventList
-            events={events}
-            isLoading={isLoading}
-            selectedDate={selectedDate}
-            onClearDate={handleClearDate}
-          />
-          <p className="mt-8 text-justify text-sm text-black/50">
-            {dict.events.warning.split("Calendarium")[0]}
-            <Link
-              href="https://calendario.cesium.di.uminho.pt/"
-              className="text-primary hover:underline"
-            >
-              Calendarium
-            </Link>
-            {dict.events.warning.split("Calendarium")[1]?.split("Instagram")[0]}
-            <Link
-              href="https://instagram.com/cesiuminho"
-              className="text-primary hover:underline"
-            >
-              Instagram
-            </Link>
-            {dict.events.warning.split("Instagram")[1]}
-          </p>
+      <div className="md:px-5">
+        <div className="md:flex md:gap-12">
+          <div className="mb-8 w-full md:mb-0 md:w-2/5">
+            <Calendar
+              events={events}
+              onDateSelect={handleDateSelect}
+              selectedDate={selectedDate}
+              className="your-calendar-class"
+            />
+            <div className="mt-4 hidden md:block">
+              <PromotionalCard type={CardType.Membership} />
+            </div>
+          </div>
+          <div className="flex-1">
+            <EventList
+              events={events}
+              isLoading={isLoading}
+              selectedDate={selectedDate}
+              onClearDate={handleClearDate}
+            />
+            <div className="mt-8 text-sm text-black/50">
+              {dict.events.warning.split("\t").map((paragraph, index) => (
+                <p key={index} className="mb-1">
+                  {paragraph.includes("Calendarium") ? (
+                    <>
+                      {paragraph.split("Calendarium")[0]}
+                      <Link
+                        href="https://calendario.cesium.di.uminho.pt/"
+                        className="text-primary hover:underline"
+                      >
+                        Calendarium
+                      </Link>
+                      {paragraph.split("Calendarium")[1]?.split("Instagram")[0]}
+                    </>
+                  ) : paragraph.includes("Instagram") ? (
+                    <>
+                      To stay updated, follow our{" "}
+                      <Link
+                        href="https://instagram.com/cesiuminho"
+                        className="text-primary hover:underline"
+                      >
+                        Instagram
+                      </Link>
+                    </>
+                  ) : (
+                    paragraph
+                  )}
+                </p>
+              ))}
+            </div>
+            <div className="mt-4 md:hidden">
+              <PromotionalCard type={CardType.Membership} />
+            </div>
+          </div>
         </div>
       </div>
     </main>
