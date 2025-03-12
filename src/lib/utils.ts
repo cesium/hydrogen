@@ -203,6 +203,39 @@ function isWithinRange(date: Date, start: Date, end: Date): boolean {
   return normalizedDate >= normalizedStart && normalizedDate <= normalizedEnd;
 }
 
+function isAllDayEvent(event: { start: Date; end: Date }): boolean {
+  const start = new Date(event.start);
+  const end = new Date(event.end);
+  return (
+    start.getHours() === 0 &&
+    start.getMinutes() === 0 &&
+    end.getHours() === 0 &&
+    end.getMinutes() === 0
+  );
+};
+
+function isMultiDayEvent(event: { start: Date; end: Date }): boolean {
+  const start = new Date(event.start);
+  const end = new Date(event.end);
+  return (
+    start.getHours() === 0 &&
+    start.getMinutes() === 0 &&
+    end.getHours() === 23 &&
+    end.getMinutes() === 59 &&
+    !isSameDay(start, end)
+  );
+};
+
+function formatDate(date: Date, locale: string): string {
+  const d = new Date(date);
+  return d
+    .toLocaleDateString(locale, {
+      day: "2-digit",
+      month: "2-digit",
+    })
+    .replace(/\//g, "/");
+};
+
 export {
   generateYearRanges,
   generateUrlsForTeams,
@@ -218,4 +251,7 @@ export {
   getMonthDays,
   isSameDay,
   isWithinRange,
+  isAllDayEvent,
+  isMultiDayEvent,
+  formatDate
 };
