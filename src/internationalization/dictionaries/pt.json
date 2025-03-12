@@ -84,8 +84,17 @@
     "projects": "Projetos"
   },
   "about": {
-    "sections": { 
+    "sections": {
       "hero": {
+        "title": "O que é o CeSIUM?",
+        "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
+        "subtitle": "Diretor Do Departamento de Informática - 2017"
+      },
+      "team": {
+        "title": "Equipa",
+        "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
+      },
+        "cesium": {
         "title": "O que é o CeSIUM?",
         "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
         "subtitle": "Diretor Do Departamento de Informática - 2017"
@@ -121,6 +130,7 @@
     },
     "departments": {
       "title": "Departamentos",
+      "subtitle": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     },
     "become_a_member": {
@@ -145,6 +155,66 @@
         "description": "Aproveita descontos de 30% ou mais em vários artigos da nossa Loja online, desde t-shirts e casacos, a artigos de papelaria, stickers, porta-chaves, e mais.",
         "link": "Abrir loja"
       }
+    },
+    "explore": {
+      "title": "Explora mais",
+      "items": [
+        {
+          "id": "events",
+          "title": "Eventos",
+          "description": "Curioso sobre as datas dos nossos eventos? Temos uma página para isso. Para mais datas do curso, temos o Calendarium.",
+          "links": [
+            { "title": "Eventos", "href": "/events", "arrow": "forward" },
+            {
+              "title": "Abrir Calendarium",
+              "href": "https://calendario.cesium.di.uminho.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "id": "shop",
+          "title": "Loja",
+          "description": "Camisolas, acessórios e materiais do CeSIUM e dos nossos projetos - está tudo disponível na nossa loja online.",
+          "links": [
+            {
+              "title": "Abrir loja",
+              "href": "https://store.cesium.pt",
+              "arrow": "outward"
+            }
+          ]
+        },
+        {
+          "id": "become_a_member",
+          "title": "Torna-te sócio",
+          "description": "Sócios do CeSIUM têm direito a vários benefícios. Descobre-os já e as parcerias a que te dão direito.",
+          "links": [
+            {
+              "title": "Torna-te sócio",
+              "href": "/about/become-a-member",
+              "arrow": "forward"
+            },
+            {
+              "title": "Parcerias",
+              "href": "/partners",
+              "arrow": "forward"
+            }
+          ]
+        },
+        {
+          "id": "become_a_collaborator",
+          "title": "Torna-te colaborador",
+          "description": "Se gostavas de fazer parte do núcleo, nós adorávamos receber-te. Sabe mais sobre como te podes tornar um colaborador.",
+          "links": [
+            {
+              "title": "Torna-te colaborador",
+              "href": "/about/become-a-collaborator",
+              "arrow": "forward",
+              "color": "blue"
+            }
+          ]
+        }
+      ]
     }
   },
   "social_media": "Redes sociais",

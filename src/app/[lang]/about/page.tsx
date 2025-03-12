@@ -5,7 +5,6 @@ import Carousel from "@/components/carousel";
 import { useDictionary } from "@/contexts/dictionary-provider";
 
 export default function About() {
-
   const dict = useDictionary();
 
   const heroItems = [
