@@ -43,7 +43,7 @@ export default function About() {
     <main className="flex-col items-center justify-center snap-y snap-mandatory overflow-y-scroll h-screen">
       <AboutSection>
           <section
-            className={`relative w-full h-fit items-center justify-center pb-64 pt-44 snap-always snap-start`}
+            className={`relative w-full h-fit items-center justify-center pb-44 pt-48 lg:pb-64 lg:pt-44 snap-always snap-start`}
           >
             <div className="hidden h-fit items-center justify-center lg:flex">
               {heroItems.map((item, index) => (item))}
