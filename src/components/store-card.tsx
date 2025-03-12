@@ -18,7 +18,13 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   if (!product) {
-    return null;
+    return (
+      <div
+        className={`relative ${sizeClass} flex-shrink-0 text-base font-semibold text-white`}
+      >
+        <div className="size-full animate-pulse rounded-lg bg-zinc-700" />
+      </div>
+    );
   }
 
   return (
@@ -29,12 +35,14 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
         href={`https://store.cesium.pt/product/${product.handle}`}
         target="_blank"
       >
-        <span className="absolute right-0 z-20 -mr-3 -mt-6 rounded-3xl bg-black px-4 py-2 ring-2 ring-white sm:mr-3">
+        <span
+          className={`absolute right-0 z-20 -mr-3 -mt-6 rounded-3xl px-4 py-2 sm:mr-3 ${isLoading ? "animate-pulse bg-zinc-700 text-zinc-700" : "bg-black ring-2 ring-white"}`}
+        >
           <p>{product.price_formatted}</p>
         </span>
         <div className="relative h-full w-full overflow-hidden rounded-lg">
           {isLoading && (
-            <div className="bg-gray-700 absolute inset-0 animate-pulse" />
+            <div className="absolute inset-0 animate-pulse bg-zinc-700" />
           )}
           <Image
             src={product.image.square}

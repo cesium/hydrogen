@@ -19,7 +19,10 @@ const getProducts = async () => {
       throw new Error(`Failed to fetch products: ${response.statusText}`);
     }
 
-    const data: Record<string, Product> = await response.json() as Record<string, Product>;
+    const data: Record<string, Product> = (await response.json()) as Record<
+      string,
+      Product
+    >;
     const productsArray = Object.values(data);
 
     return productsArray.slice(0, -1);
