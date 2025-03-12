@@ -1,7 +1,13 @@
 "use client";
 
 import type { EventCardProps } from "../lib/types";
-import { getMonthAbbreviation, getDay, isAllDayEvent, isMultiDayEvent, formatDate } from "../lib/utils";
+import {
+  getMonthAbbreviation,
+  getDay,
+  isAllDayEvent,
+  isMultiDayEvent,
+  formatDate,
+} from "../lib/utils";
 import { useLang } from "@/contexts/dictionary-provider";
 
 export function EventCard({ event }: EventCardProps) {

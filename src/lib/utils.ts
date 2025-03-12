@@ -212,7 +212,7 @@ function isAllDayEvent(event: { start: Date; end: Date }): boolean {
     end.getHours() === 0 &&
     end.getMinutes() === 0
   );
-};
+}
 
 function isMultiDayEvent(event: { start: Date; end: Date }): boolean {
   const start = new Date(event.start);
@@ -224,7 +224,7 @@ function isMultiDayEvent(event: { start: Date; end: Date }): boolean {
     end.getMinutes() === 59 &&
     !isSameDay(start, end)
   );
-};
+}
 
 function formatDate(date: Date, locale: string): string {
   const d = new Date(date);
@@ -234,7 +234,7 @@ function formatDate(date: Date, locale: string): string {
       month: "2-digit",
     })
     .replace(/\//g, "/");
-};
+}
 
 export {
   generateYearRanges,
@@ -253,5 +253,5 @@ export {
   isWithinRange,
   isAllDayEvent,
   isMultiDayEvent,
-  formatDate
+  formatDate,
 };
