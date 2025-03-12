@@ -64,7 +64,7 @@ export default function EventsPage() {
         </div>
       </div>
 
-      <div className="md:px-5">
+      <div>
         <div className="md:flex md:gap-12">
           <div className="mb-8 flex w-full flex-col gap-14 md:mb-0 md:w-2/5">
             <Calendar
@@ -89,42 +89,35 @@ export default function EventsPage() {
                 {dict.events.warningTitle}
               </h2>
               <div className="text-black/50">
-                {dict.events.warning.split("\t").map((paragraph, index) => {
-                  if (paragraph.includes("Calendarium")) {
-                    const parts = paragraph.split("Calendarium");
-                    return (
-                      <p key={index} className="mb-1">
-                        {parts[0]}
-                        <Link
-                          href="https://calendario.cesium.di.uminho.pt/"
-                          className="font-bold text-primary hover:underline"
-                        >
-                          Calendarium
-                        </Link>
-                        {parts[1]}
-                      </p>
-                    );
-                  }
-
-                  if (paragraph.includes("Instagram")) {
-                    const parts = paragraph.split("Instagram");
-                    return (
-                      <p key={index} className="mb-1">
-                        {parts[0]}
-                        <Link
-                          href="https://instagram.com/cesiuminho"
-                          className="font-bold text-primary hover:underline"
-                        >
-                          Instagram
-                        </Link>
-                        .
-                      </p>
-                    );
-                  }
-
+                {dict.events.warning.split("\n").map((paragraph, index) => {
+                  const parts = paragraph.split(/(Calendarium|Instagram)/);
                   return (
                     <p key={index} className="mb-1">
-                      {paragraph}
+                      {parts.map((part, i) => {
+                        if (part === "Calendarium") {
+                          return (
+                            <Link
+                              key={i}
+                              href="https://calendario.cesium.di.uminho.pt/"
+                              className="font-bold text-primary hover:underline"
+                            >
+                              Calendarium
+                            </Link>
+                          );
+                        }
+                        if (part === "Instagram") {
+                          return (
+                            <Link
+                              key={i}
+                              href="https://instagram.com/cesiuminho"
+                              className="font-bold text-primary hover:underline"
+                            >
+                              Instagram
+                            </Link>
+                          );
+                        }
+                        return part;
+                      })}
                     </p>
                   );
                 })}
