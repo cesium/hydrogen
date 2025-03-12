@@ -89,7 +89,6 @@ const generateUrlsForTeams = (
   return urls;
 };
 
-
 const getDepartmentMembersInfo = (
   team: TeamData,
   yearRange: string,
