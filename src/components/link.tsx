@@ -24,7 +24,14 @@ const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
       <p>{title}</p>
     </button>
   ) : (
-    <Link href={arrow === "forward" ? hrefLang : hrefDefault} className={style}>
+    <Link
+      href={arrow === "forward" ? hrefLang : hrefDefault}
+      {...(arrow === "outward" && {
+        rel: "noopener noreferrer",
+        target: "_blank",
+      })}
+      className={style}
+    >
       <p>{title}</p>
       {(arrow === "forward" || arrow === "outward") && (
         <span className="material-symbols-outlined">{"arrow_" + arrow}</span>
