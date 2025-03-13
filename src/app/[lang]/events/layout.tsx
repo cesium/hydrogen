@@ -43,8 +43,8 @@ export function generateMetadata({
     alternates: {
       canonical: "https://cesium.di.uminho.pt/events",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/events",
-        pt: "https://cesium.di.uminho.pt/pt_PT/events",
+        en: "https://cesium.di.uminho.pt/en/events",
+        pt: "https://cesium.di.uminho.pt/pt/events",
       },
     },
   };

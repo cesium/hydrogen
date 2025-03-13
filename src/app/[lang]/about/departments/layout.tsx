@@ -43,8 +43,8 @@ export function generateMetadata({
     alternates: {
       canonical: "https://cesium.di.uminho.pt/about/departments",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/about/departments",
-        pt: "https://cesium.di.uminho.pt/pt_PT/about/departments",
+        en: "https://cesium.di.uminho.pt/en/about/departments",
+        pt: "https://cesium.di.uminho.pt/pt/about/departments",
       },
     },
   };

@@ -43,8 +43,8 @@ export function generateMetadata({
     alternates: {
       canonical: "https://cesium.di.uminho.pt/projects",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/projects",
-        pt: "https://cesium.di.uminho.pt/pt_PT/projects",
+        en: "https://cesium.di.uminho.pt/en/projects",
+        pt: "https://cesium.di.uminho.pt/pt/projects",
       },
     },
   };

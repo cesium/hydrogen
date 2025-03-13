@@ -43,8 +43,8 @@ export function generateMetadata({
     alternates: {
       canonical: "https://cesium.di.uminho.pt/about/become-a-member",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/about/become-a-member",
-        pt: "https://cesium.di.uminho.pt/pt_PT/about/become-a-member",
+        en: "https://cesium.di.uminho.pt/en/about/become-a-member",
+        pt: "https://cesium.di.uminho.pt/pt/about/become-a-member",
       },
     },
   };

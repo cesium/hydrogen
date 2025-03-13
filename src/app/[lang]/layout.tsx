@@ -33,8 +33,8 @@ export function generateMetadata({
     openGraph: {
       siteName: dict.seo.title,
       type: "website",
-      locale: "pt_PT",
-      alternateLocale: "en_US",
+      locale: "pt",
+      alternateLocale: "en",
     },
     robots: {
       index: true,
