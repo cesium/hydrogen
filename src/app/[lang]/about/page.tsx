@@ -8,14 +8,11 @@ export default function About() {
   const dict = useDictionary();
 
   const heroItems = [
-    <div
-      key="title"
-      className="flex lg:flex-1 items-center"
-    >
-      <p className="bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title font-medium leading-[125%] text-transparent text-[36px] sm:text-[40px] xl:text-[48px] w-[343px] sm:w-[358px] lg:w-[460px] h-fit xl:w-[565px]">
+    <div key="title" className="flex items-center lg:flex-1 mb-32 lg:mb-0" >
+      <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] xl:w-[565px] xl:text-[48px]">
         Centro de
         <br /> Estudantes de
-        <span className="font-title text-[36px] sm:text-[40px] xl:text-[48px] text-black">
+        <span className="font-title text-[36px] text-black sm:text-[40px] xl:text-[48px]">
           {" "}
           Engenharia Informática
         </span>{" "}
@@ -23,16 +20,13 @@ export default function About() {
       </p>
     </div>,
 
-    <div
-      key="subtitle"
-      className="flex flex-col justify-center sm:h-[300px]"
-    >
+    <div key="subtitle" className="flex flex-col justify-center sm:h-[300px] mb-32 lg:mb-0">
       <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
-        <p className="text-[15px] xl:text-[16px] w-[343px] h-fit sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px]">
+        <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
           {dict.about.sections.hero.description}
         </p>
       </div>
-      <div className="mt-3 lg:mt-5 text-right font-sans text-[15px] font-normal text-black xl:text-[16px]">
+      <div className="mt-3 text-right font-sans text-[15px] font-normal text-black lg:mt-5 xl:text-[16px]">
         <p>Pedro Rangel Henriques</p>
         <p>{dict.about.sections.hero.subtitle}</p>
       </div>
@@ -40,48 +34,45 @@ export default function About() {
   ];
 
   return (
-    <main className="flex-col items-center justify-center snap-y snap-mandatory overflow-y-scroll h-screen">
+    <main className="h-screen snap-y snap-mandatory flex-col items-center justify-center overflow-y-scroll">
       <AboutSection>
-          <section
-            className={`relative w-full h-fit items-center justify-center pb-44 pt-48 lg:pb-64 lg:pt-44 snap-always snap-start`}
-          >
-            <div className="hidden h-fit items-center justify-center lg:flex">
-              {heroItems.map((item, index) => (item))}
-            </div>
-
-            <div className="block lg:hidden">
-              <Carousel
-                autoplay={2000}
-                pagination
-                items={heroItems.map((item, index) => (
-                  <div key={index} className="flex justify-center items-center">{item}</div>
-                ))}
-              />
-            </div>
-          
-          <div className="absolute bottom-[30px] left-0 right-0 flex flex-col items-center justify-center gap-1 h-[56px]">
-                <p>Desliza para ver mais</p>
-                <span className="material-symbols-outlined">arrow_downward</span>
+        <section
+          className={`flex h-[745px] w-full snap-center snap-always flex-col justify-center sm:h-[804px] lg:gap-44`}
+        >
+          <div className="hidden h-fit items-center justify-center lg:flex">
+            {heroItems.map((item, _) => item)}
           </div>
-          
-          </section>
 
+          <div className="block lg:hidden">
+            <Carousel
+              pagination
+              items={heroItems.map((item, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  {item}
+                </div>
+              ))}
+            />
+          </div>
+
+          <div className="flex h-[56px] flex-col items-center justify-center gap-1">
+            <p>Desliza para ver mais</p>
+            <span className="material-symbols-outlined">arrow_downward</span>
+          </div>
+        </section>
       </AboutSection>
 
-      <section className="snap-always snap-center h-screen">
-        <div className="h-full flex justify-center items-center">
-          <div className="flex flex-col items-center justify-center w-full max-w-[1440px]">
-            <h2 className="text-[36px] font-title font-medium text-black text-center md:text-[48px] lg:text-[60px]">
+      <section className="h-screen snap-start snap-always">
+        <div className="flex h-full items-center justify-center">
+          <div className="flex w-full max-w-[1440px] flex-col items-center justify-center">
+            <h2 className="text-center font-title text-[36px] font-medium text-black md:text-[48px] lg:text-[60px]">
               hello
             </h2>
-            <div className="text-[16px] font-sans font-normal text-[#6E6E6E] text-center mt-3 md:text-[18px] lg:text-[20px]">
+            <div className="mt-3 text-center font-sans text-[16px] font-normal text-[#6E6E6E] md:text-[18px] lg:text-[20px]">
               subtitulo
             </div>
           </div>
         </div>
       </section>
-
     </main>
   );
 }
-
