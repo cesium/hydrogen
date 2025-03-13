@@ -1,11 +1,14 @@
 import Image from "next/image";
 
+type Style = "style1" | "style2";
+
 interface AvatarProps {
   src?: string;
   name?: string;
   role?: string;
   imageClassName?: string;
   className?: string;
+  style?: Style;
 }
 
 const Avatar = ({
@@ -14,10 +17,11 @@ const Avatar = ({
   role,
   imageClassName,
   className,
+  style,
 }: AvatarProps) => {
   return (
     <figure
-      className={`flex flex-shrink-0 items-center gap-4 md:flex-col${className ? " " + className : ""}`}
+      className={`flex flex-shrink-0 items-center gap-4 ${style == "style2" ? "flex-col text-center" : "md:flex-col md:text-center"} ${className ? " " + className : ""}`}
     >
       <Image
         src={src ?? "/images/none.png"}
@@ -32,8 +36,8 @@ const Avatar = ({
       />
       {name && role && (
         <div className="flex max-w-36 flex-col gap-1 md:items-center">
-          <h3 className="font-medium md:text-center">{name}</h3>
-          <p className="text-sm text-gray md:text-center">{role}</p>
+          <h3 className="font-medium">{name}</h3>
+          <p className="text-sm text-gray">{role}</p>
         </div>
       )}
     </figure>
