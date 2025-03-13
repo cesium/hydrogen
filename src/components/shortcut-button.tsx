@@ -17,6 +17,8 @@ export const ShortcutButton: React.FC<ShortcutButtonProps> = ({
   return (
     <Link
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="relative flex h-[90px] w-full items-center gap-4 rounded-2xl border border-black/10 px-6 shadow-[0_2px_4px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] md:w-[260px]"
     >
       {highlight && (
