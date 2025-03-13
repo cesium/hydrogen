@@ -2,6 +2,7 @@ import {
   getDictionary,
   type Locale,
 } from "@/internationalization/dictionaries";
+import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
 import StoreCard from "@/components/store-card";
 import PromotionalCard from "@/components/promotional-card";
@@ -13,7 +14,7 @@ export function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Metadata {
-  const dict = getDictionary(lang);
+  const dict = getDictionary(fullLocale(lang));
 
   return {
     title: dict.seo.title,
