@@ -64,51 +64,49 @@ export default function EventsPage() {
         </div>
       </div>
 
-      <div>
-        <div className="md:flex md:gap-12">
-          <div className="mb-8 flex w-full flex-col gap-14 md:mb-0 md:w-2/5">
-            <Calendar
-              events={events}
-              onDateSelect={handleDateSelect}
-              selectedDate={selectedDate}
-              className="your-calendar-class"
-            />
-            <div className="hidden md:block">
-              <PromotionalCard mobileOnlyLayout type={CardType.Membership} />
-            </div>
+      <div className="md:flex md:gap-12">
+        <div className="mb-8 flex w-full flex-col gap-14 md:mb-0 md:w-2/5">
+          <Calendar
+            events={events}
+            onDateSelect={handleDateSelect}
+            selectedDate={selectedDate}
+            className="your-calendar-class"
+          />
+          <div className="hidden md:block">
+            <PromotionalCard mobileOnlyLayout type={CardType.Membership} />
           </div>
-          <div className="flex flex-1 flex-col gap-6">
-            <EventList
-              events={events}
-              isLoading={isLoading}
-              selectedDate={selectedDate}
-              onClearDate={handleClearDate}
-            />
-            <div className="text-sm">
-              <h2 className="mb-4 font-title text-2xl font-medium">
-                {dict.events.warningTitle}
-              </h2>
-              <div className="text-black/50">
-                <Markdown
-                  options={{
-                    overrides: {
-                      a: {
-                        props: {
-                          className: "font-bold text-primary hover:underline",
-                          target: "_blank",
-                          rel: "noopener noreferrer",
-                        },
+        </div>
+        <div className="flex flex-1 flex-col gap-6">
+          <EventList
+            events={events}
+            isLoading={isLoading}
+            selectedDate={selectedDate}
+            onClearDate={handleClearDate}
+          />
+          <div className="text-sm">
+            <h2 className="mb-4 font-title text-2xl font-medium">
+              {dict.events.warningTitle}
+            </h2>
+            <div className="text-black/50">
+              <Markdown
+                options={{
+                  overrides: {
+                    a: {
+                      props: {
+                        className: "font-bold text-primary hover:underline",
+                        target: "_blank",
+                        rel: "noopener noreferrer",
                       },
                     },
-                  }}
-                >
-                  {dict.events.warning}
-                </Markdown>
-              </div>
+                  },
+                }}
+              >
+                {dict.events.warning}
+              </Markdown>
             </div>
-            <div className="md:hidden">
-              <PromotionalCard type={CardType.Membership} />
-            </div>
+          </div>
+          <div className="md:hidden">
+            <PromotionalCard type={CardType.Membership} />
           </div>
         </div>
       </div>
