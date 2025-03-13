@@ -83,6 +83,12 @@
     "store": "Loja",
     "projects": "Projetos"
   },
+  "home": {
+    "cesium": {
+      "title": "O que é o **CeSIUM?**",
+      "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional."
+    }
+  },
   "about": {
     "sections": {
       "team": {

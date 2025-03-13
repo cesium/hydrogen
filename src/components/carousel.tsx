@@ -9,6 +9,8 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useState, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 
+type PaginationPos = "bottom" | "top";
+
 interface CarouselProps {
   overflow?: boolean;
   pagination?: boolean;
@@ -17,16 +19,18 @@ interface CarouselProps {
   items: React.ReactNode[];
   autoplay?: number;
   showNavigation?: boolean;
+  paginationPos?: PaginationPos;
 }
 
 export default function Carousel({
   overflow = false /* Shows partially the previous and next items */,
   pagination = false /* Shows the bullet pagination */,
   loop = false /* Loops through the items */,
-  single = false,
+  single = false, /* Show just one slide at a time */
   items /* Items to show on the carousel */,
   autoplay /* Sets if the carousel has autoplay */,
   showNavigation = false /* Default is without arrows */,
+  paginationPos = "bottom",
 }: CarouselProps) {
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -40,6 +44,10 @@ export default function Carousel({
 
   return (
     <div className="relative">
+      {pagination && paginationPos === "top" && (
+        <div className="custom-pagination pointer-events-none absolute right-4 top-4 z-10 flex h-fit w-fit sm:!top-12 sm:right-16"></div>
+      )}
+
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
@@ -51,7 +59,17 @@ export default function Carousel({
         autoplay={
           autoplay ? { delay: autoplay, disableOnInteraction: false } : false
         }
-        pagination={pagination ? { clickable: true, type: "bullets" } : false}
+        pagination={
+          pagination && paginationPos === "top"
+            ? {
+                el: ".custom-pagination",
+                clickable: true,
+                renderBullet: (index, className) => {
+                  return `<span key="${index}" class="${className} custom-bullet"></span>`;
+                },
+              }
+            : { clickable: true }
+        }
         breakpoints={{
           768: {
             slidesPerView: overflow ? 1.8 : single ? 1 : 2,
@@ -75,9 +93,9 @@ export default function Carousel({
       </Swiper>
 
       {showNavigation && (
-        <div className="absolute inset-0 z-50 px-10 h-full top-0">
+        <div className="pointer-events-none absolute inset-0 top-0 z-10 h-full px-10">
           <button
-            className={`select-none absolute left-10 top-1/2 transform -translate-y-1/2 p-2 text-white ${isFirstSlide ? "hidden" : ""} pointer-events-auto`}
+            className={`absolute bottom-2 left-2 z-50 transform select-none p-2 text-white lg:left-10 lg:top-1/2 lg:-translate-y-1/2 ${isFirstSlide ? "hidden" : ""} pointer-events-auto`}
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous slide"
           >
@@ -86,7 +104,7 @@ export default function Carousel({
             </span>
           </button>
           <button
-            className={`select-none absolute right-10 top-1/2 transform -translate-y-1/2 p-2 text-white ${(isLastSlide && !loop) ? "hidden" : ""} pointer-events-auto`}
+            className={`absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2 ${isLastSlide && !loop ? "hidden" : ""} pointer-events-auto`}
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next slide"
           >

@@ -13,10 +13,10 @@ export default function Home() {
     <main className="flex-col items-center justify-center">
       <div className="w-full overflow-hidden pt-4 sm:pt-6">
         <ScrollableHighlight
-          title={dict.about.sections.cesium.title}
-          subtitle={dict.about.sections.cesium.subtitle}
+          title={dict.home.cesium.title}
+          subtitle={dict.home.cesium.subtitle}
           background={images[backgroundImage]}
-          items={images.filter((_,index) => index != backgroundImage)}
+          items={images.filter((_, index) => index != backgroundImage)}
         />
       </div>
     </main>

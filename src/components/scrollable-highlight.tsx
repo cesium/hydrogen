@@ -3,6 +3,7 @@
 import React from "react";
 import Carousel from "./carousel";
 import Image from "next/image";
+import Markdown from "markdown-to-jsx";
 
 interface Item {
   src: string;
@@ -23,34 +24,33 @@ export default function ScrollableHighlight({
   items,
 }: Props) {
   const content = [
+    /* Primeiro elemento */
     <div
-      className="flex h-[650px] w-full place-items-center justify-center rounded-xl sm:h-[600px] sm:justify-start"
+      className="flex h-[650px] w-full place-items-center justify-center rounded-2xl px-7 sm:h-[600px] sm:justify-start sm:px-10 bg-cover bg-no-repeat"
       style={{
         backgroundImage: `
         radial-gradient(circle at top center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
         radial-gradient(circle, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.7) 100%),
         url(${background?.src})
       `,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
         backgroundPosition: "center 16%",
       }}
     >
-      <div className="relative sm:w-[684px] sm:px-[100px] xl:w-[800px]">
-        <h1
-          className="mb-5 font-title text-5xl text-white"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 1), rgba(255, 255, 255, 1))",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          {title}
+      <div className="relative sm:w-[684px] md:px-25 xl:w-[800px]">
+        <h1 className="mb-5 bg-gradient-to-r from-white/40 via-white to-white bg-clip-text font-title text-4xl text-transparent sm:text-5xl">
+          <Markdown
+            className="font-normal"
+            options={{
+              overrides: { strong: { props: { className: "text-white" } } },
+            }}
+          >
+            {`${title}`}
+          </Markdown>
         </h1>
         <h2 className="text-base text-white">{subtitle}</h2>
       </div>
     </div>,
+    /* Map das imagens */
     ...items.map((item, index) => (
       <div key={index} className="flex justify-center">
         <Image
@@ -58,15 +58,21 @@ export default function ScrollableHighlight({
           width={490}
           height={367}
           alt={item.alt}
-          className="h-[650px] w-full rounded-xl object-cover sm:h-[600px] sm:max-w-full"
+          className="h-[650px] w-full rounded-2xl object-cover sm:h-[600px] sm:max-w-full"
         />
       </div>
     )),
   ];
 
   return (
-    <div className="w-full overflow-hidden px-8 pt-4 sm:pt-6">
-      <Carousel single items={content} showNavigation />
+    <div className="w-full overflow-hidden px-5 pt-4 sm:px-8 sm:pt-6">
+      <Carousel
+        single
+        showNavigation
+        pagination
+        items={content}
+        paginationPos={"top"}
+      />
     </div>
   );
 }
