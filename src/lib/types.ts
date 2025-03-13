@@ -24,3 +24,17 @@ export type TeamData = Team[];
 export interface MemberInfo extends Member {
   imageUrl: string;
 }
+
+export interface ProductImage {
+  thumb: string;
+  square: string;
+  full: string;
+}
+
+export interface Product {
+  id: string;
+  title: string;
+  handle: string;
+  price_formatted: string;
+  image: ProductImage;
+}

@@ -3,6 +3,10 @@ import {
   type Locale,
 } from "@/internationalization/dictionaries";
 import { type Metadata } from "next";
+import StoreCard from "@/components/store-card";
+import PromotionalCard from "@/components/promotional-card";
+import { CardType } from "@/lib/types";
+import { horizontalPadding } from "@/lib/styling";
 
 export function generateMetadata({
   params: { lang },
@@ -49,5 +53,15 @@ export function generateMetadata({
 }
 
 export default function Home() {
-  return <main className="flex-col items-center justify-center">Home</main>;
+  return (
+    <main className={`${horizontalPadding}`}>
+      <section className="grid columns-1 gap-8 sm:columns-2">
+        <div className="sm:col-span-2">
+          <StoreCard />
+        </div>
+        <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
+        <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+      </section>
+    </main>
+  );
 }

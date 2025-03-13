@@ -53,7 +53,11 @@ interface DepartmentsListProps {
   className?: string;
 }
 
-const DepartmentsList = ({ hideTeam, hideShortName, className }: DepartmentsListProps) => {
+const DepartmentsList = ({
+  hideTeam,
+  hideShortName,
+  className,
+}: DepartmentsListProps) => {
   const currentYearRange = "2024-2025";
   const [teamData, setTeamData] = useState<TeamData>([]);
 
