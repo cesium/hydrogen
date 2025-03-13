@@ -39,8 +39,8 @@
   }
 
   .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 
@@ -65,6 +65,11 @@
 .custom-swiper {
   width: 100%;
   overflow: hidden;
+}
+
+.custom-swiper .swiper-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .custom-swiper .swiper-pagination {
