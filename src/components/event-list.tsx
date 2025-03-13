@@ -51,8 +51,8 @@ export function EventList({
     if (isLoading || totalEvents.length > 0) {
       const canShowMore = totalEvents.length > visibleCount;
       return (
-        <div className="mb-8">
-          <h2 className="mb-4 font-title text-2xl font-medium">{title}</h2>
+        <div className="">
+          <h2 className="font-title text-2xl font-medium">{title}</h2>
           <div className="space-y-0">
             {isLoading ? (
               <>
@@ -88,13 +88,13 @@ export function EventList({
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-6">
       {selectedDate && (
         <button
           onClick={() => {
             onClearDate();
           }}
-          className="mb-4 inline-flex w-auto items-center rounded-full bg-primary p-1 px-3 text-white transition-colors hover:bg-primary/90"
+          className="inline-flex w-fit items-center rounded-full bg-primary p-1 px-3 text-white transition-colors hover:bg-primary/90"
         >
           {selectedDate
             .toLocaleDateString(lang, {

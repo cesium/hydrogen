@@ -16,7 +16,7 @@ export function EventCard({ event }: EventCardProps) {
   const day = getDay(event.start);
 
   return (
-    <div className="flex items-start gap-4 border-b border-black/20 p-4 py-6">
+    <div className="flex items-start gap-4 border-b border-black/20 py-6">
       <div className="w-[4.5rem] rounded-xl bg-black bg-opacity-[6%] p-2 text-center">
         <div className="text-sm font-medium text-primary">{month}</div>
         <div className="text-2xl font-bold">{day}</div>
@@ -24,7 +24,6 @@ export function EventCard({ event }: EventCardProps) {
       <div className="flex-1">
         <h3 className="mb-4 text-xl font-bold">{event.title}</h3>
         <div className="text-gray-600 space-y-2 text-base">
-          {}
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined">calendar_month</span>
             {isAllDayEvent(event) ? (
