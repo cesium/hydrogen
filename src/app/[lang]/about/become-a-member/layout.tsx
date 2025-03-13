@@ -2,6 +2,7 @@ import {
   getDictionary,
   type Locale,
 } from "@/internationalization/dictionaries";
+import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
 
 export function generateMetadata({
@@ -9,7 +10,7 @@ export function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Metadata {
-  const dict = getDictionary(lang);
+  const dict = getDictionary(fullLocale(lang));
 
   return {
     title: dict.seo.become_a_member.title,
@@ -42,8 +43,8 @@ export function generateMetadata({
     alternates: {
       canonical: "https://cesium.di.uminho.pt/about/become-a-member",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/about/become-a-member",
-        pt: "https://cesium.di.uminho.pt/pt_PT/about/become-a-member",
+        en: "https://cesium.di.uminho.pt/en/about/become-a-member",
+        pt: "https://cesium.di.uminho.pt/pt/about/become-a-member",
       },
     },
   };

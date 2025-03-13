@@ -231,6 +231,18 @@
       ]
     }
   },
+  "events": {
+    "title": "Events",
+    "warning": "Check other months to see more events. This page only includes CeSIUM events. For more events, such as tests or deadlines, visit the [Calendarium](https://calendario.cesium.pt). To stay updated, follow our [Instagram](https://instagram.com/cesiuminho).",
+    "warningTitle": "More Events",
+    "weekDays": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
+    "showLess": "Show Less",
+    "showMore": "Show More",
+    "futureEvents": "Upcoming",
+    "pastEvents": "Past",
+    "noEvents": "There are no events to display.",
+    "loading": "Loading events..."
+  },
   "social_media": "Social media",
   "socials": [
     {

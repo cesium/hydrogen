@@ -2,6 +2,7 @@ import {
   getDictionary,
   type Locale,
 } from "@/internationalization/dictionaries";
+import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
 
 export function generateMetadata({
@@ -9,7 +10,7 @@ export function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Metadata {
-  const dict = getDictionary(lang);
+  const dict = getDictionary(fullLocale(lang));
 
   return {
     title: dict.seo.projects.title,
@@ -42,8 +43,8 @@ export function generateMetadata({
     alternates: {
       canonical: "https://cesium.di.uminho.pt/projects",
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/projects",
-        pt: "https://cesium.di.uminho.pt/pt_PT/projects",
+        en: "https://cesium.di.uminho.pt/en/projects",
+        pt: "https://cesium.di.uminho.pt/pt/projects",
       },
     },
   };
