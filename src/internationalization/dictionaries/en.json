@@ -312,7 +312,7 @@
         "title": "Café do Luís",
         "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
         "logo": "/images/partners/cafedoluis.jpg",
-        "color": "#241d1f",
+        "color": "#A24061",
         "perks": [
           {
             "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
@@ -336,7 +336,7 @@
         "title": "Escola de Condução UM",
         "url": "https://www.facebook.com/EscolaDeConducaoUm",
         "logo": "/images/partners/escoladeconducaoum.png",
-        "color": "#443d12",
+        "color": "#BBB24A",
         "perks": [
           {
             "description": "**Desconto de 40€** na carta de condução da Categoria B.",
@@ -368,7 +368,7 @@
         "title": "Nuguelmusic",
         "url": "http://www.nuguelmusic.pt/",
         "logo": "/images/partners/nuguel.png",
-        "color": "#7f2c3f",
+        "color": "#E31E25",
         "perks": [
           {
             "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
@@ -380,7 +380,7 @@
         "title": "Os Farias",
         "url": "https://www.facebook.com/os.farias.3",
         "logo": "/images/partners/osfarias.jpg",
-        "color": "#1f1d19",
+        "color": "#7DA279",
         "perks": [
           {
             "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
@@ -404,7 +404,7 @@
         "title": "Pausa Útil",
         "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
         "logo": "/images/partners/pausautil.png",
-        "color": "#000000",
+        "color": "#598EBA",
         "perks": [
           {
             "description": "Refeição e chá por **4.50€**.",
@@ -424,7 +424,7 @@
         "title": "The Traditional Great Pizza",
         "url": "https://www.thetraditionalgreatpizza.com/",
         "logo": "/images/partners/thetraditionalgreatpizza.png",
-        "color": "#1d1d1b",
+        "color": "#89573E",
         "perks": [
           {
             "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
@@ -436,7 +436,7 @@
         "title": "Sabor da fruta",
         "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
         "logo": "/images/partners/sabordafruta.png",
-        "color": "#02943c",
+        "color": "#009240",
         "perks": [
           {
             "description": "**Oferta de café** na compra de um menu.",
