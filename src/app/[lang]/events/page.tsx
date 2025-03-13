@@ -6,11 +6,11 @@ import PromotionalCard from "@/components/promotional-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import getEvents from "@/lib/api/getEvents";
 import { type Event, CardType } from "@/lib/types";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { isSameDay } from "@/lib/utils";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import AppLink from "@/components/link";
+import Markdown from "markdown-to-jsx";
 
 export default function EventsPage() {
   const dict = useDictionary();
@@ -77,53 +77,36 @@ export default function EventsPage() {
               <PromotionalCard mobileOnlyLayout type={CardType.Membership} />
             </div>
           </div>
-          <div className="flex-1">
+          <div className="flex flex-1 flex-col gap-6">
             <EventList
               events={events}
               isLoading={isLoading}
               selectedDate={selectedDate}
               onClearDate={handleClearDate}
             />
-            <div className="mt-8 text-sm">
+            <div className="text-sm">
               <h2 className="mb-4 font-title text-2xl font-medium">
                 {dict.events.warningTitle}
               </h2>
               <div className="text-black/50">
-                {dict.events.warning.split("\n").map((paragraph, index) => {
-                  const parts = paragraph.split(/(Calendarium|Instagram)/);
-                  return (
-                    <p key={index} className="mb-1">
-                      {parts.map((part, i) => {
-                        if (part === "Calendarium") {
-                          return (
-                            <Link
-                              key={i}
-                              href="https://calendario.cesium.di.uminho.pt/"
-                              className="font-bold text-primary hover:underline"
-                            >
-                              Calendarium
-                            </Link>
-                          );
-                        }
-                        if (part === "Instagram") {
-                          return (
-                            <Link
-                              key={i}
-                              href="https://instagram.com/cesiuminho"
-                              className="font-bold text-primary hover:underline"
-                            >
-                              Instagram
-                            </Link>
-                          );
-                        }
-                        return part;
-                      })}
-                    </p>
-                  );
-                })}
+                <Markdown
+                  options={{
+                    overrides: {
+                      a: {
+                        props: {
+                          className: "font-bold text-primary hover:underline",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                        },
+                      },
+                    },
+                  }}
+                >
+                  {dict.events.warning}
+                </Markdown>
               </div>
             </div>
-            <div className="mt-4 md:hidden">
+            <div className="md:hidden">
               <PromotionalCard type={CardType.Membership} />
             </div>
           </div>
