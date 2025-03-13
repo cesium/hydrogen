@@ -11,6 +11,34 @@ export default function BecomeAMember() {
     <main
       className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
+    <div className="relative pl-8 md:pl-8 lg:pl-24 xl:pl-24 2xl:pl-24 pt-14 pb-40 lg:pb-20 bg-primary text-white relative overflow-hidden">
+      <h1 className="text-4xl lg:text-5xl font-[475] text-gradient font-title opacity-50 mt-2">
+        Torna-te sócio do</h1>
+      <h1 className="text-4xl lg:text-5xl font-[475] font-title mb-6">
+        CeSIUM</h1>
+      <p className="block sm:hidden md:hidden z-10 relative">
+        Usufrui de vários benefícios, parcerias e</p> 
+      <p className="block sm:hidden md:hidden z-10 relative">
+        descontos, com uma quota vitalícia.</p> 
+      <p className="hidden sm:block md:block text-lg z-10 relative">
+        Com um cartão de sócio, podes desbloquear vários benefícios,</p>  
+      <p className="hidden sm:block md:block mb-15 text-lg z-10 relative">
+        parcerias e descontos.</p>
+      <p className="mt-5 block sm:hidden font-bold z-10 relative">
+        10€, uma vez, para sempre</p>
+      <a href="">
+        <button className="text-primary bg-white border border-white px-4 py-2 mt-5 md:mt-10 lg:mt-14 xl:mt-17 2xl:mt-18 rounded-md hover:bg-white-700 z-10 relative">
+          Inscreve-te</button>
+      </a>
+      <div className="absolute -bottom-8 lg:-bottom-8 sm:top-36 -right-20 lg:right-56 justify-end flex flex-col z-[0]">
+      <img 
+          src="/vectors/member.svg" 
+          alt="Torna-te membro" 
+          className="w-96 h-64 lg:w-[528px] lg:h-[331px] -rotate-6">
+      </img>
+      </div>
+    </div>   
+    
       <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
