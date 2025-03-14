@@ -25,6 +25,7 @@ export default function ScrollableHighlight({
 }: Props) {
   const content = [
     <div
+      key={0}
       className="flex h-[650px] w-full place-items-center justify-center rounded-2xl bg-cover bg-no-repeat px-7 sm:h-[600px] sm:justify-start sm:px-10"
       style={{
         backgroundImage: `
@@ -52,7 +53,7 @@ export default function ScrollableHighlight({
       </div>
     </div>,
     ...items.map((item, index) => (
-      <div key={index} className="flex justify-center">
+      <div key={index + 1} className="flex justify-center">
         <Image
           src={item.src}
           width={490}

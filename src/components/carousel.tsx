@@ -1,13 +1,13 @@
 "use client";
 
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useState, useRef } from "react";
-import { Swiper as SwiperType } from "swiper";
+import type { Swiper as SwiperType } from "swiper";
 
 type PaginationPos = "bottom" | "top";
 
@@ -37,7 +37,7 @@ export default function Carousel({
   const [isFirstSlide, setIsFirstSlide] = useState(true);
   const [isLastSlide, setIsLastSlide] = useState(false);
 
-  const handleSlideChange = (swiper: any) => {
+  const handleSlideChange = (swiper: SwiperType) => {
     setIsFirstSlide(swiper.realIndex === 0);
     setIsLastSlide(swiper.isEnd);
   };
