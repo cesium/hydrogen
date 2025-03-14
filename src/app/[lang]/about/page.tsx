@@ -121,7 +121,7 @@ export default function About() {
         subtitle={dict.about.sections.team.subtitle ?? ""}
         linkName="see_team"
         linkPos="after"
-        href="/about/team"
+        href="/team"
         overflows
       >
         <div className="flex w-full gap-7">
@@ -175,11 +175,9 @@ export default function About() {
       </AboutSectionLayout>
       {/* Projects */}
       <AboutSectionLayout
-        linkName="see_more"
         titleOrientation="vertical"
         title={dict.about.projects.title}
         subtitle={dict.about.projects.description}
-        href="/projects"
         overflows
       >
         <div

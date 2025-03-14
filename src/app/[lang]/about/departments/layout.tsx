@@ -36,7 +36,7 @@ export function generateMetadata({
           url: "https://cesium.di.uminho.pt/og.png",
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },

@@ -13,8 +13,8 @@ export function generateMetadata({
   const dict = getDictionary(fullLocale(lang));
 
   return {
-    title: dict.seo.projects.title,
-    description: dict.seo.projects.description,
+    title: dict.seo.team.title,
+    description: dict.seo.team.description,
     keywords: [
       "student center",
       "engeneering",
@@ -24,33 +24,33 @@ export function generateMetadata({
       "students",
       "CeSIUM",
       "CeSIUM UMinho",
-      "projects",
+      "team",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/projects",
+      url: `${process.env.URL}/team`,
       type: "website",
-      title: dict.seo.projects.title,
-      description: dict.seo.projects.description,
+      title: dict.seo.team.title,
+      description: dict.seo.team.description,
       images: [
         {
-          url: "https://cesium.di.uminho.pt/og.png",
+          url: `${process.env.URL}/og.png`,
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/projects",
+      canonical: `${process.env.URL}/team`,
       languages: {
-        en: "https://cesium.di.uminho.pt/en/projects",
-        pt: "https://cesium.di.uminho.pt/pt/projects",
+        en: `${process.env.URL}/en/team`,
+        pt: `${process.env.URL}/pt/team`,
       },
     },
   };
 }
 
-export default function ProjectsLayout({
+export default function TeamLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return <>{children}</>;

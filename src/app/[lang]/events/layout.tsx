@@ -27,24 +27,24 @@ export function generateMetadata({
       "events",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/events",
+      url: `${process.env.URL}/events`,
       type: "website",
       title: dict.seo.events.title,
       description: dict.seo.events.description,
       images: [
         {
-          url: "https://cesium.di.uminho.pt/og.png",
+          url: `${process.env.URL}/og.png`,
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/events",
+      canonical: `${process.env.URL}/events`,
       languages: {
-        en: "https://cesium.di.uminho.pt/en/events",
-        pt: "https://cesium.di.uminho.pt/pt/events",
+        en: `${process.env.URL}/en/events`,
+        pt: `${process.env.URL}/pt/events`,
       },
     },
   };

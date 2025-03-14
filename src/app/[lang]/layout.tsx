@@ -29,7 +29,7 @@ export function generateMetadata({
   const dict = getDictionary(fullLocale(lang));
 
   return {
-    metadataBase: new URL("https://cesium.di.uminho.pt"),
+    metadataBase: new URL(process.env.URL ?? "https://cesium.di.uminho.pt"),
     openGraph: {
       siteName: dict.seo.title,
       type: "website",

@@ -31,7 +31,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
         return {
           src: "/logo/coderdojo.svg",
           alt: "CoderDojo Logo",
-          gradient_color: "rgba(50,51,51,0.25)",
+          gradient_color: "#722ed125",
           ref: "https://coderdojobraga.org/",
         };
       default:

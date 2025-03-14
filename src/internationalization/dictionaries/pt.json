@@ -82,6 +82,7 @@
   },
   "navbar": {
     "home": "Início",
+    "team": "Equipa",
     "about": "Sobre Nós",
     "events": "Eventos",
     "partners": "Parcerias",
@@ -249,38 +250,62 @@
   },
   "social_media": "Redes sociais",
   "socials": [
-    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
-    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
-    { "name": "GitHub", "url": "https://github.com/cesium" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
-    { "name": "X", "url": "https://x.com/cesiuminho" },
-    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/cesiuminho",
+      "hex": "#0165E1"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/cesiuminho",
+      "hex": "#C13584"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/cesiuminho",
+      "hex": "#000000"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@cesiuminho",
+      "hex": "#FE2C55"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/cesium",
+      "hex": "#000000"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/c/cesiumUM",
+      "hex": "#FF0000"
+    }
   ],
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"],
-      "links": ["#", "#", "#", "#"]
+      "items": ["Sobre nós", "Equipa", "Departmentos"],
+      "links": ["/about", "/team", "/about/departments"]
     },
     {
       "title": "Atividades",
-      "items": ["Projetos", "Eventos", "Parcerias"],
-      "links": ["#", "#", "#"]
+      "items": ["Eventos", "Parcerias"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Estudantes",
-      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"],
-      "links": ["#", "#", "#"]
+      "items": ["Torna-te sócio", "Torna-te colaborador"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Links Úteis",
       "items": [
+        "CeSIUM Link",
         "Calendarium",
         "Blackboard",
-        "Portal do Aluno",
-        "Página de LEI"
+        "Portal do Aluno"
       ],
-      "links": ["#", "#", "#", "#"]
+      "links": ["https://cesium.link", "https://calendario.cesium.pt", "https://elearning.uminho.pt", "https://alunos.uminho.pt"]
     }
   ],
   "partners": [
