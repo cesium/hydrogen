@@ -6,7 +6,7 @@ import AboutSection from "./about-section";
 import { useRef, useState } from "react";
 
 type TitleOr = "vertical" | "horizontal";
-type LinkName = "see_more" | "see_team";
+type LinkName = "see_more" | "see_team"|"go_to_departments" | "go_to_team";
 type LinkPos = "after" | "before";
 
 interface AboutSectionProps {
@@ -19,6 +19,7 @@ interface AboutSectionProps {
   overflows?: boolean;
   dark?: boolean;
   children?: React.ReactNode;
+  linkColor?: "blue"|"primary"
 }
 
 const AboutSectionLayout = ({
@@ -31,6 +32,7 @@ const AboutSectionLayout = ({
   overflows,
   dark,
   children,
+  linkColor
 }: AboutSectionProps) => {
   const dict = useDictionary();
 
@@ -74,6 +76,7 @@ const AboutSectionLayout = ({
               title={dict.button[linkName]}
               href={href}
               arrow="forward"
+              color= {linkColor}
             />
           </span>
         </div>
@@ -88,7 +91,8 @@ const AboutSectionLayout = ({
                 title={dict.button[linkName]}
                 href={href}
                 arrow="forward"
-              />
+                color= {linkColor}
+              /> 
             </div>
           </div>
           {/* Content (Scrollable) */}

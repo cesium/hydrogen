@@ -65,7 +65,9 @@
     "see_team": "Ver direção",
     "learn_more": "Saber mais",
     "see_more": "Ver mais",
-    "back": "Voltar"
+    "back": "Voltar",
+    "go_to_team": "Ir para Equipa",
+    "go_to_departments": "Ir para Departamentos"
   },
   "collaborate_card": {
     "title": "Torna-te colaborador",
@@ -213,7 +215,27 @@
               "arrow": "forward",
               "color": "blue"
             }
-          ]
+          ], 
+          "become_collaborator": {
+            "team": { 
+              "title": "Junta-te à equipa",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "href": "about/team", 
+              "color": "blue"
+            }, 
+            "choose_department": {
+              "title": "Escolhe o teu departamento",
+              "subtitle": "Se gostas de programar, o CAOS vai ser a tua praia. Olho para o design? Junta-te ao DMC. Podes-te juntar ao departamento com que mais te identificares, e se não conseguires escolher, até te podes juntar a vários. Se ainda não conheces os nossos departamentos, carrega no botão abaixo para saber mais. Senão, estamos à tua espera!",
+              "href": "about/departments", 
+              "color": "blue"
+            }, 
+            "join": { 
+              "title": "Estamos à tua espera",
+              "subtitle": "Ser colaborador do CeSIUM é mais do que trabalhar - é aprender coisas novas, conhecer pessoas incríveis e fazer parte de experiências. Se te parece bem, candidata-te já.",
+              "first_button_name": "Começar inscrição",
+              "second_button_name": "Fala connosco" 
+            }
+          }
         }
       ]
     }

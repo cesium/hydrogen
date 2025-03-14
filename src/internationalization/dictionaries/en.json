@@ -65,7 +65,9 @@
     "see_team": "Go to team",
     "learn_more": "Learn more",
     "see_more": "See more",
-    "back": "Go Back"
+    "back": "Go Back",
+    "go_to_team": "Go to Team",
+    "go_to_departments": "Go to Departments"
   },
   "collaborate_card": {
     "title": "Become a collaborator",
@@ -209,7 +211,27 @@
               "arrow": "forward",
               "color": "blue"
             }
-          ]
+          ], 
+          "become_collaborator": {
+            "team": { 
+              "title": "Join the team",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "href": "about/team",
+              "color": "blue"
+            }, 
+            "choose_department": {
+              "title": "Choose your department",
+              "subtitle": "If you enjoy programming, CAOS will be your thing. Interested in design? Join DMC. You can join the department you identify with the most, and if you can't decide, you can even join several. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!",
+              "href": "about/departments", 
+              "color": "blue"
+            }, 
+            "join": { 
+              "title": "We are waiting for you",
+              "subtitle": "Being a collaborator at CeSIUM is more than just working - it's about learning new things, meeting amazing people, and being part of experiences. If it sounds good to you, apply now.",
+              "first_button_name": "Start registration",
+              "second_button_name": "Talk with us" 
+            }
+          }
         }
       ]
     }
