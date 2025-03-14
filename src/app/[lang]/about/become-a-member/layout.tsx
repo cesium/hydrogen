@@ -27,24 +27,24 @@ export function generateMetadata({
       "become a member",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/about/become-a-member",
+      url: `${process.env.URL}/about/become-a-member`,
       type: "website",
       title: dict.seo.become_a_member.title,
       description: dict.seo.become_a_member.description,
       images: [
         {
-          url: "https://cesium.di.uminho.pt/og.png",
+          url: `${process.env.URL}/og.png`,
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/about/become-a-member",
+      canonical: `${process.env.URL}/about/become-a-member`,
       languages: {
-        en: "https://cesium.di.uminho.pt/en/about/become-a-member",
-        pt: "https://cesium.di.uminho.pt/pt/about/become-a-member",
+        en: `${process.env.URL}/en/about/become-a-member`,
+        pt: `${process.env.URL}/pt/about/become-a-member`,
       },
     },
   };

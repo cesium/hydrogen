@@ -27,24 +27,24 @@ export function generateMetadata({
       "become a collaborator",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/about/become-a-collaborator",
+      url: `${process.env.URL}/about/become-a-collaborator`,
       type: "website",
       title: dict.seo.become_a_collaborator.title,
       description: dict.seo.become_a_collaborator.description,
       images: [
         {
-          url: "https://cesium.di.uminho.pt/og.png",
+          url: `${process.env.URL}/og.png`,
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/about/become-a-collaborator",
+      canonical: `${process.env.URL}/about/become-a-collaborator`,
       languages: {
-        en: "https://cesium.di.uminho.pt/en/about/become-a-collaborator",
-        pt: "https://cesium.di.uminho.pt/pt/team",
+        en: `${process.env.URL}/en/about/become-a-collaborator`,
+        pt: `${process.env.URL}/pt/team`,
       },
     },
   };
