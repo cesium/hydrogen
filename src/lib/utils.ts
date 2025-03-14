@@ -89,7 +89,6 @@ const generateUrlsForTeams = (
   return urls;
 };
 
-
 const getDepartmentMembersInfo = (
   team: TeamData,
   yearRange: string,
@@ -115,6 +114,14 @@ const getDepartmentMembersInfo = (
       };
     else return { ...member, imageUrl: "/images/none.png" };
   });
+};
+
+const shuffleArray = <T>(array: T[]): T[] => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j]!, array[i]!];
+  }
+  return array;
 };
 
 function classNames(...classes: string[]) {
@@ -145,6 +152,122 @@ const departmentShortName = (departmentName: string) => {
   }
 };
 
+function formatEventDate(date: Date): string {
+  return date.toLocaleDateString("pt-BR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function getMonthAbbreviation(date: Date, lang: string): string {
+  return date
+    .toLocaleString(lang, { month: "short" })
+    .replace(".", "")
+    .toUpperCase();
+}
+
+function getDay(date: Date): number {
+  return date.getDate();
+}
+
+function getDaysInMonth(date: Date): Date[] {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  const days: Date[] = [];
+  for (let day = 1; day <= daysInMonth; day++) {
+    days.push(new Date(year, month, day));
+  }
+
+  return days;
+}
+
+function getMonthDays(date: Date): Date[] {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+
+  const days: Date[] = [];
+
+  const daysFromPrevMonth = firstDay.getDay();
+  for (let i = daysFromPrevMonth; i > 0; i--) {
+    days.push(new Date(year, month, -i + 1));
+  }
+
+  days.push(...getDaysInMonth(date));
+
+  const daysFromNextMonth = 7 - lastDay.getDay() - 1;
+  for (let i = 1; i <= daysFromNextMonth; i++) {
+    days.push(new Date(year, month + 1, i));
+  }
+
+  return days;
+}
+
+function isSameDay(date1: Date, date2: Date): boolean {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+}
+
+function isWithinRange(date: Date, start: Date, end: Date): boolean {
+  const normalizedDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  );
+  const normalizedStart = new Date(
+    start.getFullYear(),
+    start.getMonth(),
+    start.getDate(),
+  );
+  const normalizedEnd = new Date(
+    end.getFullYear(),
+    end.getMonth(),
+    end.getDate(),
+  );
+
+  return normalizedDate >= normalizedStart && normalizedDate <= normalizedEnd;
+}
+
+function isAllDayEvent(event: { start: Date; end: Date }): boolean {
+  const start = new Date(event.start);
+  const end = new Date(event.end);
+  return (
+    start.getHours() === 0 &&
+    start.getMinutes() === 0 &&
+    end.getHours() === 0 &&
+    end.getMinutes() === 0
+  );
+}
+
+function isMultiDayEvent(event: { start: Date; end: Date }): boolean {
+  const start = new Date(event.start);
+  const end = new Date(event.end);
+  return (
+    start.getHours() === 0 &&
+    start.getMinutes() === 0 &&
+    end.getHours() === 23 &&
+    end.getMinutes() === 59 &&
+    !isSameDay(start, end)
+  );
+}
+
+function formatDate(date: Date, locale: string): string {
+  const d = new Date(date);
+  return d
+    .toLocaleDateString(locale, {
+      day: "2-digit",
+      month: "2-digit",
+    })
+    .replace(/\//g, "/");
+}
+
 export {
   generateYearRanges,
   generateUrlsForTeams,
@@ -154,4 +277,15 @@ export {
   classNames,
   getDepartmentMembersInfo,
   departmentShortName,
+  shuffleArray,
+  formatEventDate,
+  getMonthAbbreviation,
+  getDay,
+  getDaysInMonth,
+  getMonthDays,
+  isSameDay,
+  isWithinRange,
+  isAllDayEvent,
+  isMultiDayEvent,
+  formatDate,
 };

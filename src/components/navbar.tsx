@@ -9,13 +9,14 @@ import { AnimatePresence, motion } from "motion/react";
 import SocialIcon from "@/components/social-icon";
 import Logo from "./logo";
 import { horizontalPadding } from "@/lib/styling";
+import { shortLocale } from "@/lib/locale";
 
 const Navbar = () => {
   const dict = useDictionary();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const lang = useLang();
-  const pathname = usePathname().replace(`/${lang}`, "");
+  const pathname = usePathname().replace(`/${shortLocale(lang)}`, "");
 
   const isCurrent = (path: string) => {
     return (
@@ -60,7 +61,7 @@ const Navbar = () => {
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:px-12 md:pt-12`}
       >
         <nav className="flex items-center justify-between gap-9 md:justify-normal">
-          <Link href="/">
+          <Link href={`/${shortLocale(lang)}`}>
             <Logo
               type="cesium"
               width={30}
@@ -83,17 +84,23 @@ const Navbar = () => {
           <div
             className={`hidden items-center space-x-6 font-title text-lg font-medium ${linkColor} md:flex`}
           >
-            {routes.map((route) => (
-              <Link
-                key={route.path}
-                href={route.path}
-                className={`${
-                  isCurrent(route.path) ? `${currentLink}` : ""
-                } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
-              >
-                {route.name}
-              </Link>
-            ))}
+            {routes.map((route) => {
+              return (
+                <Link
+                  key={route.path}
+                  href={
+                    route.path.startsWith("http")
+                      ? route.path
+                      : `/${shortLocale(lang)}${route.path}`
+                  }
+                  className={`${
+                    isCurrent(route.path) ? `${currentLink}` : ""
+                  } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
+                >
+                  {route.name}
+                </Link>
+              );
+            })}
           </div>
           <motion.button
             className={`${hamburgerMenuColor} material-symbols-outlined z-50 p-1 text-3xl md:hidden`}
@@ -121,7 +128,11 @@ const Navbar = () => {
                     transition={{ delay: i * 0.1 }}
                   >
                     <Link
-                      href={route.path}
+                      href={
+                        route.path.startsWith("http")
+                          ? route.path
+                          : `/${shortLocale(lang)}${route.path}`
+                      }
                       className={`${
                         isCurrent(route.path) ? "text-black" : ""
                       } transition-colors hover:text-black`}

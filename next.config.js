@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "assets.hydrogen.cesium.pt",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.shopk.it",
+      },
     ],
   },
 };
