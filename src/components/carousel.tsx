@@ -26,7 +26,7 @@ export default function Carousel({
   overflow = false /* Shows partially the previous and next items */,
   pagination = false /* Shows the bullet pagination */,
   loop = false /* Loops through the items */,
-  single = false, /* Show just one slide at a time */
+  single = false /* Show just one slide at a time */,
   items /* Items to show on the carousel */,
   autoplay /* Sets if the carousel has autoplay */,
   showNavigation = false /* Default is without arrows */,

@@ -24,9 +24,8 @@ export default function ScrollableHighlight({
   items,
 }: Props) {
   const content = [
-    /* Primeiro elemento */
     <div
-      className="flex h-[650px] w-full place-items-center justify-center rounded-2xl px-7 sm:h-[600px] sm:justify-start sm:px-10 bg-cover bg-no-repeat"
+      className="flex h-[650px] w-full place-items-center justify-center rounded-2xl bg-cover bg-no-repeat px-7 sm:h-[600px] sm:justify-start sm:px-10"
       style={{
         backgroundImage: `
         radial-gradient(circle at top center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
@@ -36,12 +35,14 @@ export default function ScrollableHighlight({
         backgroundPosition: "center 16%",
       }}
     >
-      <div className="relative sm:w-[684px] md:px-25 xl:w-[800px]">
+      <div className="md:px-25 relative sm:w-[684px] xl:w-[800px]">
         <h1 className="mb-5 bg-gradient-to-r from-white/40 via-white to-white bg-clip-text font-title text-4xl text-transparent sm:text-5xl">
           <Markdown
             className="font-normal"
             options={{
-              overrides: { strong: { props: { className: "text-white" } } },
+              overrides: {
+                strong: { props: { className: "text-white font-medium" } },
+              },
             }}
           >
             {`${title}`}
@@ -50,7 +51,6 @@ export default function ScrollableHighlight({
         <h2 className="text-base text-white">{subtitle}</h2>
       </div>
     </div>,
-    /* Map das imagens */
     ...items.map((item, index) => (
       <div key={index} className="flex justify-center">
         <Image
