@@ -31,13 +31,24 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="group transition-transform duration-300 hover:-translate-y-1"
                   >
-                    <SocialIcon
-                      type={social.name.toLowerCase()}
-                      width={24}
-                      height={24}
-                      fill="#6C757D"
-                    />
+                    <div className="group-hover:hidden">
+                      <SocialIcon
+                        type={social.name.toLowerCase()}
+                        width={24}
+                        height={24}
+                        fill="#6C757D"
+                      />
+                    </div>
+                    <div className="hidden group-hover:block">
+                      <SocialIcon
+                        type={social.name.toLowerCase()}
+                        width={24}
+                        height={24}
+                        fill={social.hex}
+                      />
+                    </div>
                   </Link>
                 );
               })}
@@ -51,7 +62,12 @@ const Footer = () => {
                   <ul className="space-y-3">
                     {section.items.map((item, index) => (
                       <li key={index} className="text-sm text-gray">
-                        <Link href={section.links?.[index] ?? "#"}>{item}</Link>
+                        <Link
+                          href={section.links?.[index] ?? "#"}
+                          className="transition-colors hover:text-black/60"
+                        >
+                          {item}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -66,14 +82,17 @@ const Footer = () => {
             <span className="text-sm text-gray">Braga, Portugal</span>
             <span className="text-sm text-gray">
               Telefone:{" "}
-              <Link className="text-sm text-gray" href="tel:+351-253-604-448">
+              <Link
+                className="text-sm text-gray transition-colors hover:text-black/60"
+                href="tel:+351-253-604-448"
+              >
                 +351 253 604 448
               </Link>
             </span>
             <span className="text-sm text-gray">
               Email:{" "}
               <Link
-                className="text-sm text-gray"
+                className="text-sm text-gray transition-colors hover:text-black/60"
                 href="mailto:cesium@di.uminho.pt"
               >
                 cesium@di.uminho.pt

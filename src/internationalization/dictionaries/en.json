@@ -267,27 +267,33 @@
   "socials": [
     {
       "name": "Facebook",
-      "url": "https://www.facebook.com/cesiuminho"
+      "url": "https://www.facebook.com/cesiuminho",
+      "hex": "#0165E1"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/cesiuminho"
+      "url": "https://www.instagram.com/cesiuminho",
+      "hex": "#C13584"
     },
     {
       "name": "X",
-      "url": "https://x.com/cesiuminho"
+      "url": "https://x.com/cesiuminho",
+      "hex": "#000000"
     },
     {
       "name": "TikTok",
-      "url": "https://www.tiktok.com/@cesiuminho"
+      "url": "https://www.tiktok.com/@cesiuminho",
+      "hex": "#FE2C55"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/cesium"
+      "url": "https://github.com/cesium",
+      "hex": "#000000"
     },
     {
       "name": "YouTube",
-      "url": "https://www.youtube.com/c/cesiumUM"
+      "url": "https://www.youtube.com/c/cesiumUM",
+      "hex": "#FF0000"
     }
   ],
   "sections": [
