@@ -30,24 +30,24 @@ export function generateMetadata({
       "CeSIUM UMinho",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt",
+      url: `${process.env.URL}`,
       type: "website",
       title: dict.seo.title,
       description: dict.seo.description,
       images: [
         {
-          url: "https://cesium.di.uminho.pt/og.png",
+          url: `${process.env.URL}/og.png`,
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt",
+      canonical: `${process.env.URL}`,
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US",
-        pt: "https://cesium.di.uminho.pt/pt_PT",
+        en: `${process.env.URL}/en`,
+        pt: `${process.env.URL}/pt`,
       },
     },
   };
