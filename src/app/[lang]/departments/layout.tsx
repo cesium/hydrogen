@@ -27,7 +27,7 @@ export function generateMetadata({
       "departments",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/about/departments",
+      url: "https://cesium.di.uminho.pt/departments",
       type: "website",
       title: dict.seo.departments.title,
       description: dict.seo.departments.description,
@@ -41,10 +41,10 @@ export function generateMetadata({
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/about/departments",
+      canonical: "https://cesium.di.uminho.pt/departments",
       languages: {
-        en: "https://cesium.di.uminho.pt/en/about/departments",
-        pt: "https://cesium.di.uminho.pt/pt/about/departments",
+        en: "https://cesium.di.uminho.pt/en/departments",
+        pt: "https://cesium.di.uminho.pt/pt/departments",
       },
     },
   };

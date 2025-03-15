@@ -83,6 +83,7 @@
   "navbar": {
     "home": "Início",
     "team": "Equipa",
+    "departments": "Departamentos",
     "about": "Sobre Nós",
     "events": "Eventos",
     "partners": "Parcerias",
@@ -285,7 +286,7 @@
     {
       "title": "CeSIUM",
       "items": ["Sobre nós", "Equipa", "Departmentos"],
-      "links": ["/about", "/team", "/about/departments"]
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Atividades",
@@ -299,13 +300,13 @@
     },
     {
       "title": "Links Úteis",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Portal do Aluno"
-      ],
-      "links": ["https://cesium.link", "https://calendario.cesium.pt", "https://elearning.uminho.pt", "https://alunos.uminho.pt"]
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Portal do Aluno"],
+      "links": [
+        "https://cesium.link",
+        "https://calendario.cesium.pt",
+        "https://elearning.uminho.pt",
+        "https://alunos.uminho.pt"
+      ]
     }
   ],
   "partners": [

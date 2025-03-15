@@ -37,42 +37,27 @@
   },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
-    "name": [
-      "Center for",
-      "Open Source Support"
-    ],
+    "name": ["Center for", "Open Source Support"],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": [
-      "Department of",
-      "Marketing and Content"
-    ],
+    "name": ["Department of", "Marketing and Content"],
     "description": "The DMC is responsible for promoting activities and managing CeSIUM's social media presence - essentially handling all of CeSIUM's marketing. Their work primarily focuses on CeSIUM's visual design and written communications.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": [
-      "Department of",
-      "External Relations and Merch"
-    ],
+    "name": ["Department of", "External Relations and Merch"],
     "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
     "icon": "handshake"
   },
   "ped": {
-    "name": [
-      "Educational",
-      "Department"
-    ],
+    "name": ["Educational", "Department"],
     "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
     "icon": "draw"
   },
   "rec": {
-    "name": [
-      "Recreational",
-      "Department"
-    ],
+    "name": ["Recreational", "Department"],
     "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
     "icon": "celebration"
   },
@@ -98,6 +83,7 @@
   "navbar": {
     "home": "Home",
     "team": "Team",
+    "departments": "Departments",
     "about": "About",
     "events": "Events",
     "partners": "Partners",
@@ -300,7 +286,7 @@
     {
       "title": "CeSIUM",
       "items": ["About Us", "Team", "Departments"],
-      "links": ["/about", "/team", "/about/departments"]
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Activities",
@@ -314,13 +300,13 @@
     },
     {
       "title": "Useful Links",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Student's Portal"
-      ],
-      "links": ["https://cesium.link", "https://calendario.cesium.pt", "https://elearning.uminho.pt", "https://alunos.uminho.pt"]
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student's Portal"],
+      "links": [
+        "https://cesium.link",
+        "https://calendario.cesium.pt",
+        "https://elearning.uminho.pt",
+        "https://alunos.uminho.pt"
+      ]
     }
   ],
   "partners": [

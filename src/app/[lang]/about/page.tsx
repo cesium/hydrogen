@@ -164,7 +164,7 @@ export default function About() {
         titleOrientation="vertical"
         title={dict.about.departments.title}
         subtitle={dict.about.departments.subtitle}
-        href="/about/departments"
+        href="/departments"
         dark
       >
         <DepartmentsList

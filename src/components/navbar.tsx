@@ -29,6 +29,7 @@ const Navbar = () => {
   const routes = [
     { name: dict.navbar.about, path: "/about" },
     { name: dict.navbar.team, path: "/team" },
+    { name: dict.navbar.departments, path: "/departments" },
     { name: dict.navbar.partners, path: "/partners" },
     { name: dict.navbar.events, path: "/events" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
@@ -165,12 +166,24 @@ const Navbar = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <SocialIcon
-                            width={26}
-                            height={26}
-                            type={social.name.toLowerCase()}
-                            fill="#94959C"
-                          />
+                          <div className="group transition-transform duration-300 hover:-translate-y-1">
+                            <div className="group-hover:hidden">
+                              <SocialIcon
+                                width={26}
+                                height={26}
+                                type={social.name.toLowerCase()}
+                                fill="#94959C"
+                              />
+                            </div>
+                            <div className="hidden group-hover:block">
+                              <SocialIcon
+                                width={26}
+                                height={26}
+                                type={social.name.toLowerCase()}
+                                fill={social.hex}
+                              />
+                            </div>
+                          </div>
                         </Link>
                       </motion.li>
                     ))}

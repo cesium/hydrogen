@@ -65,6 +65,10 @@ const Footer = () => {
                         <Link
                           href={section.links?.[index] ?? "#"}
                           className="transition-colors hover:text-black/60"
+                          {...(section.links?.[index]?.startsWith("http") && {
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                          })}
                         >
                           {item}
                         </Link>
