@@ -341,7 +341,7 @@
       "color": "#9a301f",
       "perks": [
         {
-          "description": "**Desconto de 0,50€** em todos os menus confecionados.",
+          "description": "**Desconto de 0.50€** em todos os menus confecionados.",
           "icon": "Euro"
         }
       ]
@@ -397,7 +397,7 @@
           "icon": "Percent"
         },
         {
-          "description": "**Portes de envio gratuitos** em compras superiores a 12,50€.",
+          "description": "**Portes de envio gratuitos** em compras superiores a 12.50€.",
           "icon": "Euro"
         }
       ]
@@ -429,11 +429,11 @@
           "icon": "License"
         },
         {
-          "description": "Preço de meias para homem: **2,75€**.",
+          "description": "Preço de meias para homem: **2.75€**.",
           "icon": "Euro"
         },
         {
-          "description": "Preço de meias para mulher: **1,50€**.",
+          "description": "Preço de meias para mulher: **1.50€**.",
           "icon": "Euro"
         }
       ]
@@ -465,7 +465,7 @@
       "color": "#1d1d1b",
       "perks": [
         {
-          "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
+          "description": "**Desconto de 0.40€** no menu estudante e nas pizzas.",
           "icon": "Euro"
         }
       ]

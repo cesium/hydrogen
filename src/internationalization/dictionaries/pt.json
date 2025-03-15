@@ -445,15 +445,15 @@
       "color": "#000000",
       "perks": [
         {
-          "description": "Refeição e chá por **4.50€**.",
+          "description": "Refeição e chá por **4,50€**.",
           "icon": "Sell"
         },
         {
-          "description": "Sobremesa a **1.40€**.",
+          "description": "Sobremesa a **1,40€**.",
           "icon": "Sell"
         },
         {
-          "description": "Café a **0.60€**.",
+          "description": "Café a **0,60€**.",
           "icon": "Sell"
         }
       ]
