@@ -37,27 +37,42 @@
   },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
   "caos": {
-    "name": ["Centro de Apoio ao", "Open Source"],
+    "name": [
+      "Centro de Apoio ao",
+      "Open Source"
+    ],
     "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": ["Departamento de", "Marketing e Conteúdo"],
+    "name": [
+      "Departamento de",
+      "Marketing e Conteúdo"
+    ],
     "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": ["Departamento de", "Relações Externas e Merch"],
+    "name": [
+      "Departamento de",
+      "Relações Externas e Merch"
+    ],
     "description": "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
     "icon": "handshake"
   },
   "ped": {
-    "name": ["Departamento", "Pedagógico"],
+    "name": [
+      "Departamento",
+      "Pedagógico"
+    ],
     "description": "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
     "icon": "draw"
   },
   "rec": {
-    "name": ["Departamento", "Recreativo"],
+    "name": [
+      "Departamento",
+      "Recreativo"
+    ],
     "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
     "icon": "celebration"
   },
@@ -184,7 +199,11 @@
           "title": "Eventos",
           "description": "Curioso sobre as datas dos nossos eventos? Temos uma página para isso. Para mais datas do curso, temos o Calendarium.",
           "links": [
-            { "title": "Eventos", "href": "/events", "arrow": "forward" },
+            {
+              "title": "Eventos",
+              "href": "/events",
+              "arrow": "forward"
+            },
             {
               "title": "Abrir Calendarium",
               "href": "https://calendario.cesium.di.uminho.pt",
@@ -285,22 +304,47 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["Sobre nós", "Equipa", "Departmentos"],
-      "links": ["/about", "/team", "/departments"]
+      "items": [
+        "Sobre nós",
+        "Equipa",
+        "Departmentos"
+      ],
+      "links": [
+        "/about",
+        "/team",
+        "/departments"
+      ]
     },
     {
       "title": "Atividades",
-      "items": ["Eventos", "Parcerias"],
-      "links": ["/events", "/partners"]
+      "items": [
+        "Eventos",
+        "Parcerias"
+      ],
+      "links": [
+        "/events",
+        "/partners"
+      ]
     },
     {
       "title": "Estudantes",
-      "items": ["Torna-te sócio", "Torna-te colaborador"],
-      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
+      "items": [
+        "Torna-te sócio",
+        "Torna-te colaborador"
+      ],
+      "links": [
+        "/about/become-a-member",
+        "/about/become-a-collaborator"
+      ]
     },
     {
       "title": "Links Úteis",
-      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Portal do Aluno"],
+      "items": [
+        "CeSIUM Link",
+        "Calendarium",
+        "Blackboard",
+        "Portal do Aluno"
+      ],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
@@ -309,178 +353,182 @@
       ]
     }
   ],
-  "partners": [
-    {
-      "title": "100 Montaditos",
-      "url": "https://portugal.100montaditos.com/pt",
-      "logo": "/images/partners/100montaditos.png",
-      "color": "#000203",
-      "perks": [
-        {
-          "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
-          "icon": "Percent"
-        }
-      ]
-    },
-    {
-      "title": "APE Coffee",
-      "url": "https://apecoffee.club/en/pages/cafetarias",
-      "logo": "/images/partners/apecoffee.webp",
-      "color": "#3c3c3e",
-      "perks": [
-        {
-          "description": "Desconto de **10%**.",
-          "icon": "Percent"
-        }
-      ]
-    },
-    {
-      "title": "Braga Pizzaria Kebab",
-      "url": "https://www.facebook.com/p/Braga-pizzaria-kebab-100047190051272/",
-      "logo": "/images/partners/bragapizzariakebab.png",
-      "color": "#9a301f",
-      "perks": [
-        {
-          "description": "**Desconto de 0,50€** em todos os menus confecionados.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Café do Luís",
-      "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
-      "logo": "/images/partners/cafedoluis.jpg",
-      "color": "#241d1f",
-      "perks": [
-        {
-          "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
-          "icon": "Water_Full"
-        }
-      ]
-    },
-    {
-      "title": "Drawstep",
-      "url": "https://drawstep.com/",
-      "logo": "/images/partners/drawstep.avif",
-      "color": "#134046",
-      "perks": [
-        {
-          "description": "**10% de desconto** na compra de jogos de tabuleiro e isenção de consumo mínimo.",
-          "icon": "Percent"
-        }
-      ]
-    },
-    {
-      "title": "Escola de Condução UM",
-      "url": "https://www.facebook.com/EscolaDeConducaoUm",
-      "logo": "/images/partners/escoladeconducaoum.png",
-      "color": "#443d12",
-      "perks": [
-        {
-          "description": "**Desconto de 40€** na carta de condução da Categoria B.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Magic Pin",
-      "url": "https://www.instagram.com/magiicpin",
-      "logo": "/images/partners/magicpin.png",
-      "color": "#e6c9a8",
-      "perks": [
-        {
-          "description": "Na compra de 8 pins, é **oferecido o pin** de menor valor.",
-          "icon": "Sell"
-        },
-        {
-          "description": "**Desconto de 20%** nos pins de curso.",
-          "icon": "Percent"
-        },
-        {
-          "description": "**Portes de envio gratuitos** em compras superiores a 12,50€.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Nuguelmusic",
-      "url": "http://www.nuguelmusic.pt/",
-      "logo": "/images/partners/nuguel.png",
-      "color": "#7f2c3f",
-      "perks": [
-        {
-          "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Os Farias",
-      "url": "https://www.facebook.com/os.farias.3",
-      "logo": "/images/partners/osfarias.jpg",
-      "color": "#1f1d19",
-      "perks": [
-        {
-          "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
-          "icon": "License"
-        },
-        {
-          "description": "Na compra de 4 emblemas, **oferta de 1**.",
-          "icon": "License"
-        },
-        {
-          "description": "Preço de meias para homem: **2,75€**.",
-          "icon": "Euro"
-        },
-        {
-          "description": "Preço de meias para mulher: **1,50€**.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Pausa Útil",
-      "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
-      "logo": "/images/partners/pausautil.png",
-      "color": "#000000",
-      "perks": [
-        {
-          "description": "Refeição e chá por **4,50€**.",
-          "icon": "Sell"
-        },
-        {
-          "description": "Sobremesa a **1,40€**.",
-          "icon": "Sell"
-        },
-        {
-          "description": "Café a **0,60€**.",
-          "icon": "Sell"
-        }
-      ]
-    },
-    {
-      "title": "The Traditional Great Pizza",
-      "url": "https://www.thetraditionalgreatpizza.com/",
-      "logo": "/images/partners/thetraditionalgreatpizza.png",
-      "color": "#1d1d1b",
-      "perks": [
-        {
-          "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Sabor da fruta",
-      "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
-      "logo": "/images/partners/sabordafruta.png",
-      "color": "#02943c",
-      "perks": [
-        {
-          "description": "**Oferta de café** na compra de um menu.",
-          "icon": "Coffee"
-        }
-      ]
-    }
-  ]
+  "partners": {
+    "title": "Partners",
+    "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the oportunities our partners have for you.",
+    "list": [
+      {
+        "title": "100 Montaditos",
+        "url": "https://portugal.100montaditos.com/pt",
+        "logo": "/images/partners/100montaditos.png",
+        "color": "#000203",
+        "perks": [
+          {
+            "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "APE Coffee",
+        "url": "https://apecoffee.club/en/pages/cafetarias",
+        "logo": "/images/partners/apecoffee.webp",
+        "color": "#3c3c3e",
+        "perks": [
+          {
+            "description": "Desconto de **10%**.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Braga Pizzaria Kebab",
+        "url": "https://www.facebook.com/p/Braga-pizzaria-kebab-100047190051272/",
+        "logo": "/images/partners/bragapizzariakebab.png",
+        "color": "#9a301f",
+        "perks": [
+          {
+            "description": "**Desconto de 0,50€** em todos os menus confecionados.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Café do Luís",
+        "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
+        "logo": "/images/partners/cafedoluis.jpg",
+        "color": "#241d1f",
+        "perks": [
+          {
+            "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
+            "icon": "Water_Full"
+          }
+        ]
+      },
+      {
+        "title": "Drawstep",
+        "url": "https://drawstep.com/",
+        "logo": "/images/partners/drawstep.avif",
+        "color": "#134046",
+        "perks": [
+          {
+            "description": "**10% de desconto** na compra de jogos de tabuleiro e isenção de consumo mínimo.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Escola de Condução UM",
+        "url": "https://www.facebook.com/EscolaDeConducaoUm",
+        "logo": "/images/partners/escoladeconducaoum.png",
+        "color": "#443d12",
+        "perks": [
+          {
+            "description": "**Desconto de 40€** na carta de condução da Categoria B.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Magic Pin",
+        "url": "https://www.instagram.com/magiicpin",
+        "logo": "/images/partners/magicpin.png",
+        "color": "#e6c9a8",
+        "perks": [
+          {
+            "description": "Na compra de 8 pins, é **oferecido o pin** de menor valor.",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Desconto de 20%** nos pins de curso.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Portes de envio gratuitos** em compras superiores a 12,50€.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Nuguelmusic",
+        "url": "http://www.nuguelmusic.pt/",
+        "logo": "/images/partners/nuguel.png",
+        "color": "#7f2c3f",
+        "perks": [
+          {
+            "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Os Farias",
+        "url": "https://www.facebook.com/os.farias.3",
+        "logo": "/images/partners/osfarias.jpg",
+        "color": "#1f1d19",
+        "perks": [
+          {
+            "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
+            "icon": "License"
+          },
+          {
+            "description": "Na compra de 4 emblemas, **oferta de 1**.",
+            "icon": "License"
+          },
+          {
+            "description": "Preço de meias para homem: **2,75€**.",
+            "icon": "Euro"
+          },
+          {
+            "description": "Preço de meias para mulher: **1,50€**.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Pausa Útil",
+        "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
+        "logo": "/images/partners/pausautil.png",
+        "color": "#000000",
+        "perks": [
+          {
+            "description": "Refeição e chá por **4,50€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Sobremesa a **1,40€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Café a **0,60€**.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
+        "title": "The Traditional Great Pizza",
+        "url": "https://www.thetraditionalgreatpizza.com/",
+        "logo": "/images/partners/thetraditionalgreatpizza.png",
+        "color": "#1d1d1b",
+        "perks": [
+          {
+            "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Sabor da fruta",
+        "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
+        "logo": "/images/partners/sabordafruta.png",
+        "color": "#02943c",
+        "perks": [
+          {
+            "description": "**Oferta de café** na compra de um menu.",
+            "icon": "Coffee"
+          }
+        ]
+      }
+    ]
+  }
 }
