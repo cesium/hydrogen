@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLang } from "@/contexts/dictionary-provider";
+import { shortLocale } from "@/lib/locale";
 
 interface LinkProps {
   title: string;
@@ -12,7 +13,7 @@ interface LinkProps {
 const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
-  const hrefLang = `/${lang}${href}`;
+  const hrefLang = `/${shortLocale(lang)}${href}`;
   const router = useRouter();
 
   const style = `flex items-center gap-1 font-medium transition-opacity hover:opacity-85 text-${color}`;
@@ -23,7 +24,14 @@ const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
       <p>{title}</p>
     </button>
   ) : (
-    <Link href={arrow === "forward" ? hrefLang : hrefDefault} className={style}>
+    <Link
+      href={arrow === "forward" ? hrefLang : hrefDefault}
+      {...(arrow === "outward" && {
+        rel: "noopener noreferrer",
+        target: "_blank",
+      })}
+      className={style}
+    >
       <p>{title}</p>
       {(arrow === "forward" || arrow === "outward") && (
         <span className="material-symbols-outlined">{"arrow_" + arrow}</span>

@@ -37,27 +37,42 @@
   },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
   "caos": {
-    "name": ["Centro de Apoio ao", "Open Source"],
+    "name": [
+      "Centro de Apoio ao",
+      "Open Source"
+    ],
     "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": ["Departamento de", "Marketing e Conteúdo"],
+    "name": [
+      "Departamento de",
+      "Marketing e Conteúdo"
+    ],
     "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": ["Departamento de", "Relações Externas e Merch"],
+    "name": [
+      "Departamento de",
+      "Relações Externas e Merch"
+    ],
     "description": "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
     "icon": "handshake"
   },
   "ped": {
-    "name": ["Departamento", "Pedagógico"],
+    "name": [
+      "Departamento",
+      "Pedagógico"
+    ],
     "description": "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
     "icon": "draw"
   },
   "rec": {
-    "name": ["Departamento", "Recreativo"],
+    "name": [
+      "Departamento",
+      "Recreativo"
+    ],
     "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
     "icon": "celebration"
   },
@@ -75,8 +90,15 @@
     "title": "Torna-te sócio",
     "text": "Participa em todos os nossos eventos gratuitamente, e usufrui de muitos mais benefícios."
   },
+  "store_card": {
+    "title": "Loja",
+    "text": "Na CeSIUM Store, temos hoodies, casacos, t-shirts, meias, canecas, stickers e muito mais. Se fores sócio, também temos descontos.",
+    "button": "Abrir Loja"
+  },
   "navbar": {
     "home": "Início",
+    "team": "Equipa",
+    "departments": "Departamentos",
     "about": "Sobre Nós",
     "events": "Eventos",
     "partners": "Parcerias",
@@ -89,15 +111,27 @@
         "title": "Equipa",
         "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
       },
-        "cesium": {
+      "cesium": {
         "title": "O que é o CeSIUM?",
         "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
         "description": "Procuramos organizar actividades de contéudo semelhante e complementar ao curso, assim como promover e divulgar acções de lazer e socialização entre estudantes e ex-alunos. Representamos ainda os interesses colectivos dos alunos de Engenharia Informática junto dos orgãos ou instituições para que a sua carreira académica seja mais rica.",
         "images": [
-          {"src": "/images/uMinho1.jpg", "alt": "Edifício da Universidade do Minho."},
-          {"src": "/images/workshop.jpg", "alt": "Sala cheia de alunos de Engenharia Informática durante um workshop."},
-          {"src": "/images/uMinho2.jpg", "alt": "Edifício da Universidade do Minho."},
-          {"src": "/images/sei24-25.jpg", "alt": "Universidade do MinhoGrupo de estudantes do CeSIUM reunidos no palco durante a Semana da Engenharia Informática, com um mascote Void."}
+          {
+            "src": "/images/uMinho1.jpg",
+            "alt": "Edifício da Universidade do Minho."
+          },
+          {
+            "src": "/images/workshop.jpg",
+            "alt": "Sala cheia de alunos de Engenharia Informática durante um workshop."
+          },
+          {
+            "src": "/images/uMinho2.jpg",
+            "alt": "Edifício da Universidade do Minho."
+          },
+          {
+            "src": "/images/sei24-25.jpg",
+            "alt": "Universidade do MinhoGrupo de estudantes do CeSIUM reunidos no palco durante a Semana da Engenharia Informática, com um mascote Void."
+          }
         ]
       }
     },
@@ -165,7 +199,11 @@
           "title": "Eventos",
           "description": "Curioso sobre as datas dos nossos eventos? Temos uma página para isso. Para mais datas do curso, temos o Calendarium.",
           "links": [
-            { "title": "Eventos", "href": "/events", "arrow": "forward" },
+            {
+              "title": "Eventos",
+              "href": "/events",
+              "arrow": "forward"
+            },
             {
               "title": "Abrir Calendarium",
               "href": "https://calendario.cesium.di.uminho.pt",
@@ -218,45 +256,106 @@
       ]
     }
   },
+  "events": {
+    "title": "Eventos",
+    "warning": "Consulta outros meses para veres mais eventos. Esta página apenas incluiu eventos do Cesium. Para mais eventos, como testes ou datas de entregas, visita o [Calendarium](https://calendario.cesium.pt). Para te manteres sempre a par, segue o nosso [Instagram](https://instagram.com/cesiuminho).",
+    "warningTitle": "Mais Eventos",
+    "weekDays": "Dom, Seg, Ter, Qua, Qui, Sex, Sab",
+    "showLess": "Mostrar menos",
+    "showMore": "Mostrar mais",
+    "futureEvents": "Próximos",
+    "pastEvents": "Passados",
+    "noEvents": "Não existem eventos para mostrar.",
+    "loading": "A carregar eventos..."
+  },
   "social_media": "Redes sociais",
   "socials": [
-    { "name": "Instagram", "url": "https://www.instagram.com/cesiuminho" },
-    { "name": "Facebook", "url": "https://www.facebook.com/cesiuminho" },
-    { "name": "GitHub", "url": "https://github.com/cesium" },
-    { "name": "TikTok", "url": "https://www.tiktok.com/@cesiuminho" },
-    { "name": "X", "url": "https://x.com/cesiuminho" },
-    { "name": "YouTube", "url": "https://www.youtube.com/c/cesiumUM" }
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/cesiuminho",
+      "hex": "#0165E1"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/cesiuminho",
+      "hex": "#C13584"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/cesiuminho",
+      "hex": "#000000"
+    },
+    {
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@cesiuminho",
+      "hex": "#FE2C55"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/cesium",
+      "hex": "#000000"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/c/cesiumUM",
+      "hex": "#FF0000"
+    }
   ],
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["Notícias", "Sobre nós", "Equipa", "Departmentos"],
-      "links": ["#", "#", "#", "#"]
+      "items": [
+        "Sobre nós",
+        "Equipa",
+        "Departmentos"
+      ],
+      "links": [
+        "/about",
+        "/team",
+        "/departments"
+      ]
     },
     {
       "title": "Atividades",
-      "items": ["Projetos", "Eventos", "Parcerias"],
-      "links": ["#", "#", "#"]
+      "items": [
+        "Eventos",
+        "Parcerias"
+      ],
+      "links": [
+        "/events",
+        "/partners"
+      ]
     },
     {
       "title": "Estudantes",
-      "items": ["Torna-te sócio", "Torna-te colaborador", "Anuário"],
-      "links": ["#", "#", "#"]
+      "items": [
+        "Torna-te sócio",
+        "Torna-te colaborador"
+      ],
+      "links": [
+        "/about/become-a-member",
+        "/about/become-a-collaborator"
+      ]
     },
     {
       "title": "Links Úteis",
       "items": [
+        "CeSIUM Link",
         "Calendarium",
         "Blackboard",
-        "Portal do Aluno",
-        "Página de LEI"
+        "Portal do Aluno"
       ],
-      "links": ["#", "#", "#", "#"]
+      "links": [
+        "https://cesium.link",
+        "https://calendario.cesium.pt",
+        "https://elearning.uminho.pt",
+        "https://alunos.uminho.pt/PT"
+      ]
     }
   ],
-  "partners":{
-    "title": "Parcerias",
-    "description": "Uma das vantagens de ser sócio do CeSIUM são as nossas parcerias incríveis. Descobre todas as ofertas que os nossos parceiros têm para ti.",
+  "partners": {
+    "title": "Partners",
+    "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the oportunities our partners have for you.",
     "list": [
       {
         "title": "100 Montaditos",
@@ -298,7 +397,7 @@
         "title": "Café do Luís",
         "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
         "logo": "/images/partners/cafedoluis.jpg",
-        "color": "#A24061",
+        "color": "#241d1f",
         "perks": [
           {
             "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
@@ -322,7 +421,7 @@
         "title": "Escola de Condução UM",
         "url": "https://www.facebook.com/EscolaDeConducaoUm",
         "logo": "/images/partners/escoladeconducaoum.png",
-        "color": "#BBB24A",
+        "color": "#443d12",
         "perks": [
           {
             "description": "**Desconto de 40€** na carta de condução da Categoria B.",
@@ -354,7 +453,7 @@
         "title": "Nuguelmusic",
         "url": "http://www.nuguelmusic.pt/",
         "logo": "/images/partners/nuguel.png",
-        "color": "#E31E25",
+        "color": "#7f2c3f",
         "perks": [
           {
             "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
@@ -366,7 +465,7 @@
         "title": "Os Farias",
         "url": "https://www.facebook.com/os.farias.3",
         "logo": "/images/partners/osfarias.jpg",
-        "color": "#7DA279",
+        "color": "#1f1d19",
         "perks": [
           {
             "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
@@ -390,18 +489,18 @@
         "title": "Pausa Útil",
         "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
         "logo": "/images/partners/pausautil.png",
-        "color": "#598EBA",
+        "color": "#000000",
         "perks": [
           {
-            "description": "Refeição e chá por **4.50€**.",
+            "description": "Refeição e chá por **4,50€**.",
             "icon": "Sell"
           },
           {
-            "description": "Sobremesa a **1.40€**.",
+            "description": "Sobremesa a **1,40€**.",
             "icon": "Sell"
           },
           {
-            "description": "Café a **0.60€**.",
+            "description": "Café a **0,60€**.",
             "icon": "Sell"
           }
         ]
@@ -410,7 +509,7 @@
         "title": "The Traditional Great Pizza",
         "url": "https://www.thetraditionalgreatpizza.com/",
         "logo": "/images/partners/thetraditionalgreatpizza.png",
-        "color": "#89573E",
+        "color": "#1d1d1b",
         "perks": [
           {
             "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
@@ -422,7 +521,7 @@
         "title": "Sabor da fruta",
         "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
         "logo": "/images/partners/sabordafruta.png",
-        "color": "#009240",
+        "color": "#02943c",
         "perks": [
           {
             "description": "**Oferta de café** na compra de um menu.",
