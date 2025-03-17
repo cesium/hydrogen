@@ -65,14 +65,12 @@ export default function ScrollableHighlight({
   ];
 
   return (
-    <div className="w-full overflow-hidden px-5 pt-4 sm:px-8 sm:pt-6">
-      <Carousel
-        single
-        showNavigation
-        pagination
-        items={content}
-        paginationPos={"top"}
-      />
-    </div>
+    <Carousel
+      single
+      showNavigation
+      pagination
+      items={content}
+      paginationPos={"top"}
+    />
   );
 }
