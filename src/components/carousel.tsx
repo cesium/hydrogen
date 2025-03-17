@@ -38,7 +38,9 @@ export default function Carousel({
   const [isLastSlide, setIsLastSlide] = useState(false);
 
   const handleSlideChange = (swiper: SwiperType) => {
-    setIsFirstSlide(swiper.realIndex === 0);
+    const currentIndex = swiper.realIndex;
+
+    setIsFirstSlide(currentIndex === 0);
     setIsLastSlide(swiper.isEnd);
   };
 

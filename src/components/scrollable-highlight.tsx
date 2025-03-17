@@ -26,14 +26,13 @@ export default function ScrollableHighlight({
   const content = [
     <div
       key={0}
-      className="flex h-[650px] w-full place-items-center justify-center rounded-2xl bg-cover bg-no-repeat px-7 sm:h-[600px] sm:justify-start sm:px-10"
+      className="flex h-[650px] w-full place-items-center justify-center rounded-2xl bg-cover bg-[center_16%] bg-no-repeat px-7 sm:h-[600px] sm:justify-start sm:px-10"
       style={{
         backgroundImage: `
         radial-gradient(circle at top center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
         radial-gradient(circle, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.7) 100%),
         url(${background?.src})
       `,
-        backgroundPosition: "center 16%",
       }}
     >
       <div className="md:px-25 relative sm:w-[684px] xl:w-[800px]">

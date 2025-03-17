@@ -92,12 +92,11 @@
   width: 8px;
   height: 8px;
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
   pointer-events: all;
+  transition: all 0.5s ease-in-out;
 }
-
 .custom-bullet.swiper-pagination-bullet-active {
   background: #ffffff;
 }
