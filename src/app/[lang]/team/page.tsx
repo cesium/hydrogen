@@ -17,7 +17,6 @@ import { CardType, type TeamData } from "@/lib/types";
 import Avatar from "@/components/avatar";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import PromotionalCard from "@/components/promotional-card";
-import AppLink from "@/components/link";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 
 export default function Team() {
@@ -64,7 +63,6 @@ export default function Team() {
       className={`space-y-8 sm:space-y-12 ${horizontalPadding} ${verticalPadding}`}
     >
       <div className="flex flex-col gap-4 px-2 md:px-5">
-        <AppLink arrow="back" title={dict.button.back} href="/about" />
         <div className="flex items-center justify-between gap-5 sm:justify-normal">
           <h1 className="font-title text-3xl font-medium">
             {dict.about.team.title}

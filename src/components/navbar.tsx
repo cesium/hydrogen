@@ -9,13 +9,14 @@ import { AnimatePresence, motion } from "motion/react";
 import SocialIcon from "@/components/social-icon";
 import Logo from "./logo";
 import { horizontalPadding } from "@/lib/styling";
+import { shortLocale } from "@/lib/locale";
 
 const Navbar = () => {
   const dict = useDictionary();
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const lang = useLang();
-  const pathname = usePathname().replace(`/${lang}`, "");
+  const pathname = usePathname().replace(`/${shortLocale(lang)}`, "");
 
   const isCurrent = (path: string) => {
     return (
@@ -27,10 +28,11 @@ const Navbar = () => {
   const home = { name: dict.navbar.home, path: "/" };
   const routes = [
     { name: dict.navbar.about, path: "/about" },
-    { name: dict.navbar.events, path: "/events" },
+    { name: dict.navbar.team, path: "/team" },
+    { name: dict.navbar.departments, path: "/departments" },
     { name: dict.navbar.partners, path: "/partners" },
+    { name: dict.navbar.events, path: "/events" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
-    { name: dict.navbar.projects, path: "/projects" },
   ];
 
   const isMember = pathname === "/about/become-a-member";
@@ -42,7 +44,7 @@ const Navbar = () => {
     ? "bg-primary"
     : isCollaborator
       ? "bg-blue"
-      : "bg-white";
+      : "bg-white md:bg-transparent";
   const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
   const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
   const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
@@ -60,13 +62,13 @@ const Navbar = () => {
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:px-12 md:pt-12`}
       >
         <nav className="flex items-center justify-between gap-9 md:justify-normal">
-          <Link href="/">
+          <Link href={`/${shortLocale(lang)}`}>
             <Logo
               type="cesium"
               width={30}
               height={34}
               alt="CeSIUM Logo Icon"
-              fill={`${colorLogo}`}
+              fill={colorLogo}
               className="hidden md:block"
               fullColor={isMemberOrCollaborator}
             />
@@ -83,17 +85,23 @@ const Navbar = () => {
           <div
             className={`hidden items-center space-x-6 font-title text-lg font-medium ${linkColor} md:flex`}
           >
-            {routes.map((route) => (
-              <Link
-                key={route.path}
-                href={route.path}
-                className={`${
-                  isCurrent(route.path) ? `${currentLink}` : ""
-                } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
-              >
-                {route.name}
-              </Link>
-            ))}
+            {routes.map((route) => {
+              return (
+                <Link
+                  key={route.path}
+                  href={
+                    route.path.startsWith("http")
+                      ? route.path
+                      : `/${shortLocale(lang)}${route.path}`
+                  }
+                  className={`${
+                    isCurrent(route.path) ? `${currentLink}` : ""
+                  } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
+                >
+                  {route.name}
+                </Link>
+              );
+            })}
           </div>
           <motion.button
             className={`${hamburgerMenuColor} material-symbols-outlined z-50 p-1 text-3xl md:hidden`}
@@ -121,7 +129,11 @@ const Navbar = () => {
                     transition={{ delay: i * 0.1 }}
                   >
                     <Link
-                      href={route.path}
+                      href={
+                        route.path.startsWith("http")
+                          ? route.path
+                          : `/${shortLocale(lang)}${route.path}`
+                      }
                       className={`${
                         isCurrent(route.path) ? "text-black" : ""
                       } transition-colors hover:text-black`}
@@ -154,12 +166,24 @@ const Navbar = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <SocialIcon
-                            width={26}
-                            height={26}
-                            type={social.name.toLowerCase()}
-                            fill="#94959C"
-                          />
+                          <div className="group transition-transform duration-300 hover:-translate-y-1">
+                            <div className="group-hover:hidden">
+                              <SocialIcon
+                                width={26}
+                                height={26}
+                                type={social.name.toLowerCase()}
+                                fill="#94959C"
+                              />
+                            </div>
+                            <div className="hidden group-hover:block">
+                              <SocialIcon
+                                width={26}
+                                height={26}
+                                type={social.name.toLowerCase()}
+                                fill={social.hex}
+                              />
+                            </div>
+                          </div>
                         </Link>
                       </motion.li>
                     ))}
