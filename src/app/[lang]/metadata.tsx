@@ -16,7 +16,7 @@ export function generateMetadata({
     description: dict.seo.description,
     keywords: [
       "student center",
-      "engeneering",
+      "engineering",
       "informatics",
       "uminho",
       "university",
