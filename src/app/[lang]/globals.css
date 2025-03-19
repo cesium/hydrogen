@@ -127,3 +127,7 @@
   text-align: justify;
   color: #6e6e6e; /* Cinza */
 }
+
+.clip-triangle {
+  clip-path: polygon(0 0, 0 100%, 100% 100%);
+}

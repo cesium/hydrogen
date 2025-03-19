@@ -1,3 +1,5 @@
+"use client";
+
 import {
   getDictionary,
   type Locale,
@@ -8,54 +10,16 @@ import StoreCard from "@/components/store-card";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
 import { horizontalPadding } from "@/lib/styling";
-
-export function generateMetadata({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}): Metadata {
-  const dict = getDictionary(fullLocale(lang));
-
-  return {
-    title: dict.seo.title,
-    description: dict.seo.description,
-    keywords: [
-      "student center",
-      "engeneering",
-      "informatics",
-      "uminho",
-      "university",
-      "students",
-      "CeSIUM",
-      "CeSIUM UMinho",
-    ],
-    openGraph: {
-      url: `${process.env.URL}`,
-      type: "website",
-      title: dict.seo.title,
-      description: dict.seo.description,
-      images: [
-        {
-          url: `${process.env.URL}/og.png`,
-          width: 1200,
-          height: 630,
-          alt: process.env.URL,
-        },
-      ],
-    },
-    alternates: {
-      canonical: `${process.env.URL}`,
-      languages: {
-        en: `${process.env.URL}/en`,
-        pt: `${process.env.URL}/pt`,
-      },
-    },
-  };
-}
+import ShortcutPanes from "@/components/shortcut-panes";
+import { useDictionary } from "@/contexts/dictionary-provider";
 
 export default function Home() {
+  const dict = useDictionary();
+  const dictHome = dict.home;
+
   return (
     <main className={`${horizontalPadding}`}>
+      <ShortcutPanes shortcuts={dictHome.shortcut_panes} />
       <section className="grid columns-1 gap-8 sm:columns-2">
         <div className="sm:col-span-2">
           <StoreCard />
