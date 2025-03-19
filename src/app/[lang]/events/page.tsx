@@ -9,6 +9,7 @@ import { type Event, CardType } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { isSameDay } from "@/lib/utils";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import { EventListCard } from "@/components/event-list-card";
 import AppLink from "@/components/link";
 import Markdown from "markdown-to-jsx";
 
@@ -110,6 +111,11 @@ export default function EventsPage() {
           </div>
         </div>
       </div>
+      <EventListCard
+        events={events}
+        selectedDate={selectedDate}
+        onClearDate={handleClearDate}
+      />
     </main>
   );
 }
