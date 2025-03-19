@@ -108,7 +108,12 @@
   "about": {
     "sections": {
       "hero": {
-        "title": "O que é o CeSIUM?",
+        "title": [
+          "Centro de",
+          "Estudantes de",
+          "Engenharia Informática",
+          "da Universidade do Minho"
+        ],
         "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
         "subtitle": "Diretor Do Departamento de Informática - 2017"
       },
@@ -118,8 +123,26 @@
       },
       "cesium": {
         "title": "O que é o CeSIUM?",
-        "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
-        "subtitle": "Diretor Do Departamento de Informática - 2017"
+        "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
+        "description": "Procuramos organizar actividades de contéudo semelhante e complementar ao curso, assim como promover e divulgar acções de lazer e socialização entre estudantes e ex-alunos. Representamos ainda os interesses colectivos dos alunos de Engenharia Informática junto dos orgãos ou instituições para que a sua carreira académica seja mais rica.",
+        "images": [
+          {
+            "src": "/images/uMinho1.jpg",
+            "alt": "Edifício da Universidade do Minho."
+          },
+          {
+            "src": "/images/workshop.jpg",
+            "alt": "Sala cheia de alunos de Engenharia Informática durante um workshop."
+          },
+          {
+            "src": "/images/uMinho2.jpg",
+            "alt": "Edifício da Universidade do Minho."
+          },
+          {
+            "src": "/images/sei24-25.jpg",
+            "alt": "Universidade do MinhoGrupo de estudantes do CeSIUM reunidos no palco durante a Semana da Engenharia Informática, com um mascote Void."
+          }
+        ]
       }
     },
     "team": {

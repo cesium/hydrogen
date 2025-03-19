@@ -32,7 +32,7 @@ export default function Carousel({
       }
       pagination={pagination ? { clickable: true, type: "bullets" } : false}
       breakpoints={{
-        640: { slidesPerView: overflow ? 1.5 : 1, spaceBetween: 15 }, // New smaller breakpoint
+        640: { slidesPerView: overflow ? 1.5 : 1, spaceBetween: 15 },
         768: { slidesPerView: overflow ? 1.8 : 1, spaceBetween: 15 },
         1024: { slidesPerView: overflow ? 2.5 : 3, spaceBetween: 20 },
       }}
