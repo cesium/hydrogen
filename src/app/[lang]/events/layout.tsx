@@ -2,6 +2,7 @@ import {
   getDictionary,
   type Locale,
 } from "@/internationalization/dictionaries";
+import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
 
 export function generateMetadata({
@@ -9,7 +10,7 @@ export function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Metadata {
-  const dict = getDictionary(lang);
+  const dict = getDictionary(fullLocale(lang));
 
   return {
     title: dict.seo.events.title,
@@ -26,24 +27,24 @@ export function generateMetadata({
       "events",
     ],
     openGraph: {
-      url: "https://cesium.di.uminho.pt/events",
+      url: `${process.env.URL}/events`,
       type: "website",
       title: dict.seo.events.title,
       description: dict.seo.events.description,
       images: [
         {
-          url: "https://cesium.di.uminho.pt/og.png",
+          url: `${process.env.URL}/og.png`,
           width: 1200,
           height: 630,
-          alt: "cesium.di.uminho.pt",
+          alt: process.env.URL,
         },
       ],
     },
     alternates: {
-      canonical: "https://cesium.di.uminho.pt/events",
+      canonical: `${process.env.URL}/events`,
       languages: {
-        en: "https://cesium.di.uminho.pt/en_US/events",
-        pt: "https://cesium.di.uminho.pt/pt_PT/events",
+        en: `${process.env.URL}/en/events`,
+        pt: `${process.env.URL}/pt/events`,
       },
     },
   };

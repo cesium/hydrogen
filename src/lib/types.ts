@@ -24,3 +24,54 @@ export type TeamData = Team[];
 export interface MemberInfo extends Member {
   imageUrl: string;
 }
+
+export interface ProductImage {
+  thumb: string;
+  square: string;
+  full: string;
+}
+
+export interface Product {
+  id: string;
+  title: string;
+  handle: string;
+  price_formatted: string;
+  image: ProductImage;
+}
+
+export interface Event {
+  title: string;
+  place?: string;
+  link?: string;
+  start: Date;
+  end: Date;
+}
+
+export interface EventsPageProps {
+  events: Event[];
+}
+
+export interface EventCardProps {
+  event: Event;
+}
+
+export interface EventListProps {
+  events: Event[];
+  isLoading?: boolean;
+  selectedDate: Date | null;
+  onClearDate: () => void;
+}
+
+export interface CalendarProps {
+  events: Event[];
+  onDateSelect?: (date: Date | null) => void;
+  onEventClick?: (event: Event) => void;
+  selectedDate: Date | null;
+  className?: string;
+}
+
+export interface EventTooltipProps {
+  events: Event[];
+  isVisible: boolean;
+  anchorElement: HTMLElement | null;
+}

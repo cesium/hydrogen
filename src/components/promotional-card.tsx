@@ -39,7 +39,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
               : "/vectors/member.svg"
           }
           alt="Promotional Image"
-          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`}`}
+          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none select-none`}
         />
       </div>
 

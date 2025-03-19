@@ -8,6 +8,7 @@ import {
 import { DictionaryProvider } from "@/contexts/dictionary-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { fullLocale } from "@/lib/locale";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,15 +26,15 @@ export function generateMetadata({
 }: {
   params: { lang: Locale };
 }): Metadata {
-  const dict = getDictionary(lang);
+  const dict = getDictionary(fullLocale(lang));
 
   return {
-    metadataBase: new URL("https://cesium.di.uminho.pt"),
+    metadataBase: new URL(process.env.URL ?? "https://cesium.di.uminho.pt"),
     openGraph: {
       siteName: dict.seo.title,
       type: "website",
-      locale: "pt_PT",
-      alternateLocale: "en_US",
+      locale: "pt",
+      alternateLocale: "en",
     },
     robots: {
       index: true,
@@ -82,14 +83,14 @@ export default function RootLayout({
   params: { lang },
 }: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
   return (
-    <html lang={lang}>
+    <html lang={fullLocale(lang)}>
       <head>
         <meta name="apple-mobile-web-app-title" content="CeSIUM" />
       </head>
       <body
         className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-white font-sans text-black antialiased`}
       >
-        <DictionaryProvider lang={lang}>
+        <DictionaryProvider lang={fullLocale(lang)}>
           <Navbar />
           <div className="h-full">{children}</div>
           <Footer />
