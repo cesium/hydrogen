@@ -8,7 +8,7 @@ export default function About() {
   const dict = useDictionary();
 
   const heroItems = [
-    <div key="title" className="flex items-center lg:flex-1 mb-32 lg:mb-0" >
+    <div key="title" className="flex items-center lg:flex-1 mb-32 lg:mb-0 pointer-events-none">
       <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] xl:w-[565px] xl:text-[48px]">
         Centro de
         <br /> Estudantes de
@@ -20,7 +20,7 @@ export default function About() {
       </p>
     </div>,
 
-    <div key="subtitle" className="flex flex-col justify-center sm:h-[300px] mb-32 lg:mb-0">
+    <div key="subtitle" className="flex flex-col justify-center sm:h-[300px] mb-32 lg:mb-0 pointer-events-none">
       <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
         <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
           {dict.about.sections.hero.description}
@@ -34,10 +34,10 @@ export default function About() {
   ];
 
   return (
-    <main className="h-screen snap-y snap-mandatory flex-col items-center justify-center overflow-y-scroll">
+    <main className="flex-col items-center justify-center">
       <AboutSection>
         <section
-          className={`flex h-[745px] w-full snap-center snap-always flex-col justify-center sm:h-[804px] lg:gap-44`}
+          className={`flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44`}
         >
           <div className="hidden h-fit items-center justify-center lg:flex">
             {heroItems.map((item, _) => item)}
@@ -45,6 +45,7 @@ export default function About() {
 
           <div className="block lg:hidden">
             <Carousel
+              autoplay={2000}
               pagination
               items={heroItems.map((item, index) => (
                 <div key={index} className="flex items-center justify-center">
@@ -61,7 +62,7 @@ export default function About() {
         </section>
       </AboutSection>
 
-      <section className="h-screen snap-start snap-always">
+      <AboutSection dark>
         <div className="flex h-full items-center justify-center">
           <div className="flex w-full max-w-[1440px] flex-col items-center justify-center">
             <h2 className="text-center font-title text-[36px] font-medium text-black md:text-[48px] lg:text-[60px]">
@@ -72,7 +73,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </AboutSection>
     </main>
   );
 }
