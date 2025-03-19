@@ -3,14 +3,174 @@ import Image from "next/image";
 import InfoCard from "@/components/info-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import { motion } from "motion/react";
+import Link from "next/link";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
+
+  const partners = dict.partners;
+
+  const partnersMiddleIndex = Math.floor(partners.length / 2);
+  const partnersFirstHalf = partners.slice(0, partnersMiddleIndex);
+  const partnersSecondHalf = partners.slice(partnersMiddleIndex);
 
   return (
     <main
       className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
+      <div className="xl:col-span-3">
+        <InfoCard>
+          <div className="flex flex-col sm:flex-row sm:gap-64 lg:max-h-96">
+            <div className="flex flex-col gap-20 py-32 pl-12 sm:flex-row">
+              <div className="">
+                <span className="material-symbols-outlined text-5xl text-[#836143]">
+                  handshake
+                </span>
+                <h1 className="bg-gradient-to-r from-[#836143] to-[#C0AC97] bg-clip-text font-title text-4xl font-semibold text-transparent">
+                  Parcerias exclusivas
+                </h1>
+              </div>
+              <div className="flex flex-col gap-4">
+                <p>
+                  Almoça no Sabor da Fruta e toma um café grátis. Ou no Café do
+                  Luís, com bebida incluída. Recebe emblemas grátis n’Os Farias.
+                  Usufrui de descontos em aulas de música e de condução. Estas
+                  são só algumas das parcerias que temos para ti.
+                </p>
+                <a
+                  className="flex items-center gap-1 text-[#5C657F]"
+                  href="https://store.cesium.pt"
+                >
+                  <p className="text-center">
+                    {dict.about.become_a_member.discounts.link}
+                  </p>
+                  <span className="material-symbols-outlined">
+                    arrow_outward
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div className="mr-24 hidden h-96 shrink-0 gap-5 lg:flex">
+              <motion.div
+                className="flex flex-col gap-5"
+                animate={{
+                  y: [0, -partnersFirstHalf.length * 100],
+                }}
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 15,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[...partnersFirstHalf, ...partnersFirstHalf].map(
+                  (partner, index) => (
+                    <Image
+                      key={`${partner.title}-${index}`}
+                      className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover"
+                      src={partner.logo}
+                      alt={partner.title}
+                      width={80}
+                      height={80}
+                    />
+                  ),
+                )}
+              </motion.div>
+              <motion.div
+                className="flex flex-col gap-5"
+                animate={{
+                  y: [-partnersSecondHalf.length * 100, 0],
+                }}
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 15,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[...partnersSecondHalf, ...partnersSecondHalf].map(
+                  (partner, index) => (
+                    <Link href={partner.url} key={`${partner.title}-${index}`}>
+                      <Image
+                        className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover transition-transform hover:scale-110"
+                        src={partner.logo}
+                        alt={partner.title}
+                        width={80}
+                        height={80}
+                      />
+                    </Link>
+                  ),
+                )}
+              </motion.div>
+            </div>
+            <div className="flex h-32 shrink-0 flex-col gap-5 overflow-hidden lg:hidden">
+              <motion.div
+                className="flex shrink-0 gap-5"
+                animate={{
+                  x: [0, -partnersFirstHalf.length * 100],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 15,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[...partnersFirstHalf, ...partnersFirstHalf].map(
+                  (partner, index) => (
+                    <Image
+                      key={`${partner.title}-${index}`}
+                      className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover"
+                      src={partner.logo}
+                      alt={partner.title}
+                      width={80}
+                      height={80}
+                    />
+                  ),
+                )}
+              </motion.div>
+              <motion.div
+                className="flex shrink-0 gap-5"
+                animate={{
+                  x: [-partnersSecondHalf.length * 100, 0],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 15,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[...partnersSecondHalf, ...partnersSecondHalf].map(
+                  (partner, index) => (
+                    <Image
+                      key={`${partner.title}-${index}`}
+                      className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover"
+                      src={partner.logo}
+                      alt={partner.title}
+                      width={80}
+                      height={80}
+                    />
+                  ),
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </InfoCard>
+      </div>
       <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
@@ -52,7 +212,7 @@ export default function BecomeAMember() {
             <Image
               src="/images/totebag.png"
               alt="totebag"
-              layout="fill"
+              fill
               className="object-cover object-[right_bottom]"
             />
           </div>
@@ -98,9 +258,8 @@ export default function BecomeAMember() {
                 <Image
                   src="/images/notebook.png"
                   alt="discounts"
-                  layout="fill"
-                  objectFit="cover"
-                  className="object-[0%_0%] sm:object-[100%_100%]"
+                  fill
+                  className="object-cover object-[0%_0%] sm:object-[100%_100%]"
                 />
               </div>
 
@@ -135,9 +294,8 @@ export default function BecomeAMember() {
                 <Image
                   src="/images/laptop.png"
                   alt="discounts"
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="0% 0%"
+                  fill
+                  className="object-cover object-[0%_0%]"
                 />
               </div>
             </div>
