@@ -12,6 +12,24 @@ export default function BecomeAMember() {
       className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
       <div className="xl:col-span-3">
+        <div className="flex w-full justify-between place-items-center  gap-x-8 sm:gap-x-0">
+          <div className="flex place-items-center min-w-[200px] max-w-[600px]">
+            <div className="sm:max-w-[540px]">
+              <h2 className="font-title text-2xl font-semibold mb-[15px]">{dict.about.become_a_member.advantages.title}</h2>
+              <p className="text-base">{dict.about.become_a_member.advantages.description}</p>
+            </div>
+          </div>
+          <Image
+            src="/images/wallet.png"
+            alt="wallet"
+            width={364}
+            height={338}
+            className="h-[200px] md:h-full object-contain"
+          />
+        </div>
+      </div>
+
+      <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
             <div className="z-10 flex flex-col items-start gap-4 md:flex-row">
