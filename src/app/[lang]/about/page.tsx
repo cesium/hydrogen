@@ -23,7 +23,6 @@ interface MemberDep extends MemberInfo {
   department: string;
 }
 
-
 export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;
@@ -36,8 +35,11 @@ export default function About() {
   const yearRange = "2024-2025";
 
   const heroItems = [
-    <div key="title" className="flex items-center lg:flex-1 mb-32 lg:mb-0 pointer-events-none">
-      <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] xl:w-[565px] xl:text-[48px] lg:pr-10">
+    <div
+      key="title"
+      className="pointer-events-none mb-32 flex items-center lg:mb-0 lg:flex-1"
+    >
+      <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] lg:pr-10 xl:w-[565px] xl:text-[48px]">
         {dict.about.sections.hero.title[0]}
         <br /> {dictAbout.sections.hero.title[1]}
         <span className="font-title text-[36px] text-black sm:text-[40px] xl:text-[48px] ">
@@ -48,7 +50,10 @@ export default function About() {
       </p>
     </div>,
 
-    <div key="subtitle" className="flex flex-col justify-center sm:h-[300px] mb-32 lg:mb-0 pointer-events-none">
+    <div
+      key="subtitle"
+      className="pointer-events-none mb-32 flex flex-col justify-center sm:h-[300px] lg:mb-0"
+    >
       <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
         <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
           {dict.about.sections.hero.description}
