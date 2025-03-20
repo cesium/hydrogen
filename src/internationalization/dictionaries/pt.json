@@ -35,6 +35,14 @@
       "description": "Conhece as vantagens de te tornares nosso sócio."
     }
   },
+  "landing": {
+    "sections": {
+      "hero": {
+        "title": "CeSIUM",
+        "description": "Centro de Estudantes de Engenharia Informática da Universidade do Minho"
+      }
+    }
+  },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
   "caos": {
     "name": [

@@ -30,12 +30,6 @@ export function generateMetadata({
 
   return {
     metadataBase: new URL(process.env.URL ?? "https://cesium.di.uminho.pt"),
-    openGraph: {
-      siteName: dict.seo.title,
-      type: "website",
-      locale: "pt",
-      alternateLocale: "en",
-    },
     robots: {
       index: true,
       follow: true,
@@ -75,6 +69,42 @@ export function generateMetadata({
       ],
     },
     manifest: "/manifest.webmanifest",
+    title: dict.seo.title,
+    description: dict.seo.description,
+    keywords: [
+      "student center",
+      "engeneering",
+      "informatics",
+      "uminho",
+      "university",
+      "students",
+      "CeSIUM",
+      "CeSIUM UMinho",
+    ],
+    openGraph: {
+      siteName: dict.seo.title,
+      type: "website",
+      locale: "pt",
+      alternateLocale: "en",
+      url: `${process.env.URL}`,
+      title: dict.seo.title,
+      description: dict.seo.description,
+      images: [
+        {
+          url: `${process.env.URL}/og.png`,
+          width: 1200,
+          height: 630,
+          alt: process.env.URL,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `${process.env.URL}`,
+      languages: {
+        en: `${process.env.URL}/en`,
+        pt: `${process.env.URL}/pt`,
+      },
+    },
   };
 }
 

@@ -37,6 +37,7 @@ const Navbar = () => {
 
   const isMember = pathname === "/about/become-a-member";
   const isCollaborator = pathname === "/about/become-a-collaborator";
+  const isLanding = pathname === "";
 
   const isMemberOrCollaborator = isMember || isCollaborator;
 
@@ -44,19 +45,25 @@ const Navbar = () => {
     ? "bg-primary"
     : isCollaborator
       ? "bg-blue"
-      : "bg-white md:bg-transparent";
-  const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
-  const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
-  const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
+      : isLanding
+        ? "bg-transparent"
+        : "bg-white md:bg-transparent";
+  const linkColor =
+    isMemberOrCollaborator || isLanding ? "text-white/50" : "text-gray";
+  const currentLink =
+    isMemberOrCollaborator || isLanding ? "text-white" : "text-black";
+  const colorLogo = isMemberOrCollaborator || isLanding ? "white" : "#ED7950";
   const hamburgerMenuColor = isOpen
     ? "text-gray"
     : isMemberOrCollaborator
       ? "text-white/50"
-      : "text-gray";
+      : isLanding
+        ? "text-white"
+        : "text-gray";
 
   return (
     <div
-      className={`${navbarBackgroundColor} ${horizontalPadding} ${isMemberOrCollaborator ? "relative after:hidden" : "sticky"} top-0 z-40 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
+      className={`${navbarBackgroundColor} ${horizontalPadding} ${isMemberOrCollaborator || isLanding ? "relative after:hidden" : "sticky"} top-0 z-50 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
     >
       <div
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:px-12 md:pt-12`}
@@ -70,7 +77,7 @@ const Navbar = () => {
               alt="CeSIUM Logo Icon"
               fill={colorLogo}
               className="hidden md:block"
-              fullColor={isMemberOrCollaborator}
+              fullColor={isMemberOrCollaborator || isLanding}
             />
             <Logo
               type="cesium-full"
@@ -79,7 +86,7 @@ const Navbar = () => {
               alt="CeSIUM Logo"
               fill={`${colorLogo}`}
               className="block md:hidden"
-              fullColor={isMemberOrCollaborator}
+              fullColor={isMemberOrCollaborator || isLanding}
             />
           </Link>
           <div
@@ -96,7 +103,7 @@ const Navbar = () => {
                   }
                   className={`${
                     isCurrent(route.path) ? `${currentLink}` : ""
-                  } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
+                  } transition-colors ${isMemberOrCollaborator || isLanding ? "hover:text-white" : "hover:text-black"}`}
                 >
                   {route.name}
                 </Link>
