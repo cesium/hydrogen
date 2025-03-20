@@ -45,42 +45,27 @@
   },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
-    "name": [
-      "Center for",
-      "Open Source Support"
-    ],
+    "name": ["Center for", "Open Source Support"],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": [
-      "Department of",
-      "Marketing and Content"
-    ],
+    "name": ["Department of", "Marketing and Content"],
     "description": "The DMC is responsible for promoting activities and managing CeSIUM's social media presence - essentially handling all of CeSIUM's marketing. Their work primarily focuses on CeSIUM's visual design and written communications.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": [
-      "Department of",
-      "External Relations and Merch"
-    ],
+    "name": ["Department of", "External Relations and Merch"],
     "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
     "icon": "handshake"
   },
   "ped": {
-    "name": [
-      "Educational",
-      "Department"
-    ],
+    "name": ["Educational", "Department"],
     "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
     "icon": "draw"
   },
   "rec": {
-    "name": [
-      "Recreational",
-      "Department"
-    ],
+    "name": ["Recreational", "Department"],
     "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
     "icon": "celebration"
   },
@@ -115,6 +100,16 @@
   },
   "about": {
     "sections": {
+      "hero": {
+        "title": [
+          "Center of",
+          "Students of",
+          "Computer Engineering",
+          "of Minho University"
+        ],
+        "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
+        "subtitle": "Director of the Informatics Department - 2017"
+      },
       "team": {
         "title": "Team",
         "subtitle": "CeSIUM wouldn't exist without our incredible team, which works every day to keep the group running and make students' years in the course unique. Meet them here."
@@ -308,47 +303,22 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": [
-        "About Us",
-        "Team",
-        "Departments"
-      ],
-      "links": [
-        "/about",
-        "/team",
-        "/departments"
-      ]
+      "items": ["About Us", "Team", "Departments"],
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Activities",
-      "items": [
-        "Events",
-        "Partnerships"
-      ],
-      "links": [
-        "/events",
-        "/partners"
-      ]
+      "items": ["Events", "Partnerships"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Students",
-      "items": [
-        "Become a Member",
-        "Become a Collaborator"
-      ],
-      "links": [
-        "/about/become-a-member",
-        "/about/become-a-collaborator"
-      ]
+      "items": ["Become a Member", "Become a Collaborator"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Useful Links",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Student's Portal"
-      ],
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student's Portal"],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
@@ -365,7 +335,7 @@
         "title": "100 Montaditos",
         "url": "https://portugal.100montaditos.com/pt",
         "logo": "/images/partners/100montaditos.png",
-        "color": "#000203",
+        "color": "#eecc67",
         "perks": [
           {
             "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
@@ -377,7 +347,7 @@
         "title": "APE Coffee",
         "url": "https://apecoffee.club/en/pages/cafetarias",
         "logo": "/images/partners/apecoffee.webp",
-        "color": "#3c3c3e",
+        "color": "#925b2a",
         "perks": [
           {
             "description": "Desconto de **10%**.",
@@ -401,7 +371,7 @@
         "title": "Café do Luís",
         "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
         "logo": "/images/partners/cafedoluis.jpg",
-        "color": "#241d1f",
+        "color": "#843dc2",
         "perks": [
           {
             "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
@@ -425,7 +395,7 @@
         "title": "Escola de Condução UM",
         "url": "https://www.facebook.com/EscolaDeConducaoUm",
         "logo": "/images/partners/escoladeconducaoum.png",
-        "color": "#443d12",
+        "color": "#BBB24A",
         "perks": [
           {
             "description": "**Desconto de 40€** na carta de condução da Categoria B.",
@@ -437,7 +407,7 @@
         "title": "Magic Pin",
         "url": "https://www.instagram.com/magiicpin",
         "logo": "/images/partners/magicpin.png",
-        "color": "#e6c9a8",
+        "color": "#d1a75b",
         "perks": [
           {
             "description": "Na compra de 8 pins, é **oferecido o pin** de menor valor.",
@@ -457,7 +427,7 @@
         "title": "Nuguelmusic",
         "url": "http://www.nuguelmusic.pt/",
         "logo": "/images/partners/nuguel.png",
-        "color": "#7f2c3f",
+        "color": "#e56b7f",
         "perks": [
           {
             "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
@@ -469,7 +439,7 @@
         "title": "Os Farias",
         "url": "https://www.facebook.com/os.farias.3",
         "logo": "/images/partners/osfarias.jpg",
-        "color": "#1f1d19",
+        "color": "#7DA279",
         "perks": [
           {
             "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
@@ -493,7 +463,7 @@
         "title": "Pausa Útil",
         "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
         "logo": "/images/partners/pausautil.png",
-        "color": "#000000",
+        "color": "#598EBA",
         "perks": [
           {
             "description": "Refeição e chá por **4.50€**.",
@@ -513,7 +483,7 @@
         "title": "The Traditional Great Pizza",
         "url": "https://www.thetraditionalgreatpizza.com/",
         "logo": "/images/partners/thetraditionalgreatpizza.png",
-        "color": "#1d1d1b",
+        "color": "#89573E",
         "perks": [
           {
             "description": "**Desconto de 0.40€** no menu estudante e nas pizzas.",
@@ -525,7 +495,7 @@
         "title": "Sabor da fruta",
         "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
         "logo": "/images/partners/sabordafruta.png",
-        "color": "#02943c",
+        "color": "#68b54a",
         "perks": [
           {
             "description": "**Oferta de café** na compra de um menu.",
