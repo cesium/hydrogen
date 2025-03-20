@@ -121,19 +121,21 @@ export default function About() {
             {heroItems.map((item, _) => item)}
           </div>
 
-          <div className="block lg:hidden">
-            <Carousel
-              autoplay={25000}
-              pagination
-              items={heroItems.map((item, index) => (
-                <div key={index} className="flex items-center justify-center">
-                  {item}
-                </div>
-              ))}
-            />
+          <div className="flex flex-col justify-center h-full lg:hidden">
+            <div className="block">
+              <Carousel
+                autoplay={25000}
+                pagination
+                items={heroItems.map((item, index) => (
+                  <div key={index} className="flex items-center justify-center">
+                    {item}
+                  </div>
+                ))}
+              />
+            </div>
           </div>
 
-          <div className="flex h-[56px] flex-col items-center justify-center gap-1">
+          <div className="flex h-[56px] flex-col items-center justify-center gap-1 mb-8">
             <p>Desliza para ver mais</p>
             <span className="material-symbols-outlined">arrow_downward</span>
           </div>
