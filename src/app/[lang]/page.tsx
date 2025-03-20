@@ -5,6 +5,7 @@ import {
 import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
 import StoreCard from "@/components/store-card";
+import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
 import { horizontalPadding } from "@/lib/styling";
@@ -58,6 +59,7 @@ export default function Home() {
     <main className={`${horizontalPadding}`}>
       <section className="grid columns-1 gap-8 sm:columns-2">
         <div className="sm:col-span-2">
+          <ShortcutButtonsContainer />
           <StoreCard />
         </div>
         <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
