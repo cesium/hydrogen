@@ -35,13 +35,11 @@ export default function Carousel({
   const swiperRef = useRef<SwiperType | null>(null);
 
   const [isFirstSlide, setIsFirstSlide] = useState(true);
-  const [isLastSlide, setIsLastSlide] = useState(false);
 
   const handleSlideChange = (swiper: SwiperType) => {
     const currentIndex = swiper.realIndex;
 
     setIsFirstSlide(currentIndex === 0);
-    setIsLastSlide(swiper.isEnd);
   };
 
   return (
@@ -97,7 +95,7 @@ export default function Carousel({
       {showNavigation && (
         <div className="pointer-events-none absolute inset-0 top-0 z-10 h-full px-10">
           <button
-            className={`absolute bottom-2 left-2 z-50 transform select-none p-2 text-white lg:left-10 lg:top-1/2 lg:-translate-y-1/2 ${isFirstSlide ? "hidden" : ""} pointer-events-auto`}
+            className={`pointer-events-auto absolute bottom-2 left-2 z-50 hidden transform select-none p-2 text-white lg:left-10 lg:top-1/2 lg:-translate-y-1/2`}
             onClick={() => swiperRef.current?.slidePrev()}
             aria-label="Previous slide"
           >
@@ -106,7 +104,7 @@ export default function Carousel({
             </span>
           </button>
           <button
-            className={`absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2 ${isLastSlide && !loop ? "hidden" : ""} pointer-events-auto`}
+            className={`absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2 ${!isFirstSlide ? "hidden" : ""} pointer-events-auto`}
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next slide"
           >
