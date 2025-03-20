@@ -87,7 +87,7 @@ export default function BecomeACollaborator() {
                     key={member.name}
                     src={member.imageUrl}
                     className="rounded-full font-normal"
-                    imageClassName="size-15 md:size-20 rounded-full "
+                    imageClassName="size-20 md:size-2buns5 rounded-full "
                     style="style2"
                   />
                 ))
