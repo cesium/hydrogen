@@ -25,7 +25,6 @@ export default function Carousel({
     <Swiper
       slidesPerView={overflow ? 1.3 : 1}
       spaceBetween={15}
-      centeredSlides={true}
       loop={loop ? true : false}
       autoplay={
         autoplay ? { delay: autoplay, disableOnInteraction: false } : false
