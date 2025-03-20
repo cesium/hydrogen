@@ -9,8 +9,8 @@ export default function BecomeACollaborator() {
   return <main>Become a Collaborator
     <div>
             <CallSubscribe
-              title={dict.callsub.title} 
-              description={dict.callsub.desc} 
+              title={dict.callsub.collaborators.title} 
+              description={dict.callsub.collaborators.desc} 
               buttonText={dict.callsub.button} 
               buttonColor={"blue"} 
               footerText={dict.callsub.footer}

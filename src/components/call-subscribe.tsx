@@ -16,7 +16,7 @@ export const CallSubscribe = ({
   footerText,
 }: CallSubscribeProps) => {
   return (
-    <div className="flex flex-col items-center justify-center text-center space-y-4 w-full">
+    <div className="flex flex-col items-center justify-center text-center space-y-6 w-full">
       <h2 className="font-title text-2xl font-semibold">{title}</h2>
       <p className="max-w-[750px]">{description}</p>
       <a href="https://cesium.link/f/socios">
@@ -27,7 +27,7 @@ export const CallSubscribe = ({
       </button>
       </a>
       <a href="mailto:cesium@di.uminho.pt">
-      <p className={`text-base text-${buttonColor} mt-4`}>{footerText}</p>
+      <p className={`text-base text-${buttonColor} font-medium`}>{footerText}</p>
       </a>
     </div>
   );

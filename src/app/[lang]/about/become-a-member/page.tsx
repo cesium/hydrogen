@@ -147,8 +147,8 @@ export default function BecomeAMember() {
       </div>
       <div className="flex flex-col items-center justify-center w-full xl:col-span-3 mt-4">
         <CallSubscribe
-          title={dict.callsub.title} 
-          description={dict.callsub.desc} 
+          title={dict.callsub.members.title} 
+          description={dict.callsub.members.desc} 
           buttonText={dict.callsub.button} 
           buttonColor={"primary"} 
           footerText={dict.callsub.footer}
