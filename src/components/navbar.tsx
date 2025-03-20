@@ -83,7 +83,7 @@ const Navbar = () => {
             />
           </Link>
           <div
-            className={`hidden items-center space-x-6 font-title text-lg font-medium ${linkColor} md:flex`}
+            className={`hidden items-center space-x-6 font-title text-base font-medium ${linkColor} md:flex`}
           >
             {routes.map((route) => {
               return (
