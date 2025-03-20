@@ -11,7 +11,6 @@ export function EventTooltip({
   const [position, setPosition] = useState({ top: 0, left: 0 });
   const [isRendered, setIsRendered] = useState(false);
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const [showArrowBelow, setShowArrowBelow] = useState(true);
 
   useEffect(() => {
     if (isVisible) {
@@ -54,7 +53,6 @@ export function EventTooltip({
       }
 
       setPosition({ top, left });
-      setShowArrowBelow(arrowBelow);
     };
 
     updatePosition();
@@ -86,15 +84,9 @@ export function EventTooltip({
       }}
     >
       <div className="relative">
-        {showArrowBelow && (
-          <div className="absolute bottom-[-6px] left-1/2 h-3 w-3 -translate-x-1/2 rotate-45 transform border-b border-r border-black/10 bg-white shadow-sm"></div>
-        )}
         <div
-          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white p-4 shadow-lg ${showArrowBelow ? "mb-1.5" : "mt-1.5"}`}
+          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 backdrop-blur-lg p-4 shadow-lg "mt-1.5"`}
         >
-          {!showArrowBelow && (
-            <div className="absolute left-1/2 top-[-6px] h-3 w-3 -translate-x-1/2 rotate-45 transform border-l border-t border-black/10 bg-white shadow-sm"></div>
-          )}
           <div className="space-y-3">
             {events.map((event, index) => (
               <div key={index} className="text-sm">
