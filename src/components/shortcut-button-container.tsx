@@ -1,57 +1,79 @@
-import ShortcutButton from "./shortcut-button"
-import Image from 'next/image'
+import ShortcutButton from "./shortcut-button";
+import Image from "next/image";
 
 export default function ShortcutButtonsContainer() {
   return (
-	<div className="w-full grid grid-cols-2 md:grid-cols-5 gap-4 py-10">
-	  <ShortcutButton href="https://perifericos.com" highlight="EM DESTAQUE">
-	  	<Image
-            src="/images/podcast_periferico.png"
-            width={500}
-            height={500}
-            className="w-28 h-6 md:w-40 md:h-8"
-            alt="wtv"
+    <div className="grid w-full grid-cols-2 gap-4 py-6 md:grid-cols-5">
+      <ShortcutButton
+        href="https://calendario.cesium.di.uminho.pt/"
+        highlight="EM DESTAQUE"
+      >
+        <div className="flex items-center">
+          <Image
+            src="/logo/calendarium.svg"
+            width={200}
+            height={200}
+            alt="Calendarium Logo Icon"
           />
-	  </ShortcutButton>
+        </div>
+      </ShortcutButton>
 
-	  <ShortcutButton href="https://calendarium.com">
-		<div className="flex items-center text-xs md:text-base">
-		  <span>cal</span>
-		  <span className="text-primary">e</span>
-		  <span>ndarium</span>
-		</div>
-	  </ShortcutButton>
+      <ShortcutButton href="https://discord.com/invite/wQEvhkfFPk">
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/logo/discord.svg"
+            width={27}
+            height={20}
+            className="md:h-8 md:w-12"
+            alt="Discord Logo"
+          />
+          <div className="flex flex-col font-title text-xs md:text-base">
+            <span>Discord do{"\n"}</span>
+            <span className="font-bold">CeSIUM</span>
+          </div>
+        </div>
+      </ShortcutButton>
 
-	  <ShortcutButton href="https://discord.com">
-		<div className="flex items-center">
-		  <Image
-			src="/images/discord_logo.png"
-			width={40}
-			height={40}
-			className="md:w-7 md:h-5 md:mr-4"
-			alt="Discord Logo"
-		  />
-		  <div className="flex flex-col font-title text-xs md:text-base">
-			<span>Discord do{'\n'}</span>
-			<span className="font-bold">CeSIUM</span>
-		  </div>
-		</div>
-	  </ShortcutButton>
+      <ShortcutButton href="https://periferico.cesium.di.uminho.pt/">
+        <Image
+          src="/images/podcast_periferico.png"
+          width={150}
+          height={150}
+          className="h-6 w-28 md:h-8 md:w-40"
+          alt="Periferico Logo"
+        />
+      </ShortcutButton>
 
-	  <ShortcutButton href="https://forms.com">
-		<div className="flex flex-col text-[10px] md:text-sm">
-		  <span>Formulário de</span>
-		  <span className="font-bold">
-			Sugestões <span className="text-primary">e</span> Problemas
-		  </span>
-		</div>
-	  </ShortcutButton>
+      <ShortcutButton href="https://pelomundo.cesium.di.uminho.pt/">
+        <div className="flex items-center space-x-2">
+          <Image
+            src="/logo/cesium_pelo_mundo.svg"
+            width={16}
+            height={16}
+            className="h-8 w-8 md:h-10 md:w-10"
+            alt="Cesium pelo Mundo logo"
+          />
+          <div className="flex flex-col font-title text-xs md:text-base">
+            <span className="font-semibold">CeSIUM</span>
+            pelo Mundo
+          </div>
+        </div>
+      </ShortcutButton>
 
-	  <ShortcutButton href="https://atalho.com">
-		<div className="flex items-center justify-center">
-		  <span className="text-black/50">Atalho</span>
-		</div>
-	  </ShortcutButton>
-	</div>
-  )
+      <div className="col-span-2 md:col-span-1">
+        <ShortcutButton href="https://cesium.link/">
+          <div className="flex items-center justify-center space-x-2">
+            <Image
+              src="/images/cesium_link.png"
+              width={100}
+              height={100}
+              className="h-12 w-12"
+              alt="Cesium link Logo"
+            />
+            <span className="font-title font-semibold">CeSIUM Link</span>
+          </div>
+        </ShortcutButton>
+      </div>
+    </div>
+  );
 }

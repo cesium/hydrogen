@@ -8,7 +8,7 @@ import StoreCard from "@/components/store-card";
 import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
-import { horizontalPadding } from "@/lib/styling"; 
+import { horizontalPadding } from "@/lib/styling";
 
 export function generateMetadata({
   params: { lang },
