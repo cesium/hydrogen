@@ -83,7 +83,7 @@ export default function About() {
     <main>
       {/* "What is CeSIUM?" */}
       <section
-        className={`flex flex-col items-center gap-4 border-b border-black/10 bg-black/5 py-12 text-center sm:gap-6`}
+        className={`flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6`}
       >
         <p className="font-title text-2xl font-medium sm:text-3xl">
           {dictAbout.sections.cesium.title}
