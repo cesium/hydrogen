@@ -32,7 +32,7 @@ export function EventTooltip({
       const rect = anchorElement.getBoundingClientRect();
       const tooltipRect = tooltipRef.current.getBoundingClientRect();
 
-      let top = rect.top - tooltipRect.height - 10;
+      let top = rect.top - tooltipRect.height - 5;
       let left = rect.left + rect.width / 2;
       let arrowBelow = true;
 
@@ -85,7 +85,7 @@ export function EventTooltip({
     >
       <div className="relative">
         <div
-          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 backdrop-blur-lg p-4 shadow-lg "mt-1.5"`}
+          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 backdrop-blur-lg p-4 shadow-lg`}
         >
           <div className="space-y-3">
             {events.map((event, index) => (
