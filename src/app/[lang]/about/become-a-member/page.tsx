@@ -12,11 +12,15 @@ export default function BecomeAMember() {
       className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
       <div className="xl:col-span-3">
-        <div className="flex w-full justify-between place-items-center  gap-x-8 sm:gap-x-0">
-          <div className="flex place-items-center min-w-[200px] max-w-[600px]">
+        <div className="flex w-full place-items-center justify-between  gap-x-8 sm:gap-x-0">
+          <div className="flex min-w-[200px] max-w-[600px] place-items-center">
             <div className="sm:max-w-[540px]">
-              <h2 className="font-title text-2xl font-semibold mb-[15px]">{dict.about.become_a_member.advantages.title}</h2>
-              <p className="text-base">{dict.about.become_a_member.advantages.description}</p>
+              <h2 className="mb-[15px] font-title text-2xl font-semibold">
+                {dict.about.become_a_member.advantages.title}
+              </h2>
+              <p className="text-base">
+                {dict.about.become_a_member.advantages.description}
+              </p>
             </div>
           </div>
           <Image
@@ -24,7 +28,7 @@ export default function BecomeAMember() {
             alt="wallet"
             width={364}
             height={338}
-            className="h-[200px] md:h-full object-contain"
+            className="h-[200px] object-contain md:h-full"
           />
         </div>
       </div>
