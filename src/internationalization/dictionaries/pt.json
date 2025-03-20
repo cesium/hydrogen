@@ -37,42 +37,27 @@
   },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
   "caos": {
-    "name": [
-      "Centro de Apoio ao",
-      "Open Source"
-    ],
+    "name": ["Centro de Apoio ao", "Open Source"],
     "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": [
-      "Departamento de",
-      "Marketing e Conteúdo"
-    ],
+    "name": ["Departamento de", "Marketing e Conteúdo"],
     "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": [
-      "Departamento de",
-      "Relações Externas e Merch"
-    ],
+    "name": ["Departamento de", "Relações Externas e Merch"],
     "description": "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
     "icon": "handshake"
   },
   "ped": {
-    "name": [
-      "Departamento",
-      "Pedagógico"
-    ],
+    "name": ["Departamento", "Pedagógico"],
     "description": "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
     "icon": "draw"
   },
   "rec": {
-    "name": [
-      "Departamento",
-      "Recreativo"
-    ],
+    "name": ["Departamento", "Recreativo"],
     "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
     "icon": "celebration"
   },
@@ -107,6 +92,16 @@
   },
   "about": {
     "sections": {
+      "hero": {
+        "title": [
+          "Centro de",
+          "Estudantes de",
+          "Engenharia Informática",
+          "da Universidade do Minho"
+        ],
+        "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
+        "subtitle": "Diretor Do Departamento de Informática - 2017"
+      },
       "team": {
         "title": "Equipa",
         "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
@@ -304,47 +299,22 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": [
-        "Sobre nós",
-        "Equipa",
-        "Departmentos"
-      ],
-      "links": [
-        "/about",
-        "/team",
-        "/departments"
-      ]
+      "items": ["Sobre nós", "Equipa", "Departmentos"],
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Atividades",
-      "items": [
-        "Eventos",
-        "Parcerias"
-      ],
-      "links": [
-        "/events",
-        "/partners"
-      ]
+      "items": ["Eventos", "Parcerias"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Estudantes",
-      "items": [
-        "Torna-te sócio",
-        "Torna-te colaborador"
-      ],
-      "links": [
-        "/about/become-a-member",
-        "/about/become-a-collaborator"
-      ]
+      "items": ["Torna-te sócio", "Torna-te colaborador"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Links Úteis",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Portal do Aluno"
-      ],
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Portal do Aluno"],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
