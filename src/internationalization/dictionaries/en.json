@@ -526,5 +526,11 @@
         ]
       }
     ]
+  },
+  "callsub": {
+    "title": "Sounds good?",
+    "desc": "You can sign up as a CeSIUM member online in a minute. Click the button below to get started or talk to us if you have any questions.",
+    "button": "Start Registration",
+    "footer": "Talk to us"
   }
 }

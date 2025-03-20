@@ -530,5 +530,11 @@
         ]
       }
     ]
+  },
+  "callsub": {
+    "title": "Soa-te bem?",
+    "desc": "Podes-te inscrever como sócio do CeSIUM online num minuto. Carrega no botão em baixo para começar ou fala connosco se tiveres dúvidas.",
+    "button": "Começar inscrição",
+    "footer": "Fala connosco"
   }
 }

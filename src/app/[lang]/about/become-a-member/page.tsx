@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import InfoCard from "@/components/info-card";
+import CallSubscribe from "@/components/call-subscribe";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 
@@ -143,6 +144,15 @@ export default function BecomeAMember() {
             </div>
           </div>
         </InfoCard>
+      </div>
+      <div className="flex flex-col items-center justify-center w-full xl:col-span-3 mt-4">
+        <CallSubscribe
+          title={dict.callsub.title} 
+          description={dict.callsub.desc} 
+          buttonText={dict.callsub.button} 
+          buttonColor={"primary"} 
+          footerText={dict.callsub.footer}
+          />
       </div>
     </main>
   );
