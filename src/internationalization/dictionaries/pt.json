@@ -513,5 +513,17 @@
         ]
       }
     ]
+  },
+  "callsub": {
+    "members": {
+      "title": "Soa-te bem?",
+      "desc": "Podes-te inscrever como sócio do CeSIUM online num minuto. Carrega no botão em baixo para começar ou fala connosco se tiveres dúvidas."
+    },
+    "collaborators":{
+      "title": "Estamos à tua espera",
+      "desc": "Ser colaborador do CeSIUM é mais do que trabalhar - é aprender coisas novas, conhecer pessoas incríveis e fazer parte de experiências. Se te parece bem, candidata-te já."
+    },
+    "button": "Começar inscrição",
+    "footer": "Fala connosco"
   }
 }
