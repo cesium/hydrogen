@@ -1,13 +1,14 @@
-import {
-  getDictionary,
-  type Locale,
-} from "@/internationalization/dictionaries";
-import { fullLocale } from "@/lib/locale";
-import { type Metadata } from "next";
 import StoreCard from "@/components/store-card";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
 import { horizontalPadding } from "@/lib/styling";
+import ScrollableContent from "@/components/scrollable-content";
+import {
+  getDictionary,
+  type Locale,
+} from "@/internationalization/dictionaries";
+import { type Metadata } from "next";
+import { fullLocale } from "@/lib/locale";
 
 export function generateMetadata({
   params: { lang },
@@ -21,7 +22,7 @@ export function generateMetadata({
     description: dict.seo.description,
     keywords: [
       "student center",
-      "engeneering",
+      "engineering",
       "informatics",
       "uminho",
       "university",
@@ -30,32 +31,34 @@ export function generateMetadata({
       "CeSIUM UMinho",
     ],
     openGraph: {
-      url: `${process.env.URL}`,
+      url: "https://cesium.di.uminho.pt",
       type: "website",
       title: dict.seo.title,
       description: dict.seo.description,
       images: [
         {
-          url: `${process.env.URL}/og.png`,
+          url: "https://cesium.di.uminho.pt/og.png",
           width: 1200,
           height: 630,
-          alt: process.env.URL,
+          alt: "cesium.di.uminho.pt",
         },
       ],
     },
     alternates: {
-      canonical: `${process.env.URL}`,
+      canonical: "https://cesium.di.uminho.pt",
       languages: {
-        en: `${process.env.URL}/en`,
-        pt: `${process.env.URL}/pt`,
+        en: "https://cesium.di.uminho.pt/en_US",
+        pt: "https://cesium.di.uminho.pt/pt_PT",
       },
     },
   };
 }
 
+
 export default function Home() {
   return (
     <main className={`${horizontalPadding}`}>
+      <ScrollableContent />
       <section className="grid columns-1 gap-8 sm:columns-2">
         <div className="sm:col-span-2">
           <StoreCard />
