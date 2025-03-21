@@ -27,7 +27,7 @@ export default function Home() {
             backgroundSize: "100% 210%",
             backgroundPosition: "0px 0px",
             backgroundImage:
-              "conic-gradient(from 160deg at 50% 50%, #F59856 0%, #635C6E 12%, #F556F0 21%, #ED7950 31%, #F46156 79%, #F556F0 97%, #F556F0 100%)",
+              "conic-gradient(from 160deg at 50% 50%, #F59856 0%, #635C6E 12%, #F556F0 21%, #ED7950 31%, #f26854 79%, #F556F0 97%, #F556F0 100%)",
           }}
         />
         {/* Cube Pattern - Desktop */}
