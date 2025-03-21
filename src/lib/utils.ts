@@ -110,9 +110,9 @@ const getDepartmentMembersInfo = (
       return {
         ...member,
         imageUrl:
-          imageUrls[0]?.[departmentIndex]?.[index] ?? "/images/none.png",
+          imageUrls[0]?.[departmentIndex]?.[index] ?? "/images/team/none.png",
       };
-    else return { ...member, imageUrl: "/images/none.png" };
+    else return { ...member, imageUrl: "/images/team/none.png" };
   });
 };
 

@@ -121,19 +121,19 @@
         "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {
-            "src": "/images/uMinho1.jpg",
+            "src": "/images/about/uMinho1.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/workshop.jpg",
+            "src": "/images/about/workshop.jpg",
             "alt": "Class full of Computer Engineering students during a workshop."
           },
           {
-            "src": "/images/uMinho2.jpg",
+            "src": "/images/about/uMinho2.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/sei24-25.jpg",
+            "src": "/images/about/sei24-25.jpg",
             "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
           }
         ]
