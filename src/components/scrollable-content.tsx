@@ -118,8 +118,6 @@ export default function ScrollableContent() {
   ));
 
   return (
-    <div>
-      <ScrollableHighlight items={content} />
-    </div>
+    <ScrollableHighlight items={content} />
   );
 }
