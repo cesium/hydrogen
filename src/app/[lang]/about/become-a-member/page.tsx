@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import InfoCard from "@/components/info-card";
+import CallSubscribe from "@/components/call-subscribe";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 
@@ -165,6 +166,16 @@ export default function BecomeAMember() {
             </div>
           </div>
         </InfoCard>
+      </div>
+      <div className="flex flex-col items-center justify-center w-full xl:col-span-3 mt-4">
+        <CallSubscribe
+          title={dict.callsub.members.title} 
+          description={dict.callsub.members.desc} 
+          buttonText={dict.callsub.button} 
+          buttonURL="https://cesium.link/f/socios"
+          buttonColor={"primary"} 
+          footerText={dict.callsub.footer}
+          />
       </div>
     </main>
   );

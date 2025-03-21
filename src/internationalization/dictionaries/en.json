@@ -509,5 +509,17 @@
         ]
       }
     ]
+  },
+  "callsub": {
+    "members": {
+      "title": "Sounds good?",
+      "desc": "You can sign up as a CeSIUM member online in a minute. Click the button below to get started or talk to us if you have any questions."
+    },
+    "collaborators": {
+      "title": "We're waiting for you",
+      "desc": "Being a CeSIUM collaborator is more than just working – it's about learning new things, meeting incredible people, and being part of unique experiences. If that sounds good to you, apply now."
+    },
+    "button": "Start Registration",
+    "footer": "Talk to us"
   }
 }
