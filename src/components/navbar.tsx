@@ -53,7 +53,6 @@ const Navbar = () => {
     : isMemberOrCollaborator
       ? "text-white/50"
       : "text-gray";
-
   return (
     <div
       className={`${navbarBackgroundColor} ${horizontalPadding} ${isMemberOrCollaborator ? "relative after:hidden" : "sticky"} top-0 z-40 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
@@ -83,7 +82,7 @@ const Navbar = () => {
             />
           </Link>
           <div
-            className={`hidden items-center space-x-6 font-title text-lg font-medium ${linkColor} md:flex`}
+            className={`hidden items-center space-x-6 font-title text-base font-medium ${linkColor} md:flex`}
           >
             {routes.map((route) => {
               return (
