@@ -6,18 +6,23 @@ import { CardType } from "@/lib/types";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
+import {
+  relativeScrollTo,
+  useScrollState,
+} from "@/contexts/scrollstate-provider";
 
 export default function Home() {
   const dict = useDictionary();
+  const { isScrolledTop } = useScrollState();
 
   return (
     <main>
       <section
-        className={`flex h-[816px] flex-col justify-center ${horizontalPadding}`}
+        className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
       >
         {/* Background Gradient */}
         <div
-          className="absolute left-0 right-0 top-0 -z-10 h-[910px]"
+          className="absolute left-0 right-0 top-0 -z-10 h-dvh"
           style={{
             backgroundSize: "100% 210%",
             backgroundPosition: "0px 0px",
@@ -42,16 +47,27 @@ export default function Home() {
           className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
         />
         {/* Hero Title/Description */}
-        <div className="mb-40 flex max-w-[680px] flex-col items-start gap-7 text-white xl:flex-row xl:items-center xl:gap-11">
-          <h1 className="font-title text-5xl font-medium sm:text-6xl">
-            {dict.landing.sections.hero.title}
-          </h1>
-          <h2 className="max-w-[80%]">
-            {dict.landing.sections.hero.description}
-          </h2>
+        <div className="flex h-full flex-col justify-center">
+          <div className="mb-36 flex max-w-[680px] flex-col items-start gap-7 text-white xl:flex-row xl:items-center xl:gap-11">
+            <h1 className="font-title text-5xl font-medium sm:text-6xl">
+              {dict.landing.sections.hero.title}
+            </h1>
+            <h2 className="max-w-[80%]">
+              {dict.landing.sections.hero.description}
+            </h2>
+          </div>
         </div>
+        <button
+          onClick={() => relativeScrollTo(50)}
+          className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
+        >
+          <p>{dict.button.swipe}</p>
+          <span className="material-symbols-outlined">arrow_downward</span>
+        </button>
       </section>
-      <div className={`z-0 bg-white ${horizontalPadding} ${verticalPadding}`}>
+      <div
+        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
+      >
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />

@@ -5,10 +5,10 @@ import {
   getDictionary,
   type Locale,
 } from "@/internationalization/dictionaries";
-import { DictionaryProvider } from "@/contexts/dictionary-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { fullLocale } from "@/lib/locale";
+import Body from "@/components/body";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -117,15 +117,11 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="CeSIUM" />
       </head>
-      <body
-        className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-foundation font-sans text-black antialiased`}
-      >
-        <DictionaryProvider lang={fullLocale(lang)}>
-          <Navbar />
-          <div className="h-full">{children}</div>
-          <Footer />
-        </DictionaryProvider>
-      </body>
+      <Body lang={lang} fonts={[inter, orbitron]}>
+        <Navbar />
+        <div className="h-full">{children}</div>
+        <Footer />
+      </Body>
     </html>
   );
 }
