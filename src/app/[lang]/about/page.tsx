@@ -1,5 +1,8 @@
 "use client";
 
+import AboutSection from "@/components/about-section";
+import Carousel from "@/components/carousel";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import DepartmentsList from "@/components/departments-list";
 import { gradient, shortName, departmentNames} from "@/components/departments-list";
 import DepartmentCard from "@/components/department-card";
@@ -7,7 +10,6 @@ import AboutSection from "@/components/about-section";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
 import ProjectCard from "@/components/project-card";
-import { useDictionary } from "@/contexts/dictionary-provider";
 import Avatar from "@/components/avatar";
 import type { MemberInfo, TeamData } from "@/lib/types";
 import { useEffect, useState } from "react";
@@ -18,7 +20,6 @@ import {
 } from "@/lib/utils";
 import { fetchTeamData } from "@/lib/utils";
 import { horizontalPadding } from "@/lib/styling";
-import Carousel from "@/components/carousel";
 import Image from "next/image";
 
 interface MemberDep extends MemberInfo {
@@ -34,6 +35,38 @@ export default function About() {
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
 
   const yearRange = "2024-2025";
+
+  const heroItems = [
+    <div
+      key="title"
+      className="pointer-events-none mb-32 flex items-center lg:mb-0 lg:flex-1"
+    >
+      <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] lg:pr-10 xl:w-[565px] xl:text-[48px]">
+        {dict.about.sections.hero.title[0]}
+        <br /> {dictAbout.sections.hero.title[1]}
+        <span className="font-title text-[36px] text-black sm:text-[40px] xl:text-[48px] ">
+          {" "}
+          {dict.about.sections.hero.title[2]}
+        </span>{" "}
+        {dict.about.sections.hero.title[3]}
+      </p>
+    </div>,
+
+    <div
+      key="subtitle"
+      className="pointer-events-none mb-32 flex flex-col justify-center sm:h-[300px] lg:mb-0"
+    >
+      <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
+        <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
+          {dict.about.sections.hero.description}
+        </p>
+      </div>
+      <div className="mt-3 text-right font-sans text-[15px] font-normal text-black lg:mt-5 xl:text-[16px]">
+        <p>Pedro Rangel Henriques</p>
+        <p>{dict.about.sections.hero.subtitle}</p>
+      </div>
+    </div>,
+  ];
 
   useEffect(() => {
     const aux = async () => {
@@ -82,9 +115,38 @@ export default function About() {
 
   return (
     <main>
+      <AboutSection>
+        <section
+          className={`flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44`}
+        >
+          <div className="hidden h-fit items-center justify-center lg:flex">
+            {heroItems.map((item, _) => item)}
+          </div>
+
+          <div className="flex flex-col justify-center h-full lg:hidden">
+            <div className="block">
+              <Carousel
+                autoplay={25000}
+                pagination
+                items={heroItems.map((item, index) => (
+                  <div key={index} className="flex items-center justify-center">
+                    {item}
+                  </div>
+                ))}
+              />
+            </div>
+          </div>
+
+          <div className="flex h-[56px] flex-col items-center justify-center gap-1 mb-8">
+            <p>Desliza para ver mais</p>
+            <span className="material-symbols-outlined">arrow_downward</span>
+          </div>
+        </section>
+      </AboutSection>
+
       {/* "What is CeSIUM?" */}
       <section
-        className={`flex flex-col items-center gap-4 border-b border-black/10 bg-black/5 py-12 text-center sm:gap-6`}
+        className={`flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6`}
       >
         <p className="font-title text-2xl font-medium sm:text-3xl">
           {dictAbout.sections.cesium.title}
