@@ -193,6 +193,10 @@
         "title": "Discounts",
         "description": "You can get discounts on our store and with our partners.",
         "link": "Go to the store"
+      },
+      "advantages": {
+        "title": "Lifetime benefits",
+        "description": "The benefits of having a membership card never expire, as the registration fee is lifelong - you pay once, and you're a member forever. These are the benefits that membership has to offer:"
       }
     },
     "explore": {
