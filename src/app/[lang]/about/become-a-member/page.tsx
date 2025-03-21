@@ -144,7 +144,7 @@ export default function BecomeAMember() {
         <InfoCard>
           <div className="flex flex-col gap-4">
             <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
-              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1">
+              <div className="pointer-events-none relative order-2 lg:order-1 -mb-4 -ml-4 h-full w-full max-w-[270px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:-ml-4">
                 <Image
                   src="/images/notebook.png"
                   alt="discounts"
@@ -181,7 +181,7 @@ export default function BecomeAMember() {
                 </div>
               </div>
 
-              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0">
+              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[270px] justify-self-end pb-32 sm:-mr-36 sm:mb-0 sm:mt-24 sm:pb-0 lg:-mr-4">
                 <Image
                   src="/images/laptop.png"
                   alt="discounts"
