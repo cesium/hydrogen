@@ -9,7 +9,7 @@ export default function BecomeAMember() {
 
   return (
     <main
-      className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
+      className={`grid grid-cols-1 gap-7 overflow-hidden xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
     <div className="relative pl-8 md:pl-8 lg:pl-24 xl:pl-24 2xl:pl-24 pt-14 pb-40 lg:pb-20 bg-primary text-white relative overflow-hidden">
       <h1 className="text-4xl lg:text-5xl font-[475] text-gradient font-title opacity-50 mt-2">
@@ -39,6 +39,28 @@ export default function BecomeAMember() {
       </div>
     </div>   
     
+      <div className="xl:col-span-3">
+        <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">
+          <div className="flex min-w-[200px] max-w-[600px] place-items-center">
+            <div className="sm:max-w-[540px]">
+              <h2 className="mb-[15px] font-title text-2xl font-semibold">
+                {dict.about.become_a_member.advantages.title}
+              </h2>
+              <p className="text-base">
+                {dict.about.become_a_member.advantages.description}
+              </p>
+            </div>
+          </div>
+          <Image
+            src="/images/wallet.png"
+            alt="wallet"
+            width={364}
+            height={338}
+            className="h-[200px] object-contain md:h-full"
+          />
+        </div>
+      </div>
+
       <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
