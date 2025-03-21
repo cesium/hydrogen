@@ -46,7 +46,6 @@ export default function Body({
   return (
     <body
       className={`${fonts.map((f) => f.variable).join(" ")} overflow-x-hidden overflow-y-scroll bg-foundation font-sans text-black antialiased`}
-      onScroll={() => handleScroll()}
     >
       <ScrollStateProvider
         isScrolledBottom={isScrolledBottom}
