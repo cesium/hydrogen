@@ -28,4 +28,4 @@ jobs:
         run: bun format
 
       - name: Lint the code
-        run: bun run lint
+        run: bun lint
