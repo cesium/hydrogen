@@ -85,7 +85,7 @@ export function EventTooltip({
     >
       <div className="relative">
         <div
-          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 backdrop-blur-lg p-4 shadow-lg`}
+          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 p-4 shadow-lg backdrop-blur-lg`}
         >
           <div className="space-y-3">
             {events.map((event, index) => (

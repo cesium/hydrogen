@@ -13,7 +13,7 @@ interface ShortcutPanesProps {
 }
 
 const ShortcutPanes = ({ shortcuts }: ShortcutPanesProps) => (
-  <div className="flex flex-col gap-8 rounded-2xl border border-dark/10 py-12 xl:flex-row xl:px-11 xl:py-0 ">
+  <div className="flex flex-col gap-8 rounded-2xl border border-dark/10 bg-white py-12 xl:flex-row xl:px-11 xl:py-0">
     {shortcuts.map((shortcut, index) => (
       <Link
         key={index}
