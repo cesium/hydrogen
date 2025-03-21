@@ -145,7 +145,7 @@ export default function BecomeAMember() {
         <InfoCard>
           <div className="flex flex-col gap-4">
             <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
-              <div className="pointer-events-none relative order-2 lg:order-1 -mb-4 -ml-4 h-full w-full max-w-[270px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:-ml-4">
+              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[270px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:order-1 lg:-ml-4">
                 <Image
                   src="/images/about/become-a-member/notebook.png"
                   alt="discounts"
@@ -195,15 +195,15 @@ export default function BecomeAMember() {
           </div>
         </InfoCard>
       </div>
-      <div className="flex flex-col items-center justify-center w-full xl:col-span-3 mt-4">
+      <div className="mt-4 flex w-full flex-col items-center justify-center xl:col-span-3">
         <CallSubscribe
-          title={dict.callsub.members.title} 
-          description={dict.callsub.members.desc} 
-          buttonText={dict.callsub.button} 
+          title={dict.callsub.members.title}
+          description={dict.callsub.members.desc}
+          buttonText={dict.callsub.button}
           buttonURL="https://cesium.link/f/socios"
-          buttonColor={"primary"} 
+          buttonColor={"primary"}
           footerText={dict.callsub.footer}
-          />
+        />
       </div>
     </main>
   );

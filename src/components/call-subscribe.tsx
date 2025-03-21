@@ -18,18 +18,20 @@ export const CallSubscribe = ({
   footerText,
 }: CallSubscribeProps) => {
   return (
-    <div className="flex flex-col items-center justify-center text-center space-y-6 w-full">
+    <div className="flex w-full flex-col items-center justify-center space-y-6 text-center">
       <h2 className="font-title text-2xl font-semibold">{title}</h2>
       <p className="max-w-[750px]">{description}</p>
       <a href={buttonURL}>
-      <button
-        className={`px-12 py-3 rounded-xl bg-${buttonColor} text-white font-semibold transition-all duration-300 hover:opacity-80`}
-      >
-        {buttonText}
-      </button>
+        <button
+          className={`rounded-xl px-12 py-3 bg-${buttonColor} font-semibold text-white transition-all duration-300 hover:opacity-80`}
+        >
+          {buttonText}
+        </button>
       </a>
       <a href="mailto:cesium@di.uminho.pt">
-      <p className={`text-base text-${buttonColor} font-medium`}>{footerText}</p>
+        <p className={`text-base text-${buttonColor} font-medium`}>
+          {footerText}
+        </p>
       </a>
     </div>
   );
