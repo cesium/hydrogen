@@ -15,6 +15,7 @@ export default function ScrollableHighlight({ items }: Props) {
       pagination
       items={items}
       paginationPos={"top"}
+      loop
     />
   );
 }

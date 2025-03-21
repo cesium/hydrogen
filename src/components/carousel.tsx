@@ -34,14 +34,6 @@ export default function Carousel({
 }: CarouselProps) {
   const swiperRef = useRef<SwiperType | null>(null);
 
-  const [isFirstSlide, setIsFirstSlide] = useState(true);
-
-  const handleSlideChange = (swiper: SwiperType) => {
-    const currentIndex = swiper.realIndex;
-
-    setIsFirstSlide(currentIndex === 0);
-  };
-
   return (
     <div className="relative">
       {pagination && paginationPos === "top" && (
@@ -83,7 +75,6 @@ export default function Carousel({
         }}
         modules={[Autoplay, Pagination, Navigation]}
         className="custom-swiper"
-        onSlideChange={handleSlideChange}
       >
         {items.map((item, index) => (
           <SwiperSlide key={index} className={`flex justify-center`}>
@@ -104,7 +95,7 @@ export default function Carousel({
             </span>
           </button>
           <button
-            className={`absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2 ${!isFirstSlide ? "hidden" : ""} pointer-events-auto`}
+            className={`pointer-events-auto absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2`}
             onClick={() => swiperRef.current?.slideNext()}
             aria-label="Next slide"
           >

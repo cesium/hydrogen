@@ -97,7 +97,7 @@
     },
     "scrollable_highlight": {
       "slide1": {
-        "title": "O que **CeSIUM?**",
+        "title": "O que **fazemos**",
         "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional."
       },
       "slide2": {
@@ -109,7 +109,7 @@
         "subtitle": "Junta-te a nós para teres acesso a hackathons exclusivos, sessões de programação, palestras de carreira e ligações à indústria. Quer estejas à procura de melhorar as tuas competências ou encontrar a tua próxima grande oportunidade."
       },
       "slide4": {
-        "title": "Envolve-**te**",
+        "title": "**Envolve**-te",
         "subtitle": "Queres fazer parte de uma comunidade apaixonada e motivada? O CeSIUM acolhe todos os estudantes de Engenharia Informática que queiram aprender, crescer e contribuir."
       }
     }
