@@ -188,7 +188,7 @@ export default function Team() {
                                                         imageUrls[index]?.[
                                                           departmentIndex
                                                         ]?.[memberIndex] ??
-                                                        "/images/none.png"
+                                                        "/images/team/none.png"
                                                       }
                                                     />
                                                   </li>
@@ -212,7 +212,7 @@ export default function Team() {
                                     role={member.role}
                                     src={
                                       imageUrls[index]?.[0]?.[memberIndex] ??
-                                      "/images/none.png"
+                                      "/images/team/none.png"
                                     }
                                   />
                                 </li>

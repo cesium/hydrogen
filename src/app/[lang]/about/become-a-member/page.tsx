@@ -56,7 +56,7 @@ export default function BecomeAMember() {
               </div>
               <div className="pointer-events-none relative z-10 h-full w-full overflow-hidden">
                 <Image
-                  src="/images/ticket.png"
+                  src="/images/about/become-a-member/ticket.png"
                   alt="ticket"
                   width={980}
                   height={365}
@@ -72,7 +72,7 @@ export default function BecomeAMember() {
         <div className="flex h-full flex-row items-center">
           <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
             <Image
-              src="/images/totebag.png"
+              src="/images/about/become-a-member/totebag.png"
               alt="totebag"
               layout="fill"
               className="object-cover object-[right_bottom]"
@@ -118,7 +118,7 @@ export default function BecomeAMember() {
             <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
               <div className="pointer-events-none relative order-2 lg:order-1 -mb-4 -ml-4 h-full w-full max-w-[270px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:-ml-4">
                 <Image
-                  src="/images/notebook.png"
+                  src="/images/about/become-a-member/notebook.png"
                   alt="discounts"
                   layout="fill"
                   objectFit="cover"
@@ -155,7 +155,7 @@ export default function BecomeAMember() {
 
               <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[270px] justify-self-end pb-32 sm:-mr-36 sm:mb-0 sm:mt-24 sm:pb-0 lg:-mr-4">
                 <Image
-                  src="/images/laptop.png"
+                  src="/images/about/become-a-member/laptop.png"
                   alt="discounts"
                   layout="fill"
                   objectFit="cover"
