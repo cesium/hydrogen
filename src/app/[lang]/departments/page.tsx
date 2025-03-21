@@ -11,7 +11,7 @@ export default function Departments() {
 
   return (
     <main
-      className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding} ${verticalPadding}`}
+      className={`flex flex-col gap-8 sm:gap-12 ${horizontalPadding} ${verticalPadding} selection:bg-primary selection:text-foundation`}
     >
       <div className="flex flex-col gap-4 px-2 md:px-5">
         <h1 className="font-title text-3xl font-medium">

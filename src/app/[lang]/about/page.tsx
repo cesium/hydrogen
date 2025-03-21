@@ -112,7 +112,7 @@ export default function About() {
   }, [yearRange]);
 
   return (
-    <main>
+    <main className="selection:bg-primary selection:text-foundation">
       <AboutSection>
         <section
           className={`flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44`}
@@ -135,7 +135,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex h-[56px] flex-col items-center justify-center gap-1 mb-8">
+          <div className="flex h-[56px] flex-col items-center justify-center gap-1 mb-8 select-none">
             <p>Desliza para ver mais</p>
             <span className="material-symbols-outlined">arrow_downward</span>
           </div>
@@ -152,7 +152,7 @@ export default function About() {
         <p className={horizontalPadding}>
           {dictAbout.sections.cesium.subtitle}
         </p>
-        <div className="w-full overflow-hidden pt-4 sm:pt-6">
+        <div className="w-full overflow-hidden pt-4 sm:pt-6 select-none">
           <Carousel
             autoplay={2000}
             pagination
@@ -264,7 +264,7 @@ export default function About() {
                 {item.links.map((link, index) => {
                   const linkColor = "color" in link ? link.color : "primary";
                   return (
-                    <div key={index}>
+                    <div key={index} className="select-none">
                       <AppLink
                         title={link.title}
                         href={link.href}

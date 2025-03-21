@@ -11,7 +11,7 @@ export default function Partners() {
   const partners = dict.partners;
 
   return (
-    <main className="flex flex-col gap-8 sm:gap-12">
+    <main className="flex flex-col gap-8 sm:gap-12 selection:bg-primary selection:text-foundation">
       <div
         className={`flex max-w-7xl flex-col gap-3.5 ${horizontalPadding} py-40`}
       >

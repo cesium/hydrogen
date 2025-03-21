@@ -41,10 +41,10 @@ const Navbar = () => {
   const isMemberOrCollaborator = isMember || isCollaborator;
 
   const navbarBackgroundColor = isMember
-    ? "bg-primary"
+    ? "bg-primary selection:bg-white selection:text-primary"
     : isCollaborator
-      ? "bg-blue"
-      : "bg-white md:bg-transparent";
+      ? "bg-blue selection:bg-white selection:text-blue"
+      : "bg-white md:bg-transparent selection:bg-primary selection:text-white";
   const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
   const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
   const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";

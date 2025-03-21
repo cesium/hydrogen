@@ -46,11 +46,11 @@ export default function EventsPage() {
 
   return (
     <main
-      className={`flex flex-col gap-10 lg:gap-14 ${horizontalPadding} ${verticalPadding}`}
+      className={`flex flex-col gap-10 lg:gap-14 ${horizontalPadding} ${verticalPadding} selection:bg-primary selection:text-foundation`}
     >
       <div className="flex items-center justify-between">
         <h1 className="font-title text-3xl font-medium">{dict.events.title}</h1>
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex select-none">
           <AppLink
             href="https://calendario.cesium.di.uminho.pt/"
             arrow="outward"

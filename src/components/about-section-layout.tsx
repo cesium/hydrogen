@@ -56,7 +56,7 @@ const AboutSectionLayout = ({
       >
         {/* Title */}
         <div
-          className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-10" : "mb-4"} sm:mr-6`}
+          className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-10" : "mb-4"} sm:mr-6 select-none`}
         >
           <div
             className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:-translate-x-2 sm:items-start sm:justify-center" : ""}`}
@@ -85,7 +85,7 @@ const AboutSectionLayout = ({
             <span className="text-start">{subtitle}</span>
             {linkName && href && (
               <div
-                className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+                className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"} select-none`}
               >
                 <CustomLink
                   title={dict.button[linkName]}

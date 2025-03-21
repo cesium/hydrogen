@@ -73,7 +73,7 @@ const DepartmentCard = ({
                 ))}
               </div>
               <Link
-                className="flex items-center space-x-1 text-sm font-medium"
+                className="flex items-center space-x-1 text-sm font-medium select-none"
                 href={`/${lang}/team`}
               >
                 <span className="hover:underline">{dict.button.see_team}</span>

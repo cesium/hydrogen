@@ -9,7 +9,7 @@ export default function BecomeAMember() {
 
   return (
     <main
-      className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
+      className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding} selection:bg-primary selection:text-foundation`}
     >
       <div className="xl:col-span-3">
         <InfoCard>
@@ -32,7 +32,7 @@ export default function BecomeAMember() {
               <div className="pointer-events-none absolute left-0 top-0 z-0 h-full w-full">
                 <div className="absolute bottom-[-50px] left-0 right-0 top-[-10px] bg-gradient-to-r from-[#9DD0FF] via-[#F5CFFF] to-[#FF9BC5] opacity-80 blur-[50px]"></div>
               </div>
-              <div className="pointer-events-none relative z-10 h-full w-full overflow-hidden">
+              <div className="pointer-events-none relative z-10 h-full w-full overflow-hidden select-none">
                 <Image
                   src="/images/ticket.png"
                   alt="ticket"
@@ -48,7 +48,7 @@ export default function BecomeAMember() {
 
       <InfoCard>
         <div className="flex h-full flex-row items-center">
-          <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
+          <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px] select-none">
             <Image
               src="/images/totebag.png"
               alt="totebag"
@@ -94,7 +94,7 @@ export default function BecomeAMember() {
         <InfoCard>
           <div className="flex flex-col gap-4">
             <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
-              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1">
+              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1 select-none">
                 <Image
                   src="/images/notebook.png"
                   alt="discounts"
@@ -118,7 +118,7 @@ export default function BecomeAMember() {
                     {dict.about.become_a_member.discounts.description}
                   </p>
                   <a
-                    className="flex items-center gap-1 text-[#5C657F]"
+                    className="flex items-center gap-1 text-[#5C657F] select-none"
                     href="https://store.cesium.pt"
                   >
                     <p className="text-center">
@@ -131,7 +131,7 @@ export default function BecomeAMember() {
                 </div>
               </div>
 
-              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0">
+              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0 select-none">
                 <Image
                   src="/images/laptop.png"
                   alt="discounts"

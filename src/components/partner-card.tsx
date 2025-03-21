@@ -46,7 +46,7 @@ const PartnerCard = ({ title, url, logo, color, perks }: PartnerCardProps) => {
     >
       <div className="absolute left-0 top-0 size-full rounded-[20px] border border-black/10" />
       <div className="z-10 flex flex-col gap-4">
-        <figure className="size-24 rounded-lg bg-white">
+        <figure className="size-24 rounded-lg bg-white select-none">
           <Image
             width={96}
             height={96}
@@ -61,7 +61,9 @@ const PartnerCard = ({ title, url, logo, color, perks }: PartnerCardProps) => {
             <PerkItem key={index} {...perk} />
           ))}
         </ul>
-        <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+        <div className="select-none">
+          <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+        </div>
       </div>
     </div>
   );

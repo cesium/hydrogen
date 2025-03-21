@@ -69,7 +69,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
         background: `radial-gradient(circle at center 130%, ${info().gradient_color ?? "rgba(50,51,51,0.25)"} 10%, rgba(50,51,51,0) 57%)`,
       }}
     >
-      <div className="relative flex h-[50px] w-auto">
+      <div className="relative flex h-[50px] w-auto select-none">
         <Image
           src={info().src}
           alt={info().alt}
@@ -83,7 +83,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
       <p className="hidden pt-4 md:block md:min-w-[460px]">
         {project.desktop_description}
       </p>
-      <div className="mt-4 flex w-16 justify-between">
+      <div className="mt-4 flex w-16 justify-between select-none">
         <AppLink
           title={dict.about.projects.open}
           href={info().ref}

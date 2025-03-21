@@ -60,7 +60,7 @@ export default function Team() {
 
   return (
     <main
-      className={`space-y-8 sm:space-y-12 ${horizontalPadding} ${verticalPadding}`}
+      className={`space-y-8 sm:space-y-12 ${horizontalPadding} ${verticalPadding} selection:bg-primary selection:text-foundation`}
     >
       <div className="flex flex-col gap-4 px-2 md:px-5">
         <div className="flex items-center justify-between gap-5 sm:justify-normal">
