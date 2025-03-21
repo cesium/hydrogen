@@ -34,11 +34,9 @@ export function EventTooltip({
 
       let top = rect.top - tooltipRect.height - 5;
       let left = rect.left + rect.width / 2;
-      let arrowBelow = true;
 
       if (top < 10) {
         top = rect.bottom + 10;
-        arrowBelow = false;
       }
 
       const rightEdge = left + tooltipRect.width / 2;
@@ -85,7 +83,7 @@ export function EventTooltip({
     >
       <div className="relative">
         <div
-          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 backdrop-blur-lg p-4 shadow-lg`}
+          className={`relative max-w-[300px] rounded-lg border border-black/10 bg-white/50 p-4 shadow-lg backdrop-blur-lg`}
         >
           <div className="space-y-3">
             {events.map((event, index) => (
