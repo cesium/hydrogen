@@ -5,7 +5,7 @@ import DepartmentCard from "./department-card";
 import type { TeamData } from "@/lib/types";
 import { fetchTeamData } from "@/lib/utils";
 
-const departmentNames = [
+export const departmentNames = [
   "Centro de Apoio ao Open Source",
   "Departamento de Marketing e Conteúdo",
   "Departamento de Relações Externas e Merch",
@@ -13,7 +13,7 @@ const departmentNames = [
   "Departamento Recreativo",
 ];
 
-const shortName = (name: string) => {
+export const shortName = (name: string) => {
   switch (name) {
     case "Centro de Apoio ao Open Source":
       return "caos";
@@ -30,7 +30,7 @@ const shortName = (name: string) => {
   }
 };
 
-const gradient = (type: string) => {
+export const gradient = (type: string) => {
   switch (type) {
     case "caos":
       return ["[#0085FF]/5", "[#00D1FF]/5"];

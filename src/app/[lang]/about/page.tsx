@@ -1,6 +1,8 @@
 "use client";
 
 import DepartmentsList from "@/components/departments-list";
+import { gradient, shortName, departmentNames} from "@/components/departments-list";
+import DepartmentCard from "@/components/department-card";
 import AboutSection from "@/components/about-section";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
@@ -27,7 +29,6 @@ export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;
   const images = dictAbout.sections.cesium.images;
-
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
@@ -170,8 +171,30 @@ export default function About() {
         <DepartmentsList
           hideTeam
           hideShortName
-          className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 2xl:grid-cols-3"
+          className="hidden grid-cols-1 gap-4 sm:gap-5 md:grid md:grid-cols-2 2xl:grid-cols-3"
         />
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel
+            autoplay={2000}
+            pagination
+            overflow
+            loop
+            items={departmentNames.map((departmentName) => (
+              <DepartmentCard
+                key={departmentName}
+                name={departmentName}
+                shortName={shortName(departmentName)}
+                gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
+                gradientTo={gradient(shortName(departmentName))[1] ?? ""}
+                hideTeam
+                hideShortName
+                teamData={teamData}
+                yearRange={yearRange}
+              ></DepartmentCard>
+            ))}
+          />
+        </div>
       </AboutSectionLayout>
       {/* Projects */}
       <AboutSectionLayout
