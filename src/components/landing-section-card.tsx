@@ -43,7 +43,7 @@ const LandingSectionCard = ({
         <div className="relative w-full">
           {overflows && (
             <div className="block">
-              {isScrolledRight && (
+              {!isScrolledRight && (
                 <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white from-20% to-transparent" />
               )}
               {!isScrolledLeft && (
