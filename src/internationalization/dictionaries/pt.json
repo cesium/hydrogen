@@ -53,9 +53,9 @@
           "href": "/departments"
         },
         {
-          "title": "Projetos",
-          "description": "Dentro do CeSIUM, temos alguns projetos especiais, sabe mais.",
-          "href": "/projects"
+          "title": "Eventos",
+          "description": "Mantém-te atualizado com todas as atividades que organizamos.",
+          "href": "/events"
         }
       ]
     }
