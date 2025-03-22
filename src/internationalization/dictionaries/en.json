@@ -47,7 +47,7 @@
   "caos": {
     "name": ["Center for", "Open Source Support"],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
-    "short_description" : "Handles all software development for CeSIUM, from event platforms to student tools.",
+    "short_description": "Handles all software development for CeSIUM, from event platforms to student tools.",
     "icon": "terminal"
   },
   "dmc": {

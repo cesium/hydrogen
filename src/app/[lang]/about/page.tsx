@@ -248,17 +248,17 @@ export default function About() {
             loop
             items={departmentNames.map((departmentName) => (
               <div className="flex h-[350px]">
-              <DepartmentCard
-                key={departmentName}
-                name={departmentName}
-                shortName={shortName(departmentName)}
-                gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
-                gradientTo={gradient(shortName(departmentName))[1] ?? ""}
-                hideTeam
-                hideShortName
-                teamData={teamData}
-                yearRange={yearRange}
-              ></DepartmentCard>
+                <DepartmentCard
+                  key={departmentName}
+                  name={departmentName}
+                  shortName={shortName(departmentName)}
+                  gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
+                  gradientTo={gradient(shortName(departmentName))[1] ?? ""}
+                  hideTeam
+                  hideShortName
+                  teamData={teamData}
+                  yearRange={yearRange}
+                ></DepartmentCard>
               </div>
             ))}
           />
