@@ -13,7 +13,7 @@ export default function ShortcutButtonsContainer() {
           src="/logo/calendarium.svg"
           width={200}
           height={200}
-          alt="Calendarium Logo Icon"
+          alt="Calendarium Logo"
         />
       </ShortcutButton>
 
@@ -41,14 +41,14 @@ export default function ShortcutButtonsContainer() {
         />
       </ShortcutButton>
 
-      <ShortcutButton href="https://discord.com/invite/wQEvhkfFPk">
+      <ShortcutButton href="https://pelomundo.cesium.di.uminho.pt/">
         <div className="flex h-full items-center justify-center gap-1.5 text-[11px] sm:gap-3 sm:text-base">
           <Image
             src="/logo/cesium-pelo-mundo.svg"
             width={50}
             height={50}
             className="h-[2.5em] w-fit"
-            alt="Discord Logo"
+            alt="CeSIUM pelo Mundo Logo"
           />
           <Markdown className="line-clamp-2 font-title">
             {"<p>CeSIUM</p>**pelo Mundo**"}
@@ -63,7 +63,7 @@ export default function ShortcutButtonsContainer() {
             width={200}
             height={200}
             className="h-[2.5em] w-fit"
-            alt="Cesium link Logo"
+            alt="CeSIUM Link Logo"
           />
         </ShortcutButton>
       </div>
