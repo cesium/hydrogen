@@ -34,11 +34,9 @@ export function EventTooltip({
 
       let top = rect.top - tooltipRect.height - 5;
       let left = rect.left + rect.width / 2;
-      let arrowBelow = true;
 
       if (top < 10) {
         top = rect.bottom + 10;
-        arrowBelow = false;
       }
 
       const rightEdge = left + tooltipRect.width / 2;
