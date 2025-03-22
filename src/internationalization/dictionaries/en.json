@@ -59,7 +59,7 @@
   "drem": {
     "name": ["Department of", "External Relations and Merch"],
     "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
-    "short_description": "Builds partnerships, manages external communications, and designs student merchandise.",
+    "short_description": "Builds partnerships, manages external communications, and designs merchandise.",
     "icon": "handshake"
   },
   "ped": {

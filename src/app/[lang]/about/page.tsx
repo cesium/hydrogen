@@ -247,7 +247,7 @@ export default function About() {
             overflow
             loop
             items={departmentNames.map((departmentName) => (
-              <div className="flex h-[300px]">
+              <div className="flex h-[350px]">
               <DepartmentCard
                 key={departmentName}
                 name={departmentName}
