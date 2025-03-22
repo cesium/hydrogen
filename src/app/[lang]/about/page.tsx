@@ -18,6 +18,10 @@ import {
 import { fetchTeamData } from "@/lib/utils";
 import { horizontalPadding } from "@/lib/styling";
 import Image from "next/image";
+import {
+  relativeScrollTo,
+  useScrollState,
+} from "@/contexts/scrollstate-provider";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -27,6 +31,8 @@ export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;
   const images = dictAbout.sections.cesium.images;
+
+  const { isScrolledTop } = useScrollState();
 
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
@@ -52,7 +58,7 @@ export default function About() {
 
     <div
       key="subtitle"
-      className="pointer-events-none mb-32 flex flex-col justify-center sm:h-[300px] lg:mb-0"
+      className="pointer-events-none mb-16 flex flex-col justify-center sm:h-[300px] lg:mb-0"
     >
       <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
         <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
@@ -115,9 +121,9 @@ export default function About() {
     <main>
       <AboutSection>
         <section
-          className={`flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44`}
+          className={`flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)] lg:gap-44`}
         >
-          <div className="hidden h-fit items-center justify-center lg:flex">
+          <div className="hidden h-full items-center justify-center lg:flex">
             {heroItems.map((item, _) => item)}
           </div>
 
@@ -125,7 +131,6 @@ export default function About() {
             <div className="block">
               <Carousel
                 autoplay={25000}
-                pagination
                 items={heroItems.map((item, index) => (
                   <div key={index} className="flex items-center justify-center">
                     {item}
@@ -134,11 +139,13 @@ export default function About() {
               />
             </div>
           </div>
-
-          <div className="mb-8 flex h-[56px] flex-col items-center justify-center gap-1">
-            <p>Desliza para ver mais</p>
+          <button
+            onClick={() => relativeScrollTo(50)}
+            className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
+          >
+            <p>{dict.button.swipe}</p>
             <span className="material-symbols-outlined">arrow_downward</span>
-          </div>
+          </button>
         </section>
       </AboutSection>
 
