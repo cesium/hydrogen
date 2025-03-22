@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import type { EventListProps, Event } from "../lib/types";
 import { EventCardCalendar } from "./event-card-calendar";
@@ -15,11 +14,8 @@ export function EventListCard({
 }: EventListProps) {
   const dict = useDictionary();
   const lang = useLang();
-  const [visibleFutureCount, setVisibleFutureCount] = useState(5);
-  const [visiblePastCount, setVisiblePastCount] = useState(5);
-
   const currentDate = new Date();
-
+  
   const filteredEvents = selectedDate
     ? events.filter((event) => {
         const eventStart = new Date(event.start);
@@ -30,72 +26,49 @@ export function EventListCard({
         );
       })
     : events;
-
+    
   const futureEventsmonth = filteredEvents
     .filter((event) => new Date(event.start) >= currentDate)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+    
   const pastEvents = filteredEvents
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
-  const visiblefutureEventsmonth = futureEventsmonth.slice(
-    0,
-    visibleFutureCount,
-  );
-  const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
-
   const renderEventList = (
     eventList: Event[],
-    totalEvents: Event[],
-    visibleCount: number,
-    setVisibleCount: (count: number) => void,
     title: string,
   ) => {
-    if (isLoading || totalEvents.length > 0) {
-      const canShowMore = totalEvents.length > visibleCount;
+    if (isLoading || eventList.length > 0) {
       return (
         <div className="">
-          <div className="my-4 flex w-full items-center">
+          <div className="my-4 flex flex-row w-full items-center">
             <div className="h-[4px] w-6 bg-gradient-to-r from-stroke to-transparent"></div>
             <h2 className="px-4 font-sans text-xl font-medium text-stroke">
               {title}
             </h2>
-            <div className="h-[4px] flex-1 bg-gradient-to-l from-stroke to-transparent"></div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-[240px]">
+            <div className="h-[4px] flex-1 bg-gradient-to-l from-stroke to-stroke/10"></div>
+                      </div>
+          <div className="flex overflow-x-auto space-x-6 pb-4">
             {isLoading ? (
               <>
-                <EventSkeleton />
-                <EventSkeleton />
+                <div className="min-w-[280px] flex-shrink-0"><EventSkeleton /></div>
+                <div className="min-w-[280px] flex-shrink-0"><EventSkeleton /></div>
               </>
             ) : (
               eventList.map((event, index) => (
-                <EventCardCalendar key={index} event={event} />
+                <div key={index} className="min-w-[280px] flex-shrink-0">
+                  <EventCardCalendar event={event} />
+                </div>
               ))
             )}
           </div>
-          {!isLoading && canShowMore && (
-            <button
-              onClick={() => setVisibleCount(visibleCount + 5)}
-              className="mt-6 w-full text-center text-primary hover:underline"
-            >
-              {dict.events.showMore}
-            </button>
-          )}
-          {!isLoading && !canShowMore && visibleCount > 5 && (
-            <button
-              onClick={() => setVisibleCount(5)}
-              className="mt-6 w-full text-center text-primary hover:underline"
-            >
-              {dict.events.showLess}
-            </button>
-          )}
         </div>
       );
     }
     return null;
   };
-
+  
   return (
     <div className="flex flex-col gap-6">
       {selectedDate && (
@@ -115,20 +88,16 @@ export function EventListCard({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
+      <div className="flex flex-row w-full items-center ">
       {renderEventList(
-        visiblefutureEventsmonth,
-        futureEventsmonth,
-        visibleFutureCount,
-        setVisibleFutureCount,
-        dict.events.futureEvents,
-      )}
+          futureEventsmonth,
+          dict.events.futureEvents,
+        )}
       {renderEventList(
-        visiblePastEvents,
-        pastEvents,
-        visiblePastCount,
-        setVisiblePastCount,
-        dict.events.pastEvents,
-      )}
+          pastEvents,
+          dict.events.pastEvents,
+        )}
+      </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>
       )}
