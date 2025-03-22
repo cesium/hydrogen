@@ -42,6 +42,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .clip-triangle {
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
 }
 
 ::-webkit-scrollbar {
@@ -123,16 +127,11 @@
   }
 }
 
-/* Estilo para o segundo texto */
 .carousel-text-wrapper.second-text .carousel-text {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   text-align: justify;
-  color: #6e6e6e; /* Cinza */
-}
-
-.clip-triangle {
-  clip-path: polygon(0 0, 0 100%, 100% 100%);
+  color: #6e6e6e;
 }
