@@ -47,7 +47,7 @@
   "caos": {
     "name": ["Center for", "Open Source Support"],
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
-    "short_description": "Handles all software development for CeSIUM, from event platforms to student tools.",
+    "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
     "icon": "terminal"
   },
   "dmc": {
@@ -65,13 +65,13 @@
   "ped": {
     "name": ["Educational", "Department"],
     "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
-    "short_description": "Organizes lectures, workshops, and study sessions to support student learning.",
+    "short_description": "Organizes lectures, workshops, and study sessions to support the students' learning.",
     "icon": "draw"
   },
   "rec": {
     "name": ["Recreational", "Department"],
     "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
-    "short_description": "Plans social and recreational events to enrich the student experience.",
+    "short_description": "Plans social and recreational events to enrich the students' experience.",
     "icon": "celebration"
   },
   "button": {
