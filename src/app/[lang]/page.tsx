@@ -35,7 +35,7 @@ export default function Home() {
           width={1087}
           height={1346.5}
           alt=""
-          src="vectors/hero.svg"
+          src="/vectors/hero.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
         />
         {/* Cube Pattern - Mobile */}
@@ -43,7 +43,7 @@ export default function Home() {
           width={638}
           height={729}
           alt=""
-          src="vectors/hero-mobile.svg"
+          src="/vectors/hero-mobile.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
         />
         {/* Hero Title/Description */}
