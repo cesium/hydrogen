@@ -212,7 +212,8 @@ export default function About() {
                   <Avatar
                     key={member.name}
                     src={
-                      imageUrls[index]?.[0]?.[memberIndex] ?? "/images/none.png"
+                      imageUrls[index]?.[0]?.[memberIndex] ??
+                      "/images/team/none.png"
                     }
                     name={member.name}
                     role={`${departmentShortName(team?.name)} • ${member.role}`}
