@@ -58,7 +58,7 @@ export default function Team() {
   };
 
   return (
-    <main className="layout-hp layout-vp space-y-8 sm:space-y-12">
+    <main className="layout-p-full space-y-8 sm:space-y-12">
       <div className="flex flex-col gap-4 px-2 md:px-5">
         <div className="flex items-center justify-between gap-5 sm:justify-normal">
           <h1 className="font-title text-3xl font-medium">

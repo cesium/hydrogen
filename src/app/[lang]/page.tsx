@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <main>
-      <section className="layout-hp flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)]">
+      <section className="layout-p-x flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)]">
         {/* Background Gradient */}
         <div
           className="absolute left-0 right-0 top-0 -z-10 h-dvh"
@@ -63,7 +63,7 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div className="layout-hp layout-vp z-0 bg-foundation">
+      <div className="layout-p-full z-0 bg-foundation">
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />

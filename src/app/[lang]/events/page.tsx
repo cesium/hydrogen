@@ -45,7 +45,7 @@ export default function EventsPage() {
   };
 
   return (
-    <main className="layout-hp layout-vp flex flex-col gap-10 lg:gap-14">
+    <main className="layout-p-full flex flex-col gap-10 lg:gap-14">
       <div className="flex items-center justify-between">
         <h1 className="font-title text-3xl font-medium">{dict.events.title}</h1>
         <div className="hidden items-center gap-4 lg:flex">

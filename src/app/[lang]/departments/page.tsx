@@ -10,7 +10,7 @@ export default function Departments() {
   const dict = useDictionary();
 
   return (
-    <main className="layout-hp layout-vp flex flex-col gap-8 sm:gap-12">
+    <main className="layout-p-full flex flex-col gap-8 sm:gap-12">
       <div className="flex flex-col gap-4 px-2 md:px-5">
         <h1 className="font-title text-3xl font-medium">
           {dict.about.departments.title}

@@ -145,7 +145,7 @@ export default function About() {
         <p className="font-title text-2xl font-medium sm:text-3xl">
           {dictAbout.sections.cesium.title}
         </p>
-        <p className="layout-hp">{dictAbout.sections.cesium.subtitle}</p>
+        <p className="layout-p-x">{dictAbout.sections.cesium.subtitle}</p>
         <div className="w-full overflow-hidden pt-4 sm:pt-6">
           <Carousel
             autoplay={2000}
@@ -165,7 +165,7 @@ export default function About() {
             ))}
           />
         </div>
-        <p className="layout-hp">{dictAbout.sections.cesium.description}</p>
+        <p className="layout-p-x">{dictAbout.sections.cesium.description}</p>
       </section>
       {/* Team */}
       <AboutSectionLayout
