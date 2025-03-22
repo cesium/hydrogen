@@ -35,6 +35,14 @@
       "description": "Conhece as vantagens de te tornares nosso sócio."
     }
   },
+  "landing": {
+    "sections": {
+      "hero": {
+        "title": "CeSIUM",
+        "description": "Computer Engineering Student Center at University of Minho"
+      }
+    }
+  },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
     "name": ["Center for", "Open Source Support"],
@@ -65,6 +73,7 @@
     "see_team": "Go to team",
     "learn_more": "Learn more",
     "see_more": "See more",
+    "swipe": "Swipe to see more",
     "back": "Go Back"
   },
   "collaborate_card": {
@@ -136,19 +145,19 @@
         "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {
-            "src": "/images/uMinho1.jpg",
+            "src": "/images/about/uMinho1.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/workshop.jpg",
+            "src": "/images/about/workshop.jpg",
             "alt": "Class full of Computer Engineering students during a workshop."
           },
           {
-            "src": "/images/uMinho2.jpg",
+            "src": "/images/about/uMinho2.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/sei24-25.jpg",
+            "src": "/images/about/sei24-25.jpg",
             "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
           }
         ]
@@ -524,5 +533,17 @@
         ]
       }
     ]
+  },
+  "callsub": {
+    "members": {
+      "title": "Sounds good?",
+      "desc": "You can sign up as a CeSIUM member online in a minute. Click the button below to get started or talk to us if you have any questions."
+    },
+    "collaborators": {
+      "title": "We're waiting for you",
+      "desc": "Being a CeSIUM collaborator is more than just working – it's about learning new things, meeting incredible people, and being part of unique experiences. If that sounds good to you, apply now."
+    },
+    "button": "Start Registration",
+    "footer": "Talk to us"
   }
 }
