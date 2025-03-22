@@ -2,7 +2,8 @@
 
 import StoreCard from "@/components/store-card";
 import PromotionalCard from "@/components/promotional-card";
-import { CardType } from "@/lib/types";
+import { type Event, CardType } from "@/lib/types";
+import { useEffect, useState } from "react";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
@@ -10,17 +11,38 @@ import {
   relativeScrollTo,
   useScrollState,
 } from "@/contexts/scrollstate-provider";
+import { EventListCard } from "@/components/event-list-card";
+import getEvents from "@/lib/api/getEvents";
+import LandingSectionCard from "@/components/landing-section-card";
 
 export default function Home() {
   const dict = useDictionary();
   const { isScrolledTop } = useScrollState();
+  const [events, setEvents] = useState<Event[]>([]);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    async function fetchEvents() {
+      try {
+        const eventsData = await getEvents();
+        setEvents(eventsData);
+      } catch (error) {
+        console.error("Failed to fetch events:", error);
+      }
+    }
+
+    void fetchEvents();
+  }, []);
+
+  const handleClearDate = () => {
+    setSelectedDate(null);
+  };
 
   return (
     <main>
       <section
         className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
       >
-        {/* Background Gradient */}
         <div
           className="absolute left-0 right-0 top-0 -z-10 h-dvh"
           style={{
@@ -30,7 +52,6 @@ export default function Home() {
               "conic-gradient(from 160deg at 50% 50%, #F59856 0%, #635C6E 12%, #F556F0 21%, #ED7950 31%, #f26854 79%, #F556F0 97%, #F556F0 100%)",
           }}
         />
-        {/* Cube Pattern - Desktop */}
         <Image
           width={1087}
           height={1346.5}
@@ -38,7 +59,6 @@ export default function Home() {
           src="/vectors/hero.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
         />
-        {/* Cube Pattern - Mobile */}
         <Image
           width={638}
           height={729}
@@ -46,7 +66,6 @@ export default function Home() {
           src="/vectors/hero-mobile.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
         />
-        {/* Hero Title/Description */}
         <div className="flex h-full flex-col justify-center">
           <div className="mb-36 flex max-w-[680px] flex-col items-start gap-7 text-white xl:flex-row xl:items-center xl:gap-11">
             <h1 className="font-title text-5xl font-medium sm:text-6xl">
@@ -65,6 +84,16 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
+      <LandingSectionCard
+        title="Eventos"
+        subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+      >
+        <EventListCard
+          events={events}
+          selectedDate={selectedDate}
+          onClearDate={handleClearDate}
+        />
+      </LandingSectionCard>
       <div
         className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
       >
