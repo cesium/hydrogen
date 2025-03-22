@@ -10,6 +10,7 @@ import {
   relativeScrollTo,
   useScrollState,
 } from "@/contexts/scrollstate-provider";
+import ShortcutPanes from "@/components/shortcut-panes";
 
 export default function Home() {
   const dict = useDictionary();
@@ -68,6 +69,7 @@ export default function Home() {
       <div
         className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
       >
+        <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />
