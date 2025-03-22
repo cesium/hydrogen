@@ -84,8 +84,12 @@ const DepartmentCard = ({
             </div>
           )}
         </div>
-        <p className="flex h-full items-start text-justify lg:text-base">
+        <p className="hidden md:flex h-full items-start text-justify lg:text-base">
           {dict[shortName].description}
+        </p>
+        <p className="md:hidden flex h-full items-start text-left lg:text-base">
+        {dict[shortName].short_description}
+
         </p>
       </div>
     </div>

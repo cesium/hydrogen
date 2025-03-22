@@ -4,9 +4,12 @@ import AboutSection from "@/components/about-section";
 import Carousel from "@/components/carousel";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import DepartmentsList from "@/components/departments-list";
-import { gradient, shortName, departmentNames} from "@/components/departments-list";
+import {
+  gradient,
+  shortName,
+  departmentNames,
+} from "@/components/departments-list";
 import DepartmentCard from "@/components/department-card";
-import AboutSection from "@/components/about-section";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
 import ProjectCard from "@/components/project-card";
@@ -123,7 +126,7 @@ export default function About() {
             {heroItems.map((item, _) => item)}
           </div>
 
-          <div className="flex flex-col justify-center h-full lg:hidden">
+          <div className="flex h-full flex-col justify-center lg:hidden">
             <div className="block">
               <Carousel
                 autoplay={25000}
@@ -137,7 +140,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="flex h-[56px] flex-col items-center justify-center gap-1 mb-8">
+          <div className="mb-8 flex h-[56px] flex-col items-center justify-center gap-1">
             <p>Desliza para ver mais</p>
             <span className="material-symbols-outlined">arrow_downward</span>
           </div>
@@ -243,6 +246,7 @@ export default function About() {
             overflow
             loop
             items={departmentNames.map((departmentName) => (
+              <div className="flex h-[300px]">
               <DepartmentCard
                 key={departmentName}
                 name={departmentName}
@@ -254,6 +258,7 @@ export default function About() {
                 teamData={teamData}
                 yearRange={yearRange}
               ></DepartmentCard>
+              </div>
             ))}
           />
         </div>
