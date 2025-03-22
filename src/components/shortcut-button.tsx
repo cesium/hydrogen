@@ -19,15 +19,17 @@ export const ShortcutButton: React.FC<ShortcutButtonProps> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative flex h-[80px] w-full items-center gap-4 rounded-2xl border border-black/10 px-2 shadow-[0_2px_4px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)] md:h-[90px] md:px-6"
+      className="relative flex h-[80px] w-full items-center gap-3 rounded-2xl border border-black/10 p-2 shadow-sm transition-shadow duration-300 hover:shadow-lg sm:p-3 md:h-[90px]"
     >
       {highlight && (
         <span className="absolute -top-3.5 right-5 z-20 whitespace-nowrap rounded-full border border-primary bg-white px-2 py-1 text-xs font-semibold text-primary">
           {highlight}
         </span>
       )}
-      <div className="w-full truncate">{children}</div>
-      <span className="material-symbols-outlined text-2xl text-black/30">
+      <div className="flex h-full w-full flex-col items-center justify-center overflow-hidden py-4 sm:py-3">
+        {children}
+      </div>
+      <span className="material-symbols-outlined text-lg text-black/30 sm:text-2xl">
         arrow_outward
       </span>
     </Link>

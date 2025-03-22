@@ -66,8 +66,11 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
+      <section className={`${horizontalPadding} py-12`}>
+        <ShortcutButtonsContainer />
+      </section>
       <div
-        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
+        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding} pt-0 md:pt-0`}
       >
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
