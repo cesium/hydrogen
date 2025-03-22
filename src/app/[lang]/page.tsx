@@ -12,115 +12,96 @@ import {
   useScrollState,
 } from "@/contexts/scrollstate-provider";
 import { EventListCard } from "@/components/event-list-card";
-import { isSameDay } from "@/lib/utils";
 import getEvents from "@/lib/api/getEvents";
 import LandingSectionCard from "@/components/landing-section-card";
-
 
 export default function Home() {
   const dict = useDictionary();
   const { isScrolledTop } = useScrollState();
   const [events, setEvents] = useState<Event[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   useEffect(() => {
     async function fetchEvents() {
       try {
-        setIsLoading(true);
         const eventsData = await getEvents();
         setEvents(eventsData);
       } catch (error) {
         console.error("Failed to fetch events:", error);
-      } finally {
-        setIsLoading(false);
       }
     }
 
     void fetchEvents();
   }, []);
 
-  const handleDateSelect = (date: Date | null) => {
-    setSelectedDate((prevDate) =>
-      prevDate && date && isSameDay(prevDate, date) ? null : date,
-    );
-  };
-
   const handleClearDate = () => {
     setSelectedDate(null);
   };
-  
 
   return (
     <main>
       <section
-      className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
+        className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
       >
-      {/* Background Gradient */}
-      <div
-        className="absolute left-0 right-0 top-0 -z-10 h-dvh"
-        style={{
-        backgroundSize: "100% 210%",
-        backgroundPosition: "0px 0px",
-        backgroundImage:
-          "conic-gradient(from 160deg at 50% 50%, #F59856 0%, #635C6E 12%, #F556F0 21%, #ED7950 31%, #f26854 79%, #F556F0 97%, #F556F0 100%)",
-        }}
-      />
-      {/* Cube Pattern - Desktop */}
-      <Image
-        width={1087}
-        height={1346.5}
-        alt=""
-        src="vectors/hero.svg"
-        className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
-      />
-      {/* Cube Pattern - Mobile */}
-      <Image
-        width={638}
-        height={729}
-        alt=""
-        src="vectors/hero-mobile.svg"
-        className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
-      />
-      {/* Hero Title/Description */}
-      <div className="flex h-full flex-col justify-center">
-        <div className="mb-36 flex max-w-[680px] flex-col items-start gap-7 text-white xl:flex-row xl:items-center xl:gap-11">
-        <h1 className="font-title text-5xl font-medium sm:text-6xl">
-          {dict.landing.sections.hero.title}
-        </h1>
-        <h2 className="max-w-[80%]">
-          {dict.landing.sections.hero.description}
-        </h2>
+        <div
+          className="absolute left-0 right-0 top-0 -z-10 h-dvh"
+          style={{
+            backgroundSize: "100% 210%",
+            backgroundPosition: "0px 0px",
+            backgroundImage:
+              "conic-gradient(from 160deg at 50% 50%, #F59856 0%, #635C6E 12%, #F556F0 21%, #ED7950 31%, #f26854 79%, #F556F0 97%, #F556F0 100%)",
+          }}
+        />
+        <Image
+          width={1087}
+          height={1346.5}
+          alt=""
+          src="vectors/hero.svg"
+          className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
+        />
+        <Image
+          width={638}
+          height={729}
+          alt=""
+          src="vectors/hero-mobile.svg"
+          className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
+        />
+        <div className="flex h-full flex-col justify-center">
+          <div className="mb-36 flex max-w-[680px] flex-col items-start gap-7 text-white xl:flex-row xl:items-center xl:gap-11">
+            <h1 className="font-title text-5xl font-medium sm:text-6xl">
+              {dict.landing.sections.hero.title}
+            </h1>
+            <h2 className="max-w-[80%]">
+              {dict.landing.sections.hero.description}
+            </h2>
+          </div>
         </div>
-      </div>
-      <button
-        onClick={() => relativeScrollTo(50)}
-        className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
-      >
-        <p>{dict.button.swipe}</p>
-        <span className="material-symbols-outlined">arrow_downward</span>
-      </button>
+        <button
+          onClick={() => relativeScrollTo(50)}
+          className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
+        >
+          <p>{dict.button.swipe}</p>
+          <span className="material-symbols-outlined">arrow_downward</span>
+        </button>
       </section>
-      <div
-      className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
-      >
-      <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-        <div className="sm:col-span-2">
-        <StoreCard />
-        </div>
-        <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
-        <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
-      </section>
+      <div className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}>
+        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="sm:col-span-2">
+            <StoreCard />
+          </div>
+          <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
+          <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+        </section>
       </div>
       <LandingSectionCard
-      title="Eventos"
-      subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+        title="Eventos"
+        subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
       >
-      <EventListCard
-        events={events}
-        selectedDate={selectedDate}
-        onClearDate={handleClearDate}
-      />
+        <EventListCard
+          events={events}
+          selectedDate={selectedDate}
+          onClearDate={handleClearDate}
+        />
       </LandingSectionCard>
     </main>
   );

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import type { EventListProps, Event } from "../lib/types";
 import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
@@ -15,7 +14,7 @@ export function EventListCard({
   const dict = useDictionary();
   const lang = useLang();
   const currentDate = new Date();
-  
+
   const filteredEvents = selectedDate
     ? events.filter((event) => {
         const eventStart = new Date(event.start);
@@ -26,34 +25,35 @@ export function EventListCard({
         );
       })
     : events;
-    
+
   const futureEventsmonth = filteredEvents
     .filter((event) => new Date(event.start) >= currentDate)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
-    
+
   const pastEvents = filteredEvents
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
-  const renderEventList = (
-    eventList: Event[],
-    title: string,
-  ) => {
+  const renderEventList = (eventList: Event[], title: string) => {
     if (isLoading || eventList.length > 0) {
       return (
         <div className="">
-          <div className="my-4 flex flex-row w-full items-center">
+          <div className="my-4 flex w-full flex-row items-center">
             <div className="h-[4px] w-6 bg-gradient-to-r from-stroke to-transparent"></div>
             <h2 className="px-4 font-sans text-xl font-medium text-stroke">
               {title}
             </h2>
             <div className="h-[4px] flex-1 bg-gradient-to-l from-stroke to-stroke/10"></div>
-                      </div>
-          <div className="flex overflow-x-auto space-x-6 pb-4">
+          </div>
+          <div className="flex space-x-6 overflow-x-auto pb-4">
             {isLoading ? (
               <>
-                <div className="min-w-[280px] flex-shrink-0"><EventSkeleton /></div>
-                <div className="min-w-[280px] flex-shrink-0"><EventSkeleton /></div>
+                <div className="min-w-[280px] flex-shrink-0">
+                  <EventSkeleton />
+                </div>
+                <div className="min-w-[280px] flex-shrink-0">
+                  <EventSkeleton />
+                </div>
               </>
             ) : (
               eventList.map((event, index) => (
@@ -68,7 +68,7 @@ export function EventListCard({
     }
     return null;
   };
-  
+
   return (
     <div className="flex flex-col gap-6">
       {selectedDate && (
@@ -88,15 +88,9 @@ export function EventListCard({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
-      <div className="flex flex-row w-full items-center ">
-      {renderEventList(
-          futureEventsmonth,
-          dict.events.futureEvents,
-        )}
-      {renderEventList(
-          pastEvents,
-          dict.events.pastEvents,
-        )}
+      <div className="flex w-full flex-row items-center ">
+        {renderEventList(futureEventsmonth, dict.events.futureEvents)}
+        {renderEventList(pastEvents, dict.events.pastEvents)}
       </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>
