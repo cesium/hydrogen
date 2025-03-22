@@ -67,7 +67,7 @@ export default function Home() {
         </button>
       </section>
       <div
-        className={`z-0 bg-foundation flex flex-col gap-5 md:gap-8 ${horizontalPadding} ${verticalPadding}`}
+        className={`z-0 flex flex-col gap-5 bg-foundation md:gap-8 ${horizontalPadding} ${verticalPadding}`}
       >
         <ScrollableContent />
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
