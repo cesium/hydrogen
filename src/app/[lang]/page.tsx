@@ -84,15 +84,6 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}>
-        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          <div className="sm:col-span-2">
-            <StoreCard />
-          </div>
-          <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
-          <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
-        </section>
-      </div>
       <LandingSectionCard
         title="Eventos"
         subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
@@ -103,6 +94,17 @@ export default function Home() {
           onClearDate={handleClearDate}
         />
       </LandingSectionCard>
+      <div
+        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
+      >
+        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="sm:col-span-2">
+            <StoreCard />
+          </div>
+          <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
+          <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+        </section>
+      </div>
     </main>
   );
 }
