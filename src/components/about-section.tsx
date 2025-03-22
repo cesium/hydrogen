@@ -1,5 +1,3 @@
-import { horizontalPadding } from "@/lib/styling";
-
 export default function AboutSection({
   children,
   dark,
@@ -9,7 +7,7 @@ export default function AboutSection({
 }) {
   return (
     <div
-      className={`flex h-full border-b border-black/10 ${dark ? "bg-muted" : ""} ${horizontalPadding}`}
+      className={`flex h-full border-b border-black/10 ${dark ? "bg-muted" : ""} layout-hp`}
     >
       {children}
     </div>

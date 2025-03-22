@@ -62,6 +62,22 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
+.layout-hp {
+  @apply px-5 sm:px-7 md:px-16 lg:px-28 2xl:px-60;
+}
+
+.layout-hpr {
+  @apply pr-5 sm:pr-7 md:pr-16 lg:pr-28 2xl:pr-60;
+}
+
+.layout-hpl {
+  @apply pl-5 sm:pl-7 md:pl-16 lg:pl-28 2xl:pl-60;
+}
+
+.layout-vp {
+  @apply py-5 md:py-12;
+}
+
 .custom-swiper {
   width: 100%;
   overflow: hidden;

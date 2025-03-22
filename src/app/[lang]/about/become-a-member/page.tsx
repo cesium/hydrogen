@@ -3,15 +3,12 @@ import Image from "next/image";
 import InfoCard from "@/components/info-card";
 import CallSubscribe from "@/components/call-subscribe";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
 
   return (
-    <main
-      className={`grid grid-cols-1 gap-7 overflow-hidden xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
-    >
+    <main className="layout-hp layout-vp grid grid-cols-1 gap-7 overflow-hidden xl:grid-cols-3">
       <div className="xl:col-span-3">
         <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">
           <div className="flex min-w-[200px] max-w-[600px] place-items-center">

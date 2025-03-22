@@ -8,7 +8,7 @@ import getEvents from "@/lib/api/getEvents";
 import { type Event, CardType } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { isSameDay } from "@/lib/utils";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
+
 import AppLink from "@/components/link";
 import Markdown from "markdown-to-jsx";
 
@@ -45,9 +45,7 @@ export default function EventsPage() {
   };
 
   return (
-    <main
-      className={`flex flex-col gap-10 lg:gap-14 ${horizontalPadding} ${verticalPadding}`}
-    >
+    <main className="layout-hp layout-vp flex flex-col gap-10 lg:gap-14">
       <div className="flex items-center justify-between">
         <h1 className="font-title text-3xl font-medium">{dict.events.title}</h1>
         <div className="hidden items-center gap-4 lg:flex">

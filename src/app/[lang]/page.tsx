@@ -3,7 +3,7 @@
 import StoreCard from "@/components/store-card";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
+
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import {
@@ -17,9 +17,7 @@ export default function Home() {
 
   return (
     <main>
-      <section
-        className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
-      >
+      <section className="layout-hp flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)]">
         {/* Background Gradient */}
         <div
           className="absolute left-0 right-0 top-0 -z-10 h-dvh"
@@ -65,9 +63,7 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div
-        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
-      >
+      <div className="layout-hp layout-vp z-0 bg-foundation">
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />

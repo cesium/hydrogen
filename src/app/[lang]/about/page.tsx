@@ -16,7 +16,7 @@ import {
   generateUrlsForTeams,
 } from "@/lib/utils";
 import { fetchTeamData } from "@/lib/utils";
-import { horizontalPadding } from "@/lib/styling";
+
 import Image from "next/image";
 
 interface MemberDep extends MemberInfo {
@@ -114,9 +114,7 @@ export default function About() {
   return (
     <main>
       <AboutSection>
-        <section
-          className={`flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44`}
-        >
+        <section className="flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44">
           <div className="hidden h-fit items-center justify-center lg:flex">
             {heroItems.map((item, _) => item)}
           </div>
@@ -143,15 +141,11 @@ export default function About() {
       </AboutSection>
 
       {/* "What is CeSIUM?" */}
-      <section
-        className={`flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6`}
-      >
+      <section className="flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6">
         <p className="font-title text-2xl font-medium sm:text-3xl">
           {dictAbout.sections.cesium.title}
         </p>
-        <p className={horizontalPadding}>
-          {dictAbout.sections.cesium.subtitle}
-        </p>
+        <p className="layout-hp">{dictAbout.sections.cesium.subtitle}</p>
         <div className="w-full overflow-hidden pt-4 sm:pt-6">
           <Carousel
             autoplay={2000}
@@ -171,9 +165,7 @@ export default function About() {
             ))}
           />
         </div>
-        <p className={horizontalPadding}>
-          {dictAbout.sections.cesium.description}
-        </p>
+        <p className="layout-hp">{dictAbout.sections.cesium.description}</p>
       </section>
       {/* Team */}
       <AboutSectionLayout
