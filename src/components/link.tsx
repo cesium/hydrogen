@@ -16,7 +16,7 @@ const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
   const hrefLang = `/${shortLocale(lang)}${href}`;
   const router = useRouter();
 
-  const style = `flex items-center gap-1 font-medium transition-opacity hover:opacity-85 text-${color}`;
+  const style = `flex w-fit group items-center gap-1 font-medium transition-opacity hover:opacity-85 text-${color}`;
 
   return arrow === "back" ? (
     <button onClick={() => router.back()} className={style}>
@@ -34,7 +34,11 @@ const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
     >
       <p>{title}</p>
       {(arrow === "forward" || arrow === "outward") && (
-        <span className="material-symbols-outlined">{"arrow_" + arrow}</span>
+        <span
+          className={`material-symbols-outlined ${arrow === "forward" ? "transition-transform duration-200 group-hover:translate-x-0.5" : ""}`}
+        >
+          {"arrow_" + arrow}
+        </span>
       )}
     </Link>
   );
