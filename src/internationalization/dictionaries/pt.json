@@ -197,6 +197,11 @@
       "advantages": {
         "title": "Vantagens para sempre",
         "description": "As vantagens de ter um cartão de sócio nunca expiram, uma vez que a quota de inscrição é vitalícia - pagas uma vez, e serás sócio para sempre. Estas são as vantagens que ser sócios tem para oferecer:"
+      },
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
       }
     },
     "explore": {
