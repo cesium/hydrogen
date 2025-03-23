@@ -74,7 +74,7 @@ const DepartmentCard = ({
               </div>
               <Link
                 className="flex items-center space-x-1 text-sm font-medium"
-                href={`/${lang}/about/team`}
+                href={`/${lang}/team`}
               >
                 <span className="hover:underline">{dict.button.see_team}</span>
                 <span className="material-symbols-outlined text-xl">

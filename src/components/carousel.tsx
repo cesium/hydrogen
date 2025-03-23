@@ -25,18 +25,14 @@ export default function Carousel({
     <Swiper
       slidesPerView={overflow ? 1.3 : 1}
       spaceBetween={15}
-      centeredSlides={true}
       loop={loop ? true : false}
       autoplay={
         autoplay ? { delay: autoplay, disableOnInteraction: false } : false
       }
       pagination={pagination ? { clickable: true, type: "bullets" } : false}
       breakpoints={{
-        768: {
-          slidesPerView: overflow ? 1.8 : 2,
-          spaceBetween: 15,
-          centeredSlides: overflow ? true : false,
-        },
+        640: { slidesPerView: overflow ? 1.5 : 1, spaceBetween: 15 },
+        768: { slidesPerView: overflow ? 1.8 : 1, spaceBetween: 15 },
         1024: { slidesPerView: overflow ? 2.5 : 3, spaceBetween: 20 },
       }}
       modules={[Autoplay, Pagination]}

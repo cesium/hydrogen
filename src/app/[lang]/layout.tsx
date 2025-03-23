@@ -5,10 +5,10 @@ import {
   getDictionary,
   type Locale,
 } from "@/internationalization/dictionaries";
-import { DictionaryProvider } from "@/contexts/dictionary-provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { fullLocale } from "@/lib/locale";
+import Body from "@/components/body";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,13 +29,7 @@ export function generateMetadata({
   const dict = getDictionary(fullLocale(lang));
 
   return {
-    metadataBase: new URL("https://cesium.di.uminho.pt"),
-    openGraph: {
-      siteName: dict.seo.title,
-      type: "website",
-      locale: "pt",
-      alternateLocale: "en",
-    },
+    metadataBase: new URL(process.env.URL ?? "https://cesium.di.uminho.pt"),
     robots: {
       index: true,
       follow: true,
@@ -75,6 +69,42 @@ export function generateMetadata({
       ],
     },
     manifest: "/manifest.webmanifest",
+    title: dict.seo.title,
+    description: dict.seo.description,
+    keywords: [
+      "student center",
+      "engeneering",
+      "informatics",
+      "uminho",
+      "university",
+      "students",
+      "CeSIUM",
+      "CeSIUM UMinho",
+    ],
+    openGraph: {
+      siteName: dict.seo.title,
+      type: "website",
+      locale: "pt",
+      alternateLocale: "en",
+      url: `${process.env.URL}`,
+      title: dict.seo.title,
+      description: dict.seo.description,
+      images: [
+        {
+          url: `${process.env.URL}/og.png`,
+          width: 1200,
+          height: 630,
+          alt: process.env.URL,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `${process.env.URL}`,
+      languages: {
+        en: `${process.env.URL}/en`,
+        pt: `${process.env.URL}/pt`,
+      },
+    },
   };
 }
 
@@ -87,15 +117,11 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-title" content="CeSIUM" />
       </head>
-      <body
-        className={`${inter.variable} ${orbitron.variable} overflow-x-hidden bg-muted font-sans text-black antialiased`}
-      >
-        <DictionaryProvider lang={fullLocale(lang)}>
-          <Navbar />
-          <div className="h-full">{children}</div>
-          <Footer />
-        </DictionaryProvider>
-      </body>
+      <Body lang={lang} fonts={[inter, orbitron]}>
+        <Navbar />
+        <div className="h-full">{children}</div>
+        <Footer />
+      </Body>
     </html>
   );
 }

@@ -1,27 +1,59 @@
 "use client";
 import Image from "next/image";
 import InfoCard from "@/components/info-card";
+import CallSubscribe from "@/components/call-subscribe";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { shuffleArray } from "@/lib/utils";
 import { shortLocale } from "@/lib/locale";
+import { useEffect, useState } from "react";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
   const lang = useLang();
 
-  const partners = shuffleArray(dict.partners);
+  const partnersMiddleIndex = Math.floor(dict.partners.list.length / 2);
+  const [partnersFirstHalf, setPartnersFirstHalf] = useState(
+    dict.partners.list.slice(0, partnersMiddleIndex),
+  );
+  const [partnersSecondHalf, setPartnersSecondHalf] = useState(
+    dict.partners.list.slice(partnersMiddleIndex),
+  );
 
-  const partnersMiddleIndex = Math.floor(partners.length / 2);
-  const partnersFirstHalf = partners.slice(0, partnersMiddleIndex);
-  const partnersSecondHalf = partners.slice(partnersMiddleIndex);
+  useEffect(() => {
+    const shuffledPartners = shuffleArray(dict.partners.list);
+    setPartnersFirstHalf(shuffledPartners.slice(0, partnersMiddleIndex));
+    setPartnersSecondHalf(shuffledPartners.slice(partnersMiddleIndex));
+  }, [dict.partners.list, partnersMiddleIndex]);
 
   return (
     <main
-      className={`grid grid-cols-1 gap-7 xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
+      className={`grid grid-cols-1 gap-7 overflow-hidden xl:grid-cols-3 ${horizontalPadding} ${verticalPadding}`}
     >
+      <div className="xl:col-span-3">
+        <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">
+          <div className="flex min-w-[200px] max-w-[600px] place-items-center">
+            <div className="sm:max-w-[540px]">
+              <h2 className="mb-[15px] font-title text-2xl font-semibold">
+                {dict.about.become_a_member.advantages.title}
+              </h2>
+              <p className="text-base">
+                {dict.about.become_a_member.advantages.description}
+              </p>
+            </div>
+          </div>
+          <Image
+            src="/images/wallet.png"
+            alt="wallet"
+            width={364}
+            height={338}
+            className="h-[200px] object-contain md:h-full"
+          />
+        </div>
+      </div>
+
       <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col justify-between xl:flex-row xl:gap-20">
@@ -231,7 +263,7 @@ export default function BecomeAMember() {
               </div>
               <div className="pointer-events-none relative z-10 h-full w-full overflow-hidden">
                 <Image
-                  src="/images/ticket.png"
+                  src="/images/about/become-a-member/ticket.png"
                   alt="ticket"
                   width={980}
                   height={365}
@@ -247,7 +279,7 @@ export default function BecomeAMember() {
         <div className="flex h-full flex-row items-center">
           <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
             <Image
-              src="/images/totebag.png"
+              src="/images/about/become-a-member/totebag.png"
               alt="totebag"
               fill
               className="object-cover object-[right_bottom]"
@@ -291,9 +323,9 @@ export default function BecomeAMember() {
         <InfoCard>
           <div className="flex flex-col gap-4">
             <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
-              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[480px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 lg:order-1">
+              <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[270px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:order-1 lg:-ml-4">
                 <Image
-                  src="/images/notebook.png"
+                  src="/images/about/become-a-member/notebook.png"
                   alt="discounts"
                   fill
                   className="object-cover object-[0%_0%] sm:object-[100%_100%]"
@@ -327,9 +359,9 @@ export default function BecomeAMember() {
                 </div>
               </div>
 
-              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[480px] justify-self-end pb-32 sm:-mr-12 sm:mb-0 sm:mt-24 sm:pb-0">
+              <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[270px] justify-self-end pb-32 sm:-mr-36 sm:mb-0 sm:mt-24 sm:pb-0 lg:-mr-4">
                 <Image
-                  src="/images/laptop.png"
+                  src="/images/about/become-a-member/laptop.png"
                   alt="discounts"
                   fill
                   className="object-cover object-[0%_0%]"
@@ -338,6 +370,16 @@ export default function BecomeAMember() {
             </div>
           </div>
         </InfoCard>
+      </div>
+      <div className="mt-4 flex w-full flex-col items-center justify-center xl:col-span-3">
+        <CallSubscribe
+          title={dict.callsub.members.title}
+          description={dict.callsub.members.desc}
+          buttonText={dict.callsub.button}
+          buttonURL="https://cesium.link/f/socios"
+          buttonColor={"primary"}
+          footerText={dict.callsub.footer}
+        />
       </div>
     </main>
   );

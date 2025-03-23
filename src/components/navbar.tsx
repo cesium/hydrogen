@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const lang = useLang();
-  const pathname = usePathname().replace(`/${shortLocale(lang)}`, "");
+  const pathname = usePathname().replace(`/${lang}`, "");
 
   const isCurrent = (path: string) => {
     return (
@@ -28,14 +28,16 @@ const Navbar = () => {
   const home = { name: dict.navbar.home, path: "/" };
   const routes = [
     { name: dict.navbar.about, path: "/about" },
-    { name: dict.navbar.events, path: "/events" },
+    { name: dict.navbar.team, path: "/team" },
+    { name: dict.navbar.departments, path: "/departments" },
     { name: dict.navbar.partners, path: "/partners" },
+    { name: dict.navbar.events, path: "/events" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
-    { name: dict.navbar.projects, path: "/projects" },
   ];
 
   const isMember = pathname === "/about/become-a-member";
   const isCollaborator = pathname === "/about/become-a-collaborator";
+  const isLanding = pathname === "";
 
   const isMemberOrCollaborator = isMember || isCollaborator;
 
@@ -43,19 +45,25 @@ const Navbar = () => {
     ? "bg-primary"
     : isCollaborator
       ? "bg-blue"
-      : "bg-muted";
-  const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
-  const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
-  const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
+      : isLanding
+        ? "bg-transparent"
+        : "bg-white md:bg-transparent";
+  const linkColor =
+    isMemberOrCollaborator || isLanding ? "text-white/50" : "text-gray";
+  const currentLink =
+    isMemberOrCollaborator || isLanding ? "text-white" : "text-black";
+  const colorLogo = isMemberOrCollaborator || isLanding ? "white" : "#ED7950";
   const hamburgerMenuColor = isOpen
     ? "text-gray"
     : isMemberOrCollaborator
       ? "text-white/50"
-      : "text-gray";
+      : isLanding
+        ? "text-white"
+        : "text-gray";
 
   return (
     <div
-      className={`${navbarBackgroundColor} ${horizontalPadding} ${isMemberOrCollaborator ? "relative after:hidden" : "sticky"} top-0 z-40 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
+      className={`${navbarBackgroundColor} ${horizontalPadding} ${isMemberOrCollaborator || isLanding ? "relative after:hidden" : "sticky"} top-0 z-50 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
     >
       <div
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:px-12 md:pt-12`}
@@ -67,9 +75,9 @@ const Navbar = () => {
               width={30}
               height={34}
               alt="CeSIUM Logo Icon"
-              fill={`${colorLogo}`}
+              fill={colorLogo}
               className="hidden md:block"
-              fullColor={isMemberOrCollaborator}
+              fullColor={isMemberOrCollaborator || isLanding}
             />
             <Logo
               type="cesium-full"
@@ -78,11 +86,11 @@ const Navbar = () => {
               alt="CeSIUM Logo"
               fill={`${colorLogo}`}
               className="block md:hidden"
-              fullColor={isMemberOrCollaborator}
+              fullColor={isMemberOrCollaborator || isLanding}
             />
           </Link>
           <div
-            className={`hidden items-center space-x-6 font-title text-lg font-medium ${linkColor} md:flex`}
+            className={`hidden items-center space-x-6 font-title text-base font-medium ${linkColor} md:flex`}
           >
             {routes.map((route) => {
               return (
@@ -95,7 +103,7 @@ const Navbar = () => {
                   }
                   className={`${
                     isCurrent(route.path) ? `${currentLink}` : ""
-                  } transition-colors ${isMemberOrCollaborator ? "hover:text-white" : "hover:text-black"}`}
+                  } transition-colors ${isMemberOrCollaborator || isLanding ? "hover:text-white" : "hover:text-black"}`}
                 >
                   {route.name}
                 </Link>
@@ -113,7 +121,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.nav
-              className="fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col justify-between bg-[#F0F0F0] px-7 pb-8 pt-20 shadow-lg"
+              className="fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col justify-between bg-[#F0F0F0] px-7 pb-8 pt-20 shadow-lg md:hidden"
               exit={{ x: "100%", borderRadius: "50px" }}
               initial={{ scale: 1.15 }}
               animate={{ scale: 1 }}
@@ -165,12 +173,24 @@ const Navbar = () => {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <SocialIcon
-                            width={26}
-                            height={26}
-                            type={social.name.toLowerCase()}
-                            fill="#94959C"
-                          />
+                          <div className="group transition-transform duration-300 hover:-translate-y-1">
+                            <div className="group-hover:hidden">
+                              <SocialIcon
+                                width={26}
+                                height={26}
+                                type={social.name.toLowerCase()}
+                                fill="#94959C"
+                              />
+                            </div>
+                            <div className="hidden group-hover:block">
+                              <SocialIcon
+                                width={26}
+                                height={26}
+                                type={social.name.toLowerCase()}
+                                fill={social.hex}
+                              />
+                            </div>
+                          </div>
                         </Link>
                       </motion.li>
                     ))}
