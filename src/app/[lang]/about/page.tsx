@@ -246,7 +246,7 @@ export default function About() {
             pagination
             overflow
             loop
-            items={departmentNames.map((departmentName,index) => (
+            items={departmentNames.map((departmentName, index) => (
               <div key={index} className="flex h-[350px]">
                 <DepartmentCard
                   key={departmentName}
