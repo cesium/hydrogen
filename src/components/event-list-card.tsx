@@ -4,6 +4,7 @@ import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { EventSkeleton } from "./event-skeleton";
 import { isSameDay } from "../lib/utils";
+import { useState } from "react";
 
 export function EventListCard({
   events,
@@ -14,6 +15,8 @@ export function EventListCard({
   const dict = useDictionary();
   const lang = useLang();
   const currentDate = new Date();
+  const [visibleFutureCount, setVisibleFutureCount] = useState(5);
+  const [visiblePastCount, setVisiblePastCount] = useState(5);
 
   const filteredEvents = selectedDate
     ? events.filter((event) => {
@@ -26,7 +29,7 @@ export function EventListCard({
       })
     : events;
 
-  const futureEventsmonth = filteredEvents
+  const futureEvents = filteredEvents
     .filter((event) => new Date(event.start) >= currentDate)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
@@ -34,8 +37,17 @@ export function EventListCard({
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
-  const renderEventList = (eventList: Event[], title: string) => {
-    if (isLoading || eventList.length > 0) {
+  const visibleFutureEvents = futureEvents.slice(0, visibleFutureCount);
+  const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
+
+  const renderEventList = (
+    eventList: Event[],
+    totalEvents: Event[],
+    visibleCount: number,
+    setVisibleCount: (count: number) => void,
+    title: string,
+  ) => {
+    if (isLoading || totalEvents.length > 0) {
       return (
         <div className="">
           <div className="my-4 flex w-full flex-row items-center">
@@ -83,14 +95,26 @@ export function EventListCard({
               day: "numeric",
               month: "2-digit",
             })
-            .replace(/^\w/, (c) => c.toUpperCase())
+            .replace(/^-/, (c) => c.toUpperCase())
             .replace("-", "/")}{" "}
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
       <div className="flex w-full flex-row items-center ">
-        {renderEventList(futureEventsmonth, dict.events.futureEvents)}
-        {renderEventList(pastEvents, dict.events.pastEvents)}
+        {renderEventList(
+          visibleFutureEvents,
+          futureEvents,
+          visibleFutureCount,
+          setVisibleFutureCount,
+          dict.events.futureEvents,
+        )}
+        {renderEventList(
+          visiblePastEvents,
+          pastEvents,
+          visiblePastCount,
+          setVisiblePastCount,
+          dict.events.pastEvents,
+        )}
       </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>

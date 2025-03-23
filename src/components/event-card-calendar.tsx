@@ -1,4 +1,6 @@
 "use client";
+
+import { useRouter } from "next/navigation";
 import type { EventCardProps } from "../lib/types";
 import {
   getMonthAbbreviation,
@@ -8,18 +10,29 @@ import {
   formatDate,
 } from "../lib/utils";
 import { useLang } from "@/contexts/dictionary-provider";
+
 export function EventCardCalendar({ event }: EventCardProps) {
   const lang = useLang();
+  const router = useRouter();
+
   const month = getMonthAbbreviation(event.start, lang);
   const day = getDay(event.start);
+
+  const handleClick = () => {
+    router.push("/events");
+  };
+
   return (
-    <div className="mb-6 mr-6 flex h-[180px] w-[410px] items-start rounded-xl bg-[#0000000D] p-6  ">
+    <div
+      className="hover:bg-gray-100 mb-6 mr-6 flex h-[180px] w-[410px] cursor-pointer items-start rounded-xl bg-[#0000000D] p-6 transition"
+      onClick={handleClick}
+    >
       <div className="mr-4 mt-6 h-[72px] w-[72px] rounded-xl bg-white p-2 text-center">
         <div className="text-sm font-medium text-primary">{month}</div>
         <div className="text-2xl font-bold">{day}</div>
       </div>
-      <div className="flex-1 ">
-        <h3 className=" text-xl font-bold">{event.title}</h3>
+      <div className="flex-1">
+        <h3 className="text-xl font-bold">{event.title}</h3>
         <div className="text-gray-600 text-base">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-gray">
