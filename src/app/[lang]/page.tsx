@@ -84,16 +84,20 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <LandingSectionCard
-        title="Eventos"
-        subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+      <div
+        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
       >
-        <EventListCard
-          events={events}
-          selectedDate={selectedDate}
-          onClearDate={handleClearDate}
-        />
-      </LandingSectionCard>
+        <LandingSectionCard
+          title="Eventos"
+          subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+        >
+          <EventListCard
+            events={events}
+            selectedDate={selectedDate}
+            onClearDate={handleClearDate}
+          />
+        </LandingSectionCard>
+      </div>
       <div
         className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
       >
