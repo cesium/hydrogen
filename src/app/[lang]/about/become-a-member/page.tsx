@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
 import InfoCard from "@/components/info-card";
-import { useDictionary } from "@/contexts/dictionary-provider";
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { shuffleArray } from "@/lib/utils";
+import { shortLocale } from "@/lib/locale";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
+  const lang = useLang();
 
-  const partners = dict.partners;
+  const partners = shuffleArray(dict.partners);
 
   const partnersMiddleIndex = Math.floor(partners.length / 2);
   const partnersFirstHalf = partners.slice(0, partnersMiddleIndex);
@@ -21,37 +24,37 @@ export default function BecomeAMember() {
     >
       <div className="xl:col-span-3">
         <InfoCard>
-          <div className="flex flex-col sm:flex-row sm:gap-64 lg:max-h-96">
-            <div className="flex flex-col gap-20 py-32 pl-12 sm:flex-row">
-              <div className="">
+          <div className="flex flex-col justify-between xl:flex-row xl:gap-20">
+            <div className="flex flex-col gap-2 px-6 pb-10 pt-7 xl:flex-row xl:gap-20 xl:py-32 xl:pl-12">
+              <div className="w-min">
                 <span className="material-symbols-outlined text-5xl text-[#836143]">
                   handshake
                 </span>
                 <h1 className="bg-gradient-to-r from-[#836143] to-[#C0AC97] bg-clip-text font-title text-4xl font-semibold text-transparent">
-                  Parcerias exclusivas
+                  {dict.about.become_a_member.exclusive_partnerships.title}
                 </h1>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 xl:max-h-96 xl:max-w-lg">
                 <p>
-                  Almoça no Sabor da Fruta e toma um café grátis. Ou no Café do
-                  Luís, com bebida incluída. Recebe emblemas grátis n’Os Farias.
-                  Usufrui de descontos em aulas de música e de condução. Estas
-                  são só algumas das parcerias que temos para ti.
+                  {
+                    dict.about.become_a_member.exclusive_partnerships
+                      .description
+                  }
                 </p>
-                <a
-                  className="flex items-center gap-1 text-[#5C657F]"
-                  href="https://store.cesium.pt"
+                <Link
+                  className="flex items-center gap-1 text-[#C0AC97]"
+                  href={"/" + shortLocale(lang) + "/partners"}
                 >
                   <p className="text-center">
-                    {dict.about.become_a_member.discounts.link}
+                    {dict.about.become_a_member.exclusive_partnerships.link}
                   </p>
                   <span className="material-symbols-outlined">
-                    arrow_outward
+                    arrow_forward
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
-            <div className="mr-24 hidden h-96 shrink-0 gap-5 lg:flex">
+            <div className="mr-24 hidden h-96 shrink-0 gap-5 xl:flex">
               <motion.div
                 className="flex flex-col gap-5"
                 animate={{
@@ -61,7 +64,7 @@ export default function BecomeAMember() {
                   y: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 15,
+                    duration: 25,
                     ease: "linear",
                   },
                 }}
@@ -69,14 +72,20 @@ export default function BecomeAMember() {
               >
                 {[...partnersFirstHalf, ...partnersFirstHalf].map(
                   (partner, index) => (
-                    <Image
+                    <Link
+                      href={partner.url}
                       key={`${partner.title}-${index}`}
-                      className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover"
-                      src={partner.logo}
-                      alt={partner.title}
-                      width={80}
-                      height={80}
-                    />
+                      className="shrink-0"
+                    >
+                      <Image
+                        key={`${partner.title}-${index}`}
+                        className="size-20 rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
+                        src={partner.logo}
+                        alt={partner.title}
+                        width={80}
+                        height={80}
+                      />
+                    </Link>
                   ),
                 )}
               </motion.div>
@@ -89,7 +98,7 @@ export default function BecomeAMember() {
                   y: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 15,
+                    duration: 25,
                     ease: "linear",
                   },
                 }}
@@ -97,9 +106,13 @@ export default function BecomeAMember() {
               >
                 {[...partnersSecondHalf, ...partnersSecondHalf].map(
                   (partner, index) => (
-                    <Link href={partner.url} key={`${partner.title}-${index}`}>
+                    <Link
+                      href={partner.url}
+                      key={`${partner.title}-${index}`}
+                      className="shrink-0"
+                    >
                       <Image
-                        className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover transition-transform hover:scale-110"
+                        className="size-20 rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
                         src={partner.logo}
                         alt={partner.title}
                         width={80}
@@ -110,9 +123,9 @@ export default function BecomeAMember() {
                 )}
               </motion.div>
             </div>
-            <div className="flex h-32 shrink-0 flex-col gap-5 overflow-hidden lg:hidden">
+            <div className="flex h-36 shrink-0 flex-col gap-5 overflow-hidden xl:hidden">
               <motion.div
-                className="flex shrink-0 gap-5"
+                className="flex gap-5"
                 animate={{
                   x: [0, -partnersFirstHalf.length * 100],
                 }}
@@ -120,27 +133,35 @@ export default function BecomeAMember() {
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 15,
+                    duration: 25,
                     ease: "linear",
                   },
                 }}
                 style={{ willChange: "transform" }}
               >
-                {[...partnersFirstHalf, ...partnersFirstHalf].map(
-                  (partner, index) => (
+                {[
+                  ...partnersFirstHalf,
+                  ...partnersFirstHalf,
+                  ...partnersFirstHalf,
+                ].map((partner, index) => (
+                  <Link
+                    href={partner.url}
+                    key={`${partner.title}-${index}`}
+                    className="shrink-0"
+                  >
                     <Image
                       key={`${partner.title}-${index}`}
-                      className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover"
+                      className="size-20 rounded-2xl border border-black/10 object-contain"
                       src={partner.logo}
                       alt={partner.title}
                       width={80}
                       height={80}
                     />
-                  ),
-                )}
+                  </Link>
+                ))}
               </motion.div>
               <motion.div
-                className="flex shrink-0 gap-5"
+                className="flex gap-5"
                 animate={{
                   x: [-partnersSecondHalf.length * 100, 0],
                 }}
@@ -148,24 +169,32 @@ export default function BecomeAMember() {
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 15,
+                    duration: 25,
                     ease: "linear",
                   },
                 }}
                 style={{ willChange: "transform" }}
               >
-                {[...partnersSecondHalf, ...partnersSecondHalf].map(
-                  (partner, index) => (
+                {[
+                  ...partnersSecondHalf,
+                  ...partnersSecondHalf,
+                  ...partnersSecondHalf,
+                ].map((partner, index) => (
+                  <Link
+                    href={partner.url}
+                    key={`${partner.title}-${index}`}
+                    className="shrink-0"
+                  >
                     <Image
                       key={`${partner.title}-${index}`}
-                      className="size-20 shrink-0 rounded-2xl border border-black/10 object-cover"
+                      className="size-20 rounded-2xl border border-black/10 object-contain"
                       src={partner.logo}
                       alt={partner.title}
                       width={80}
                       height={80}
                     />
-                  ),
-                )}
+                  </Link>
+                ))}
               </motion.div>
             </div>
           </div>

@@ -43,7 +43,7 @@ const Navbar = () => {
     ? "bg-primary"
     : isCollaborator
       ? "bg-blue"
-      : "bg-white";
+      : "bg-muted";
   const linkColor = isMemberOrCollaborator ? "text-white/50" : "text-gray";
   const currentLink = isMemberOrCollaborator ? "text-white" : "text-black";
   const colorLogo = isMemberOrCollaborator ? "white" : "#ED7950";
