@@ -42,7 +42,7 @@ export default function ShortcutButtonsContainer() {
       </ShortcutButton>
 
       <ShortcutButton href="https://pelomundo.cesium.di.uminho.pt/">
-        <div className="flex h-full items-center justify-center gap-1.5 text-[11px] sm:gap-3 sm:text-base">
+        <div className="flex h-full items-center justify-center gap-1.5 text-xs sm:gap-3 sm:text-base">
           <Image
             src="/logo/cesium-pelo-mundo.svg"
             width={50}
