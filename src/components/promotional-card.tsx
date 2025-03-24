@@ -1,6 +1,7 @@
 "use client";
 
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { shortLocale } from "@/lib/locale";
 import { CardType } from "@/lib/types";
 import Button from "./button";
 
@@ -69,7 +70,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
           color={type == CardType.Collaborate ? "blue" : "primary"}
           href={
             "/" +
-            lang +
+            shortLocale(lang) +
             (type == CardType.Collaborate
               ? "/about/become-a-collaborator"
               : "/about/become-a-member")

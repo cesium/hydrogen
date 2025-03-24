@@ -68,8 +68,7 @@
 }
 
 .custom-swiper .swiper-wrapper {
-  display: flex;
-  align-items: center;
+  @apply items-center;
 }
 
 .custom-swiper .swiper-pagination {
