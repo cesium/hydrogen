@@ -19,6 +19,7 @@ import { fetchTeamData } from "@/lib/utils";
 import { horizontalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
+import Markdown from "markdown-to-jsx";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -40,28 +41,31 @@ export default function About() {
   const heroItems = [
     <div
       key="title"
-      className="pointer-events-none flex h-full items-center lg:mb-0 lg:flex-1"
+      className="pointer-events-none flex h-full select-none items-center text-4xl lg:max-w-[50%] xl:text-5xl"
     >
-      <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] lg:pr-10 xl:w-[565px] xl:text-[48px]">
-        {dict.about.sections.hero.title[0]}
-        <br /> {dictAbout.sections.hero.title[1]}
-        <span className="font-title text-[36px] text-black sm:text-[40px] xl:text-[48px] ">
-          {" "}
-          {dict.about.sections.hero.title[2]}
-        </span>{" "}
-        {dict.about.sections.hero.title[3]}
-      </p>
+      <Markdown
+        options={{
+          overrides: {
+            strong: {
+              props: {
+                className: "font-bold text-black font-medium",
+              },
+            },
+          },
+        }}
+        className="bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title font-medium text-transparent"
+      >
+        {dict.about.sections.hero.title}
+      </Markdown>
     </div>,
     <div
       key="subtitle"
-      className="pointer-events-none flex flex-col justify-center sm:h-[300px] lg:mb-0"
+      className="pointer-events-none flex select-none flex-col justify-center lg:max-w-[50%]"
     >
-      <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
-        <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
-          {dict.about.sections.hero.description}
-        </p>
+      <div className="text-justify text-[#6E6E6E]">
+        <p className="h-fit">{dict.about.sections.hero.description}</p>
       </div>
-      <div className="mt-3 text-right font-sans text-[15px] font-normal text-black lg:mt-5 xl:text-[16px]">
+      <div className="mt-3 text-right text-black lg:mt-5">
         <p>Pedro Rangel Henriques</p>
         <p>{dict.about.sections.hero.subtitle}</p>
       </div>

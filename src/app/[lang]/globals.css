@@ -67,6 +67,10 @@
   overflow: hidden;
 }
 
+.custom-swiper .swiper-wrapper {
+  @apply items-center;
+}
+
 .custom-swiper .swiper-pagination {
   display: flex;
   position: relative;
