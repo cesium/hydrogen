@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ShortcutButtonsContainer() {
   return (
-    <div className="grid w-full grid-cols-2 gap-4 min-[1370px]:grid-cols-5">
+    <div className="grid w-full grid-cols-2 gap-3.5 sm:gap-4 min-[1370px]:grid-cols-5">
       <ShortcutButton
         href="https://calendario.cesium.di.uminho.pt/"
         highlight="EM DESTAQUE"
