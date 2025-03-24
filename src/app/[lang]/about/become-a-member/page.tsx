@@ -36,7 +36,7 @@ export default function BecomeAMember() {
         <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">
           <div className="flex min-w-[200px] max-w-[600px] place-items-center">
             <div className="sm:max-w-[540px]">
-              <h2 className="mb-[15px] font-title text-2xl font-semibold">
+              <h2 className="mb-4 font-title text-2xl font-semibold">
                 {dict.about.become_a_member.advantages.title}
               </h2>
               <p className="text-base">
@@ -49,7 +49,7 @@ export default function BecomeAMember() {
             alt="wallet"
             width={364}
             height={338}
-            className="h-[200px] object-contain md:h-full"
+            className="pointer-events-none h-[200px] select-none object-contain md:h-full"
           />
         </div>
       </div>
@@ -74,13 +74,13 @@ export default function BecomeAMember() {
                   }
                 </p>
                 <Link
-                  className="flex items-center gap-1 text-[#C0AC97]"
+                  className="group flex w-fit items-center gap-1 text-[#C0AC97] "
                   href={"/" + shortLocale(lang) + "/partners"}
                 >
                   <p className="text-center">
                     {dict.about.become_a_member.exclusive_partnerships.link}
                   </p>
-                  <span className="material-symbols-outlined">
+                  <span className="material-symbols-outlined transition-transform duration-200 group-hover:translate-x-0.5">
                     arrow_forward
                   </span>
                 </Link>
@@ -113,7 +113,7 @@ export default function BecomeAMember() {
                     >
                       <Image
                         key={`${partner.title}-${index}`}
-                        className="size-20 rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
+                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
                         src={partner.logo}
                         alt={partner.title}
                         width={80}
@@ -148,7 +148,7 @@ export default function BecomeAMember() {
                       rel="noopener noreferrer"
                     >
                       <Image
-                        className="size-20 rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
+                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
                         src={partner.logo}
                         alt={partner.title}
                         width={80}
@@ -189,7 +189,7 @@ export default function BecomeAMember() {
                   >
                     <Image
                       key={`${partner.title}-${index}`}
-                      className="size-20 rounded-2xl border border-black/10 object-contain"
+                      className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
                       src={partner.logo}
                       alt={partner.title}
                       width={80}
@@ -227,7 +227,7 @@ export default function BecomeAMember() {
                   >
                     <Image
                       key={`${partner.title}-${index}`}
-                      className="size-20 rounded-2xl border border-black/10 object-contain"
+                      className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
                       src={partner.logo}
                       alt={partner.title}
                       width={80}
@@ -267,7 +267,7 @@ export default function BecomeAMember() {
                   alt="ticket"
                   width={980}
                   height={365}
-                  className="h-full w-full object-cover object-top"
+                  className="pointer-events-none h-full w-full select-none object-cover object-top"
                 />
               </div>
             </div>
@@ -282,7 +282,7 @@ export default function BecomeAMember() {
               src="/images/about/become-a-member/totebag.png"
               alt="totebag"
               fill
-              className="object-cover object-[right_bottom]"
+              className="pointer-events-none select-none object-cover object-[right_bottom]"
             />
           </div>
 
@@ -328,7 +328,7 @@ export default function BecomeAMember() {
                   src="/images/about/become-a-member/notebook.png"
                   alt="discounts"
                   fill
-                  className="object-cover object-[0%_0%] sm:object-[100%_100%]"
+                  className="pointer-events-none select-none object-cover object-[0%_0%] sm:object-[100%_100%]"
                 />
               </div>
 
@@ -364,7 +364,7 @@ export default function BecomeAMember() {
                   src="/images/about/become-a-member/laptop.png"
                   alt="discounts"
                   fill
-                  className="object-cover object-[0%_0%]"
+                  className="pointer-events-none select-none object-cover object-[0%_0%]"
                 />
               </div>
             </div>
