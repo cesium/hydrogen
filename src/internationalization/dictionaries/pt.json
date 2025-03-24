@@ -40,7 +40,24 @@
       "hero": {
         "title": "CeSIUM",
         "description": "Centro de Estudantes de Engenharia Informática da Universidade do Minho"
-      }
+      },
+      "shortcut_panes": [
+        {
+          "title": "Equipa",
+          "description": "Conhece a equipa dedicada que faz o CeSIUM funcionar todos os dias.",
+          "href": "/team"
+        },
+        {
+          "title": "Departamentos",
+          "description": "O CeSIUM atua em várias áreas. Conhece os nossos departamentos.",
+          "href": "/departments"
+        },
+        {
+          "title": "Eventos",
+          "description": "Mantém-te atualizado com todas as atividades que organizamos.",
+          "href": "/events"
+        }
+      ]
     }
   },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",

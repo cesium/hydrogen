@@ -40,7 +40,24 @@
       "hero": {
         "title": "CeSIUM",
         "description": "Computer Engineering Student Center at University of Minho"
-      }
+      },
+      "shortcut_panes": [
+        {
+          "title": "Team",
+          "description": "Meet the dedicated team that makes CeSIUM move, every day.",
+          "href": "/team"
+        },
+        {
+          "title": "Departments",
+          "description": "CeSIUM operates in various areas. Get to know our departments.",
+          "href": "/departments"
+        },
+        {
+          "title": "Events",
+          "description": "Stay up to date with all the events we organize.",
+          "href": "/events"
+        }
+      ]
     }
   },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
