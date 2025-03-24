@@ -29,7 +29,7 @@ export const CallSubscribe = ({
         </button>
       </a>
       <a href="mailto:cesium@di.uminho.pt">
-        <p className={`text-base text-${buttonColor} font-medium`}>
+        <p className={`text-base text-${buttonColor} font-medium select-none`}>
           {footerText}
         </p>
       </a>

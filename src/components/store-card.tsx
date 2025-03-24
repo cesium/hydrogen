@@ -85,14 +85,14 @@ const StoreCard = () => {
 
   return (
     <InfoCard>
-      <div className="flex flex-col bg-black sm:flex-row sm:justify-between sm:gap-2">
+      <div className="flex flex-col bg-black sm:flex-row sm:justify-between sm:gap-2 selection:bg-white selection:text-black">
         <div className="flex w-full flex-col gap-2 px-6 py-9 pb-3 text-white sm:w-3/6 sm:px-9 sm:py-11">
           <h4 className="font-title text-2xl font-medium">
             {dict.store_card.title}
           </h4>
           <p>{dict.store_card.text}</p>
           <Link
-            className="hover:bg-gray-100 mt-2 w-max rounded-full px-5 py-3 text-white ring-2 ring-white transition-colors hover:bg-white/5"
+            className="hover:bg-gray-100 mt-2 w-max rounded-full px-5 py-3 text-white ring-2 ring-white transition-colors hover:bg-white/5 select-none"
             href={"https://store.cesium.pt"}
             target="_blank"
           >

@@ -119,7 +119,7 @@ export default function RootLayout({
       </head>
       <Body lang={lang} fonts={[inter, orbitron]}>
         <Navbar />
-        <div className="h-full">{children}</div>
+        <div className="h-full selection:bg-primary selection:text-white">{children}</div>
         <Footer />
       </Body>
     </html>

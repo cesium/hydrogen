@@ -29,7 +29,7 @@ export default function BecomeAMember() {
             alt="wallet"
             width={364}
             height={338}
-            className="h-[200px] object-contain md:h-full"
+            className="h-[200px] object-contain md:h-full select-none"
           />
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function BecomeAMember() {
                   alt="ticket"
                   width={980}
                   height={365}
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover object-top select-none"
                 />
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function BecomeAMember() {
               src="/images/about/become-a-member/totebag.png"
               alt="totebag"
               layout="fill"
-              className="object-cover object-[right_bottom]"
+              className="object-cover object-[right_bottom] select-none"
             />
           </div>
 
@@ -123,7 +123,7 @@ export default function BecomeAMember() {
                   alt="discounts"
                   layout="fill"
                   objectFit="cover"
-                  className="object-[0%_0%] sm:object-[100%_100%]"
+                  className="object-[0%_0%] sm:object-[100%_100%] select-none"
                 />
               </div>
 
@@ -161,6 +161,7 @@ export default function BecomeAMember() {
                   layout="fill"
                   objectFit="cover"
                   objectPosition="0% 0%"
+                  className="select-none"
                 />
               </div>
             </div>

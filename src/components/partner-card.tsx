@@ -60,7 +60,7 @@ const PartnerCard = ({
             height={96}
             src={logo}
             alt={title}
-            className="size-full rounded-lg object-contain"
+            className="size-full rounded-lg object-contain select-none"
           />
         </figure>
         <h1 className="text-xl font-semibold text-black/90">{title}</h1>
@@ -71,7 +71,9 @@ const PartnerCard = ({
                 <PerkItem key={index} {...perk} />
               ))}
             </ul>
-            <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+            <div className="select-none">
+              <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+            </div>
           </>
         )}
       </div>

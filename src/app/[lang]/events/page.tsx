@@ -50,7 +50,7 @@ export default function EventsPage() {
     >
       <div className="flex items-center justify-between">
         <h1 className="font-title text-3xl font-medium">{dict.events.title}</h1>
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-4 lg:flex select-none">
           <AppLink
             href="https://calendario.cesium.di.uminho.pt/"
             arrow="outward"

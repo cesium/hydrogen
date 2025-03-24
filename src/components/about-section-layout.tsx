@@ -85,7 +85,7 @@ const AboutSectionLayout = ({
             <span className="text-start">{subtitle}</span>
             {linkName && href && (
               <div
-                className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+                className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"} select-none`}
               >
                 <CustomLink
                   title={dict.button[linkName]}

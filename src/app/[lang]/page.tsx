@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <main>
       <section
-        className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
+        className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding} selection:bg-white selection:text-primary`}
       >
         {/* Background Gradient */}
         <div

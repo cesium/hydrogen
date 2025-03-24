@@ -74,7 +74,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
           src={info().src}
           alt={info().alt}
           fill
-          className="object-contain object-left-top"
+          className="object-contain object-left-top select-none"
         />
       </div>
       <p className="pt-4 md:hidden md:min-w-[460px]">
@@ -83,7 +83,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
       <p className="hidden pt-4 md:block md:min-w-[460px]">
         {project.desktop_description}
       </p>
-      <div className="mt-4 flex w-16 justify-between">
+      <div className="mt-4 flex w-16 justify-between select-none">
         <AppLink
           title={dict.about.projects.open}
           href={info().ref}
