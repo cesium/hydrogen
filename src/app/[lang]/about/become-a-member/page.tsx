@@ -53,7 +53,7 @@ export default function BecomeAMember() {
             style="style1"
             color="primary"
             as="link"
-            href="#"
+            href="https://cesium.link/f/socios"
           />
         </div>
         <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">
@@ -97,7 +97,7 @@ export default function BecomeAMember() {
               alt="wallet"
               width={364}
               height={338}
-              className="h-[200px] object-contain md:h-full"
+              className="pointer-events-none h-[200px] select-none object-contain md:h-full"
             />
           </div>
         </section>
@@ -288,7 +288,7 @@ export default function BecomeAMember() {
             </div>
           </InfoCard>
         </div>
-        {/* Cards */}
+        {/* Participate */}
         <div className="xl:col-span-3">
           <InfoCard>
             <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
@@ -310,7 +310,7 @@ export default function BecomeAMember() {
                 <div className="pointer-events-none absolute left-0 top-0 z-0 h-full w-full">
                   <div className="absolute bottom-[-50px] left-0 right-0 top-[-10px] bg-gradient-to-r from-[#9DD0FF] via-[#F5CFFF] to-[#FF9BC5] opacity-80 blur-[50px]"></div>
                 </div>
-                <div className="pointer-events-none relative z-10 h-full w-full overflow-hidden">
+                <div className="pointer-events-none relative z-10 h-full w-full select-none overflow-hidden">
                   <Image
                     src="/images/about/become-a-member/ticket.png"
                     alt="ticket"
@@ -326,7 +326,7 @@ export default function BecomeAMember() {
         {/* Kit */}
         <InfoCard>
           <div className="flex h-full flex-row items-center">
-            <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
+            <div className="pointer-events-none relative h-[90%] w-[450px] select-none overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
               <Image
                 src="/images/about/become-a-member/totebag.png"
                 alt="totebag"
@@ -334,7 +334,6 @@ export default function BecomeAMember() {
                 className="object-cover object-[right_bottom]"
               />
             </div>
-
             <div className="flex flex-col gap-4 px-5 py-20 md:px-12">
               <h2 className="font-title text-2xl font-semibold text-primary">
                 {dict.about.become_a_member.member_kit.title}
@@ -355,7 +354,7 @@ export default function BecomeAMember() {
             <p>{dict.about.become_a_member.room_acess.description}</p>
           </div>
         </InfoCard>
-
+        {/* Representation */}
         <InfoCard>
           <div className="flex flex-col gap-4 px-12 py-10">
             <span className="material-symbols-outlined text-5xl text-primary">
@@ -367,12 +366,12 @@ export default function BecomeAMember() {
             <p>{dict.about.become_a_member.represent.description}</p>
           </div>
         </InfoCard>
-        {/* Representation */}
+        {/* Discounts */}
         <section className="xl:col-span-3">
           <InfoCard>
             <div className="flex flex-col gap-4">
               <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
-                <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[270px] justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:order-1 lg:-ml-4">
+                <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[270px] select-none justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:order-1 lg:-ml-4">
                   <Image
                     src="/images/about/become-a-member/notebook.png"
                     alt="discounts"
@@ -409,7 +408,7 @@ export default function BecomeAMember() {
                   </div>
                 </div>
 
-                <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[270px] justify-self-end pb-32 sm:-mr-36 sm:mb-0 sm:mt-24 sm:pb-0 lg:-mr-4">
+                <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[270px] select-none justify-self-end pb-32 sm:-mr-36 sm:mb-0 sm:mt-24 sm:pb-0 lg:-mr-4">
                   <Image
                     src="/images/about/become-a-member/laptop.png"
                     alt="discounts"

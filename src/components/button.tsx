@@ -46,6 +46,9 @@ const Button = ({
         <Link
           href={href}
           className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
+          {...(href.startsWith("http")
+            ? { rel: "noopener noreferrer", target: "_blank" }
+            : {})}
         >
           {title}
         </Link>
