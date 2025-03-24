@@ -119,7 +119,7 @@ export function Calendar({
                     setTooltipAnchor(null);
                   }}
                 >
-                  <button
+                    <button
                     onClick={() =>
                       isCurrentMonth ? handleDateSelect(date) : null
                     }
@@ -128,10 +128,11 @@ export function Calendar({
                     flex h-12 w-10 items-center justify-center rounded-xl text-center
                     ${!isCurrentMonth ? "text-gray-300 cursor-default opacity-50" : "cursor-pointer transition-colors hover:bg-black/5"}
                     ${isSelected ? "z-10 bg-primary text-white hover:bg-primary" : ""}
-                  `}
-                  >
+                    ${isSameDay(date, new Date()) ? "text-primary" : ""}
+                    `}
+                    >
                     {date.getDate()}
-                  </button>
+                    </button>
                   {hasEvent(date) && isCurrentMonth && (
                     <span
                       className={`absolute bottom-1 h-1.5 w-1.5 rounded-full bg-primary ${isSelected ? "z-20 bg-white" : "z-10"}`}
