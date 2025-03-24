@@ -119,12 +119,7 @@
   "about": {
     "sections": {
       "hero": {
-        "title": [
-          "Center of",
-          "Students of",
-          "Computer Engineering",
-          "of Minho University"
-        ],
+        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
         "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
         "subtitle": "Director of the Informatics Department - 2017"
       },
@@ -138,19 +133,19 @@
         "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {
-            "src": "/images/uMinho1.jpg",
+            "src": "/images/about/uMinho1.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/workshop.jpg",
+            "src": "/images/about/workshop.jpg",
             "alt": "Class full of Computer Engineering students during a workshop."
           },
           {
-            "src": "/images/uMinho2.jpg",
+            "src": "/images/about/uMinho2.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/sei24-25.jpg",
+            "src": "/images/about/sei24-25.jpg",
             "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
           }
         ]
@@ -190,6 +185,11 @@
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
     "become_a_member": {
+      "exclusive_partnerships": {
+        "title": "Exclusive Partnerships",
+        "description": "Have lunch at Sabor da Fruta and get a free coffee. Or at Café do Luís, with a drink included. Get free badges at Os Farias. Enjoy discounts on music and driving lessons. These are just some of the partnerships we have for you.",
+        "link": "View partnerships"
+      },
       "participate": {
         "title": "Participate",
         "description": "Participate in all our events for free and enjoy tons of other benefits."
@@ -526,5 +526,17 @@
         ]
       }
     ]
+  },
+  "callsub": {
+    "members": {
+      "title": "Sounds good?",
+      "desc": "You can sign up as a CeSIUM member online in a minute. Click the button below to get started or talk to us if you have any questions."
+    },
+    "collaborators": {
+      "title": "We're waiting for you",
+      "desc": "Being a CeSIUM collaborator is more than just working – it's about learning new things, meeting incredible people, and being part of unique experiences. If that sounds good to you, apply now."
+    },
+    "button": "Start Registration",
+    "footer": "Talk to us"
   }
 }

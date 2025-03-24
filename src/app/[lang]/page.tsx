@@ -1,16 +1,13 @@
 "use client";
 
 import StoreCard from "@/components/store-card";
+import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import { horizontalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import {
-  relativeScrollTo,
-  useScrollState,
-} from "@/contexts/scrollstate-provider";
-import ShortcutPanes from "@/components/shortcut-panes";
+import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 
 export default function Home() {
   const dict = useDictionary();
@@ -36,7 +33,7 @@ export default function Home() {
           width={1087}
           height={1346.5}
           alt=""
-          src="vectors/hero.svg"
+          src="/vectors/hero.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
         />
         {/* Cube Pattern - Mobile */}
@@ -44,7 +41,7 @@ export default function Home() {
           width={638}
           height={729}
           alt=""
-          src="vectors/hero-mobile.svg"
+          src="/vectors/hero-mobile.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
         />
         {/* Hero Title/Description */}
@@ -58,19 +55,20 @@ export default function Home() {
             </h2>
           </div>
         </div>
+        {/* See More */}
         <button
-          onClick={() => relativeScrollTo(50)}
+          onClick={() => scrollTo(window.innerHeight - 72)}
           className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
         >
           <p>{dict.button.swipe}</p>
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div
-        className={`z-0 flex flex-col gap-5 bg-foundation md:gap-8 ${horizontalPadding} ${verticalPadding}`}
-      >
-        <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
-        <section className="grid grid-cols-1 gap-8 px-2 sm:grid-cols-2 md:gap-8 md:px-5">
+      <div className={`z-0 bg-foundation ${horizontalPadding}`}>
+        <section className={`py-12`}>
+          <ShortcutButtonsContainer />
+        </section>
+        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />
           </div>
