@@ -107,13 +107,13 @@ export default function BecomeAMember() {
                     <Link
                       href={partner.url}
                       key={`${partner.title}-${index}`}
-                      className="shrink-0"
+                      className="shrink-0 transition-transform hover:scale-110"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Image
                         key={`${partner.title}-${index}`}
-                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
+                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
                         src={partner.logo}
                         alt={partner.title}
                         width={80}
@@ -143,12 +143,12 @@ export default function BecomeAMember() {
                     <Link
                       href={partner.url}
                       key={`${partner.title}-${index}`}
-                      className="shrink-0"
+                      className="shrink-0 transition-transform hover:scale-110"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       <Image
-                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain transition-transform hover:scale-110"
+                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
                         src={partner.logo}
                         alt={partner.title}
                         width={80}
