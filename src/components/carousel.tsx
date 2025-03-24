@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import type { Swiper as SwiperType } from "swiper";
 
 type PaginationPos = "bottom" | "top";
@@ -63,9 +63,18 @@ export default function Carousel({
             : { clickable: true }
         }
         breakpoints={{
-          640: { slidesPerView: overflow ? 1.5 : 1, spaceBetween: 15 },
-          768: { slidesPerView: overflow ? 1.8 : 1, spaceBetween: 15 },
-          1024: { slidesPerView: overflow ? 2.5 : 3, spaceBetween: 20 },
+          640: {
+            slidesPerView: overflow ? 1.5 : single ? 1 : 2,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: overflow ? 1.8 : single ? 1 : 2,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: overflow ? 2.5 : single ? 1 : 3,
+            spaceBetween: 20,
+          },
         }}
         modules={[Autoplay, Pagination, Navigation]}
         className="custom-swiper"

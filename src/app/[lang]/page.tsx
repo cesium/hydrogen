@@ -66,12 +66,12 @@ export default function Home() {
         </button>
       </section>
       <div className={`z-0 bg-foundation ${horizontalPadding}`}>
-        <section className={`py-12`}>
+        <section className="py-10 md:py-12">
           <ShortcutButtonsContainer />
         </section>
-        <div className="flex flex-col gap-5 md:gap-8">
+        <div className="flex flex-col gap-5 pb-5 md:gap-8 md:pb-12">
           <ScrollableContent />
-          <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-8">
             <div className="sm:col-span-2">
               <StoreCard />
             </div>
