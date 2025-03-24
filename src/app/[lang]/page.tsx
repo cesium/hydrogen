@@ -85,7 +85,7 @@ export default function Home() {
         </button>
       </section>
       <div
-        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
+        className={`z-0 flex flex-col gap-8 bg-foundation ${horizontalPadding} ${verticalPadding}`}
       >
         <LandingSectionCard
           title="Eventos"
@@ -98,10 +98,6 @@ export default function Home() {
             onClearDate={handleClearDate}
           />
         </LandingSectionCard>
-      </div>
-      <div
-        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
-      >
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />

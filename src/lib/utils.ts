@@ -152,14 +152,6 @@ const departmentShortName = (departmentName: string) => {
   }
 };
 
-function formatEventDate(date: Date): string {
-  return date.toLocaleDateString("pt-BR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
-
 function getMonthAbbreviation(date: Date, lang: string): string {
   return date
     .toLocaleString(lang, { month: "short" })
@@ -278,7 +270,6 @@ export {
   getDepartmentMembersInfo,
   departmentShortName,
   shuffleArray,
-  formatEventDate,
   getMonthAbbreviation,
   getDay,
   getDaysInMonth,

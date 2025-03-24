@@ -5,6 +5,7 @@ import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { EventSkeleton } from "./event-skeleton";
 import { isSameDay } from "../lib/utils";
 import { useState } from "react";
+import { fullLocale } from "@/lib/locale";
 
 export function EventListCard({
   events,
@@ -49,15 +50,13 @@ export function EventListCard({
   ) => {
     if (isLoading || totalEvents.length > 0) {
       return (
-        <div className="">
-          <div className="my-4 flex w-full flex-row items-center">
-            <div className="h-[4px] w-6 bg-gradient-to-r from-stroke to-transparent"></div>
-            <h2 className="px-4 font-sans text-xl font-medium text-stroke">
-              {title}
-            </h2>
-            <div className="h-[4px] flex-1 bg-gradient-to-l from-stroke to-stroke/10"></div>
+        <div className="flex flex-col gap-2">
+          <div className="flex w-full flex-row items-center">
+            <div className="h-[4px] w-6 rounded-full bg-gradient-to-r from-stroke to-transparent" />
+            <h2 className="px-4 font-semibold text-gray/70">{title}</h2>
+            <div className="h-[4px] flex-1 rounded-full bg-gradient-to-l from-stroke to-stroke/10" />
           </div>
-          <div className="flex space-x-6 pb-4">
+          <div className="flex space-x-6">
             {isLoading ? (
               <>
                 <div className="min-w-[280px] flex-shrink-0">
@@ -91,7 +90,7 @@ export function EventListCard({
           className="inline-flex w-fit items-center rounded-full bg-primary p-1 px-3 text-white transition-colors hover:bg-primary/90"
         >
           {selectedDate
-            .toLocaleDateString(lang, {
+            .toLocaleDateString(fullLocale(lang), {
               day: "numeric",
               month: "2-digit",
             })

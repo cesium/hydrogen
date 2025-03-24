@@ -6,6 +6,7 @@ import { EventCard } from "./event-card";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { EventSkeleton } from "./event-skeleton";
 import { isSameDay } from "../lib/utils";
+import { fullLocale } from "@/lib/locale";
 
 export function EventList({
   events,
@@ -97,7 +98,7 @@ export function EventList({
           className="inline-flex w-fit items-center rounded-full bg-primary p-1 px-3 text-white transition-colors hover:bg-primary/90"
         >
           {selectedDate
-            .toLocaleDateString(lang, {
+            .toLocaleDateString(fullLocale(lang), {
               day: "numeric",
               month: "2-digit",
             })

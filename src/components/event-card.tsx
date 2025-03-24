@@ -1,5 +1,6 @@
 "use client";
 
+import { fullLocale } from "@/lib/locale";
 import type { EventCardProps } from "../lib/types";
 import {
   getMonthAbbreviation,
@@ -27,14 +28,17 @@ export function EventCard({ event }: EventCardProps) {
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined">calendar_month</span>
             {isAllDayEvent(event) ? (
-              <span>{new Date(event.start).toLocaleDateString(lang)}</span>
+              <span>
+                {new Date(event.start).toLocaleDateString(fullLocale(lang))}
+              </span>
             ) : isMultiDayEvent(event) ? (
               <span>
-                {formatDate(event.start, lang)} - {formatDate(event.end, lang)}
+                {formatDate(event.start, fullLocale(lang))} -{" "}
+                {formatDate(event.end, fullLocale(lang))}
               </span>
             ) : (
               <span>
-                {new Date(event.start).toLocaleTimeString(lang, {
+                {new Date(event.start).toLocaleTimeString(fullLocale(lang), {
                   hour: "2-digit",
                   minute: "2-digit",
                 })}
