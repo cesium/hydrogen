@@ -1,6 +1,7 @@
 "use client";
 
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { shortLocale } from "@/lib/locale";
 import { CardType } from "@/lib/types";
 import Link from "next/link";
 
@@ -66,7 +67,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
           className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 ${!mobileOnlyLayout ? "min-[950px]:static min-[950px]:text-base" : ""} text-${color}`}
           href={
             "/" +
-            lang +
+            shortLocale(lang) +
             (type == CardType.Collaborate
               ? "/about/become-a-collaborator"
               : "/about/become-a-member")

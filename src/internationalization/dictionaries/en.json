@@ -168,6 +168,11 @@
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
     "become_a_member": {
+      "exclusive_partnerships": {
+        "title": "Exclusive Partnerships",
+        "description": "Have lunch at Sabor da Fruta and get a free coffee. Or at Café do Luís, with a drink included. Get free badges at Os Farias. Enjoy discounts on music and driving lessons. These are just some of the partnerships we have for you.",
+        "link": "View partnerships"
+      },
       "participate": {
         "title": "Participate",
         "description": "Participate in all our events for free and enjoy tons of other benefits."
