@@ -67,10 +67,10 @@ export default function Home() {
         </button>
       </section>
       <div
-        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
+        className={`z-0 flex flex-col gap-5 bg-foundation md:gap-8 ${horizontalPadding} ${verticalPadding}`}
       >
         <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
-        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <section className="grid grid-cols-1 gap-8 px-2 sm:grid-cols-2 md:gap-8 md:px-5">
           <div className="sm:col-span-2">
             <StoreCard />
           </div>
