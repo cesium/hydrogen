@@ -24,7 +24,7 @@ export function EventCardCalendar({ event }: EventCardProps) {
 
   return (
     <div
-      className="hover:bg-gray-100 mb-6 mr-6 flex h-[215px] w-[353px] cursor-pointer flex-col items-start rounded-xl bg-[#0000000D] transition md:h-[180px] md:w-[410px] md:flex-row md:p-6"
+      className="hover:bg-gray-100 mb-6 flex h-[215px] w-[353px] cursor-pointer flex-col items-start rounded-xl bg-[#0000000D] transition md:h-[180px] md:w-[410px] md:flex-row md:p-6"
       onClick={handleClick}
     >
       <div className=" ml-4 mt-3 flex flex-row gap-1 rounded-xl bg-white p-2 text-center md:mr-4 md:mt-6 md:h-[72px] md:w-[72px] md:flex-col md:gap-0">
@@ -34,7 +34,7 @@ export function EventCardCalendar({ event }: EventCardProps) {
         <div className="text-2xl font-bold">{day}</div>
       </div>
       <div className="ml-4 mt-2 flex-1 md:ml-0 md:mt-0">
-        <h3 className="text-xl font-bold">{event.title}</h3>
+        <h3 className="text-base font-bold">{event.title}</h3>
         <div className="text-gray-600 text-base">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-gray">

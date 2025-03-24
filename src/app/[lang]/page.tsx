@@ -90,6 +90,7 @@ export default function Home() {
         <LandingSectionCard
           title="Eventos"
           subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+          overflows
         >
           <EventListCard
             events={events}

@@ -57,7 +57,7 @@ export function EventListCard({
             </h2>
             <div className="h-[4px] flex-1 bg-gradient-to-l from-stroke to-stroke/10"></div>
           </div>
-          <div className="flex space-x-6 overflow-x-auto pb-4">
+          <div className="flex space-x-6 pb-4">
             {isLoading ? (
               <>
                 <div className="min-w-[280px] flex-shrink-0">
@@ -69,7 +69,7 @@ export function EventListCard({
               </>
             ) : (
               eventList.map((event, index) => (
-                <div key={index} className="min-w-[280px] flex-shrink-0">
+                <div key={index} className="min-w-[280px] flex-shrink">
                   <EventCardCalendar event={event} />
                 </div>
               ))
@@ -100,7 +100,7 @@ export function EventListCard({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
-      <div className="flex w-full flex-row items-center ">
+      <div className="flex w-full flex-row items-center gap-6">
         {renderEventList(
           visibleFutureEvents,
           futureEvents,
