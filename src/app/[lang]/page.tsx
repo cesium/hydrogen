@@ -8,6 +8,7 @@ import { horizontalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
+import ShortcutPanes from "@/components/shortcut-panes";
 
 export default function Home() {
   const dict = useDictionary();
@@ -64,11 +65,16 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div className={`z-0 bg-foundation ${horizontalPadding}`}>
-        <section className={`py-12`}>
+      <div
+        className={`z-0 bg-foundation ${horizontalPadding} flex flex-col gap-12 py-12`}
+      >
+        <section>
           <ShortcutButtonsContainer />
         </section>
-        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <section>
+          <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
+        </section>
+        <section className="grid grid-cols-1 gap-8 px-5 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />
           </div>
