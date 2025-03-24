@@ -18,7 +18,7 @@ export default function ShortcutButtonsContainer() {
       </ShortcutButton>
 
       <ShortcutButton href="https://discord.com/invite/wQEvhkfFPk">
-        <div className="flex h-full items-center justify-center gap-2 text-[11px] sm:gap-3 sm:text-base">
+        <div className="flex h-full items-center justify-center gap-2 text-xs sm:gap-3 sm:text-base">
           <Image
             src="/logo/discord.svg"
             width={50}
