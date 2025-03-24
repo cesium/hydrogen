@@ -1,9 +1,10 @@
 "use client";
 
 import StoreCard from "@/components/store-card";
+import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import { horizontalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import {
@@ -65,9 +66,10 @@ export default function Home() {
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div
-        className={`z-0 bg-foundation ${horizontalPadding} ${verticalPadding}`}
-      >
+      <div className={`z-0 bg-foundation ${horizontalPadding}`}>
+        <section className={`py-12`}>
+          <ShortcutButtonsContainer />
+        </section>
         <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />
