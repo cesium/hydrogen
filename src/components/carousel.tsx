@@ -40,9 +40,7 @@ export default function Carousel({
       centeredSlides
     >
       {items.map((item, index) => (
-        <SwiperSlide key={index} className={`flex justify-center`}>
-          {item}
-        </SwiperSlide>
+        <SwiperSlide key={index}>{item}</SwiperSlide>
       ))}
     </Swiper>
   );

@@ -6,10 +6,7 @@ import { CardType } from "@/lib/types";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import {
-  relativeScrollTo,
-  useScrollState,
-} from "@/contexts/scrollstate-provider";
+import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 
 export default function Home() {
   const dict = useDictionary();
@@ -57,8 +54,9 @@ export default function Home() {
             </h2>
           </div>
         </div>
+        {/* See More */}
         <button
-          onClick={() => relativeScrollTo(50)}
+          onClick={() => scrollTo(window.innerHeight - 72)}
           className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
         >
           <p>{dict.button.swipe}</p>
