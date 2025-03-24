@@ -109,7 +109,7 @@ export function Calendar({
                   key={index}
                   className="relative flex flex-col items-center"
                   onMouseEnter={(e) => {
-                    if (hasEvent(date)) {
+                    if (hasEvent(date) && isCurrentMonth) {
                       setHoveredDate(date);
                       setTooltipAnchor(e.currentTarget);
                     }
