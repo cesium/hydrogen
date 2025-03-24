@@ -173,6 +173,11 @@
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     },
     "become_a_member": {
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
+      },
       "participate": {
         "title": "Participa gratuitamente em eventos",
         "description": "O teu cartão de sócio é o passe direto para quase todos os nossos eventos. Aproveita noites de karaoke, board games ou cinema, workshops e showoffs, ocasiões especiais como o Magusto e a Noite de Informática, e muito mais, de graça ou com descontos exclusivos."
@@ -197,11 +202,6 @@
       "advantages": {
         "title": "Vantagens para sempre",
         "description": "As vantagens de ter um cartão de sócio nunca expiram, uma vez que a quota de inscrição é vitalícia - pagas uma vez, e serás sócio para sempre. Estas são as vantagens que ser sócios tem para oferecer:"
-      },
-      "hero": {
-        "title": "Torna-te sócio do",
-        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
-        "button": "Inscreve-te"
       }
     },
     "explore": {

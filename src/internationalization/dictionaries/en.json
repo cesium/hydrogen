@@ -173,6 +173,11 @@
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
     "become_a_member": {
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
+      },
       "participate": {
         "title": "Participate",
         "description": "Participate in all our events for free and enjoy tons of other benefits."
@@ -197,11 +202,6 @@
       "advantages": {
         "title": "Lifetime benefits",
         "description": "The benefits of having a membership card never expire, as the registration fee is lifelong - you pay once, and you're a member forever. These are the benefits that membership has to offer:"
-      },
-      "hero": {
-        "title": "Become a member of",
-        "description": "With a membership card, you can unlock various benefits, partnerships, and discounts.",
-        "button": "Join now"
       }
     },
     "explore": {

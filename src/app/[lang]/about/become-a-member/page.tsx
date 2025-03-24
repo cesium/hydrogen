@@ -1,32 +1,28 @@
 "use client";
+
 import Image from "next/image";
 import Button from "@/components/button";
 import InfoCard from "@/components/info-card";
 import CallSubscribe from "@/components/call-subscribe";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import {
-  horizontalPadding,
-  horizontalPaddingL,
-  verticalPadding,
-} from "@/lib/styling";
+import { horizontalPadding, verticalPadding } from "@/lib/styling";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
 
   return (
     <main>
+      {/* Hero */}
       <section
-        className={`grid min-h-[400px] grid-flow-row items-start bg-primary text-white lg:grid-flow-col lg:items-start`}
+        className={`relative grid min-h-[380px] grid-flow-row items-start bg-primary text-white lg:grid-flow-col lg:items-start`}
       >
         <div
           className={`max-w-1/2 flex flex-col gap-8 ${verticalPadding} px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60`}
         >
           <div>
-            <h1 className="text-gradient font-title text-4xl font-medium opacity-50 lg:text-5xl">
-              {dict.about.become_a_member.hero.title}
-            </h1>
-            <h1 className="font-title text-4xl font-medium lg:text-5xl">
-              CeSIUM
+            <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
+              {dict.about.become_a_member.hero.title}{" "}
+              <span className="text-white">CeSIUM</span>
             </h1>
           </div>
           <p className="relative z-10 text-lg">
@@ -40,7 +36,7 @@ export default function BecomeAMember() {
             href="#"
           />
         </div>
-        <div className="flex h-full items-end justify-center sm:hidden sm:justify-end xl:flex">
+        <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">
           <Image
             src="/vectors/member.svg"
             alt="Torna-te membro"
@@ -49,14 +45,26 @@ export default function BecomeAMember() {
             className="h-fit w-[323px] lg:w-[528px]"
           />
         </div>
+        <div className="pointer-events-none absolute bottom-0 right-0 hidden h-full select-none items-end justify-center sm:flex sm:justify-end xl:hidden">
+          <Image
+            src="/vectors/member.svg"
+            alt="Torna-te membro"
+            height={331}
+            width={528}
+            className="h-fit w-[323px]"
+          />
+        </div>
       </section>
-
-      <div className={`${horizontalPadding} ${verticalPadding} flex flex-col gap-5 md:gap-8`}>
-        <div className="xl:col-span-3">
+      {/* Content */}
+      <div
+        className={`grid grid-cols-1 gap-7 overflow-hidden py-10 md:py-14 xl:grid-cols-3 ${horizontalPadding}`}
+      >
+        {/* Vantagens */}
+        <section className="pb-4 xl:col-span-3">
           <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">
-            <div className="flex min-w-[200px] max-w-[600px] place-items-center">
-              <div className="sm:max-w-[540px]">
-                <h2 className="mb-[15px] font-title text-2xl font-semibold">
+            <div className="flex min-w-[200px] max-w-[600px] place-items-center px-5">
+              <div className="flex flex-col gap-4 sm:max-w-[540px]">
+                <h2 className="font-title text-3xl font-medium">
                   {dict.about.become_a_member.advantages.title}
                 </h2>
                 <p className="text-base">
@@ -72,8 +80,8 @@ export default function BecomeAMember() {
               className="h-[200px] object-contain md:h-full"
             />
           </div>
-        </div>
-
+        </section>
+        {/* Cards */}
         <div className="xl:col-span-3">
           <InfoCard>
             <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
@@ -108,7 +116,7 @@ export default function BecomeAMember() {
             </div>
           </InfoCard>
         </div>
-
+        {/* Kit */}
         <InfoCard>
           <div className="flex h-full flex-row items-center">
             <div className="pointer-events-none relative h-[90%] w-[450px] overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
@@ -128,7 +136,7 @@ export default function BecomeAMember() {
             </div>
           </div>
         </InfoCard>
-
+        {/* Room */}
         <InfoCard>
           <div className="flex flex-col gap-4 px-12 py-10">
             <span className="material-symbols-outlined text-5xl text-primary">
@@ -152,8 +160,8 @@ export default function BecomeAMember() {
             <p>{dict.about.become_a_member.represent.description}</p>
           </div>
         </InfoCard>
-
-        <div className="xl:col-span-3">
+        {/* Representation */}
+        <section className="xl:col-span-3">
           <InfoCard>
             <div className="flex flex-col gap-4">
               <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
@@ -206,8 +214,9 @@ export default function BecomeAMember() {
               </div>
             </div>
           </InfoCard>
-        </div>
-        <div className="mt-4 flex w-full flex-col items-center justify-center xl:col-span-3">
+        </section>
+        {/* Call to register */}
+        <section className="mt-4 flex w-full flex-col items-center justify-center xl:col-span-3">
           <CallSubscribe
             title={dict.callsub.members.title}
             description={dict.callsub.members.desc}
@@ -216,7 +225,34 @@ export default function BecomeAMember() {
             buttonColor={"primary"}
             footerText={dict.callsub.footer}
           />
-        </div>
+        </section>
+        {/* Details */}
+        <section className="flex justify-center py-3 xl:col-span-3">
+          <ol className="flex max-w-[85ch] list-inside list-decimal flex-col gap-2 text-sm text-gray">
+            <li>
+              A inscrição como sócio depende de uma quota única no valor de 10€.
+              Os benefícios não expiram nem estão sujeitos a limites gerais, a
+              menos que um dos benefícios já estabeleça por definição essas
+              condições. O pagamento apenas pode ser feito através de dinheiro
+              vivo, diretamente na sala do CeSIUM.
+            </li>
+            <li>
+              Como sócio, terás sempre acesso a todas as parcerias que
+              disponibilizamos. Porém, as mesmas podem sofrer alteração de
+              condições ou terminar.
+            </li>
+            <li>
+              O kit de sócio inclui um sortido de artigos que pode variar de kit
+              para kit, consoante um critério de escolha aleatório e
+              disponibilidade dos brindes.
+            </li>
+            <li>
+              Em certas ocasiões, durante o horário de abertura, a sala do
+              CeSIUM pode estar fechada, por estar a decorrer uma atividade
+              interna dentro dela (como, por exemplo, uma reunião).
+            </li>
+          </ol>
+        </section>
       </div>
     </main>
   );
