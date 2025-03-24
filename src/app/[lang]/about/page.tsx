@@ -124,7 +124,7 @@ export default function About() {
           className={`flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)]`}
         >
           {/* Desktop Hero */}
-          <div className="hidden h-full items-center justify-center lg:flex">
+          <div className="hidden h-full items-center justify-center lg:flex gap-10">
             {heroItems.map((item, _) => item)}
           </div>
           {/* Mobile Hero */}
