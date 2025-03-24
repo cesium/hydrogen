@@ -126,12 +126,7 @@
   "about": {
     "sections": {
       "hero": {
-        "title": [
-          "Center of",
-          "Students of",
-          "Computer Engineering",
-          "of Minho University"
-        ],
+        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
         "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
         "subtitle": "Director of the Informatics Department - 2017"
       },

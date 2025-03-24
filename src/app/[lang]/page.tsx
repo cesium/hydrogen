@@ -1,16 +1,14 @@
 "use client";
 
 import StoreCard from "@/components/store-card";
+import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { CardType } from "@/lib/types";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import { horizontalPadding } from "@/lib/styling";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import {
-  relativeScrollTo,
-  useScrollState,
-} from "@/contexts/scrollstate-provider";
 import ScrollableContent from "@/components/scrollable-content";
+import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 
 export default function Home() {
   const dict = useDictionary();
@@ -58,25 +56,29 @@ export default function Home() {
             </h2>
           </div>
         </div>
+        {/* See More */}
         <button
-          onClick={() => relativeScrollTo(50)}
+          onClick={() => scrollTo(window.innerHeight - 72)}
           className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
         >
           <p>{dict.button.swipe}</p>
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
-      <div
-        className={`z-0 flex flex-col gap-5 bg-foundation md:gap-8 ${horizontalPadding} ${verticalPadding}`}
-      >
-        <ScrollableContent />
-        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          <div className="sm:col-span-2">
-            <StoreCard />
-          </div>
-          <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
-          <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+      <div className={`z-0 bg-foundation ${horizontalPadding}`}>
+        <section className={`py-12`}>
+          <ShortcutButtonsContainer />
         </section>
+        <div className="flex flex-col gap-5 md:gap-8">
+          <ScrollableContent />
+          <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="sm:col-span-2">
+              <StoreCard />
+            </div>
+            <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
+            <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+          </section>
+        </div>
       </div>
     </main>
   );

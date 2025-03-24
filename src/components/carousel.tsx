@@ -46,7 +46,7 @@ export default function Carousel({
         }}
         slidesPerView={overflow ? 1.3 : 1}
         spaceBetween={15}
-        centeredSlides={true}
+        centeredSlides
         loop={loop}
         autoplay={
           autoplay ? { delay: autoplay, disableOnInteraction: false } : false
@@ -63,15 +63,9 @@ export default function Carousel({
             : { clickable: true }
         }
         breakpoints={{
-          768: {
-            slidesPerView: overflow ? 1.8 : single ? 1 : 2,
-            spaceBetween: 15,
-            centeredSlides: overflow ? true : false,
-          },
-          1024: {
-            slidesPerView: overflow ? 2.5 : single ? 1 : 3,
-            spaceBetween: 20,
-          },
+          640: { slidesPerView: overflow ? 1.5 : 1, spaceBetween: 15 },
+          768: { slidesPerView: overflow ? 1.8 : 1, spaceBetween: 15 },
+          1024: { slidesPerView: overflow ? 2.5 : 3, spaceBetween: 20 },
         }}
         modules={[Autoplay, Pagination, Navigation]}
         className="custom-swiper"
