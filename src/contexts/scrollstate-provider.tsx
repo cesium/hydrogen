@@ -21,15 +21,12 @@ export function ScrollStateProvider({
 
   const handleScroll = () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    const scrollableHeight = scrollHeight - clientHeight;
 
     const isTop = window.pageYOffset === 0;
     setIsScrolledTop(isTop);
 
     const isBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight;
     setIsScrolledBottom(isBottom);
-
-    const scrolledPercentage = (scrollTop / scrollableHeight) * 100;
   };
 
   useEffect(() => {

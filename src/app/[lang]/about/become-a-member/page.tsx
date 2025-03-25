@@ -112,7 +112,9 @@ export default function BecomeAMember() {
                     }
                   </p>
                   <AppLink
-                    title={dict.about.become_a_member.exclusive_partnerships.link}
+                    title={
+                      dict.about.become_a_member.exclusive_partnerships.link
+                    }
                     color="#987b60"
                     href="/partners"
                   />
