@@ -2,6 +2,7 @@
 
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
+import Image from "next/image";
 import Button from "./button";
 
 interface CardProps {
@@ -24,21 +25,22 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
 
   return (
     <div
-      className={`relative flex min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color}`}
+      className={`relative flex h-full min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color}`}
     >
       {/* Card image */}
       <div
-        className={`absolute bottom-0 hidden min-[330px]:block ${type == CardType.Collaborate ? "left-2" : "left-8"}`}
+        className={`absolute bottom-0 hidden justify-start ${mobileOnlyLayout ? "min-[840px]:flex" : "min-[330px]:flex"} ${type == CardType.Collaborate ? "left-2" : "left-8"}`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={
             type == CardType.Collaborate
               ? "/vectors/collaborator.svg"
               : "/vectors/member.svg"
           }
           alt="Promotional Image"
-          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none select-none`}
+          height={500}
+          width={500}
+          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none w-fit select-none`}
         />
       </div>
 
