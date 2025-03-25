@@ -39,6 +39,7 @@ export default function Home() {
 
   return (
     <main>
+      {/* Hero */}
       <section
         className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
       >
@@ -99,8 +100,8 @@ export default function Home() {
         {/* Events */}
         <section>
           <LandingSectionCard
-            title="Eventos"
-            subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+            title={dict.landing.sections.events.title}
+            subtitle={dict.landing.sections.events.description}
             overflows
           >
             <EventListCard

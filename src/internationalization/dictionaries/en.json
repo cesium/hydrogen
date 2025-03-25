@@ -41,6 +41,10 @@
         "title": "CeSIUM",
         "description": "Computer Engineering Student Center at University of Minho"
       },
+      "events": {
+        "title": "Events",
+        "description": "At CeSIUM, we organize a variety of activities - pedagogical, recreational, and more. Got your attention? We have a page with all the dates."
+      },
       "shortcut_buttons": {
         "highlight": "Featured",
         "discord": "<p>**CeSIUM's**</p> Discord",
