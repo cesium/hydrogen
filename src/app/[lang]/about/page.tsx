@@ -257,7 +257,10 @@ export default function About() {
             overflow
             loop
             items={departmentNames.map((departmentName, index) => (
-              <div key={index} className="flex h-[350px]">
+              <div
+                key={index}
+                className="pointer-events-none flex h-[350px] select-none"
+              >
                 <DepartmentCard
                   key={departmentName}
                   name={departmentName}
@@ -268,7 +271,7 @@ export default function About() {
                   hideShortName
                   teamData={teamData}
                   yearRange={yearRange}
-                ></DepartmentCard>
+                />
               </div>
             ))}
           />
