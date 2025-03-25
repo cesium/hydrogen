@@ -1,19 +1,18 @@
 "use client";
 
 import StoreCard from "@/components/store-card";
+import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { type Event, CardType } from "@/lib/types";
 import { useEffect, useState } from "react";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
-import Image from "next/image";
-import { useDictionary } from "@/contexts/dictionary-provider";
-import {
-  relativeScrollTo,
-  useScrollState,
-} from "@/contexts/scrollstate-provider";
+import { horizontalPadding } from "@/lib/styling";
 import { EventListCard } from "@/components/event-list-card";
 import getEvents from "@/lib/api/getEvents";
 import LandingSectionCard from "@/components/landing-section-card";
+import Image from "next/image";
+import { useDictionary } from "@/contexts/dictionary-provider";
+import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
+import ShortcutPanes from "@/components/shortcut-panes";
 
 export default function Home() {
   const dict = useDictionary();
@@ -56,14 +55,14 @@ export default function Home() {
           width={1087}
           height={1346.5}
           alt=""
-          src="vectors/hero.svg"
+          src="/vectors/hero.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
         />
         <Image
           width={638}
           height={729}
           alt=""
-          src="vectors/hero-mobile.svg"
+          src="/vectors/hero-mobile.svg"
           className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
         />
         <div className="flex h-full flex-col justify-center">
@@ -76,29 +75,43 @@ export default function Home() {
             </h2>
           </div>
         </div>
+        {/* See More */}
         <button
-          onClick={() => relativeScrollTo(50)}
+          onClick={() => scrollTo(window.innerHeight - 72)}
           className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 text-white transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
         >
           <p>{dict.button.swipe}</p>
           <span className="material-symbols-outlined">arrow_downward</span>
         </button>
       </section>
+      {/* Content */}
       <div
-        className={`z-0 flex flex-col gap-8 bg-foundation ${horizontalPadding} ${verticalPadding}`}
+        className={`z-0 bg-foundation ${horizontalPadding} flex flex-col gap-12 py-12`}
       >
-        <LandingSectionCard
-          title="Eventos"
-          subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
-          overflows
-        >
-          <EventListCard
-            events={events}
-            selectedDate={selectedDate}
-            onClearDate={handleClearDate}
-          />
-        </LandingSectionCard>
-        <section className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+        {/* Shortcut Buttons */}
+        <section>
+          <ShortcutButtonsContainer />
+        </section>
+        {/* Shortcut Panes */}
+        <section>
+          <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
+        </section>
+        {/* Events */}
+        <section>
+          <LandingSectionCard
+            title="Eventos"
+            subtitle="No CeSIUM, organizamos vários eventos - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+            overflows
+          >
+            <EventListCard
+              events={events}
+              selectedDate={selectedDate}
+              onClearDate={handleClearDate}
+            />
+          </LandingSectionCard>
+        </section>
+        {/* Store / Member / Collaborator */}
+        <section className="grid grid-cols-1 gap-8 px-2 md:px-5 sm:grid-cols-2">
           <div className="sm:col-span-2">
             <StoreCard />
           </div>

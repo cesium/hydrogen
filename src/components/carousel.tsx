@@ -25,7 +25,7 @@ export default function Carousel({
     <Swiper
       slidesPerView={overflow ? 1.3 : 1}
       spaceBetween={15}
-      loop={loop ? true : false}
+      loop={loop}
       autoplay={
         autoplay ? { delay: autoplay, disableOnInteraction: false } : false
       }
@@ -37,11 +37,10 @@ export default function Carousel({
       }}
       modules={[Autoplay, Pagination]}
       className="custom-swiper"
+      centeredSlides
     >
       {items.map((item, index) => (
-        <SwiperSlide key={index} className={`flex justify-center`}>
-          {item}
-        </SwiperSlide>
+        <SwiperSlide key={index}>{item}</SwiperSlide>
       ))}
     </Swiper>
   );

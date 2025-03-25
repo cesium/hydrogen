@@ -40,7 +40,24 @@
       "hero": {
         "title": "CeSIUM",
         "description": "Computer Engineering Student Center at University of Minho"
-      }
+      },
+      "shortcut_panes": [
+        {
+          "title": "Team",
+          "description": "Meet the dedicated team that makes CeSIUM move, every day.",
+          "href": "/team"
+        },
+        {
+          "title": "Departments",
+          "description": "CeSIUM operates in various areas. Get to know our departments.",
+          "href": "/departments"
+        },
+        {
+          "title": "Events",
+          "description": "Stay up to date with all the events we organize.",
+          "href": "/events"
+        }
+      ]
     }
   },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
@@ -102,12 +119,7 @@
   "about": {
     "sections": {
       "hero": {
-        "title": [
-          "Center of",
-          "Students of",
-          "Computer Engineering",
-          "of Minho University"
-        ],
+        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
         "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
         "subtitle": "Director of the Informatics Department - 2017"
       },
@@ -173,6 +185,11 @@
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
     "become_a_member": {
+      "exclusive_partnerships": {
+        "title": "Exclusive Partnerships",
+        "description": "Have lunch at Sabor da Fruta and get a free coffee. Or at Café do Luís, with a drink included. Get free badges at Os Farias. Enjoy discounts on music and driving lessons. These are just some of the partnerships we have for you.",
+        "link": "View partnerships"
+      },
       "participate": {
         "title": "Participate",
         "description": "Participate in all our events for free and enjoy tons of other benefits."
