@@ -1,11 +1,12 @@
 "use client";
 
+import { useLang } from "@/contexts/dictionary-provider";
 import Link from "next/link";
 
 interface ButtonProps {
   title: string;
   style: "style1" | "style2";
-  color?: "primary" | "blue";
+  color?: string;
   as?: "button" | "link";
   href?: string;
   onClick?: () => void;
@@ -19,16 +20,24 @@ const Button = ({
   href,
   onClick,
 }: ButtonProps) => {
-  const baseStyle =
-    "py-[13px] text-base font-normal transition-opacity hover:opacity-85 active:scale-95 transition-transform ease-in-out duration-300";
+  const lang = useLang();
+  const hrefDefault = href ?? "/";
+  const hrefLang = `/${lang}${href}`;
 
+  const isCustomColor = !["blue", "primary", "black"].includes(color);
+  const isLocalLink =
+    href &&
+    !(
+      href.startsWith("http") ||
+      href.startsWith("mailto") ||
+      href.startsWith("tel")
+    );
+
+  const baseStyle =
+    "py-3 text-base font-normal transition-transform hover:scale-105 active:scale-95 transition-transform ease-in-out duration-300";
   const styleVariant = {
-    style1: `rounded-full bg-white px-5 w-fit ${
-      color === "primary" ? "text-primary" : "text-blue"
-    }`,
-    style2: `rounded-[10px] px-6 text-white w-[250px] ${
-      color === "primary" ? "bg-primary" : "bg-blue"
-    }`,
+    style1: `rounded-full bg-white px-5 w-fit ${!isCustomColor ? `text-${color}` : ""}`,
+    style2: `rounded-xl font-semibold px-12 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
   };
 
   return (
@@ -37,6 +46,7 @@ const Button = ({
         <button
           onClick={onClick}
           className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
+          {...(isCustomColor && { style: { color } })}
         >
           {title}
         </button>
@@ -44,8 +54,12 @@ const Button = ({
 
       {as === "link" && href && (
         <Link
-          href={href}
+          href={isLocalLink ? hrefLang : hrefDefault}
           className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
+          {...(isCustomColor && { style: { color } })}
+          {...(!isLocalLink
+            ? { rel: "noopener noreferrer", target: "_blank" }
+            : {})}
         >
           {title}
         </Link>

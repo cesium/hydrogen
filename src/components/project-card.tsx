@@ -84,11 +84,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
         {project.desktop_description}
       </p>
       <div className="mt-4 flex w-16 justify-between">
-        <AppLink
-          title={dict.about.projects.open}
-          href={info().ref}
-          arrow="outward"
-        ></AppLink>
+        <AppLink title={dict.about.projects.open} href={info().ref}></AppLink>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import type { MemberInfo, TeamData } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { getDepartmentMembersInfo } from "@/lib/utils";
 import Avatar from "./avatar";
 import Markdown from "markdown-to-jsx";
+import AppLink from "./link";
 
 interface DepartmentCardProps {
   name: string;
@@ -31,7 +31,6 @@ const DepartmentCard = ({
   yearRange,
   shortDescription,
 }: DepartmentCardProps) => {
-  const lang = useLang();
   const dict = useDictionary();
 
   const [members, setMembers] = useState<MemberInfo[]>([]);
@@ -89,15 +88,11 @@ const DepartmentCard = ({
                   />
                 ))}
               </div>
-              <Link
-                className="flex items-center space-x-1 text-sm font-medium"
-                href={`/${lang}/team`}
-              >
-                <span className="hover:underline">{dict.button.see_team}</span>
-                <span className="material-symbols-outlined text-xl">
-                  arrow_forward
-                </span>
-              </Link>
+              <AppLink
+                title={dict.button.see_team}
+                href="/team"
+                color="black"
+              />
             </div>
           )}
         </div>

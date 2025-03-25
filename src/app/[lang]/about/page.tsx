@@ -312,7 +312,6 @@ export default function About() {
                       <AppLink
                         title={link.title}
                         href={link.href}
-                        arrow={link.arrow as "back" | "forward" | "outward"}
                         color={linkColor as "primary" | "blue"}
                       />
                     </div>

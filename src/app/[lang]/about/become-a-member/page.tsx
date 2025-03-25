@@ -4,17 +4,16 @@ import Image from "next/image";
 import Button from "@/components/button";
 import InfoCard from "@/components/info-card";
 import CallSubscribe from "@/components/call-subscribe";
-import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { shuffleArray } from "@/lib/utils";
-import { shortLocale } from "@/lib/locale";
 import { useEffect, useState } from "react";
+import AppLink from "@/components/link";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
-  const lang = useLang();
 
   const partnersMiddleIndex = Math.floor(dict.partners.list.length / 2);
   const [partnersFirstHalf, setPartnersFirstHalf] = useState(
@@ -54,15 +53,6 @@ export default function BecomeAMember() {
             color="primary"
             as="link"
             href="https://cesium.link/f/socios"
-          />
-        </div>
-        <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">
-          <Image
-            src="/vectors/member.svg"
-            alt="Torna-te membro"
-            height={331}
-            width={528}
-            className="h-fit w-[323px] lg:w-[528px]"
           />
         </div>
         <div className="pointer-events-none absolute bottom-0 right-0 hidden h-full select-none items-end justify-center sm:flex sm:justify-end xl:hidden">
@@ -121,17 +111,13 @@ export default function BecomeAMember() {
                         .description
                     }
                   </p>
-                  <Link
-                    className="group flex w-fit items-center gap-1 text-[#C0AC97] "
-                    href={"/" + shortLocale(lang) + "/partners"}
-                  >
-                    <p className="text-center">
-                      {dict.about.become_a_member.exclusive_partnerships.link}
-                    </p>
-                    <span className="material-symbols-outlined transition-transform duration-200 group-hover:translate-x-0.5">
-                      arrow_forward
-                    </span>
-                  </Link>
+                  <AppLink
+                    title={
+                      dict.about.become_a_member.exclusive_partnerships.link
+                    }
+                    color="#987b60"
+                    href="/partners"
+                  />
                 </div>
               </div>
               <div className="mr-24 hidden h-96 shrink-0 gap-5 xl:flex">
@@ -394,17 +380,11 @@ export default function BecomeAMember() {
                     <p className="text-center">
                       {dict.about.become_a_member.discounts.description}
                     </p>
-                    <a
-                      className="flex items-center gap-1 text-[#5C657F]"
+                    <AppLink
+                      title={dict.about.become_a_member.discounts.link}
                       href="https://store.cesium.pt"
-                    >
-                      <p className="text-center">
-                        {dict.about.become_a_member.discounts.link}
-                      </p>
-                      <span className="material-symbols-outlined">
-                        arrow_outward
-                      </span>
-                    </a>
+                      color="#5C657F"
+                    />
                   </div>
                 </div>
 
