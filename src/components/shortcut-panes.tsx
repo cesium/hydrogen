@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useLang } from "@/contexts/dictionary-provider";
-import { shortLocale } from "@/lib/locale";
 
 interface Shortcut {
   title: string;
@@ -22,7 +21,7 @@ const ShortcutPanes = ({ shortcuts }: ShortcutPanesProps) => {
       {shortcuts.map((shortcut, index) => (
         <Link
           key={index}
-          href={`/${shortLocale(lang)}${shortcut.href}`}
+          href={`/${lang}${shortcut.href}`}
           className={`group relative w-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-stroke from-20% to-transparent to-60% px-6 py-9 xl:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] xl:px-14 ${index == shortcuts.length - 1 ? "rounded-b-xl xl:rounded-none" : ""}`}
         >
           <div

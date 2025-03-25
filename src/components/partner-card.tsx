@@ -71,7 +71,7 @@ const PartnerCard = ({
                 <PerkItem key={index} {...perk} />
               ))}
             </ul>
-            <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+            <AppLink title={dict.button.see_more} href={url} />
           </>
         )}
       </div>

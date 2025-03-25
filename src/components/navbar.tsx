@@ -9,7 +9,6 @@ import { AnimatePresence, motion } from "motion/react";
 import SocialIcon from "@/components/social-icon";
 import Logo from "./logo";
 import { horizontalPadding } from "@/lib/styling";
-import { shortLocale } from "@/lib/locale";
 
 const Navbar = () => {
   const dict = useDictionary();
@@ -69,7 +68,7 @@ const Navbar = () => {
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:px-12 md:pt-12`}
       >
         <nav className="flex items-center justify-between gap-9 md:justify-normal">
-          <Link href={`/${shortLocale(lang)}`}>
+          <Link href={`/${lang}`}>
             <Logo
               type="cesium"
               width={30}
@@ -99,7 +98,7 @@ const Navbar = () => {
                   href={
                     route.path.startsWith("http")
                       ? route.path
-                      : `/${shortLocale(lang)}${route.path}`
+                      : `/${lang}${route.path}`
                   }
                   className={`${
                     isCurrent(route.path) ? `${currentLink}` : ""
@@ -139,7 +138,7 @@ const Navbar = () => {
                       href={
                         route.path.startsWith("http")
                           ? route.path
-                          : `/${shortLocale(lang)}${route.path}`
+                          : `/${lang}${route.path}`
                       }
                       className={`${
                         isCurrent(route.path) ? "text-black" : ""

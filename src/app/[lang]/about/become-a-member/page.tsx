@@ -1,18 +1,18 @@
 "use client";
+
 import Image from "next/image";
 import InfoCard from "@/components/info-card";
 import CallSubscribe from "@/components/call-subscribe";
-import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { shuffleArray } from "@/lib/utils";
-import { shortLocale } from "@/lib/locale";
 import { useEffect, useState } from "react";
+import AppLink from "@/components/link";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
-  const lang = useLang();
 
   const partnersMiddleIndex = Math.floor(dict.partners.list.length / 2);
   const [partnersFirstHalf, setPartnersFirstHalf] = useState(
@@ -57,7 +57,7 @@ export default function BecomeAMember() {
       <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col justify-between xl:flex-row xl:gap-20">
-            <div className="flex flex-col gap-2 px-6 pb-10 pt-7 xl:flex-row xl:gap-20 xl:py-32 xl:pl-12">
+            <div className="flex flex-col gap-3 px-6 pb-10 pt-7 xl:flex-row xl:gap-20 xl:py-32 xl:pl-12">
               <div className="w-min">
                 <span className="material-symbols-outlined text-5xl text-[#836143]">
                   handshake
@@ -73,17 +73,11 @@ export default function BecomeAMember() {
                       .description
                   }
                 </p>
-                <Link
-                  className="group flex w-fit items-center gap-1 text-[#C0AC97] "
-                  href={"/" + shortLocale(lang) + "/partners"}
-                >
-                  <p className="text-center">
-                    {dict.about.become_a_member.exclusive_partnerships.link}
-                  </p>
-                  <span className="material-symbols-outlined transition-transform duration-200 group-hover:translate-x-0.5">
-                    arrow_forward
-                  </span>
-                </Link>
+                <AppLink
+                  title={dict.about.become_a_member.exclusive_partnerships.link}
+                  color="#987b60"
+                  href="/partners"
+                />
               </div>
             </div>
             <div className="mr-24 hidden h-96 shrink-0 gap-5 xl:flex">
@@ -345,17 +339,11 @@ export default function BecomeAMember() {
                   <p className="text-center">
                     {dict.about.become_a_member.discounts.description}
                   </p>
-                  <a
-                    className="flex items-center gap-1 text-[#5C657F]"
+                  <AppLink
+                    title={dict.about.become_a_member.discounts.link}
                     href="https://store.cesium.pt"
-                  >
-                    <p className="text-center">
-                      {dict.about.become_a_member.discounts.link}
-                    </p>
-                    <span className="material-symbols-outlined">
-                      arrow_outward
-                    </span>
-                  </a>
+                    color="#5C657F"
+                  />
                 </div>
               </div>
 
