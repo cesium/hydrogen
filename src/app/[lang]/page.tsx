@@ -98,13 +98,13 @@ export default function Home() {
         <section>
           <ShortcutButtonsContainer />
         </section>
-        {/* Shortcut Panes */}
-        <section>
-          <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
-        </section>
         {/* Highlight Slideshow */}
         <section>
           <ScrollableContent />
+        </section>
+        {/* Shortcut Panes */}
+        <section>
+          <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
         </section>
         {/* Events */}
         <section>
