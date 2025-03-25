@@ -15,8 +15,9 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        foundation: "#FAFAFA",
         primary: "#ED7950",
-        background: "#FAFAFA",
+        muted: "#F5F5F5",
         stroke: "#D4D4D8",
         black: "#27272A",
         dark: "#000000",
@@ -27,6 +28,9 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         title: ["var(--font-orbitron)", ...fontFamily.mono],
+      },
+      borderRadius: {
+        "2.5xl": "20px",
       },
     },
   },
@@ -53,6 +57,22 @@ const config: Config = {
     "py-5",
     "md:px-7",
     "md:py-12",
+    "pr-5",
+    "pl-5",
+    "md:pr-7",
+    "md:pl-7",
+    "2xl:px-60",
+    "2xl:pr-60",
+    "2xl:pl-60",
+    "lg:px-28",
+    "lg:pr-28",
+    "lg:pl-28",
+    "sm:px-7",
+    "sm:pr-7",
+    "sm:pl-7",
+    "md:px-16",
+    "md:pr-16",
+    "md:pl-16",
   ],
 };
 export default config;

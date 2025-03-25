@@ -1,21 +1,22 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useLang } from "@/contexts/dictionary-provider";
+import { shortLocale } from "@/lib/locale";
 
 interface LinkProps {
   title: string;
   href?: string;
   arrow?: "back" | "forward" | "outward";
+  color?: "primary" | "blue";
 }
 
-const AppLink = ({ title, href, arrow }: LinkProps) => {
+const AppLink = ({ title, href, arrow, color = "primary" }: LinkProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
-  const hrefLang = `/${lang}${href}`;
+  const hrefLang = `/${shortLocale(lang)}${href}`;
   const router = useRouter();
 
-  const style =
-    "flex items-center gap-1 font-medium text-primary transition-opacity hover:opacity-85";
+  const style = `flex w-fit group items-center gap-1 font-medium transition-opacity hover:opacity-85 text-${color}`;
 
   return arrow === "back" ? (
     <button onClick={() => router.back()} className={style}>
@@ -23,10 +24,21 @@ const AppLink = ({ title, href, arrow }: LinkProps) => {
       <p>{title}</p>
     </button>
   ) : (
-    <Link href={arrow === "forward" ? hrefLang : hrefDefault} className={style}>
+    <Link
+      href={arrow === "forward" ? hrefLang : hrefDefault}
+      {...(arrow === "outward" && {
+        rel: "noopener noreferrer",
+        target: "_blank",
+      })}
+      className={style}
+    >
       <p>{title}</p>
       {(arrow === "forward" || arrow === "outward") && (
-        <span className="material-symbols-outlined">{"arrow_" + arrow}</span>
+        <span
+          className={`material-symbols-outlined ${arrow === "forward" ? "transition-transform duration-200 group-hover:translate-x-0.5" : ""}`}
+        >
+          {"arrow_" + arrow}
+        </span>
       )}
     </Link>
   );
