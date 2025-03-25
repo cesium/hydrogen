@@ -21,7 +21,7 @@ export function DictionaryProvider({
   lang,
 }: {
   children: React.ReactNode;
-  lang: Locale;
+  lang: DictionaryLocale;
 }) {
   const dict = getDictionary(fullLocale(lang));
   return (

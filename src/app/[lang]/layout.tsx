@@ -9,6 +9,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { fullLocale } from "@/lib/locale";
 import Body from "@/components/body";
+import type { DictionaryLocale } from "@/contexts/dictionary-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -111,7 +112,10 @@ export function generateMetadata({
 export default function RootLayout({
   children,
   params: { lang },
-}: Readonly<{ children: React.ReactNode; params: { lang: Locale } }>) {
+}: Readonly<{
+  children: React.ReactNode;
+  params: { lang: DictionaryLocale };
+}>) {
   return (
     <html lang={fullLocale(lang)}>
       <head>

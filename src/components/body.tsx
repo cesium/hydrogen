@@ -1,8 +1,10 @@
 "use client";
 
-import { DictionaryProvider } from "@/contexts/dictionary-provider";
+import {
+  type DictionaryLocale,
+  DictionaryProvider,
+} from "@/contexts/dictionary-provider";
 import { ScrollStateProvider } from "@/contexts/scrollstate-provider";
-import type { Locale } from "@/internationalization/dictionaries";
 import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import { useEffect, useState } from "react";
 
@@ -12,7 +14,7 @@ export default function Body({
   children,
 }: {
   fonts: NextFontWithVariable[];
-  lang: Locale;
+  lang: DictionaryLocale;
   children: React.ReactNode;
 }) {
   const [isScrolledTop, setIsScrolledTop] = useState(true);

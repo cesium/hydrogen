@@ -18,8 +18,7 @@ export const shortLocales = () =>
 
 export const fullLocale = (locale: DictionaryLocale) => {
   if (locale.includes("-")) return locale as Locale;
-  return (locales.find((locale) => locale.startsWith(locale)) ??
-    defaultLocale) as Locale;
+  return (locales.find((l) => l.startsWith(locale)) ?? defaultLocale) as Locale;
 };
 
 export const shortLocale = (locale: DictionaryLocale) => {
