@@ -41,6 +41,11 @@
         "title": "CeSIUM",
         "description": "Centro de Estudantes de Engenharia Informática da Universidade do Minho"
       },
+      "shortcut_buttons": {
+        "highlight": "Em destaque",
+        "discord": "Discord do <p>**CeSIUM**</p>",
+        "pelomundo": "<p>CeSIUM</p>**pelo Mundo**"
+      },
       "shortcut_panes": [
         {
           "title": "Equipa",
@@ -62,28 +67,33 @@
   },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
   "caos": {
-    "name": ["Centro de Apoio ao", "Open Source"],
+    "name": "Centro de Apoio ao **Open Source**",
     "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
+    "short_description": "Desenvolve todo o software do CeSIUM, desde plataformas para eventos até ferramentas para alunos.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": ["Departamento de", "Marketing e Conteúdo"],
+    "name": "Departamento de **Marketing e Conteúdo**",
     "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
+    "short_description": "Gere o marketing, a divulgação, as redes sociais e as comunicações do CeSIUM.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": ["Departamento de", "Relações Externas e Merch"],
+    "name": "Departamento de **Relações Externas e Merchandising**",
     "description": "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
+    "short_description": "Estabelece parcerias, gere as comunicações externas e cria merchandising.",
     "icon": "handshake"
   },
   "ped": {
-    "name": ["Departamento", "Pedagógico"],
+    "name": "Departamento **Pedagógico**",
     "description": "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
+    "short_description": "Organiza palestras, workshops e sessões de estudo para apoiar a aprendizagem dos estudantes.",
     "icon": "draw"
   },
   "rec": {
-    "name": ["Departamento", "Recreativo"],
+    "name": "Departamento **Recreativo**",
     "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
+    "short_description": " Planeia eventos sociais e recreativos para enriquecer a experiência dos estudantes.",
     "icon": "celebration"
   },
   "button": {
@@ -207,7 +217,7 @@
         "description": "O CeSIUM é a voz dos teus interesses e problemas na universidade. Ao seres sócio, é mais fácil fazeres-te ouvir."
       },
       "discounts": {
-        "title": "Descontos na Merch",
+        "title": "Descontos na Merchandising",
         "description": "Aproveita descontos de 30% ou mais em vários artigos da nossa Loja online, desde t-shirts e casacos, a artigos de papelaria, stickers, porta-chaves, e mais.",
         "link": "Abrir loja"
       },

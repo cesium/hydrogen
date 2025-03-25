@@ -1,13 +1,16 @@
 import Markdown from "markdown-to-jsx";
 import ShortcutButton from "./shortcut-button";
 import Image from "next/image";
+import { useDictionary } from "@/contexts/dictionary-provider";
 
 export default function ShortcutButtonsContainer() {
+  const dict = useDictionary();
+
   return (
     <div className="grid w-full grid-cols-2 gap-3.5 sm:gap-4 min-[1370px]:grid-cols-5">
       <ShortcutButton
         href="https://calendario.cesium.di.uminho.pt/"
-        highlight="EM DESTAQUE"
+        highlight={dict.landing.sections.shortcut_buttons.highlight}
       >
         <Image
           src="/logo/calendarium.svg"
@@ -27,7 +30,7 @@ export default function ShortcutButtonsContainer() {
             alt="Discord Logo"
           />
           <Markdown className="line-clamp-2 font-title">
-            {"Discord do <p>**CeSIUM**</p>"}
+            {dict.landing.sections.shortcut_buttons.discord}
           </Markdown>
         </div>
       </ShortcutButton>
@@ -51,7 +54,7 @@ export default function ShortcutButtonsContainer() {
             alt="CeSIUM pelo Mundo Logo"
           />
           <Markdown className="line-clamp-2 font-title">
-            {"<p>CeSIUM</p>**pelo Mundo**"}
+            {dict.landing.sections.shortcut_buttons.pelomundo}
           </Markdown>
         </div>
       </ShortcutButton>
