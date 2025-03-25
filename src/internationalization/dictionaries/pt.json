@@ -343,47 +343,22 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": [
-        "Sobre nós",
-        "Equipa",
-        "Departmentos"
-      ],
-      "links": [
-        "/about",
-        "/team",
-        "/departments"
-      ]
+      "items": ["Sobre nós", "Equipa", "Departmentos"],
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Atividades",
-      "items": [
-        "Eventos",
-        "Parcerias"
-      ],
-      "links": [
-        "/events",
-        "/partners"
-      ]
+      "items": ["Eventos", "Parcerias"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Estudantes",
-      "items": [
-        "Torna-te sócio",
-        "Torna-te colaborador"
-      ],
-      "links": [
-        "/about/become-a-member",
-        "/about/become-a-collaborator"
-      ]
+      "items": ["Torna-te sócio", "Torna-te colaborador"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Links Úteis",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Portal do Aluno"
-      ],
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Portal do Aluno"],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",

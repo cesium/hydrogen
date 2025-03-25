@@ -12,7 +12,7 @@ const ScrollStateContext = createContext<ScrollStateContextData | undefined>(
 );
 
 export function ScrollStateProvider({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -43,9 +43,7 @@ export function ScrollStateProvider({
   }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
-    <ScrollStateContext.Provider
-      value={{ isScrolledTop, isScrolledBottom }}
-    >
+    <ScrollStateContext.Provider value={{ isScrolledTop, isScrolledBottom }}>
       {children}
     </ScrollStateContext.Provider>
   );
