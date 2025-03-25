@@ -10,10 +10,11 @@ import { EventListCard } from "@/components/event-list-card";
 import getEvents from "@/lib/api/getEvents";
 import LandingSectionCard from "@/components/landing-section-card";
 import Image from "next/image";
-import { useDictionary } from "@/contexts/dictionary-provider";
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 import ShortcutPanes from "@/components/shortcut-panes";
 import PartnerCard from "@/components/partner-card";
+import Link from "next/link";
 
 export default function Home() {
   const dict = useDictionary();
@@ -22,6 +23,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const partners = dict.partners;
+  const lang = useLang();
 
   useEffect(() => {
     async function fetchEvents() {
@@ -129,15 +131,16 @@ export default function Home() {
               className={`grid grid-cols-2 gap-4 md:auto-cols-[250px] md:grid-flow-col md:grid-cols-none`}
             >
               {partners.list.map((partner, index) => (
-                <PartnerCard
-                  key={index}
-                  title={partner.title}
-                  url={partner.url}
-                  logo={partner.logo}
-                  color={partner.color}
-                  perks={partner.perks}
-                  simplelayout
-                />
+                <Link key={index} href={`${lang}/partners`}>
+                  <PartnerCard
+                    title={partner.title}
+                    url={partner.url}
+                    logo={partner.logo}
+                    color={partner.color}
+                    perks={partner.perks}
+                    simplelayout
+                  />
+                </Link>
               ))}
             </div>
           </LandingSectionCard>
