@@ -20,7 +20,7 @@ const Button = ({
   onClick,
 }: ButtonProps) => {
   const baseStyle =
-    "py-[13px] text-base font-normal transition-transform hover:scale-105 active:scale-95 ease-in-out duration-300";
+    "py-[13px] text-base font-normal transition-opacity hover:opacity-85 active:scale-95 transition-transform ease-in-out duration-300";
 
   const styleVariant = {
     style1: `rounded-full bg-white px-5 w-fit ${
@@ -46,9 +46,6 @@ const Button = ({
         <Link
           href={href}
           className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
-          {...(href.startsWith("http")
-            ? { rel: "noopener noreferrer", target: "_blank" }
-            : {})}
         >
           {title}
         </Link>
