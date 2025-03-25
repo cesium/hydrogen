@@ -8,8 +8,7 @@ import {
   shortLocale,
   shortLocales,
 } from "./lib/locale";
-
-type Locale = (typeof locales)[number];
+import type { Locale } from "./internationalization/dictionaries";
 
 export function middleware(request: NextRequest): NextResponse {
   // Check if there is any supported locale in the pathname
@@ -33,7 +32,7 @@ export function middleware(request: NextRequest): NextResponse {
         request.headers.get("Accept-Language") ?? defaultLocale,
     },
   }).languages();
-  const locale: Locale = match(languages, locales, defaultLocale);
+  const locale: Locale = match(languages, locales, defaultLocale) as Locale;
   request.nextUrl.pathname = `/${shortLocale(locale)}${pathname}`;
   // e.g. incoming request is /products
   // The new URL is now /en-US/products
