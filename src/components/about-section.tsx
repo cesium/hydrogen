@@ -13,7 +13,7 @@ export default function AboutSection({
 }) {
   return (
     <div
-      className={`flex h-full border-b border-black/10 ${padding == true ? "md:pl-[70px]" : ""}  ${dark ? "bg-[#fafafa]" : ""} ${horizontalpadding == true ?horizontalPadding : ""}`}
+      className={`flex h-full border-b border-black/10 ${padding == true ? "md:pl-[70px]" : ""}  ${dark ? "bg-[#fafafa]" : ""} ${horizontalpadding == true ? horizontalPadding : ""}`}
     >
       {children}
     </div>

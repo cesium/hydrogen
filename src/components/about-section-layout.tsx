@@ -6,7 +6,7 @@ import AboutSection from "./about-section";
 import { useRef, useState } from "react";
 
 type TitleOr = "vertical" | "horizontal";
-type LinkName = "see_more" | "see_team"|"go_to_departments" | "go_to_team";
+type LinkName = "see_more" | "see_team" | "go_to_departments" | "go_to_team";
 type LinkPos = "after" | "before";
 
 interface AboutSectionProps {
@@ -19,7 +19,9 @@ interface AboutSectionProps {
   overflows?: boolean;
   dark?: boolean;
   children?: React.ReactNode;
-  linkColor?: "blue"|"primary"
+  linkColor?: "blue" | "primary";
+  strech?: boolean;
+  showlinkmobile?: boolean;
 }
 
 const AboutSectionLayout = ({
@@ -32,7 +34,9 @@ const AboutSectionLayout = ({
   overflows,
   dark,
   children,
-  linkColor
+  linkColor,
+  strech,
+  showlinkmobile,
 }: AboutSectionProps) => {
   const dict = useDictionary();
 
@@ -52,9 +56,9 @@ const AboutSectionLayout = ({
   };
 
   return (
-    <AboutSection dark={dark} >
+    <AboutSection dark={dark}>
       <div
-        className={`relative flex w-full flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 p-12`}
+        className={`relative flex w-full flex-col items-stretch ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 `}
       >
         {/* Title */}
         <div
@@ -64,39 +68,39 @@ const AboutSectionLayout = ({
             className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:items-start sm:justify-center" : ""}`}
           >
             <span
-              className={`w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} `}
+              className={`w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} ${strech ? "px-4 md:px-12 md:py-2" : ""} `}
             >
               {title}
             </span>
           </div>
           <span
-            className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
+            className={` ${showlinkmobile ? "hidden" : ""} pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
           >
             <CustomLink
               title={dict.button[linkName]}
               href={href}
               arrow="forward"
-              color= {linkColor}
+              color={linkColor}
             />
           </span>
         </div>
         {/* Subtitle */}
-        <div className="overflow-auto">
-          <div>
-            <span className="text-start">{subtitle}</span>
+        <div className={`overflow-hidden `}>
+          <div className={` flex md:flex-col ${strech ? "px-4 sm:px-12" : ""}`}>
+            <span className={` text-start  `}>{subtitle}</span>
             <div
-              className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+              className={` ${showlinkmobile ? "hidden md:block" : ""} mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
             >
               <CustomLink
                 title={dict.button[linkName]}
                 href={href}
                 arrow="forward"
-                color= {linkColor}
-              /> 
+                color={linkColor}
+              />
             </div>
           </div>
           {/* Content (Scrollable) */}
-          <div className="relative">
+          <div className={`${showlinkmobile ? "mt-8" : ""} `}>
             {overflows && (
               <div className="hidden md:block">
                 {!isScrolledRight && (
@@ -108,7 +112,7 @@ const AboutSectionLayout = ({
               </div>
             )}
             <div
-              className="no-scrollbar mt-7 overflow-y-auto overflow-x-scroll sm:mt-10"
+              className={`no-scrollbar overflow-y-auto overflow-x-scroll sm:mt-10 ${strech ? "mx-[20px] md:-mx-[50px]" : ""}`}
               ref={scrollableRef}
               onScroll={handleScroll}
             >

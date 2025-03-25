@@ -91,15 +91,27 @@
         "title": "Team",
         "subtitle": "CeSIUM wouldn't exist without our incredible team, which works every day to keep the group running and make students' years in the course unique. Meet them here."
       },
-        "cesium": {
+      "cesium": {
         "title": "What is CeSIUM?",
         "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
         "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
-          {"src": "/images/uMinho1.jpg", "alt": "University of Minho building."},
-          {"src": "/images/workshop.jpg", "alt": "Class full of Computer Engineering students during a workshop."},
-          {"src": "/images/uMinho2.jpg", "alt": "University of Minho building."},
-          {"src": "/images/sei24-25.jpg", "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."}
+          {
+            "src": "/images/uMinho1.jpg",
+            "alt": "University of Minho building."
+          },
+          {
+            "src": "/images/workshop.jpg",
+            "alt": "Class full of Computer Engineering students during a workshop."
+          },
+          {
+            "src": "/images/uMinho2.jpg",
+            "alt": "University of Minho building."
+          },
+          {
+            "src": "/images/sei24-25.jpg",
+            "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
+          }
         ]
       }
     },
@@ -211,25 +223,25 @@
               "arrow": "forward",
               "color": "blue"
             }
-          ], 
+          ],
           "become_collaborator": {
-            "team": { 
+            "team": {
               "title": "Join the team",
               "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
               "href": "about/team",
               "color": "blue"
-            }, 
+            },
             "choose_department": {
               "title": "Choose your department",
               "subtitle": "If you enjoy programming, CAOS will be your thing. Interested in design? Join DMC. You can join the department you identify with the most, and if you can't decide, you can even join several. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!",
-              "href": "about/departments", 
+              "href": "about/departments",
               "color": "blue"
-            }, 
-            "join": { 
+            },
+            "join": {
               "title": "We are waiting for you",
               "subtitle": "Being a collaborator at CeSIUM is more than just working - it's about learning new things, meeting amazing people, and being part of experiences. If it sounds good to you, apply now.",
               "first_button_name": "Start registration",
-              "second_button_name": "Talk with us" 
+              "second_button_name": "Talk with us"
             }
           }
         }
