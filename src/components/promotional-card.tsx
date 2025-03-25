@@ -3,7 +3,6 @@
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
 import Image from "next/image";
-import Link from "next/link";
 import Button from "./button";
 
 interface CardProps {
