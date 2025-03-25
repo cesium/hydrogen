@@ -40,7 +40,24 @@
       "hero": {
         "title": "CeSIUM",
         "description": "Centro de Estudantes de Engenharia Informática da Universidade do Minho"
-      }
+      },
+      "shortcut_panes": [
+        {
+          "title": "Equipa",
+          "description": "Conhece a equipa dedicada que faz o CeSIUM funcionar todos os dias.",
+          "href": "/team"
+        },
+        {
+          "title": "Departamentos",
+          "description": "O CeSIUM atua em várias áreas. Conhece os nossos departamentos.",
+          "href": "/departments"
+        },
+        {
+          "title": "Eventos",
+          "description": "Mantém-te atualizado com todas as atividades que organizamos.",
+          "href": "/events"
+        }
+      ]
     }
   },
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
@@ -107,12 +124,7 @@
   "about": {
     "sections": {
       "hero": {
-        "title": [
-          "Centro de",
-          "Estudantes de",
-          "Engenharia Informática",
-          "da Universidade do Minho"
-        ],
+        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
         "description": "Decorria no ano de 1995, a Licenciatura em Engenharia de Sistemas e Informática (LESI) da UM. (...) Foi neste contexto que um grupo de alunos do 3º ano pediu à Direção de Curso (DC), que eu então dirigia, apoio para criar oficialmente um Centro de Estudantes. (...) A partir desse momento iniciou-se o caminho deste núcleo estudantil que, 20 anos depois, mantém o nome e sigla e mantém o propósito determinado na projeção da imagem do curso e na defesa dos interesses dos seus associados.",
         "subtitle": "Diretor Do Departamento de Informática - 2017"
       },
@@ -178,6 +190,11 @@
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     },
     "become_a_member": {
+      "exclusive_partnerships": {
+        "title": "Parcerias exclusivas",
+        "description": "Almoça no Sabor da Fruta e toma um café grátis. Ou no Café do Luís, com bebida incluída. Recebe emblemas grátis n’Os Farias. Usufrui de descontos em aulas de música e de condução. Estas são só algumas das parcerias que temos para ti.",
+        "link": "Ver parecerias"
+      },
       "participate": {
         "title": "Participa gratuitamente em eventos",
         "description": "O teu cartão de sócio é o passe direto para quase todos os nossos eventos. Aproveita noites de karaoke, board games ou cinema, workshops e showoffs, ocasiões especiais como o Magusto e a Noite de Informática, e muito mais, de graça ou com descontos exclusivos."

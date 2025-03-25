@@ -2,11 +2,31 @@
 import Image from "next/image";
 import InfoCard from "@/components/info-card";
 import CallSubscribe from "@/components/call-subscribe";
-import { useDictionary } from "@/contexts/dictionary-provider";
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { shuffleArray } from "@/lib/utils";
+import { shortLocale } from "@/lib/locale";
+import { useEffect, useState } from "react";
 
 export default function BecomeAMember() {
   const dict = useDictionary();
+  const lang = useLang();
+
+  const partnersMiddleIndex = Math.floor(dict.partners.list.length / 2);
+  const [partnersFirstHalf, setPartnersFirstHalf] = useState(
+    dict.partners.list.slice(0, partnersMiddleIndex),
+  );
+  const [partnersSecondHalf, setPartnersSecondHalf] = useState(
+    dict.partners.list.slice(partnersMiddleIndex),
+  );
+
+  useEffect(() => {
+    const shuffledPartners = shuffleArray(dict.partners.list);
+    setPartnersFirstHalf(shuffledPartners.slice(0, partnersMiddleIndex));
+    setPartnersSecondHalf(shuffledPartners.slice(partnersMiddleIndex));
+  }, [dict.partners.list, partnersMiddleIndex]);
 
   return (
     <main
@@ -16,7 +36,7 @@ export default function BecomeAMember() {
         <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">
           <div className="flex min-w-[200px] max-w-[600px] place-items-center">
             <div className="sm:max-w-[540px]">
-              <h2 className="mb-[15px] font-title text-2xl font-semibold">
+              <h2 className="mb-4 font-title text-2xl font-semibold">
                 {dict.about.become_a_member.advantages.title}
               </h2>
               <p className="text-base">
@@ -29,11 +49,197 @@ export default function BecomeAMember() {
             alt="wallet"
             width={364}
             height={338}
-            className="h-[200px] object-contain md:h-full"
+            className="pointer-events-none h-[200px] select-none object-contain md:h-full"
           />
         </div>
       </div>
 
+      <div className="xl:col-span-3">
+        <InfoCard>
+          <div className="flex flex-col justify-between xl:flex-row xl:gap-20">
+            <div className="flex flex-col gap-2 px-6 pb-10 pt-7 xl:flex-row xl:gap-20 xl:py-32 xl:pl-12">
+              <div className="w-min">
+                <span className="material-symbols-outlined text-5xl text-[#836143]">
+                  handshake
+                </span>
+                <h1 className="bg-gradient-to-r from-[#836143] to-[#C0AC97] bg-clip-text font-title text-4xl font-semibold text-transparent">
+                  {dict.about.become_a_member.exclusive_partnerships.title}
+                </h1>
+              </div>
+              <div className="flex flex-col gap-4 xl:max-h-96 xl:max-w-lg">
+                <p>
+                  {
+                    dict.about.become_a_member.exclusive_partnerships
+                      .description
+                  }
+                </p>
+                <Link
+                  className="group flex w-fit items-center gap-1 text-[#C0AC97] "
+                  href={"/" + shortLocale(lang) + "/partners"}
+                >
+                  <p className="text-center">
+                    {dict.about.become_a_member.exclusive_partnerships.link}
+                  </p>
+                  <span className="material-symbols-outlined transition-transform duration-200 group-hover:translate-x-0.5">
+                    arrow_forward
+                  </span>
+                </Link>
+              </div>
+            </div>
+            <div className="mr-24 hidden h-96 shrink-0 gap-5 xl:flex">
+              <motion.div
+                className="flex flex-col gap-5"
+                animate={{
+                  y: [0, -partnersFirstHalf.length * 100],
+                }}
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[...partnersFirstHalf, ...partnersFirstHalf].map(
+                  (partner, index) => (
+                    <Link
+                      href={partner.url}
+                      key={`${partner.title}-${index}`}
+                      className="shrink-0 transition-transform hover:scale-110"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        key={`${partner.title}-${index}`}
+                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
+                        src={partner.logo}
+                        alt={partner.title}
+                        width={80}
+                        height={80}
+                      />
+                    </Link>
+                  ),
+                )}
+              </motion.div>
+              <motion.div
+                className="flex flex-col gap-5"
+                animate={{
+                  y: [-partnersSecondHalf.length * 100, 0],
+                }}
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[...partnersSecondHalf, ...partnersSecondHalf].map(
+                  (partner, index) => (
+                    <Link
+                      href={partner.url}
+                      key={`${partner.title}-${index}`}
+                      className="shrink-0 transition-transform hover:scale-110"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
+                        src={partner.logo}
+                        alt={partner.title}
+                        width={80}
+                        height={80}
+                      />
+                    </Link>
+                  ),
+                )}
+              </motion.div>
+            </div>
+            <div className="flex h-36 shrink-0 flex-col gap-5 overflow-hidden xl:hidden">
+              <motion.div
+                className="flex gap-5"
+                animate={{
+                  x: [0, -partnersFirstHalf.length * 100],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[
+                  ...partnersFirstHalf,
+                  ...partnersFirstHalf,
+                  ...partnersFirstHalf,
+                ].map((partner, index) => (
+                  <Link
+                    href={partner.url}
+                    key={`${partner.title}-${index}`}
+                    className="shrink-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      key={`${partner.title}-${index}`}
+                      className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
+                      src={partner.logo}
+                      alt={partner.title}
+                      width={80}
+                      height={80}
+                    />
+                  </Link>
+                ))}
+              </motion.div>
+              <motion.div
+                className="flex gap-5"
+                animate={{
+                  x: [-partnersSecondHalf.length * 100, 0],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+                style={{ willChange: "transform" }}
+              >
+                {[
+                  ...partnersSecondHalf,
+                  ...partnersSecondHalf,
+                  ...partnersSecondHalf,
+                ].map((partner, index) => (
+                  <Link
+                    href={partner.url}
+                    key={`${partner.title}-${index}`}
+                    className="shrink-0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      key={`${partner.title}-${index}`}
+                      className="pointer-events-none size-20 select-none rounded-2xl border border-black/10 object-contain"
+                      src={partner.logo}
+                      alt={partner.title}
+                      width={80}
+                      height={80}
+                    />
+                  </Link>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </InfoCard>
+      </div>
       <div className="xl:col-span-3">
         <InfoCard>
           <div className="flex flex-col gap-4 overflow-hidden px-12 pt-10">
@@ -61,7 +267,7 @@ export default function BecomeAMember() {
                   alt="ticket"
                   width={980}
                   height={365}
-                  className="h-full w-full object-cover object-top"
+                  className="pointer-events-none h-full w-full select-none object-cover object-top"
                 />
               </div>
             </div>
@@ -75,8 +281,8 @@ export default function BecomeAMember() {
             <Image
               src="/images/about/become-a-member/totebag.png"
               alt="totebag"
-              layout="fill"
-              className="object-cover object-[right_bottom]"
+              fill
+              className="pointer-events-none select-none object-cover object-[right_bottom]"
             />
           </div>
 
@@ -121,9 +327,8 @@ export default function BecomeAMember() {
                 <Image
                   src="/images/about/become-a-member/notebook.png"
                   alt="discounts"
-                  layout="fill"
-                  objectFit="cover"
-                  className="object-[0%_0%] sm:object-[100%_100%]"
+                  fill
+                  className="pointer-events-none select-none object-cover object-[0%_0%] sm:object-[100%_100%]"
                 />
               </div>
 
@@ -158,9 +363,8 @@ export default function BecomeAMember() {
                 <Image
                   src="/images/about/become-a-member/laptop.png"
                   alt="discounts"
-                  layout="fill"
-                  objectFit="cover"
-                  objectPosition="0% 0%"
+                  fill
+                  className="pointer-events-none select-none object-cover object-[0%_0%]"
                 />
               </div>
             </div>
