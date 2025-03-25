@@ -111,7 +111,7 @@ export default function Home() {
           </LandingSectionCard>
         </section>
         {/* Store / Member / Collaborator */}
-        <section className="grid grid-cols-1 gap-8 px-2 md:px-5 sm:grid-cols-2">
+        <section className="grid grid-cols-1 gap-8 px-2 sm:grid-cols-2 md:px-5">
           <div className="sm:col-span-2">
             <StoreCard />
           </div>
