@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { MemberInfo, TeamData } from "@/lib/types";
 import DepartmentsList from "@/components/departments-list";
-import About from "../page";
+import CollaboratorLayout from "@/components/become-a-collaborator-layout";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -71,13 +71,14 @@ export default function BecomeACollaborator() {
   }, [yearRange]);
 
   return <main>
-    <AboutSectionLayout 
+    <CollaboratorLayout 
     title = {dictBecomeCollaborator?.team.title ?? "Error"}
     subtitle = {dictBecomeCollaborator?.team.subtitle ?? "Error"}
     linkName = "go_to_team"
     href = {dictBecomeCollaborator?.team.href ?? "Error"} 
-    overflows // a parte das imagens não é a mesma que esta no about, ou seja, não valia apena criar um componente que fosse usado em ambas? 
-    linkColor ={dictBecomeCollaborator?.team.color == "blue"? "blue": "primary"} 
+    overflows 
+    linkColor ={dictBecomeCollaborator?.team.color == "blue"? "blue": "primary"}
+    dark
     >
       <div className="flex w-full gap-5 justify-evenly">
           {teamData.map((team, index) =>
@@ -104,24 +105,25 @@ export default function BecomeACollaborator() {
                 )),
           )}
       </div>
-      </AboutSectionLayout>
-      <AboutSectionLayout 
-      title = {dictBecomeCollaborator?.choose_department.title?? "Error"}
-      subtitle = {dictBecomeCollaborator?.choose_department.subtitle?? "Error"}
-      linkName = "go_to_departments"
-      href = {dictBecomeCollaborator?.choose_department.href?? "Error"} 
-      linkColor ={dictBecomeCollaborator?.choose_department.color == "blue"? "blue": "primary"} 
-      dark
-      >
-      <div className="w-full relative -mx-12">
-        <div className="relative before:absolute before:inset-0 before:w-screen before:bg-gradient-to-r before:from-white before:via-transparent before:to-white pointer-events-none"></div>
-        <DepartmentsList
-          hideTeam
-          hideShortName
-          className="flex gap-6 overflow-x-auto px-12 snap-x snap-mandatory"
-        />
+      </CollaboratorLayout>
+      <div className=" w-full ">
+        <AboutSectionLayout
+          title={dictBecomeCollaborator?.choose_department.title ?? "Error"}
+          subtitle={dictBecomeCollaborator?.choose_department.subtitle ?? "Error"}
+          linkName="go_to_departments"
+          href={dictBecomeCollaborator?.choose_department.href ?? "Error"}
+          linkColor={dictBecomeCollaborator?.choose_department.color == "blue" ? "blue" : "primary"}
+        >
+          <div className="h-[224px] w-full relative overflow-y-hidden ">
+            <div className="absolute inset-0 pointer-events-none z-10 bg-gradient-to-b from-transparent from-20% to-white"></div>
+            <DepartmentsList
+              hideTeam
+              hideShortName
+              className="flex md:flex-row flex-col justify-between"
+              />
+          </div>
+        </AboutSectionLayout>
       </div>
-    </AboutSectionLayout>
     
   <div className="flex justify-center items-center w-full py-12 bg-white">
       <div className="text-center max-w-2xl">
@@ -141,7 +143,5 @@ export default function BecomeACollaborator() {
         </div>
       </div>
     </div>
-
-
     </main>;
 }

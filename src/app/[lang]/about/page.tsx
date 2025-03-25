@@ -192,7 +192,7 @@ export default function About() {
         </div>
       </AboutSectionLayout>
       {/* Explore Further */}
-      <AboutSection dark>
+      <AboutSection dark horizontalpadding>
         <div className="flex flex-col gap-5 py-10 md:py-16">
           <h2 className="w-full font-title text-2xl font-medium md:text-3xl">
             {dict.about.explore.title}

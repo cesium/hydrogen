@@ -52,9 +52,9 @@ const AboutSectionLayout = ({
   };
 
   return (
-    <AboutSection dark={dark}>
+    <AboutSection dark={dark} >
       <div
-        className={`relative flex w-full flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12`}
+        className={`relative flex w-full flex-col items-stretch py-10 ${titleOrientation == "vertical" ? "sm:flex-row" : ""} sm:py-12 p-12`}
       >
         {/* Title */}
         <div
