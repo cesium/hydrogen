@@ -41,6 +41,10 @@
         "title": "CeSIUM",
         "description": "Centro de Estudantes de Engenharia Informática da Universidade do Minho"
       },
+      "events": {
+        "title": "Eventos",
+        "description": "No CeSIUM, organizamos várias atividades - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+      },
       "shortcut_buttons": {
         "highlight": "Em destaque",
         "discord": "Discord do <p>**CeSIUM**</p>",

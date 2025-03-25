@@ -1,14 +1,11 @@
 "use client";
-
-import { useState } from "react";
 import type { EventListProps, Event } from "../lib/types";
-import { EventCard } from "./event-card";
+import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { EventSkeleton } from "./event-skeleton";
 import { isSameDay } from "../lib/utils";
 import { fullLocale } from "@/lib/locale";
 
-export function EventList({
+export function EventListCard({
   events,
   isLoading,
   selectedDate,
@@ -16,9 +13,6 @@ export function EventList({
 }: EventListProps) {
   const dict = useDictionary();
   const lang = useLang();
-  const [visibleFutureCount, setVisibleFutureCount] = useState(5);
-  const [visiblePastCount, setVisiblePastCount] = useState(5);
-
   const currentDate = new Date();
 
   const filteredEvents = selectedDate
@@ -35,53 +29,45 @@ export function EventList({
   const futureEvents = filteredEvents
     .filter((event) => new Date(event.start) >= currentDate)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+
   const pastEvents = filteredEvents
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
-  const visibleFutureEvents = futureEvents.slice(0, visibleFutureCount);
-  const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
+  const visibleFutureEvents = futureEvents.slice(0, 5);
+  const visiblePastEvents = pastEvents.slice(0, 5);
 
   const renderEventList = (
     eventList: Event[],
     totalEvents: Event[],
-    visibleCount: number,
-    setVisibleCount: (count: number) => void,
     title: string,
   ) => {
     if (isLoading || totalEvents.length > 0) {
-      const canShowMore = totalEvents.length > visibleCount;
       return (
-        <div className="">
-          <h2 className="font-title text-2xl font-medium">{title}</h2>
-          <div className="space-y-0">
+        <div className="flex flex-col gap-2">
+          {isLoading ? (
+            <div className="my-2.5 flex h-1.5 w-full animate-pulse rounded-full bg-gray/10" />
+          ) : (
+            <div className="flex w-full flex-row items-center">
+              <div className="h-1 w-6 rounded-full bg-gradient-to-r from-stroke to-transparent" />
+              <h2 className="px-4 font-semibold text-gray/70">{title}</h2>
+              <div className="h-1 flex-1 rounded-full bg-gradient-to-l from-stroke to-stroke/10" />
+            </div>
+          )}
+          <div className="flex space-x-6">
             {isLoading ? (
               <>
-                <EventSkeleton />
-                <EventSkeleton />
+                <div className="h-[218px] w-[296px] animate-pulse rounded-2.5xl bg-gray/10 md:h-[158px] md:w-[410px]" />
+                <div className="h-[218px] w-[296px] animate-pulse rounded-2.5xl bg-gray/10 md:h-[158px] md:w-[410px]" />
               </>
             ) : (
               eventList.map((event, index) => (
-                <EventCard key={index} event={event} />
+                <div key={index} className="min-w-[280px] flex-shrink">
+                  <EventCardCalendar event={event} />
+                </div>
               ))
             )}
           </div>
-          {!isLoading && canShowMore && (
-            <button
-              onClick={() => setVisibleCount(visibleCount + 5)}
-              className="mt-6 w-full text-center text-primary hover:underline"
-            >
-              {dict.events.showMore}
-            </button>
-          )}
-          {!isLoading && !canShowMore && visibleCount > 5 && (
-            <button
-              onClick={() => setVisibleCount(5)}
-              className="mt-6 w-full text-center text-primary hover:underline"
-            >
-              {dict.events.showLess}
-            </button>
-          )}
         </div>
       );
     }
@@ -102,25 +88,19 @@ export function EventList({
               day: "numeric",
               month: "2-digit",
             })
-            .replace(/^\w/, (c) => c.toUpperCase())
+            .replace(/^-/, (c) => c.toUpperCase())
             .replace("-", "/")}{" "}
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
-      {renderEventList(
-        visibleFutureEvents,
-        futureEvents,
-        visibleFutureCount,
-        setVisibleFutureCount,
-        dict.events.futureEvents,
-      )}
-      {renderEventList(
-        visiblePastEvents,
-        pastEvents,
-        visiblePastCount,
-        setVisiblePastCount,
-        dict.events.pastEvents,
-      )}
+      <div className="flex w-full flex-row items-center gap-6">
+        {renderEventList(
+          visibleFutureEvents,
+          futureEvents,
+          dict.events.futureEvents,
+        )}
+        {renderEventList(visiblePastEvents, pastEvents, dict.events.pastEvents)}
+      </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>
       )}
