@@ -15,7 +15,7 @@
       }
 
       .cls-4 {
-        fill: #eb784f;
+        fill: #ed7950;
       }
     </style>
     <linearGradient id="linear-gradient" x1="234.09" y1="1047.8" x2="1361.03" y2="116.03" gradientTransform="translate(81.26 -97.79) rotate(7.38)" gradientUnits="userSpaceOnUse">
@@ -28,7 +28,7 @@
     </linearGradient>
     <radialGradient id="radial-gradient" cx="944.91" cy="472.59" fx="944.91" fy="472.59" r="410.7" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#efaf98"/>
-      <stop offset="1" stop-color="#eb784f"/>
+      <stop offset="1" stop-color="#ed7950"/>
     </radialGradient>
   </defs>
   <rect class="cls-4" y="0" width="1600" height="1000"/>
