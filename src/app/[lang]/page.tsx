@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import ScrollableContent from "@/components/scrollable-content";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
+import ShortcutPanes from "@/components/shortcut-panes";
 
 export default function Home() {
   const dict = useDictionary();
@@ -71,6 +72,9 @@ export default function Home() {
         </section>
         <div className="flex flex-col gap-5 pb-5 md:gap-8 md:pb-12">
           <ScrollableContent />
+          <section>
+            <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
+          </section>
           <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-8">
             <div className="sm:col-span-2">
               <StoreCard />
