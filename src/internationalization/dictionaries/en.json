@@ -41,6 +41,11 @@
         "title": "CeSIUM",
         "description": "Computer Engineering Student Center at University of Minho"
       },
+      "shortcut_buttons": {
+        "highlight": "Highlighted",
+        "discord": "<p>**CeSIUM's**</p> Discord",
+        "pelomundo": "<p>CeSIUM</p>**around the World**"
+      },
       "shortcut_panes": [
         {
           "title": "Team",
