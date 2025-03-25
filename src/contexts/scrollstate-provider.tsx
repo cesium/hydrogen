@@ -1,11 +1,10 @@
 "use client";
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 interface ScrollStateContextData {
   isScrolledTop: boolean;
   isScrolledBottom: boolean;
-  scrollPosition: number; // 0 - 100
 }
 
 const ScrollStateContext = createContext<ScrollStateContextData | undefined>(
@@ -13,19 +12,39 @@ const ScrollStateContext = createContext<ScrollStateContextData | undefined>(
 );
 
 export function ScrollStateProvider({
-  children,
-  isScrolledTop,
-  isScrolledBottom,
-  scrollPosition,
+  children
 }: {
   children: React.ReactNode;
-  isScrolledTop: boolean;
-  isScrolledBottom: boolean;
-  scrollPosition: number;
 }) {
+  const [isScrolledTop, setIsScrolledTop] = useState(true);
+  const [isScrolledBottom, setIsScrolledBottom] = useState(false);
+
+  const handleScroll = () => {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    const scrollableHeight = scrollHeight - clientHeight;
+
+    const isTop = window.pageYOffset === 0;
+    setIsScrolledTop(isTop);
+
+    const isBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight;
+    setIsScrolledBottom(isBottom);
+
+    const scrolledPercentage = (scrollTop / scrollableHeight) * 100;
+  };
+
+  useEffect(() => {
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Cleanup: remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this runs only once on mount
+
   return (
     <ScrollStateContext.Provider
-      value={{ isScrolledTop, isScrolledBottom, scrollPosition }}
+      value={{ isScrolledTop, isScrolledBottom }}
     >
       {children}
     </ScrollStateContext.Provider>
@@ -35,7 +54,6 @@ export function ScrollStateProvider({
 export function useScrollState(): {
   isScrolledTop: boolean;
   isScrolledBottom: boolean;
-  scrollPosition: number;
 } {
   const context = useContext(ScrollStateContext);
   if (context === undefined) {
@@ -44,7 +62,6 @@ export function useScrollState(): {
   return {
     isScrolledTop: context.isScrolledTop,
     isScrolledBottom: context.isScrolledBottom,
-    scrollPosition: context.scrollPosition,
   };
 }
 
