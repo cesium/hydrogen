@@ -5,9 +5,11 @@ import type { Dictionary, Locale } from "@/internationalization/dictionaries";
 import { getDictionary } from "@/internationalization/dictionaries";
 import { fullLocale } from "@/lib/locale";
 
+export type DictionaryLocale = Locale | "en" | "pt";
+
 interface DictionaryContextData {
   dict: Dictionary;
-  lang: Locale;
+  lang: DictionaryLocale;
 }
 
 const DictionaryContext = createContext<DictionaryContextData | undefined>(
@@ -19,7 +21,7 @@ export function DictionaryProvider({
   lang,
 }: {
   children: React.ReactNode;
-  lang: Locale;
+  lang: DictionaryLocale;
 }) {
   const dict = getDictionary(fullLocale(lang));
   return (

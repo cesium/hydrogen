@@ -17,7 +17,7 @@ export default function ScrollableHighlight({ items }: Props) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden rounded-2xl">
       {/* Pagination Circles */}
       <div className="custom-pagination pointer-events-none absolute right-4 top-4 z-10 flex h-fit w-fit sm:!top-12 sm:right-16" />
       {/* Slides */}

@@ -104,7 +104,7 @@ export default function ScrollableContent() {
   const content: React.ReactNode[] = items.map((item, index) => (
     <div
       key={index}
-      className="flex h-[650px] w-full select-none place-items-center justify-center rounded-2xl bg-cover bg-[center_16%] bg-no-repeat px-7 sm:h-[600px] sm:justify-start sm:px-10"
+      className="flex h-[650px] w-full select-none place-items-center justify-center bg-cover bg-[center_16%] bg-no-repeat px-7 sm:h-[600px] sm:justify-start sm:px-10"
       style={{
         backgroundImage: `
           radial-gradient(circle at top center, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%),
