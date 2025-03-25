@@ -2,9 +2,7 @@
 import type { EventListProps, Event } from "../lib/types";
 import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { EventSkeleton } from "./event-skeleton";
 import { isSameDay } from "../lib/utils";
-import { useState } from "react";
 import { fullLocale } from "@/lib/locale";
 
 export function EventListCard({
@@ -16,8 +14,6 @@ export function EventListCard({
   const dict = useDictionary();
   const lang = useLang();
   const currentDate = new Date();
-  const [visibleFutureCount, setVisibleFutureCount] = useState(5);
-  const [visiblePastCount, setVisiblePastCount] = useState(5);
 
   const filteredEvents = selectedDate
     ? events.filter((event) => {
@@ -38,33 +34,31 @@ export function EventListCard({
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
-  const visibleFutureEvents = futureEvents.slice(0, visibleFutureCount);
-  const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
+  const visibleFutureEvents = futureEvents.slice(0, 5);
+  const visiblePastEvents = pastEvents.slice(0, 5);
 
   const renderEventList = (
     eventList: Event[],
     totalEvents: Event[],
-    visibleCount: number,
-    setVisibleCount: (count: number) => void,
     title: string,
   ) => {
     if (isLoading || totalEvents.length > 0) {
       return (
         <div className="flex flex-col gap-2">
-          <div className="flex w-full flex-row items-center">
-            <div className="h-[4px] w-6 rounded-full bg-gradient-to-r from-stroke to-transparent" />
-            <h2 className="px-4 font-semibold text-gray/70">{title}</h2>
-            <div className="h-[4px] flex-1 rounded-full bg-gradient-to-l from-stroke to-stroke/10" />
-          </div>
+          {isLoading ? (
+            <div className="my-2.5 flex h-1.5 w-full animate-pulse rounded-full bg-gray/10" />
+          ) : (
+            <div className="flex w-full flex-row items-center">
+              <div className="h-1 w-6 rounded-full bg-gradient-to-r from-stroke to-transparent" />
+              <h2 className="px-4 font-semibold text-gray/70">{title}</h2>
+              <div className="h-1 flex-1 rounded-full bg-gradient-to-l from-stroke to-stroke/10" />
+            </div>
+          )}
           <div className="flex space-x-6">
             {isLoading ? (
               <>
-                <div className="min-w-[280px] flex-shrink-0">
-                  <EventSkeleton />
-                </div>
-                <div className="min-w-[280px] flex-shrink-0">
-                  <EventSkeleton />
-                </div>
+                <div className="h-[218px] w-[296px] animate-pulse rounded-2.5xl bg-gray/10 md:h-[158px] md:w-[410px]" />
+                <div className="h-[218px] w-[296px] animate-pulse rounded-2.5xl bg-gray/10 md:h-[158px] md:w-[410px]" />
               </>
             ) : (
               eventList.map((event, index) => (
@@ -103,17 +97,9 @@ export function EventListCard({
         {renderEventList(
           visibleFutureEvents,
           futureEvents,
-          visibleFutureCount,
-          setVisibleFutureCount,
           dict.events.futureEvents,
         )}
-        {renderEventList(
-          visiblePastEvents,
-          pastEvents,
-          visiblePastCount,
-          setVisiblePastCount,
-          dict.events.pastEvents,
-        )}
+        {renderEventList(visiblePastEvents, pastEvents, dict.events.pastEvents)}
       </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>

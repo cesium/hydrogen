@@ -18,15 +18,19 @@ export default function Home() {
   const dict = useDictionary();
   const { isScrolledTop } = useScrollState();
   const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   useEffect(() => {
     async function fetchEvents() {
       try {
+        setIsLoading(true);
         const eventsData = await getEvents();
         setEvents(eventsData);
       } catch (error) {
         console.error("Failed to fetch events:", error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -106,6 +110,7 @@ export default function Home() {
           >
             <EventListCard
               events={events}
+              isLoading={isLoading}
               selectedDate={selectedDate}
               onClearDate={handleClearDate}
             />
