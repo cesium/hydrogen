@@ -41,6 +41,11 @@
         "title": "CeSIUM",
         "description": "Centro de Estudantes de Engenharia Informática da Universidade do Minho"
       },
+      "shortcut_buttons": {
+        "highlight": "Em destaque",
+        "discord": "Discord do <p>**CeSIUM**</p>",
+        "pelomundo": "<p>CeSIUM</p>**pelo Mundo**"
+      },
       "shortcut_panes": [
         {
           "title": "Equipa",
