@@ -137,7 +137,7 @@ const departmentShortName = (departmentName: string) => {
       return "caos";
     case "Departamento de Marketing e Conteúdo":
       return "dmc";
-    case "Departamento de Relações Externas e Merch":
+    case "Departamento de Relações Externas e Merchandising":
       return "drem";
     case "Departamento Pedagógico":
       return "ped";
