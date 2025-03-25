@@ -84,7 +84,7 @@ export default function About() {
         "Presidência",
         "Centro de Apoio ao Open Source",
         "Departamento de Marketing e Conteúdo",
-        "Departamento de Relações Externas e Merch",
+        "Departamento de Relações Externas e Merchandising",
         "Departamento Pedagógico",
         "Departamento Recreativo",
         "Vogais",
@@ -271,6 +271,7 @@ export default function About() {
                   hideShortName
                   teamData={teamData}
                   yearRange={yearRange}
+                  shortDescription
                 />
               </div>
             ))}

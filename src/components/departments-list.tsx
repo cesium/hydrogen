@@ -8,7 +8,7 @@ import { fetchTeamData } from "@/lib/utils";
 export const departmentNames = [
   "Centro de Apoio ao Open Source",
   "Departamento de Marketing e Conteúdo",
-  "Departamento de Relações Externas e Merch",
+  "Departamento de Relações Externas e Merchandising",
   "Departamento Pedagógico",
   "Departamento Recreativo",
 ];
@@ -19,7 +19,7 @@ export const shortName = (name: string) => {
       return "caos";
     case "Departamento de Marketing e Conteúdo":
       return "dmc";
-    case "Departamento de Relações Externas e Merch":
+    case "Departamento de Relações Externas e Merchandising":
       return "drem";
     case "Departamento Pedagógico":
       return "ped";

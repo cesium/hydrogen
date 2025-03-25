@@ -6,6 +6,7 @@ import type { MemberInfo, TeamData } from "@/lib/types";
 import { useEffect, useState } from "react";
 import { getDepartmentMembersInfo } from "@/lib/utils";
 import Avatar from "./avatar";
+import Markdown from "markdown-to-jsx";
 
 interface DepartmentCardProps {
   name: string;
@@ -16,6 +17,7 @@ interface DepartmentCardProps {
   hideShortName?: boolean;
   teamData: TeamData;
   yearRange: string;
+  shortDescription?: boolean;
 }
 
 const DepartmentCard = ({
@@ -27,6 +29,7 @@ const DepartmentCard = ({
   hideShortName,
   teamData,
   yearRange,
+  shortDescription,
 }: DepartmentCardProps) => {
   const lang = useLang();
   const dict = useDictionary();
@@ -57,8 +60,22 @@ const DepartmentCard = ({
             <span className="material-symbols-outlined text-4xl text-gray">
               {dict[shortName].icon}
             </span>
-            <p className="text-gray">{dict[shortName].name[0]}</p>
-            <p className="text-black">{dict[shortName].name[1]}</p>
+            <p>
+              <Markdown
+                className="text-gray"
+                options={{
+                  overrides: {
+                    strong: {
+                      props: {
+                        className: "text-black font-medium",
+                      },
+                    },
+                  },
+                }}
+              >
+                {dict[shortName].name}
+              </Markdown>
+            </p>
           </div>
           {!hideTeam && (
             <div className="flex items-center justify-between gap-3">
@@ -84,12 +101,15 @@ const DepartmentCard = ({
             </div>
           )}
         </div>
-        <p className="hidden h-full items-start text-justify md:flex lg:text-base">
-          {dict[shortName].description}
-        </p>
-        <p className="flex h-full items-start text-left md:hidden lg:text-base">
-          {dict[shortName].short_description}
-        </p>
+        {shortDescription ? (
+          <p className="flex h-full items-start text-left">
+            {dict[shortName].short_description}
+          </p>
+        ) : (
+          <p className="h-full items-start text-justify">
+            {dict[shortName].description}
+          </p>
+        )}
       </div>
     </div>
   );
