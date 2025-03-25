@@ -47,7 +47,7 @@ const PartnerCard = ({
 
   return (
     <div
-      className="relative flex h-full w-full flex-col gap-4 rounded-[20px] p-7"
+      className="relative flex min-w-[280px] snap-start flex-col gap-4 rounded-[20px] p-7"
       style={{
         background: `linear-gradient(180deg, ${color}20 0%, #00000000 50%, #00000000 100%)`,
       }}

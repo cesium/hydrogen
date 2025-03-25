@@ -13,6 +13,7 @@ import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 import ShortcutPanes from "@/components/shortcut-panes";
+import PartnerCard from "@/components/partner-card";
 
 export default function Home() {
   const dict = useDictionary();
@@ -20,6 +21,7 @@ export default function Home() {
   const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const partners = dict.partners;
 
   useEffect(() => {
     async function fetchEvents() {
@@ -114,6 +116,28 @@ export default function Home() {
               selectedDate={selectedDate}
               onClearDate={handleClearDate}
             />
+          </LandingSectionCard>
+        </section>
+        {/* Partners */}
+        <section>
+          <LandingSectionCard
+            title={dict.landing.sections.partners.title}
+            subtitle={dict.landing.sections.partners.description}
+            overflows
+          >
+            <div className={`flex snap-x gap-4`}>
+              {partners.list.map((partner, index) => (
+                <PartnerCard
+                  key={index}
+                  title={partner.title}
+                  url={partner.url}
+                  logo={partner.logo}
+                  color={partner.color}
+                  perks={partner.perks}
+                  simplelayout
+                />
+              ))}
+            </div>
           </LandingSectionCard>
         </section>
         {/* Store / Member / Collaborator */}

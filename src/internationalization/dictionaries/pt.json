@@ -45,6 +45,10 @@
         "title": "Eventos",
         "description": "No CeSIUM, organizamos várias atividades - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
       },
+      "partners": {
+        "title": "Parcerias",
+        "description": "Uma das vantagens de ser sócio do CeSIUM são as nossas parcerias incríveis. Descobre todas as ofertas que os nossos parceiros têm para ti."
+      },
       "shortcut_buttons": {
         "highlight": "Em destaque",
         "discord": "Discord do <p>**CeSIUM**</p>",
