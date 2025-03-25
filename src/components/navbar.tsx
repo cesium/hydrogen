@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const lang = useLang();
-  const pathname = usePathname().replace(`/${lang}`, "");
+  const pathname = usePathname().replace(`/${shortLocale(lang)}`, "");
 
   const isCurrent = (path: string) => {
     return (

@@ -206,6 +206,11 @@
       }
     },
     "become_a_member": {
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
+      },
       "exclusive_partnerships": {
         "title": "Parcerias exclusivas",
         "description": "Almoça no Sabor da Fruta e toma um café grátis. Ou no Café do Luís, com bebida incluída. Recebe emblemas grátis n’Os Farias. Usufrui de descontos em aulas de música e de condução. Estas são só algumas das parcerias que temos para ti.",
