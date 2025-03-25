@@ -125,7 +125,9 @@ export default function Home() {
             subtitle={dict.landing.sections.partners.description}
             overflows
           >
-            <div className={`flex snap-x gap-4`}>
+            <div
+              className={`grid grid-cols-2 gap-4 md:auto-cols-[280px] md:grid-flow-col md:grid-cols-none`}
+            >
               {partners.list.map((partner, index) => (
                 <PartnerCard
                   key={index}
