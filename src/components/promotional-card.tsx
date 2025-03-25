@@ -1,10 +1,10 @@
 "use client";
 
-import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { shortLocale } from "@/lib/locale";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./button";
 
 interface CardProps {
   type: CardType;
@@ -23,7 +23,6 @@ const getColor = (type: CardType) => {
 const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
   const dict = useDictionary();
   const color = getColor(type);
-  const lang = useLang();
 
   return (
     <div
@@ -65,18 +64,17 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
       {/* Actions */}
 
       <div className="z-10 flex w-full justify-end">
-        <Link
-          className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 ${!mobileOnlyLayout ? "min-[950px]:static min-[950px]:text-base" : ""} text-${color}`}
+        <Button
+          title={dict.button.learn_more}
+          style="style1"
+          as="link"
+          color={type == CardType.Collaborate ? "blue" : "primary"}
           href={
-            "/" +
-            shortLocale(lang) +
-            (type == CardType.Collaborate
+            type == CardType.Collaborate
               ? "/about/become-a-collaborator"
-              : "/about/become-a-member")
+              : "/about/become-a-member"
           }
-        >
-          {dict.button.learn_more}
-        </Link>
+        />
       </div>
     </div>
   );

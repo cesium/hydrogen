@@ -11,6 +11,7 @@ import getEvents from "@/lib/api/getEvents";
 import LandingSectionCard from "@/components/landing-section-card";
 import Image from "next/image";
 import { useDictionary } from "@/contexts/dictionary-provider";
+import ScrollableContent from "@/components/scrollable-content";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 import ShortcutPanes from "@/components/shortcut-panes";
 
@@ -100,6 +101,10 @@ export default function Home() {
         {/* Shortcut Panes */}
         <section>
           <ShortcutPanes shortcuts={dict.landing.sections.shortcut_panes} />
+        </section>
+        {/* Highlight Slideshow */}
+        <section>
+          <ScrollableContent />
         </section>
         {/* Events */}
         <section>

@@ -130,6 +130,30 @@
     "store": "Loja",
     "projects": "Projetos"
   },
+  "home": {
+    "cesium": {
+      "title": "O que é o **CeSIUM?**",
+      "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional."
+    },
+    "scrollable_highlight": {
+      "slide1": {
+        "title": "O que é o **CeSIUM?**",
+        "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional."
+      },
+      "slide2": {
+        "title": "A nossa **missão**",
+        "subtitle": "No CeSIUM, esforçamo-nos por criar um ambiente colaborativo e inovador para os estudantes de Engenharia Informática. Através de eventos, workshops e oportunidades de networking, ajudamos a desenvolver competências técnicas, fomentar o trabalho em equipa e preparar-te para os desafios do mundo real."
+      },
+      "slide3": {
+        "title": "O que **oferecemos?**",
+        "subtitle": "Junta-te a nós para teres acesso a hackathons exclusivos, sessões de programação, palestras de carreira e ligações à indústria. Quer estejas à procura de melhorar as tuas competências ou encontrar a tua próxima grande oportunidade."
+      },
+      "slide4": {
+        "title": "**Envolve**-te",
+        "subtitle": "Queres fazer parte de uma comunidade apaixonada e motivada? O CeSIUM acolhe todos os estudantes de Engenharia Informática que queiram aprender, crescer e contribuir."
+      }
+    }
+  },
   "about": {
     "sections": {
       "hero": {
@@ -198,7 +222,19 @@
       "subtitle": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
       "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
     },
+    "become_a_collaborator": {
+      "hero": {
+        "title": "Torna-te colaborador do",
+        "description": "Podes fazer parte do CeSIUM com uma simples inscrição. Junta-te hoje.",
+        "button": "Inscreve-te"
+      }
+    },
     "become_a_member": {
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
+      },
       "exclusive_partnerships": {
         "title": "Parcerias exclusivas",
         "description": "Almoça no Sabor da Fruta e toma um café grátis. Ou no Café do Luís, com bebida incluída. Recebe emblemas grátis n’Os Farias. Usufrui de descontos em aulas de música e de condução. Estas são só algumas das parcerias que temos para ti.",
