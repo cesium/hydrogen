@@ -126,7 +126,7 @@ export default function Home() {
             overflows
           >
             <div
-              className={`grid grid-cols-2 gap-4 md:auto-cols-[280px] md:grid-flow-col md:grid-cols-none`}
+              className={`grid grid-cols-2 gap-4 md:auto-cols-[250px] md:grid-flow-col md:grid-cols-none`}
             >
               {partners.list.map((partner, index) => (
                 <PartnerCard
