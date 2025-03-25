@@ -121,8 +121,18 @@ export default function Home() {
           <div className="sm:col-span-2">
             <StoreCard />
           </div>
-          <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
-          <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+          <div className="hidden sm:block">
+            <PromotionalCard type={CardType.Membership} mobileOnlyLayout />
+          </div>
+          <div className="hidden sm:block">
+            <PromotionalCard type={CardType.Collaborate} mobileOnlyLayout />
+          </div>
+          <div className="sm:hidden">
+            <PromotionalCard type={CardType.Membership} />
+          </div>
+          <div className="sm:hidden">
+            <PromotionalCard type={CardType.Collaborate} />
+          </div>
         </section>
       </div>
     </main>
