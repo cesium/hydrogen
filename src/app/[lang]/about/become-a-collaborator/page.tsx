@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Button from "@/components/button";
 import CallSubscribe from "@/components/call-subscribe";
-import { fullLocale } from "@/lib/locale";
 import { verticalPadding } from "@/lib/styling";
 import { useDictionary } from "@/contexts/dictionary-provider";
 
