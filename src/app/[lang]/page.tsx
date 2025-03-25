@@ -131,7 +131,7 @@ export default function Home() {
               className={`grid grid-cols-2 gap-4 md:auto-cols-[250px] md:grid-flow-col md:grid-cols-none`}
             >
               {partners.list.map((partner, index) => (
-                <Link key={index} href={`${lang}/partners`}>
+                <Link key={index} href={`/${lang}/partners`}>
                   <PartnerCard
                     title={partner.title}
                     url={partner.url}

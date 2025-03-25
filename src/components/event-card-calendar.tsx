@@ -20,7 +20,7 @@ export function EventCardCalendar({ event }: EventCardProps) {
   return (
     <Link
       className="flex h-full w-full flex-col items-start gap-4 rounded-2.5xl bg-black/5 p-5 transition md:w-[410px] md:flex-row md:p-6"
-      href={`${lang}/events`}
+      href={`/${lang}/events`}
     >
       <div className="flex h-fit min-w-[72px] flex-row items-center gap-2 rounded-xl bg-white p-2.5 px-3 text-center md:h-[72px] md:flex-col md:gap-0">
         <div className="text-sm font-medium text-primary ">{month}</div>
