@@ -100,7 +100,7 @@ export default function BecomeACollaborator() {
             color="blue"
             as="link"
             href="https://cesium.link/f/recrutamento"
-            data-umami-event="comecar-inscricao-colaborador"
+            umamiEvent="comecar-inscricao-colaborador"
           />
         </div>
         <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">

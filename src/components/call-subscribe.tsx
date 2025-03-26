@@ -28,7 +28,7 @@ export const CallSubscribe = ({
         color={buttonColor}
         style="style2"
         href={buttonURL}
-        data-umami-event={
+        umamiEvent={
           buttonColor === "blue"
             ? "comecar-inscricao-colaborador"
             : "comecar-inscricao-socio"
