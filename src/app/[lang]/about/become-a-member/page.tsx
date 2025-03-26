@@ -55,10 +55,19 @@ export default function BecomeAMember() {
             href="https://cesium.link/f/socios"
           />
         </div>
+        <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">
+          <Image
+            src="/vectors/member.svg"
+            alt={"Member Vector"}
+            height={331}
+            width={528}
+            className="h-fit w-[323px] lg:w-[528px]"
+          />
+        </div>
         <div className="pointer-events-none absolute bottom-0 right-0 hidden h-full select-none items-end justify-center sm:flex sm:justify-end xl:hidden">
           <Image
             src="/vectors/member.svg"
-            alt="Torna-te membro"
+            alt={"Member Vector"}
             height={331}
             width={528}
             className="h-fit w-[323px]"
