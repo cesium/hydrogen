@@ -177,19 +177,19 @@
         "description": "Procuramos organizar atividades de conteúdo similar e/ou complementar ao curso, bem como promover e divulgar momentos de lazer e socialização entre alunos. Representamos ainda os interesses coletivos dos alunos de Engenharia Informática junto dos órgãos ou instituições relevantes, para que a sua experiência académica seja mais envolvente.",
         "images": [
           {
-            "src": "/images/about/uMinho1.jpg",
+            "src": "/images/about/uMinho1.webp",
             "alt": "Edifício da Universidade do Minho."
           },
           {
-            "src": "/images/about/workshop.jpg",
+            "src": "/images/about/workshop.webp",
             "alt": "Sala cheia de alunos de Engenharia Informática durante um workshop."
           },
           {
-            "src": "/images/about/uMinho2.jpg",
+            "src": "/images/about/uMinho2.webp",
             "alt": "Edifício da Universidade do Minho."
           },
           {
-            "src": "/images/about/sei24-25.jpg",
+            "src": "/images/about/sei24-25.webp",
             "alt": "Grupo de estudantes do CeSIUM reunidos no palco durante a Semana da Engenharia Informática, com a mascote Void."
           }
         ]
