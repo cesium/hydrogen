@@ -42,7 +42,7 @@ export function generateMetadata({
     applicationName: "CeSIUM",
     appleWebApp: {
       title: "CeSIUM",
-      statusBarStyle: "black-translucent",
+      statusBarStyle: "default",
       capable: true,
     },
     icons: {
