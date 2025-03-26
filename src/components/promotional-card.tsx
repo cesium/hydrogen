@@ -29,7 +29,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
     >
       {/* Card image */}
       <div
-        className={`absolute bottom-0 hidden justify-start ${mobileOnlyLayout ? "min-[840px]:flex" : "min-[330px]:flex"} ${type == CardType.Collaborate ? "left-2" : "left-8"}`}
+        className={`absolute bottom-0 hidden justify-start ${mobileOnlyLayout ? "min-[840px]:flex" : "min-[330px]:flex"} ${type == CardType.Collaborate ? "left-0" : "left-0"}`}
       >
         <Image
           src={
@@ -40,7 +40,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
           alt="Promotional Image"
           height={500}
           width={500}
-          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none w-fit select-none`}
+          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} w-36 min-[376px]:w-44 pointer-events-none select-none`}
         />
       </div>
 
@@ -61,7 +61,6 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
       </div>
 
       {/* Actions */}
-
       <div className="z-10 flex w-full justify-end">
         <Button
           title={dict.button.learn_more}
