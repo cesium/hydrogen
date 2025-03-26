@@ -9,7 +9,7 @@ export default function AboutSection({
 }) {
   return (
     <div
-      className={`flex h-full border-b border-black/10 ${dark ? "bg-muted" : ""} ${stretch ? "" : horizontalPadding}`}
+      className={`flex h-full border-b border-black/10 ${dark ? "bg-muted" : ""} ${stretch ? "" : "layout-p-x"}`}
     >
       {children}
     </div>

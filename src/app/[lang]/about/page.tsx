@@ -125,9 +125,7 @@ export default function About() {
   return (
     <main>
       <AboutSection>
-        <section
-          className={`flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)]`}
-        >
+        <section className="flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)]">
           {/* Desktop Hero */}
           <div className="hidden h-full items-center justify-center gap-10 lg:flex">
             {heroItems.map((item, _) => item)}

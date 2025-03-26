@@ -8,7 +8,6 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import SocialIcon from "@/components/social-icon";
 import Logo from "./logo";
-import { horizontalPadding } from "@/lib/styling";
 
 const Navbar = () => {
   const dict = useDictionary();
@@ -65,7 +64,7 @@ const Navbar = () => {
       className={`${navbarBackgroundColor} layout-p-x ${isMemberOrCollaborator || isLanding ? "relative after:hidden" : "sticky"} top-0 z-50 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
     >
       <div
-        className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:px-12 md:pt-12`}
+        className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:pt-12`}
       >
         <nav className="flex items-center justify-between gap-9 md:justify-normal">
           <Link href={`/${lang}`}>
