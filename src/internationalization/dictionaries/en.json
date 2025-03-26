@@ -590,6 +590,7 @@
     "footer": "Talk to us"
   },
   "not_found": {
+    "title": "Oops...",
     "description": "We couldn't find the page you're looking for. It may have been deleted or moved elsewhere. We invite you to visit the homepage to explore the many pages we have that don’t return a 404 error.",
     "go_to_start": "Go to the start",
     "contact_us": "Contact us"
