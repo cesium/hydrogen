@@ -10,10 +10,12 @@ import { EventListCard } from "@/components/event-list-card";
 import getEvents from "@/lib/api/getEvents";
 import LandingSectionCard from "@/components/landing-section-card";
 import Image from "next/image";
-import { useDictionary } from "@/contexts/dictionary-provider";
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import ScrollableContent from "@/components/scrollable-content";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 import ShortcutPanes from "@/components/shortcut-panes";
+import PartnerCard from "@/components/partner-card";
+import Link from "next/link";
 
 export default function Home() {
   const dict = useDictionary();
@@ -21,6 +23,8 @@ export default function Home() {
   const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const partners = dict.partners;
+  const lang = useLang();
 
   useEffect(() => {
     async function fetchEvents() {
@@ -119,6 +123,29 @@ export default function Home() {
               selectedDate={selectedDate}
               onClearDate={handleClearDate}
             />
+          </LandingSectionCard>
+        </section>
+        {/* Partners */}
+        <section>
+          <LandingSectionCard
+            title={dict.landing.sections.partners.title}
+            subtitle={dict.landing.sections.partners.description}
+            overflows
+          >
+            <div className="grid auto-cols-[250px] grid-flow-col gap-4">
+              {partners.list.map((partner, index) => (
+                <Link key={index} href={`/${lang}/partners`}>
+                  <PartnerCard
+                    title={partner.title}
+                    url={partner.url}
+                    logo={partner.logo}
+                    color={partner.color}
+                    perks={partner.perks}
+                    simplelayout
+                  />
+                </Link>
+              ))}
+            </div>
           </LandingSectionCard>
         </section>
         {/* Store / Member / Collaborator */}

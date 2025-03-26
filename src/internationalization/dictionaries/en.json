@@ -45,6 +45,10 @@
         "title": "Events",
         "description": "At CeSIUM, we organize a variety of activities - pedagogical, recreational, and more. Got your attention? We have a page with all the dates."
       },
+      "partners": {
+        "title": "Partners",
+        "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the opportunities our partners have for you."
+      },
       "shortcut_buttons": {
         "highlight": "Featured",
         "discord": "<p>**CeSIUM's**</p> Discord",

@@ -1,7 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import type { EventCardProps } from "../lib/types";
+import Link from "next/link";
 import {
   getMonthAbbreviation,
   getDay,
@@ -14,19 +14,13 @@ import { fullLocale } from "@/lib/locale";
 
 export function EventCardCalendar({ event }: EventCardProps) {
   const lang = useLang();
-  const router = useRouter();
-
   const month = getMonthAbbreviation(event.start, lang);
   const day = getDay(event.start);
 
-  const handleClick = () => {
-    router.push("/events");
-  };
-
   return (
-    <button
+    <Link
       className="flex h-full w-full flex-col items-start gap-4 rounded-2.5xl bg-black/5 p-5 transition md:w-[410px] md:flex-row md:p-6"
-      onClick={handleClick}
+      href={`/${lang}/events`}
     >
       <div className="flex h-fit min-w-[72px] flex-row items-center gap-2 rounded-xl bg-white p-2.5 px-3 text-center md:h-[72px] md:flex-col md:gap-0">
         <div className="text-sm font-medium text-primary ">{month}</div>
@@ -84,6 +78,6 @@ export function EventCardCalendar({ event }: EventCardProps) {
           )}
         </div>
       </div>
-    </button>
+    </Link>
   );
 }
