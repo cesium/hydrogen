@@ -51,14 +51,9 @@ export default function EventsPage() {
         <div className="hidden items-center gap-4 lg:flex">
           <AppLink
             href="https://calendario.cesium.di.uminho.pt/"
-            arrow="outward"
             title="Calendarium"
           />
-          <AppLink
-            href="https://instagram.com/cesiuminho"
-            arrow="outward"
-            title="Instagram"
-          />
+          <AppLink href="https://instagram.com/cesiuminho" title="Instagram" />
         </div>
       </div>
 

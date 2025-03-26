@@ -109,7 +109,7 @@ export function Calendar({
                   key={index}
                   className="relative flex flex-col items-center"
                   onMouseEnter={(e) => {
-                    if (hasEvent(date)) {
+                    if (hasEvent(date) && isCurrentMonth) {
                       setHoveredDate(date);
                       setTooltipAnchor(e.currentTarget);
                     }
@@ -128,7 +128,8 @@ export function Calendar({
                     flex h-12 w-10 items-center justify-center rounded-xl text-center
                     ${!isCurrentMonth ? "text-gray-300 cursor-default opacity-50" : "cursor-pointer transition-colors hover:bg-black/5"}
                     ${isSelected ? "z-10 bg-primary text-white hover:bg-primary" : ""}
-                  `}
+                    ${isSameDay(date, new Date()) ? "text-primary" : ""}
+                    `}
                   >
                     {date.getDate()}
                   </button>

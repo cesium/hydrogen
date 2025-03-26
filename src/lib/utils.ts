@@ -137,7 +137,7 @@ const departmentShortName = (departmentName: string) => {
       return "caos";
     case "Departamento de Marketing e Conteúdo":
       return "dmc";
-    case "Departamento de Relações Externas e Merch":
+    case "Departamento de Relações Externas e Merchandising":
       return "drem";
     case "Departamento Pedagógico":
       return "ped";
@@ -151,14 +151,6 @@ const departmentShortName = (departmentName: string) => {
       return "caos";
   }
 };
-
-function formatEventDate(date: Date): string {
-  return date.toLocaleDateString("pt-BR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-}
 
 function getMonthAbbreviation(date: Date, lang: string): string {
   return date
@@ -278,7 +270,6 @@ export {
   getDepartmentMembersInfo,
   departmentShortName,
   shuffleArray,
-  formatEventDate,
   getMonthAbbreviation,
   getDay,
   getDaysInMonth,

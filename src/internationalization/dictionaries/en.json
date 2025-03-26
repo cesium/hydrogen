@@ -40,41 +40,78 @@
       "hero": {
         "title": "CeSIUM",
         "description": "Computer Engineering Student Center at University of Minho"
-      }
+      },
+      "events": {
+        "title": "Events",
+        "description": "At CeSIUM, we organize a variety of activities - pedagogical, recreational, and more. Got your attention? We have a page with all the dates."
+      },
+      "partners": {
+        "title": "Partners",
+        "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the opportunities our partners have for you."
+      },
+      "shortcut_buttons": {
+        "highlight": "Featured",
+        "discord": "<p>**CeSIUM's**</p> Discord",
+        "pelomundo": "<p>CeSIUM</p>**around the World**"
+      },
+      "shortcut_panes": [
+        {
+          "title": "Team",
+          "description": "Meet the dedicated team that makes CeSIUM move, every day.",
+          "href": "/team"
+        },
+        {
+          "title": "Departments",
+          "description": "CeSIUM operates in various areas. Get to know our departments.",
+          "href": "/departments"
+        },
+        {
+          "title": "Events",
+          "description": "Stay up to date with all the events we organize.",
+          "href": "/events"
+        }
+      ]
     }
   },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
-    "name": ["Center for", "Open Source Support"],
+    "name": "Center for **Open Source Support**",
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
+    "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": ["Department of", "Marketing and Content"],
+    "name": "Department of **Marketing and Content**",
     "description": "The DMC is responsible for promoting activities and managing CeSIUM's social media presence - essentially handling all of CeSIUM's marketing. Their work primarily focuses on CeSIUM's visual design and written communications.",
+    "short_description": "Manages CeSIUM's marketing, social media, and creative communications.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": ["Department of", "External Relations and Merch"],
+    "name": "Department of **External Relations and Merchandising**",
     "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
+    "short_description": "Builds partnerships, manages external communications, and designs merchandise.",
     "icon": "handshake"
   },
   "ped": {
-    "name": ["Educational", "Department"],
+    "name": "**Educational** Department",
     "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
+    "short_description": "Organizes lectures, workshops, and study sessions to support the students' learning.",
     "icon": "draw"
   },
   "rec": {
-    "name": ["Recreational", "Department"],
+    "name": "**Recreational** Department",
     "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
+    "short_description": "Plans social and recreational events to enrich the students' experience.",
     "icon": "celebration"
   },
   "button": {
     "see_team": "Go to team",
     "learn_more": "Learn more",
     "see_more": "See more",
-    "swipe": "Swipe to see more",
-    "back": "Go Back"
+    "back": "Go Back",
+    "go_to_team": "Go to Team",
+    "go_to_departments": "Go to Departments",
+    "swipe": "Swipe to see more"
   },
   "collaborate_card": {
     "title": "Become a collaborator",
@@ -99,15 +136,34 @@
     "store": "Store",
     "projects": "Projects"
   },
+  "home": {
+    "cesium": {
+      "title": "What is **CeSIUM?**",
+      "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+    },
+    "scrollable_highlight": {
+      "slide1": {
+        "title": "What is **CeSIUM?**",
+        "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+      },
+      "slide2": {
+        "title": "Our **mission**",
+        "subtitle": " At CeSIUM, we strive to create a collaborative and innovative environment for Computer Engineering students. Through events, workshops, and networking opportunities, we help you develop technical skills, foster teamwork, and prepare for real-world challenges."
+      },
+      "slide3": {
+        "title": "What we **offer?**",
+        "subtitle": "Join us to access hackathons, coding sessions, career talks, and industry connections. Whether you're looking to improve your skills or find your next big opportunity."
+      },
+      "slide4": {
+        "title": "Get **involved**",
+        "subtitle": "Want to be part of a passionate and driven community? CeSIUM welcomes all Computer Engineering students eager to learn, grow, and contribute."
+      }
+    }
+  },
   "about": {
     "sections": {
       "hero": {
-        "title": [
-          "Center of",
-          "Students of",
-          "Computer Engineering",
-          "of Minho University"
-        ],
+        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
         "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
         "subtitle": "Director of the Informatics Department - 2017"
       },
@@ -134,7 +190,7 @@
           },
           {
             "src": "/images/about/sei24-25.jpg",
-            "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
+            "alt": "Group of CeSIUM students gathered on stage during Software Engineering Week, with the Void mascot."
           }
         ]
       }
@@ -172,7 +228,32 @@
       "subtitle": "We operate with 5 departments that focus on the different areas of our activities as a core. Get to know them here.",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
+    "become_a_collaborator": {
+      "hero": {
+        "title": "Become a collaborator of",
+        "description": "You can join CeSIUM with a simple registration. Join today.",
+        "button": "Register"
+      },
+      "join_team": {
+        "title": "Join the team",
+        "description": "Do you want to meet new people within the course and engage in a dynamic and innovative environment while learning new and interesting concepts relevant to your professional future? What are you waiting for to join us? Get to know the team that will welcome you with open arms as a collaborator! We can't wait to have you on board!"
+      },
+      "choose_department": {
+        "title": "Choose your department",
+        "description": "If you love programming, CAOS is the place for you. More into design? Join DMC. You can collaborate with the department that suits you best, or if you can't choose just one, you can take part in multiple. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!"
+      }
+    },
     "become_a_member": {
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
+      },
+      "exclusive_partnerships": {
+        "title": "Exclusive Partnerships",
+        "description": "Have lunch at Sabor da Fruta and get a free coffee. Or at Café do Luís, with a drink included. Get free badges at Os Farias. Enjoy discounts on music and driving lessons. These are just some of the partnerships we have for you.",
+        "link": "View partnerships"
+      },
       "participate": {
         "title": "Participate",
         "description": "Participate in all our events for free and enjoy tons of other benefits."
@@ -255,7 +336,27 @@
               "arrow": "forward",
               "color": "blue"
             }
-          ]
+          ],
+          "become_collaborator": {
+            "team": {
+              "title": "Join the team",
+              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "href": "about/team",
+              "color": "blue"
+            },
+            "choose_department": {
+              "title": "Choose your department",
+              "subtitle": "If you enjoy programming, CAOS will be your thing. Interested in design? Join DMC. You can join the department you identify with the most, and if you can't decide, you can even join several. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!",
+              "href": "about/departments",
+              "color": "blue"
+            },
+            "join": {
+              "title": "We are waiting for you",
+              "subtitle": "Being a collaborator at CeSIUM is more than just working - it's about learning new things, meeting amazing people, and being part of experiences. If it sounds good to you, apply now.",
+              "first_button_name": "Start registration",
+              "second_button_name": "Talk with us"
+            }
+          }
         }
       ]
     }
@@ -343,7 +444,7 @@
         "color": "#eecc67",
         "perks": [
           {
-            "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
+            "description": "**10% discount** on purchases over 7€, except on Wednesdays and Sundays.",
             "icon": "Percent"
           }
         ]
@@ -355,7 +456,7 @@
         "color": "#925b2a",
         "perks": [
           {
-            "description": "Desconto de **10%**.",
+            "description": "**10%** Discount.",
             "icon": "Percent"
           }
         ]
@@ -367,7 +468,7 @@
         "color": "#9a301f",
         "perks": [
           {
-            "description": "**Desconto de 0.50€** em todos os menus confecionados.",
+            "description": "**0.50€ discount** on all prepared menus.",
             "icon": "Euro"
           }
         ]
@@ -379,7 +480,7 @@
         "color": "#843dc2",
         "perks": [
           {
-            "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
+            "description": "**Free drink** with Special Hamburger, American Toast, Salmon Toast, and Special Hot Dog menus.\n\n**Fanta, Nestea, Water, Sprite, Ginger ale**",
             "icon": "Water_Full"
           }
         ]
@@ -391,7 +492,7 @@
         "color": "#134046",
         "perks": [
           {
-            "description": "**10% de desconto** na compra de jogos de tabuleiro e isenção de consumo mínimo.",
+            "description": "**10% discount** on board games and no minimum consumption.",
             "icon": "Percent"
           }
         ]
@@ -403,7 +504,7 @@
         "color": "#BBB24A",
         "perks": [
           {
-            "description": "**Desconto de 40€** na carta de condução da Categoria B.",
+            "description": "**40€ discount** on Category B driving license.",
             "icon": "Euro"
           }
         ]
@@ -415,15 +516,15 @@
         "color": "#d1a75b",
         "perks": [
           {
-            "description": "Na compra de 8 pins, é **oferecido o pin** de menor valor.",
+            "description": "When purchasing 8 pins, the **pin with the lowest value** is free.",
             "icon": "Sell"
           },
           {
-            "description": "**Desconto de 20%** nos pins de curso.",
+            "description": "**20% discount** on course pins.",
             "icon": "Percent"
           },
           {
-            "description": "**Portes de envio gratuitos** em compras superiores a 12.50€.",
+            "description": "**Free shipping** on purchases over 12.50€.",
             "icon": "Euro"
           }
         ]
@@ -435,7 +536,7 @@
         "color": "#e56b7f",
         "perks": [
           {
-            "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
+            "description": "**5€ discount** on all activities (music, dance, martial arts, theater, etc).",
             "icon": "Euro"
           }
         ]
@@ -447,19 +548,19 @@
         "color": "#7DA279",
         "perks": [
           {
-            "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
+            "description": "When purchasing the academic attire, **get 3 additional badges** (in addition to the usual 4).",
             "icon": "License"
           },
           {
-            "description": "Na compra de 4 emblemas, **oferta de 1**.",
+            "description": "When purchasing 4 badges, **get 1 free**.",
             "icon": "License"
           },
           {
-            "description": "Preço de meias para homem: **2.75€**.",
+            "description": "Price of men's socks: **2.75€**.",
             "icon": "Euro"
           },
           {
-            "description": "Preço de meias para mulher: **1.50€**.",
+            "description": "Price of women's socks: **1.50€**.",
             "icon": "Euro"
           }
         ]
@@ -471,15 +572,15 @@
         "color": "#598EBA",
         "perks": [
           {
-            "description": "Refeição e chá por **4.50€**.",
+            "description": "Meal and tea for **4.50€**.",
             "icon": "Sell"
           },
           {
-            "description": "Sobremesa a **1.40€**.",
+            "description": "Dessert for **1.40€**.",
             "icon": "Sell"
           },
           {
-            "description": "Café a **0.60€**.",
+            "description": "Coffee for **0.60€**.",
             "icon": "Sell"
           }
         ]
@@ -491,7 +592,7 @@
         "color": "#89573E",
         "perks": [
           {
-            "description": "**Desconto de 0.40€** no menu estudante e nas pizzas.",
+            "description": "**0.40€ discount** on the student menu and pizzas.",
             "icon": "Euro"
           }
         ]
@@ -503,7 +604,7 @@
         "color": "#68b54a",
         "perks": [
           {
-            "description": "**Oferta de café** na compra de um menu.",
+            "description": "**Free coffee** with the purchase of a menu.",
             "icon": "Coffee"
           }
         ]
@@ -521,5 +622,11 @@
     },
     "button": "Start Registration",
     "footer": "Talk to us"
+  },
+  "not_found": {
+    "title": "Oops...",
+    "description": "We couldn't find the page you're looking for. It may have been deleted or moved elsewhere. We invite you to visit the homepage to explore the many pages we have that don’t return a 404 error.",
+    "go_to_start": "Go to the start",
+    "contact_us": "Contact us"
   }
 }

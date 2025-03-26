@@ -1,7 +1,7 @@
 "use client";
 
-import { fullLocale } from "@/lib/locale";
 import type { EventCardProps } from "../lib/types";
+import Link from "next/link";
 import {
   getMonthAbbreviation,
   getDay,
@@ -10,23 +10,31 @@ import {
   formatDate,
 } from "../lib/utils";
 import { useLang } from "@/contexts/dictionary-provider";
+import { fullLocale } from "@/lib/locale";
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCardCalendar({ event }: EventCardProps) {
   const lang = useLang();
   const month = getMonthAbbreviation(event.start, lang);
   const day = getDay(event.start);
 
   return (
-    <div className="flex items-start gap-4 border-b border-black/20 py-6">
-      <div className="w-[4.5rem] rounded-xl bg-black bg-opacity-[6%] p-2 text-center">
-        <div className="text-sm font-medium text-primary">{month}</div>
-        <div className="text-2xl font-bold">{day}</div>
+    <Link
+      className="flex h-full w-full flex-col items-start gap-4 rounded-2.5xl bg-black/5 p-5 transition md:w-[410px] md:flex-row md:p-6"
+      href={`/${lang}/events`}
+    >
+      <div className="flex h-fit min-w-[72px] flex-row items-center gap-2 rounded-xl bg-white p-2.5 px-3 text-center md:h-[72px] md:flex-col md:gap-0">
+        <div className="text-sm font-medium text-primary ">{month}</div>
+        <div className="text-2xl font-medium">{day}</div>
       </div>
-      <div className="flex-1">
-        <h3 className="mb-4 text-xl font-bold">{event.title}</h3>
-        <div className="text-gray-600 space-y-2 text-base">
+      <div className="flex w-full flex-col gap-2">
+        <h3 className="line-clamp-1 text-start text-xl font-semibold">
+          {event.title}
+        </h3>
+        <div className="text-gray-600 flex flex-col gap-0.5 text-base">
           <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined">calendar_month</span>
+            <span className="material-symbols-outlined text-gray">
+              calendar_month
+            </span>
             {isAllDayEvent(event) ? (
               <span>
                 {new Date(event.start).toLocaleDateString(fullLocale(lang))}
@@ -46,19 +54,23 @@ export function EventCard({ event }: EventCardProps) {
             )}
           </div>
           {event.place && (
-            <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined">location_on</span>
+            <div className="flex  items-center gap-2">
+              <span className="material-symbols-outlined text-gray">
+                location_on
+              </span>
               {event.place}
             </div>
           )}
           {event.link && (
-            <div className="flex w-64 max-w-[80%] items-center gap-2 text-primary sm:max-w-full">
-              <span className="material-symbols-outlined">explore</span>
+            <div className="flex w-64 max-w-[80%] items-center gap-2 sm:max-w-full">
+              <span className="material-symbols-outlined text-gray">
+                explore
+              </span>
               <a
                 href={event.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="truncate hover:underline"
+                className="truncate font-medium text-gray hover:underline"
               >
                 {event.link.split("://")[1]}
               </a>
@@ -66,6 +78,6 @@ export function EventCard({ event }: EventCardProps) {
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

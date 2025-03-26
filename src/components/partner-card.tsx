@@ -53,7 +53,7 @@ const PartnerCard = ({
       }}
     >
       <div className="absolute left-0 top-0 size-full rounded-[20px] border border-black/10" />
-      <div className="z-10 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <figure className="size-24 rounded-lg bg-white">
           <Image
             width={96}
@@ -71,7 +71,7 @@ const PartnerCard = ({
                 <PerkItem key={index} {...perk} />
               ))}
             </ul>
-            <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+            <AppLink title={dict.button.see_more} href={url} />
           </>
         )}
       </div>

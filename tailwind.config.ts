@@ -29,6 +29,9 @@ const config: Config = {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         title: ["var(--font-orbitron)", ...fontFamily.mono],
       },
+      borderRadius: {
+        "2.5xl": "20px",
+      },
     },
   },
   plugins: [],

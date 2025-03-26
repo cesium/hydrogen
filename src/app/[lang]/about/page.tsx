@@ -4,6 +4,12 @@ import AboutSection from "@/components/about-section";
 import Carousel from "@/components/carousel";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import DepartmentsList from "@/components/departments-list";
+import {
+  gradient,
+  shortName,
+  departmentNames,
+} from "@/components/departments-list";
+import DepartmentCard from "@/components/department-card";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
 import ProjectCard from "@/components/project-card";
@@ -18,6 +24,8 @@ import {
 import { fetchTeamData } from "@/lib/utils";
 
 import Image from "next/image";
+import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
+import Markdown from "markdown-to-jsx";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -27,39 +35,42 @@ export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;
   const images = dictAbout.sections.cesium.images;
-
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
+
+  const { isScrolledTop } = useScrollState();
 
   const yearRange = "2024-2025";
 
   const heroItems = [
     <div
       key="title"
-      className="pointer-events-none mb-32 flex items-center lg:mb-0 lg:flex-1"
+      className="pointer-events-none flex h-full select-none items-center text-4xl lg:max-w-[50%] xl:text-5xl"
     >
-      <p className="h-fit w-[343px] bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title text-[36px] font-medium leading-[125%] text-transparent sm:w-[358px] sm:text-[40px] lg:w-[460px] lg:pr-10 xl:w-[565px] xl:text-[48px]">
-        {dict.about.sections.hero.title[0]}
-        <br /> {dictAbout.sections.hero.title[1]}
-        <span className="font-title text-[36px] text-black sm:text-[40px] xl:text-[48px] ">
-          {" "}
-          {dict.about.sections.hero.title[2]}
-        </span>{" "}
-        {dict.about.sections.hero.title[3]}
-      </p>
+      <Markdown
+        options={{
+          overrides: {
+            strong: {
+              props: {
+                className: "font-bold text-black font-medium",
+              },
+            },
+          },
+        }}
+        className="bg-gradient-to-r from-black/50 via-black/25 to-black/50 bg-clip-text font-title font-medium text-transparent"
+      >
+        {dict.about.sections.hero.title}
+      </Markdown>
     </div>,
-
     <div
       key="subtitle"
-      className="pointer-events-none mb-32 flex flex-col justify-center sm:h-[300px] lg:mb-0"
+      className="pointer-events-none flex select-none flex-col justify-center lg:max-w-[50%]"
     >
-      <div className="text-justify font-sans font-normal leading-[24px] text-[#6E6E6E]">
-        <p className="h-fit w-[343px] text-[15px] sm:w-[480px] md:w-[636px] lg:w-[480px] xl:w-[636px] xl:text-[16px]">
-          {dict.about.sections.hero.description}
-        </p>
+      <div className="text-justify text-[#6E6E6E]">
+        <p className="h-fit">{dict.about.sections.hero.description}</p>
       </div>
-      <div className="mt-3 text-right font-sans text-[15px] font-normal text-black lg:mt-5 xl:text-[16px]">
+      <div className="mt-3 text-right text-black lg:mt-5">
         <p>Pedro Rangel Henriques</p>
         <p>{dict.about.sections.hero.subtitle}</p>
       </div>
@@ -73,7 +84,7 @@ export default function About() {
         "Presidência",
         "Centro de Apoio ao Open Source",
         "Departamento de Marketing e Conteúdo",
-        "Departamento de Relações Externas e Merch",
+        "Departamento de Relações Externas e Merchandising",
         "Departamento Pedagógico",
         "Departamento Recreativo",
         "Vogais",
@@ -114,32 +125,38 @@ export default function About() {
   return (
     <main>
       <AboutSection>
-        <section className="flex h-[745px] w-full flex-col justify-center sm:h-[804px] lg:gap-44">
-          <div className="hidden h-fit items-center justify-center lg:flex">
+        <section
+          className={`flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)]`}
+        >
+          {/* Desktop Hero */}
+          <div className="hidden h-full items-center justify-center gap-10 lg:flex">
             {heroItems.map((item, _) => item)}
           </div>
-
-          <div className="flex h-full flex-col justify-center lg:hidden">
-            <div className="block">
-              <Carousel
-                autoplay={25000}
-                pagination
-                items={heroItems.map((item, index) => (
-                  <div key={index} className="flex items-center justify-center">
-                    {item}
-                  </div>
-                ))}
-              />
-            </div>
+          {/* Mobile Hero */}
+          <div className="flex h-full items-center lg:hidden">
+            <Carousel
+              autoplay={25000}
+              pagination
+              items={heroItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex h-full items-center justify-center"
+                >
+                  {item}
+                </div>
+              ))}
+            />
           </div>
-
-          <div className="mb-8 flex h-[56px] flex-col items-center justify-center gap-1">
-            <p>Desliza para ver mais</p>
+          {/* See More */}
+          <button
+            onClick={() => scrollTo(window.innerHeight - 72)}
+            className={`mb-8 flex h-14 flex-col items-center justify-center gap-1 transition-opacity duration-300 ${isScrolledTop ? "opacity-100" : "opacity-0"}`}
+          >
+            <p>{dict.button.swipe}</p>
             <span className="material-symbols-outlined">arrow_downward</span>
-          </div>
+          </button>
         </section>
       </AboutSection>
-
       {/* "What is CeSIUM?" */}
       <section className="flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6">
         <p className="font-title text-2xl font-medium sm:text-3xl">
@@ -224,8 +241,36 @@ export default function About() {
         <DepartmentsList
           hideTeam
           hideShortName
-          className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 2xl:grid-cols-3"
+          className="hidden grid-cols-1 gap-4 sm:gap-5 md:grid md:grid-cols-2 2xl:grid-cols-3"
         />
+        {/* Mobile Carousel */}
+        <div className="md:hidden">
+          <Carousel
+            autoplay={2000}
+            pagination
+            overflow
+            loop
+            items={departmentNames.map((departmentName, index) => (
+              <div
+                key={index}
+                className="pointer-events-none flex h-[350px] select-none"
+              >
+                <DepartmentCard
+                  key={departmentName}
+                  name={departmentName}
+                  shortName={shortName(departmentName)}
+                  gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
+                  gradientTo={gradient(shortName(departmentName))[1] ?? ""}
+                  hideTeam
+                  hideShortName
+                  teamData={teamData}
+                  yearRange={yearRange}
+                  shortDescription
+                />
+              </div>
+            ))}
+          />
+        </div>
       </AboutSectionLayout>
       {/* Projects */}
       <AboutSectionLayout
@@ -261,7 +306,6 @@ export default function About() {
                       <AppLink
                         title={link.title}
                         href={link.href}
-                        arrow={link.arrow as "back" | "forward" | "outward"}
                         color={linkColor as "primary" | "blue"}
                       />
                     </div>

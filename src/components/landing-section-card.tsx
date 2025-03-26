@@ -31,7 +31,7 @@ const LandingSectionCard = ({
   };
 
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-5 rounded-2xl border border-dark/10 bg-white px-6 py-6 sm:px-12 md:gap-12 md:py-12">
+    <section className="flex w-full flex-col items-start justify-center gap-5 rounded-2xl border border-dark/10 bg-white p-6 sm:p-8 md:gap-12 md:p-12">
       <div className="flex flex-col gap-4 md:flex-row md:gap-10">
         <p className="font-title text-2xl font-medium sm:text-[30px]">
           {title}
@@ -42,7 +42,7 @@ const LandingSectionCard = ({
       <div className="w-full">
         <div className="relative w-full">
           {overflows && (
-            <div className="block">
+            <div className="pointer-events-none block">
               {!isScrolledRight && (
                 <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white from-20% to-transparent" />
               )}

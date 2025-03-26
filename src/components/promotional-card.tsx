@@ -1,8 +1,9 @@
 "use client";
 
-import { useDictionary, useLang } from "@/contexts/dictionary-provider";
+import { useDictionary } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
-import Link from "next/link";
+import Image from "next/image";
+import Button from "./button";
 
 interface CardProps {
   type: CardType;
@@ -21,25 +22,25 @@ const getColor = (type: CardType) => {
 const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
   const dict = useDictionary();
   const color = getColor(type);
-  const lang = useLang();
 
   return (
     <div
-      className={`relative flex min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color}`}
+      className={`relative flex h-full min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color}`}
     >
       {/* Card image */}
       <div
-        className={`absolute bottom-0 hidden min-[330px]:block ${type == CardType.Collaborate ? "left-2" : "left-8"}`}
+        className={`absolute bottom-0 hidden justify-start ${mobileOnlyLayout ? "min-[840px]:flex" : "min-[330px]:flex"} ${type == CardType.Collaborate ? "left-0" : "left-0"}`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={
             type == CardType.Collaborate
               ? "/vectors/collaborator.svg"
               : "/vectors/member.svg"
           }
           alt="Promotional Image"
-          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none select-none`}
+          height={500}
+          width={500}
+          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none w-36 select-none min-[376px]:w-44`}
         />
       </div>
 
@@ -60,20 +61,18 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
       </div>
 
       {/* Actions */}
-
       <div className="z-10 flex w-full justify-end">
-        <Link
-          className={`hover:bg-gray-100 rounded-full bg-white px-5 py-3 ${!mobileOnlyLayout ? "min-[950px]:static min-[950px]:text-base" : ""} text-${color}`}
+        <Button
+          title={dict.button.learn_more}
+          style="style1"
+          as="link"
+          color={type == CardType.Collaborate ? "blue" : "primary"}
           href={
-            "/" +
-            lang +
-            (type == CardType.Collaborate
+            type == CardType.Collaborate
               ? "/about/become-a-collaborator"
-              : "/about/become-a-member")
+              : "/about/become-a-member"
           }
-        >
-          {dict.button.learn_more}
-        </Link>
+        />
       </div>
     </div>
   );

@@ -1,12 +1,13 @@
 "use client";
 
-import { useDictionary } from "@/contexts/dictionary-provider";
+import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import Image from "next/image";
 import SocialIcon from "@/components/social-icon";
 import Link from "next/link";
 
 const Footer = () => {
   const dict = useDictionary();
+  const lang = useLang();
 
   return (
     <div className="layout-p-x bg-[#EBEBEB]">
@@ -62,7 +63,11 @@ const Footer = () => {
                     {section.items.map((item, index) => (
                       <li key={index} className="text-sm text-gray">
                         <Link
-                          href={section.links?.[index] ?? "#"}
+                          href={
+                            (section.links?.[index]?.startsWith("http") ?? "#")
+                              ? (section.links?.[index] ?? "#")
+                              : `/${lang}${section.links?.[index] ?? "#"}`
+                          }
                           className="transition-colors hover:text-black/60"
                           {...(section.links?.[index]?.startsWith("http") && {
                             target: "_blank",
