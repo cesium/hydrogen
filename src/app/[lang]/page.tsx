@@ -132,9 +132,7 @@ export default function Home() {
             subtitle={dict.landing.sections.partners.description}
             overflows
           >
-            <div
-              className={`grid grid-cols-2 gap-4 md:auto-cols-[250px] md:grid-flow-col md:grid-cols-none`}
-            >
+            <div className="grid auto-cols-[250px] grid-flow-col gap-4">
               {partners.list.map((partner, index) => (
                 <Link key={index} href={`/${lang}/partners`}>
                   <PartnerCard
