@@ -49,7 +49,7 @@ const AppLink = ({ title, href, back, color = "primary" }: LinkProps) => {
         <span
           className={`material-symbols-outlined transition-transform duration-200 ${isLocalLink ? "group-hover:translate-x-0.5" : "group-hover:-translate-y-[1px] group-hover:translate-x-[1px]"}`}
         >
-          arrow_{!isLocalLink ? "outward" : "forward"}
+          {!isLocalLink ? "arrow_outward" : "arrow_forward"}
         </span>
       </Link>
     )
