@@ -41,9 +41,7 @@ export function generateMetadata({
     },
     applicationName: "CeSIUM",
     appleWebApp: {
-      title: "CeSIUM",
       statusBarStyle: "default",
-      capable: true,
     },
     icons: {
       icon: [
@@ -120,6 +118,7 @@ export default function RootLayout({
     <html lang={fullLocale(lang)}>
       <head>
         <meta name="apple-mobile-web-app-title" content="CeSIUM" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <Body lang={lang} fonts={[inter, orbitron]}>
         <Navbar />

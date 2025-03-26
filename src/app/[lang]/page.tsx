@@ -63,21 +63,23 @@ export default function Home() {
           height={1346.5}
           alt=""
           src="/vectors/hero.svg"
-          className="pointer-events-none absolute right-0 top-0 z-10 hidden h-[95%] w-fit select-none lg:block"
+          priority
+          className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-fit select-none lg:block"
         />
         <Image
           width={638}
           height={729}
           alt=""
           src="/vectors/hero-mobile.svg"
-          className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[95%] lg:hidden"
+          priority
+          className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[90%] lg:hidden"
         />
         <div className="flex h-full flex-col justify-center">
           <div className="mb-36 flex max-w-[680px] flex-col items-start gap-7 text-white xl:flex-row xl:items-center xl:gap-11">
-            <h1 className="font-title text-5xl font-medium sm:text-6xl">
+            <h1 className="font-title text-5xl font-medium md:text-6xl">
               {dict.landing.sections.hero.title}
             </h1>
-            <h2 className="max-w-[80%]">
+            <h2 className="pr-6 md:max-w-[60%]">
               {dict.landing.sections.hero.description}
             </h2>
           </div>
