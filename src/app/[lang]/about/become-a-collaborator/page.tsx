@@ -1,6 +1,5 @@
 "use client";
 
-import AboutSectionLayout from "@/components/about-section-layout";
 import Avatar from "@/components/avatar";
 import {
   departmentShortName,
@@ -10,8 +9,12 @@ import {
 } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { MemberInfo, TeamData } from "@/lib/types";
-import DepartmentsList from "@/components/departments-list";
+import type { MemberInfo, TeamData } from "@/lib/types";
+import DepartmentsList, {
+  departmentNames,
+  gradient,
+  shortName,
+} from "@/components/departments-list";
 import CollaboratorLayout from "@/components/become-a-collaborator-layout";
 import Image from "next/image";
 import Button from "@/components/button";
@@ -19,6 +22,8 @@ import CallSubscribe from "@/components/call-subscribe";
 import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import AboutSection from "@/components/about-section";
 import AppLink from "@/components/link";
+import Carousel from "@/components/carousel";
+import DepartmentCard from "@/components/department-card";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -26,15 +31,6 @@ interface MemberDep extends MemberInfo {
 
 export default function BecomeACollaborator() {
   const dict = useDictionary();
-  const departmentNames = [
-    "Presidência",
-    "Centro de Apoio ao Open Source",
-    "Departamento de Marketing e Conteúdo",
-    "Departamento de Relações Externas e Merch",
-    "Departamento Pedagógico",
-    "Departamento Recreativo",
-    "Vogais",
-  ];
 
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
   const [teamData, setTeamData] = useState<TeamData>([]);
@@ -44,6 +40,16 @@ export default function BecomeACollaborator() {
 
   useEffect(() => {
     const aux = async () => {
+      const departmentNames = [
+        "Presidência",
+        "Centro de Apoio ao Open Source",
+        "Departamento de Marketing e Conteúdo",
+        "Departamento de Relações Externas e Merch",
+        "Departamento Pedagógico",
+        "Departamento Recreativo",
+        "Vogais",
+      ];
+
       const team: TeamData = await fetchTeamData(yearRange);
       setTeamData(team);
 
@@ -155,7 +161,7 @@ export default function BecomeACollaborator() {
         </div>
       </CollaboratorLayout>
       <AboutSection stretch>
-        <div className="relative flex w-full flex-col items-stretch gap-4 py-10 sm:py-12">
+        <div className="flex w-full flex-col items-stretch gap-4 bg-white py-10 sm:py-12">
           {/* Title */}
           <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
             <div
@@ -167,32 +173,60 @@ export default function BecomeACollaborator() {
             </div>
           </div>
           {/* Subtitle */}
-          <div className="overflow-auto px-6 sm:px-0">
+          <div className="px-6 sm:px-0">
             <div className={`${horizontalPadding}`}>
               <span className="text-start">
                 {dict.about.become_a_collaborator.choose_department.description}
               </span>
               <div className="mt-4 block sm:block">
                 <AppLink
-                  title={dict.button["go_to_departments"]}
+                  title={dict.button.go_to_departments}
                   href="/departments"
                   color="blue"
                 />
               </div>
             </div>
-            {/* Content (Scrollable) */}
-            <div className="relative">
-              <div className="no-scrollbar mt-7 overflow-y-auto overflow-x-scroll sm:mt-10">
-                <div className="relative mb-8 h-[224px] w-full overflow-hidden">
-                  <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent from-20% to-white"></div>
-                  <DepartmentsList
+          </div>
+          {/* Content (Scrollable) */}
+          <div className="relative hidden xl:block">
+            <div className="mt-7 w-full sm:mt-10">
+              <div className="no-scrollbar mb-8 flex h-[302px] w-full overflow-y-hidden overflow-x-scroll px-10">
+                <DepartmentsList
+                  hideTeam
+                  hideShortName
+                  className="flex w-fit gap-3"
+                />
+              </div>
+              <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,_var(--tw-gradient-stops))] from-transparent from-40% via-white/80 via-80% to-white to-100%"></div>
+            </div>
+          </div>
+          {/* Mobile Carousel */}
+          <div className="relative h-72 overflow-hidden xl:hidden">
+            <Carousel
+              pagination
+              overflow
+              loop
+              items={departmentNames.map((departmentName, index) => (
+                <div
+                  key={index}
+                  className="pointer-events-none flex h-[350px] select-none"
+                >
+                  <DepartmentCard
+                    key={departmentName}
+                    name={departmentName}
+                    shortName={shortName(departmentName)}
+                    gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
+                    gradientTo={gradient(shortName(departmentName))[1] ?? ""}
                     hideTeam
                     hideShortName
-                    className="-mx-8 flex flex-col justify-between gap-8 md:flex-row"
+                    teamData={teamData}
+                    yearRange={yearRange}
+                    shortDescription
                   />
                 </div>
-              </div>
-            </div>
+              ))}
+            />
+            <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,_var(--tw-gradient-stops))] from-transparent from-40% via-white/80 via-80% to-white to-100%"></div>
           </div>
         </div>
       </AboutSection>
