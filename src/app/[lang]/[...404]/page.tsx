@@ -29,7 +29,7 @@ export default function NotFound() {
           />
         </div>
       </div>
-      <span className="-mb-28 -mr-16 bg-gradient-to-r from-transparent to-black/20 bg-clip-text font-title text-[165px] font-medium text-transparent sm:-mb-44 sm:text-[235px] lg:mb-0">
+      <span className="-mb-28 -mr-16 bg-gradient-to-r from-transparent from-5% to-black/20 bg-clip-text font-title text-[165px] font-medium text-transparent sm:-mb-44 sm:text-[235px] lg:mb-0">
         404
       </span>
     </main>
