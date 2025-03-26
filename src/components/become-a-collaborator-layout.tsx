@@ -49,10 +49,10 @@ const CollaboratorLayout = ({
   };
 
   return (
-    <AboutSection dark={dark} padding>
+    <AboutSection dark={dark}>
       <div className="relative flex w-full flex-col items-stretch gap-6 py-10 sm:flex-row sm:py-12">
         {/* Left Section: Title, Subtitle, and Link */}
-        <div className="flex flex-shrink-0 flex-col px-6 sm:w-1/3 sm:px-0">
+        <div className="flex flex-shrink-0 flex-col px-6 sm:w-1/2 sm:px-0">
           <div className="mb-4">
             <span className="w-fit select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl">
               {title}
@@ -65,7 +65,6 @@ const CollaboratorLayout = ({
             <CustomLink
               title={dict.button[linkName]}
               href={href}
-              arrow="forward"
               color={linkColor}
             />
           </div>
@@ -78,20 +77,20 @@ const CollaboratorLayout = ({
               {/* Gradient for desktop */}
               <div className="hidden md:block">
                 {!isScrolledRight && (
-                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white from-20% to-transparent" />
+                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-foundation from-20% to-transparent" />
                 )}
                 {!isScrolledLeft && (
-                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white from-20% to-transparent" />
+                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-foundation from-20% to-transparent" />
                 )}
               </div>
 
               {/* Gradient for mobile */}
               <div className="block md:hidden">
                 {!isScrolledRight && (
-                  <div className="absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-white from-50% to-transparent" />
+                  <div className="absolute right-0 top-0 z-10 h-full w-10 bg-gradient-to-l from-foundation from-50% to-transparent" />
                 )}
                 {!isScrolledLeft && (
-                  <div className="absolute left-0 top-0 z-10 h-full w-10 bg-gradient-to-r from-white from-50% to-transparent" />
+                  <div className="absolute left-0 top-0 z-10 h-full w-10 bg-gradient-to-r from-foundation from-50% to-transparent" />
                 )}
               </div>
             </>

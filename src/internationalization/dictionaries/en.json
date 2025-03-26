@@ -229,6 +229,14 @@
         "title": "Become a collaborator of",
         "description": "You can join CeSIUM with a simple registration. Join today.",
         "button": "Register"
+      },
+      "join_team": {
+        "title": "Join the team",
+        "description": "Do you want to meet new people within the course and engage in a dynamic and innovative environment while learning new and interesting concepts relevant to your professional future? What are you waiting for to join us? Get to know the team that will welcome you with open arms as a collaborator! We can't wait to have you on board!"
+      },
+      "choose_department": {
+        "title": "Choose your department",
+        "description": "If you love programming, CAOS is the place for you. More into design? Join DMC. You can collaborate with the department that suits you best, or if you can't choose just one, you can take part in multiple. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!"
       }
     },
     "become_a_member": {

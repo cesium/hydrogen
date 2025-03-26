@@ -16,7 +16,9 @@ import CollaboratorLayout from "@/components/become-a-collaborator-layout";
 import Image from "next/image";
 import Button from "@/components/button";
 import CallSubscribe from "@/components/call-subscribe";
-import { verticalPadding } from "@/lib/styling";
+import { horizontalPadding, verticalPadding } from "@/lib/styling";
+import AboutSection from "@/components/about-section";
+import AppLink from "@/components/link";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -24,7 +26,6 @@ interface MemberDep extends MemberInfo {
 
 export default function BecomeACollaborator() {
   const dict = useDictionary();
-  const dictBecomeCollaborator = dict.about.explore.items[3]?.become_collaborator;
   const departmentNames = [
     "Presidência",
     "Centro de Apoio ao Open Source",
@@ -120,15 +121,12 @@ export default function BecomeACollaborator() {
         </div>
       </section>
       <CollaboratorLayout
-        title={dictBecomeCollaborator?.team.title ?? "Error"}
-        subtitle={dictBecomeCollaborator?.team.subtitle ?? "Error"}
+        title={dict.about.become_a_collaborator.join_team.title}
+        subtitle={dict.about.become_a_collaborator.join_team.description}
         linkName="go_to_team"
-        href={dictBecomeCollaborator?.team.href ?? "Error"}
+        href="/team"
         overflows
-        linkColor={
-          dictBecomeCollaborator?.team.color == "blue" ? "blue" : "primary"
-        }
-        dark
+        linkColor="blue"
       >
         <div className="flex w-full justify-evenly gap-5">
           {teamData.map((team, index) =>
@@ -138,7 +136,7 @@ export default function BecomeACollaborator() {
                     key={member.name}
                     src={member.imageUrl}
                     className="rounded-full font-normal"
-                    imageClassName="size-20 md:size-2buns5 rounded-full "
+                    imageClassName="size-20 rounded-full "
                     style="style2"
                   />
                 ))
@@ -156,35 +154,55 @@ export default function BecomeACollaborator() {
           )}
         </div>
       </CollaboratorLayout>
-      <AboutSectionLayout
-        title={dictBecomeCollaborator?.choose_department.title ?? "Error"}
-        subtitle={dictBecomeCollaborator?.choose_department.subtitle ?? "Error"}
-        linkName="go_to_departments"
-        href={dictBecomeCollaborator?.choose_department.href ?? "Error"}
-        linkColor={
-          dictBecomeCollaborator?.choose_department.color == "blue"
-            ? "blue"
-            : "primary"
-        }
-        strech={true}
-        showlinkmobile
-      >
-        <div className="relative h-[224px] w-full overflow-y-hidden ">
-          <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent from-20% to-white"></div>
-          <DepartmentsList
-            hideTeam
-            hideShortName
-            className="flex flex-col justify-between md:flex-row"
-          />
+      <AboutSection stretch>
+        <div className="relative flex w-full flex-col items-stretch gap-4 py-10 sm:py-12">
+          {/* Title */}
+          <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
+            <div
+              className={`flex h-fit flex-1 items-center justify-start ${horizontalPadding}`}
+            >
+              <span className="w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl">
+                {dict.about.become_a_collaborator.choose_department.title}
+              </span>
+            </div>
+          </div>
+          {/* Subtitle */}
+          <div className="overflow-auto px-6 sm:px-0">
+            <div className={`${horizontalPadding}`}>
+              <span className="text-start">
+                {dict.about.become_a_collaborator.choose_department.description}
+              </span>
+              <div className="mt-4 block sm:block">
+                <AppLink
+                  title={dict.button["go_to_departments"]}
+                  href="/departments"
+                  color="blue"
+                />
+              </div>
+            </div>
+            {/* Content (Scrollable) */}
+            <div className="relative">
+              <div className="no-scrollbar mt-7 overflow-y-auto overflow-x-scroll sm:mt-10">
+                <div className="relative mb-8 h-[224px] w-full overflow-hidden">
+                  <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-transparent from-20% to-white"></div>
+                  <DepartmentsList
+                    hideTeam
+                    hideShortName
+                    className="-mx-8 flex flex-col justify-between gap-8 md:flex-row"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </AboutSectionLayout>
-      <div>
+      </AboutSection>
+      <div className="my-12">
         <CallSubscribe
           title={dict.callsub.collaborators.title}
           description={dict.callsub.collaborators.desc}
           buttonText={dict.callsub.button}
           buttonURL="https://cesium.link/f/recrutamento"
-          buttonColor={"blue"}
+          buttonColor="blue"
           footerText={dict.callsub.footer}
         />
       </div>

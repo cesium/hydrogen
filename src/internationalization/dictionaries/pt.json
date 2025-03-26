@@ -229,6 +229,14 @@
         "title": "Torna-te colaborador do",
         "description": "Podes fazer parte do CeSIUM com uma simples inscrição. Junta-te hoje.",
         "button": "Inscreve-te"
+      },
+      "join_team": {
+        "title": "Junta-te à equipa",
+        "description": "Queres conhecer novas pessoas dentro do curso e envolver-te num ambiente dinâmico e inovador, enquanto aprendes conceitos novos e interessantes, relevantes para o teu futuro profissional? Estás à espera de quê para colaborar connosco? Conhece já a equipa que te receberá de portas abertas, enquanto colaborador! Estamos desejosos para te acolher!"
+      },
+      "choose_department": {
+        "title": "Escolhe o teu departamento",
+        "description": "Se gostas de programar, o CAOS vai ser a tua praia. Olho para design? Junta-te ao DMC. Podes colaborar com o departamento com que mais te identificas ou, se não conseguires escolher apenas um, poderás participar em vários. Se ainda não conheces os nossos departamentos, carrega no botão abaixo para saber mais. Senão, estamos à tua espera!"
       }
     },
     "become_a_member": {
