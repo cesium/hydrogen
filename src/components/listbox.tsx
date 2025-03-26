@@ -164,7 +164,10 @@ const ListBox = ({
     <Listbox onChange={setCurrentOption} value={currentOption}>
       {({ open }) => (
         <>
-          <ListboxButton className="flex h-min rounded-lg border border-black/10 p-1 pl-2 align-middle text-primary">
+          <ListboxButton
+            data-umami-event={`mandate-${currentOption}`}
+            className="flex h-min rounded-lg border border-black/10 p-1 pl-2 align-middle text-primary"
+          >
             {currentOption}
             <span className="material-symbols-outlined">unfold_more</span>
           </ListboxButton>

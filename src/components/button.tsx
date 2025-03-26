@@ -10,6 +10,7 @@ interface ButtonProps {
   as?: "button" | "link";
   href?: string;
   onClick?: () => void;
+  umamiEvent?: string;
 }
 
 const Button = ({
@@ -19,6 +20,7 @@ const Button = ({
   as = "link",
   href,
   onClick,
+  umamiEvent,
 }: ButtonProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
@@ -48,6 +50,7 @@ const Button = ({
           onClick={onClick}
           className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
           {...(isCustomColor && { style: { color } })}
+          {...(umamiEvent ? { "data-umami-event": umamiEvent } : {})}
         >
           {title}
         </button>
@@ -61,6 +64,7 @@ const Button = ({
           {...(!isLocalLink
             ? { rel: "noopener noreferrer", target: "_blank" }
             : {})}
+          {...(umamiEvent ? { "data-umami-event": umamiEvent } : {})}
         >
           {title}
           {style === "style3" && (

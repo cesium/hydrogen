@@ -48,6 +48,7 @@ export default function BecomeAMember() {
             color="primary"
             as="link"
             href="https://cesium.link/f/socios"
+            umamiEvent="comecar-inscricao-socio"
           />
         </div>
         <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">

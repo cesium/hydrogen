@@ -1,11 +1,10 @@
-"use client";
-
 import {
   type DictionaryLocale,
   DictionaryProvider,
 } from "@/contexts/dictionary-provider";
 import { ScrollStateProvider } from "@/contexts/scrollstate-provider";
 import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
+import UmamiAnalytics from "./umami-analytics";
 
 export default function Body({
   fonts,
@@ -23,6 +22,7 @@ export default function Body({
       <ScrollStateProvider>
         <DictionaryProvider lang={lang}>{children}</DictionaryProvider>
       </ScrollStateProvider>
+      <UmamiAnalytics />
     </body>
   );
 }
