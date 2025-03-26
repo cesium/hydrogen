@@ -65,7 +65,6 @@ export default function ShortcutButtonsContainer() {
             src="/logo/cesium-link.svg"
             width={200}
             height={200}
-            className="h-[2.5em] w-fit"
             alt="CeSIUM Link Logo"
           />
         </ShortcutButton>
