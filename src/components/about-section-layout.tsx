@@ -1,6 +1,6 @@
 "use client";
 
-import CustomLink from "./link";
+import AppLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import AboutSection from "./about-section";
 import { useRef, useState } from "react";
@@ -71,7 +71,7 @@ const AboutSectionLayout = ({
             <span
               className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
             >
-              <CustomLink title={dict.button[linkName]} href={href} />
+              <AppLink title={dict.button[linkName]} href={href} />
             </span>
           )}
         </div>
@@ -83,7 +83,7 @@ const AboutSectionLayout = ({
               <div
                 className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
               >
-                <CustomLink title={dict.button[linkName]} href={href} />
+                <AppLink title={dict.button[linkName]} href={href} />
               </div>
             )}
           </div>

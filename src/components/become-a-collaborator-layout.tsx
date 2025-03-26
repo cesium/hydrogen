@@ -1,6 +1,6 @@
 "use client";
 
-import CustomLink from "./link";
+import AppLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import AboutSection from "./about-section";
 import { useRef, useState } from "react";
@@ -62,7 +62,7 @@ const CollaboratorLayout = ({
             <span className="text-start">{subtitle}</span>
           </div>
           <div>
-            <CustomLink
+            <AppLink
               title={dict.button[linkName]}
               href={href}
               color={linkColor}
