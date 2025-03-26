@@ -1,45 +1,45 @@
 {
   "seo": {
-    "title": "CeSIUM - Computer Engineering Student Center at UMinho",
-    "description": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
+    "title": "CeSIUM - Software Engineering Student Center at UMinho",
+    "description": "CeSIUM is the Software Engineering Student Center at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
     "projects": {
       "title": "Projects | CeSIUM",
-      "description": "Estes são os projetos desenvolvidos pelo CeSIUM."
+      "description": "These are the pojects developed by CeSIUM."
     },
     "partners": {
       "title": "Partners | CeSIUM",
-      "description": "Estas são as parcerias do CeSIUM."
+      "description": "These are CeSIUM's partners."
     },
     "events": {
       "title": "Events | CeSIUM",
-      "description": "Estes são os eventos dinamizados pelo CeSIUM."
+      "description": "Events organized by CeSIUM."
     },
     "about": {
       "title": "About | CeSIUM",
-      "description": "Sabe mais sobre nós."
+      "description": "Get to know more about us."
     },
     "team": {
       "title": "Team | CeSIUM",
-      "description": "Conhece a equipa do CeSIUM."
+      "description": "Meet the CeSIUM team."
     },
     "departments": {
       "title": "Departments | CeSIUM",
-      "description": "Conhece os nossos departamentos."
+      "description": "Meet our departments."
     },
     "become_a_collaborator": {
       "title": "Become a Collaborator | CeSIUM",
-      "description": "Conhece as vantagens de te tornares nosso colaborador."
+      "description": ""
     },
     "become_a_member": {
       "title": "Become a Member | CeSIUM",
-      "description": "Conhece as vantagens de te tornares nosso sócio."
+      "description": "Get to know the perks of being a CeSIUM member."
     }
   },
   "landing": {
     "sections": {
       "hero": {
         "title": "CeSIUM",
-        "description": "Computer Engineering Student Center at University of Minho"
+        "description": "Software Engineering Student Center at University of Minho"
       },
       "events": {
         "title": "Events",
@@ -73,34 +73,34 @@
       ]
     }
   },
-  "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
+  "cesium": "CeSIUM - Software Engineering Student Center at UMinho",
   "caos": {
     "name": "Center for **Open Source Support**",
-    "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
+    "description": "CAOS is responsible for all software development associated with CeSIUM, from platforms that directly serve the organization and its events to useful platforms for Computer Engineering students.",
     "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
     "icon": "terminal"
   },
   "dmc": {
     "name": "Department of **Marketing and Content**",
-    "description": "The DMC is responsible for promoting activities and managing CeSIUM's social media presence - essentially handling all of CeSIUM's marketing. Their work primarily focuses on CeSIUM's visual design and written communications.",
+    "description": "DMC is responsible for promoting activities and managing CeSIUM's social media, meaning all of CeSIUM's marketing. Its work focuses mainly on CeSIUM's design and image, as well as communication and photographic documentation of activities.",
     "short_description": "Manages CeSIUM's marketing, social media, and creative communications.",
     "icon": "lightbulb"
   },
   "drem": {
     "name": "Department of **External Relations and Merchandising**",
-    "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
+    "description": "DREM is the department that ensures the establishment and maintenance of partnerships that CeSIUM members can benefit from, as well as handling contact with all external entities. It is also responsible for creating the organization's merchandise, designed for all our students.",
     "short_description": "Builds partnerships, manages external communications, and designs merchandise.",
     "icon": "handshake"
   },
   "ped": {
-    "name": "**Educational** Department",
-    "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
+    "name": "**Pedagogical** Department",
+    "description": "The Pedagogical Department is responsible for organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and fostering interest in various areas of Computer Science.",
     "short_description": "Organizes lectures, workshops, and study sessions to support the students' learning.",
     "icon": "draw"
   },
   "rec": {
     "name": "**Recreational** Department",
-    "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
+    "description": "The Recreational Department organizes social and leisure activities to bring students together and enhance their academic experience. The activities range from gala dinners, karaoke nights, and game nights to sports tournaments, academic parties, snack gatherings, and much more.",
     "short_description": "Plans social and recreational events to enrich the students' experience.",
     "icon": "celebration"
   },
@@ -123,7 +123,7 @@
   },
   "store_card": {
     "title": "Store",
-    "text": "At the CeSIUM Store, we have hoodies, jackets, t-shirts, socks, mugs, stickers, and much more. If you're a member, we also have discounts.",
+    "text": "At the CeSIUM Store, we have hoodies, jackets, t-shirts, socks, mugs, stickers, and much more. If you're a member, you'll also have discounts on all products!",
     "button": "Open Store"
   },
   "navbar": {
@@ -139,31 +139,31 @@
   "home": {
     "cesium": {
       "title": "What is **CeSIUM?**",
-      "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+      "subtitle": "CeSIUM is a Student Center for Software Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
     },
     "scrollable_highlight": {
       "slide1": {
         "title": "What is **CeSIUM?**",
-        "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+        "subtitle": "CeSIUM is a Student Center for Software Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
       },
       "slide2": {
         "title": "Our **mission**",
-        "subtitle": " At CeSIUM, we strive to create a collaborative and innovative environment for Computer Engineering students. Through events, workshops, and networking opportunities, we help you develop technical skills, foster teamwork, and prepare for real-world challenges."
+        "subtitle": "At CeSIUM, we strive to create a collaborative and relaxed environment for all Computer Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare you for the real world."
       },
       "slide3": {
         "title": "What we **offer?**",
-        "subtitle": "Join us to access hackathons, coding sessions, career talks, and industry connections. Whether you're looking to improve your skills or find your next big opportunity."
+        "subtitle": "Join us to gain access to hackathons, talks, connections to the business world, programming sessions, and more. Whether you're looking to invest in your knowledge and skills or find your next unforgettable opportunity."
       },
       "slide4": {
         "title": "Get **involved**",
-        "subtitle": "Want to be part of a passionate and driven community? CeSIUM welcomes all Computer Engineering students eager to learn, grow, and contribute."
+        "subtitle": "Want to be part of a passionate and driven community? CeSIUM welcomes all Software Engineering students eager to learn, grow, and contribute."
       }
     }
   },
   "about": {
     "sections": {
       "hero": {
-        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
+        "title": "**Software Engineering** Student Center at University of Minho",
         "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
         "subtitle": "Director of the Informatics Department - 2017"
       },
@@ -173,8 +173,8 @@
       },
       "cesium": {
         "title": "What is CeSIUM?",
-        "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
-        "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
+        "subtitle": "CeSIUM is the Student Center for Software Engineering at the University of Minho, made up of a team of volunteer students, with the primary goal of representing and promoting the Computer Engineering course. It is a united and dynamic group, capable of providing enriching and unique experiences, thus complementing your academic life while never forgetting to prepare you for your future professional life.",
+        "description": "We strive to organize activities with similar and complementary content to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Software Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {
             "src": "/images/about/uMinho1.jpg",
@@ -182,7 +182,7 @@
           },
           {
             "src": "/images/about/workshop.jpg",
-            "alt": "Class full of Computer Engineering students during a workshop."
+            "alt": "Class full of Software Engineering students during a workshop."
           },
           {
             "src": "/images/about/uMinho2.jpg",
@@ -197,7 +197,7 @@
     },
     "team": {
       "title": "Team",
-      "description": "These are some of the members of our team, from the presidency to the department heads, general assembly, and fiscal council.",
+      "description": "Here we introduce you to the members of our team, from the Presidency to the directors of the various Departments, as well as the General Assembly Board and the Fiscal Council.",
       "team_selector": {
         "default_option": "Current mandate",
         "hint": "Select mandate"
@@ -205,11 +205,11 @@
     },
     "projects": {
       "title": "Projects",
-      "description": "From SEI - the Computer Engineering Week, an annual activity that connects students to innovations and companies - to CoderDojo - which brings programming to the younger generation - CeSIUM creates and participates in various projects. Discover them here.",
+      "description": "From SEI - the Software Engineering Week, an annual activity that connects students to innovations and companies - to CoderDojo - which brings programming to the younger generation - CeSIUM creates and participates in various projects. Discover them here.",
       "card": [
         {
           "mobile_description": "Held annually at the Gualtar campus of the University of Minho, it combines technological innovations with industry experts for students.",
-          "desktop_description": "The Computer Engineering Week is held annually at the Gualtar campus of the University of Minho, aiming to combine the latest technological innovations with the best industry experts to offer a fantastic program to our students."
+          "desktop_description": "The Software Engineering Week is held annually at the Gualtar campus of the University of Minho, aiming to combine the latest technological innovations with the best industry experts to offer a fantastic program to our students."
         },
         {
           "mobile_description": "An annual programming competition where participants have 48 hours to develop a project.",
@@ -231,7 +231,7 @@
     "become_a_collaborator": {
       "hero": {
         "title": "Become a collaborator of",
-        "description": "You can join CeSIUM with a simple registration. Join today.",
+        "description": "You can be part of one or more departments, contributing to improving the operation of your student group.",
         "button": "Register"
       },
       "join_team": {
@@ -240,14 +240,14 @@
       },
       "choose_department": {
         "title": "Choose your department",
-        "description": "If you love programming, CAOS is the place for you. More into design? Join DMC. You can collaborate with the department that suits you best, or if you can't choose just one, you can take part in multiple. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!"
+        "description": "If you love programming, CAOS is the place for you. More into design? Join DMC. You can collaborate with the department that suits you best, or if you can't choose just one, you can take part in multiple. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you! Sign up now!"
       }
     },
     "become_a_member": {
       "hero": {
-        "title": "Torna-te sócio do",
-        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
-        "button": "Inscreve-te"
+        "title": "Become a member of",
+        "description": "With a membership card, you can unlock various benefits, partnerships, and discounts.",
+        "button": "Start Registration"
       },
       "exclusive_partnerships": {
         "title": "Exclusive Partnerships",
@@ -260,7 +260,7 @@
       },
       "member_kit": {
         "title": "Member Kit",
-        "description": "You can join these departments and contribute to making your organization work."
+        "description": "Receive a starter pack of goodies, which may include a unique t-shirt, notebooks, stickers, pens, and much more. Additionally, we offer you a tote bag to carry everything with you."
       },
       "room_acess": {
         "title": "Room Access",
@@ -340,7 +340,7 @@
           "become_collaborator": {
             "team": {
               "title": "Join the team",
-              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "subtitle": "Do you want to meet new people within the course and immerse yourself in a dynamic and innovative environment while learning new and interesting concepts relevant to your professional future? What are you waiting for to join us? Get to know the team that will welcome you with open arms as a collaborator! We can't wait to have you on board!",
               "href": "about/team",
               "color": "blue"
             },
