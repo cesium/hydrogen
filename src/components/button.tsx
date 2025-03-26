@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface ButtonProps {
   title: string;
-  style: "style1" | "style2";
+  style: "style1" | "style2" | "style3";
   color?: string;
   as?: "button" | "link";
   href?: string;
@@ -38,6 +38,7 @@ const Button = ({
   const styleVariant = {
     style1: `rounded-full bg-white px-5 w-fit ${!isCustomColor ? `text-${color}` : ""}`,
     style2: `rounded-xl font-semibold px-12 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
+    style3: `flex gap-1 rounded-full font-semibold px-5 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
   };
 
   return (
@@ -62,6 +63,9 @@ const Button = ({
             : {})}
         >
           {title}
+          {style === "style3" && (
+            <span className="material-symbols-outlined">arrow_forward</span>
+          )}
         </Link>
       )}
     </>
