@@ -118,7 +118,7 @@ export default function RootLayout({
     <html lang={fullLocale(lang)}>
       <head>
         <meta name="apple-mobile-web-app-title" content="CeSIUM" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <Body lang={lang} fonts={[inter, orbitron]}>
         <Navbar />

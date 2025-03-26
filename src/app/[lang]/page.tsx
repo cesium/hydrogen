@@ -66,6 +66,7 @@ export default function Home() {
           height={1346.5}
           alt=""
           src="/vectors/hero.svg"
+          priority
           className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-fit select-none lg:block"
         />
         <Image
@@ -73,6 +74,7 @@ export default function Home() {
           height={729}
           alt=""
           src="/vectors/hero-mobile.svg"
+          priority
           className="pointer-events-none absolute right-0 top-0 z-10 w-fit select-none sm:h-[90%] lg:hidden"
         />
         <div className="flex h-full flex-col justify-center">

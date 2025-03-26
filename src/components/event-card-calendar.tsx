@@ -66,9 +66,7 @@ export function EventCardCalendar({ event }: EventCardProps) {
               <span className="material-symbols-outlined text-gray">
                 explore
               </span>
-              <div
-                className="truncate font-medium text-gray"
-              >
+              <div className="truncate font-medium text-gray">
                 {event.link.split("://")[1]}
               </div>
             </div>

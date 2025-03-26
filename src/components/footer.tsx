@@ -18,8 +18,9 @@ const Footer = () => {
             <Image
               src="/logo/cesium.svg"
               alt="CeSIUM Logo Icon"
-              width={32}
-              height={37}
+              width={40}
+              height={40}
+              className="w-[32px]"
             />
             <p className="text-sm leading-[17px] text-[#94959C]">
               {dict.cesium}

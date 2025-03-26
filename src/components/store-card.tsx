@@ -47,9 +47,9 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
           <Image
             src={product.image.square}
             alt={product.title}
-            layout="fill"
-            objectFit="contain"
-            className="pointer-events-none select-none"
+            width={500}
+            height={500}
+            className="pointer-events-none select-none object-contain"
             onLoad={() => setIsLoading(false)}
           />
         </div>
