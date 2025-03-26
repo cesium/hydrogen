@@ -31,7 +31,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
         return {
           src: "/logo/coderdojo.svg",
           alt: "CoderDojo Logo",
-          gradient_color: "rgba(50,51,51,0.25)",
+          gradient_color: "#722ed125",
           ref: "https://coderdojobraga.org/",
         };
       default:
@@ -84,11 +84,7 @@ const ProjectCard = ({ type }: ProjectProps) => {
         {project.desktop_description}
       </p>
       <div className="mt-4 flex w-16 justify-between">
-        <AppLink
-          title={dict.about.projects.open}
-          href={info().ref}
-          arrow="outward"
-        ></AppLink>
+        <AppLink title={dict.about.projects.open} href={info().ref}></AppLink>
       </div>
     </div>
   );

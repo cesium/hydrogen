@@ -16,6 +16,7 @@ interface PartnerCardProps {
   logo: string;
   color: string;
   perks: Perk[];
+  simplelayout?: boolean;
 }
 
 const PerkItem = ({ icon, description }: Perk) => (
@@ -34,7 +35,14 @@ const PerkItem = ({ icon, description }: Perk) => (
   </li>
 );
 
-const PartnerCard = ({ title, url, logo, color, perks }: PartnerCardProps) => {
+const PartnerCard = ({
+  title,
+  url,
+  logo,
+  color,
+  perks,
+  simplelayout,
+}: PartnerCardProps) => {
   const dict = useDictionary();
 
   return (
@@ -56,12 +64,16 @@ const PartnerCard = ({ title, url, logo, color, perks }: PartnerCardProps) => {
           />
         </figure>
         <h1 className="text-xl font-semibold text-black/90">{title}</h1>
-        <ul className="flex flex-col gap-3 text-dark">
-          {perks.map((perk, index) => (
-            <PerkItem key={index} {...perk} />
-          ))}
-        </ul>
-        <AppLink title={dict.button.see_more} href={url} arrow="outward" />
+        {!simplelayout && (
+          <>
+            <ul className="flex flex-col gap-3 text-dark">
+              {perks.map((perk, index) => (
+                <PerkItem key={index} {...perk} />
+              ))}
+            </ul>
+            <AppLink title={dict.button.see_more} href={url} />
+          </>
+        )}
       </div>
     </div>
   );

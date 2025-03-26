@@ -13,6 +13,10 @@ import { useDictionary } from "@/contexts/dictionary-provider";
 import { MemberInfo, TeamData } from "@/lib/types";
 import DepartmentsList from "@/components/departments-list";
 import CollaboratorLayout from "@/components/become-a-collaborator-layout";
+import Image from "next/image";
+import Button from "@/components/button";
+import CallSubscribe from "@/components/call-subscribe";
+import { verticalPadding } from "@/lib/styling";
 
 interface MemberDep extends MemberInfo {
   department: string;
@@ -20,8 +24,7 @@ interface MemberDep extends MemberInfo {
 
 export default function BecomeACollaborator() {
   const dict = useDictionary();
-  const dictBecomeCollaborator =
-    dict.about.explore.items[3]?.become_collaborator;
+  const dictBecomeCollaborator = dict.about.explore.items[3]?.become_collaborator;
   const departmentNames = [
     "Presidência",
     "Centro de Apoio ao Open Source",
@@ -74,6 +77,48 @@ export default function BecomeACollaborator() {
 
   return (
     <main>
+      <section
+        className={`relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white lg:grid-flow-col lg:items-start`}
+      >
+        <div
+          className={`max-w-1/2 flex flex-col gap-8 ${verticalPadding} px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60`}
+        >
+          <div>
+            <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
+              {dict.about.become_a_collaborator.hero.title}{" "}
+              <span className="text-white">CeSIUM</span>
+            </h1>
+          </div>
+          <p className="relative z-10 text-lg">
+            {dict.about.become_a_collaborator.hero.description}
+          </p>
+          <Button
+            title={dict.about.become_a_collaborator.hero.button}
+            style="style1"
+            color="blue"
+            as="link"
+            href="https://cesium.link/f/recrutamento"
+          />
+        </div>
+        <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">
+          <Image
+            src="/vectors/collaborator.svg"
+            alt="Torna-te membro"
+            height={331}
+            width={528}
+            className="h-fit w-[323px] lg:w-[528px]"
+          />
+        </div>
+        <div className="pointer-events-none absolute bottom-0 right-0 hidden h-full select-none items-end justify-center sm:flex sm:justify-end xl:hidden">
+          <Image
+            src="/vectors/collaborator.svg"
+            alt="Torna-te colaborador"
+            height={331}
+            width={528}
+            className="h-fit w-[323px]"
+          />
+        </div>
+      </section>
       <CollaboratorLayout
         title={dictBecomeCollaborator?.team.title ?? "Error"}
         subtitle={dictBecomeCollaborator?.team.subtitle ?? "Error"}
@@ -133,26 +178,15 @@ export default function BecomeACollaborator() {
           />
         </div>
       </AboutSectionLayout>
-
-      <div className="flex w-full items-center justify-center bg-white py-12">
-        <div className="max-w-2xl text-center">
-          <h2 className="select-none whitespace-nowrap font-title text-2xl font-medium text-black sm:text-3xl">
-            {dictBecomeCollaborator?.join.title ?? "Error"}
-          </h2>
-          <p className="text-gray-600 mt-2">
-            {dictBecomeCollaborator?.join.subtitle ?? "Error"}
-          </p>
-          <div className="mt-6 space-y-3">
-            <button className="rounded-lg border border-transparent bg-blue px-6 py-2 font-medium text-white transition-colors duration-300 hover:border-blue hover:bg-white hover:text-blue">
-              Começar inscrição
-            </button>
-            <div>
-              <a href="#" className="text-blue ">
-                Fala connosco
-              </a>
-            </div>
-          </div>
-        </div>
+      <div>
+        <CallSubscribe
+          title={dict.callsub.collaborators.title}
+          description={dict.callsub.collaborators.desc}
+          buttonText={dict.callsub.button}
+          buttonURL="https://cesium.link/f/recrutamento"
+          buttonColor={"blue"}
+          footerText={dict.callsub.footer}
+        />
       </div>
     </main>
   );

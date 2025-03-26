@@ -2,9 +2,7 @@ import { horizontalPadding } from "@/lib/styling";
 
 export default function AboutSection({
   children,
-  dark,
-  horizontalpadding,
-  padding,
+  dark
 }: {
   children: React.ReactNode;
   dark?: boolean;
@@ -13,7 +11,7 @@ export default function AboutSection({
 }) {
   return (
     <div
-      className={`flex h-full border-b border-black/10 ${padding == true ? "md:pl-[70px]" : ""}  ${dark ? "bg-[#fafafa]" : ""} ${horizontalpadding == true ? horizontalPadding : ""}`}
+      className={`flex h-full border-b border-black/10 ${dark ? "bg-muted" : ""} ${horizontalPadding}`}
     >
       {children}
     </div>

@@ -35,30 +35,69 @@
       "description": "Conhece as vantagens de te tornares nosso sócio."
     }
   },
+  "landing": {
+    "sections": {
+      "hero": {
+        "title": "CeSIUM",
+        "description": "Computer Engineering Student Center at University of Minho"
+      },
+      "events": {
+        "title": "Events",
+        "description": "At CeSIUM, we organize a variety of activities - pedagogical, recreational, and more. Got your attention? We have a page with all the dates."
+      },
+      "shortcut_buttons": {
+        "highlight": "Featured",
+        "discord": "<p>**CeSIUM's**</p> Discord",
+        "pelomundo": "<p>CeSIUM</p>**around the World**"
+      },
+      "shortcut_panes": [
+        {
+          "title": "Team",
+          "description": "Meet the dedicated team that makes CeSIUM move, every day.",
+          "href": "/team"
+        },
+        {
+          "title": "Departments",
+          "description": "CeSIUM operates in various areas. Get to know our departments.",
+          "href": "/departments"
+        },
+        {
+          "title": "Events",
+          "description": "Stay up to date with all the events we organize.",
+          "href": "/events"
+        }
+      ]
+    }
+  },
   "cesium": "CeSIUM - Computer Engineering Student Center at UMinho",
   "caos": {
-    "name": ["Center for", "Open Source Support"],
+    "name": "Center for **Open Source Support**",
     "description": "Responsible for all software development associated with CeSIUM, including platforms that directly serve the organization and its events, as well as platforms that are useful for students.",
+    "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": ["Department of", "Marketing and Content"],
+    "name": "Department of **Marketing and Content**",
     "description": "The DMC is responsible for promoting activities and managing CeSIUM's social media presence - essentially handling all of CeSIUM's marketing. Their work primarily focuses on CeSIUM's visual design and written communications.",
+    "short_description": "Manages CeSIUM's marketing, social media, and creative communications.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": ["Department of", "External Relations and Merch"],
+    "name": "Department of **External Relations and Merchandising**",
     "description": "DREM is the department that establishes and maintains partnerships that CeSIUM members can benefit from, as well as managing communications with all external entities. They're also responsible for creating merchandise for all our students.",
+    "short_description": "Builds partnerships, manages external communications, and designs merchandise.",
     "icon": "handshake"
   },
   "ped": {
-    "name": ["Educational", "Department"],
+    "name": "**Educational** Department",
     "description": "The Educational Department is in charge of organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and promoting interest in various areas of Computer Science.",
+    "short_description": "Organizes lectures, workshops, and study sessions to support the students' learning.",
     "icon": "draw"
   },
   "rec": {
-    "name": ["Recreational", "Department"],
+    "name": "**Recreational** Department",
     "description": "The Recreational Department organizes fun and social activities aimed at bringing students together and enhancing their academic experience. Activities range from sports competitions to game tournaments, academic parties, social gatherings, and much more.",
+    "short_description": "Plans social and recreational events to enrich the students' experience.",
     "icon": "celebration"
   },
   "button": {
@@ -67,7 +106,8 @@
     "see_more": "See more",
     "back": "Go Back",
     "go_to_team": "Go to Team",
-    "go_to_departments": "Go to Departments"
+    "go_to_departments": "Go to Departments",
+    "swipe": "Swipe to see more"
   },
   "collaborate_card": {
     "title": "Become a collaborator",
@@ -77,16 +117,52 @@
     "title": "Become a member",
     "text": "Participate in all our events for free and enjoy tons of other benefits."
   },
+  "store_card": {
+    "title": "Store",
+    "text": "At the CeSIUM Store, we have hoodies, jackets, t-shirts, socks, mugs, stickers, and much more. If you're a member, we also have discounts.",
+    "button": "Open Store"
+  },
   "navbar": {
     "home": "Home",
+    "team": "Team",
+    "departments": "Departments",
     "about": "About",
     "events": "Events",
     "partners": "Partners",
     "store": "Store",
     "projects": "Projects"
   },
+  "home": {
+    "cesium": {
+      "title": "What is **CeSIUM?**",
+      "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+    },
+    "scrollable_highlight": {
+      "slide1": {
+        "title": "What is **CeSIUM?**",
+        "subtitle": "CeSIUM is a Student Center for Computer Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+      },
+      "slide2": {
+        "title": "Our **mission**",
+        "subtitle": " At CeSIUM, we strive to create a collaborative and innovative environment for Computer Engineering students. Through events, workshops, and networking opportunities, we help you develop technical skills, foster teamwork, and prepare for real-world challenges."
+      },
+      "slide3": {
+        "title": "What we **offer?**",
+        "subtitle": "Join us to access hackathons, coding sessions, career talks, and industry connections. Whether you're looking to improve your skills or find your next big opportunity."
+      },
+      "slide4": {
+        "title": "Get **involved**",
+        "subtitle": "Want to be part of a passionate and driven community? CeSIUM welcomes all Computer Engineering students eager to learn, grow, and contribute."
+      }
+    }
+  },
   "about": {
     "sections": {
+      "hero": {
+        "title": "Centro de Estudantes de **Engenharia Informática** da Universidade do Minho",
+        "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
+        "subtitle": "Director of the Informatics Department - 2017"
+      },
       "team": {
         "title": "Team",
         "subtitle": "CeSIUM wouldn't exist without our incredible team, which works every day to keep the group running and make students' years in the course unique. Meet them here."
@@ -97,20 +173,20 @@
         "description": "We strive to organize activities with content similar and complementary to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Computer Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {
-            "src": "/images/uMinho1.jpg",
+            "src": "/images/about/uMinho1.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/workshop.jpg",
+            "src": "/images/about/workshop.jpg",
             "alt": "Class full of Computer Engineering students during a workshop."
           },
           {
-            "src": "/images/uMinho2.jpg",
+            "src": "/images/about/uMinho2.jpg",
             "alt": "University of Minho building."
           },
           {
-            "src": "/images/sei24-25.jpg",
-            "alt": "University of Minho - Group of CeSIUM students gathered on stage during Computer Engineering Week, with the Void mascot."
+            "src": "/images/about/sei24-25.jpg",
+            "alt": "Group of CeSIUM students gathered on stage during Software Engineering Week, with the Void mascot."
           }
         ]
       }
@@ -148,7 +224,24 @@
       "subtitle": "We operate with 5 departments that focus on the different areas of our activities as a core. Get to know them here.",
       "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
     },
+    "become_a_collaborator": {
+      "hero": {
+        "title": "Become a collaborator of",
+        "description": "You can join CeSIUM with a simple registration. Join today.",
+        "button": "Register"
+      }
+    },
     "become_a_member": {
+      "hero": {
+        "title": "Torna-te sócio do",
+        "description": "Com um cartão de sócio, podes desbloquear vários benefícios, parcerias e descontos.",
+        "button": "Inscreve-te"
+      },
+      "exclusive_partnerships": {
+        "title": "Exclusive Partnerships",
+        "description": "Have lunch at Sabor da Fruta and get a free coffee. Or at Café do Luís, with a drink included. Get free badges at Os Farias. Enjoy discounts on music and driving lessons. These are just some of the partnerships we have for you.",
+        "link": "View partnerships"
+      },
       "participate": {
         "title": "Participate",
         "description": "Participate in all our events for free and enjoy tons of other benefits."
@@ -169,6 +262,10 @@
         "title": "Discounts",
         "description": "You can get discounts on our store and with our partners.",
         "link": "Go to the store"
+      },
+      "advantages": {
+        "title": "Lifetime benefits",
+        "description": "The benefits of having a membership card never expire, as the registration fee is lifelong - you pay once, and you're a member forever. These are the benefits that membership has to offer:"
       }
     },
     "explore": {
@@ -210,7 +307,11 @@
               "href": "/about/become-a-member",
               "arrow": "forward"
             },
-            { "title": "Partnerships", "href": "/partners", "arrow": "forward" }
+            {
+              "title": "Partnerships",
+              "href": "/partners",
+              "arrow": "forward"
+            }
           ]
         },
         {
@@ -248,232 +349,266 @@
       ]
     }
   },
+  "events": {
+    "title": "Events",
+    "warning": "Check other months to see more events. This page only includes CeSIUM events. For more events, such as tests or deadlines, visit the [Calendarium](https://calendario.cesium.pt). To stay updated, follow our [Instagram](https://instagram.com/cesiuminho).",
+    "warningTitle": "More Events",
+    "weekDays": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
+    "showLess": "Show Less",
+    "showMore": "Show More",
+    "futureEvents": "Upcoming",
+    "pastEvents": "Past",
+    "noEvents": "There are no events to display.",
+    "loading": "Loading events..."
+  },
   "social_media": "Social media",
   "socials": [
     {
       "name": "Facebook",
-      "url": "https://www.facebook.com/cesiuminho"
+      "url": "https://www.facebook.com/cesiuminho",
+      "hex": "#0165E1"
     },
     {
       "name": "Instagram",
-      "url": "https://www.instagram.com/cesiuminho"
+      "url": "https://www.instagram.com/cesiuminho",
+      "hex": "#C13584"
     },
     {
       "name": "X",
-      "url": "https://x.com/cesiuminho"
+      "url": "https://x.com/cesiuminho",
+      "hex": "#000000"
     },
     {
       "name": "TikTok",
-      "url": "https://www.tiktok.com/@cesiuminho"
+      "url": "https://www.tiktok.com/@cesiuminho",
+      "hex": "#FE2C55"
     },
     {
       "name": "GitHub",
-      "url": "https://github.com/cesium"
+      "url": "https://github.com/cesium",
+      "hex": "#000000"
     },
     {
       "name": "YouTube",
-      "url": "https://www.youtube.com/c/cesiumUM"
+      "url": "https://www.youtube.com/c/cesiumUM",
+      "hex": "#FF0000"
     }
   ],
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["News", "About Us", "Team", "Departments"],
-      "links": ["#", "#", "#", "#"]
+      "items": ["About Us", "Team", "Departments"],
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Activities",
-      "items": ["Projects", "Events", "Partnerships"],
-      "links": ["#", "#", "#"]
+      "items": ["Events", "Partnerships"],
+      "links": ["/events", "/partners"]
     },
     {
-      "title": "Estudantes",
-      "items": ["Memberships", "Collaborators", "Anuary"],
-      "links": ["#", "#", "#"]
+      "title": "Students",
+      "items": ["Become a Member", "Become a Collaborator"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
-      "title": "Links Úteis",
-      "items": [
-        "Calendarium",
-        "Blackboard",
-        "Academic Portal",
-        "Computer Engineering Page"
-      ],
-      "links": ["#", "#", "#", "#"]
+      "title": "Useful Links",
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student's Portal"],
+      "links": [
+        "https://cesium.link",
+        "https://calendario.cesium.pt",
+        "https://elearning.uminho.pt",
+        "https://alunos.uminho.pt/EN"
+      ]
     }
   ],
-  "partners": [
-    {
-      "title": "100 Montaditos",
-      "url": "https://portugal.100montaditos.com/pt",
-      "logo": "/images/partners/100montaditos.png",
-      "color": "#000203",
-      "perks": [
-        {
-          "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
-          "icon": "Percent"
-        }
-      ]
+  "partners": {
+    "title": "Partners",
+    "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the oportunities our partners have for you.",
+    "list": [
+      {
+        "title": "100 Montaditos",
+        "url": "https://portugal.100montaditos.com/pt",
+        "logo": "/images/partners/100montaditos.png",
+        "color": "#eecc67",
+        "perks": [
+          {
+            "description": "**10% discount** on purchases over 7€, except on Wednesdays and Sundays.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "APE Coffee",
+        "url": "https://apecoffee.club/en/pages/cafetarias",
+        "logo": "/images/partners/apecoffee.webp",
+        "color": "#925b2a",
+        "perks": [
+          {
+            "description": "**10%** Discount.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Braga Pizzaria Kebab",
+        "url": "https://www.facebook.com/p/Braga-pizzaria-kebab-100047190051272/",
+        "logo": "/images/partners/bragapizzariakebab.png",
+        "color": "#9a301f",
+        "perks": [
+          {
+            "description": "**0.50€ discount** on all prepared menus.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Café do Luís",
+        "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
+        "logo": "/images/partners/cafedoluis.jpg",
+        "color": "#843dc2",
+        "perks": [
+          {
+            "description": "**Free drink** with Special Hamburger, American Toast, Salmon Toast, and Special Hot Dog menus.\n\n**Fanta, Nestea, Water, Sprite, Ginger ale**",
+            "icon": "Water_Full"
+          }
+        ]
+      },
+      {
+        "title": "Drawstep",
+        "url": "https://drawstep.com/",
+        "logo": "/images/partners/drawstep.avif",
+        "color": "#134046",
+        "perks": [
+          {
+            "description": "**10% discount** on board games and no minimum consumption.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Escola de Condução UM",
+        "url": "https://www.facebook.com/EscolaDeConducaoUm",
+        "logo": "/images/partners/escoladeconducaoum.png",
+        "color": "#BBB24A",
+        "perks": [
+          {
+            "description": "**40€ discount** on Category B driving license.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Magic Pin",
+        "url": "https://www.instagram.com/magiicpin",
+        "logo": "/images/partners/magicpin.png",
+        "color": "#d1a75b",
+        "perks": [
+          {
+            "description": "When purchasing 8 pins, the **pin with the lowest value** is free.",
+            "icon": "Sell"
+          },
+          {
+            "description": "**20% discount** on course pins.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Free shipping** on purchases over 12.50€.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Nuguelmusic",
+        "url": "http://www.nuguelmusic.pt/",
+        "logo": "/images/partners/nuguel.png",
+        "color": "#e56b7f",
+        "perks": [
+          {
+            "description": "**5€ discount** on all activities (music, dance, martial arts, theater, etc).",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Os Farias",
+        "url": "https://www.facebook.com/os.farias.3",
+        "logo": "/images/partners/osfarias.jpg",
+        "color": "#7DA279",
+        "perks": [
+          {
+            "description": "When purchasing the academic attire, **get 3 additional badges** (in addition to the usual 4).",
+            "icon": "License"
+          },
+          {
+            "description": "When purchasing 4 badges, **get 1 free**.",
+            "icon": "License"
+          },
+          {
+            "description": "Price of men's socks: **2.75€**.",
+            "icon": "Euro"
+          },
+          {
+            "description": "Price of women's socks: **1.50€**.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Pausa Útil",
+        "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
+        "logo": "/images/partners/pausautil.png",
+        "color": "#598EBA",
+        "perks": [
+          {
+            "description": "Meal and tea for **4.50€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Dessert for **1.40€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Coffee for **0.60€**.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
+        "title": "The Traditional Great Pizza",
+        "url": "https://www.thetraditionalgreatpizza.com/",
+        "logo": "/images/partners/thetraditionalgreatpizza.png",
+        "color": "#89573E",
+        "perks": [
+          {
+            "description": "**0.40€ discount** on the student menu and pizzas.",
+            "icon": "Euro"
+          }
+        ]
+      },
+      {
+        "title": "Sabor da fruta",
+        "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
+        "logo": "/images/partners/sabordafruta.png",
+        "color": "#68b54a",
+        "perks": [
+          {
+            "description": "**Free coffee** with the purchase of a menu.",
+            "icon": "Coffee"
+          }
+        ]
+      }
+    ]
+  },
+  "callsub": {
+    "members": {
+      "title": "Sounds good?",
+      "desc": "You can sign up as a CeSIUM member online in a minute. Click the button below to get started or talk to us if you have any questions."
     },
-    {
-      "title": "APE Coffee",
-      "url": "https://apecoffee.club/en/pages/cafetarias",
-      "logo": "/images/partners/apecoffee.webp",
-      "color": "#3c3c3e",
-      "perks": [
-        {
-          "description": "Desconto de **10%**.",
-          "icon": "Percent"
-        }
-      ]
+    "collaborators": {
+      "title": "We're waiting for you",
+      "desc": "Being a CeSIUM collaborator is more than just working – it's about learning new things, meeting incredible people, and being part of unique experiences. If that sounds good to you, apply now."
     },
-    {
-      "title": "Braga Pizzaria Kebab",
-      "url": "https://www.facebook.com/p/Braga-pizzaria-kebab-100047190051272/",
-      "logo": "/images/partners/bragapizzariakebab.png",
-      "color": "#9a301f",
-      "perks": [
-        {
-          "description": "**Desconto de 0,50€** em todos os menus confecionados.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Café do Luís",
-      "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
-      "logo": "/images/partners/cafedoluis.jpg",
-      "color": "#241d1f",
-      "perks": [
-        {
-          "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
-          "icon": "Water_Full"
-        }
-      ]
-    },
-    {
-      "title": "Drawstep",
-      "url": "https://drawstep.com/",
-      "logo": "/images/partners/drawstep.avif",
-      "color": "#134046",
-      "perks": [
-        {
-          "description": "**10% de desconto** na compra de jogos de tabuleiro e isenção de consumo mínimo.",
-          "icon": "Percent"
-        }
-      ]
-    },
-    {
-      "title": "Escola de Condução UM",
-      "url": "https://www.facebook.com/EscolaDeConducaoUm",
-      "logo": "/images/partners/escoladeconducaoum.png",
-      "color": "#443d12",
-      "perks": [
-        {
-          "description": "**Desconto de 40€** na carta de condução da Categoria B.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Magic Pin",
-      "url": "https://www.instagram.com/magiicpin",
-      "logo": "/images/partners/magicpin.png",
-      "color": "#e6c9a8",
-      "perks": [
-        {
-          "description": "Na compra de 8 pins, é **oferecido o pin** de menor valor.",
-          "icon": "Sell"
-        },
-        {
-          "description": "**Desconto de 20%** nos pins de curso.",
-          "icon": "Percent"
-        },
-        {
-          "description": "**Portes de envio gratuitos** em compras superiores a 12,50€.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Nuguelmusic",
-      "url": "http://www.nuguelmusic.pt/",
-      "logo": "/images/partners/nuguel.png",
-      "color": "#7f2c3f",
-      "perks": [
-        {
-          "description": "**Desconto de 5€** em todas as atividades (música, dança, artes marciais, teatro, etc).",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Os Farias",
-      "url": "https://www.facebook.com/os.farias.3",
-      "logo": "/images/partners/osfarias.jpg",
-      "color": "#1f1d19",
-      "perks": [
-        {
-          "description": "Na compra do traje, **oferta de mais 3 emblemas** (para além dos 4 habituais).",
-          "icon": "License"
-        },
-        {
-          "description": "Na compra de 4 emblemas, **oferta de 1**.",
-          "icon": "License"
-        },
-        {
-          "description": "Preço de meias para homem: **2,75€**.",
-          "icon": "Euro"
-        },
-        {
-          "description": "Preço de meias para mulher: **1,50€**.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Pausa Útil",
-      "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
-      "logo": "/images/partners/pausautil.png",
-      "color": "#000000",
-      "perks": [
-        {
-          "description": "Refeição e chá por **4.50€**.",
-          "icon": "Sell"
-        },
-        {
-          "description": "Sobremesa a **1.40€**.",
-          "icon": "Sell"
-        },
-        {
-          "description": "Café a **0.60€**.",
-          "icon": "Sell"
-        }
-      ]
-    },
-    {
-      "title": "The Traditional Great Pizza",
-      "url": "https://www.thetraditionalgreatpizza.com/",
-      "logo": "/images/partners/thetraditionalgreatpizza.png",
-      "color": "#1d1d1b",
-      "perks": [
-        {
-          "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
-          "icon": "Euro"
-        }
-      ]
-    },
-    {
-      "title": "Sabor da fruta",
-      "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
-      "logo": "/images/partners/sabordafruta.png",
-      "color": "#02943c",
-      "perks": [
-        {
-          "description": "**Oferta de café** na compra de um menu.",
-          "icon": "Coffee"
-        }
-      ]
-    }
-  ]
+    "button": "Start Registration",
+    "footer": "Talk to us"
+  }
 }

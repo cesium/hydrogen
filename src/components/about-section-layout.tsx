@@ -13,9 +13,9 @@ interface AboutSectionProps {
   title: string;
   titleOrientation?: TitleOr;
   subtitle: string;
-  linkName: LinkName;
+  linkName?: LinkName;
   linkPos?: LinkPos;
-  href: string;
+  href?: string;
   overflows?: boolean;
   dark?: boolean;
   children?: React.ReactNode;
@@ -62,10 +62,10 @@ const AboutSectionLayout = ({
       >
         {/* Title */}
         <div
-          className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-20" : "mb-4"} sm:mr-6`}
+          className={`flex items-center gap-4 ${titleOrientation === "vertical" ? "mb-4 sm:mb-0 sm:w-10" : "mb-4"} sm:mr-6`}
         >
           <div
-            className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:items-start sm:justify-center" : ""}`}
+            className={`flex h-fit flex-1 items-center justify-start ${titleOrientation == "vertical" ? "sm:h-full sm:w-full sm:-translate-x-2 sm:items-start sm:justify-center" : ""}`}
           >
             <span
               className={`w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl ${titleOrientation == "vertical" ? "sm:translate-x-[-50%] sm:translate-y-[-50%] sm:-rotate-90 sm:pr-1 " : ""} ${strech ? "px-4 md:px-12 md:py-2" : ""} `}
@@ -73,41 +73,35 @@ const AboutSectionLayout = ({
               {title}
             </span>
           </div>
-          <span
-            className={` ${showlinkmobile ? "hidden" : ""} pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
-          >
-            <CustomLink
-              title={dict.button[linkName]}
-              href={href}
-              arrow="forward"
-              color={linkColor}
-            />
-          </span>
+          {linkName && href && (
+            <span
+              className={`pt-1 sm:hidden ${linkPos == "after" ? "hidden" : ""}`}
+            >
+              <CustomLink title={dict.button[linkName]} href={href} />
+            </span>
+          )}
         </div>
         {/* Subtitle */}
-        <div className={`overflow-hidden `}>
-          <div className={` flex md:flex-col ${strech ? "px-4 sm:px-12" : ""}`}>
-            <span className={` text-start  `}>{subtitle}</span>
-            <div
-              className={` ${showlinkmobile ? "hidden md:block" : ""} mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
-            >
-              <CustomLink
-                title={dict.button[linkName]}
-                href={href}
-                arrow="forward"
-                color={linkColor}
-              />
-            </div>
+        <div className="overflow-auto">
+          <div>
+            <span className="text-start">{subtitle}</span>
+            {linkName && href && (
+              <div
+                className={`mt-4 sm:block ${linkPos == "after" ? "block" : "hidden"}`}
+              >
+                <CustomLink title={dict.button[linkName]} href={href} />
+              </div>
+            )}
           </div>
           {/* Content (Scrollable) */}
           <div className={`${showlinkmobile ? "mt-8" : ""} `}>
             {overflows && (
               <div className="hidden md:block">
                 {!isScrolledRight && (
-                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-white from-20% to-transparent" />
+                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-foundation from-20% to-transparent" />
                 )}
                 {!isScrolledLeft && (
-                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-white from-20% to-transparent" />
+                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-foundation from-20% to-transparent" />
                 )}
               </div>
             )}

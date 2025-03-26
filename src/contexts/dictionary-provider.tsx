@@ -1,12 +1,15 @@
 "use client";
 
 import { createContext, useContext } from "react";
-import type { Locale, Dictionary } from "@/internationalization/dictionaries";
+import type { Dictionary, Locale } from "@/internationalization/dictionaries";
 import { getDictionary } from "@/internationalization/dictionaries";
+import { fullLocale } from "@/lib/locale";
+
+export type DictionaryLocale = Locale | "en" | "pt";
 
 interface DictionaryContextData {
   dict: Dictionary;
-  lang: Locale;
+  lang: DictionaryLocale;
 }
 
 const DictionaryContext = createContext<DictionaryContextData | undefined>(
@@ -18,9 +21,9 @@ export function DictionaryProvider({
   lang,
 }: {
   children: React.ReactNode;
-  lang: Locale;
+  lang: DictionaryLocale;
 }) {
-  const dict = getDictionary(lang);
+  const dict = getDictionary(fullLocale(lang));
   return (
     <DictionaryContext.Provider value={{ dict, lang }}>
       {children}
