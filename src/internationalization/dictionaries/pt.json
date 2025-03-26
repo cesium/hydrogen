@@ -240,7 +240,7 @@
       },
       "choose_department": {
         "title": "Escolhe o teu departamento",
-        "description": "Se gostas de programar, o CAOS vai ser a tua praia. Olho para design? Junta-te ao DMC. Podes colaborar com o departamento com que mais te identificas ou, se não conseguires escolher apenas um, poderás participar em vários. Se ainda não conheces os nossos departamentos, carrega no botão abaixo para saber mais. Senão, estamos à tua espera!"
+        "description": "Se gostas de programar, o CAOS vai ser a tua praia. Olho para design? Junta-te ao DMC. Podes colaborar com o departamento com que mais te identificas ou, se não conseguires escolher apenas um, poderás participar em vários. Se ainda não conheces os nossos departamentos, carrega no botão abaixo para saber mais. Senão, estamos à tua espera! Inscreve-te já!"
       }
     },
     "become_a_member": {
@@ -344,7 +344,7 @@
           "become_collaborator": {
             "team": {
               "title": "Junta-te à equipa",
-              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "subtitle": "Queres conhecer novas pessoas dentro do curso e envolver-te num ambiente dinâmico e inovador, enquanto aprendes conceitos novos e interessantes, relevantes para o teu futuro profissional? Estás à espera de quê para colaborar connosco? Conhece já a equipa que te receberá de portas abertas, enquanto colaborador! Estamos desejosos para te acolher!",
               "href": "about/team",
               "color": "blue"
             },
@@ -413,47 +413,22 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": [
-        "Sobre nós",
-        "Equipa",
-        "Departmentos"
-      ],
-      "links": [
-        "/about",
-        "/team",
-        "/departments"
-      ]
+      "items": ["Sobre nós", "Equipa", "Departmentos"],
+      "links": ["/about", "/team", "/departments"]
     },
     {
       "title": "Atividades",
-      "items": [
-        "Eventos",
-        "Parcerias"
-      ],
-      "links": [
-        "/events",
-        "/partners"
-      ]
+      "items": ["Eventos", "Parcerias"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Estudantes",
-      "items": [
-        "Torna-te sócio",
-        "Torna-te colaborador"
-      ],
-      "links": [
-        "/about/become-a-member",
-        "/about/become-a-collaborator"
-      ]
+      "items": ["Torna-te sócio", "Torna-te colaborador"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Links Úteis",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Portal do Aluno"
-      ],
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Portal do Aluno"],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
