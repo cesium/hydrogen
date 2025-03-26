@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
-    "description": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
+    "description": "O CeSIUM é o Centro de Estudantes de Engenharia Informática da Universidade do Minho, constituído por uma equipa de alunos voluntários, tendo como objetivo fulcral representar e promover o curso, Engenharia Informática.",
     "projects": {
       "title": "Projetos | CeSIUM",
       "description": "Estes são os projetos desenvolvidos pelo CeSIUM."
@@ -43,7 +43,7 @@
       },
       "events": {
         "title": "Eventos",
-        "description": "No CeSIUM, organizamos várias atividades - tanto de foro pedagógico, como recreativo, entre outros. Captamos-te a atenção? Temos uma página com todas as datas."
+        "description": "No CeSIUM, organizamos várias atividades - tanto no âmbito pedagógico, como recreativo, entre outros. Captamos a tua atenção? Temos uma página com todas as datas dos nossos eventos."
       },
       "partners": {
         "title": "Parcerias",
@@ -67,7 +67,7 @@
         },
         {
           "title": "Eventos",
-          "description": "Mantém-te atualizado com todas as atividades que organizamos.",
+          "description": "Mantém-te atualizado quanto às atividades que organizamos.",
           "href": "/events"
         }
       ]
@@ -76,32 +76,32 @@
   "cesium": "CeSIUM - Centro de Estudantes de Engenharia Informática da UMinho",
   "caos": {
     "name": "Centro de Apoio ao **Open Source**",
-    "description": "Responsável por todo o desenvolvimento de software associado ao CeSIUM, quer sejam as plataformas que servem diretamente o núcleo e os seus eventos, ou as plataformas úteis para os alunos.",
-    "short_description": "Desenvolve todo o software do CeSIUM, desde plataformas para eventos até ferramentas para alunos.",
+    "description": "O CAOS é responsável por todo o desenvolvimento de software associado ao CeSIUM, desde plataformas que servem diretamente o núcleo e os seus eventos, como plataformas úteis para os alunos de Engenharia Informática.",
+    "short_description": "Responsável por todo o desenvolvimento de software do CeSIUM.",
     "icon": "terminal"
   },
   "dmc": {
     "name": "Departamento de **Marketing e Conteúdo**",
-    "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho divide-se, essencialmente, no design estilístico do CeSIUM e na comunicação escrita.",
-    "short_description": "Gere o marketing, a divulgação, as redes sociais e as comunicações do CeSIUM.",
+    "description": "O DMC é responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM, isto é, todo o marketing do CeSIUM. O seu trabalho foca-se, essencialmente, no design e imagem do CeSIUM, bem como na comunicação e registo fotográfico de atividades.",
+    "short_description": "Responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM.",
     "icon": "lightbulb"
   },
   "drem": {
     "name": "Departamento de **Relações Externas e Merchandising**",
-    "description": "O DREM é o departamento que trata de estabelecer e manter as parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetuar o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação do merch do núcleo para todos os nossos estudantes.",
-    "short_description": "Estabelece parcerias, gere as comunicações externas e cria merchandising.",
+    "description": "O DREM é o departamento que assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetua o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação de merch do núcleo, pensada para todos os nossos estudantes.",
+    "short_description": "Assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir.",
     "icon": "handshake"
   },
   "ped": {
     "name": "Departamento **Pedagógico**",
-    "description": "O Departamento Pedagógico está encarregue de organizar atividades do foro didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
-    "short_description": "Organiza palestras, workshops e sessões de estudo para apoiar a aprendizagem dos estudantes.",
+    "description": "O Departamento Pedagógico está encarregue de organizar atividades no âmbito didático, como sessões de estudo, palestras, workshops, entre outros, ajudando os alunos no seu estudo e promovendo o interesse pelas diversas áreas da Informática.",
+    "short_description": "Encarregue de organizar atividades no âmbito didático, como sessões de estudo, palestras, workshops, entre outros.",
     "icon": "draw"
   },
   "rec": {
     "name": "Departamento **Recreativo**",
-    "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades realizadas vão desde competições desportivas, a torneios de jogos, festas académicas, lanches, e muito mais.",
-    "short_description": " Planeia eventos sociais e recreativos para enriquecer a experiência dos estudantes.",
+    "description": "O Departamento Recreativo organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica. As atividades dinamizadas vão desde o jantar de gala, karaokes, noites de jogos, até torneios desportivos, festas académicas, lanches, e muito mais.",
+    "short_description": "Organiza atividades lúdicas e sociais, com o intuito de unir os estudantes e melhorar a sua experiência académica.",
     "icon": "celebration"
   },
   "button": {
@@ -115,7 +115,7 @@
   },
   "collaborate_card": {
     "title": "Torna-te colaborador",
-    "text": "Podes juntar-te a estes departamentos e contribuir para fazer o teu núcleo funcionar."
+    "text": "Podes fazer parte de um ou mais departamentos, contribuindo para melhorar o funcionamento do teu núcleo."
   },
   "member_card": {
     "title": "Torna-te sócio",
@@ -123,7 +123,7 @@
   },
   "store_card": {
     "title": "Loja",
-    "text": "Na CeSIUM Store, temos hoodies, casacos, t-shirts, meias, canecas, stickers e muito mais. Se fores sócio, também temos descontos.",
+    "text": "Na CeSIUM Store, temos hoodies, casacos, t-shirts, meias, canecas, stickers e muito mais. Se fores sócio, também terás descontos em todos os produtos.",
     "button": "Abrir Loja"
   },
   "navbar": {
@@ -139,12 +139,12 @@
   "home": {
     "cesium": {
       "title": "O que é o **CeSIUM?**",
-      "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional."
+      "subtitle": "O CeSIUM é o Centro de Estudantes de Engenharia Informática da Universidade do Minho, constituído por uma equipa de alunos voluntários, tendo como objetivo fulcral representar e promover o curso, Engenharia Informática. É um núcleo unido e dinâmico, capaz de proporcionar experiências enriquecedoras e únicas, complementando assim a tua vida académica, sem nunca esquecer a preparação da tua futura vida profissional."
     },
     "scrollable_highlight": {
       "slide1": {
         "title": "O que é o **CeSIUM?**",
-        "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional."
+        "subtitle": "O CeSIUM é o Centro de Estudantes de Engenharia Informática da Universidade do Minho, constituído por uma equipa de alunos voluntários, tendo como objetivo fulcral representar e promover o curso, Engenharia Informática. É um núcleo unido e dinâmico, capaz de proporcionar experiências enriquecedoras e únicas, complementando assim a tua vida académica, sem nunca esquecer a preparação da tua futura vida profissional."
       },
       "slide2": {
         "title": "A nossa **missão**",
@@ -169,12 +169,12 @@
       },
       "team": {
         "title": "Equipa",
-        "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha todos os dias para manter o núcleo a funcionar e tornar os anos dos estudantes no curso únicos. Conhece-a aqui."
+        "subtitle": "O CeSIUM não existiria sem a nossa equipa incrível, que trabalha diariamente para manter o núcleo em funcionamento, tornando os anos dos alunos de Engenharia Informática únicos. Conhece-a aqui."
       },
       "cesium": {
         "title": "O que é o CeSIUM?",
         "subtitle": "O CeSIUM é um Centro de estudantes de Engenharia Informática da Universidade do Minho composto por alunos voluntários que têm como objectivo principal representar e promover o curso. É um núcleo unido e dinâmico capaz de proporcionar experiências únicas e enriquecedoras para a tua futura vida profissional.",
-        "description": "Procuramos organizar actividades de contéudo semelhante e complementar ao curso, assim como promover e divulgar acções de lazer e socialização entre estudantes e ex-alunos. Representamos ainda os interesses colectivos dos alunos de Engenharia Informática junto dos orgãos ou instituições para que a sua carreira académica seja mais rica.",
+        "description": "Procuramos organizar atividades de conteúdo similar e/ou complementar ao curso, bem como promover e divulgar momentos de lazer e socialização entre alunos. Representamos ainda os interesses coletivos dos alunos de Engenharia Informática junto dos órgãos ou instituições relevantes, para que a sua experiência académica seja mais envolvente.",
         "images": [
           {
             "src": "/images/about/uMinho1.jpg",
@@ -197,7 +197,7 @@
     },
     "team": {
       "title": "Equipa",
-      "description": "Estes são alguns dos elementos da nossa equipa, da presidência às direções dos departamentos, assembleia geral e conselho fiscal.",
+      "description": "Aqui apresentamos-te os elementos da nossa Equipa, da Presidência às direções dos diversos Departamentos, assim como a Mesa da Assembleia Geral e o Conselho Fiscal.",
       "team_selector": {
         "default_option": "Atual mandato",
         "hint": "Selecionar mandato"
@@ -213,7 +213,7 @@
         },
         {
           "mobile_description": "Uma competição de programação anual onde os participantes têm 48 horas para desenvolverem um projeto.",
-          "desktop_description": "A Hackathon Bugsbyte é uma competição de programação anual na qual os participantes têm 48 horas para trabalham em equipa e desenvolverem um projeto tecnológico sobre uma solução empreendedora e impactante."
+          "desktop_description": "A Hackathon Bugsbyte é uma competição de programação anual, na qual os participantes têm 48 horas para desenvolver, em equipa, um projeto tecnológico sobre uma solução empreendedora e impactante."
         },
         {
           "mobile_description": "Um movimento global, voluntário, sem fins lucrativos, que visa ensinar crianças e jovens dos 7 aos 17 anos a programar.",
@@ -225,8 +225,8 @@
     },
     "departments": {
       "title": "Departamentos",
-      "subtitle": "Funcionamos com 5 departamentos que se focam nas diferentes áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
-      "description": "Os departamentos do CeSIUM são responsáveis por diferentes áreas de atuação do núcleo, desde a organização de eventos, à gestão de parcerias, passando pela comunicação e pelo desenvolvimento de software."
+      "subtitle": "O nosso funcionamento organiza-se em 5 departamentos, focados nas diversas áreas da nossa atividade enquanto núcleo. Conhece-os aqui.",
+      "description": "Os departamentos do CeSIUM são responsáveis por diversas áreas de atuação do núcleo, desde organização de eventos a desenvolvimento de software, bem como criação de conteúdo para divulgação de atividades, gestão de parcerias, entre outros."
     },
     "become_a_collaborator": {
       "hero": {
@@ -240,7 +240,7 @@
       },
       "choose_department": {
         "title": "Escolhe o teu departamento",
-        "description": "Se gostas de programar, o CAOS vai ser a tua praia. Olho para design? Junta-te ao DMC. Podes colaborar com o departamento com que mais te identificas ou, se não conseguires escolher apenas um, poderás participar em vários. Se ainda não conheces os nossos departamentos, carrega no botão abaixo para saber mais. Senão, estamos à tua espera!"
+        "description": "Se gostas de programar, o CAOS vai ser a tua praia. Olho para design? Junta-te ao DMC. Podes colaborar com o departamento com que mais te identificas ou, se não conseguires escolher apenas um, poderás participar em vários. Se ainda não conheces os nossos departamentos, carrega no botão abaixo para saber mais. Senão, estamos à tua espera! Inscreve-te já!"
       }
     },
     "become_a_member": {
@@ -256,11 +256,11 @@
       },
       "participate": {
         "title": "Participa gratuitamente em eventos",
-        "description": "O teu cartão de sócio é o passe direto para quase todos os nossos eventos. Aproveita noites de karaoke, board games ou cinema, workshops e showoffs, ocasiões especiais como o Magusto e a Noite de Informática, e muito mais, de graça ou com descontos exclusivos."
+        "description": "O teu cartão de sócio é o passe direto para quase todos os nossos eventos. Aproveita noites de karaoke, board games ou cinema, workshops e showoffs, ocasiões especiais como o Magusto e a Noite de Informática, e muito mais, gratuitamente ou com direito a descontos exclusivos."
       },
       "member_kit": {
         "title": "Kit Sócio",
-        "description": "Recebe um starter pack de ofertas, que pode incluir uma T-Shirt, cadernos, stickers, canetas, e mais. E uma tote bag para levares tudo contigo."
+        "description": "Recebe um starter pack de ofertas, que poderá incluir uma t-shirt única, cadernos, stickers, canetas, e muito mais. Além disso, oferecemos-te uma tote bag para levares tudo contigo."
       },
       "room_acess": {
         "title": "Acesso à sala do CeSIUM",
@@ -271,13 +271,13 @@
         "description": "O CeSIUM é a voz dos teus interesses e problemas na universidade. Ao seres sócio, é mais fácil fazeres-te ouvir."
       },
       "discounts": {
-        "title": "Descontos na Merchandising",
-        "description": "Aproveita descontos de 30% ou mais em vários artigos da nossa Loja online, desde t-shirts e casacos, a artigos de papelaria, stickers, porta-chaves, e mais.",
+        "title": "Descontos na Merch",
+        "description": "Aproveita descontos de 30% ou mais em vários artigos da nossa Loja online, desde t-shirts e casacos, a artigos de papelaria, stickers, porta-chaves, e muito mais.",
         "link": "Abrir loja"
       },
       "advantages": {
         "title": "Vantagens para sempre",
-        "description": "As vantagens de ter um cartão de sócio nunca expiram, uma vez que a quota de inscrição é vitalícia - pagas uma vez, e serás sócio para sempre. Estas são as vantagens que ser sócios tem para oferecer:"
+        "description": "As vantagens de ter um cartão de sócio nunca expiram, uma vez que a quota de inscrição é vitalícia - pagas uma vez, e serás sócio para sempre. Estas são as vantagens que te oferecemos enquanto sócio do CeSIUM:"
       }
     },
     "explore": {
@@ -315,7 +315,7 @@
         {
           "id": "become_a_member",
           "title": "Torna-te sócio",
-          "description": "Sócios do CeSIUM têm direito a vários benefícios. Descobre-os já e as parcerias a que te dão direito.",
+          "description": "Sócios do CeSIUM têm direito a vários benefícios. Descobre-os já, assim como as parcerias que oferecemos aos mesmos.",
           "links": [
             {
               "title": "Torna-te sócio",
@@ -332,7 +332,7 @@
         {
           "id": "become_a_collaborator",
           "title": "Torna-te colaborador",
-          "description": "Se gostavas de fazer parte do núcleo, nós adorávamos receber-te. Sabe mais sobre como te podes tornar um colaborador.",
+          "description": "Se gostavas de fazer parte do núcleo, nós adoraríamos receber-te. Sabe mais sobre como te podes tornar colaborador.",
           "links": [
             {
               "title": "Torna-te colaborador",
@@ -344,7 +344,7 @@
           "become_collaborator": {
             "team": {
               "title": "Junta-te à equipa",
-              "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              "subtitle": "Queres conhecer novas pessoas dentro do curso e envolver-te num ambiente dinâmico e inovador, enquanto aprendes conceitos novos e interessantes, relevantes para o teu futuro profissional? Estás à espera de quê para colaborar connosco? Conhece já a equipa que te receberá de portas abertas, enquanto colaborador! Estamos desejosos para te acolher!",
               "href": "about/team",
               "color": "blue"
             },
@@ -367,7 +367,7 @@
   },
   "events": {
     "title": "Eventos",
-    "warning": "Consulta outros meses para veres mais eventos. Esta página apenas incluiu eventos do Cesium. Para mais eventos, como testes ou datas de entregas, visita o [Calendarium](https://calendario.cesium.pt). Para te manteres sempre a par, segue o nosso [Instagram](https://instagram.com/cesiuminho).",
+    "warning": "Consulta diversos meses para veres mais eventos. Esta página apenas inclui eventos do CeSIUM. Para mais datas importantes, como avaliações ou entregas de projetos, visita o [Calendarium](https://calendario.cesium.pt). Para te manteres atualizado, segue já o nosso [Instagram](https://instagram.com/cesiuminho).",
     "warningTitle": "Mais Eventos",
     "weekDays": "Dom, Seg, Ter, Qua, Qui, Sex, Sab",
     "showLess": "Mostrar menos",
@@ -439,7 +439,7 @@
   ],
   "partners": {
     "title": "Parcerias",
-    "description": "Uma das vantagens de ser sócio do CeSIUM são as nossas parcerias incríveis. Descobre todas as ofertas que os nossos parceiros têm para ti.",
+    "description": "Uma das vantagens de ser sócio do CeSIUM é poder usufruir das nossas incríveis parcerias. Descobre aqui todas as oportunidades e descontos que te oferecemos.",
     "list": [
       {
         "title": "100 Montaditos",
@@ -618,7 +618,7 @@
   "callsub": {
     "members": {
       "title": "Soa-te bem?",
-      "desc": "Podes-te inscrever como sócio do CeSIUM online num minuto. Carrega no botão em baixo para começar ou fala connosco se tiveres dúvidas."
+      "desc": "Podes inscrever-te como sócio do CeSIUM online num minuto. Carrega no botão em baixo para começar, ou fala connosco se tiveres dúvidas."
     },
     "collaborators": {
       "title": "Estamos à tua espera",
