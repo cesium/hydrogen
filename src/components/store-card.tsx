@@ -50,7 +50,7 @@ const StoreProduct = ({ product, sizeClass }: StoreProductProps) => {
             layout="fill"
             objectFit="contain"
             className="pointer-events-none select-none"
-            onLoadingComplete={() => setIsLoading(false)}
+            onLoad={() => setIsLoading(false)}
           />
         </div>
       </Link>

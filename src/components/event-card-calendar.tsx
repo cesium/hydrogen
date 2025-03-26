@@ -66,14 +66,11 @@ export function EventCardCalendar({ event }: EventCardProps) {
               <span className="material-symbols-outlined text-gray">
                 explore
               </span>
-              <a
-                href={event.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="truncate font-medium text-gray hover:underline"
+              <div
+                className="truncate font-medium text-gray"
               >
                 {event.link.split("://")[1]}
-              </a>
+              </div>
             </div>
           )}
         </div>
