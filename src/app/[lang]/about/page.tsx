@@ -171,8 +171,8 @@ export default function About() {
               <div key={index} className="flex justify-center">
                 <Image
                   src={image.src}
-                  width={490}
-                  height={367}
+                  width={1000}
+                  height={1000}
                   alt={image.alt}
                   className="h-[237px] w-full rounded-xl object-cover sm:h-[367px] sm:max-w-full"
                 />

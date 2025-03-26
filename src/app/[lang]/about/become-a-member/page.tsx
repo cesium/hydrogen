@@ -86,7 +86,7 @@ export default function BecomeAMember() {
               </div>
             </div>
             <Image
-              src="/images/wallet.png"
+              src="/images/about/become-a-member/wallet.png"
               alt="wallet"
               width={364}
               height={338}
