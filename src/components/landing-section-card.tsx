@@ -31,7 +31,7 @@ const LandingSectionCard = ({
   };
 
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-5 rounded-2xl border border-dark/10 bg-white p-6 sm:p-8 md:gap-12 md:p-12">
+    <section className="flex w-full flex-col items-start justify-center gap-5 rounded-2xl border border-dark/10 bg-white p-6 sm:p-8 md:gap-12 md:p-12">
       <div className="flex flex-col gap-4 md:flex-row md:gap-10">
         <p className="font-title text-2xl font-medium sm:text-[30px]">
           {title}
