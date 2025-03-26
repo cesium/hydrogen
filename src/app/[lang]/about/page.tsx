@@ -22,7 +22,7 @@ import {
   generateUrlsForTeams,
 } from "@/lib/utils";
 import { fetchTeamData } from "@/lib/utils";
-import { horizontalPadding } from "@/lib/styling";
+
 import Image from "next/image";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 import Markdown from "markdown-to-jsx";
@@ -125,9 +125,7 @@ export default function About() {
   return (
     <main>
       <AboutSection>
-        <section
-          className={`flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)]`}
-        >
+        <section className="flex h-[calc(100dvh-72px)] w-full flex-col justify-center md:h-[calc(100dvh-94px)]">
           {/* Desktop Hero */}
           <div className="hidden h-full items-center justify-center gap-10 lg:flex">
             {heroItems.map((item, _) => item)}
@@ -158,15 +156,11 @@ export default function About() {
         </section>
       </AboutSection>
       {/* "What is CeSIUM?" */}
-      <section
-        className={`flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6`}
-      >
+      <section className="flex flex-col items-center gap-4 border-b border-black/10 bg-muted py-12 text-center sm:gap-6">
         <p className="font-title text-2xl font-medium sm:text-3xl">
           {dictAbout.sections.cesium.title}
         </p>
-        <p className={horizontalPadding}>
-          {dictAbout.sections.cesium.subtitle}
-        </p>
+        <p className="layout-p-x">{dictAbout.sections.cesium.subtitle}</p>
         <div className="w-full overflow-hidden pt-4 sm:pt-6">
           <Carousel
             autoplay={2000}
@@ -186,9 +180,7 @@ export default function About() {
             ))}
           />
         </div>
-        <p className={horizontalPadding}>
-          {dictAbout.sections.cesium.description}
-        </p>
+        <p className="layout-p-x">{dictAbout.sections.cesium.description}</p>
       </section>
       {/* Team */}
       <AboutSectionLayout

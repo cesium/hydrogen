@@ -60,7 +60,7 @@ export default function ScrollableHighlight({ items }: Props) {
       {/* Navigation Buttons */}
       <div className="pointer-events-none absolute inset-0 top-0 z-10 h-full px-10">
         <button
-          className={`pointer-events-auto absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2`}
+          className="pointer-events-auto absolute bottom-2 right-2 z-50 transform select-none p-2 text-white lg:right-10 lg:top-1/2 lg:-translate-y-1/2"
           onClick={() => swiperRef.current?.slideNext()}
           aria-label="Next slide"
         >

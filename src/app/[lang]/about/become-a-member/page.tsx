@@ -5,7 +5,6 @@ import Button from "@/components/button";
 import InfoCard from "@/components/info-card";
 import CallSubscribe from "@/components/call-subscribe";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { shuffleArray } from "@/lib/utils";
@@ -32,12 +31,8 @@ export default function BecomeAMember() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className={`relative grid min-h-[380px] grid-flow-row items-start bg-primary text-white lg:grid-flow-col lg:items-start`}
-      >
-        <div
-          className={`max-w-1/2 flex flex-col gap-8 ${verticalPadding} px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60`}
-        >
+      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-primary text-white lg:grid-flow-col lg:items-start">
+        <div className="max-w-1/2 layout-p-y flex flex-col gap-8 px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60">
           <div>
             <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
               {dict.about.become_a_member.hero.title}{" "}
@@ -75,9 +70,7 @@ export default function BecomeAMember() {
         </div>
       </section>
       {/* Content */}
-      <div
-        className={`grid grid-cols-1 gap-7 overflow-hidden py-10 md:py-14 xl:grid-cols-3 ${horizontalPadding}`}
-      >
+      <div className="layout-p-x grid grid-cols-1 gap-7 overflow-hidden py-10 md:py-14 xl:grid-cols-3">
         {/* Vantagens */}
         <section className="pb-4 xl:col-span-3">
           <div className="flex w-full place-items-center justify-between gap-x-8 sm:gap-x-0">

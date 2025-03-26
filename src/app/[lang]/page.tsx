@@ -5,7 +5,6 @@ import ShortcutButtonsContainer from "@/components/shortcut-button-container";
 import PromotionalCard from "@/components/promotional-card";
 import { type Event, CardType } from "@/lib/types";
 import { useEffect, useState } from "react";
-import { horizontalPadding } from "@/lib/styling";
 import { EventListCard } from "@/components/event-list-card";
 import getEvents from "@/lib/api/getEvents";
 import LandingSectionCard from "@/components/landing-section-card";
@@ -49,9 +48,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section
-        className={`flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)] ${horizontalPadding}`}
-      >
+      <section className="layout-p-x flex h-[calc(100dvh-72px)] flex-col justify-between md:h-[calc(100dvh-94px)]">
         <div
           className="absolute left-0 right-0 top-0 -z-10 h-dvh"
           style={{
@@ -95,9 +92,7 @@ export default function Home() {
         </button>
       </section>
       {/* Content */}
-      <div
-        className={`z-0 bg-foundation ${horizontalPadding} flex flex-col gap-12 py-12`}
-      >
+      <div className="layout-p-x z-0 flex flex-col gap-12 bg-foundation py-12">
         {/* Shortcut Buttons */}
         <section>
           <ShortcutButtonsContainer />

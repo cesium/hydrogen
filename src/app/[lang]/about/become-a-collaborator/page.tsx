@@ -19,7 +19,6 @@ import CollaboratorLayout from "@/components/become-a-collaborator-layout";
 import Image from "next/image";
 import Button from "@/components/button";
 import CallSubscribe from "@/components/call-subscribe";
-import { horizontalPadding, verticalPadding } from "@/lib/styling";
 import AboutSection from "@/components/about-section";
 import AppLink from "@/components/link";
 import Carousel from "@/components/carousel";
@@ -84,12 +83,8 @@ export default function BecomeACollaborator() {
 
   return (
     <main>
-      <section
-        className={`relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white lg:grid-flow-col lg:items-start`}
-      >
-        <div
-          className={`max-w-1/2 flex flex-col gap-8 ${verticalPadding} px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60`}
-        >
+      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white lg:grid-flow-col lg:items-start">
+        <div className="max-w-1/2 layout-p-y flex flex-col gap-8 px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60">
           <div>
             <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
               {dict.about.become_a_collaborator.hero.title}{" "}
@@ -164,9 +159,7 @@ export default function BecomeACollaborator() {
         <div className="flex w-full flex-col items-stretch gap-4 bg-white py-10 sm:py-12">
           {/* Title */}
           <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
-            <div
-              className={`flex h-fit flex-1 items-center justify-start ${horizontalPadding}`}
-            >
+            <div className="layout-p-x flex h-fit flex-1 items-center justify-start">
               <span className="w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl">
                 {dict.about.become_a_collaborator.choose_department.title}
               </span>
@@ -174,7 +167,7 @@ export default function BecomeACollaborator() {
           </div>
           {/* Subtitle */}
           <div className="px-6 sm:px-0">
-            <div className={`${horizontalPadding}`}>
+            <div className="layout-p-x">
               <span className="text-start">
                 {dict.about.become_a_collaborator.choose_department.description}
               </span>
