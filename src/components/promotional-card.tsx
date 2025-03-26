@@ -40,7 +40,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
           alt="Promotional Image"
           height={500}
           width={500}
-          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} w-36 min-[376px]:w-44 pointer-events-none select-none`}
+          className={`${type == CardType.Collaborate ? `h-20 min-[376px]:h-24 ${!mobileOnlyLayout ? "min-[950px]:h-28" : ""}` : `h-16 min-[375px]:h-20 ${!mobileOnlyLayout ? "min-[950px]:h-24" : ""}`} pointer-events-none w-36 select-none min-[376px]:w-44`}
         />
       </div>
 
