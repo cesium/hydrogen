@@ -76,7 +76,7 @@
   "cesium": "CeSIUM - Software Engineering Student Center at UMinho",
   "caos": {
     "name": "Center for **Open Source Support**",
-    "description": "CAOS is responsible for all software development associated with CeSIUM, from platforms that directly serve the organization and its events to useful platforms for Computer Engineering students.",
+    "description": "CAOS is responsible for all software development associated with CeSIUM, from platforms that directly serve the organization and its events to useful platforms for Software Engineering students.",
     "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
     "icon": "terminal"
   },
@@ -148,7 +148,7 @@
       },
       "slide2": {
         "title": "Our **mission**",
-        "subtitle": "At CeSIUM, we strive to create a collaborative and relaxed environment for all Computer Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare you for the real world."
+        "subtitle": "At CeSIUM, we strive to create a collaborative and relaxed environment for all Software Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare you for the real world."
       },
       "slide3": {
         "title": "What we **offer?**",
@@ -173,7 +173,7 @@
       },
       "cesium": {
         "title": "What is CeSIUM?",
-        "subtitle": "CeSIUM is the Student Center for Software Engineering at the University of Minho, made up of a team of volunteer students, with the primary goal of representing and promoting the Computer Engineering course. It is a united and dynamic group, capable of providing enriching and unique experiences, thus complementing your academic life while never forgetting to prepare you for your future professional life.",
+        "subtitle": "CeSIUM is the Student Center for Software Engineering at the University of Minho, made up of a team of volunteer students, with the primary goal of representing and promoting the Software Engineering course. It is a united and dynamic group, capable of providing enriching and unique experiences, thus complementing your academic life while never forgetting to prepare you for your future professional life.",
         "description": "We strive to organize activities with similar and complementary content to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Software Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {

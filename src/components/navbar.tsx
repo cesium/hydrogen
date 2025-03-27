@@ -61,7 +61,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${navbarBackgroundColor} layout-p-x ${isMemberOrCollaborator || isLanding ? "relative after:hidden" : "sticky"} top-0 z-50 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
+      className={`${navbarBackgroundColor} layout-p-x ${isOpen ? "sticky" : ""} ${isMemberOrCollaborator || isLanding ? "relative after:hidden" : "sticky"} top-0 z-50 after:absolute after:bottom-0 after:left-0 after:h-6 after:w-full after:translate-y-6 after:bg-gradient-to-b after:from-white after:to-transparent md:relative after:md:hidden`}
     >
       <div
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:pt-12`}
@@ -119,7 +119,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.nav
-              className="fixed bottom-0 left-0 right-0 top-0 z-40 flex flex-col justify-between bg-[#F0F0F0] px-7 pb-8 pt-20 shadow-lg md:hidden"
+              className="fixed left-0 right-0 top-0 z-40 flex h-dvh flex-col justify-between bg-[#F0F0F0] px-7 pb-8 pt-20 shadow-lg md:hidden"
               exit={{ x: "100%", borderRadius: "50px" }}
               initial={{ scale: 1.15 }}
               animate={{ scale: 1 }}
