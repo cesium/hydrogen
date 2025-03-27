@@ -161,7 +161,7 @@ export default function BecomeACollaborator() {
           {/* Title */}
           <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
             <div className="layout-p-x flex h-fit flex-1 items-center justify-start">
-              <span className="w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl">
+              <span className="w-fit origin-right select-none font-title text-2xl font-medium sm:text-3xl">
                 {dict.about.become_a_collaborator.choose_department.title}
               </span>
             </div>
@@ -224,7 +224,7 @@ export default function BecomeACollaborator() {
           </div>
         </div>
       </AboutSection>
-      <div className="my-12">
+      <div className="my-12 layout-p-x">
         <CallSubscribe
           title={dict.callsub.collaborators.title}
           description={dict.callsub.collaborators.desc}
