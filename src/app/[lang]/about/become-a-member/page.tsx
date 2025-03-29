@@ -418,28 +418,9 @@ export default function BecomeAMember() {
         {/* Details */}
         <section className="flex justify-center py-3 xl:col-span-3">
           <ol className="flex max-w-[85ch] list-inside list-decimal flex-col gap-2 text-sm text-gray">
-            <li>
-              A inscrição como sócio depende de uma quota única no valor de 10€.
-              Os benefícios não expiram nem estão sujeitos a limites gerais, a
-              menos que um dos benefícios já estabeleça por definição essas
-              condições. O pagamento apenas pode ser feito através de dinheiro
-              vivo, diretamente na sala do CeSIUM.
-            </li>
-            <li>
-              Como sócio, terás sempre acesso a todas as parcerias que
-              disponibilizamos. Porém, as mesmas podem sofrer alteração de
-              condições ou terminar.
-            </li>
-            <li>
-              O kit de sócio inclui um sortido de artigos que pode variar de kit
-              para kit, consoante um critério de escolha aleatório e
-              disponibilidade dos brindes.
-            </li>
-            <li>
-              Em certas ocasiões, durante o horário de abertura, a sala do
-              CeSIUM pode estar fechada, por estar a decorrer uma atividade
-              interna dentro dela (como, por exemplo, uma reunião).
-            </li>
+            {dict.about.become_a_member.details.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
           </ol>
         </section>
       </div>
