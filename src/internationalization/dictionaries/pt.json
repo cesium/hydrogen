@@ -278,7 +278,13 @@
       "advantages": {
         "title": "Vantagens para sempre",
         "description": "As vantagens de ter um cartão de sócio nunca expiram, uma vez que a quota de inscrição é vitalícia - pagas uma vez, e serás sócio para sempre. Estas são as vantagens que te oferecemos enquanto sócio do CeSIUM:"
-      }
+      },
+      "details": [
+        "A inscrição como sócio depende de uma quota única no valor de 10€. Os benefícios não expiram nem estão sujeitos a limites gerais, a menos que um dos benefícios já estabeleça por definição essas condições. O pagamento apenas pode ser feito através de dinheiro vivo, diretamente na sala do CeSIUM.",
+        "Como sócio, terás sempre acesso a todas as parcerias que disponibilizamos. Porém, as mesmas podem sofrer alteração de condições ou terminar.",
+        "O kit de sócio inclui um sortido de artigos que pode variar de kit para kit, consoante um critério de escolha aleatório e disponibilidade dos brindes.",
+        "Em certas ocasiões, durante o horário de abertura, a sala do CeSIUM pode estar fechada, por estar a decorrer uma atividade interna dentro dela (como, por exemplo, uma reunião)."
+      ]
     },
     "explore": {
       "title": "Explora mais",
@@ -547,7 +553,7 @@
       },
       {
         "title": "Os Farias",
-        "url": "https://www.facebook.com/os.farias.3",
+        "url": "https://www.facebook.com/profile.php?id=100054540065635",
         "logo": "/images/partners/osfarias.jpg",
         "color": "#7DA279",
         "perks": [
@@ -603,7 +609,7 @@
       },
       {
         "title": "Sabor da fruta",
-        "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
+        "url": "https://www.facebook.com/profile.php?id=100078212413074",
         "logo": "/images/partners/sabordafruta.png",
         "color": "#68b54a",
         "perks": [
