@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="layout-p-x flex h-[calc(100dvh-72px)] flex-col justify-between selection:bg-white selection:text-primary md:h-[calc(100dvh-94px)]">
+      <section className="layout-p-x flex h-[calc(100dvh-72px)] flex-col justify-between selection:bg-white/30 md:h-[calc(100dvh-94px)]">
         <div
           className="absolute left-0 right-0 top-0 -z-10 h-dvh"
           style={{

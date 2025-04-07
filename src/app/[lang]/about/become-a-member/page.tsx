@@ -31,7 +31,7 @@ export default function BecomeAMember() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-primary text-white selection:bg-white selection:text-primary lg:grid-flow-col lg:items-start">
+      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-primary text-white selection:bg-white/30 lg:grid-flow-col lg:items-start">
         <div className="max-w-1/2 layout-p-y flex flex-col gap-8 px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60">
           <div>
             <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">

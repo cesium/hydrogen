@@ -25,7 +25,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
 
   return (
     <div
-      className={`relative flex h-full min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color} selection:bg-white selection:text-${color}`}
+      className={`relative flex h-full min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color} selection:bg-white/30`}
     >
       {/* Card image */}
       <div

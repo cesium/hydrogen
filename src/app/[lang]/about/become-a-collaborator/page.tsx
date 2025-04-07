@@ -84,7 +84,7 @@ export default function BecomeACollaborator() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white selection:bg-white selection:text-blue lg:grid-flow-col lg:items-start">
+      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white selection:bg-white/30 lg:grid-flow-col lg:items-start">
         <div className="max-w-1/2 layout-p-y flex flex-col gap-8 px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60">
           <div>
             <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
@@ -123,7 +123,7 @@ export default function BecomeACollaborator() {
           />
         </div>
       </section>
-      <div className="selection:bg-blue selection:text-white">
+      <div className="selection:bg-blue/90">
         {/* Join The Team */}
         <CollaboratorLayout
           title={dict.about.become_a_collaborator.join_team.title}
@@ -192,7 +192,7 @@ export default function BecomeACollaborator() {
             {/* Content (Scrollable) */}
             <div className="relative hidden xl:block">
               <div className="mt-7 w-full sm:mt-10">
-                <div className="no-scrollbar mb-8 flex h-[302px] w-full overflow-y-hidden overflow-x-scroll px-10">
+                <div className="no-scrollbar mb-8 flex h-[302px] w-full select-none overflow-y-hidden overflow-x-scroll px-10">
                   <DepartmentsList
                     hideTeam
                     hideShortName
