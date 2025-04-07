@@ -411,7 +411,7 @@ export default function BecomeAMember() {
             description={dict.callsub.members.desc}
             buttonText={dict.callsub.button}
             buttonURL="https://cesium.link/f/socios"
-            buttonColor={"primary"}
+            buttonColor="primary"
             footerText={dict.callsub.footer}
           />
         </section>

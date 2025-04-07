@@ -29,7 +29,7 @@ export const CallSubscribe = ({
         style="style2"
         href={buttonURL}
         umamiEvent={
-          buttonColor === "blue"
+          buttonColor === "signature-blue"
             ? "comecar-inscricao-colaborador"
             : "comecar-inscricao-socio"
         }

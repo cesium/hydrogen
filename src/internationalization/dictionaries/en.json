@@ -76,7 +76,7 @@
   "cesium": "CeSIUM - Software Engineering Student Center at UMinho",
   "caos": {
     "name": "Center for **Open Source Support**",
-    "description": "CAOS is responsible for all software development associated with CeSIUM, from platforms that directly serve the organization and its events to useful platforms for Computer Engineering students.",
+    "description": "CAOS is responsible for all software development associated with CeSIUM, from platforms that directly serve the organization and its events to useful platforms for Software Engineering students.",
     "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
     "icon": "terminal"
   },
@@ -148,7 +148,7 @@
       },
       "slide2": {
         "title": "Our **mission**",
-        "subtitle": "At CeSIUM, we strive to create a collaborative and relaxed environment for all Computer Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare you for the real world."
+        "subtitle": "At CeSIUM, we strive to create a collaborative and relaxed environment for all Software Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare you for the real world."
       },
       "slide3": {
         "title": "What we **offer?**",
@@ -173,7 +173,7 @@
       },
       "cesium": {
         "title": "What is CeSIUM?",
-        "subtitle": "CeSIUM is the Student Center for Software Engineering at the University of Minho, made up of a team of volunteer students, with the primary goal of representing and promoting the Computer Engineering course. It is a united and dynamic group, capable of providing enriching and unique experiences, thus complementing your academic life while never forgetting to prepare you for your future professional life.",
+        "subtitle": "CeSIUM is the Student Center for Software Engineering at the University of Minho, made up of a team of volunteer students, with the primary goal of representing and promoting the Software Engineering course. It is a united and dynamic group, capable of providing enriching and unique experiences, thus complementing your academic life while never forgetting to prepare you for your future professional life.",
         "description": "We strive to organize activities with similar and complementary content to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Software Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
         "images": [
           {
@@ -334,7 +334,7 @@
               "title": "Become a collaborator",
               "href": "/about/become-a-collaborator",
               "arrow": "forward",
-              "color": "blue"
+              "color": "signature-blue"
             }
           ],
           "become_collaborator": {
@@ -342,13 +342,13 @@
               "title": "Join the team",
               "subtitle": "Do you want to meet new people within the course and immerse yourself in a dynamic and innovative environment while learning new and interesting concepts relevant to your professional future? What are you waiting for to join us? Get to know the team that will welcome you with open arms as a collaborator! We can't wait to have you on board!",
               "href": "about/team",
-              "color": "blue"
+              "color": "signature-blue"
             },
             "choose_department": {
               "title": "Choose your department",
               "subtitle": "If you enjoy programming, CAOS will be your thing. Interested in design? Join DMC. You can join the department you identify with the most, and if you can't decide, you can even join several. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!",
               "href": "about/departments",
-              "color": "blue"
+              "color": "signature-blue"
             },
             "join": {
               "title": "We are waiting for you",
@@ -440,7 +440,7 @@
       {
         "title": "100 Montaditos",
         "url": "https://portugal.100montaditos.com/pt",
-        "logo": "/images/partners/100montaditos.png",
+        "logo": "/images/partners/100montaditos.webp",
         "color": "#eecc67",
         "perks": [
           {
@@ -464,7 +464,7 @@
       {
         "title": "Braga Pizzaria Kebab",
         "url": "https://www.facebook.com/p/Braga-pizzaria-kebab-100047190051272/",
-        "logo": "/images/partners/bragapizzariakebab.png",
+        "logo": "/images/partners/bragapizzariakebab.webp",
         "color": "#9a301f",
         "perks": [
           {
@@ -476,7 +476,7 @@
       {
         "title": "Café do Luís",
         "url": "https://www.facebook.com/cafedoluisbraga/?locale=pt_PT",
-        "logo": "/images/partners/cafedoluis.jpg",
+        "logo": "/images/partners/cafedoluis.webp",
         "color": "#843dc2",
         "perks": [
           {
@@ -488,7 +488,7 @@
       {
         "title": "Drawstep",
         "url": "https://drawstep.com/",
-        "logo": "/images/partners/drawstep.avif",
+        "logo": "/images/partners/drawstep.webp",
         "color": "#134046",
         "perks": [
           {
@@ -500,7 +500,7 @@
       {
         "title": "Escola de Condução UM",
         "url": "https://www.facebook.com/EscolaDeConducaoUm",
-        "logo": "/images/partners/escoladeconducaoum.png",
+        "logo": "/images/partners/escoladeconducaoum.webp",
         "color": "#BBB24A",
         "perks": [
           {
@@ -512,7 +512,7 @@
       {
         "title": "Magic Pin",
         "url": "https://www.instagram.com/magiicpin",
-        "logo": "/images/partners/magicpin.png",
+        "logo": "/images/partners/magicpin.webp",
         "color": "#d1a75b",
         "perks": [
           {
@@ -532,7 +532,7 @@
       {
         "title": "Nuguelmusic",
         "url": "http://www.nuguelmusic.pt/",
-        "logo": "/images/partners/nuguel.png",
+        "logo": "/images/partners/nuguel.webp",
         "color": "#e56b7f",
         "perks": [
           {
@@ -544,7 +544,7 @@
       {
         "title": "Os Farias",
         "url": "https://www.facebook.com/os.farias.3",
-        "logo": "/images/partners/osfarias.jpg",
+        "logo": "/images/partners/osfarias.webp",
         "color": "#7DA279",
         "perks": [
           {
@@ -568,7 +568,7 @@
       {
         "title": "Pausa Útil",
         "url": "https://www.facebook.com/Pausa-%C3%9Atil-296346960391077/",
-        "logo": "/images/partners/pausautil.png",
+        "logo": "/images/partners/pausautil.webp",
         "color": "#598EBA",
         "perks": [
           {
@@ -588,7 +588,7 @@
       {
         "title": "The Traditional Great Pizza",
         "url": "https://www.thetraditionalgreatpizza.com/",
-        "logo": "/images/partners/thetraditionalgreatpizza.png",
+        "logo": "/images/partners/thetraditionalgreatpizza.webp",
         "color": "#89573E",
         "perks": [
           {
@@ -600,7 +600,7 @@
       {
         "title": "Sabor da fruta",
         "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
-        "logo": "/images/partners/sabordafruta.png",
+        "logo": "/images/partners/sabordafruta.webp",
         "color": "#68b54a",
         "perks": [
           {

@@ -16,7 +16,7 @@ interface CardProps {
 }
 
 const getColor = (type: CardType) => {
-  return type === CardType.Collaborate ? "blue" : "primary";
+  return type === CardType.Collaborate ? "signature-blue" : "primary";
 };
 
 const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
@@ -66,7 +66,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
           title={dict.button.learn_more}
           style="style1"
           as="link"
-          color={type == CardType.Collaborate ? "blue" : "primary"}
+          color={type == CardType.Collaborate ? "signature-blue" : "primary"}
           href={
             type == CardType.Collaborate
               ? "/about/become-a-collaborator"

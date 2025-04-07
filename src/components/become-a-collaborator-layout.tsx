@@ -19,7 +19,7 @@ interface CollaboratorLayoutProps {
   overflows?: boolean;
   dark?: boolean;
   children?: React.ReactNode;
-  linkColor?: "blue" | "primary";
+  linkColor?: "signature-blue" | "primary";
 }
 
 const CollaboratorLayout = ({
@@ -58,20 +58,18 @@ const CollaboratorLayout = ({
               {title}
             </span>
           </div>
-          <div className="mb-4">
-            <span className="text-start">{subtitle}</span>
+          <div className="mb-4 text-justify">
+            <span>{subtitle}</span>
           </div>
-          <div>
-            <AppLink
-              title={dict.button[linkName]}
-              href={href}
-              color={linkColor}
-            />
-          </div>
+          <AppLink
+            title={dict.button[linkName]}
+            href={href}
+            color={linkColor}
+          />
         </div>
 
         {/* Right Section: Children */}
-        <div className="relative flex-1 md:pt-16">
+        <div className="relative flex h-full w-full flex-1 items-center overflow-x-auto">
           {overflows && (
             <>
               {/* Gradient for desktop */}
@@ -96,7 +94,7 @@ const CollaboratorLayout = ({
             </>
           )}
           <div
-            className="no-scrollbar mt-7 h-20 overflow-y-hidden overflow-x-scroll sm:mt-0"
+            className="no-scrollbar mt-7 h-20 w-full overflow-y-hidden overflow-x-scroll sm:mt-0"
             ref={scrollableRef}
             onScroll={handleScroll}
           >

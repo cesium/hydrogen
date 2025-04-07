@@ -26,7 +26,7 @@ const Button = ({
   const hrefDefault = href ?? "/";
   const hrefLang = `/${lang}${href}`;
 
-  const isCustomColor = !["blue", "primary", "black"].includes(color);
+  const isCustomColor = !["signature-blue", "primary", "black"].includes(color);
   const isLocalLink =
     href &&
     !(

@@ -84,7 +84,7 @@ export default function BecomeACollaborator() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white selection:bg-white/30 lg:grid-flow-col lg:items-start">
+      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-signature-blue text-white selection:bg-white/30 lg:grid-flow-col lg:items-start">
         <div className="max-w-1/2 layout-p-y flex flex-col gap-8 px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60">
           <div>
             <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
@@ -98,7 +98,7 @@ export default function BecomeACollaborator() {
           <Button
             title={dict.about.become_a_collaborator.hero.button}
             style="style1"
-            color="blue"
+            color="signature-blue"
             as="link"
             href="https://cesium.link/f/recrutamento"
             umamiEvent="comecar-inscricao-colaborador"
@@ -107,7 +107,7 @@ export default function BecomeACollaborator() {
         <div className="pointer-events-none flex h-full select-none items-end justify-center sm:hidden sm:justify-end xl:flex">
           <Image
             src="/vectors/collaborator.svg"
-            alt="Torna-te membro"
+            alt="Torna-te colaborador"
             height={331}
             width={528}
             className="h-fit w-[323px] lg:w-[528px]"
@@ -123,17 +123,16 @@ export default function BecomeACollaborator() {
           />
         </div>
       </section>
-      <div className="selection:bg-blue/90">
-        {/* Join The Team */}
+      <div className="selection:bg-signature-blue">
         <CollaboratorLayout
           title={dict.about.become_a_collaborator.join_team.title}
           subtitle={dict.about.become_a_collaborator.join_team.description}
           linkName="go_to_team"
           href="/team"
           overflows
-          linkColor="blue"
+          linkColor="signature-blue"
         >
-          <div className="flex w-full justify-evenly gap-5">
+          <div className="pointer-events-none flex w-full select-none justify-evenly gap-5">
             {teamData.map((team, index) =>
               index == 0
                 ? members.map((member) => (
@@ -141,7 +140,7 @@ export default function BecomeACollaborator() {
                       key={member.name}
                       src={member.imageUrl}
                       className="rounded-full font-normal"
-                      imageClassName="size-20 rounded-full "
+                      imageClassName="size-20 rounded-full"
                       style="style2"
                     />
                   ))
@@ -152,29 +151,28 @@ export default function BecomeACollaborator() {
                         imageUrls[index]?.[0]?.[memberIndex] ??
                         "/images/none.png"
                       }
-                      className="rounded-full"
-                      imageClassName="size-15 md:size-20 rounded-full"
+                      className="rounded-full font-normal"
+                      imageClassName="size-20 rounded-full"
                       style="style2"
                     />
                   )),
             )}
           </div>
         </CollaboratorLayout>
-        {/* Choose Your Department */}
         <AboutSection stretch>
-          <div className="flex w-full flex-col items-stretch gap-4 bg-white py-10 sm:py-12">
+          <div className="flex w-full flex-col items-stretch gap-4 bg-white pt-10 sm:pt-12">
             {/* Title */}
             <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
               <div className="layout-p-x flex h-fit flex-1 items-center justify-start">
-                <span className="w-fit origin-right select-none whitespace-nowrap font-title text-2xl font-medium sm:text-3xl">
+                <span className="w-fit origin-right select-none font-title text-2xl font-medium sm:text-3xl">
                   {dict.about.become_a_collaborator.choose_department.title}
                 </span>
               </div>
             </div>
             {/* Subtitle */}
             <div className="px-6 sm:px-0">
-              <div className="layout-p-x">
-                <span className="text-start">
+              <div className="layout-p-x text-justify">
+                <span>
                   {
                     dict.about.become_a_collaborator.choose_department
                       .description
@@ -184,7 +182,7 @@ export default function BecomeACollaborator() {
                   <AppLink
                     title={dict.button.go_to_departments}
                     href="/departments"
-                    color="blue"
+                    color="signature-blue"
                   />
                 </div>
               </div>
@@ -203,7 +201,7 @@ export default function BecomeACollaborator() {
               </div>
             </div>
             {/* Mobile Carousel */}
-            <div className="relative h-72 overflow-hidden xl:hidden">
+            <div className="relative mt-4 h-72 overflow-hidden xl:hidden">
               <Carousel
                 pagination
                 overflow
@@ -234,14 +232,13 @@ export default function BecomeACollaborator() {
             </div>
           </div>
         </AboutSection>
-        {/* Call to Register */}
-        <div className="my-12">
+        <div className="layout-p-x my-12">
           <CallSubscribe
             title={dict.callsub.collaborators.title}
             description={dict.callsub.collaborators.desc}
             buttonText={dict.callsub.button}
             buttonURL="https://cesium.link/f/recrutamento"
-            buttonColor="blue"
+            buttonColor="signature-blue"
             footerText={dict.callsub.footer}
           />
         </div>
