@@ -356,7 +356,7 @@
             },
             "choose_department": {
               "title": "Choose Your Department",
-              "subtitle": "Join the department that matches your interests - coding (CAOS), design (DMC), or multiple departments. Learn more below or sign up now!",
+              "subtitle": "Join the department that matches your interests - coding (CAOS), marketing(DMC), or multiple departments. Learn more below or sign up now!",
               "href": "about/departments",
               "color": "blue"
             },
