@@ -86,7 +86,7 @@ export default function BecomeAMember() {
               </div>
             </div>
             <Image
-              src="/images/about/become-a-member/wallet.png"
+              src="/images/about/become-a-member/wallet.webp"
               alt="wallet"
               width={364}
               height={338}
@@ -301,7 +301,7 @@ export default function BecomeAMember() {
                 </div>
                 <div className="pointer-events-none relative z-10 h-full w-full select-none overflow-hidden">
                   <Image
-                    src="/images/about/become-a-member/ticket.png"
+                    src="/images/about/become-a-member/ticket.webp"
                     alt="ticket"
                     width={980}
                     height={365}
@@ -317,7 +317,7 @@ export default function BecomeAMember() {
           <div className="flex h-full flex-row items-center">
             <div className="pointer-events-none relative h-[90%] w-[450px] select-none overflow-hidden min-[604px]:h-full min-[890px]:max-w-[300px] lg:h-[90%] lg:max-w-[450px]">
               <Image
-                src="/images/about/become-a-member/totebag.png"
+                src="/images/about/become-a-member/totebag.webp"
                 alt="totebag"
                 layout="fill"
                 className="object-cover object-[right_bottom]"
@@ -362,7 +362,7 @@ export default function BecomeAMember() {
               <div className="grid h-full grid-cols-2 sm:h-96 sm:grid-cols-3">
                 <div className="pointer-events-none relative order-2 -mb-4 -ml-4 h-full w-full max-w-[270px] select-none justify-self-start sm:-ml-12 sm:-mt-24 sm:mb-0 md:-ml-36 lg:order-1 lg:-ml-4">
                   <Image
-                    src="/images/about/become-a-member/notebook.png"
+                    src="/images/about/become-a-member/notebook.webp"
                     alt="discounts"
                     layout="fill"
                     objectFit="cover"
@@ -393,7 +393,7 @@ export default function BecomeAMember() {
 
                 <div className="pointer-events-none relative order-3 -mb-4 -mr-4 h-full w-full max-w-[270px] select-none justify-self-end pb-32 sm:-mr-36 sm:mb-0 sm:mt-24 sm:pb-0 lg:-mr-4">
                   <Image
-                    src="/images/about/become-a-member/laptop.png"
+                    src="/images/about/become-a-member/laptop.webp"
                     alt="discounts"
                     layout="fill"
                     objectFit="cover"
@@ -418,28 +418,9 @@ export default function BecomeAMember() {
         {/* Details */}
         <section className="flex justify-center py-3 xl:col-span-3">
           <ol className="flex max-w-[85ch] list-inside list-decimal flex-col gap-2 text-sm text-gray">
-            <li>
-              A inscrição como sócio depende de uma quota única no valor de 10€.
-              Os benefícios não expiram nem estão sujeitos a limites gerais, a
-              menos que um dos benefícios já estabeleça por definição essas
-              condições. O pagamento apenas pode ser feito através de dinheiro
-              vivo, diretamente na sala do CeSIUM.
-            </li>
-            <li>
-              Como sócio, terás sempre acesso a todas as parcerias que
-              disponibilizamos. Porém, as mesmas podem sofrer alteração de
-              condições ou terminar.
-            </li>
-            <li>
-              O kit de sócio inclui um sortido de artigos que pode variar de kit
-              para kit, consoante um critério de escolha aleatório e
-              disponibilidade dos brindes.
-            </li>
-            <li>
-              Em certas ocasiões, durante o horário de abertura, a sala do
-              CeSIUM pode estar fechada, por estar a decorrer uma atividade
-              interna dentro dela (como, por exemplo, uma reunião).
-            </li>
+            {dict.about.become_a_member.details.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
           </ol>
         </section>
       </div>

@@ -1,22 +1,22 @@
 {
   "seo": {
-    "title": "CeSIUM - Software Engineering Student Center at UMinho",
-    "description": "CeSIUM is the Software Engineering Student Center at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life.",
+    "title": "CeSIUM - University of Minho Software Engineering Students' Center",
+    "description": "CeSIUM is the Software Engineering Students' Center of the University of Minho, consisting of a team of volunteer students with the core objective of representing and promoting the Software Engineering course. A united and dynamic organization providing enriching and unique experiences to complement academic life while preparing students for their professional future.",
     "projects": {
       "title": "Projects | CeSIUM",
-      "description": "These are the pojects developed by CeSIUM."
+      "description": "Discover the projects developed by CeSIUM."
     },
     "partners": {
-      "title": "Partners | CeSIUM",
-      "description": "These are CeSIUM's partners."
+      "title": "Partnerships | CeSIUM",
+      "description": "Explore CeSIUM's partnerships and collaborations."
     },
     "events": {
       "title": "Events | CeSIUM",
-      "description": "Events organized by CeSIUM."
+      "description": "Check out the events organized by CeSIUM."
     },
     "about": {
       "title": "About | CeSIUM",
-      "description": "Get to know more about us."
+      "description": "Learn more about our organization."
     },
     "team": {
       "title": "Team | CeSIUM",
@@ -24,106 +24,106 @@
     },
     "departments": {
       "title": "Departments | CeSIUM",
-      "description": "Meet our departments."
+      "description": "Discover our departments and their roles."
     },
     "become_a_collaborator": {
       "title": "Become a Collaborator | CeSIUM",
-      "description": ""
+      "description": "Discover the benefits of becoming a CeSIUM collaborator."
     },
     "become_a_member": {
       "title": "Become a Member | CeSIUM",
-      "description": "Get to know the perks of being a CeSIUM member."
+      "description": "Explore the advantages of CeSIUM membership."
     }
   },
   "landing": {
     "sections": {
       "hero": {
         "title": "CeSIUM",
-        "description": "Software Engineering Student Center at University of Minho"
+        "description": "University of Minho Software Engineering Students' Center"
       },
       "events": {
         "title": "Events",
-        "description": "At CeSIUM, we organize a variety of activities - pedagogical, recreational, and more. Got your attention? We have a page with all the dates."
+        "description": "At CeSIUM, we organize various activities - from pedagogical to recreational events and more. Interested? Visit our events page for all dates and details."
       },
       "partners": {
-        "title": "Partners",
-        "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the opportunities our partners have for you."
+        "title": "Partnerships",
+        "description": "One of the key benefits of being a CeSIUM member is access to our exclusive partnerships. Discover all the offers available from our partners."
       },
       "shortcut_buttons": {
         "highlight": "Featured",
-        "discord": "<p>**CeSIUM's**</p> Discord",
-        "pelomundo": "<p>CeSIUM</p>**around the World**"
+        "discord": "<p>CeSIUM's</p>**Discord**",
+        "pelomundo": "<p>CeSIUM</p>**Around the World**"
       },
       "shortcut_panes": [
         {
           "title": "Team",
-          "description": "Meet the dedicated team that makes CeSIUM move, every day.",
+          "description": "Meet the dedicated team that keeps CeSIUM running every day.",
           "href": "/team"
         },
         {
           "title": "Departments",
-          "description": "CeSIUM operates in various areas. Get to know our departments.",
+          "description": "CeSIUM operates in multiple areas. Explore our departments.",
           "href": "/departments"
         },
         {
           "title": "Events",
-          "description": "Stay up to date with all the events we organize.",
+          "description": "Stay updated about our organized activities.",
           "href": "/events"
         }
       ]
     }
   },
-  "cesium": "CeSIUM - Software Engineering Student Center at UMinho",
+  "cesium": "CeSIUM - University of Minho Software Engineering Students' Center",
   "caos": {
-    "name": "Center for **Open Source Support**",
-    "description": "CAOS is responsible for all software development associated with CeSIUM, from platforms that directly serve the organization and its events to useful platforms for Software Engineering students.",
-    "short_description": "Handles all software development for CeSIUM, from event platforms to tools useful for students.",
+    "name": "**Open Source** Support Center",
+    "description": "CAOS handles all software development for CeSIUM, including platforms serving the organization and its events, as well as tools useful for Software Engineering students.",
+    "short_description": "Responsible for all CeSIUM software development.",
     "icon": "terminal"
   },
   "dmc": {
-    "name": "Department of **Marketing and Content**",
-    "description": "DMC is responsible for promoting activities and managing CeSIUM's social media, meaning all of CeSIUM's marketing. Its work focuses mainly on CeSIUM's design and image, as well as communication and photographic documentation of activities.",
-    "short_description": "Manages CeSIUM's marketing, social media, and creative communications.",
+    "name": "**Marketing and Content** Department",
+    "description": "DMC manages activity promotion and social media presence, focusing on CeSIUM's visual identity, communications, and photographic documentation of events.",
+    "short_description": "Handles activity promotion and social media management.",
     "icon": "lightbulb"
   },
   "drem": {
-    "name": "Department of **External Relations and Merchandising**",
-    "description": "DREM is the department that ensures the establishment and maintenance of partnerships that CeSIUM members can benefit from, as well as handling contact with all external entities. It is also responsible for creating the organization's merchandise, designed for all our students.",
-    "short_description": "Builds partnerships, manages external communications, and designs merchandise.",
+    "name": "**External Relations and Merchandising** Department",
+    "description": "DREM establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
+    "short_description": "Manages partnerships and member benefits.",
     "icon": "handshake"
   },
   "ped": {
     "name": "**Pedagogical** Department",
-    "description": "The Pedagogical Department is responsible for organizing educational activities such as study sessions, lectures, workshops, and more, helping students with their studies and fostering interest in various areas of Computer Science.",
-    "short_description": "Organizes lectures, workshops, and study sessions to support the students' learning.",
+    "description": "Organizes educational activities like study sessions, lectures, and workshops to support student learning and promote interest in computing fields.",
+    "short_description": "Coordinates educational activities and academic support.",
     "icon": "draw"
   },
   "rec": {
     "name": "**Recreational** Department",
-    "description": "The Recreational Department organizes social and leisure activities to bring students together and enhance their academic experience. The activities range from gala dinners, karaoke nights, and game nights to sports tournaments, academic parties, snack gatherings, and much more.",
-    "short_description": "Plans social and recreational events to enrich the students' experience.",
+    "description": "Creates social and recreational activities to unite students and enhance academic experience, including gala dinners, game nights, sports tournaments, and parties.",
+    "short_description": "Organizes social events and recreational activities.",
     "icon": "celebration"
   },
   "button": {
-    "see_team": "Go to team",
-    "learn_more": "Learn more",
-    "see_more": "See more",
-    "back": "Go Back",
+    "see_team": "View Team",
+    "learn_more": "Learn More",
+    "see_more": "See More",
+    "back": "Back",
     "go_to_team": "Go to Team",
     "go_to_departments": "Go to Departments",
     "swipe": "Swipe to see more"
   },
   "collaborate_card": {
-    "title": "Become a collaborator",
-    "text": "You can join these departments and contribute to making your organization work."
+    "title": "Become a Collaborator",
+    "text": "Join one or more departments to contribute to improving your student organization."
   },
   "member_card": {
-    "title": "Become a member",
-    "text": "Participate in all our events for free and enjoy tons of other benefits."
+    "title": "Become a Member",
+    "text": "Participate in all our events for free and enjoy numerous exclusive benefits."
   },
   "store_card": {
     "title": "Store",
-    "text": "At the CeSIUM Store, we have hoodies, jackets, t-shirts, socks, mugs, stickers, and much more. If you're a member, you'll also have discounts on all products!",
+    "text": "At the CeSIUM Store, find hoodies, jackets, t-shirts, socks, mugs, stickers, and more. Members receive discounts on all products.",
     "button": "Open Store"
   },
   "navbar": {
@@ -132,49 +132,49 @@
     "departments": "Departments",
     "about": "About",
     "events": "Events",
-    "partners": "Partners",
+    "partners": "Partnerships",
     "store": "Store",
     "projects": "Projects"
   },
   "home": {
     "cesium": {
       "title": "What is **CeSIUM?**",
-      "subtitle": "CeSIUM is a Student Center for Software Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+      "subtitle": "CeSIUM is the Software Engineering Students' Center of the University of Minho, formed by volunteer students dedicated to representing and promoting the Software Engineering course. We provide unique experiences to enhance academic life while preparing students for professional careers."
     },
     "scrollable_highlight": {
       "slide1": {
         "title": "What is **CeSIUM?**",
-        "subtitle": "CeSIUM is a Student Center for Software Engineering at the University of Minho, composed of volunteer students whose main goal is to represent and promote the course. It is a united and dynamic group capable of providing unique and enriching experiences for your future professional life."
+        "subtitle": "CeSIUM is the Software Engineering Students' Center of the University of Minho, formed by volunteer students dedicated to representing and promoting the Software Engineering course. We provide unique experiences to enhance academic life while preparing students for professional careers."
       },
       "slide2": {
-        "title": "Our **mission**",
-        "subtitle": "At CeSIUM, we strive to create a collaborative and relaxed environment for all Software Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare you for the real world."
+        "title": "Our **Mission**",
+        "subtitle": "At CeSIUM, we strive to create a collaborative environment for Software Engineering students. Through events, workshops, and networking opportunities, we help develop technical skills, foster teamwork, and prepare students for real-world challenges."
       },
       "slide3": {
-        "title": "What we **offer?**",
-        "subtitle": "Join us to gain access to hackathons, talks, connections to the business world, programming sessions, and more. Whether you're looking to invest in your knowledge and skills or find your next unforgettable opportunity."
+        "title": "What We **Offer**",
+        "subtitle": "Join us for hackathons, lectures, industry connections, coding sessions, and more. Whether you're looking to expand your skills or find unforgettable opportunities, we've got you covered."
       },
       "slide4": {
-        "title": "Get **involved**",
-        "subtitle": "Want to be part of a passionate and driven community? CeSIUM welcomes all Software Engineering students eager to learn, grow, and contribute."
+        "title": "Get **Involved**",
+        "subtitle": "Want to join a passionate community? CeSIUM welcomes all Software Engineering students eager to learn, grow, and contribute."
       }
     }
   },
   "about": {
     "sections": {
       "hero": {
-        "title": "**Software Engineering** Student Center at University of Minho",
-        "description": "The year was 1995, and the Bachelor's Degree in Systems and Informatics Engineering (LESI) at UM was ongoing. (...) It was in this context that a group of 3rd-year students asked the Course Directorate (DC), which I was leading at the time, for support to officially create a Student Center. (...) From that moment on, the journey of this student group began, which, 20 years later, still carries the same name and acronym, staying true to its purpose of promoting the course's image and defending the interests of its members.",
-        "subtitle": "Director of the Informatics Department - 2017"
+        "title": "University of Minho **Software Engineering** Students' Center",
+        "description": "In 1995, during the Systems and Informatics Engineering course at UM... A group of 3rd-year students requested official recognition for a student center. This marked the beginning of an organization that, 20 years later, continues its mission of promoting the course and defending student interests.",
+        "subtitle": "Director of Informatics Department - 2017"
       },
       "team": {
         "title": "Team",
-        "subtitle": "CeSIUM wouldn't exist without our incredible team, which works every day to keep the group running and make students' years in the course unique. Meet them here."
+        "subtitle": "CeSIUM exists thanks to our dedicated team working daily to maintain operations and create unforgettable experiences for Software Engineering students. Meet them here."
       },
       "cesium": {
         "title": "What is CeSIUM?",
-        "subtitle": "CeSIUM is the Student Center for Software Engineering at the University of Minho, made up of a team of volunteer students, with the primary goal of representing and promoting the Software Engineering course. It is a united and dynamic group, capable of providing enriching and unique experiences, thus complementing your academic life while never forgetting to prepare you for your future professional life.",
-        "description": "We strive to organize activities with similar and complementary content to the course, as well as to promote and publicize leisure and socialization events among students and alumni. We also represent the collective interests of Software Engineering students before organizations or institutions to ensure their academic journey is more fulfilling.",
+        "subtitle": "CeSIUM is the Software Engineering Students' Center of the University of Minho, formed by volunteer students dedicated to representing and promoting the Software Engineering course. We provide unique experiences to enhance academic life while preparing students for professional careers.",
+        "description": "We organize course-related activities while promoting social events. We represent student interests to relevant institutions to enhance academic experiences.",
         "images": [
           {
             "src": "/images/about/uMinho1.webp",
@@ -182,7 +182,7 @@
           },
           {
             "src": "/images/about/workshop.webp",
-            "alt": "Class full of Software Engineering students during a workshop."
+            "alt": "Software Engineering students during a workshop."
           },
           {
             "src": "/images/about/uMinho2.webp",
@@ -190,102 +190,109 @@
           },
           {
             "src": "/images/about/sei24-25.webp",
-            "alt": "Group of CeSIUM students gathered on stage during Software Engineering Week, with the Void mascot."
+            "alt": "CeSIUM students with mascot Void during the Software Engineering Week."
           }
         ]
       }
     },
     "team": {
       "title": "Team",
-      "description": "Here we introduce you to the members of our team, from the Presidency to the directors of the various Departments, as well as the General Assembly Board and the Fiscal Council.",
+      "description": "Meet our team members - from leadership to department heads, General Assembly board, and Fiscal Council.",
       "team_selector": {
-        "default_option": "Current mandate",
-        "hint": "Select mandate"
+        "default_option": "Current term",
+        "hint": "Select term"
       }
     },
     "projects": {
       "title": "Projects",
-      "description": "From SEI - the Software Engineering Week, an annual activity that connects students to innovations and companies - to CoderDojo - which brings programming to the younger generation - CeSIUM creates and participates in various projects. Discover them here.",
+      "description": "From SEI - our annual tech week connecting students with innovations and companies - to CoderDojo introducing programming to youth, CeSIUM develops various initiatives. Explore them here.",
       "card": [
         {
-          "mobile_description": "Held annually at the Gualtar campus of the University of Minho, it combines technological innovations with industry experts for students.",
-          "desktop_description": "The Software Engineering Week is held annually at the Gualtar campus of the University of Minho, aiming to combine the latest technological innovations with the best industry experts to offer a fantastic program to our students."
+          "mobile_description": "Annual event at UMinho's Gualtar campus combining tech innovations with industry experts.",
+          "desktop_description": "The Software Engineering Week annually brings together cutting-edge technologies and industry leaders at UMinho's Gualtar campus, offering students an exceptional program."
         },
         {
-          "mobile_description": "An annual programming competition where participants have 48 hours to develop a project.",
-          "desktop_description": "The Bugsbyte Hackathon is an annual programming competition in which participants have 48 hours to work as a team and develop a technological project focused on an entrepreneurial and impactful solution."
+          "mobile_description": "Annual 48-hour programming competition for project development.",
+          "desktop_description": "Bugsbyte Hackathon is an annual programming competition where teams develop impactful tech solutions over 48 hours."
         },
         {
-          "mobile_description": "A global, volunteer-driven, non-profit movement that aims to teach children and young people aged 7 to 17 how to program.",
-          "desktop_description": "CoderDojo Braga is part of a global, volunteer-driven, non-profit movement that aims to teach children and young people aged 7 to 17 how to program. This project seeks to demonstrate how programming can be a force for positive change in the world."
+          "mobile_description": "Global volunteer movement teaching programming to 7-17 year olds.",
+          "desktop_description": "CoderDojo Braga is part of a global non-profit movement teaching programming to youth, demonstrating how coding can positively change the world."
         }
       ],
       "open": "Open",
-      "see_more": "See more"
+      "see_more": "See More"
     },
     "departments": {
       "title": "Departments",
-      "subtitle": "We operate with 5 departments that focus on the different areas of our activities as a core. Get to know them here.",
-      "description": "The departments at CeSIUM handle various aspects of the organization, from event planning and partnership management to communication and software development."
+      "subtitle": "Our operations are divided into 5 departments focused on different organizational areas. Discover them here.",
+      "description": "CeSIUM departments handle various organizational aspects including event planning, software development, content creation, partnership management, and more."
     },
     "become_a_collaborator": {
       "hero": {
-        "title": "Become a collaborator of",
-        "description": "You can be part of one or more departments, contributing to improving the operation of your student group.",
-        "button": "Register"
+        "title": "Become a Collaborator of",
+        "description": "Join CeSIUM with a simple registration. Become part of our team today.",
+        "button": "Sign Up"
       },
       "join_team": {
-        "title": "Join the team",
-        "description": "Do you want to meet new people within the course and engage in a dynamic and innovative environment while learning new and interesting concepts relevant to your professional future? What are you waiting for to join us? Get to know the team that will welcome you with open arms as a collaborator! We can't wait to have you on board!"
+        "title": "Join the Team",
+        "description": "Want to meet new people, engage in a dynamic environment, and learn skills relevant to your future career? Join us as a collaborator! Meet the team waiting to welcome you!"
       },
       "choose_department": {
-        "title": "Choose your department",
-        "description": "If you love programming, CAOS is the place for you. More into design? Join DMC. You can collaborate with the department that suits you best, or if you can't choose just one, you can take part in multiple. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you! Sign up now!"
+        "title": "Choose Your Department",
+        "description": "Love coding? Join CAOS. Interested in design? DMC needs you. You can join multiple departments. Learn more about them below or sign up now!"
       }
     },
     "become_a_member": {
       "hero": {
-        "title": "Become a member of",
-        "description": "With a membership card, you can unlock various benefits, partnerships, and discounts.",
-        "button": "Start Registration"
+        "title": "Become a Member of",
+        "description": "Unlock benefits, partnerships, and discounts with a membership card.",
+        "button": "Sign Up"
       },
       "exclusive_partnerships": {
         "title": "Exclusive Partnerships",
-        "description": "Have lunch at Sabor da Fruta and get a free coffee. Or at Café do Luís, with a drink included. Get free badges at Os Farias. Enjoy discounts on music and driving lessons. These are just some of the partnerships we have for you.",
-        "link": "View partnerships"
+        "description": "Enjoy free coffee with meals, discounts on music lessons and driving courses, special offers at local businesses, and more.",
+        "link": "View Partnerships"
       },
       "participate": {
-        "title": "Participate",
-        "description": "Participate in all our events for free and enjoy tons of other benefits."
+        "title": "Free Event Participation",
+        "description": "Your membership grants free or discounted access to karaoke nights, workshops, board game sessions, special events like Magusto and Software Engineering Night, and more."
       },
       "member_kit": {
         "title": "Member Kit",
-        "description": "Receive a starter pack of goodies, which may include a unique t-shirt, notebooks, stickers, pens, and much more. Additionally, we offer you a tote bag to carry everything with you."
+        "description": "Receive a starter pack including exclusive t-shirts, notebooks, stickers, pens, and a tote bag."
       },
       "room_acess": {
-        "title": "Room Access",
-        "description": "You can access our room and use our resources."
+        "title": "CeSIUM Room Access",
+        "description": "Access our student lounge anytime and enjoy our pantry with discounted snacks and drinks."
       },
       "represent": {
-        "title": "Represent",
-        "description": "You can represent CeSIUM in events and competitions."
+        "title": "Student Representation",
+        "description": "CeSIUM advocates for student interests with university authorities - your membership strengthens our voice."
       },
       "discounts": {
-        "title": "Discounts",
-        "description": "You can get discounts on our store and with our partners.",
-        "link": "Go to the store"
+        "title": "Merch Discounts",
+        "description": "Get 30%+ discounts on store items including apparel, stationery, and accessories.",
+        "link": "Open Store"
       },
       "advantages": {
-        "title": "Lifetime benefits",
-        "description": "The benefits of having a membership card never expire, as the registration fee is lifelong - you pay once, and you're a member forever. These are the benefits that membership has to offer:"
-      }
+        "title": "Lifetime Benefits",
+        "description": "Membership benefits never expire - your one-time registration fee grants lifetime access. These are the permanent advantages we provide as part of your CeSIUM membership:"
+      },
+      "details": [
+        "Membership requires a one-time fee of €10. Benefits never expire and have no general limitations unless specific benefits inherently include such conditions. Payment can only be made in cash, in person at the CeSIUM office.",
+        "As a member, you'll always maintain access to all partnerships we offer. However, partnership terms may change or partnerships may be discontinued.",
+        "The member kit includes an assortment of items that may vary between kits, based on random selection criteria and gift availability.",
+        "During certain occasions within opening hours, the CeSIUM room may be closed for internal activities (e.g., meetings or events)."
+      ]
     },
     "explore": {
-      "title": "Explore further",
+      "title": "Explore More",
       "items": [
         {
+          "id": "events",
           "title": "Events",
-          "description": "Curious about the dates of our events? We have a page for that. For more course dates, we have the Calendarium.",
+          "description": "Curious about our event dates? Visit our events page or check Calendarium for academic dates.",
           "links": [
             {
               "title": "Events",
@@ -300,22 +307,24 @@
           ]
         },
         {
-          "title": "Shop",
-          "description": "T-shirts, accessories and materials from CeSIUM and our projects - everything is available in our online store.",
+          "id": "shop",
+          "title": "Store",
+          "description": "Find CeSIUM merchandise - hoodies, accessories, and materials from our projects.",
           "links": [
             {
-              "title": "Open Shop",
+              "title": "Open Store",
               "href": "https://store.cesium.pt",
               "arrow": "outward"
             }
           ]
         },
         {
-          "title": "Become a member",
-          "description": "CeSIUM members are entitled to a number of benefits. Discover them now and the partnerships they entitle you to.",
+          "id": "become_a_member",
+          "title": "Become a Member",
+          "description": "Discover member benefits and exclusive partnerships.",
           "links": [
             {
-              "title": "Become a member",
+              "title": "Become Member",
               "href": "/about/become-a-member",
               "arrow": "forward"
             },
@@ -327,11 +336,12 @@
           ]
         },
         {
-          "title": "Become a collaborator",
-          "description": "If you'd like to be part of the team, we'd love to welcome you. Find out more about how you can become a collaborator.",
+          "id": "become_a_collaborator",
+          "title": "Become a Collaborator",
+          "description": "Want to join our team? Learn how to become a collaborator.",
           "links": [
             {
-              "title": "Become a collaborator",
+              "title": "Become Collaborator",
               "href": "/about/become-a-collaborator",
               "arrow": "forward",
               "color": "blue"
@@ -339,22 +349,22 @@
           ],
           "become_collaborator": {
             "team": {
-              "title": "Join the team",
-              "subtitle": "Do you want to meet new people within the course and immerse yourself in a dynamic and innovative environment while learning new and interesting concepts relevant to your professional future? What are you waiting for to join us? Get to know the team that will welcome you with open arms as a collaborator! We can't wait to have you on board!",
+              "title": "Join the Team",
+              "subtitle": "Want to meet new people in a dynamic environment while learning career-relevant skills? Meet the team waiting to welcome you!",
               "href": "about/team",
               "color": "blue"
             },
             "choose_department": {
-              "title": "Choose your department",
-              "subtitle": "If you enjoy programming, CAOS will be your thing. Interested in design? Join DMC. You can join the department you identify with the most, and if you can't decide, you can even join several. If you don't know our departments yet, click the button below to learn more. Otherwise, we're waiting for you!",
+              "title": "Choose Your Department",
+              "subtitle": "Join the department that matches your interests - coding (CAOS), marketing(DMC), or multiple departments. Learn more below or sign up now!",
               "href": "about/departments",
               "color": "blue"
             },
             "join": {
-              "title": "We are waiting for you",
-              "subtitle": "Being a collaborator at CeSIUM is more than just working - it's about learning new things, meeting amazing people, and being part of experiences. If it sounds good to you, apply now.",
-              "first_button_name": "Start registration",
-              "second_button_name": "Talk with us"
+              "title": "We're Waiting",
+              "subtitle": "Being a CeSIUM collaborator means learning, networking, and unique experiences. Start your application today.",
+              "first_button_name": "Start Application",
+              "second_button_name": "Contact Us"
             }
           }
         }
@@ -363,17 +373,17 @@
   },
   "events": {
     "title": "Events",
-    "warning": "Check other months to see more events. This page only includes CeSIUM events. For more events, such as tests or deadlines, visit the [Calendarium](https://calendario.cesium.pt). To stay updated, follow our [Instagram](https://instagram.com/cesiuminho).",
+    "warning": "Browse multiple months for more events. This page only shows CeSIUM events. For academic dates, visit [Calendarium](https://calendario.cesium.pt). Follow our [Instagram](https://instagram.com/cesiuminho) for updates.",
     "warningTitle": "More Events",
     "weekDays": "Sun, Mon, Tue, Wed, Thu, Fri, Sat",
     "showLess": "Show Less",
     "showMore": "Show More",
     "futureEvents": "Upcoming",
     "pastEvents": "Past",
-    "noEvents": "There are no events to display.",
+    "noEvents": "No events to display.",
     "loading": "Loading events..."
   },
-  "social_media": "Social media",
+  "social_media": "Social Media",
   "socials": [
     {
       "name": "Facebook",
@@ -409,7 +419,7 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["About Us", "Team", "Departments"],
+      "items": ["About", "Team", "Departments"],
       "links": ["/about", "/team", "/departments"]
     },
     {
@@ -419,23 +429,23 @@
     },
     {
       "title": "Students",
-      "items": ["Become a Member", "Become a Collaborator"],
+      "items": ["Become Member", "Become Collaborator"],
       "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Useful Links",
-      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student's Portal"],
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student Portal"],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
         "https://elearning.uminho.pt",
-        "https://alunos.uminho.pt/EN"
+        "https://alunos.uminho.pt/PT"
       ]
     }
   ],
   "partners": {
-    "title": "Partners",
-    "description": "One of the advantages of being a member of CeSIUM is our incredible partnerships. Discover all the oportunities our partners have for you.",
+    "title": "Partnerships",
+    "description": "CeSIUM members enjoy exclusive partnership benefits. Discover all available offers and discounts.",
     "list": [
       {
         "title": "100 Montaditos",
@@ -444,7 +454,7 @@
         "color": "#eecc67",
         "perks": [
           {
-            "description": "**10% discount** on purchases over 7€, except on Wednesdays and Sundays.",
+            "description": "**10% discount** on purchases over €7 (excludes Wednesdays and Sundays).",
             "icon": "Percent"
           }
         ]
@@ -456,7 +466,7 @@
         "color": "#925b2a",
         "perks": [
           {
-            "description": "**10%** Discount.",
+            "description": "**10% discount** on all purchases.",
             "icon": "Percent"
           }
         ]
@@ -468,7 +478,7 @@
         "color": "#9a301f",
         "perks": [
           {
-            "description": "**0.50€ discount** on all prepared menus.",
+            "description": "**€0.50 off** all prepared menus.",
             "icon": "Euro"
           }
         ]
@@ -480,7 +490,7 @@
         "color": "#843dc2",
         "perks": [
           {
-            "description": "**Free drink** with Special Hamburger, American Toast, Salmon Toast, and Special Hot Dog menus.\n\n**Fanta, Nestea, Water, Sprite, Ginger ale**",
+            "description": "**Free drink** with Special Burger, American Toast, Salmon Toast, or Special Hot Dog menus.\n\n**Fanta, Nestea, Water, Sprite, Ginger ale**",
             "icon": "Water_Full"
           }
         ]
@@ -492,7 +502,7 @@
         "color": "#134046",
         "perks": [
           {
-            "description": "**10% discount** on board games and no minimum consumption.",
+            "description": "**10% discount** on board games with no minimum purchase required.",
             "icon": "Percent"
           }
         ]
@@ -504,7 +514,7 @@
         "color": "#BBB24A",
         "perks": [
           {
-            "description": "**40€ discount** on Category B driving license.",
+            "description": "**€40 off** Category B driving license.",
             "icon": "Euro"
           }
         ]
@@ -516,15 +526,15 @@
         "color": "#d1a75b",
         "perks": [
           {
-            "description": "When purchasing 8 pins, the **pin with the lowest value** is free.",
+            "description": "Buy 8 pins, get **lowest-priced pin free**.",
             "icon": "Sell"
           },
           {
-            "description": "**20% discount** on course pins.",
+            "description": "**20% off** course pins.",
             "icon": "Percent"
           },
           {
-            "description": "**Free shipping** on purchases over 12.50€.",
+            "description": "**Free shipping** on orders over €12.50.",
             "icon": "Euro"
           }
         ]
@@ -536,31 +546,31 @@
         "color": "#e56b7f",
         "perks": [
           {
-            "description": "**5€ discount** on all activities (music, dance, martial arts, theater, etc).",
+            "description": "**€5 off** all activities (music, dance, martial arts, theater).",
             "icon": "Euro"
           }
         ]
       },
       {
         "title": "Os Farias",
-        "url": "https://www.facebook.com/os.farias.3",
+        "url": "https://www.facebook.com/profile.php?id=100054540065635",
         "logo": "/images/partners/osfarias.webp",
         "color": "#7DA279",
         "perks": [
           {
-            "description": "When purchasing the academic attire, **get 3 additional badges** (in addition to the usual 4).",
+            "description": "**3 extra emblems** free with academic attire purchase.",
             "icon": "License"
           },
           {
-            "description": "When purchasing 4 badges, **get 1 free**.",
+            "description": "Buy 4 emblems, **get 1 free**.",
             "icon": "License"
           },
           {
-            "description": "Price of men's socks: **2.75€**.",
+            "description": "Men's socks: **€2.75**.",
             "icon": "Euro"
           },
           {
-            "description": "Price of women's socks: **1.50€**.",
+            "description": "Women's socks: **€1.50**.",
             "icon": "Euro"
           }
         ]
@@ -572,15 +582,15 @@
         "color": "#598EBA",
         "perks": [
           {
-            "description": "Meal and tea for **4.50€**.",
+            "description": "Meal + tea for **€4.50**.",
             "icon": "Sell"
           },
           {
-            "description": "Dessert for **1.40€**.",
+            "description": "Dessert at **€1.40**.",
             "icon": "Sell"
           },
           {
-            "description": "Coffee for **0.60€**.",
+            "description": "Coffee for **€0.60**.",
             "icon": "Sell"
           }
         ]
@@ -592,19 +602,19 @@
         "color": "#89573E",
         "perks": [
           {
-            "description": "**0.40€ discount** on the student menu and pizzas.",
+            "description": "**€0.40 off** student menus and pizzas.",
             "icon": "Euro"
           }
         ]
       },
       {
         "title": "Sabor da fruta",
-        "url": "https://www.facebook.com/Sabor-da-Fruta-193004494058283/",
+        "url": "https://www.facebook.com/profile.php?id=100078212413074",
         "logo": "/images/partners/sabordafruta.webp",
         "color": "#68b54a",
         "perks": [
           {
-            "description": "**Free coffee** with the purchase of a menu.",
+            "description": "**Free coffee** with any menu purchase.",
             "icon": "Coffee"
           }
         ]
@@ -613,20 +623,20 @@
   },
   "callsub": {
     "members": {
-      "title": "Sounds good?",
-      "desc": "You can sign up as a CeSIUM member online in a minute. Click the button below to get started or talk to us if you have any questions."
+      "title": "Sound good?",
+      "desc": "Become a CeSIUM member online in one minute. Click below to start, or contact us with questions."
     },
     "collaborators": {
-      "title": "We're waiting for you",
-      "desc": "Being a CeSIUM collaborator is more than just working – it's about learning new things, meeting incredible people, and being part of unique experiences. If that sounds good to you, apply now."
+      "title": "We're Waiting",
+      "desc": "Being a CeSIUM collaborator means learning, networking, and unique experiences. Apply now."
     },
-    "button": "Start Registration",
-    "footer": "Talk to us"
+    "button": "Start Application",
+    "footer": "Contact us"
   },
   "not_found": {
     "title": "Oops...",
-    "description": "We couldn't find the page you're looking for. It may have been deleted or moved elsewhere. We invite you to visit the homepage to explore the many pages we have that don’t return a 404 error.",
-    "go_to_start": "Go to the start",
-    "contact_us": "Contact us"
+    "description": "We couldn't find the page you're looking for. It may have been moved or deleted. Visit our homepage to explore other content.",
+    "go_to_start": "Go to Homepage",
+    "contact_us": "Contact Us"
   }
 }
