@@ -19,7 +19,7 @@ interface CollaboratorLayoutProps {
   overflows?: boolean;
   dark?: boolean;
   children?: React.ReactNode;
-  linkColor?: "blue" | "primary";
+  linkColor?: "signature-blue" | "primary";
 }
 
 const CollaboratorLayout = ({

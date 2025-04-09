@@ -16,7 +16,7 @@ interface CardProps {
 }
 
 const getColor = (type: CardType) => {
-  return type === CardType.Collaborate ? "blue" : "primary";
+  return type === CardType.Collaborate ? "signature-blue" : "primary";
 };
 
 const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
@@ -25,7 +25,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
 
   return (
     <div
-      className={`relative flex h-full min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color}`}
+      className={`relative flex h-full min-h-60 w-full flex-col items-center justify-between gap-4 overflow-hidden rounded-2xl p-6 text-white ${!mobileOnlyLayout ? "min-[950px]:min-h-0 min-[950px]:flex-row min-[950px]:p-8" : ""} bg-${color} selection:bg-white/30`}
     >
       {/* Card image */}
       <div
@@ -66,7 +66,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
           title={dict.button.learn_more}
           style="style1"
           as="link"
-          color={type == CardType.Collaborate ? "blue" : "primary"}
+          color={type == CardType.Collaborate ? "signature-blue" : "primary"}
           href={
             type == CardType.Collaborate
               ? "/about/become-a-collaborator"

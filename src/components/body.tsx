@@ -17,7 +17,7 @@ export default function Body({
 }) {
   return (
     <body
-      className={`${fonts.map((f) => f.variable).join(" ")} overflow-x-hidden overflow-y-scroll bg-foundation font-sans text-black antialiased`}
+      className={`${fonts.map((f) => f.variable).join(" ")} overflow-x-hidden overflow-y-scroll bg-foundation font-sans text-black antialiased selection:bg-primary selection:text-white`}
     >
       <ScrollStateProvider>
         <DictionaryProvider lang={lang}>{children}</DictionaryProvider>

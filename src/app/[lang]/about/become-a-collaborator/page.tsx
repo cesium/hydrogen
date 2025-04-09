@@ -83,7 +83,8 @@ export default function BecomeACollaborator() {
 
   return (
     <main>
-      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-blue text-white lg:grid-flow-col lg:items-start">
+      {/* Hero */}
+      <section className="relative grid min-h-[380px] grid-flow-row items-start bg-signature-blue text-white selection:bg-white/30 lg:grid-flow-col lg:items-start">
         <div className="max-w-1/2 layout-p-y flex flex-col gap-8 px-5 sm:pr-0 md:px-16 lg:pl-28 2xl:pl-60">
           <div>
             <h1 className="text-gradient font-title text-4xl font-medium text-white/50 lg:text-5xl">
@@ -97,7 +98,7 @@ export default function BecomeACollaborator() {
           <Button
             title={dict.about.become_a_collaborator.hero.button}
             style="style1"
-            color="blue"
+            color="signature-blue"
             as="link"
             href="https://cesium.link/f/recrutamento"
             umamiEvent="comecar-inscricao-colaborador"
@@ -122,117 +123,125 @@ export default function BecomeACollaborator() {
           />
         </div>
       </section>
-      <CollaboratorLayout
-        title={dict.about.become_a_collaborator.join_team.title}
-        subtitle={dict.about.become_a_collaborator.join_team.description}
-        linkName="go_to_team"
-        href="/team"
-        overflows
-        linkColor="blue"
-      >
-        <div className="pointer-events-none flex w-full select-none justify-evenly gap-5">
-          {teamData.map((team, index) =>
-            index == 0
-              ? members.map((member) => (
-                  <Avatar
-                    key={member.name}
-                    src={member.imageUrl}
-                    className="rounded-full font-normal"
-                    imageClassName="size-20 rounded-full"
-                    style="style2"
-                  />
-                ))
-              : team?.members?.map((member, memberIndex) => (
-                  <Avatar
-                    key={member.name}
-                    src={
-                      imageUrls[index]?.[0]?.[memberIndex] ?? "/images/none.png"
-                    }
-                    className="rounded-full font-normal"
-                    imageClassName="size-20 rounded-full"
-                    style="style2"
-                  />
-                )),
-          )}
-        </div>
-      </CollaboratorLayout>
-      <AboutSection stretch>
-        <div className="flex w-full flex-col items-stretch gap-4 bg-white pt-10 sm:pt-12">
-          {/* Title */}
-          <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
-            <div className="layout-p-x flex h-fit flex-1 items-center justify-start">
-              <span className="w-fit origin-right select-none font-title text-2xl font-medium sm:text-3xl">
-                {dict.about.become_a_collaborator.choose_department.title}
-              </span>
-            </div>
+      <div className="selection:bg-signature-blue">
+        <CollaboratorLayout
+          title={dict.about.become_a_collaborator.join_team.title}
+          subtitle={dict.about.become_a_collaborator.join_team.description}
+          linkName="go_to_team"
+          href="/team"
+          overflows
+          linkColor="signature-blue"
+        >
+          <div className="pointer-events-none flex w-full select-none justify-evenly gap-5">
+            {teamData.map((team, index) =>
+              index == 0
+                ? members.map((member) => (
+                    <Avatar
+                      key={member.name}
+                      src={member.imageUrl}
+                      className="rounded-full font-normal"
+                      imageClassName="size-20 rounded-full"
+                      style="style2"
+                    />
+                  ))
+                : team?.members?.map((member, memberIndex) => (
+                    <Avatar
+                      key={member.name}
+                      src={
+                        imageUrls[index]?.[0]?.[memberIndex] ??
+                        "/images/none.png"
+                      }
+                      className="rounded-full font-normal"
+                      imageClassName="size-20 rounded-full"
+                      style="style2"
+                    />
+                  )),
+            )}
           </div>
-          {/* Subtitle */}
-          <div className="px-6 sm:px-0">
-            <div className="layout-p-x text-justify">
-              <span>
-                {dict.about.become_a_collaborator.choose_department.description}
-              </span>
-              <div className="mt-4 block sm:block">
-                <AppLink
-                  title={dict.button.go_to_departments}
-                  href="/departments"
-                  color="blue"
-                />
+        </CollaboratorLayout>
+        <AboutSection stretch>
+          <div className="flex w-full flex-col items-stretch gap-4 bg-white pt-10 sm:pt-12">
+            {/* Title */}
+            <div className="flex items-center gap-4 px-6 sm:mr-6 sm:px-0">
+              <div className="layout-p-x flex h-fit flex-1 items-center justify-start">
+                <span className="w-fit origin-right select-none font-title text-2xl font-medium sm:text-3xl">
+                  {dict.about.become_a_collaborator.choose_department.title}
+                </span>
               </div>
             </div>
-          </div>
-          {/* Content (Scrollable) */}
-          <div className="relative hidden xl:block">
-            <div className="mt-7 w-full sm:mt-10">
-              <div className="no-scrollbar mb-8 flex h-[302px] w-full overflow-y-hidden overflow-x-scroll px-10">
-                <DepartmentsList
-                  hideTeam
-                  hideShortName
-                  className="flex w-fit gap-3"
-                />
+            {/* Subtitle */}
+            <div className="px-6 sm:px-0">
+              <div className="layout-p-x text-justify">
+                <span>
+                  {
+                    dict.about.become_a_collaborator.choose_department
+                      .description
+                  }
+                </span>
+                <div className="mt-4 block sm:block">
+                  <AppLink
+                    title={dict.button.go_to_departments}
+                    href="/departments"
+                    color="signature-blue"
+                  />
+                </div>
               </div>
+            </div>
+            {/* Content (Scrollable) */}
+            <div className="relative hidden xl:block">
+              <div className="mt-7 w-full sm:mt-10">
+                <div className="no-scrollbar mb-8 flex h-[302px] w-full select-none overflow-y-hidden overflow-x-scroll px-10">
+                  <DepartmentsList
+                    hideTeam
+                    hideShortName
+                    className="flex w-fit gap-3"
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,_var(--tw-gradient-stops))] from-transparent from-40% via-white/80 via-80% to-white to-100%"></div>
+              </div>
+            </div>
+            {/* Mobile Carousel */}
+            <div className="relative mt-4 h-72 overflow-hidden xl:hidden">
+              <Carousel
+                pagination
+                overflow
+                loop
+                items={departmentNames.map((departmentName, index) => (
+                  <div
+                    key={index}
+                    className="pointer-events-none flex h-[350px] select-none"
+                  >
+                    <DepartmentCard
+                      key={departmentName}
+                      name={departmentName}
+                      shortName={shortName(departmentName)}
+                      gradientFrom={
+                        gradient(shortName(departmentName))[0] ?? ""
+                      }
+                      gradientTo={gradient(shortName(departmentName))[1] ?? ""}
+                      hideTeam
+                      hideShortName
+                      teamData={teamData}
+                      yearRange={yearRange}
+                      shortDescription
+                    />
+                  </div>
+                ))}
+              />
               <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,_var(--tw-gradient-stops))] from-transparent from-40% via-white/80 via-80% to-white to-100%"></div>
             </div>
           </div>
-          {/* Mobile Carousel */}
-          <div className="relative mt-4 h-72 overflow-hidden xl:hidden">
-            <Carousel
-              pagination
-              overflow
-              loop
-              items={departmentNames.map((departmentName, index) => (
-                <div
-                  key={index}
-                  className="pointer-events-none flex h-[350px] select-none"
-                >
-                  <DepartmentCard
-                    key={departmentName}
-                    name={departmentName}
-                    shortName={shortName(departmentName)}
-                    gradientFrom={gradient(shortName(departmentName))[0] ?? ""}
-                    gradientTo={gradient(shortName(departmentName))[1] ?? ""}
-                    hideTeam
-                    hideShortName
-                    teamData={teamData}
-                    yearRange={yearRange}
-                    shortDescription
-                  />
-                </div>
-              ))}
-            />
-            <div className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,_var(--tw-gradient-stops))] from-transparent from-40% via-white/80 via-80% to-white to-100%"></div>
-          </div>
+        </AboutSection>
+        <div className="layout-p-x my-12">
+          <CallSubscribe
+            title={dict.callsub.collaborators.title}
+            description={dict.callsub.collaborators.desc}
+            buttonText={dict.callsub.button}
+            buttonURL="https://cesium.link/f/recrutamento"
+            buttonColor="signature-blue"
+            footerText={dict.callsub.footer}
+          />
         </div>
-      </AboutSection>
-      <div className="layout-p-x my-12">
-        <CallSubscribe
-          title={dict.callsub.collaborators.title}
-          description={dict.callsub.collaborators.desc}
-          buttonText={dict.callsub.button}
-          buttonURL="https://cesium.link/f/recrutamento"
-          buttonColor="blue"
-          footerText={dict.callsub.footer}
-        />
       </div>
     </main>
   );

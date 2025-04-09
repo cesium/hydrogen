@@ -304,7 +304,7 @@ export default function About() {
                       <AppLink
                         title={link.title}
                         href={link.href}
-                        color={linkColor as "primary" | "blue"}
+                        color={linkColor}
                       />
                     </div>
                   );

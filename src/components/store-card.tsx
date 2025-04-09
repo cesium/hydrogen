@@ -85,7 +85,7 @@ const StoreCard = () => {
 
   return (
     <InfoCard>
-      <div className="flex flex-col bg-black sm:flex-row sm:justify-between sm:gap-2">
+      <div className="flex flex-col bg-black selection:bg-white/30 sm:flex-row sm:justify-between sm:gap-2">
         <div className="flex w-full flex-col gap-2 px-6 py-9 pb-3 text-white sm:w-3/6 sm:px-9 sm:py-11">
           <h4 className="font-title text-2xl font-medium">
             {dict.store_card.title}

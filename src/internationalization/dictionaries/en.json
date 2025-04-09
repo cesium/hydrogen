@@ -344,7 +344,7 @@
               "title": "Become Collaborator",
               "href": "/about/become-a-collaborator",
               "arrow": "forward",
-              "color": "blue"
+              "color": "signature-blue"
             }
           ],
           "become_collaborator": {
@@ -352,13 +352,13 @@
               "title": "Join the Team",
               "subtitle": "Want to meet new people in a dynamic environment while learning career-relevant skills? Meet the team waiting to welcome you!",
               "href": "about/team",
-              "color": "blue"
+              "color": "signature-blue"
             },
             "choose_department": {
               "title": "Choose Your Department",
               "subtitle": "Join the department that matches your interests - coding (CAOS), marketing(DMC), or multiple departments. Learn more below or sign up now!",
               "href": "about/departments",
-              "color": "blue"
+              "color": "signature-blue"
             },
             "join": {
               "title": "We're Waiting",

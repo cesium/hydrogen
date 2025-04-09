@@ -14,7 +14,7 @@ const AppLink = ({ title, href, back, color = "primary" }: LinkProps) => {
   const hrefDefault = href ?? "/";
   const hrefLang = `/${lang}${href}`;
   const router = useRouter();
-  const isCustomColor = !["blue", "primary", "black"].includes(color);
+  const isCustomColor = !["signature-blue", "primary", "black"].includes(color);
   const isLocalLink =
     href &&
     !(
