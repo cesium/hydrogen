@@ -36,7 +36,7 @@ const Button = ({
     );
 
   const baseStyle =
-    "py-3 text-base font-normal transition-transform hover:scale-105 active:scale-95 transition-transform ease-in-out duration-300";
+    "py-3 text-base font-normal transition-transform hover:scale-105 active:scale-95 transition-transform ease-in-out duration-300 select-none";
   const styleVariant = {
     style1: `rounded-full bg-white px-5 w-fit ${!isCustomColor ? `text-${color}` : ""}`,
     style2: `rounded-xl font-semibold px-12 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
