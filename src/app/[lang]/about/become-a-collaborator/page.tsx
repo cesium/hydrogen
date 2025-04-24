@@ -35,7 +35,7 @@ export default function BecomeACollaborator() {
   const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
 
-  const yearRange = "2024-2025";
+  const yearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "";
 
   useEffect(() => {
     const aux = async () => {

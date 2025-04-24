@@ -20,7 +20,9 @@ import PromotionalCard from "@/components/promotional-card";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
-  const [currentYear, setCurrentYear] = useState<string>("2024-2025");
+  const [currentYear, setCurrentYear] = useState<string>(
+    process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "",
+  );
   const [team, setTeam] = useState<TeamData>([]);
   const [disclosureStates, setDisclosureStates] = useState<boolean[]>([]);
   const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
@@ -66,7 +68,7 @@ export default function Team() {
           </h1>
           <ListBox
             options={yearRanges}
-            defaultOption="2024-2025"
+            defaultOption={process.env.NEXT_PUBLIC_CURRENT_MANDATE}
             defaultOptionText={dict.about.team.team_selector.default_option}
             hint={dict.about.team.team_selector.hint}
             currentOption={currentYear}

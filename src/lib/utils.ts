@@ -11,7 +11,9 @@ const generateYearRanges = (startYear: number, endYear: number): string[] => {
 
 const fetchTeamData = async (currentYear: string): Promise<TeamData> => {
   try {
-    const response = await fetch(`/data/teams/${currentYear}/teams.json`);
+    const response = await fetch(
+      `https://assets.hydrogen.cesium.pt/data/teams/${currentYear}/teams.json`,
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

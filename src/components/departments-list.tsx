@@ -58,7 +58,7 @@ const DepartmentsList = ({
   hideShortName,
   className,
 }: DepartmentsListProps) => {
-  const currentYearRange = "2024-2025";
+  const currentYearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "";
   const [teamData, setTeamData] = useState<TeamData>([]);
 
   useEffect(() => {

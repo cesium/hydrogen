@@ -41,7 +41,7 @@ export default function About() {
 
   const { isScrolledTop } = useScrollState();
 
-  const yearRange = "2024-2025";
+  const yearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "";
 
   const heroItems = [
     <div
