@@ -48,11 +48,11 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
       <div
         className={`left-2 right-0 top-8 z-10 mt-0 w-full flex-grow text-start ${!mobileOnlyLayout ? "min-[950px]:ml-48 min-[950px]:flex-grow min-[950px]:text-left" : ""}`}
       >
-        <h4 className="mb-2 font-title text-2xl font-medium text-white">
+        <h1 className="mb-2 font-title text-2xl font-medium text-white">
           {type == CardType.Collaborate
             ? dict.collaborate_card.title
             : dict.member_card.title}
-        </h4>
+        </h1>
         <p className="text-justify font-sans text-base text-white">
           {type == CardType.Collaborate
             ? dict.collaborate_card.text
