@@ -215,7 +215,7 @@ export default function About() {
                     key={member.name}
                     src={
                       imageUrls[index]?.[0]?.[memberIndex] ??
-                      "/images/team/none.png"
+                      "/images/team/none.webp"
                     }
                     name={member.name}
                     role={`${departmentShortName(team?.name)} • ${member.role}`}

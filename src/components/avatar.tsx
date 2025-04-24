@@ -24,14 +24,14 @@ const Avatar = ({
       className={`flex flex-shrink-0 items-center gap-4 ${style == "style2" ? "flex-col text-center" : "md:flex-col md:text-center"} ${className ? " " + className : ""}`}
     >
       <Image
-        src={src ?? "/images/team/none.png"}
+        src={src ?? "/images/team/none.webp"}
         alt={`${name}'s Profile picture`}
         width={400}
         height={400}
         className={imageClassName ?? "size-16 rounded-full md:size-32"}
         loading="lazy"
         placeholder="blur"
-        blurDataURL="/images/team/none.png"
+        blurDataURL="/images/team/none.webp"
         unoptimized
       />
       {name && role && (
