@@ -59,7 +59,7 @@ const PartnerCard = ({
             width={96}
             height={96}
             src={logo}
-            alt={title}
+            alt={title + " logo"}
             className="size-full rounded-lg object-contain"
           />
         </figure>
