@@ -149,7 +149,7 @@ export default function BecomeACollaborator() {
                       key={member.name}
                       src={
                         imageUrls[index]?.[0]?.[memberIndex] ??
-                        "/images/none.png"
+                        "/images/none.webp"
                       }
                       className="rounded-full font-normal"
                       imageClassName="size-20 rounded-full"
