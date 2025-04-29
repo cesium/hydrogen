@@ -1,15 +1,10 @@
 "use client";
 
 import Avatar from "@/components/avatar";
-import {
-  departmentShortName,
-  fetchTeamData,
-  generateUrlsForTeams,
-  getDepartmentMembersInfo,
-} from "@/lib/utils";
+import { departmentShortName } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import type { MemberInfo, TeamData } from "@/lib/types";
+import type { Member } from "@/lib/types";
 import DepartmentsList, {
   departmentNames,
   gradient,
@@ -23,46 +18,27 @@ import AboutSection from "@/components/about-section";
 import AppLink from "@/components/link";
 import Carousel from "@/components/carousel";
 import DepartmentCard from "@/components/department-card";
+import { useTeamData, useTeamDataUtils } from "@/contexts/team-data-provider";
 
-interface MemberDep extends MemberInfo {
+interface MemberDep extends Member {
   department: string;
 }
 
 export default function BecomeACollaborator() {
   const dict = useDictionary();
-
-  const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
-  const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
-
-  const yearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "";
+  const teamData = useTeamData();
+  const { getDepartmentByName } = useTeamDataUtils();
 
   useEffect(() => {
     const aux = async () => {
-      const departmentNames = [
-        "Presidência",
-        "Centro de Apoio ao Open Source",
-        "Departamento de Marketing e Conteúdo",
-        "Departamento de Relações Externas e Merch",
-        "Departamento Pedagógico",
-        "Departamento Recreativo",
-        "Vogais",
-      ];
-
-      const team: TeamData = await fetchTeamData(yearRange);
-      setTeamData(team);
-
-      const urls = generateUrlsForTeams(team, yearRange);
-      setImageUrls(urls);
+      const teamNames = ["Presidência", ...departmentNames, "Vogais"];
 
       const membersData: MemberDep[] = [];
 
-      departmentNames.forEach((departmentName, index) => {
-        const departmentData = getDepartmentMembersInfo(
-          team,
-          yearRange,
-          departmentName,
-        );
+      teamNames.forEach((departmentName, index) => {
+        const departmentData =
+          getDepartmentByName(departmentName)?.members ?? [];
 
         const depShortName =
           index != 0 && index != 6
@@ -79,7 +55,7 @@ export default function BecomeACollaborator() {
       setMembers(membersData);
     };
     void aux();
-  }, [yearRange]);
+  }, [teamData, getDepartmentByName]);
 
   return (
     <main>
@@ -138,19 +114,16 @@ export default function BecomeACollaborator() {
                 ? members.map((member) => (
                     <Avatar
                       key={member.name}
-                      src={member.imageUrl}
+                      src={member.imageUrl ?? "/images/team/none.webp"}
                       className="rounded-full font-normal"
                       imageClassName="size-20 rounded-full"
                       style="style2"
                     />
                   ))
-                : team?.members?.map((member, memberIndex) => (
+                : team?.members?.map((member) => (
                     <Avatar
                       key={member.name}
-                      src={
-                        imageUrls[index]?.[0]?.[memberIndex] ??
-                        "/images/none.png"
-                      }
+                      src={member.imageUrl ?? "/images/team/none.webp"}
                       className="rounded-full font-normal"
                       imageClassName="size-20 rounded-full"
                       style="style2"
@@ -221,8 +194,6 @@ export default function BecomeACollaborator() {
                       gradientTo={gradient(shortName(departmentName))[1] ?? ""}
                       hideTeam
                       hideShortName
-                      teamData={teamData}
-                      yearRange={yearRange}
                       shortDescription
                     />
                   </div>

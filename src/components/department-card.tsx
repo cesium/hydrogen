@@ -1,12 +1,10 @@
 "use client";
 
 import { useDictionary } from "@/contexts/dictionary-provider";
-import type { MemberInfo, TeamData } from "@/lib/types";
-import { useEffect, useState } from "react";
-import { getDepartmentMembersInfo } from "@/lib/utils";
 import Avatar from "./avatar";
 import Markdown from "markdown-to-jsx";
 import AppLink from "./link";
+import { useTeamDataUtils } from "@/contexts/team-data-provider";
 
 interface DepartmentCardProps {
   name: string;
@@ -15,8 +13,6 @@ interface DepartmentCardProps {
   gradientTo: string;
   hideTeam?: boolean;
   hideShortName?: boolean;
-  teamData: TeamData;
-  yearRange: string;
   shortDescription?: boolean;
 }
 
@@ -27,18 +23,10 @@ const DepartmentCard = ({
   gradientTo,
   hideTeam,
   hideShortName,
-  teamData,
-  yearRange,
   shortDescription,
 }: DepartmentCardProps) => {
   const dict = useDictionary();
-
-  const [members, setMembers] = useState<MemberInfo[]>([]);
-
-  useEffect(() => {
-    const membersData = getDepartmentMembersInfo(teamData, yearRange, name);
-    setMembers(membersData);
-  }, [teamData, yearRange, name]);
+  const members = useTeamDataUtils().getDepartmentByName(name)?.members ?? [];
 
   return (
     <div className="relative grid w-full overflow-hidden rounded-2xl md:rounded-3xl">
@@ -81,7 +69,7 @@ const DepartmentCard = ({
               <div className="flex -space-x-4 min-[400px]:-space-x-3 sm:-space-x-2">
                 {members.map((m, _) => (
                   <Avatar
-                    src={m.imageUrl}
+                    src={m.imageUrl ?? "/images/team/none.webp"}
                     className="rounded-full border-2 border-muted/50"
                     imageClassName="size-9 rounded-full"
                     key={m.name}

@@ -1,9 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import DepartmentCard from "./department-card";
-import type { TeamData } from "@/lib/types";
-import { fetchTeamData } from "@/lib/utils";
 
 export const departmentNames = [
   "Centro de Apoio ao Open Source",
@@ -58,17 +53,6 @@ const DepartmentsList = ({
   hideShortName,
   className,
 }: DepartmentsListProps) => {
-  const currentYearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "";
-  const [teamData, setTeamData] = useState<TeamData>([]);
-
-  useEffect(() => {
-    const aux = async () => {
-      const data: TeamData = await fetchTeamData(currentYearRange);
-      setTeamData(data);
-    };
-    void aux();
-  }, [currentYearRange]);
-
   return (
     <div
       className={className}
@@ -83,8 +67,6 @@ const DepartmentsList = ({
           gradientTo={gradient(shortName(departmentName))[1] ?? ""}
           hideTeam={hideTeam}
           hideShortName={hideShortName}
-          teamData={teamData}
-          yearRange={currentYearRange}
         ></DepartmentCard>
       ))}
     </div>

@@ -6,6 +6,7 @@ export enum CardType {
 export interface Member {
   name: string;
   role: string;
+  imageUrl?: string;
 }
 
 export interface Department {
@@ -20,10 +21,6 @@ export interface Team {
 }
 
 export type TeamData = Team[];
-
-export interface MemberInfo extends Member {
-  imageUrl: string;
-}
 
 export interface ProductImage {
   thumb: string;

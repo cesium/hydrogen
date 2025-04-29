@@ -3,31 +3,25 @@
 import AboutSection from "@/components/about-section";
 import Carousel from "@/components/carousel";
 import { useDictionary } from "@/contexts/dictionary-provider";
-import DepartmentsList from "@/components/departments-list";
-import {
+import DepartmentsList, {
+  departmentNames,
   gradient,
   shortName,
-  departmentNames,
 } from "@/components/departments-list";
 import DepartmentCard from "@/components/department-card";
 import AboutSectionLayout from "@/components/about-section-layout";
 import AppLink from "@/components/link";
 import ProjectCard from "@/components/project-card";
 import Avatar from "@/components/avatar";
-import type { MemberInfo, TeamData } from "@/lib/types";
+import type { Member } from "@/lib/types";
 import { useEffect, useState } from "react";
-import {
-  departmentShortName,
-  getDepartmentMembersInfo,
-  generateUrlsForTeams,
-} from "@/lib/utils";
-import { fetchTeamData } from "@/lib/utils";
-
+import { departmentShortName } from "@/lib/utils";
 import Image from "next/image";
 import { scrollTo, useScrollState } from "@/contexts/scrollstate-provider";
 import Markdown from "markdown-to-jsx";
+import { useTeamData, useTeamDataUtils } from "@/contexts/team-data-provider";
 
-interface MemberDep extends MemberInfo {
+interface MemberDep extends Member {
   department: string;
 }
 
@@ -35,13 +29,10 @@ export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;
   const images = dictAbout.sections.cesium.images;
-  const [teamData, setTeamData] = useState<TeamData>([]);
   const [members, setMembers] = useState<MemberDep[]>([]);
-  const [imageUrls, setImageUrls] = useState<(string | string[])[][]>([]);
-
   const { isScrolledTop } = useScrollState();
-
-  const yearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE ?? "";
+  const teamData = useTeamData();
+  const { getDepartmentByName } = useTeamDataUtils();
 
   const heroItems = [
     <div
@@ -79,31 +70,13 @@ export default function About() {
 
   useEffect(() => {
     const aux = async () => {
-      // List of department names, !! as they appear in team data !!
-      const departmentNames = [
-        "Presidência",
-        "Centro de Apoio ao Open Source",
-        "Departamento de Marketing e Conteúdo",
-        "Departamento de Relações Externas e Merchandising",
-        "Departamento Pedagógico",
-        "Departamento Recreativo",
-        "Vogais",
-      ];
-
-      const team: TeamData = await fetchTeamData(yearRange);
-      setTeamData(team);
-
-      const urls = generateUrlsForTeams(team, yearRange);
-      setImageUrls(urls);
+      const teamNames = ["Presidência", ...departmentNames, "Vogais"];
 
       const membersData: MemberDep[] = [];
 
-      departmentNames.forEach((departmentName, index) => {
-        const departmentData = getDepartmentMembersInfo(
-          team,
-          yearRange,
-          departmentName,
-        );
+      teamNames.forEach((departmentName, index) => {
+        const departmentData =
+          getDepartmentByName(departmentName)?.members ?? [];
 
         const depShortName =
           index != 0 && index != 6
@@ -120,7 +93,7 @@ export default function About() {
       setMembers(membersData);
     };
     void aux();
-  }, [yearRange]);
+  }, [teamData, getDepartmentByName]);
 
   return (
     <main>
@@ -198,7 +171,7 @@ export default function About() {
               ? members.map((member) => (
                   <Avatar
                     key={member.name}
-                    src={member.imageUrl}
+                    src={member.imageUrl ?? "/images/team/none.webp"}
                     name={member.name}
                     role={
                       member.department
@@ -210,13 +183,10 @@ export default function About() {
                     style="style2"
                   />
                 ))
-              : team?.members?.map((member, memberIndex) => (
+              : team?.members?.map((member) => (
                   <Avatar
                     key={member.name}
-                    src={
-                      imageUrls[index]?.[0]?.[memberIndex] ??
-                      "/images/team/none.png"
-                    }
+                    src={member.imageUrl ?? "/images/team/none.webp"}
                     name={member.name}
                     role={`${departmentShortName(team?.name)} • ${member.role}`}
                     className="rounded-full"
@@ -261,8 +231,6 @@ export default function About() {
                   gradientTo={gradient(shortName(departmentName))[1] ?? ""}
                   hideTeam
                   hideShortName
-                  teamData={teamData}
-                  yearRange={yearRange}
                   shortDescription
                 />
               </div>
