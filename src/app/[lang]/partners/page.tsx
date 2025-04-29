@@ -5,6 +5,8 @@ import PromotionalCard from "@/components/promotional-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
 
+export const runtime = "edge";
+
 export default function Partners() {
   const dict = useDictionary();
   const partners = dict.partners;

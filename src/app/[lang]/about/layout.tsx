@@ -5,6 +5,8 @@ import {
 import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
 
+export const runtime = "edge";
+
 export function generateMetadata({
   params: { lang },
 }: {

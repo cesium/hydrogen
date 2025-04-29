@@ -6,6 +6,8 @@ import { useDictionary } from "@/contexts/dictionary-provider";
 
 import { CardType } from "@/lib/types";
 
+export const runtime = "edge";
+
 export default function Departments() {
   const dict = useDictionary();
 

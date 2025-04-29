@@ -4,6 +4,8 @@ import Button from "@/components/button";
 import AppLink from "@/components/link";
 import { useDictionary } from "@/contexts/dictionary-provider";
 
+export const runtime = "edge";
+
 export default function NotFound() {
   const dict = useDictionary();
 

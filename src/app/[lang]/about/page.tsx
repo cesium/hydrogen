@@ -31,6 +31,8 @@ interface MemberDep extends MemberInfo {
   department: string;
 }
 
+export const runtime = "edge";
+
 export default function About() {
   const dict = useDictionary();
   const dictAbout = dict.about;

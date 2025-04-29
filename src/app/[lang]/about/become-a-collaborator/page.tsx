@@ -28,6 +28,8 @@ interface MemberDep extends MemberInfo {
   department: string;
 }
 
+export const runtime = "edge";
+
 export default function BecomeACollaborator() {
   const dict = useDictionary();
 

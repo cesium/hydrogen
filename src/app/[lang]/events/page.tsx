@@ -12,6 +12,8 @@ import { isSameDay } from "@/lib/utils";
 import AppLink from "@/components/link";
 import Markdown from "markdown-to-jsx";
 
+export const runtime = "edge";
+
 export default function EventsPage() {
   const dict = useDictionary();
   const [events, setEvents] = useState<Event[]>([]);

@@ -16,6 +16,8 @@ import ShortcutPanes from "@/components/shortcut-panes";
 import PartnerCard from "@/components/partner-card";
 import Link from "next/link";
 
+export const runtime = "edge";
+
 export default function Home() {
   const dict = useDictionary();
   const { isScrolledTop } = useScrollState();

@@ -11,6 +11,8 @@ import { shuffleArray } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import AppLink from "@/components/link";
 
+export const runtime = "edge";
+
 export default function BecomeAMember() {
   const dict = useDictionary();
 

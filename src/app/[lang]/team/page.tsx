@@ -18,6 +18,8 @@ import Avatar from "@/components/avatar";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import PromotionalCard from "@/components/promotional-card";
 
+export const runtime = "edge";
+
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
   const [currentYear, setCurrentYear] = useState<string>("2024-2025");
