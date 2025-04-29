@@ -60,7 +60,9 @@ export default function Team() {
         </div>
         <p>{dict.about.team.description}</p>
       </div>
-      {isFetching && <h1 className="text-2xl">FETCHING</h1>}
+      {isFetching && (
+        <span className="material-symbols-outlined animate-spin w-full flex justify-center">progress_activity</span>
+      )}
       {team &&
         !isFetching &&
         team.map((team, index) => (
