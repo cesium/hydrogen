@@ -650,5 +650,8 @@
     "description": "We couldn't find the page you're looking for. It may have been moved or deleted. Visit our homepage to explore other content.",
     "go_to_start": "Go to Homepage",
     "contact_us": "Contact Us"
+  },
+  "footer": {
+    "phone": "Phone"
   }
 }

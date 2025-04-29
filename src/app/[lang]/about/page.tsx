@@ -32,7 +32,7 @@ export default function About() {
   const [members, setMembers] = useState<MemberDep[]>([]);
   const { isScrolledTop } = useScrollState();
   const teamData = useTeamData();
-  const { getDepartmentByName } = useTeamDataUtils();
+  const { getDepartmentByName, isFetching } = useTeamDataUtils();
 
   const heroItems = [
     <div
@@ -166,35 +166,46 @@ export default function About() {
         overflows
       >
         <div className="flex w-full gap-7">
-          {teamData.map((team, index) =>
-            index == 0
-              ? members.map((member) => (
-                  <Avatar
-                    key={member.name}
-                    src={member.imageUrl ?? "/images/team/none.webp"}
-                    name={member.name}
-                    role={
-                      member.department
-                        ? `${member.department} • ${member.role}`
-                        : member.role
-                    }
-                    className="rounded-full font-normal"
-                    imageClassName="size-24 md:size-32 rounded-full"
-                    style="style2"
-                  />
-                ))
-              : team?.members?.map((member) => (
-                  <Avatar
-                    key={member.name}
-                    src={member.imageUrl ?? "/images/team/none.webp"}
-                    name={member.name}
-                    role={`${departmentShortName(team?.name)} • ${member.role}`}
-                    className="rounded-full"
-                    imageClassName="size-24 md:size-32 rounded-full"
-                    style="style2"
-                  />
-                )),
-          )}
+          {!isFetching &&
+            teamData.map((team, index) =>
+              index == 0
+                ? members.map((member) => (
+                    <Avatar
+                      key={member.name}
+                      src={member.imageUrl ?? "/images/team/none.webp"}
+                      name={member.name}
+                      role={
+                        member.department
+                          ? `${member.department} • ${member.role}`
+                          : member.role
+                      }
+                      className="rounded-full font-normal"
+                      imageClassName="size-24 md:size-32 rounded-full"
+                      style="style2"
+                    />
+                  ))
+                : team?.members?.map((member) => (
+                    <Avatar
+                      key={member.name}
+                      src={member.imageUrl ?? "/images/team/none.webp"}
+                      name={member.name}
+                      role={`${departmentShortName(team?.name)} • ${member.role}`}
+                      className="rounded-full"
+                      imageClassName="size-24 md:size-32 rounded-full"
+                      style="style2"
+                    />
+                  )),
+            )}
+          {isFetching &&
+            Array.from({ length: 10 }).map((_, index) => (
+              <div key={index} className="flex flex-col items-center gap-4">
+                <div className="size-24 min-w-24 animate-pulse rounded-full bg-gray/10 md:size-32 md:min-w-32" />
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-4 w-24 animate-pulse rounded-md bg-gray/10" />
+                  <div className="h-3 w-20 animate-pulse rounded-md bg-gray/10" />
+                </div>
+              </div>
+            ))}
         </div>
       </AboutSectionLayout>
       {/* Departments */}

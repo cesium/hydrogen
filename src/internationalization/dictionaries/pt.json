@@ -650,5 +650,8 @@
     "description": "Não conseguimos encontrar a página que procuras. Pode ter sido apagada ou movida para outro sítio. Convidamos-te a visitar a página inicial para descobrires as imensas páginas que temos que não dão um erro 404.",
     "go_to_start": "Ir para o início",
     "contact_us": "Contacta-nos"
+  },
+  "footer": {
+    "phone": "Telefone"
   }
 }

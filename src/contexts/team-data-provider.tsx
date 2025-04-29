@@ -27,15 +27,15 @@ export function TeamDataProvider({ children }: { children: React.ReactNode }) {
   const [isFetching, setIsFetching] = useState<boolean>(true);
 
   useEffect(() => {
-    setIsFetching(true);
     async function fetchData() {
+      setIsFetching(true);
       const d = await fetchTeamData(yearRange);
       const tpd = await fetchTeamData(teamPageYearRange);
       setData(d);
       setTeamPageData(tpd);
+      setIsFetching(false);
     }
     void fetchData();
-    setIsFetching(false);
   }, [yearRange, teamPageYearRange]);
 
   const getTeamByName = (name: string) => {

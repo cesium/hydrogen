@@ -16,12 +16,14 @@ import {
   useTeamPageData,
   useTeamPageYearRange,
   useTeamDataUtils,
+  useYearRange,
 } from "@/contexts/team-data-provider";
 import { generateYearRanges } from "@/lib/utils";
 
 export default function Team() {
   const [fromDefaultOpen, isFromDefaultOpen] = useState(true);
   const team = useTeamPageData();
+  const defaultYearRange = useYearRange();
   const yearRange = useTeamPageYearRange();
   const { setTeamPageYearRange, isFetching } = useTeamDataUtils();
   const yearRanges = generateYearRanges(1995, 2024);
@@ -51,7 +53,7 @@ export default function Team() {
           </h1>
           <ListBox
             options={yearRanges}
-            defaultOption={process.env.NEXT_PUBLIC_CURRENT_MANDATE}
+            defaultOption={defaultYearRange}
             defaultOptionText={dict.about.team.team_selector.default_option}
             hint={dict.about.team.team_selector.hint}
             currentOption={yearRange}
@@ -61,7 +63,9 @@ export default function Team() {
         <p>{dict.about.team.description}</p>
       </div>
       {isFetching && (
-        <span className="material-symbols-outlined animate-spin w-full flex justify-center">progress_activity</span>
+        <span className="material-symbols-outlined flex w-full animate-spin justify-center">
+          progress_activity
+        </span>
       )}
       {team &&
         !isFetching &&
