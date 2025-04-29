@@ -33,6 +33,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group transition-transform duration-300 hover:-translate-y-1"
+                    aria-label={"CeSIUM's " + social.name + " link"}
                   >
                     <div className="group-hover:hidden">
                       <SocialIcon
@@ -59,7 +60,7 @@ const Footer = () => {
             <div className="grid w-full  min-w-[300px] grid-cols-2 gap-x-10 gap-y-8 sm:min-w-[600px] sm:grid-cols-4">
               {dict.sections.map((section, index) => (
                 <div key={index}>
-                  <h3 className="mb-3 text-stone">{section.title}</h3>
+                  <h1 className="mb-3 text-stone">{section.title}</h1>
                   <ul className="space-y-3">
                     {section.items.map((item, index) => (
                       <li key={index} className="text-sm text-gray">

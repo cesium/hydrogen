@@ -419,8 +419,20 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["Sobre nós", "Equipa", "Departmentos"],
-      "links": ["/about", "/team", "/departments"]
+      "items": [
+        "Sobre nós",
+        "Equipa",
+        "Departmentos",
+        "Regulamento Interno",
+        "Estatutos"
+      ],
+      "links": [
+        "/about",
+        "/team",
+        "/departments",
+        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno-2425.pdf",
+        "https://assets.hydrogen.cesium.pt/documents/estatutos-2425.pdf"
+      ]
     },
     {
       "title": "Atividades",
@@ -502,7 +514,7 @@
         "color": "#134046",
         "perks": [
           {
-            "description": "**10% de desconto** na compra de jogos de tabuleiro e isenção de consumo mínimo.",
+            "description": "**10% de desconto** na compra de jogos de tabuleiro.",
             "icon": "Percent"
           }
         ]

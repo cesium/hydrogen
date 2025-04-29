@@ -419,8 +419,20 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["About", "Team", "Departments"],
-      "links": ["/about", "/team", "/departments"]
+      "items": [
+        "About",
+        "Team",
+        "Departments",
+        "Internal Regulations",
+        "Statutes"
+      ],
+      "links": [
+        "/about",
+        "/team",
+        "/departments",
+        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno-2425.pdf",
+        "https://assets.hydrogen.cesium.pt/documents/estatutos-2425.pdf"
+      ]
     },
     {
       "title": "Activities",
@@ -439,7 +451,7 @@
         "https://cesium.link",
         "https://calendario.cesium.pt",
         "https://elearning.uminho.pt",
-        "https://alunos.uminho.pt/PT"
+        "https://alunos.uminho.pt/EN"
       ]
     }
   ],
@@ -502,7 +514,7 @@
         "color": "#134046",
         "perks": [
           {
-            "description": "**10% discount** on board games with no minimum purchase required.",
+            "description": "**10% discount** on board games.",
             "icon": "Percent"
           }
         ]
