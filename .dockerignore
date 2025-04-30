@@ -2,5 +2,8 @@
 /node_modules
 .dockerignore
 .env
+.env.local
 Dockerfile
 fly.toml
+next-env.d.ts
+/.next

@@ -1,5 +1,6 @@
 app = "hydrogen"
 primary_region = "cdg"
+swap_size_mb = 512
 
 [build]
 
@@ -18,4 +19,3 @@ primary_region = "cdg"
 
 [env]
   URL="https://cesium.di.uminho.pt"
-  NEXT_PUBLIC_CURRENT_MANDATE="2024-2025"

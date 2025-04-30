@@ -15,6 +15,9 @@ ENV NODE_ENV="production"
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
+# Build arguments
+ARG NEXT_PUBLIC_CURRENT_MANDATE="2024-2025"
+
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential pkg-config python-is-python3
