@@ -14,16 +14,31 @@ const Footer = () => {
       <footer className=" flex flex-col place-items-center pb-16 pt-8 sm:flex-row sm:place-items-end">
         <div className="flex w-full max-w-[500px] flex-col place-items-center justify-center space-y-5 sm:w-1/2 sm:max-w-max sm:flex-col-reverse md:place-items-start">
           <div className="w-full space-y-6 pb-2.5 sm:mt-[50px] sm:w-80 sm:pb-0">
-            <Image
-              src="/logo/cesium.svg"
-              alt="CeSIUM Logo Icon"
-              width={40}
-              height={40}
-              className="w-[32px]"
-            />
-            <p className="text-sm leading-[17px] text-[#94959C]">
+            <div className="flex -translate-x-0.5 items-center gap-4">
+              <Image
+                src="/logo/cesium.svg"
+                alt="CeSIUM Logo Icon"
+                width={40}
+                height={40}
+                className="h-9 sm:h-10"
+              />
+              <Link
+                href="https://ipdj.gov.pt/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/logo/ipdj.svg"
+                  alt="IPDJ Logo"
+                  width={40}
+                  height={40}
+                  className="h-9 w-fit sm:h-10"
+                />
+              </Link>
+            </div>
+            {/* <p className="text-sm leading-[17px] text-[#94959C]">
               {dict.cesium}
-            </p>
+            </p> */}
             <div className="justify-left flex h-[30px] space-x-5">
               {dict.socials.map((social) => {
                 return (
