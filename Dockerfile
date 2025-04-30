@@ -41,7 +41,7 @@ FROM base
 COPY --from=build /app /app
 
 # Entrypoint sets up the container.
-ENTRYPOINT [ "/app/docker-entrypoint.js" ]
+ENTRYPOINT [ "/app/docker-entrypoint.ts" ]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
