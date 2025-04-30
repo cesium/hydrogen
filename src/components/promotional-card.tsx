@@ -53,7 +53,7 @@ const PromotionalCard = ({ type, mobileOnlyLayout }: CardProps) => {
             ? dict.collaborate_card.title
             : dict.member_card.title}
         </h1>
-        <p className="text-justify font-sans text-base text-white">
+        <p className="font-sans text-base text-white">
           {type == CardType.Collaborate
             ? dict.collaborate_card.text
             : dict.member_card.text}
