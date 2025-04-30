@@ -652,6 +652,13 @@
     "contact_us": "Contacta-nos"
   },
   "footer": {
-    "phone": "Telefone"
+    "phone": "Telefone",
+    "address": [
+      "Sala 1.04",
+      "Departamento de Informática",
+      "Campus de Gualtar",
+      "Universidade do Minho",
+      "4710-057 Braga, Portugal"
+    ]
   }
 }

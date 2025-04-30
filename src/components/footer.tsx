@@ -90,10 +90,9 @@ const Footer = () => {
           <div className="my-8 h-0 border border-stroke sm:hidden"></div>
           <div className="flex flex-col gap-4 text-right sm:place-items-end">
             <span className="text-sm text-gray">
-              <p>Departamento de Informática</p>
-              <p>Campus de Gualtar</p>
-              <p>Universidade do Minho</p>
-              <p>4710-057 Braga, Portugal</p>
+              {dict.footer.address.map((line, idx) => (
+                <p key={idx}>{line}</p>
+              ))}
             </span>
             <div className="flex flex-col">
               <span className="text-sm text-gray">
