@@ -9,7 +9,7 @@ if (process.argv.slice(-3).join(' ') === 'bun run start') {
   await exec('bunx next build --experimental-build-mode generate')
 }
 
-// launch application
+// Launch application
 await exec(process.argv.slice(2).join(' '))
 
 function exec(command: string) {
