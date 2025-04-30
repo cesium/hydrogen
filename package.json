@@ -26,6 +26,7 @@
     "swiper": "^11.2.1"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
     "@types/eslint": "^8.56.6",
     "@types/node": "^20",
     "@types/react": "^18",
