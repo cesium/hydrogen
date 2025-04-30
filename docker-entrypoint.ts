@@ -12,9 +12,9 @@ if (process.argv.slice(-3).join(' ') === 'bun run start') {
 // launch application
 await exec(process.argv.slice(2).join(' '))
 
-function exec(command) {
+function exec(command: string) {
   const child = spawn(command, { shell: true, stdio: 'inherit', env })
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     child.on('exit', code => {
       if (code === 0) {
         resolve()

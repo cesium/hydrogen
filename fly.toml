@@ -20,3 +20,7 @@ primary_region = 'cdg'
   memory = '512mb'
   cpu_kind = 'shared'
   cpus = 1
+
+[env]
+  URL='https://cesium.di.uminho.pt'
+  NEXT_PUBLIC_CURRENT_MANDATE='2024-2025'
