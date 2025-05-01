@@ -22,7 +22,7 @@ const ShortcutPanes = ({ shortcuts }: ShortcutPanesProps) => {
         <Link
           key={index}
           href={`/${lang}${shortcut.href}`}
-          className={`group relative w-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-stroke from-20% to-transparent to-60% px-6 py-9 xl:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] xl:px-14 ${index == shortcuts.length - 1 ? "rounded-b-xl xl:rounded-none" : ""}`}
+          className={`group relative w-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-stroke/40 from-20% to-transparent to-60% px-6 py-9 xl:bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] xl:px-14 ${index == shortcuts.length - 1 ? "rounded-b-xl xl:rounded-none" : ""}`}
         >
           <div
             className={`clip-triangle absolute left-0 h-8 w-full bg-white xl:bottom-auto xl:left-[-1px] xl:top-0 xl:h-full xl:w-11 ${index == shortcuts.length - 1 ? "bottom-0 rounded-2xl xl:rounded-none" : "bottom-[-1px]"}`}
