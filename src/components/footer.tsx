@@ -30,7 +30,7 @@ const Footer = () => {
                 <Image
                   src="/logo/ipdj.svg"
                   alt="IPDJ Logo"
-                  width={40}
+                  width={155.817}
                   height={40}
                   className="h-9 w-fit sm:h-10"
                 />
