@@ -1,8 +1,9 @@
 "use client";
+
 import type { EventListProps, Event } from "../lib/types";
 import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { isSameDay } from "../lib/utils";
+import { isSameDay, isWithinRange } from "../lib/utils";
 import { fullLocale } from "@/lib/locale";
 
 export function EventListCard({
@@ -21,21 +22,22 @@ export function EventListCard({
         const eventEnd = new Date(event.end);
         return (
           isSameDay(eventStart, selectedDate) ||
-          (eventEnd && eventStart <= selectedDate && eventEnd >= selectedDate)
+          (eventEnd && isWithinRange(selectedDate, eventStart, eventEnd))
         );
       })
     : events;
 
+  const todayEvents = filteredEvents.filter((event) =>
+    isWithinRange(currentDate, new Date(event.start), new Date(event.end)),
+  );
+
   const futureEvents = filteredEvents
-    .filter((event) => new Date(event.start) >= currentDate)
+    .filter((event) => new Date(event.start) > currentDate)
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
   const pastEvents = filteredEvents
     .filter((event) => new Date(event.end) < currentDate)
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
-
-  const visibleFutureEvents = futureEvents.slice(0, 5);
-  const visiblePastEvents = pastEvents.slice(0, 5);
 
   const renderEventList = (
     eventList: Event[],
@@ -93,13 +95,11 @@ export function EventListCard({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
+      {todayEvents.length > 0 &&
+        renderEventList(todayEvents, todayEvents, dict.events.todayEvents)}
       <div className="flex w-full flex-row items-center gap-6">
-        {renderEventList(
-          visibleFutureEvents,
-          futureEvents,
-          dict.events.futureEvents,
-        )}
-        {renderEventList(visiblePastEvents, pastEvents, dict.events.pastEvents)}
+        {renderEventList(futureEvents, futureEvents, dict.events.futureEvents)}
+        {renderEventList(pastEvents, pastEvents, dict.events.pastEvents)}
       </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>
