@@ -37,7 +37,11 @@ export function EventList({
   );
 
   const futureEvents = filteredEvents
-    .filter((event) => new Date(event.start) > currentDate && !isWithinRange(currentDate, new Date(event.start), new Date(event.end)))
+    .filter(
+      (event) =>
+        new Date(event.start) > currentDate &&
+        !isWithinRange(currentDate, new Date(event.start), new Date(event.end)),
+    )
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
   const pastEvents = filteredEvents
@@ -125,7 +129,13 @@ export function EventList({
         </button>
       )}
       {todayEvents.length > 0 &&
-        renderEventList(todayEvents, todayEvents, todayEvents.length, setVisibleFutureCount, getTitleForSelectedDate())}
+        renderEventList(
+          todayEvents,
+          todayEvents,
+          todayEvents.length,
+          setVisibleFutureCount,
+          getTitleForSelectedDate(),
+        )}
       {renderEventList(
         visibleFutureEvents,
         futureEvents,
