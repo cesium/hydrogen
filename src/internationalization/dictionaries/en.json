@@ -380,6 +380,7 @@
     "showMore": "Show More",
     "futureEvents": "Upcoming",
     "pastEvents": "Past",
+    "todayEvents": "Today",
     "noEvents": "No events to display.",
     "loading": "Loading events..."
   },
