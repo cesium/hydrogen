@@ -36,9 +36,6 @@ const Footer = () => {
                 />
               </Link>
             </div>
-            {/* <p className="text-sm leading-[17px] text-[#94959C]">
-              {dict.cesium}
-            </p> */}
             <div className="justify-left flex h-[30px] space-x-5">
               {dict.socials.map((social) => {
                 return (
