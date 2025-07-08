@@ -472,6 +472,22 @@
         ]
       },
       {
+        "title": "2nd Life Mobile",
+        "url": "https://2ndlifemobile.com/",
+        "logo": "/images/partners/2ndlifemobile.webp",
+        "color": "#ffca06",
+        "perks": [
+          {
+            "description": "**Desconto de 30%** em todas as reparações, efetuadas na loja de Braga.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Oferta de dois acessórios, equivalentes a 20€** na compra de um smartphone de valor superior a 150€.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
         "title": "APE Coffee",
         "url": "https://apecoffee.club/en/pages/cafetarias",
         "logo": "/images/partners/apecoffee.webp",
