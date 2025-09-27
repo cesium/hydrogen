@@ -3,7 +3,13 @@
 import type { EventListProps, Event } from "../lib/types";
 import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { isSameDay, isWithinRange } from "../lib/utils";
+import {
+  isSameDay,
+  isWithinRange,
+  isToday,
+  isPastDay,
+  isFutureDay,
+} from "../lib/utils";
 import { fullLocale } from "@/lib/locale";
 
 export function EventListCard({
@@ -14,7 +20,6 @@ export function EventListCard({
 }: EventListProps) {
   const dict = useDictionary();
   const lang = useLang();
-  const currentDate = new Date();
 
   const filteredEvents = selectedDate
     ? events.filter((event) => {
@@ -27,16 +32,30 @@ export function EventListCard({
       })
     : events;
 
-  const todayEvents = filteredEvents.filter((event) =>
-    isWithinRange(currentDate, new Date(event.start), new Date(event.end)),
-  );
+  const todayEvents = filteredEvents.filter((event) => {
+    const eventStart = new Date(event.start);
+    const eventEnd = new Date(event.end);
+    const today = new Date();
+
+    return (
+      isToday(eventStart) ||
+      isToday(eventEnd) ||
+      isWithinRange(today, eventStart, eventEnd)
+    );
+  });
 
   const futureEvents = filteredEvents
-    .filter((event) => new Date(event.start) > currentDate)
+    .filter((event) => {
+      const eventStart = new Date(event.start);
+      return isFutureDay(eventStart);
+    })
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
   const pastEvents = filteredEvents
-    .filter((event) => new Date(event.end) < currentDate)
+    .filter((event) => {
+      const eventEnd = new Date(event.end);
+      return isPastDay(eventEnd);
+    })
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
   const renderEventList = (

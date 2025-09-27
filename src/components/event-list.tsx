@@ -5,7 +5,13 @@ import type { EventListProps, Event } from "../lib/types";
 import { EventCard } from "./event-card";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import { EventSkeleton } from "./event-skeleton";
-import { isSameDay, isWithinRange } from "../lib/utils";
+import {
+  isSameDay,
+  isWithinRange,
+  isToday,
+  isPastDay,
+  isFutureDay,
+} from "../lib/utils";
 import { fullLocale } from "@/lib/locale";
 
 export function EventList({
@@ -17,9 +23,9 @@ export function EventList({
   const dict = useDictionary();
   const lang = useLang();
   const [visibleFutureCount, setVisibleFutureCount] = useState(5);
+  const [visibleTodayCount, setVisibleTodayCount] = useState(5);
   const [visiblePastCount, setVisiblePastCount] = useState(5);
-
-  const currentDate = new Date();
+  const [visibleFilteredCount, setVisibleFilteredCount] = useState(5);
 
   const filteredEvents = selectedDate
     ? events.filter((event) => {
@@ -32,24 +38,36 @@ export function EventList({
       })
     : events;
 
-  const todayEvents = filteredEvents.filter((event) =>
-    isWithinRange(currentDate, new Date(event.start), new Date(event.end)),
-  );
+  const todayEvents = filteredEvents.filter((event) => {
+    const eventStart = new Date(event.start);
+    const eventEnd = new Date(event.end);
+    const today = new Date();
+
+    return (
+      isToday(eventStart) ||
+      isToday(eventEnd) ||
+      isWithinRange(today, eventStart, eventEnd)
+    );
+  });
 
   const futureEvents = filteredEvents
-    .filter(
-      (event) =>
-        new Date(event.start) > currentDate &&
-        !isWithinRange(currentDate, new Date(event.start), new Date(event.end)),
-    )
+    .filter((event) => {
+      const eventStart = new Date(event.start);
+      return isFutureDay(eventStart);
+    })
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
   const pastEvents = filteredEvents
-    .filter((event) => new Date(event.end) < currentDate)
+    .filter((event) => {
+      const eventEnd = new Date(event.end);
+      return isPastDay(eventEnd);
+    })
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
   const visibleFutureEvents = futureEvents.slice(0, visibleFutureCount);
   const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
+  const visibleTodayEvents = todayEvents.slice(0, visibleTodayCount);
+  const visibleFilteredEvents = filteredEvents.slice(0, visibleFilteredCount);
 
   const renderEventList = (
     eventList: Event[],
@@ -100,9 +118,9 @@ export function EventList({
   const getTitleForSelectedDate = () => {
     if (!selectedDate) return dict.events.todayEvents;
 
-    if (isSameDay(selectedDate, currentDate)) {
+    if (isToday(selectedDate)) {
       return dict.events.todayEvents;
-    } else if (selectedDate > currentDate) {
+    } else if (isFutureDay(selectedDate)) {
       return dict.events.futureEvents;
     } else {
       return dict.events.pastEvents;
@@ -128,27 +146,40 @@ export function EventList({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
-      {todayEvents.length > 0 &&
+      {selectedDate ? (
+        filteredEvents.length > 0 &&
         renderEventList(
-          todayEvents,
-          todayEvents,
-          todayEvents.length,
-          setVisibleFutureCount,
+          visibleFilteredEvents,
+          filteredEvents,
+          filteredEvents.length,
+          setVisibleFilteredCount,
           getTitleForSelectedDate(),
-        )}
-      {renderEventList(
-        visibleFutureEvents,
-        futureEvents,
-        visibleFutureCount,
-        setVisibleFutureCount,
-        dict.events.futureEvents,
-      )}
-      {renderEventList(
-        visiblePastEvents,
-        pastEvents,
-        visiblePastCount,
-        setVisiblePastCount,
-        dict.events.pastEvents,
+        )
+      ) : (
+        <>
+          {todayEvents.length > 0 &&
+            renderEventList(
+              visibleTodayEvents,
+              todayEvents,
+              todayEvents.length,
+              setVisibleTodayCount,
+              dict.events.todayEvents,
+            )}
+          {renderEventList(
+            visibleFutureEvents,
+            futureEvents,
+            visibleFutureCount,
+            setVisibleFutureCount,
+            dict.events.futureEvents,
+          )}
+          {renderEventList(
+            visiblePastEvents,
+            pastEvents,
+            visiblePastCount,
+            setVisiblePastCount,
+            dict.events.pastEvents,
+          )}
+        </>
       )}
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>

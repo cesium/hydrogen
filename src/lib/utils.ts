@@ -250,6 +250,41 @@ function isMultiDayEvent(event: { start: Date; end: Date }): boolean {
   );
 }
 
+function isToday(date: Date): boolean {
+  const today = new Date();
+  return isSameDay(date, today);
+}
+
+function isPastDay(date: Date): boolean {
+  const today = new Date();
+  const dateOnly = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  );
+  const todayOnly = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  );
+  return dateOnly < todayOnly;
+}
+
+function isFutureDay(date: Date): boolean {
+  const today = new Date();
+  const dateOnly = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+  );
+  const todayOnly = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate(),
+  );
+  return dateOnly > todayOnly;
+}
+
 function formatDate(date: Date, locale: string): string {
   const d = new Date(date);
   return d
@@ -279,4 +314,7 @@ export {
   isAllDayEvent,
   isMultiDayEvent,
   formatDate,
+  isToday,
+  isPastDay,
+  isFutureDay,
 };
