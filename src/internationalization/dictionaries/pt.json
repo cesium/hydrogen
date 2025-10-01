@@ -380,7 +380,9 @@
     "showMore": "Mostrar mais",
     "futureEvents": "Próximos",
     "pastEvents": "Passados",
+    "todayEvents": "Hoje",
     "noEvents": "Não existem eventos para mostrar.",
+    "day": "Dia",
     "loading": "A carregar eventos..."
   },
   "social_media": "Redes sociais",
