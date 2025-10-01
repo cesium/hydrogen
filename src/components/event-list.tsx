@@ -11,8 +11,14 @@ import {
   isToday,
   isPastDay,
   isFutureDay,
+  isMultiDayEvent,
 } from "../lib/utils";
 import { fullLocale } from "@/lib/locale";
+
+interface ExtendedEvent extends Event {
+  dayNumber?: number;
+  totalDays?: number;
+}
 
 export function EventList({
   events,
@@ -27,16 +33,39 @@ export function EventList({
   const [visiblePastCount, setVisiblePastCount] = useState(5);
   const [visibleFilteredCount, setVisibleFilteredCount] = useState(5);
 
+  const expandMultiDayEvents = (eventList: Event[]): ExtendedEvent[] =>
+    eventList.flatMap((event) => {
+      const start = new Date(event.start);
+      const end = new Date(event.end);
+
+      if (!isMultiDayEvent({ start, end })) return [event];
+
+      const days = Math.ceil(
+        (end.setHours(0,0,0,0) - start.setHours(0,0,0,0)) / (1000 * 60 * 60 * 24)
+      ) + 1;
+
+      return Array.from({ length: days }, (_, i) => {
+        const day = new Date(start);
+        day.setDate(start.getDate() + i);
+        return {
+          ...event,
+          start: new Date(day),
+          end: new Date(day),
+          dayNumber: i + 1,
+          totalDays: days,
+          title: `${event.title} (${dict.events.day} ${i + 1})`,
+        };
+      });
+    });
+
+  const expandedEvents = expandMultiDayEvents(events);
+
   const filteredEvents = selectedDate
-    ? events.filter((event) => {
+    ? expandedEvents.filter((event) => {
         const eventStart = new Date(event.start);
-        const eventEnd = new Date(event.end);
-        return (
-          isSameDay(eventStart, selectedDate) ||
-          (eventEnd && isWithinRange(selectedDate, eventStart, eventEnd))
-        );
+        return isSameDay(eventStart, selectedDate);
       })
-    : events;
+    : expandedEvents;
 
   const todayEvents = filteredEvents.filter((event) => {
     const eventStart = new Date(event.start);
@@ -55,14 +84,22 @@ export function EventList({
       const eventStart = new Date(event.start);
       return isFutureDay(eventStart);
     })
-    .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
+    .sort((a, b) => {
+      const dateA = new Date(a.start);
+      const dateB = new Date(b.start);
+      return dateA.getTime() - dateB.getTime();
+    });
 
   const pastEvents = filteredEvents
     .filter((event) => {
       const eventEnd = new Date(event.end);
       return isPastDay(eventEnd);
     })
-    .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
+    .sort((a, b) => {
+      const dateA = new Date(a.end);
+      const dateB = new Date(b.end);
+      return dateB.getTime() - dateA.getTime();
+    });
 
   const visibleFutureEvents = futureEvents.slice(0, visibleFutureCount);
   const visiblePastEvents = pastEvents.slice(0, visiblePastCount);
@@ -70,8 +107,8 @@ export function EventList({
   const visibleFilteredEvents = filteredEvents.slice(0, visibleFilteredCount);
 
   const renderEventList = (
-    eventList: Event[],
-    totalEvents: Event[],
+    eventList: ExtendedEvent[],
+    totalEvents: ExtendedEvent[],
     visibleCount: number,
     setVisibleCount: (count: number) => void,
     title: string,
@@ -89,7 +126,10 @@ export function EventList({
               </>
             ) : (
               eventList.map((event, index) => (
-                <EventCard key={index} event={event} />
+                <EventCard
+                  key={`${event.title}-${event.dayNumber ?? 0}-${index}`}
+                  event={event}
+                />
               ))
             )}
           </div>
@@ -151,7 +191,7 @@ export function EventList({
         renderEventList(
           visibleFilteredEvents,
           filteredEvents,
-          filteredEvents.length,
+          visibleFilteredCount,
           setVisibleFilteredCount,
           getTitleForSelectedDate(),
         )
@@ -161,7 +201,7 @@ export function EventList({
             renderEventList(
               visibleTodayEvents,
               todayEvents,
-              todayEvents.length,
+              visibleTodayCount,
               setVisibleTodayCount,
               dict.events.todayEvents,
             )}

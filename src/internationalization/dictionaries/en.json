@@ -382,6 +382,7 @@
     "pastEvents": "Past",
     "todayEvents": "Today",
     "noEvents": "No events to display.",
+    "day": "Day",
     "loading": "Loading events..."
   },
   "social_media": "Social Media",

@@ -19,6 +19,7 @@ export default function EventsPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   useEffect(() => {
+    /*
     async function fetchEvents() {
       try {
         setIsLoading(true);
@@ -32,6 +33,87 @@ export default function EventsPage() {
     }
 
     void fetchEvents();
+    */
+
+    const now = new Date();
+    const hardcodedEvents: Event[] = [
+      // Single day event (2 hours duration)
+      {
+        title: "Tech Talk: AI in Web Development",
+        place: "Auditorium A",
+        link: "https://example.com/tech-talk",
+        start: new Date(now.getTime() + 24 * 60 * 60 * 1000), // Tomorrow at same time
+        end: new Date(now.getTime() + 24 * 60 * 60 * 1000 + 2 * 60 * 60 * 1000), // Tomorrow + 2 hours
+      },
+      // Multi-day event (3 days duration)
+      {
+        title: "CeSIUM Code Week 2024",
+        place: "Computer Science Department",
+        link: "https://example.com/code-week",
+        start: new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() - 2,
+          0,
+          0,
+          0,
+        ), // Next week at midnight
+        end: new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 5,
+          23,
+          59,
+          59,
+        ), // Same day at 11:59 PM
+      },
+      // All-day event (starts at midnight, ends at 11:59 PM same day)
+      {
+        title: "Open Source Contribution Day",
+        place: "Online Event",
+        link: "https://example.com/open-source-day",
+        start: new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 7,
+          0,
+          0,
+          0,
+        ), // Next week at midnight
+        end: new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 7,
+          23,
+          59,
+          59,
+        ), // Same day at 11:59 PM
+      },
+      {
+        title: "SEI",
+        place: "Online Event",
+        link: "https://example.com/open-source-day",
+        start: new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() - 2,
+          0,
+          0,
+          0,
+        ), // Next week at midnight
+        end: new Date(
+          now.getFullYear(),
+          now.getMonth(),
+          now.getDate() + 4,
+          23,
+          59,
+          59,
+        ), // Same day at 11:59 PM
+      },
+    ];
+
+    setEvents(hardcodedEvents);
+    setIsLoading(false);
   }, []);
 
   const handleDateSelect = (date: Date | null) => {
