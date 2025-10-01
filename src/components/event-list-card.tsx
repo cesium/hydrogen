@@ -114,9 +114,8 @@ export function EventListCard({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
-      {todayEvents.length > 0 &&
-        renderEventList(todayEvents, todayEvents, dict.events.todayEvents)}
       <div className="flex w-full flex-row items-center gap-6">
+        {renderEventList(todayEvents, todayEvents, dict.events.todayEvents)}
         {renderEventList(futureEvents, futureEvents, dict.events.futureEvents)}
         {renderEventList(pastEvents, pastEvents, dict.events.pastEvents)}
       </div>
