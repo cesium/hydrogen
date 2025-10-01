@@ -101,9 +101,7 @@ const DepartmentCard = ({
             {dict[shortName].short_description}
           </p>
         ) : (
-          <p className="h-full items-start">
-            {dict[shortName].description}
-          </p>
+          <p className="h-full items-start">{dict[shortName].description}</p>
         )}
       </div>
     </div>
