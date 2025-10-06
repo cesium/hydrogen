@@ -40,9 +40,11 @@ export function EventList({
 
       if (!isMultiDayEvent({ start, end })) return [event];
 
-      const days = Math.ceil(
-        (end.setHours(0,0,0,0) - start.setHours(0,0,0,0)) / (1000 * 60 * 60 * 24)
-      ) + 1;
+      const days =
+        Math.ceil(
+          (end.setHours(0, 0, 0, 0) - start.setHours(0, 0, 0, 0)) /
+            (1000 * 60 * 60 * 24),
+        ) + 1;
 
       return Array.from({ length: days }, (_, i) => {
         const day = new Date(start);

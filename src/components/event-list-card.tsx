@@ -47,14 +47,22 @@ export function EventListCard({
   const futureEvents = filteredEvents
     .filter((event) => {
       const eventStart = new Date(event.start);
-      return isFutureDay(eventStart);
+      const today = new Date();
+      const oneMonthFromNow = new Date(today);
+      oneMonthFromNow.setMonth(oneMonthFromNow.getMonth() + 1);
+
+      return isFutureDay(eventStart) && eventStart <= oneMonthFromNow;
     })
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
   const pastEvents = filteredEvents
     .filter((event) => {
       const eventEnd = new Date(event.end);
-      return isPastDay(eventEnd);
+      const today = new Date();
+      const oneMonthAgo = new Date(today);
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+      return isPastDay(eventEnd) && eventEnd >= oneMonthAgo;
     })
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
@@ -114,9 +122,8 @@ export function EventListCard({
           <span className="material-symbols-outlined ml-1 text-xl">close</span>
         </button>
       )}
-      {todayEvents.length > 0 &&
-        renderEventList(todayEvents, todayEvents, dict.events.todayEvents)}
       <div className="flex w-full flex-row items-center gap-6">
+        {renderEventList(todayEvents, todayEvents, dict.events.todayEvents)}
         {renderEventList(futureEvents, futureEvents, dict.events.futureEvents)}
         {renderEventList(pastEvents, pastEvents, dict.events.pastEvents)}
       </div>
