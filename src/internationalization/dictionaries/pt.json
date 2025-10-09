@@ -626,6 +626,30 @@
         ]
       },
       {
+        "title": "Rick Universal",
+        "url": "https://www.instagram.com/rick.universal/",
+        "logo": "/images/partners/rickuniversal.webp",
+        "color": "#0000D3",
+        "perks": [
+          {
+            "description": "Fino: **0.80€** | Balde: **1.50€** | Super Bock 33cl: **1.20€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Caipirinha: **3.00€** | Mojito: **3.00€** | Piña Colada: **3.00€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Vodka + Sumo: **2.50€** | Whiskey + Cola: **2.50€** | Somersby: **0.80€** | Somersby + Absinto: **2.80€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Na compra de um snack, fino a **0.50€**.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
         "title": "The Traditional Great Pizza",
         "url": "https://www.thetraditionalgreatpizza.com/",
         "logo": "/images/partners/thetraditionalgreatpizza.webp",
