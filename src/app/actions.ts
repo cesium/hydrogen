@@ -31,46 +31,47 @@ const generateForMember = (member: Member, yearRange: string) => {
   return generateImageUrl(yearRange, baseName, count);
 };
 
-export const fetchTeamData = unstable_cache(
-  async (currentYear: string): Promise<TeamData> => {
-    try {
-      const response = await fetch(
-        `https://assets.hydrogen.cesium.pt/data/teams/${currentYear}/teams.json`,
-      );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      let data: TeamData = (await response.json()) as TeamData;
+export const fetchTeamData = (currentYear: string) =>
+  unstable_cache(
+    async (): Promise<TeamData> => {
+      try {
+        const response = await fetch(
+          `https://assets.hydrogen.cesium.pt/data/teams/${currentYear}/teams.json`,
+        );
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        let data: TeamData = (await response.json()) as TeamData;
 
-      if (!isYearBefore2016(currentYear)) {
-        data = data.map((team) => ({
-          ...team,
-          members: (team.members = team.members?.map((member) => ({
-            ...member,
-            imageUrl: (member.imageUrl = generateForMember(
-              member,
-              currentYear,
-            )),
-          }))),
-          departments: team.departments?.map((department) => ({
-            ...department,
-            members: department.members?.map((member) => ({
+        if (!isYearBefore2016(currentYear)) {
+          data = data.map((team) => ({
+            ...team,
+            members: (team.members = team.members?.map((member) => ({
               ...member,
               imageUrl: (member.imageUrl = generateForMember(
                 member,
                 currentYear,
               )),
+            }))),
+            departments: team.departments?.map((department) => ({
+              ...department,
+              members: department.members?.map((member) => ({
+                ...member,
+                imageUrl: (member.imageUrl = generateForMember(
+                  member,
+                  currentYear,
+                )),
+              })),
             })),
-          })),
-        }));
-      }
+          }));
+        }
 
-      return data;
-    } catch (error) {
-      console.error("Error fetching team data:", error);
-      return [];
-    }
-  },
-  ["teamData"],
-  { revalidate: 60 * 60 * 24, tags: ["teamData"] }, // 1 day
-);
+        return data;
+      } catch (error) {
+        console.error("Error fetching team data:", error);
+        return [];
+      }
+    },
+    ["teamData", currentYear],
+    { revalidate: 60 * 60 * 24, tags: ["teamData"] }, // 1 day
+  )();
