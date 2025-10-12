@@ -86,9 +86,9 @@
     "short_description": "Handles activity promotion and social media management.",
     "icon": "lightbulb"
   },
-  "drem": {
-    "name": "**External Relations and Merchandising** Department",
-    "description": "DREM establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
+  "dsp": {
+    "name": "**Social and Partnerships** Department",
+    "description": "DSP establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
     "short_description": "Manages partnerships and member benefits.",
     "icon": "handshake"
   },

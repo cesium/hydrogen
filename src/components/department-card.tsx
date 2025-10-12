@@ -8,7 +8,7 @@ import { useTeamDataUtils } from "@/contexts/team-data-provider";
 
 interface DepartmentCardProps {
   name: string;
-  shortName: "caos" | "dmc" | "drem" | "ped" | "rec";
+  shortName: "caos" | "dmc" | "dsp" | "ped" | "rec";
   gradientFrom: string;
   gradientTo: string;
   hideTeam?: boolean;

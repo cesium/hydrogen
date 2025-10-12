@@ -3,7 +3,7 @@ import DepartmentCard from "./department-card";
 export const departmentNames = [
   "Centro de Apoio ao Open Source",
   "Departamento de Marketing e Conteúdo",
-  "Departamento de Relações Externas e Merchandising",
+  "Departamento Social e Parcerias",
   "Departamento Pedagógico",
   "Departamento Recreativo",
 ];
@@ -14,8 +14,8 @@ export const shortName = (name: string) => {
       return "caos";
     case "Departamento de Marketing e Conteúdo":
       return "dmc";
-    case "Departamento de Relações Externas e Merchandising":
-      return "drem";
+    case "Departamento Social e Parcerias":
+      return "dsp";
     case "Departamento Pedagógico":
       return "ped";
     case "Departamento Recreativo":
@@ -31,7 +31,7 @@ export const gradient = (type: string) => {
       return ["[#0085FF]/5", "[#00D1FF]/5"];
     case "dmc":
       return ["[#FF00F5]/5", "[#FF2E00]/5"];
-    case "drem":
+    case "dsp":
       return ["[#0500FF]/5", "[#A500DE]/5"];
     case "ped":
       return ["[#E4B12E]/20", "[#ED7950]/20"];
