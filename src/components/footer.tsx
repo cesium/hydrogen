@@ -100,26 +100,32 @@ const Footer = () => {
         </div>
         <div className="flex w-full max-w-[500px] flex-col sm:place-content-end sm:place-items-end md:max-w-full">
           <div className="my-8 h-0 border border-stroke sm:hidden"></div>
-          <div className="flex flex-col sm:place-items-end">
-            <span className="text-sm text-gray">Braga, Portugal</span>
+          <div className="flex flex-col gap-4 text-right sm:place-items-end">
             <span className="text-sm text-gray">
-              Telefone:{" "}
-              <Link
-                className="text-sm text-gray transition-colors hover:text-black/60"
-                href="tel:+351-253-604-448"
-              >
-                +351 253 604 448
-              </Link>
+              {dict.footer.address.map((line, idx) => (
+                <p key={idx}>{line}</p>
+              ))}
             </span>
-            <span className="text-sm text-gray">
-              Email:{" "}
-              <Link
-                className="text-sm text-gray transition-colors hover:text-black/60"
-                href="mailto:cesium@di.uminho.pt"
-              >
-                cesium@di.uminho.pt
-              </Link>
-            </span>
+            <div className="flex flex-col">
+              <span className="text-sm text-gray">
+                {dict.footer.phone}:{" "}
+                <Link
+                  className="text-sm text-gray transition-colors hover:text-black/60"
+                  href="tel:+351-253-604-448"
+                >
+                  +351 253 604 448
+                </Link>
+              </span>
+              <span className="text-sm text-gray">
+                Email:{" "}
+                <Link
+                  className="text-sm text-gray transition-colors hover:text-black/60"
+                  href="mailto:cesium@di.uminho.pt"
+                >
+                  cesium@di.uminho.pt
+                </Link>
+              </span>
+            </div>
           </div>
         </div>
       </footer>

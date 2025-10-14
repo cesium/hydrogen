@@ -86,9 +86,9 @@
     "short_description": "Responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM.",
     "icon": "lightbulb"
   },
-  "drem": {
-    "name": "Departamento de **Relações Externas e Merchandising**",
-    "description": "O DREM é o departamento que assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetua o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação de merch do núcleo, pensada para todos os nossos estudantes.",
+  "dsp": {
+    "name": "Departamento **Social e Parcerias**",
+    "description": "O DSP é o departamento que assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetua o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação de merch do núcleo, pensada para todos os nossos estudantes.",
     "short_description": "Assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir.",
     "icon": "handshake"
   },
@@ -432,8 +432,8 @@
         "/about",
         "/team",
         "/departments",
-        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno-2425.pdf",
-        "https://assets.hydrogen.cesium.pt/documents/estatutos-2425.pdf"
+        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno.pdf",
+        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf"
       ]
     },
     {
@@ -692,5 +692,15 @@
     "description": "Não conseguimos encontrar a página que procuras. Pode ter sido apagada ou movida para outro sítio. Convidamos-te a visitar a página inicial para descobrires as imensas páginas que temos que não dão um erro 404.",
     "go_to_start": "Ir para o início",
     "contact_us": "Contacta-nos"
+  },
+  "footer": {
+    "phone": "Telefone",
+    "address": [
+      "Sala 1.04",
+      "Departamento de Informática",
+      "Campus de Gualtar",
+      "Universidade do Minho",
+      "4710-057 Braga, Portugal"
+    ]
   }
 }

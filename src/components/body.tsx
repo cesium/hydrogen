@@ -5,6 +5,7 @@ import {
 import { ScrollStateProvider } from "@/contexts/scrollstate-provider";
 import type { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import UmamiAnalytics from "./umami-analytics";
+import { TeamDataProvider } from "@/contexts/team-data-provider";
 
 export default function Body({
   fonts,
@@ -19,9 +20,11 @@ export default function Body({
     <body
       className={`${fonts.map((f) => f.variable).join(" ")} overflow-x-hidden overflow-y-scroll bg-foundation font-sans text-black antialiased selection:bg-primary selection:text-white`}
     >
-      <ScrollStateProvider>
-        <DictionaryProvider lang={lang}>{children}</DictionaryProvider>
-      </ScrollStateProvider>
+      <TeamDataProvider>
+        <ScrollStateProvider>
+          <DictionaryProvider lang={lang}>{children}</DictionaryProvider>
+        </ScrollStateProvider>
+      </TeamDataProvider>
       <UmamiAnalytics />
     </body>
   );

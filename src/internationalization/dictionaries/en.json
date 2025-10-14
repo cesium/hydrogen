@@ -86,9 +86,9 @@
     "short_description": "Handles activity promotion and social media management.",
     "icon": "lightbulb"
   },
-  "drem": {
-    "name": "**External Relations and Merchandising** Department",
-    "description": "DREM establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
+  "dsp": {
+    "name": "**Social and Partnerships** Department",
+    "description": "DSP establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
     "short_description": "Manages partnerships and member benefits.",
     "icon": "handshake"
   },
@@ -432,8 +432,8 @@
         "/about",
         "/team",
         "/departments",
-        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno-2425.pdf",
-        "https://assets.hydrogen.cesium.pt/documents/estatutos-2425.pdf"
+        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno.pdf",
+        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf"
       ]
     },
     {
@@ -692,5 +692,15 @@
     "description": "We couldn't find the page you're looking for. It may have been moved or deleted. Visit our homepage to explore other content.",
     "go_to_start": "Go to Homepage",
     "contact_us": "Contact Us"
+  },
+  "footer": {
+    "phone": "Phone",
+    "address": [
+      "Room 1.04",
+      "Departamento de Informática",
+      "Campus de Gualtar",
+      "Universidade do Minho",
+      "4710-057 Braga, Portugal"
+    ]
   }
 }
