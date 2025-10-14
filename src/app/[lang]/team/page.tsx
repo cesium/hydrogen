@@ -26,7 +26,10 @@ export default function Team() {
   const defaultYearRange = useYearRange();
   const yearRange = useTeamPageYearRange();
   const { setTeamPageYearRange } = useTeamDataUtils();
-  const yearRanges = generateYearRanges(1995, 2024);
+  const yearRanges = generateYearRanges(
+    1995,
+    parseInt(defaultYearRange.split("-")[0]!, 10),
+  );
   const [disclosureStates, setDisclosureStates] = useState<boolean[]>([]);
   const dict = useDictionary();
 
