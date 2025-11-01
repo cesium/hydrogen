@@ -675,17 +675,13 @@
       },
       {
         "title": "Focus Jiu-Jitsu",
-        "url": "https://www.instagram.com/focusjiujitsuhq/",
+        "url": "https://cesium.link/r/focus-jiu-jitsu",
         "logo": "/images/partners/focusjiujitsu.webp",
         "color": "#68b54a",
         "perks": [
           {
             "description": "**10 aulas grátis de fundamentos**, inscrições limitadas aos 10 primeiros sócios ativos.",
-            "icon": "Experiment"
-          },
-          {
-            "description": "* Incrições disponiveis no cesium.link",
-            "icon": "Emergency"
+            "icon": "sports_kabaddi"
           }
         ]
       }
