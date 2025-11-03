@@ -672,6 +672,18 @@
             "icon": "Coffee"
           }
         ]
+      },
+      {
+        "title": "Focus Jiu-Jitsu",
+        "url": "https://cesium.link/r/focus-jiu-jitsu",
+        "logo": "/images/partners/focusjiujitsu.webp",
+        "color": "#2c3227",
+        "perks": [
+          {
+            "description": "**10 aulas grátis de fundamentos**, inscrições limitadas aos 10 primeiros sócios ativos.",
+            "icon": "sports_kabaddi"
+          }
+        ]
       }
     ]
   },
