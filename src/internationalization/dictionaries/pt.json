@@ -460,6 +460,10 @@
   "partners": {
     "title": "Parcerias",
     "description": "Uma das vantagens de ser sócio do CeSIUM é poder usufruir das nossas incríveis parcerias. Descobre aqui todas as oportunidades e descontos que te oferecemos.",
+    "form_notice": {
+      "title": "Sugira parcerias!",
+      "description": "Preencha o formulário para que possamos entender quais tipos de parcerias seriam uma boa opção."
+    },
     "list": [
       {
         "title": "100 Montaditos",

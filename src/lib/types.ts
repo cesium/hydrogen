@@ -3,6 +3,10 @@ export enum CardType {
   Membership = "Membership",
 }
 
+export enum NoticeType {
+  Partnerships = "Partnerships",
+}
+
 export interface Member {
   name: string;
   role: string;

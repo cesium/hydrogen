@@ -460,6 +460,10 @@
   "partners": {
     "title": "Partnerships",
     "description": "CeSIUM members enjoy exclusive partnership benefits. Discover all available offers and discounts.",
+    "form_notice": {
+      "title": "Suggest partners!",
+      "description": "Fill out the form so we can learn what kinds of partnerships would be a good fit."
+    },
     "list": [
       {
         "title": "100 Montaditos",
