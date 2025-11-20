@@ -2,8 +2,10 @@
 
 import PartnerCard from "@/components/partner-card";
 import PromotionalCard from "@/components/promotional-card";
+import NoticeCard from "@/components/notice-card";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import { CardType } from "@/lib/types";
+import { NoticeType } from "@/lib/types";
 
 export default function Partners() {
   const dict = useDictionary();
@@ -18,6 +20,9 @@ export default function Partners() {
         <p>{dict.partners.description}</p>
       </div>
       <div className="layout-p-x flex flex-col gap-8 border-t border-zinc-200 bg-muted pb-16 pt-14 sm:gap-12">
+        <div className="px-2 md:px-0">
+          <NoticeCard type={NoticeType.Partnerships} />
+        </div>
         <div className="grid grid-cols-1 gap-2.5 sm:gap-3 md:grid-cols-2 2xl:grid-cols-3">
           {partners.list.map((partner, index) => (
             <PartnerCard
