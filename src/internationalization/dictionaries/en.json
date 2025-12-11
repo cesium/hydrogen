@@ -14,6 +14,10 @@
       "title": "Events | CeSIUM",
       "description": "Check out the events organized by CeSIUM."
     },
+    "documents": {
+      "title": "Documents | CeSIUM",
+      "description": "Check out CeSIUM's documents."
+    },
     "about": {
       "title": "About | CeSIUM",
       "description": "Learn more about our organization."
@@ -385,6 +389,9 @@
     "day": "Day",
     "loading": "Loading events..."
   },
+  "documents": {
+    "title": "Documents"
+  },
   "social_media": "Social Media",
   "socials": [
     {
@@ -438,17 +445,34 @@
     },
     {
       "title": "Activities",
-      "items": ["Events", "Partnerships"],
-      "links": ["/events", "/partners"]
+      "items": [
+        "Events",
+        "Partnerships"
+      ],
+      "links": [
+        "/events",
+        "/partners"
+      ]
     },
     {
       "title": "Students",
-      "items": ["Become Member", "Become Collaborator"],
-      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
+      "items": [
+        "Become Member",
+        "Become Collaborator"
+      ],
+      "links": [
+        "/about/become-a-member",
+        "/about/become-a-collaborator"
+      ]
     },
     {
       "title": "Useful Links",
-      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student Portal"],
+      "items": [
+        "CeSIUM Link",
+        "Calendarium",
+        "Blackboard",
+        "Student Portal"
+      ],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
