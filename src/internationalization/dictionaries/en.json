@@ -14,6 +14,10 @@
       "title": "Events | CeSIUM",
       "description": "Check out the events organized by CeSIUM."
     },
+    "documents": {
+      "title": "Documents | CeSIUM",
+      "description": "Check out CeSIUM's documents."
+    },
     "about": {
       "title": "About | CeSIUM",
       "description": "Learn more about our organization."
@@ -384,6 +388,9 @@
     "noEvents": "No events to display.",
     "day": "Day",
     "loading": "Loading events..."
+  },
+  "documents": {
+    "title": "Institutional Documents"
   },
   "social_media": "Social Media",
   "socials": [

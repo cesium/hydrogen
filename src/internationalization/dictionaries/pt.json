@@ -18,6 +18,10 @@
       "title": "Sobre | CeSIUM",
       "description": "Sabe mais sobre nós."
     },
+    "documents": {
+      "title": "Documentos | CeSIUM",
+      "description": "Estes são os documentos do CeSIUM."
+    },
     "team": {
       "title": "Equipa | CeSIUM",
       "description": "Conhece a equipa do CeSIUM."
@@ -384,6 +388,9 @@
     "noEvents": "Não existem eventos para mostrar.",
     "day": "Dia",
     "loading": "A carregar eventos..."
+  },
+  "documents": {
+    "title": "Documentos Institucionais"
   },
   "social_media": "Redes sociais",
   "socials": [
