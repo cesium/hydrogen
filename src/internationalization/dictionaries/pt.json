@@ -19,7 +19,7 @@
       "description": "Sabe mais sobre nós."
     },
     "documents": {
-      "title": "Documentos ! CeSIUM",
+      "title": "Documentos | CeSIUM",
       "description": "Estes são os documentos do CeSIUM."
     },
     "team": {
@@ -390,7 +390,7 @@
     "loading": "A carregar eventos..."
   },
   "documents": {
-    "title": "Documentos"
+    "title": "Documentos Institucionais"
   },
   "social_media": "Redes sociais",
   "socials": [

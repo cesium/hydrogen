@@ -5,8 +5,8 @@ export default function Documents() {
   const dict = useDictionary();
 
   return (
-    <main>
-      <h1 className="font-mediumpx-2 font-title text-3xl md:px-5">
+    <main className="layout-p-full">
+      <h1 className="font-medium font-title text-3xl">
         {dict.documents.title}
       </h1>
     </main>
