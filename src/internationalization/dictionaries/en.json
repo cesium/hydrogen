@@ -134,7 +134,8 @@
     "events": "Events",
     "partners": "Partnerships",
     "store": "Store",
-    "projects": "Projects"
+    "projects": "Projects",
+    "documents": "Documents"
   },
   "home": {
     "cesium": {
