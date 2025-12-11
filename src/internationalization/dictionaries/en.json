@@ -445,34 +445,17 @@
     },
     {
       "title": "Activities",
-      "items": [
-        "Events",
-        "Partnerships"
-      ],
-      "links": [
-        "/events",
-        "/partners"
-      ]
+      "items": ["Events", "Partnerships"],
+      "links": ["/events", "/partners"]
     },
     {
       "title": "Students",
-      "items": [
-        "Become Member",
-        "Become Collaborator"
-      ],
-      "links": [
-        "/about/become-a-member",
-        "/about/become-a-collaborator"
-      ]
+      "items": ["Become Member", "Become Collaborator"],
+      "links": ["/about/become-a-member", "/about/become-a-collaborator"]
     },
     {
       "title": "Useful Links",
-      "items": [
-        "CeSIUM Link",
-        "Calendarium",
-        "Blackboard",
-        "Student Portal"
-      ],
+      "items": ["CeSIUM Link", "Calendarium", "Blackboard", "Student Portal"],
       "links": [
         "https://cesium.link",
         "https://calendario.cesium.pt",
