@@ -426,14 +426,16 @@
         "Team",
         "Departments",
         "Internal Regulations",
-        "Statutes"
+        "Statutes",
+        "Documents"
       ],
       "links": [
         "/about",
         "/team",
         "/departments",
         "https://assets.hydrogen.cesium.pt/documents/regulamento-interno.pdf",
-        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf"
+        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf",
+        "/documents"
       ]
     },
     {
