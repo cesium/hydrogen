@@ -29,7 +29,7 @@ const DepartmentCard = ({
   const members = useTeamDataUtils().getDepartmentByName(name)?.members ?? [];
 
   return (
-    <div className="wt-full relative grid overflow-hidden rounded-2xl md:rounded-3xl">
+    <div className="relative grid w-full overflow-hidden rounded-2xl md:rounded-3xl">
       {!hideShortName && (
         <div className="absolute bottom-0 right-0 hidden translate-x-10 translate-y-10 select-none bg-gradient-to-br from-black/0 to-black/10 bg-clip-text font-title text-9xl text-transparent md:block">
           {shortName.toUpperCase()}
