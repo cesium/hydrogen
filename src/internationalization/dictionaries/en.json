@@ -468,7 +468,7 @@
         "color": "#eecc67",
         "perks": [
           {
-            "description": "**10% discount** on purchases over €7 (excludes Wednesdays and Sundays).",
+            "description": "**10% discount** on purchases over €7 (excludes Mondays, Wednesdays and Sundays).",
             "icon": "Percent"
           }
         ]

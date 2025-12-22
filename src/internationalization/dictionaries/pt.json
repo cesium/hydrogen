@@ -468,7 +468,7 @@
         "color": "#eecc67",
         "perks": [
           {
-            "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
+            "description": "**Desconto de 10%** em compras superiores a 7€, exceto segundas, quartas e domingos.",
             "icon": "Percent"
           }
         ]
