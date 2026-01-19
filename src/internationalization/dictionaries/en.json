@@ -531,7 +531,7 @@
         "color": "#843dc2",
         "perks": [
           {
-            "description": "**Free drink** with Special Burger, American Toast, Salmon Toast, or Special Hot Dog menus.\n\n**Fanta, Nestea, Water, Sprite, Ginger ale**",
+            "description": "**Free drink*** with Special Burger, Regular Burger, American Toast, and Special Hot Dog menus.\n\n***Water, Juices, Fanta (orange or pineapple), Coke Zero, and Sprite**",
             "icon": "Water_Full"
           }
         ]
@@ -567,15 +567,15 @@
         "color": "#d1a75b",
         "perks": [
           {
-            "description": "Buy 8 pins, get **lowest-priced pin free**.",
+            "description": "**1 free mystery pin** with purchases over €10.00",
             "icon": "Sell"
           },
           {
-            "description": "**20% off** course pins.",
+            "description": "**Emblems priced at €2.00** for members",
             "icon": "Percent"
           },
           {
-            "description": "**Free shipping** on orders over €12.50.",
+            "description": "**10% discount** on purchases over €20.00",
             "icon": "Euro"
           }
         ]
@@ -607,11 +607,11 @@
             "icon": "License"
           },
           {
-            "description": "Men's socks: **€2.75**.",
+            "description": "Men's socks: **€0.20 off** original price.",
             "icon": "Euro"
           },
           {
-            "description": "Women's socks: **€1.50**.",
+            "description": "Women's socks: **€0.25 off** original price.",
             "icon": "Euro"
           }
         ]
@@ -693,6 +693,26 @@
           {
             "description": "**10 free foundational classes**, registration limited to the first 10 active members.",
             "icon": "sports_kabaddi"
+          }
+        ]
+      },
+      {
+        "title": "CopyScan",
+        "url": "https://www.instagram.com/copy.scan/",
+        "logo": "/images/partners/copyscan.webp",
+        "color": "#50adda",
+        "perks": [
+          {
+            "description": "**10% discount** on black and white prints.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**15% discount** on color prints.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**10% discount** on school supplies.",
+            "icon": "Percent"
           }
         ]
       }
