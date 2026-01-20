@@ -24,16 +24,18 @@ export default function Partners() {
           <NoticeCard type={NoticeType.Partnerships} />
         </div>
         <div className="grid grid-cols-1 gap-2.5 sm:gap-3 md:grid-cols-2 2xl:grid-cols-3">
-          {partners.list.map((partner, index) => (
-            <PartnerCard
-              key={index}
-              title={partner.title}
-              url={partner.url}
-              logo={partner.logo}
-              color={partner.color}
-              perks={partner.perks}
-            />
-          ))}
+          {partners.list
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .map((partner, index) => (
+              <PartnerCard
+                key={index}
+                title={partner.title}
+                url={partner.url}
+                logo={partner.logo}
+                color={partner.color}
+                perks={partner.perks}
+              />
+            ))}
         </div>
         <div className="px-2 md:px-5">
           <PromotionalCard type={CardType.Membership} />
