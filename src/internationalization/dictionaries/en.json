@@ -715,6 +715,22 @@
             "icon": "Percent"
           }
         ]
+      },
+      {
+        "title": "Lamasan",
+        "url": "https://www.instagram.com/lamasanbraga",
+        "logo": "/images/partners/lamasan.webp",
+        "color": "#DDB45E",
+        "perks": [
+          {
+            "description": "**Individual Discount: 0.50€** off for every **7€** spent. \n\n Cumulative discount",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Discount for 4 or more members: 1.00€** off for every **7€** spent. \n\n Cumulative discount",
+            "icon": "Sell"
+          }
+        ]
       }
     ]
   },

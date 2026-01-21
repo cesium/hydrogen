@@ -715,6 +715,22 @@
             "icon": "Percent"
           }
         ]
+      },
+      {
+        "title": "Lamasan",
+        "url": "https://www.instagram.com/lamasanbraga",
+        "logo": "/images/partners/lamasan.webp",
+        "color": "#DDB45E",
+        "perks": [
+          {
+            "description": "**Desconto Individual: 0,50€** de desconto por cada **7€** em compras. \n\n Desconto acomulável",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Desconto para 4 ou mais sócios:** 1,00€ de desconto por cada 7€ em compras. \n\n Desconto acomulável",
+            "icon": "Sell"
+          }
+        ]
       }
     ]
   },
