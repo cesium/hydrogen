@@ -5,7 +5,7 @@ import Link from "next/link";
 
 interface ButtonProps {
   title: string;
-  style: "style1" | "style2" | "style3";
+  style: "style1" | "style2" | "style3" | "style4";
   color?: string;
   as?: "button" | "link";
   href?: string;
@@ -41,6 +41,7 @@ const Button = ({
     style1: `rounded-full bg-white px-5 w-fit ${!isCustomColor ? `text-${color}` : ""}`,
     style2: `rounded-xl font-semibold px-12 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
     style3: `flex gap-1 rounded-full font-semibold px-5 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
+    style4: `rounded-full px-5 text-muted ${!isCustomColor ? `bg-${color}` : ""}`,
   };
 
   return (
