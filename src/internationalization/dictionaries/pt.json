@@ -723,11 +723,11 @@
         "color": "#DDB45E",
         "perks": [
           {
-            "description": "**Desconto Individual: 0,50€** de desconto por cada **7€** em compras. \n\n Desconto acomulável",
+            "description": "**Desconto Individual: 0,50€** de desconto por cada **7€** em compras. \n\n Desconto acumulável",
             "icon": "Sell"
           },
           {
-            "description": "**Desconto para 4 ou mais sócios:** 1,00€ de desconto por cada 7€ em compras. \n\n Desconto acomulável",
+            "description": "**Desconto para 4 ou mais sócios:** 1,00€ de desconto por cada 7€ em compras. \n\n Desconto acumulável",
             "icon": "Sell"
           }
         ]
