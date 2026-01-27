@@ -138,7 +138,8 @@
     "events": "Eventos",
     "partners": "Parcerias",
     "store": "Loja",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "documents": "Documentos"
   },
   "home": {
     "cesium": {
@@ -433,14 +434,16 @@
         "Equipa",
         "Departmentos",
         "Regulamento Interno",
-        "Estatutos"
+        "Estatutos",
+        "Documentos"
       ],
       "links": [
         "/about",
         "/team",
         "/departments",
         "https://assets.hydrogen.cesium.pt/documents/regulamento-interno.pdf",
-        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf"
+        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf",
+        "/documents"
       ]
     },
     {

@@ -31,6 +31,7 @@ const Navbar = () => {
     { name: dict.navbar.partners, path: "/partners" },
     { name: dict.navbar.events, path: "/events" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
+    { name: dict.navbar.documents, path: "/documents" },
   ];
 
   const isMember = pathname === "/about/become-a-member";
