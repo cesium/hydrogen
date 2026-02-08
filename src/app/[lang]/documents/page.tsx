@@ -6,7 +6,7 @@ export default function Documents() {
 
   return (
     <main className="layout-p-full">
-      <h1 className="font-medium font-title text-3xl">
+      <h1 className="font-title text-3xl font-medium">
         {dict.documents.title}
       </h1>
     </main>
