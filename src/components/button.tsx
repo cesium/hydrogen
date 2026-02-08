@@ -11,9 +11,9 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   umamiEvent?: string;
-  icon? : string;
-  isDownload?: boolean
-  downloadTitle?: string
+  icon?: string;
+  isDownload?: boolean;
+  downloadTitle?: string;
 }
 
 const Button = ({
@@ -24,17 +24,18 @@ const Button = ({
   href,
   onClick,
   umamiEvent,
-  icon= undefined,
+  icon = undefined,
   isDownload = false,
-  downloadTitle = ""
+  downloadTitle = "",
 }: ButtonProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
   const hrefLang = `/${lang}${href}`;
 
-  const formattedFileName = isDownload && downloadTitle
-  ? downloadTitle.replace(/ /g, "_") + ".pdf" 
-  : undefined;
+  const formattedFileName =
+    isDownload && downloadTitle
+      ? downloadTitle.replace(/ /g, "_") + ".pdf"
+      : undefined;
 
   const isCustomColor = !["signature-blue", "primary", "black"].includes(color);
   const isLocalLink =
@@ -64,18 +65,14 @@ const Button = ({
           {...(umamiEvent ? { "data-umami-event": umamiEvent } : {})}
         >
           {title}
-          {icon && 
-            <span className = "material-symbols-outlined">
-              {icon}
-            </span>
-          }
+          {icon && <span className="material-symbols-outlined">{icon}</span>}
         </button>
       )}
 
       {as === "link" && href && (
         <Link
-          href={isDownload? href : (isLocalLink ? hrefLang : hrefDefault)}
-          {...(isDownload && {download : formattedFileName})}
+          href={isDownload ? href : isLocalLink ? hrefLang : hrefDefault}
+          {...(isDownload && { download: formattedFileName })}
           {...(isDownload ? { target: "_blank" } : {})}
           className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
           {...(isCustomColor && { style: { color } })}
@@ -86,7 +83,9 @@ const Button = ({
         >
           {title}
           {style === "style3" && (
-            <span className="material-symbols-outlined">{icon? icon: "arrow_forward"}</span>
+            <span className="material-symbols-outlined">
+              {icon ?? "arrow_forward"}
+            </span>
           )}
         </Link>
       )}
