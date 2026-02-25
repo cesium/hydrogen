@@ -84,8 +84,6 @@ export interface Document {
   description: string;
   imageUrl?: string;
   categories: string[];
-  reference: string;
-  accessPermision: string;
 }
 
 export type DocumentsData = Document[];
