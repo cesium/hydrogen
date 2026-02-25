@@ -84,5 +84,4 @@ export interface DocumentProps {
   description: string;
   imageUrl: string;
   categories: string[];
-  accessPermision: string;
 }

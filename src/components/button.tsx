@@ -2,6 +2,8 @@
 
 import { useLang } from "@/contexts/dictionary-provider";
 import Link from "next/link";
+import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 interface ButtonProps {
   title: string;
@@ -14,6 +16,7 @@ interface ButtonProps {
   icon?: string;
   isDownload?: boolean;
   downloadTitle?: string;
+  className?: string;
 }
 
 const Button = ({
@@ -27,6 +30,7 @@ const Button = ({
   icon = undefined,
   isDownload = false,
   downloadTitle = "",
+  className = "",
 }: ButtonProps) => {
   const lang = useLang();
   const hrefDefault = href ?? "/";
@@ -54,13 +58,16 @@ const Button = ({
     style3: `flex gap-1 rounded-full font-semibold px-5 text-white ${!isCustomColor ? `bg-${color}` : ""}`,
     style4: `rounded-full px-5 text-muted ${!isCustomColor ? `bg-${color}` : ""}`,
   };
+  const finalClassName = twMerge(
+    clsx(`${baseStyle} ${style ? styleVariant[style] : ""}`, className),
+  );
 
   return (
     <>
       {as === "button" && onClick && (
         <button
           onClick={onClick}
-          className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
+          className={finalClassName}
           {...(isCustomColor && { style: { color } })}
           {...(umamiEvent ? { "data-umami-event": umamiEvent } : {})}
         >
@@ -74,7 +81,7 @@ const Button = ({
           href={isDownload ? href : isLocalLink ? hrefLang : hrefDefault}
           {...(isDownload && { download: formattedFileName })}
           {...(isDownload ? { target: "_blank" } : {})}
-          className={`${baseStyle} ${style ? styleVariant[style] : ""}`}
+          className={finalClassName}
           {...(isCustomColor && { style: { color } })}
           {...(!isLocalLink
             ? { rel: "noopener noreferrer", target: "_blank" }

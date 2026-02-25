@@ -13,7 +13,6 @@ export function Document({
   description,
   imageUrl,
   categories,
-  accessPermision,
 }: DocumentProps) {
   const [seeMore, setSeeMore] = useState<boolean>(false);
 
@@ -49,8 +48,8 @@ export function Document({
           </div>
         </div>
       </div>
-      <div className="row-start-3 mt-2 flex flex-row items-center justify-start gap-3 lg:col-start-2 lg:row-start-1 lg:mt-0 lg:justify-end">
-        <div className="mr-2">
+      <div className="row-start-3 mt-2 flex flex-row items-center justify-start gap-2 lg:col-start-2 lg:row-start-1 lg:mt-0 lg:justify-end lg:gap-3">
+        <div>
           <Button
             title={docs_dict.download}
             style="style3"
@@ -60,6 +59,7 @@ export function Document({
             icon="download"
             isDownload={true}
             downloadTitle={title}
+            className="text-sm lg:text-base"
           />
         </div>
         <div>
@@ -70,6 +70,7 @@ export function Document({
             as="button"
             onClick={() => setSeeMore(!seeMore)}
             icon={seeMore ? "arrow_upward" : "arrow_downward"}
+            className="text-sm lg:text-base"
           />
         </div>
       </div>
@@ -83,10 +84,6 @@ export function Document({
           <div className="my-2 flex flex-col lg:m-2">
             <div className="font-bold">{docs_dict.description}</div>
             {description}
-          </div>
-          <div className="my-2 flex flex-col lg:m-2">
-            <div className="font-bold">{docs_dict.accessPermissions}</div>
-            {accessPermision}
           </div>
         </div>
       </div>
