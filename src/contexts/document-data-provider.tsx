@@ -7,7 +7,6 @@ interface DocumentDataContext {
   yearSelected: string;
   setYearSelected: (year: string) => void;
   documentsData: DocumentsData;
-  isFetching: boolean;
 }
 
 const DocumentsContext = createContext<DocumentDataContext | undefined>(
@@ -21,19 +20,16 @@ export function DocumentsDataProvider({
 }) {
   const initialYear = process.env.NEXT_PUBLIC_CURRENT_MANDATE!;
   const [yearSelected, setYearSelected] = useState<string>(initialYear);
-  const [isFetching, setFetchingState] = useState<boolean>(true);
   const [documentsData, setDocumentsData] = useState<DocumentsData>([]);
 
   useEffect(() => {
     async function fetchDocs() {
-      setFetchingState(true);
       try {
-        const docsData: DocumentsData = []; // TODO: missing the implementation for fetching documents
+        const docsData: DocumentsData = [];
         setDocumentsData(docsData);
       } catch (error) {
         console.log("Error fetching documents data: ", error);
       }
-      setFetchingState(false);
     }
     void fetchDocs();
   }, [yearSelected]);
@@ -43,8 +39,7 @@ export function DocumentsDataProvider({
       value={{
         yearSelected,
         setYearSelected,
-        documentsData,
-        isFetching,
+        documentsData
       }}
     >
       {children}
@@ -70,14 +65,4 @@ export function useDocumentsData() {
     );
   }
   return context.documentsData;
-}
-
-export function useFetchingState() {
-  const context = useContext(DocumentsContext);
-  if (context === undefined) {
-    throw new Error(
-      "getFetchingState() can only be used insied a DocumentsDataProvider",
-    );
-  }
-  return context.isFetching;
 }
