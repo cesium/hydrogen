@@ -14,6 +14,10 @@
       "title": "Events | CeSIUM",
       "description": "Check out the events organized by CeSIUM."
     },
+    "documents": {
+      "title": "Documents | CeSIUM",
+      "description": "Check out CeSIUM's documents."
+    },
     "about": {
       "title": "About | CeSIUM",
       "description": "Learn more about our organization."
@@ -86,9 +90,9 @@
     "short_description": "Handles activity promotion and social media management.",
     "icon": "lightbulb"
   },
-  "drem": {
-    "name": "**External Relations and Merchandising** Department",
-    "description": "DREM establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
+  "dsp": {
+    "name": "**Social and Partnerships** Department",
+    "description": "DSP establishes and maintains partnerships for member benefits, manages external communications, and oversees merchandise creation for students.",
     "short_description": "Manages partnerships and member benefits.",
     "icon": "handshake"
   },
@@ -134,7 +138,8 @@
     "events": "Events",
     "partners": "Partnerships",
     "store": "Store",
-    "projects": "Projects"
+    "projects": "Projects",
+    "documents": "Documents"
   },
   "home": {
     "cesium": {
@@ -380,8 +385,18 @@
     "showMore": "Show More",
     "futureEvents": "Upcoming",
     "pastEvents": "Past",
+    "todayEvents": "Today",
     "noEvents": "No events to display.",
+    "day": "Day",
     "loading": "Loading events..."
+  },
+  "documents": {
+    "title": "Institutional Documents",
+    "allDocs": "All documents",
+    "download": "Download",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "description": "Description"
   },
   "social_media": "Social Media",
   "socials": [
@@ -419,8 +434,22 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["About", "Team", "Departments"],
-      "links": ["/about", "/team", "/departments"]
+      "items": [
+        "About",
+        "Team",
+        "Departments",
+        "Internal Regulations",
+        "Statutes",
+        "Documents"
+      ],
+      "links": [
+        "/about",
+        "/team",
+        "/departments",
+        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno.pdf",
+        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf",
+        "/documents"
+      ]
     },
     {
       "title": "Activities",
@@ -439,13 +468,17 @@
         "https://cesium.link",
         "https://calendario.cesium.pt",
         "https://elearning.uminho.pt",
-        "https://alunos.uminho.pt/PT"
+        "https://alunos.uminho.pt/EN"
       ]
     }
   ],
   "partners": {
     "title": "Partnerships",
     "description": "CeSIUM members enjoy exclusive partnership benefits. Discover all available offers and discounts.",
+    "form_notice": {
+      "title": "Suggest partners!",
+      "description": "Fill out the form so we can learn what kinds of partnerships would be a good fit."
+    },
     "list": [
       {
         "title": "100 Montaditos",
@@ -454,8 +487,24 @@
         "color": "#eecc67",
         "perks": [
           {
-            "description": "**10% discount** on purchases over €7 (excludes Wednesdays and Sundays).",
+            "description": "**10% discount** on purchases over €7 (excludes Mondays, Wednesdays and Sundays).",
             "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "2nd Life Mobile",
+        "url": "https://2ndlifemobile.com/",
+        "logo": "/images/partners/2ndlifemobile.webp",
+        "color": "#ffca06",
+        "perks": [
+          {
+            "description": "**30% discount** on all repairs done in the Braga store.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Offer of two accessories worth €20** with the purchase of a smartphone priced over €150.",
+            "icon": "Sell"
           }
         ]
       },
@@ -490,7 +539,7 @@
         "color": "#843dc2",
         "perks": [
           {
-            "description": "**Free drink** with Special Burger, American Toast, Salmon Toast, or Special Hot Dog menus.\n\n**Fanta, Nestea, Water, Sprite, Ginger ale**",
+            "description": "**Free drink*** with Special Burger, Regular Burger, American Toast, and Special Hot Dog menus.\n\n***Water, Juices, Fanta (orange or pineapple), Coke Zero, and Sprite**",
             "icon": "Water_Full"
           }
         ]
@@ -502,7 +551,7 @@
         "color": "#134046",
         "perks": [
           {
-            "description": "**10% discount** on board games with no minimum purchase required.",
+            "description": "**10% discount** on board games.",
             "icon": "Percent"
           }
         ]
@@ -526,15 +575,15 @@
         "color": "#d1a75b",
         "perks": [
           {
-            "description": "Buy 8 pins, get **lowest-priced pin free**.",
+            "description": "**1 free mystery pin** with purchases over €10.00",
             "icon": "Sell"
           },
           {
-            "description": "**20% off** course pins.",
+            "description": "**Emblems priced at €2.00** for members",
             "icon": "Percent"
           },
           {
-            "description": "**Free shipping** on orders over €12.50.",
+            "description": "**10% discount** on purchases over €20.00",
             "icon": "Euro"
           }
         ]
@@ -562,15 +611,15 @@
             "icon": "License"
           },
           {
-            "description": "Buy 4 emblems, **get 1 free**.",
+            "description": "Buy 4 emblems, **get 1 extra for free**.",
             "icon": "License"
           },
           {
-            "description": "Men's socks: **€2.75**.",
+            "description": "Men's socks: **€0.20 off** original price.",
             "icon": "Euro"
           },
           {
-            "description": "Women's socks: **€1.50**.",
+            "description": "Women's socks: **€0.25 off** original price.",
             "icon": "Euro"
           }
         ]
@@ -591,6 +640,30 @@
           },
           {
             "description": "Coffee for **€0.60**.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
+        "title": "Rick Universal",
+        "url": "https://www.instagram.com/rick.universal/",
+        "logo": "/images/partners/rickuniversal.webp",
+        "color": "#0000D3",
+        "perks": [
+          {
+            "description": "Small Draft Beer: **0.80€** | Beer Bucket: **1.50€** | Super Bock 33cl (Beer): **1.20€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Caipirinha: **3.00€** | Mojito: **3.00€** | Piña Colada: **3.00€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Vodka + Juice: **2.50€** | Whiskey + Cola: **2.50€** | Somersby: **0.80€** | Somersby + Absinthe: **2.80€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Buy a snack, get a small draft beer for **0.50€**.",
             "icon": "Sell"
           }
         ]
@@ -618,6 +691,54 @@
             "icon": "Coffee"
           }
         ]
+      },
+      {
+        "title": "Focus Jiu-Jitsu",
+        "url": "https://cesium.link/r/focus-jiu-jitsu",
+        "logo": "/images/partners/focusjiujitsu.webp",
+        "color": "#2c3227",
+        "perks": [
+          {
+            "description": "**10 free foundational classes**, registration limited to the first 10 active members.",
+            "icon": "sports_kabaddi"
+          }
+        ]
+      },
+      {
+        "title": "CopyScan",
+        "url": "https://www.instagram.com/copy.scan/",
+        "logo": "/images/partners/copyscan.webp",
+        "color": "#50adda",
+        "perks": [
+          {
+            "description": "**10% discount** on black and white prints.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**15% discount** on color prints.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**10% discount** on school supplies.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Lamasan",
+        "url": "https://www.instagram.com/lamasanbraga",
+        "logo": "/images/partners/lamasan.webp",
+        "color": "#DDB45E",
+        "perks": [
+          {
+            "description": "**Individual Discount: 0.50€** off for every **7€** spent. \n\n Cumulative discount",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Discount for 4 or more members: 1.00€** off for every **7€** spent. \n\n Cumulative discount",
+            "icon": "Sell"
+          }
+        ]
       }
     ]
   },
@@ -638,5 +759,15 @@
     "description": "We couldn't find the page you're looking for. It may have been moved or deleted. Visit our homepage to explore other content.",
     "go_to_start": "Go to Homepage",
     "contact_us": "Contact Us"
+  },
+  "footer": {
+    "phone": "Phone",
+    "address": [
+      "Room 1.04",
+      "Departamento de Informática",
+      "Campus de Gualtar",
+      "Universidade do Minho",
+      "4710-057 Braga, Portugal"
+    ]
   }
 }

@@ -3,9 +3,14 @@ export enum CardType {
   Membership = "Membership",
 }
 
+export enum NoticeType {
+  Partnerships = "Partnerships",
+}
+
 export interface Member {
   name: string;
   role: string;
+  imageUrl?: string;
 }
 
 export interface Department {
@@ -20,10 +25,6 @@ export interface Team {
 }
 
 export type TeamData = Team[];
-
-export interface MemberInfo extends Member {
-  imageUrl: string;
-}
 
 export interface ProductImage {
   thumb: string;
@@ -74,4 +75,13 @@ export interface EventTooltipProps {
   events: Event[];
   isVisible: boolean;
   anchorElement: HTMLElement | null;
+}
+
+export interface DocumentProps {
+  documentUrl: string;
+  title: string;
+  publication_date: string;
+  description: string;
+  imageUrl: string;
+  categories: string[];
 }

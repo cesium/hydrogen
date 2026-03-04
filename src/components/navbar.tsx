@@ -31,6 +31,7 @@ const Navbar = () => {
     { name: dict.navbar.partners, path: "/partners" },
     { name: dict.navbar.events, path: "/events" },
     { name: dict.navbar.store, path: "https://store.cesium.pt" },
+    { name: dict.navbar.documents, path: "/documents" },
   ];
 
   const isMember = pathname === "/about/become-a-member";
@@ -67,7 +68,7 @@ const Navbar = () => {
         className={`${navbarBackgroundColor} flex w-full flex-col pb-3 pt-4 md:relative md:pt-12`}
       >
         <nav className="flex items-center justify-between gap-9 md:justify-normal">
-          <Link href={`/${lang}`}>
+          <Link href={`/${lang}`} aria-label="Go home">
             <Logo
               type="cesium"
               width={30}
@@ -170,6 +171,7 @@ const Navbar = () => {
                           href={social.url}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={"CeSIUM's " + social.name + " link"}
                         >
                           <div className="group transition-transform duration-300 hover:-translate-y-1">
                             <div className="group-hover:hidden">

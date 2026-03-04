@@ -18,6 +18,10 @@
       "title": "Sobre | CeSIUM",
       "description": "Sabe mais sobre nós."
     },
+    "documents": {
+      "title": "Documentos | CeSIUM",
+      "description": "Estes são os documentos do CeSIUM."
+    },
     "team": {
       "title": "Equipa | CeSIUM",
       "description": "Conhece a equipa do CeSIUM."
@@ -86,9 +90,9 @@
     "short_description": "Responsável pela divulgação de atividades e gestão das redes sociais do CeSIUM.",
     "icon": "lightbulb"
   },
-  "drem": {
-    "name": "Departamento de **Relações Externas e Merchandising**",
-    "description": "O DREM é o departamento que assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetua o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação de merch do núcleo, pensada para todos os nossos estudantes.",
+  "dsp": {
+    "name": "Departamento **Social e Parcerias**",
+    "description": "O DSP é o departamento que assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir, bem como efetua o contacto com todas as entidades externas ao CeSIUM. É ainda da sua responsabilidade a criação de merch do núcleo, pensada para todos os nossos estudantes.",
     "short_description": "Assegura o estabelecimento e manutenção das parcerias das quais os sócios do CeSIUM podem usufruir.",
     "icon": "handshake"
   },
@@ -134,7 +138,8 @@
     "events": "Eventos",
     "partners": "Parcerias",
     "store": "Loja",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "documents": "Documentos"
   },
   "home": {
     "cesium": {
@@ -252,7 +257,7 @@
       "exclusive_partnerships": {
         "title": "Parcerias exclusivas",
         "description": "Almoça no Sabor da Fruta e toma um café grátis. Ou no Café do Luís, com bebida incluída. Recebe emblemas grátis n’Os Farias. Usufrui de descontos em aulas de música e de condução. Estas são só algumas das parcerias que temos para ti.",
-        "link": "Ver parecerias"
+        "link": "Ver parcerias"
       },
       "participate": {
         "title": "Participa gratuitamente em eventos",
@@ -380,8 +385,19 @@
     "showMore": "Mostrar mais",
     "futureEvents": "Próximos",
     "pastEvents": "Passados",
+    "todayEvents": "Hoje",
     "noEvents": "Não existem eventos para mostrar.",
+    "day": "Dia",
     "loading": "A carregar eventos..."
+  },
+  "documents": {
+    "title": "Documentos Institucionais",
+    "allDocs": "Todos os documentos",
+    "download": "Descarregar",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos",
+    "publicationDate": "Data de publicação",
+    "description": "Descrição"
   },
   "social_media": "Redes sociais",
   "socials": [
@@ -419,8 +435,22 @@
   "sections": [
     {
       "title": "CeSIUM",
-      "items": ["Sobre nós", "Equipa", "Departmentos"],
-      "links": ["/about", "/team", "/departments"]
+      "items": [
+        "Sobre nós",
+        "Equipa",
+        "Departmentos",
+        "Regulamento Interno",
+        "Estatutos",
+        "Documentos"
+      ],
+      "links": [
+        "/about",
+        "/team",
+        "/departments",
+        "https://assets.hydrogen.cesium.pt/documents/regulamento-interno.pdf",
+        "https://assets.hydrogen.cesium.pt/documents/estatutos.pdf",
+        "/documents"
+      ]
     },
     {
       "title": "Atividades",
@@ -446,6 +476,10 @@
   "partners": {
     "title": "Parcerias",
     "description": "Uma das vantagens de ser sócio do CeSIUM é poder usufruir das nossas incríveis parcerias. Descobre aqui todas as oportunidades e descontos que te oferecemos.",
+    "form_notice": {
+      "title": "Sugere parcerias!",
+      "description": "Preenche o formulário para que possamos entender quais tipos de parcerias seriam uma boa opção."
+    },
     "list": [
       {
         "title": "100 Montaditos",
@@ -454,8 +488,24 @@
         "color": "#eecc67",
         "perks": [
           {
-            "description": "**Desconto de 10%** em compras superiores a 7€, exceto quartas e domingos.",
+            "description": "**Desconto de 10%** em compras superiores a 7€, exceto segundas, quartas e domingos.",
             "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "2nd Life Mobile",
+        "url": "https://2ndlifemobile.com/",
+        "logo": "/images/partners/2ndlifemobile.webp",
+        "color": "#ffca06",
+        "perks": [
+          {
+            "description": "**Desconto de 30%** em todas as reparações, efetuadas na loja de Braga.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Oferta de dois acessórios, equivalentes a 20€** na compra de um smartphone de valor superior a 150€.",
+            "icon": "Sell"
           }
         ]
       },
@@ -490,7 +540,7 @@
         "color": "#843dc2",
         "perks": [
           {
-            "description": "**Oferta de bebida** nos menus Hambúrguer Especial, Tosta Americana, Tosta de Salmão e Cachorro Especial.\n\n**Fanta, Nestea, Água, Sprite, Ginger ale**",
+            "description": "**Oferta de bebida*** nos menus Hambúrguer Especial, Hambúrguer Corriqueiro, Tosta Americana e Cachorro Especial.\n\n***Água, Sumos, Fanta (de laranja ou ananás), Cola Zero e Sprite**",
             "icon": "Water_Full"
           }
         ]
@@ -502,7 +552,7 @@
         "color": "#134046",
         "perks": [
           {
-            "description": "**10% de desconto** na compra de jogos de tabuleiro e isenção de consumo mínimo.",
+            "description": "**10% de desconto** na compra de jogos de tabuleiro.",
             "icon": "Percent"
           }
         ]
@@ -526,15 +576,15 @@
         "color": "#d1a75b",
         "perks": [
           {
-            "description": "Na compra de 8 pins, é **oferecido o pin** de menor valor.",
+            "description": "**Oferta de 1 pin mistério** em compras superiores a 10.00€",
             "icon": "Sell"
           },
           {
-            "description": "**Desconto de 20%** nos pins de curso.",
+            "description": "**Emblemas no valor de 2.00€** para sócios",
             "icon": "Percent"
           },
           {
-            "description": "**Portes de envio gratuitos** em compras superiores a 12,50€.",
+            "description": "**Desconto de 10%** em compras superiores a 20.00€",
             "icon": "Euro"
           }
         ]
@@ -562,15 +612,15 @@
             "icon": "License"
           },
           {
-            "description": "Na compra de 4 emblemas, **oferta de 1**.",
+            "description": "Na compra de 4 emblemas, **oferta de 1 extra**.",
             "icon": "License"
           },
           {
-            "description": "Preço de meias para homem: **2,75€**.",
+            "description": "Preço de meias para homem: **desconto de 0.20€ sobre o preço original**.",
             "icon": "Euro"
           },
           {
-            "description": "Preço de meias para mulher: **1,50€**.",
+            "description": "Preço de meias para mulher: **desconto de 0.25€ sobre o preço original**.",
             "icon": "Euro"
           }
         ]
@@ -591,6 +641,30 @@
           },
           {
             "description": "Café a **0,60€**.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
+        "title": "Rick Universal",
+        "url": "https://www.instagram.com/rick.universal/",
+        "logo": "/images/partners/rickuniversal.webp",
+        "color": "#0000D3",
+        "perks": [
+          {
+            "description": "Fino: **0.80€** | Balde: **1.50€** | Super Bock 33cl: **1.20€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Caipirinha: **3.00€** | Mojito: **3.00€** | Piña Colada: **3.00€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Vodka + Sumo: **2.50€** | Whiskey + Cola: **2.50€** | Somersby: **0.80€** | Somersby + Absinto: **2.80€**",
+            "icon": "Euro"
+          },
+          {
+            "description": "Na compra de um snack, fino a **0.50€**.",
             "icon": "Sell"
           }
         ]
@@ -618,6 +692,54 @@
             "icon": "Coffee"
           }
         ]
+      },
+      {
+        "title": "Focus Jiu-Jitsu",
+        "url": "https://cesium.link/r/focus-jiu-jitsu",
+        "logo": "/images/partners/focusjiujitsu.webp",
+        "color": "#2c3227",
+        "perks": [
+          {
+            "description": "**10 aulas grátis de fundamentos**, inscrições limitadas aos 10 primeiros sócios ativos.",
+            "icon": "sports_kabaddi"
+          }
+        ]
+      },
+      {
+        "title": "CopyScan",
+        "url": "https://www.instagram.com/copy.scan/",
+        "logo": "/images/partners/copyscan.webp",
+        "color": "#50adda",
+        "perks": [
+          {
+            "description": "**Desconto de 10%** em impressões a preto e branco.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Desconto de 15%** em impressões a cores.",
+            "icon": "Percent"
+          },
+          {
+            "description": "**Desconto de 10%** em material escolar.",
+            "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Lamasan",
+        "url": "https://www.instagram.com/lamasanbraga",
+        "logo": "/images/partners/lamasan.webp",
+        "color": "#DDB45E",
+        "perks": [
+          {
+            "description": "**Desconto Individual: 0,50€** de desconto por cada **7€** em compras. \n\n Desconto acumulável",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Desconto para 4 ou mais sócios:** 1,00€ de desconto por cada 7€ em compras. \n\n Desconto acumulável",
+            "icon": "Sell"
+          }
+        ]
       }
     ]
   },
@@ -638,5 +760,15 @@
     "description": "Não conseguimos encontrar a página que procuras. Pode ter sido apagada ou movida para outro sítio. Convidamos-te a visitar a página inicial para descobrires as imensas páginas que temos que não dão um erro 404.",
     "go_to_start": "Ir para o início",
     "contact_us": "Contacta-nos"
+  },
+  "footer": {
+    "phone": "Telefone",
+    "address": [
+      "Sala 1.04",
+      "Departamento de Informática",
+      "Campus de Gualtar",
+      "Universidade do Minho",
+      "4710-057 Braga, Portugal"
+    ]
   }
 }

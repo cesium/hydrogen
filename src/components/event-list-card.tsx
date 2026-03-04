@@ -1,8 +1,15 @@
 "use client";
+
 import type { EventListProps, Event } from "../lib/types";
 import { EventCardCalendar } from "./event-card-calendar";
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
-import { isSameDay } from "../lib/utils";
+import {
+  isSameDay,
+  isWithinRange,
+  isToday,
+  isPastDay,
+  isFutureDay,
+} from "../lib/utils";
 import { fullLocale } from "@/lib/locale";
 
 export function EventListCard({
@@ -13,7 +20,6 @@ export function EventListCard({
 }: EventListProps) {
   const dict = useDictionary();
   const lang = useLang();
-  const currentDate = new Date();
 
   const filteredEvents = selectedDate
     ? events.filter((event) => {
@@ -21,21 +27,44 @@ export function EventListCard({
         const eventEnd = new Date(event.end);
         return (
           isSameDay(eventStart, selectedDate) ||
-          (eventEnd && eventStart <= selectedDate && eventEnd >= selectedDate)
+          (eventEnd && isWithinRange(selectedDate, eventStart, eventEnd))
         );
       })
     : events;
 
+  const todayEvents = filteredEvents.filter((event) => {
+    const eventStart = new Date(event.start);
+    const eventEnd = new Date(event.end);
+    const today = new Date();
+
+    return (
+      isToday(eventStart) ||
+      isToday(eventEnd) ||
+      isWithinRange(today, eventStart, eventEnd)
+    );
+  });
+
   const futureEvents = filteredEvents
-    .filter((event) => new Date(event.start) >= currentDate)
+    .filter((event) => {
+      const eventStart = new Date(event.start);
+      const today = new Date();
+      const oneMonthFromNow = new Date(today);
+      oneMonthFromNow.setMonth(oneMonthFromNow.getMonth() + 1);
+
+      return isFutureDay(eventStart) && eventStart <= oneMonthFromNow;
+    })
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
   const pastEvents = filteredEvents
-    .filter((event) => new Date(event.end) < currentDate)
-    .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
+    .filter((event) => {
+      const eventEnd = new Date(event.end);
+      const today = new Date();
+      const oneMonthAgo = new Date(today);
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-  const visibleFutureEvents = futureEvents.slice(0, 5);
-  const visiblePastEvents = pastEvents.slice(0, 5);
+      return isPastDay(eventEnd) && eventEnd >= oneMonthAgo;
+    })
+    .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
   const renderEventList = (
     eventList: Event[],
@@ -94,12 +123,9 @@ export function EventListCard({
         </button>
       )}
       <div className="flex w-full flex-row items-center gap-6">
-        {renderEventList(
-          visibleFutureEvents,
-          futureEvents,
-          dict.events.futureEvents,
-        )}
-        {renderEventList(visiblePastEvents, pastEvents, dict.events.pastEvents)}
+        {renderEventList(todayEvents, todayEvents, dict.events.todayEvents)}
+        {renderEventList(futureEvents, futureEvents, dict.events.futureEvents)}
+        {renderEventList(pastEvents, pastEvents, dict.events.pastEvents)}
       </div>
       {!isLoading && filteredEvents.length === 0 && (
         <div className="text-center text-black/50">{dict.events.noEvents}</div>
