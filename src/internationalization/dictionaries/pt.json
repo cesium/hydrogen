@@ -391,7 +391,13 @@
     "loading": "A carregar eventos..."
   },
   "documents": {
-    "title": "Documentos Institucionais"
+    "title": "Documentos Institucionais",
+    "allDocs": "Todos os documentos",
+    "download": "Descarregar",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos",
+    "publicationDate": "Data de publicação",
+    "description": "Descrição"
   },
   "social_media": "Redes sociais",
   "socials": [

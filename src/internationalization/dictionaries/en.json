@@ -391,7 +391,12 @@
     "loading": "Loading events..."
   },
   "documents": {
-    "title": "Institutional Documents"
+    "title": "Institutional Documents",
+    "allDocs": "All documents",
+    "download": "Download",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "description": "Description"
   },
   "social_media": "Social Media",
   "socials": [

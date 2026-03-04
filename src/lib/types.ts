@@ -76,3 +76,12 @@ export interface EventTooltipProps {
   isVisible: boolean;
   anchorElement: HTMLElement | null;
 }
+
+export interface DocumentProps {
+  documentUrl: string;
+  title: string;
+  publication_date: string;
+  description: string;
+  imageUrl: string;
+  categories: string[];
+}
