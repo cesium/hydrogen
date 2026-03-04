@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "cdn.shopk.it",
+        hostname: "cdn-shopkit.com",
       },
     ],
   },
