@@ -77,13 +77,13 @@ export interface EventTooltipProps {
   anchorElement: HTMLElement | null;
 }
 
-export interface Document {
+export interface DocumentProps {
   documentUrl: string;
   title: string;
   publication_date: string;
   description: string;
-  imageUrl?: string;
+  imageUrl: string;
   categories: string[];
 }
 
-export type DocumentsData = Document[];
+export type DocumentsData = DocumentProps[];
