@@ -739,6 +739,18 @@
             "icon": "Sell"
           }
         ]
+      },
+      {
+        "title": "Bira dos Namorados",
+        "url": "https://www.biradosnamorados.pt",
+        "logo": "/images/partners/biradosnamorados.webp",
+        "color": "#AAB05E",
+        "perks": [
+          {
+            "description": "**10% discount**, valid at Bira dos Namorados restaurants in Braga and Porto.",
+            "icon": "Percent"
+          }
+        ]
       }
     ]
   },
