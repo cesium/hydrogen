@@ -85,3 +85,5 @@ export interface DocumentProps {
   imageUrl: string;
   categories: string[];
 }
+
+export type DocumentsData = DocumentProps[];

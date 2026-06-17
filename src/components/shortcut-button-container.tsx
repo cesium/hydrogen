@@ -9,30 +9,24 @@ export default function ShortcutButtonsContainer() {
   return (
     <div className="grid w-full grid-cols-2 gap-3.5 sm:gap-4 min-[1370px]:grid-cols-5">
       <ShortcutButton
-        href="https://calendario.cesium.di.uminho.pt/"
+        href="https://pombo.cesium.pt" // TODO: Change to .di.uminho.pt when the migration is done
         highlight={dict.landing.sections.shortcut_buttons.highlight}
       >
+        <Image
+          src="/logo/pombo.svg"
+          width={200}
+          height={200}
+          alt="Pombo Logo"
+        />
+      </ShortcutButton>
+
+      <ShortcutButton href="https://calendario.cesium.di.uminho.pt/">
         <Image
           src="/logo/calendarium.svg"
           width={200}
           height={200}
           alt="Calendarium Logo"
         />
-      </ShortcutButton>
-
-      <ShortcutButton href="https://discord.com/invite/wQEvhkfFPk">
-        <div className="flex h-full items-center justify-center gap-2 text-[10px] min-[400px]:text-xs sm:gap-3 sm:text-base">
-          <Image
-            src="/logo/discord.svg"
-            width={50}
-            height={50}
-            className="h-[2.5em] w-fit"
-            alt="Discord Logo"
-          />
-          <Markdown className="line-clamp-2 font-title">
-            {dict.landing.sections.shortcut_buttons.discord}
-          </Markdown>
-        </div>
       </ShortcutButton>
 
       <ShortcutButton href="https://periferico.cesium.di.uminho.pt/">
