@@ -740,6 +740,26 @@
             "icon": "Sell"
           }
         ]
+      },
+      {
+        "title": "Mezobeli",
+        "url": "https://www.instagram.com/mezobeli_braga/",
+        "logo": "/images/partners/mezobeli.webp",
+        "color": "#C9A42D",
+        "perks": [
+          {
+            "description": "Refeição e chá por **4,50**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Sobremesa a **1,40€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Café a **0,60€**.",
+            "icon": "Sell"
+          }
+        ]
       }
     ]
   },
