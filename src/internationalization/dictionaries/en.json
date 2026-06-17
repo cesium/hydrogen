@@ -751,15 +751,15 @@
             "icon": "Sell"
           },
           {
-            "description": "Water for **€1**, and other drinks for **€1,35**",
+            "description": "Water for **€1**, and other drinks for **€1.35**",
             "icon": "Sell"
           },
           {
-            "description": "Dessert for **€1,60**.",
+            "description": "Dessert for **€1.60**.",
             "icon": "Sell"
           },
           {
-            "description": "Coffee for **€0,80**.",
+            "description": "Coffee for **€0.80**.",
             "icon": "Sell"
           }
         ]
