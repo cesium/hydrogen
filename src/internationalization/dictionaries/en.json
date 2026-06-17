@@ -751,11 +751,7 @@
             "icon": "Sell"
           },
           {
-            "description": "Water for **€1**.",
-            "icon": "Sell"
-          },
-          {
-            "description": "Drinks for **€1,35**.",
+            "description": "Water for **€1**, and other drinks for **€1,35**",
             "icon": "Sell"
           },
           {

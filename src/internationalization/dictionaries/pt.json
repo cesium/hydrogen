@@ -752,11 +752,7 @@
             "icon": "Sell"
           },
           {
-            "description": "Água por **1€**.",
-            "icon": "Sell"
-          },
-          {
-            "description": "Bebidas por **1,35€**.",
+            "description": "Água por **1€**, e outras bebidas por **1,35€**.",
             "icon": "Sell"
           },
           {
