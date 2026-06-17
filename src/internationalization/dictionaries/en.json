@@ -651,19 +651,19 @@
         "color": "#0000D3",
         "perks": [
           {
-            "description": "Small Draft Beer: **0.80€** | Beer Bucket: **1.50€** | Super Bock 33cl (Beer): **1.20€**",
+            "description": "Small Draft Beer: **€0.80** | Beer Bucket: **€1.50** | Super Bock 33cl (Beer): **€1.20**",
             "icon": "Euro"
           },
           {
-            "description": "Caipirinha: **3.00€** | Mojito: **3.00€** | Piña Colada: **3.00€**",
+            "description": "Caipirinha: **€3.00** | Mojito: **€3.00** | Piña Colada: **€3.00**",
             "icon": "Euro"
           },
           {
-            "description": "Vodka + Juice: **2.50€** | Whiskey + Cola: **2.50€** | Somersby: **0.80€** | Somersby + Absinthe: **2.80€**",
+            "description": "Vodka + Juice: **€2.50** | Whiskey + Cola: **€2.50** | Somersby: **€0.80** | Somersby + Absinthe: **€2.80**",
             "icon": "Euro"
           },
           {
-            "description": "Buy a snack, get a small draft beer for **0.50€**.",
+            "description": "Buy a snack, get a small draft beer for **€0.50**.",
             "icon": "Sell"
           }
         ]
@@ -731,11 +731,11 @@
         "color": "#DDB45E",
         "perks": [
           {
-            "description": "**Individual Discount: 0.50€** off for every **7€** spent. \n\n Cumulative discount",
+            "description": "**Individual Discount: €0.50** off for every **€7** spent. \n\n Cumulative discount",
             "icon": "Sell"
           },
           {
-            "description": "**Discount for 4 or more members: 1.00€** off for every **7€** spent. \n\n Cumulative discount",
+            "description": "**Discount for 4 or more members: €1.00** off for every **€7** spent. \n\n Cumulative discount",
             "icon": "Sell"
           }
         ]
@@ -747,15 +747,23 @@
         "color": "#C9A42D",
         "perks": [
           {
-            "description": "Meal + tea for **4,50**.",
+            "description": "Dish for **€5**.",
             "icon": "Sell"
           },
           {
-            "description": "Dessert for **1,40€**.",
+            "description": "Water for **€1**.",
             "icon": "Sell"
           },
           {
-            "description": "Coffee for **0,60€**.",
+            "description": "Drinks for **€1,35**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Dessert for **€1,60**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Coffee for **€0,80**.",
             "icon": "Sell"
           }
         ]
