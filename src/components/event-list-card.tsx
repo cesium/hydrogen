@@ -58,11 +58,7 @@ export function EventListCard({
   const pastEvents = filteredEvents
     .filter((event) => {
       const eventEnd = new Date(event.end);
-      const today = new Date();
-      const oneMonthAgo = new Date(today);
-      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-
-      return isPastDay(eventEnd) && eventEnd >= oneMonthAgo;
+      return isPastDay(eventEnd);
     })
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
 
