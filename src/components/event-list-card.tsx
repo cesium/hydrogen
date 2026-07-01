@@ -55,16 +55,27 @@ export function EventListCard({
     })
     .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime());
 
-  const pastEvents = filteredEvents
+  const today = new Date();
+  const oneMonthAgo = new Date(today);
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+  const recentPastEvents = filteredEvents
     .filter((event) => {
       const eventEnd = new Date(event.end);
-      const today = new Date();
-      const oneMonthAgo = new Date(today);
-      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
-
       return isPastDay(eventEnd) && eventEnd >= oneMonthAgo;
     })
     .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
+
+  const allPastEvents = filteredEvents
+    .filter((event) => isPastDay(new Date(event.end)))
+    .sort((a, b) => new Date(b.end).getTime() - new Date(a.end).getTime());
+
+  const pastEvents =
+    recentPastEvents.length > 0 ||
+    todayEvents.length > 0 ||
+    futureEvents.length > 0
+      ? recentPastEvents
+      : allPastEvents.slice(0, 3);
 
   const renderEventList = (
     eventList: Event[],
