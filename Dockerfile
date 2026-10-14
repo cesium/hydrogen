@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:1
 
-ARG BUN_VERSION=1.1.30
+ARG BUN_VERSION=1.4
 FROM oven/bun:${BUN_VERSION}-slim AS base
 
 LABEL fly_launch_runtime="Next.js"
@@ -16,7 +16,7 @@ ENV NODE_ENV="production"
 FROM base AS build
 
 # Build arguments
-ARG NEXT_PUBLIC_CURRENT_MANDATE="2024-2025"
+ARG NEXT_PUBLIC_CURRENT_MANDATE="2026-2027"
 
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
