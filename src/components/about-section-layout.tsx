@@ -3,7 +3,7 @@
 import AppLink from "./link";
 import { useDictionary } from "@/contexts/dictionary-provider";
 import AboutSection from "./about-section";
-import { useRef, useState } from "react";
+import Scrollable from "@/components/scrollable";
 
 type TitleOr = "vertical" | "horizontal";
 type LinkName = "see_more" | "see_team";
@@ -33,21 +33,6 @@ const AboutSectionLayout = ({
   children,
 }: AboutSectionProps) => {
   const dict = useDictionary();
-
-  const [isScrolledLeft, setIsScrolledLeft] = useState(true);
-  const [isScrolledRight, setIsScrolledRight] = useState(false);
-  const scrollableRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = () => {
-    if (scrollableRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollableRef.current;
-      // Check if the element is scrolled all the way to the left
-      const isLeft = scrollableRef.current.scrollLeft === 0;
-      setIsScrolledLeft(isLeft);
-      const isRight = scrollLeft + clientWidth >= scrollWidth;
-      setIsScrolledRight(isRight);
-    }
-  };
 
   return (
     <AboutSection dark={dark}>
@@ -88,25 +73,9 @@ const AboutSectionLayout = ({
             )}
           </div>
           {/* Content (Scrollable) */}
-          <div className="relative">
-            {overflows && (
-              <div className="hidden md:block">
-                {!isScrolledRight && (
-                  <div className="absolute right-0 top-0 z-10 h-full w-20 bg-gradient-to-l from-foundation from-20% to-transparent" />
-                )}
-                {!isScrolledLeft && (
-                  <div className="absolute left-0 top-0 z-10 h-full w-20 bg-gradient-to-r from-foundation from-20% to-transparent" />
-                )}
-              </div>
-            )}
-            <div
-              className="no-scrollbar mt-7 overflow-y-auto overflow-x-scroll sm:mt-10"
-              ref={scrollableRef}
-              onScroll={handleScroll}
-            >
-              {children}
-            </div>
-          </div>
+          <Scrollable overflows={overflows} className="mt-7 sm:mt-10">
+            {children}
+          </Scrollable>
         </div>
       </div>
     </AboutSection>
