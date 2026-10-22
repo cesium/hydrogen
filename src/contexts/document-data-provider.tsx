@@ -1,7 +1,8 @@
 "use client";
 
 import type { DocumentsData } from "@/lib/types";
-import { useContext, createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState, useEffect, useRef } from "react";
+import { fetchDocumentsData } from "@/app/actions";
 
 interface DocumentDataContext {
   yearSelected: string;
@@ -24,17 +25,28 @@ export function DocumentsDataProvider({
   const [isFetching, setFetchingState] = useState<boolean>(true);
   const [documentsData, setDocumentsData] = useState<DocumentsData>([]);
 
+  const sharedDocsRef = useRef<DocumentsData | null>(null);
+
   useEffect(() => {
     async function fetchDocs() {
       setFetchingState(true);
       try {
-        const docsData: DocumentsData = []; // TODO: missing the implementation for fetching documents
-        setDocumentsData(docsData);
+        const sharedPromise = sharedDocsRef.current
+          ? Promise.resolve(sharedDocsRef.current)
+          : fetchDocumentsData("shared");
+        const [yearsDocs, sharedDocs] = await Promise.all([
+          fetchDocumentsData(yearSelected),
+          sharedPromise,
+        ]);
+        sharedDocsRef.current = sharedDocs;
+        setDocumentsData([...yearsDocs, ...sharedDocs]);
       } catch (error) {
         console.log("Error fetching documents data: ", error);
+      } finally {
+        setFetchingState(false);
       }
-      setFetchingState(false);
     }
+
     void fetchDocs();
   }, [yearSelected]);
 
@@ -80,4 +92,14 @@ export function useFetchingState() {
     );
   }
   return context.isFetching;
+}
+
+export function useYearSelected() {
+  const context = useContext(DocumentsContext);
+  if (context === undefined) {
+    throw new Error(
+      "useYearSelected() can only be used inside a DocumentsDataProvider",
+    );
+  }
+  return context.yearSelected;
 }
