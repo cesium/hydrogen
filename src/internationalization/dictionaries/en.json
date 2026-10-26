@@ -631,15 +631,15 @@
         "color": "#598EBA",
         "perks": [
           {
-            "description": "Meal + tea for **€4.50**.",
+            "description": "Meal + tea for **€5.50**.",
             "icon": "Sell"
           },
           {
-            "description": "Dessert at **€1.40**.",
+            "description": "Dessert at **€1.60**.",
             "icon": "Sell"
           },
           {
-            "description": "Coffee for **€0.60**.",
+            "description": "Coffee for **€0.80**.",
             "icon": "Sell"
           }
         ]
@@ -675,7 +675,7 @@
         "color": "#89573E",
         "perks": [
           {
-            "description": "**€0.40 off** student menus and pizzas.",
+            "description": "**10% off** traditional family pizzas (cannot be combined)",
             "icon": "Euro"
           }
         ]
@@ -711,7 +711,7 @@
         "color": "#50adda",
         "perks": [
           {
-            "description": "**10% discount** on black and white prints.",
+            "description": "**15% discount** on black and white prints.",
             "icon": "Percent"
           },
           {
