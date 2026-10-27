@@ -632,15 +632,15 @@
         "color": "#598EBA",
         "perks": [
           {
-            "description": "Refeição e chá por **4,50€**.",
+            "description": "Refeição e chá por **5,50€**.",
             "icon": "Sell"
           },
           {
-            "description": "Sobremesa a **1,40€**.",
+            "description": "Sobremesa a **1,60€**.",
             "icon": "Sell"
           },
           {
-            "description": "Café a **0,60€**.",
+            "description": "Café a **0,80€**.",
             "icon": "Sell"
           }
         ]
@@ -676,7 +676,7 @@
         "color": "#89573E",
         "perks": [
           {
-            "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
+            "description": "**Desconto de 10%** em pizzas familiares tradicionais (desconto não acumulável)",
             "icon": "Euro"
           }
         ]
@@ -712,7 +712,7 @@
         "color": "#50adda",
         "perks": [
           {
-            "description": "**Desconto de 10%** em impressões a preto e branco.",
+            "description": "**Desconto de 15%** em impressões a preto e branco.",
             "icon": "Percent"
           },
           {
