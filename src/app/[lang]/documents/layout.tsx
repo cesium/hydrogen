@@ -4,6 +4,7 @@ import {
 } from "@/internationalization/dictionaries";
 import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
+import { DocumentsDataProvider } from "@/contexts/document-data-provider";
 
 export function generateMetadata({
   params: { lang },
@@ -53,5 +54,5 @@ export function generateMetadata({
 export default function DocumentsLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return <>{children}</>;
+  return <DocumentsDataProvider>{children}</DocumentsDataProvider>;
 }

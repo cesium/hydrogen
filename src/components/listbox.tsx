@@ -11,9 +11,11 @@ interface DropdownProps {
   options: string[];
   currentOption: string;
   setCurrentOption: (option: string) => void;
+  getOptionLabel?: (option: string) => string;
   defaultOption?: string;
   defaultOptionText?: string;
   hint?: string;
+  border?: boolean;
 }
 
 const ListBoxItem = ({
@@ -23,6 +25,7 @@ const ListBoxItem = ({
   defaultOptionText,
   currentOption,
   currentOptionIndex,
+  optionLabel,
 }: {
   option: string;
   index: number;
@@ -30,6 +33,7 @@ const ListBoxItem = ({
   defaultOptionText?: string;
   currentOption: string;
   currentOptionIndex: number;
+  optionLabel: string;
 }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -75,7 +79,7 @@ const ListBoxItem = ({
 
   return (
     <ListboxOption
-      key={index}
+      key={option}
       value={option}
       as={motion.div}
       ref={ref}
@@ -115,7 +119,7 @@ const ListBoxItem = ({
         />
       </svg>
       <div>
-        {option}
+        {optionLabel}
         {defaultOption === option && defaultOptionText && (
           <p className="text-sm text-primary">{defaultOptionText}</p>
         )}
@@ -128,9 +132,11 @@ const ListBox = ({
   options,
   currentOption,
   setCurrentOption,
+  getOptionLabel,
   defaultOption,
   defaultOptionText,
   hint,
+  border = true,
 }: DropdownProps) => {
   const containerVariants = {
     hidden: {
@@ -166,9 +172,9 @@ const ListBox = ({
         <>
           <ListboxButton
             data-umami-event={`mandate-${currentOption}`}
-            className="flex h-min rounded-lg border border-black/10 p-1 pl-2 align-middle text-primary"
+            className={`flex h-min rounded-lg ${border ? "border border-black/10" : ""} p-1 pl-2 align-middle text-primary`}
           >
-            {currentOption}
+            {getOptionLabel?.(currentOption) ?? currentOption}
             <span className="material-symbols-outlined">unfold_more</span>
           </ListboxButton>
           <AnimatePresence>
@@ -193,13 +199,14 @@ const ListBox = ({
                   <div className="px-4 py-2">
                     {options.map((option, index) => (
                       <ListBoxItem
-                        key={index}
+                        key={option}
                         option={option}
                         index={index}
                         defaultOption={defaultOption}
                         defaultOptionText={defaultOptionText}
                         currentOption={currentOption}
                         currentOptionIndex={options.indexOf(currentOption)}
+                        optionLabel={getOptionLabel?.(option) ?? option}
                       />
                     ))}
                   </div>
