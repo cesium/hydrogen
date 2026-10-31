@@ -775,6 +775,26 @@
             "icon": "Percent"
           }
         ]
+      },
+      {
+        "title": "Frangordo",
+        "url": "https://www.instagram.com/frangordo.pt/",
+        "logo": "/images/partners/frangordo.webp",
+        "color": "#F08300",
+        "perks": [
+          {
+            "description": "**€1.00** discount on menus 1 and 2.",
+            "icon": "Sell"
+          },
+          {
+            "description": "**€0.50** discount on Frangordinho, Wrap and Desportivo menus.",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Free** takeway service for orders of 10 or more people.",
+            "icon": "Sell"
+          }
+        ]
       }
     ]
   },
