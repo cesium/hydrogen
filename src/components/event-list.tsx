@@ -92,10 +92,14 @@ export function EventList({
       return dateA.getTime() - dateB.getTime();
     });
 
+  const oneMonthAgo = new Date();
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+  oneMonthAgo.setHours(0, 0, 0, 0);
+
   const pastEvents = filteredEvents
     .filter((event) => {
       const eventEnd = new Date(event.end);
-      return isPastDay(eventEnd);
+      return isPastDay(eventEnd) && eventEnd >= oneMonthAgo;
     })
     .sort((a, b) => {
       const dateA = new Date(a.end);
