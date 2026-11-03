@@ -11,7 +11,7 @@ import { generateYearRanges } from "@/lib/utils";
 import { GroupTabs, TabsContainer, Tab } from "@/components/tabs";
 import DocumentsList from "@/components/document-list";
 import OrderSelector from "@/components/order-selector";
-import type { OrderCriteria, OrderCriteriaMap } from "@/lib/types";
+import type { OrderCriteriaMap } from "@/lib/types";
 import { useState } from "react";
 import Scrollable from "@/components/scrollable";
 import DocumentsSkeleton from "@/components/documents-skeleton";
@@ -71,9 +71,8 @@ export default function Documents() {
   );
   const categories = [...new Set(docs.flatMap((x) => x.categories))];
   const orderCriterias = createOrderCriterias(dict.documents.order, lang);
-  const [order, setOrder] = useState<OrderCriteria>(
-    orderCriterias["date-desc"]!,
-  );
+  const [orderKey, setOrderKey] = useState<string>("date-desc");
+  const order = orderCriterias[orderKey]!;
   return (
     <main>
       <div className="layout-p-t">
@@ -114,9 +113,9 @@ export default function Documents() {
               </Scrollable>
             </TabsContainer>
             <OrderSelector
-              order={order}
+              orderKey={orderKey}
               orderCriterias={orderCriterias}
-              setOrder={setOrder}
+              setOrderKey={setOrderKey}
               className="shrink-0"
             />
           </div>

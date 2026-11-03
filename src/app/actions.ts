@@ -8,7 +8,7 @@ import type {
 } from "@/lib/types";
 import { unstable_cache } from "next/cache";
 
-const S3_BUCKET_URL = "https://assets.hydrogen.cesium.pt";
+const S3_BUCKET_URL = "https://pub-faa659c53df24e51ad00622bf954a45a.r2.dev";
 
 const isYearBefore2016 = (yearRange: string) => {
   const firstYearStr = yearRange.split("-")[0];

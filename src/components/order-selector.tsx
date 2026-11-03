@@ -1,17 +1,17 @@
 import ListBox from "@/components/listbox";
-import type { OrderCriteria, OrderCriteriaMap } from "@/lib/types";
+import type { OrderCriteriaMap } from "@/lib/types";
 
 interface OrderSelectorProps {
-  order: OrderCriteria;
+  orderKey: string;
   orderCriterias: OrderCriteriaMap;
-  setOrder: (order: OrderCriteria) => void;
+  setOrderKey: (orderKey: string) => void;
   className?: string;
 }
 
 const OrderSelector = ({
-  order,
+  orderKey,
   orderCriterias,
-  setOrder,
+  setOrderKey,
   className = "",
 }: OrderSelectorProps) => {
   const orderValues = Object.keys(orderCriterias);
@@ -21,8 +21,8 @@ const OrderSelector = ({
     <div className={className}>
       <ListBox
         options={orderValues}
-        currentOption={order.value}
-        setCurrentOption={(value) => setOrder(orderCriterias[value]!)}
+        currentOption={orderCriterias[orderKey]!.value}
+        setCurrentOption={setOrderKey}
         getOptionLabel={(value) => orderCriterias[value]!.label}
         border={false}
       />

@@ -1,7 +1,5 @@
 "use client";
 
-import Scrollable from "./scrollable";
-
 export default function DocumentsSkeleton() {
   return (
     <>
@@ -17,7 +15,7 @@ export default function DocumentsSkeleton() {
               </span>
             </div>
             <div className="flex min-w-0 flex-col items-start justify-center object-center">
-              <div className="mb-1 line-clamp-2 h-5 w-48 rounded bg-gray/10 text-base font-bold leading-tight" />
+              <div className="mb-1 h-5 w-48 max-w-full overflow-hidden rounded bg-gray/10" />
               <div className="text-gray-500 flex w-full min-w-0 flex-col items-center gap-1 text-sm md:flex-row">
                 <div className="my-1 flex items-center py-0.5">
                   <span className="material-symbols-outlined mr-1 text-[18px]">
@@ -25,7 +23,7 @@ export default function DocumentsSkeleton() {
                   </span>
                   <div className="h-4 w-24 rounded bg-gray/10" />
                 </div>
-                <Scrollable overflows className="w-full min-w-0">
+                <div className="w-full min-w-0 overflow-hidden">
                   <div className="my-1 flex w-max flex-row flex-nowrap justify-start">
                     {[1, 2].map((_, index) => (
                       <div
@@ -34,7 +32,7 @@ export default function DocumentsSkeleton() {
                       ></div>
                     ))}
                   </div>
-                </Scrollable>
+                </div>
               </div>
             </div>
           </div>

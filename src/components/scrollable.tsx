@@ -33,9 +33,10 @@ const Scrollable = ({
 
     const observer = new ResizeObserver(handleScroll);
     observer.observe(element);
+    if (element.firstElementChild) observer.observe(element.firstElementChild);
 
     return () => observer.disconnect();
-  }, [children]);
+  }, []);
 
   // Define dinamicamente onde aplicar a transparência nas pontas
   const getMaskStyle = () => {

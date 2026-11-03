@@ -68,7 +68,7 @@ export function useSetYear() {
   const context = useContext(DocumentsContext);
   if (context === undefined) {
     throw new Error(
-      "selectYear() can only be used inside a DocumentsDataProvider",
+      "useSetYear() can only be used inside a DocumentsDataProvider",
     );
   }
   return context.setYearSelected;
@@ -78,7 +78,7 @@ export function useDocumentsData() {
   const context = useContext(DocumentsContext);
   if (context === undefined) {
     throw new Error(
-      "getDocumentsData() can only be used inside a DocumentsDataProvider",
+      "useDocumentsData() can only be used inside a DocumentsDataProvider",
     );
   }
   return context.documentsData;
@@ -88,7 +88,7 @@ export function useFetchingState() {
   const context = useContext(DocumentsContext);
   if (context === undefined) {
     throw new Error(
-      "getFetchingState() can only be used inside a DocumentsDataProvider",
+      "useFetchingState() can only be used inside a DocumentsDataProvider",
     );
   }
   return context.isFetching;

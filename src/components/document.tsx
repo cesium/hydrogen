@@ -32,7 +32,7 @@ export default function Document({
           </span>
         </div>
         <div className="flex min-w-0 flex-col items-start justify-center object-center">
-          <div className="text-gray-900 mb-1 line-clamp-2 text-base font-bold leading-tight">
+          <div className="text-gray-900 mb-1 line-clamp-2 overflow-hidden text-base font-bold leading-tight">
             {displayTitle}
           </div>
           <div className="text-gray-500 flex w-full min-w-0 flex-col items-center gap-1 text-sm md:flex-row">
