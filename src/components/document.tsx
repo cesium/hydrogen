@@ -7,6 +7,14 @@ import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import Scrollable from "./scrollable";
 import { shortLocale } from "@/lib/locale";
 
+const formatDate = (dateStr: string) => {
+  const [year, month, day] = dateStr.split("-");
+  if (year && month && day) {
+    return `${day}/${month}/${year}`;
+  }
+  return dateStr;
+};
+
 export default function Document({
   title,
   publication_date,
@@ -40,7 +48,7 @@ export default function Document({
               <span className="material-symbols-outlined mr-1 text-[18px]">
                 calendar_month
               </span>
-              <span>{publication_date}</span>
+              <span>{formatDate(publication_date)}</span>
             </div>
             <Scrollable overflows className="w-full min-w-0">
               <div className="my-1 flex w-max flex-row flex-nowrap justify-start">
@@ -60,6 +68,17 @@ export default function Document({
       <div className="row-start-3 mt-2 flex flex-row items-center justify-start gap-2 md:col-start-2 md:row-start-1 md:mt-0 md:justify-end md:gap-3">
         <div>
           <Button
+            title={seeMore ? docs_dict.seeLess : docs_dict.seeMore}
+            style="style1"
+            color="primary"
+            as="button"
+            onClick={() => setSeeMore(!seeMore)}
+            icon={seeMore ? "arrow_upward" : "arrow_downward"}
+            className="text-sm md:text-base"
+          />
+        </div>
+        <div>
+          <Button
             title={docs_dict.download}
             style="style3"
             color="primary"
@@ -68,17 +87,6 @@ export default function Document({
             icon="download"
             isDownload={true}
             downloadTitle={displayTitle}
-            className="text-sm md:text-base"
-          />
-        </div>
-        <div>
-          <Button
-            title={seeMore ? docs_dict.seeLess : docs_dict.seeMore}
-            style="style1"
-            color="primary"
-            as="button"
-            onClick={() => setSeeMore(!seeMore)}
-            icon={seeMore ? "arrow_upward" : "arrow_downward"}
             className="text-sm md:text-base"
           />
         </div>

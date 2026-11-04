@@ -187,7 +187,7 @@ const ListBox = ({
                 exit="exit"
                 variants={containerVariants}
                 anchor={{ to: "bottom start", padding: 16, gap: 8 }}
-                className="min-w-72 origin-top rounded-2xl border border-black/10 bg-white pt-4 shadow-md"
+                className="z-50 min-w-72 origin-top rounded-2xl border border-black/10 bg-white pt-4 shadow-md"
               >
                 {hint && (
                   <h3 className="mx-5 font-semibold leading-7 text-black">

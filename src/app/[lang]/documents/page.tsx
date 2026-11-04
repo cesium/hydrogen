@@ -2,9 +2,9 @@
 import { useDictionary, useLang } from "@/contexts/dictionary-provider";
 import {
   useDocumentsData,
-  useSetYear,
-  useYearSelected,
-  useFetchingState,
+  useSetDocumentsYear,
+  useDocumentsYear,
+  useDocumentsFetching,
 } from "@/contexts/document-data-provider";
 import ListBox from "@/components/listbox";
 import { generateYearRanges } from "@/lib/utils";
@@ -58,13 +58,13 @@ const createOrderCriterias = (
 });
 
 export default function Documents() {
-  const isLoading = useFetchingState();
+  const isLoading = useDocumentsFetching();
   const dict = useDictionary();
   const docs = useDocumentsData();
   const lang = shortLocale(useLang());
-  const yearSelected = useYearSelected();
+  const yearSelected = useDocumentsYear();
   const defaultYearRange = process.env.NEXT_PUBLIC_CURRENT_MANDATE!;
-  const setYear = useSetYear();
+  const setYear = useSetDocumentsYear();
   const yearRanges = generateYearRanges(
     1995,
     parseInt(defaultYearRange.split("-")[0]!, 10),

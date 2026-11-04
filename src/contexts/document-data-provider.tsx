@@ -1,19 +1,19 @@
 "use client";
 
+import { createContext, useContext, useEffect, useState } from "react";
 import type { DocumentsData } from "@/lib/types";
-import { useContext, createContext, useState, useEffect, useRef } from "react";
 import { fetchDocumentsData } from "@/app/actions";
 
-interface DocumentDataContext {
+interface DocumentsDataContextData {
   yearSelected: string;
   setYearSelected: (year: string) => void;
   documentsData: DocumentsData;
   isFetching: boolean;
 }
 
-const DocumentsContext = createContext<DocumentDataContext | undefined>(
-  undefined,
-);
+const DocumentsDataContext = createContext<
+  DocumentsDataContextData | undefined
+>(undefined);
 
 export function DocumentsDataProvider({
   children,
@@ -22,36 +22,29 @@ export function DocumentsDataProvider({
 }) {
   const initialYear = process.env.NEXT_PUBLIC_CURRENT_MANDATE!;
   const [yearSelected, setYearSelected] = useState<string>(initialYear);
-  const [isFetching, setFetchingState] = useState<boolean>(true);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
   const [documentsData, setDocumentsData] = useState<DocumentsData>([]);
 
-  const sharedDocsRef = useRef<DocumentsData | null>(null);
-
   useEffect(() => {
-    async function fetchDocs() {
-      setFetchingState(true);
+    async function fetchData() {
+      setIsFetching(true);
       try {
-        const sharedPromise = sharedDocsRef.current
-          ? Promise.resolve(sharedDocsRef.current)
-          : fetchDocumentsData("shared");
-        const [yearsDocs, sharedDocs] = await Promise.all([
+        const [yd, sd] = await Promise.all([
           fetchDocumentsData(yearSelected),
-          sharedPromise,
+          fetchDocumentsData("shared"),
         ]);
-        sharedDocsRef.current = sharedDocs;
-        setDocumentsData([...yearsDocs, ...sharedDocs]);
+        setDocumentsData([...yd, ...sd]);
       } catch (error) {
-        console.log("Error fetching documents data: ", error);
+        console.error("Error fetching documents data: ", error);
       } finally {
-        setFetchingState(false);
+        setIsFetching(false);
       }
     }
-
-    void fetchDocs();
+    void fetchData();
   }, [yearSelected]);
 
   return (
-    <DocumentsContext.Provider
+    <DocumentsDataContext.Provider
       value={{
         yearSelected,
         setYearSelected,
@@ -60,45 +53,45 @@ export function DocumentsDataProvider({
       }}
     >
       {children}
-    </DocumentsContext.Provider>
+    </DocumentsDataContext.Provider>
   );
 }
 
-export function useSetYear() {
-  const context = useContext(DocumentsContext);
+export function useSetDocumentsYear(): (year: string) => void {
+  const context = useContext(DocumentsDataContext);
   if (context === undefined) {
     throw new Error(
-      "useSetYear() can only be used inside a DocumentsDataProvider",
+      "useSetDocumentsYear() must be used within a DocumentsDataProvider",
     );
   }
   return context.setYearSelected;
 }
 
-export function useDocumentsData() {
-  const context = useContext(DocumentsContext);
+export function useDocumentsData(): DocumentsData {
+  const context = useContext(DocumentsDataContext);
   if (context === undefined) {
     throw new Error(
-      "useDocumentsData() can only be used inside a DocumentsDataProvider",
+      "useDocumentsData() must be used within a DocumentsDataProvider",
     );
   }
   return context.documentsData;
 }
 
-export function useFetchingState() {
-  const context = useContext(DocumentsContext);
+export function useDocumentsFetching(): boolean {
+  const context = useContext(DocumentsDataContext);
   if (context === undefined) {
     throw new Error(
-      "useFetchingState() can only be used inside a DocumentsDataProvider",
+      "useDocumentsFetching() must be used within a DocumentsDataProvider",
     );
   }
   return context.isFetching;
 }
 
-export function useYearSelected() {
-  const context = useContext(DocumentsContext);
+export function useDocumentsYear(): string {
+  const context = useContext(DocumentsDataContext);
   if (context === undefined) {
     throw new Error(
-      "useYearSelected() can only be used inside a DocumentsDataProvider",
+      "useDocumentsYear() must be used within a DocumentsDataProvider",
     );
   }
   return context.yearSelected;
