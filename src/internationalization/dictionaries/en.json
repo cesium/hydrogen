@@ -643,15 +643,15 @@
         "color": "#598EBA",
         "perks": [
           {
-            "description": "Meal + tea for **€4.50**.",
+            "description": "Meal + tea for **€5.50**.",
             "icon": "Sell"
           },
           {
-            "description": "Dessert at **€1.40**.",
+            "description": "Dessert at **€1.60**.",
             "icon": "Sell"
           },
           {
-            "description": "Coffee for **€0.60**.",
+            "description": "Coffee for **€0.80**.",
             "icon": "Sell"
           }
         ]
@@ -663,19 +663,19 @@
         "color": "#0000D3",
         "perks": [
           {
-            "description": "Small Draft Beer: **0.80€** | Beer Bucket: **1.50€** | Super Bock 33cl (Beer): **1.20€**",
+            "description": "Small Draft Beer: **€0.80** | Beer Bucket: **€1.50** | Super Bock 33cl (Beer): **€1.20**",
             "icon": "Euro"
           },
           {
-            "description": "Caipirinha: **3.00€** | Mojito: **3.00€** | Piña Colada: **3.00€**",
+            "description": "Caipirinha: **€3.00** | Mojito: **€3.00** | Piña Colada: **€3.00**",
             "icon": "Euro"
           },
           {
-            "description": "Vodka + Juice: **2.50€** | Whiskey + Cola: **2.50€** | Somersby: **0.80€** | Somersby + Absinthe: **2.80€**",
+            "description": "Vodka + Juice: **€2.50** | Whiskey + Cola: **€2.50** | Somersby: **€0.80** | Somersby + Absinthe: **€2.80**",
             "icon": "Euro"
           },
           {
-            "description": "Buy a snack, get a small draft beer for **0.50€**.",
+            "description": "Buy a snack, get a small draft beer for **€0.50**.",
             "icon": "Sell"
           }
         ]
@@ -687,7 +687,7 @@
         "color": "#89573E",
         "perks": [
           {
-            "description": "**€0.40 off** student menus and pizzas.",
+            "description": "**10% off** on traditional family pizzas (cannot be combined)",
             "icon": "Euro"
           }
         ]
@@ -723,7 +723,7 @@
         "color": "#50adda",
         "perks": [
           {
-            "description": "**10% discount** on black and white prints.",
+            "description": "**15% discount** on black and white prints.",
             "icon": "Percent"
           },
           {
@@ -743,11 +743,35 @@
         "color": "#DDB45E",
         "perks": [
           {
-            "description": "**Individual Discount: 0.50€** off for every **7€** spent. \n\n Cumulative discount",
+            "description": "**Individual Discount: €0.50** off for every **€7** spent. \n\n Cumulative discount",
             "icon": "Sell"
           },
           {
-            "description": "**Discount for 4 or more members: 1.00€** off for every **7€** spent. \n\n Cumulative discount",
+            "description": "**Discount for 4 or more members: €1.00** off for every **€7** spent. \n\n Cumulative discount",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
+        "title": "Mezobeli",
+        "url": "https://www.instagram.com/mezobeli_braga/",
+        "logo": "/images/partners/mezobeli.webp",
+        "color": "#C9A42D",
+        "perks": [
+          {
+            "description": "Dish for **€5**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Water for **€1**, and other drinks for **€1.35**",
+            "icon": "Sell"
+          },
+          {
+            "description": "Dessert for **€1.60**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Coffee for **€0.80**.",
             "icon": "Sell"
           }
         ]
@@ -761,6 +785,26 @@
           {
             "description": "**10% discount**, valid at Bira dos Namorados restaurants in Braga and Porto.",
             "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Frangordo",
+        "url": "https://www.instagram.com/frangordo.pt/",
+        "logo": "/images/partners/frangordo.webp",
+        "color": "#F08300",
+        "perks": [
+          {
+            "description": "**€1.00** discount on menus 1 and 2.",
+            "icon": "Sell"
+          },
+          {
+            "description": "**€0.50** discount on Frangordinho, Wrap and Desportivo menus.",
+            "icon": "Sell"
+          },
+          {
+            "description": "**Free** takeway service for orders of 10 or more people.",
+            "icon": "Sell"
           }
         ]
       }

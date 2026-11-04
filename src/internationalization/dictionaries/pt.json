@@ -644,15 +644,15 @@
         "color": "#598EBA",
         "perks": [
           {
-            "description": "Refeição e chá por **4,50€**.",
+            "description": "Refeição e chá por **5,50€**.",
             "icon": "Sell"
           },
           {
-            "description": "Sobremesa a **1,40€**.",
+            "description": "Sobremesa a **1,60€**.",
             "icon": "Sell"
           },
           {
-            "description": "Café a **0,60€**.",
+            "description": "Café a **0,80€**.",
             "icon": "Sell"
           }
         ]
@@ -688,7 +688,7 @@
         "color": "#89573E",
         "perks": [
           {
-            "description": "**Desconto de 0,40€** no menu estudante e nas pizzas.",
+            "description": "**Desconto de 10%** em pizzas familiares tradicionais (desconto não acumulável)",
             "icon": "Euro"
           }
         ]
@@ -724,7 +724,7 @@
         "color": "#50adda",
         "perks": [
           {
-            "description": "**Desconto de 10%** em impressões a preto e branco.",
+            "description": "**Desconto de 15%** em impressões a preto e branco.",
             "icon": "Percent"
           },
           {
@@ -762,6 +762,50 @@
           {
             "description": "**Desconto de 10%**, válido nos restaurantes Bira dos Namorados de Braga e do Porto.",
             "icon": "Percent"
+          }
+        ]
+      },
+      {
+        "title": "Mezobeli",
+        "url": "https://www.instagram.com/mezobeli_braga/",
+        "logo": "/images/partners/mezobeli.webp",
+        "color": "#C9A42D",
+        "perks": [
+          {
+            "description": "Prato por **5€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Água por **1€**, e outras bebidas por **1,35€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Sobremesa por **1,60€**.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Café a **0,80€**.",
+            "icon": "Sell"
+          }
+        ]
+      },
+      {
+        "title": "Frangordo",
+        "url": "https://www.instagram.com/frangordo.pt/", 
+        "logo": "/images/partners/frangordo.webp",
+        "color": "#F08300", 
+        "perks": [
+          {
+            "description": "Desconto de **1,00 €** nos menus 1 e 2.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Desconto de **0,50 €** no menu Frangordinho, menu Wrap e menu Desportivo.",
+            "icon": "Sell"
+          },
+          {
+            "description": "Serviço de takeaway **gratuito** para encomendas de 10 ou mais pessoas.",
+            "icon": "Sell"
           }
         ]
       }
