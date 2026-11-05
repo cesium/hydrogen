@@ -4,7 +4,7 @@ import {
 } from "@/internationalization/dictionaries";
 import { fullLocale } from "@/lib/locale";
 import { type Metadata } from "next";
-import { DocumentsDataProvider } from "@/contexts/document-data-provider";
+import { DocumentsDataProvider } from "@/contexts/documents-data-provider";
 
 export function generateMetadata({
   params: { lang },

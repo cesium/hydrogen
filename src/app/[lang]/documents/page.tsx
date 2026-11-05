@@ -5,7 +5,7 @@ import {
   useSetDocumentsYear,
   useDocumentsYear,
   useDocumentsFetching,
-} from "@/contexts/document-data-provider";
+} from "@/contexts/documents-data-provider";
 import ListBox from "@/components/listbox";
 import { generateYearRanges } from "@/lib/utils";
 import { GroupTabs, TabsContainer, Tab } from "@/components/tabs";

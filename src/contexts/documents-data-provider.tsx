@@ -28,17 +28,12 @@ export function DocumentsDataProvider({
   useEffect(() => {
     async function fetchData() {
       setIsFetching(true);
-      try {
-        const [yd, sd] = await Promise.all([
-          fetchDocumentsData(yearSelected),
-          fetchDocumentsData("shared"),
-        ]);
-        setDocumentsData([...yd, ...sd]);
-      } catch (error) {
-        console.error("Error fetching documents data: ", error);
-      } finally {
-        setIsFetching(false);
-      }
+      const [yd, sd] = await Promise.all([
+        fetchDocumentsData(yearSelected),
+        fetchDocumentsData("shared"),
+      ]);
+      setDocumentsData([...yd, ...sd]);
+      setIsFetching(false);
     }
     void fetchData();
   }, [yearSelected]);
