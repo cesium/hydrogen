@@ -26,12 +26,16 @@ export function middleware(request: NextRequest): NextResponse {
   if (pathnameHasLocale) return NextResponse.next();
 
   // Redirect if there is no locale
+  // "*" is not a valid locale and makes match() throw. Node's fetch sends it by
+  // default, so Next.js' server action forwarding would loop on that error.
   const languages = new Negotiator({
     headers: {
       "accept-language":
         request.headers.get("Accept-Language") ?? defaultLocale,
     },
-  }).languages();
+  })
+    .languages()
+    .filter((language) => language !== "*");
   const locale: Locale = match(languages, locales, defaultLocale) as Locale;
   request.nextUrl.pathname = `/${shortLocale(locale)}${pathname}`;
   // e.g. incoming request is /products
