@@ -1,4 +1,4 @@
-[asdf-vm]: https://asdf-vm.com/
+[mise]: https://mise.jdx.dev/
 
 # 🚀 Getting Started
 
@@ -10,14 +10,15 @@ local machine for development and testing purposes.
 The following software is required to be installed on your system:
 
 - [Node.js 20.11.1+](https://nodejs.org/en/download/)
-- [Bun 1.1.30+](https://bun.sh/)
+- [Bun 1.4+](https://bun.sh/)
 
-We recommend using [asdf version manager][asdf-vm] to install and manage all
-the programming languages' requirements.
+We recommend using [mise][mise] to install and manage all the programming
+languages' requirements. The required versions are listed in the
+`.tool-versions` file, which mise reads.
 
 ## 🔧 Setup
 
-Cloning the repository:
+First, clone the repository:
 
 ```
 git clone git@github.com:cesium/hydrogen.git
@@ -25,23 +26,35 @@ cd hydrogen
 git checkout develop
 ```
 
-Installing prerequisites:
+Then, if you are using mise, install the required tools:
 
 ```
-asdf install
+mise install
 ```
 
-Installing dependencies:
+Next, install the dependencies:
 
 ```
 bun i
 ```
 
-Finally, follow the exemplary `.env.local.sample` file to create your own `.env.local`.
+Finally, create your environment file and change it as needed:
+
+```
+cp .env.local.sample .env.local
+```
+
+| Variable                      | Description                                    |
+| ----------------------------- | ---------------------------------------------- |
+| `SHOPKIT_API_KEY`             | API key used to fetch the store's products     |
+| `UMAMI_URL`                   | URL of the Umami analytics instance            |
+| `UMAMI_WEBSITE_ID`            | Website ID in Umami                            |
+| `NEXT_PUBLIC_CURRENT_MANDATE` | Current team mandate (e.g. `2026-2027`)        |
+| `NEXT_PUBLIC_ATLAS_API_URL`   | URL of the Atlas API, used to fetch the events |
 
 ## 🔨 Development
 
-Starting the development server.
+Start the development server and then you can open `http://localhost:3000`.
 
 ```
 bun dev
@@ -61,7 +74,11 @@ bun format
 
 ## 🔗 References
 
-You can use these resources to learn more about the technologies this project uses.
+You can use these resources to learn more about the technologies this project
+uses.
 
-- [Getting Started with React](https://reactjs.org/docs/getting-started.html)
+- [Learn React](https://react.dev/learn)
 - [Learn Next.js](https://nextjs.org/learn)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Bun Documentation](https://bun.sh/docs)
