@@ -1,7 +1,6 @@
 # syntax=docker/dockerfile:1
 
 ARG BUN_VERSION=1.4
-ARG NODE_VERSION=20.11.1
 
 # Build stage
 FROM oven/bun:${BUN_VERSION}-slim AS builder
@@ -22,7 +21,7 @@ RUN bun run build
 
 
 # Final stage for app image
-FROM node:${NODE_VERSION}-slim AS runner
+FROM oven/bun:${BUN_VERSION}-slim AS runner
 
 # Install curl for the health check
 RUN apt-get update -qq && \
@@ -37,15 +36,15 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 # Owned by the runtime user because Next.js writes its cache under .next
-COPY --from=builder --chown=node /app/public ./public
-COPY --from=builder --chown=node /app/.next/standalone ./
-COPY --from=builder --chown=node /app/.next/static ./.next/static
+COPY --from=builder --chown=bun /app/public ./public
+COPY --from=builder --chown=bun /app/.next/standalone ./
+COPY --from=builder --chown=bun /app/.next/static ./.next/static
 
-USER node
+USER bun
 
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 --start-period=5s \
   CMD curl -f http://localhost:3000/ || exit 1
 
-CMD [ "node", "server.js" ]
+CMD [ "bun", "server.js" ]
