@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+  env: {
+    ATLAS_API_URL: process.env.ATLAS_API_URL,
+  },
   images: {
     remotePatterns: [
       {

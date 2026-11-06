@@ -3,14 +3,15 @@ import { type Event } from "@/lib/types";
 
 const getEvents = async () => {
   try {
-    const response = await axios.get<Event[]>(
-      "https://calendario.cesium.di.uminho.pt/api/transfer/events?filterId=-1&groupId=0&groupId=7&groupId=9&groupId=10&groupId=11&groupId=12",
+    const response = await axios.get<{ events: Event[] }>(
+      `${process.env.ATLAS_API_URL}/v1/public/events`,
     );
-    response.data.forEach((event) => {
+    const events = response.data.events ?? [];
+    events.forEach((event) => {
       event.end = new Date(event.end);
       event.start = new Date(event.start);
     });
-    return Array.isArray(response.data) ? response.data : [response.data];
+    return events;
   } catch (error) {
     console.error("Error fetching events:", error);
     throw error;
