@@ -4,7 +4,7 @@ import { type Event } from "@/lib/types";
 const getEvents = async () => {
   try {
     const response = await axios.get<{ events: Event[] }>(
-      `${process.env.ATLAS_API_URL}/v1/public/events`,
+      `${process.env.NEXT_PUBLIC_ATLAS_API_URL}/v1/public/events`,
     );
     const events = response.data.events ?? [];
     events.forEach((event) => {
