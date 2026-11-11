@@ -1,51 +1,50 @@
-# syntax = docker/dockerfile:1
+# syntax=docker/dockerfile:1
 
 ARG BUN_VERSION=1.4
-FROM oven/bun:${BUN_VERSION}-slim AS base
 
-LABEL fly_launch_runtime="Next.js"
+# Build stage
+FROM oven/bun:${BUN_VERSION}-slim AS builder
 
-# Next.js app lives here
 WORKDIR /app
 
-# Set production environment
-ENV NODE_ENV="production"
-
-
-# Throw-away build stage to reduce size of final image
-FROM base AS build
-
-# Build arguments
-ARG NEXT_PUBLIC_CURRENT_MANDATE="2026-2027"
-
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential pkg-config python-is-python3
+ENV NEXT_TELEMETRY_DISABLED=1
 
 # Install node modules
 COPY bun.lockb package.json ./
-RUN bun install
+RUN bun install --frozen-lockfile
 
 # Copy application code
 COPY . .
 
 # Build application
-RUN bunx next build --experimental-build-mode compile
-
-# Remove development dependencies
-RUN rm -rf node_modules && \
-    bun install --ci
+RUN bun run build
 
 
 # Final stage for app image
-FROM base
+FROM oven/bun:${BUN_VERSION}-slim AS runner
 
-# Copy built application
-COPY --from=build /app /app
+# Install curl for the health check
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl && \
+    rm -rf /var/lib/apt/lists/*
 
-# Entrypoint sets up the container.
-ENTRYPOINT [ "/app/docker-entrypoint.ts" ]
+WORKDIR /app
 
-# Start the server by default, this can be overwritten at runtime
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+# Owned by the runtime user because Next.js writes its cache under .next
+COPY --from=builder --chown=bun /app/public ./public
+COPY --from=builder --chown=bun /app/.next/standalone ./
+COPY --from=builder --chown=bun /app/.next/static ./.next/static
+
+USER bun
+
 EXPOSE 3000
-CMD [ "bun", "run", "start" ]
+
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 --start-period=5s \
+  CMD curl -f http://localhost:3000/ || exit 1
+
+CMD [ "bun", "server.js" ]
