@@ -78,12 +78,33 @@ export interface EventTooltipProps {
 }
 
 export interface DocumentProps {
-  documentUrl: string;
-  title: string;
+  documentName: string;
+  title: MultiLangText;
   publication_date: string;
-  description: string;
-  imageUrl: string;
+  description: MultiLangText;
   categories: string[];
 }
 
-export type DocumentsData = DocumentProps[];
+export interface MultiLangText {
+  pt: string;
+  en: string;
+}
+
+export interface DocumentData {
+  title: MultiLangText;
+  publication_date: string;
+  description: MultiLangText;
+  categories: string[];
+  documentUrl: string;
+}
+
+export interface OrderCriteria {
+  value: string;
+  label: string;
+  sort: (a: DocumentData, b: DocumentData) => number;
+}
+
+export type OrderCriteriaMap = Record<string, OrderCriteria>;
+
+export type DocumentsProps = DocumentProps[];
+export type DocumentsData = DocumentData[];
