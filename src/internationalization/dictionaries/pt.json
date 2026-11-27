@@ -392,12 +392,24 @@
   },
   "documents": {
     "title": "Documentos Institucionais",
+    "team_selector": {
+      "default_option": "Atual mandato",
+      "hint": "Selecionar mandato"
+    },
     "allDocs": "Todos os documentos",
+    "order": {
+      "dateDesc": "Data: mais recente",
+      "dateAsc": "Data: mais antiga",
+      "titleAsc": "Título: A-Z",
+      "titleDesc": "Título: Z-A"
+    },
     "download": "Descarregar",
     "seeMore": "Ver mais",
     "seeLess": "Ver menos",
     "publicationDate": "Data de publicação",
-    "description": "Descrição"
+    "description": "Descrição",
+    "noDescription": "Nenhuma descrição fornecida",
+    "noDocuments": "Nenhum documento disponível para este ano"
   },
   "social_media": "Redes sociais",
   "socials": [

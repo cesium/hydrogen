@@ -392,11 +392,23 @@
   },
   "documents": {
     "title": "Institutional Documents",
+    "team_selector": {
+      "default_option": "Current term",
+      "hint": "Select term"
+    },
     "allDocs": "All documents",
+    "order": {
+      "dateDesc": "Date: newest first",
+      "dateAsc": "Date: oldest first",
+      "titleAsc": "Title: A-Z",
+      "titleDesc": "Title: Z-A"
+    },
     "download": "Download",
     "seeMore": "See more",
     "seeLess": "See less",
-    "description": "Description"
+    "description": "Description",
+    "noDescription": "No description provided",
+    "noDocuments": "No documents available for this year"
   },
   "social_media": "Social Media",
   "socials": [
